@@ -14,8 +14,8 @@
 		790A81182AAE19A700283D7E /* TaskWiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790A81172AAE19A700283D7E /* TaskWiseTests.swift */; };
 		790A81222AAE19A700283D7E /* TaskWiseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790A81212AAE19A700283D7E /* TaskWiseUITests.swift */; };
 		790A81332AAE285A00283D7E /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 790A81322AAE285A00283D7E /* Localizable.xcstrings */; };
-		790A81372AAE2C8A00283D7E /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790A81362AAE2C8A00283D7E /* Localized.swift */; };
 		7988A02C2AAE2EAC00C63265 /* DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988A02B2AAE2EAC00C63265 /* DI.swift */; };
+		7988A0332AAE307E00C63265 /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988A0322AAE307E00C63265 /* Localized.swift */; };
 		7A9A901567717541BBD96A02 /* Pods_TaskWise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD32EFC3A22C26F3A0A07A5 /* Pods_TaskWise.framework */; };
 		7FC2DAEE3DB409238E5DA726 /* libPods-TaskWiseTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6A56D56A0816CFDB820555 /* libPods-TaskWiseTests.a */; };
 /* End PBXBuildFile section */
@@ -49,8 +49,8 @@
 		790A811D2AAE19A700283D7E /* TaskWiseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskWiseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		790A81212AAE19A700283D7E /* TaskWiseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskWiseUITests.swift; sourceTree = "<group>"; };
 		790A81322AAE285A00283D7E /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
-		790A81362AAE2C8A00283D7E /* Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
 		7988A02B2AAE2EAC00C63265 /* DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DI.swift; sourceTree = "<group>"; };
+		7988A0322AAE307E00C63265 /* Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
 		91C2B2216449795E4EF13BE8 /* Pods-TaskWise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskWise.debug.xcconfig"; path = "Target Support Files/Pods-TaskWise/Pods-TaskWise.debug.xcconfig"; sourceTree = "<group>"; };
 		982159FDF24FAD927584113A /* Pods-TaskWiseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskWiseTests.debug.xcconfig"; path = "Target Support Files/Pods-TaskWiseTests/Pods-TaskWiseTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A9790524961B82E82E6F6AD5 /* Pods-TaskWise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskWise.release.xcconfig"; path = "Target Support Files/Pods-TaskWise/Pods-TaskWise.release.xcconfig"; sourceTree = "<group>"; };
@@ -121,12 +121,11 @@
 		790A81052AAE19A700283D7E /* TaskWise */ = {
 			isa = PBXGroup;
 			children = (
-				790A81082AAE19A700283D7E /* ContentView.swift */,
-				7988A02B2AAE2EAC00C63265 /* DI.swift */,
-				790A81062AAE19A700283D7E /* TaskWiseApp.swift */,
-				790A81342AAE28A200283D7E /* Generated */,
+				7988A02D2AAE2F7A00C63265 /* App */,
+				7988A02E2AAE2F8400C63265 /* DI */,
 				790A810C2AAE19A700283D7E /* Preview Content */,
 				790A81312AAE282800283D7E /* Resources */,
+				7988A0342AAE310700C63265 /* Scene */,
 			);
 			path = TaskWise;
 			sourceTree = "<group>";
@@ -158,18 +157,59 @@
 		790A81312AAE282800283D7E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				790A810A2AAE19A700283D7E /* Assets.xcassets */,
-				790A81322AAE285A00283D7E /* Localizable.xcstrings */,
+				7988A0312AAE2FD100C63265 /* Assets */,
+				7988A02F2AAE2FB100C63265 /* Generated */,
+				7988A0302AAE2FC600C63265 /* Localizable */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		790A81342AAE28A200283D7E /* Generated */ = {
+		7988A02D2AAE2F7A00C63265 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				790A81362AAE2C8A00283D7E /* Localized.swift */,
+				790A81062AAE19A700283D7E /* TaskWiseApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		7988A02E2AAE2F8400C63265 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				7988A02B2AAE2EAC00C63265 /* DI.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		7988A02F2AAE2FB100C63265 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				7988A0322AAE307E00C63265 /* Localized.swift */,
 			);
 			path = Generated;
+			sourceTree = "<group>";
+		};
+		7988A0302AAE2FC600C63265 /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				790A81322AAE285A00283D7E /* Localizable.xcstrings */,
+			);
+			path = Localizable;
+			sourceTree = "<group>";
+		};
+		7988A0312AAE2FD100C63265 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				790A810A2AAE19A700283D7E /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		7988A0342AAE310700C63265 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				790A81082AAE19A700283D7E /* ContentView.swift */,
+			);
+			path = Scene;
 			sourceTree = "<group>";
 		};
 		8CEBAA51A4C881F8694DD290 /* Frameworks */ = {
@@ -419,9 +459,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7988A0332AAE307E00C63265 /* Localized.swift in Sources */,
 				7988A02C2AAE2EAC00C63265 /* DI.swift in Sources */,
 				790A81092AAE19A700283D7E /* ContentView.swift in Sources */,
-				790A81372AAE2C8A00283D7E /* Localized.swift in Sources */,
 				790A81072AAE19A700283D7E /* TaskWiseApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
