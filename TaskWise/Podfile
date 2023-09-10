@@ -5,6 +5,7 @@ inhibit_all_warnings!
 target 'TaskWise' do
   use_frameworks!
 
+  pod 'SwiftGen'
   pod 'SwiftLint'
 end
 

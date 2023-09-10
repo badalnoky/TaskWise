@@ -1,0 +1,6 @@
+json:
+  inputs: TaskWise/Resources/Localizable.xcstrings
+  filter: .+\.xcstrings$
+  outputs:
+    templatePath: Templates/string-assets.stencil
+    output: TaskWise/Generated/Localized.swift
