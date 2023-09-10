@@ -13,6 +13,8 @@
 		790A810E2AAE19A700283D7E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 790A810D2AAE19A700283D7E /* Preview Assets.xcassets */; };
 		790A81182AAE19A700283D7E /* TaskWiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790A81172AAE19A700283D7E /* TaskWiseTests.swift */; };
 		790A81222AAE19A700283D7E /* TaskWiseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790A81212AAE19A700283D7E /* TaskWiseUITests.swift */; };
+		7A9A901567717541BBD96A02 /* Pods_TaskWise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD32EFC3A22C26F3A0A07A5 /* Pods_TaskWise.framework */; };
+		7FC2DAEE3DB409238E5DA726 /* libPods-TaskWiseTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6A56D56A0816CFDB820555 /* libPods-TaskWiseTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6A6A56D56A0816CFDB820555 /* libPods-TaskWiseTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TaskWiseTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		790A81032AAE19A700283D7E /* TaskWise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskWise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		790A81062AAE19A700283D7E /* TaskWiseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskWiseApp.swift; sourceTree = "<group>"; };
 		790A81082AAE19A700283D7E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,6 +45,11 @@
 		790A81172AAE19A700283D7E /* TaskWiseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskWiseTests.swift; sourceTree = "<group>"; };
 		790A811D2AAE19A700283D7E /* TaskWiseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskWiseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		790A81212AAE19A700283D7E /* TaskWiseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskWiseUITests.swift; sourceTree = "<group>"; };
+		91C2B2216449795E4EF13BE8 /* Pods-TaskWise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskWise.debug.xcconfig"; path = "Target Support Files/Pods-TaskWise/Pods-TaskWise.debug.xcconfig"; sourceTree = "<group>"; };
+		982159FDF24FAD927584113A /* Pods-TaskWiseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskWiseTests.debug.xcconfig"; path = "Target Support Files/Pods-TaskWiseTests/Pods-TaskWiseTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A9790524961B82E82E6F6AD5 /* Pods-TaskWise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskWise.release.xcconfig"; path = "Target Support Files/Pods-TaskWise/Pods-TaskWise.release.xcconfig"; sourceTree = "<group>"; };
+		DAD32EFC3A22C26F3A0A07A5 /* Pods_TaskWise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaskWise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E56C80BB80154BCA4A77A454 /* Pods-TaskWiseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskWiseTests.release.xcconfig"; path = "Target Support Files/Pods-TaskWiseTests/Pods-TaskWiseTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A9A901567717541BBD96A02 /* Pods_TaskWise.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FC2DAEE3DB409238E5DA726 /* libPods-TaskWiseTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +79,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E1D43BFCC87103E28E2DDD6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				91C2B2216449795E4EF13BE8 /* Pods-TaskWise.debug.xcconfig */,
+				A9790524961B82E82E6F6AD5 /* Pods-TaskWise.release.xcconfig */,
+				982159FDF24FAD927584113A /* Pods-TaskWiseTests.debug.xcconfig */,
+				E56C80BB80154BCA4A77A454 /* Pods-TaskWiseTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		790A80FA2AAE19A600283D7E = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +98,8 @@
 				790A81162AAE19A700283D7E /* TaskWiseTests */,
 				790A81202AAE19A700283D7E /* TaskWiseUITests */,
 				790A81042AAE19A700283D7E /* Products */,
+				3E1D43BFCC87103E28E2DDD6 /* Pods */,
+				8CEBAA51A4C881F8694DD290 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,6 +148,15 @@
 			path = TaskWiseUITests;
 			sourceTree = "<group>";
 		};
+		8CEBAA51A4C881F8694DD290 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DAD32EFC3A22C26F3A0A07A5 /* Pods_TaskWise.framework */,
+				6A6A56D56A0816CFDB820555 /* libPods-TaskWiseTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -131,6 +164,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 790A81272AAE19A700283D7E /* Build configuration list for PBXNativeTarget "TaskWise" */;
 			buildPhases = (
+				3CC7A2FEB40B39D088A243F9 /* [CP] Check Pods Manifest.lock */,
 				790A80FF2AAE19A600283D7E /* Sources */,
 				790A81002AAE19A600283D7E /* Frameworks */,
 				790A81012AAE19A600283D7E /* Resources */,
@@ -148,6 +182,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 790A812A2AAE19A700283D7E /* Build configuration list for PBXNativeTarget "TaskWiseTests" */;
 			buildPhases = (
+				80CA417FE7CAA5314BE9DC95 /* [CP] Check Pods Manifest.lock */,
 				790A810F2AAE19A700283D7E /* Sources */,
 				790A81102AAE19A700283D7E /* Frameworks */,
 				790A81112AAE19A700283D7E /* Resources */,
@@ -248,6 +283,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3CC7A2FEB40B39D088A243F9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TaskWise-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		80CA417FE7CAA5314BE9DC95 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TaskWiseTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		790A80FF2AAE19A600283D7E /* Sources */ = {
@@ -412,6 +494,7 @@
 		};
 		790A81282AAE19A700283D7E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91C2B2216449795E4EF13BE8 /* Pods-TaskWise.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -441,6 +524,7 @@
 		};
 		790A81292AAE19A700283D7E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9790524961B82E82E6F6AD5 /* Pods-TaskWise.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -470,6 +554,7 @@
 		};
 		790A812B2AAE19A700283D7E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 982159FDF24FAD927584113A /* Pods-TaskWiseTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -490,6 +575,7 @@
 		};
 		790A812C2AAE19A700283D7E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E56C80BB80154BCA4A77A454 /* Pods-TaskWiseTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
