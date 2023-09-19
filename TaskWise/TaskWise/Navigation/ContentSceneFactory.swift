@@ -21,7 +21,7 @@ extension ContentSceneFactory {
     }
 
     func dashboard(with navigator: Navigator<ContentSceneFactory>) -> DashboardView {
-        DashboardView()
+        DashboardView(viewModel: DashboardViewModel(navigator: navigator))
     }
 
     func day(with navigator: Navigator<ContentSceneFactory>) -> DayView {

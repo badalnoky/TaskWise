@@ -4,10 +4,16 @@
 
 import Foundation
 internal enum Str {
-    /// Example test
-    internal static let example = String(localized: "example", defaultValue: "Example test")
-    /// This is the second example
-    internal static let secondExample = String(localized: "secondExample", defaultValue: "This is the second example")
+    /// Today
+    internal static let dashboardTitle = String(localized: "Dashboard.title", defaultValue: "Today")
+    /// Todo
+    internal static let dashboardTodoLabel = String(localized: "Dashboard.todoLabel", defaultValue: "Todo")
+    /// plus
+    internal static let iconsAdd = String(localized: "Icons.add", defaultValue: "plus")
+    /// calendar
+    internal static let iconsCalendar = String(localized: "Icons.calendar", defaultValue: "calendar")
+    /// gear
+    internal static let iconsSettings = String(localized: "Icons.settings", defaultValue: "gear")
 }
 
 extension Str {

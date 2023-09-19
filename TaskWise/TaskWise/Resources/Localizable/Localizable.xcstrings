@@ -1,24 +1,57 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "example" : {
+    "Dashboard.title" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Example test"
+            "value" : "Today"
           }
         }
       }
     },
-    "secondExample" : {
+    "Dashboard.todoLabel" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "This is the second example"
+            "value" : "Todo"
+          }
+        }
+      }
+    },
+    "Icons.add" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "plus"
+          }
+        }
+      }
+    },
+    "Icons.calendar" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "calendar"
+          }
+        }
+      }
+    },
+    "Icons.settings" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "gear"
           }
         }
       }
