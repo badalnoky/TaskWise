@@ -14,6 +14,14 @@ internal enum Str {
     internal static let iconsCalendar = String(localized: "Icons.calendar", defaultValue: "calendar")
     /// gear
     internal static let iconsSettings = String(localized: "Icons.settings", defaultValue: "gear")
+    /// My Categories
+    internal static let settingsCategoriesLabel = String(localized: "Settings.categoriesLabel", defaultValue: "My Categories")
+    /// My Columns
+    internal static let settingsColumnsLabel = String(localized: "Settings.columnsLabel", defaultValue: "My Columns")
+    /// My priorities
+    internal static let settingsPrioritiesLabel = String(localized: "Settings.prioritiesLabel", defaultValue: "My priorities")
+    /// Settings
+    internal static let settingsTitle = String(localized: "Settings.title", defaultValue: "Settings")
 }
 
 extension Str {

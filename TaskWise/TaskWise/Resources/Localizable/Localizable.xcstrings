@@ -55,6 +55,50 @@
           }
         }
       }
+    },
+    "Settings.categoriesLabel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "My Categories"
+          }
+        }
+      }
+    },
+    "Settings.columnsLabel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "My Columns"
+          }
+        }
+      }
+    },
+    "Settings.prioritiesLabel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "My priorities"
+          }
+        }
+      }
+    },
+    "Settings.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

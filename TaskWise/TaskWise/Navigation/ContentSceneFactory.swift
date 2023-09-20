@@ -29,7 +29,7 @@ extension ContentSceneFactory {
     }
 
     func settings(with navigator: Navigator<ContentSceneFactory>) -> SettingsView {
-        SettingsView()
+        SettingsView(viewModel: SettingsViewModel(navigator: navigator))
     }
 
     func task(with navigator: Navigator<ContentSceneFactory>) -> TaskView {
