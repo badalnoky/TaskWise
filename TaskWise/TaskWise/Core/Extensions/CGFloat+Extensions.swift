@@ -5,6 +5,8 @@ public extension CGFloat {
     static let indicatorBorderWidth: CGFloat = 15
     /// 25 pt
     static let defaultIconSize: CGFloat = 25
+    /// 30 pt
+    static let defaultCheckboxSize: CGFloat = 30
     /// 35 pt
     static let iconButtonSize: CGFloat = 35
 }

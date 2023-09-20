@@ -33,6 +33,6 @@ extension ContentSceneFactory {
     }
 
     func task(with navigator: Navigator<ContentSceneFactory>) -> TaskView {
-        TaskView()
+        TaskView(viewModel: TaskViewModel(navigator: navigator))
     }
 }

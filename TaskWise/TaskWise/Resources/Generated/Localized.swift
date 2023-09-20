@@ -12,6 +12,10 @@ internal enum Str {
     internal static let iconsAdd = String(localized: "Icons.add", defaultValue: "plus")
     /// calendar
     internal static let iconsCalendar = String(localized: "Icons.calendar", defaultValue: "calendar")
+    /// checkmark.circle.fill
+    internal static let iconsCheck = String(localized: "Icons.check", defaultValue: "checkmark.circle.fill")
+    /// pencil
+    internal static let iconsEdit = String(localized: "Icons.edit", defaultValue: "pencil")
     /// gear
     internal static let iconsSettings = String(localized: "Icons.settings", defaultValue: "gear")
     /// My Categories
@@ -22,6 +26,22 @@ internal enum Str {
     internal static let settingsPrioritiesLabel = String(localized: "Settings.prioritiesLabel", defaultValue: "My priorities")
     /// Settings
     internal static let settingsTitle = String(localized: "Settings.title", defaultValue: "Settings")
+    /// Category
+    internal static let taskCategoryLabel = String(localized: "Task.categoryLabel", defaultValue: "Category")
+    /// Color
+    internal static let taskColorLabel = String(localized: "Task.colorLabel", defaultValue: "Color")
+    /// Delete task
+    internal static let taskDeleteButton = String(localized: "Task.deleteButton", defaultValue: "Delete task")
+    /// Ends
+    internal static let taskEndsLabel = String(localized: "Task.endsLabel", defaultValue: "Ends")
+    /// Priority
+    internal static let taskPriorityLabel = String(localized: "Task.priorityLabel", defaultValue: "Priority")
+    /// Repeats
+    internal static let taskRepeatLabel = String(localized: "Task.repeatLabel", defaultValue: "Repeats")
+    /// Starts
+    internal static let taskStartsLabel = String(localized: "Task.startsLabel", defaultValue: "Starts")
+    /// Steps
+    internal static let taskStepsLabel = String(localized: "Task.stepsLabel", defaultValue: "Steps")
 }
 
 extension Str {
