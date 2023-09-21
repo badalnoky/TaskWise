@@ -4,6 +4,8 @@
 
 import Foundation
 internal enum Str {
+    /// Todo
+    internal static let calendarTodoLabel = String(localized: "Calendar.todoLabel", defaultValue: "Todo")
     /// Today
     internal static let dashboardTitle = String(localized: "Dashboard.title", defaultValue: "Today")
     /// Todo
@@ -16,6 +18,12 @@ internal enum Str {
     internal static let iconsCheck = String(localized: "Icons.check", defaultValue: "checkmark.circle.fill")
     /// pencil
     internal static let iconsEdit = String(localized: "Icons.edit", defaultValue: "pencil")
+    /// line.3.horizontal.decrease.circle
+    internal static let iconsFilter = String(localized: "Icons.filter", defaultValue: "line.3.horizontal.decrease.circle")
+    /// list.bullet.below.rectangle
+    internal static let iconsList = String(localized: "Icons.list", defaultValue: "list.bullet.below.rectangle")
+    /// magnifyingglass
+    internal static let iconsSearch = String(localized: "Icons.search", defaultValue: "magnifyingglass")
     /// gear
     internal static let iconsSettings = String(localized: "Icons.settings", defaultValue: "gear")
     /// My Categories

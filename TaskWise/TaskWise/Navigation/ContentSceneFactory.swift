@@ -17,7 +17,7 @@ public final class ContentSceneFactory: SceneFactory {
 
 extension ContentSceneFactory {
     func calendar(with navigator: Navigator<ContentSceneFactory>) -> CalendarView {
-        CalendarView()
+        CalendarView(viewModel: CalendarViewModel(navigator: navigator))
     }
 
     func dashboard(with navigator: Navigator<ContentSceneFactory>) -> DashboardView {

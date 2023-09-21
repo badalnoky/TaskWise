@@ -1,6 +1,17 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Calendar.todoLabel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todo"
+          }
+        }
+      }
+    },
     "Dashboard.title" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -63,6 +74,39 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "pencil"
+          }
+        }
+      }
+    },
+    "Icons.filter" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "line.3.horizontal.decrease.circle"
+          }
+        }
+      }
+    },
+    "Icons.list" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "list.bullet.below.rectangle"
+          }
+        }
+      }
+    },
+    "Icons.search" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "magnifyingglass"
           }
         }
       }

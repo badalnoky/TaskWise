@@ -6,6 +6,9 @@ extension Image {
     static let add = Image(systemName: Str.iconsAdd)
     static let edit = Image(systemName: Str.iconsEdit)
     static let check = Image(systemName: Str.iconsCheck)
+    static let search = Image(systemName: Str.iconsSearch)
+    static let list = Image(systemName: Str.iconsList)
+    static let filter = Image(systemName: Str.iconsFilter)
 }
 
 public extension Image {
