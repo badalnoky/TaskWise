@@ -16,7 +16,6 @@ public protocol NavigatorInput: View {
 
 public struct Navigator<Factory: SceneFactory>: NavigatorInput {
     @State private var presentationStack = NavigationPath()
-    @State private var fadeInOut = true
 
     public let factory: Factory
     public let root: Factory.FlowScreen
@@ -29,8 +28,6 @@ public struct Navigator<Factory: SceneFactory>: NavigatorInput {
                     factory.view(for: screen, with: self as! Factory.SpecificNavigator)
                 }
         }
-        .onAppear { withAnimation(Animation.easeInOut(duration: .one)) { fadeInOut = false } }
-        .opacity(fadeInOut ? .zero : .one)
     }
 
     public init(sceneFactory: Factory, root: Factory.FlowScreen) {
