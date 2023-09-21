@@ -10,6 +10,8 @@ internal enum Str {
     internal static let dashboardTitle = String(localized: "Dashboard.title", defaultValue: "Today")
     /// Todo
     internal static let dashboardTodoLabel = String(localized: "Dashboard.todoLabel", defaultValue: "Todo")
+    /// Todo
+    internal static let dayTodoLabel = String(localized: "Day.todoLabel", defaultValue: "Todo")
     /// plus
     internal static let iconsAdd = String(localized: "Icons.add", defaultValue: "plus")
     /// calendar

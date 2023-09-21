@@ -25,7 +25,7 @@ extension ContentSceneFactory {
     }
 
     func day(with navigator: Navigator<ContentSceneFactory>) -> DayView {
-        DayView()
+        DayView(viewModel: DayViewModel(navigator: navigator))
     }
 
     func settings(with navigator: Navigator<ContentSceneFactory>) -> SettingsView {
