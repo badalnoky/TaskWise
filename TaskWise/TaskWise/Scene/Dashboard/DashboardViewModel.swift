@@ -13,14 +13,17 @@ import Foundation
 
 extension DashboardViewModel {
     func didTapCalendar() {
+        navigator.showCalendar()
     }
 
     func didTapSettings() {
+        navigator.showSettings()
     }
 
     func didTapAddTask() {
     }
 
     func didTapTask(_ task: String) {
+        navigator.showTask()
     }
 }

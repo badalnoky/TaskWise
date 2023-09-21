@@ -14,4 +14,8 @@ import Foundation
 extension DayViewModel {
     func didTapAdd() {
     }
+
+    func didTapTask(_ task: String) {
+        navigator.showTask()
+    }
 }

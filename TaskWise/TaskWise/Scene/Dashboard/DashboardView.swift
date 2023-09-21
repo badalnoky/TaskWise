@@ -8,9 +8,9 @@ extension DashboardView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                IconButton(.settings) {}
+                IconButton(.settings, action: viewModel.didTapSettings)
                 Spacer()
-                IconButton(.calendar) {}
+                IconButton(.calendar, action: viewModel.didTapCalendar)
             }
 
             Text(Str.dashboardTitle)
@@ -46,6 +46,9 @@ extension DashboardView: View {
                                         Text(task)
                                             .padding()
                                             .frame(width: geometry.size.width)
+                                            .onTapGesture {
+                                                viewModel.didTapTask(task)
+                                            }
                                     }
                                 }
                             }

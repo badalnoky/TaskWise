@@ -4,7 +4,13 @@ import SwiftUI
     private var navigator: Navigator<ContentSceneFactory>
 
     var isListed = false
-    var selectedDate: Date = .now
+    var selectedDate: Date = .now {
+        didSet {
+            if !isListed {
+                self.navigator.showDay()
+            }
+        }
+    }
     var loadedTasks: [String] = ["these", "are", "the", "loaded", "tasks"]
 
     init(navigator: Navigator<ContentSceneFactory>) {

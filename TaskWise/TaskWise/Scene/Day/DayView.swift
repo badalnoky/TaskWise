@@ -29,6 +29,9 @@ extension DayView: View {
                 ForEach(viewModel.tasks, id: \.self) { task in
                     Text(task)
                         .padding()
+                        .onTapGesture {
+                            viewModel.didTapTask(task)
+                        }
                 }
             }
         }
