@@ -17,22 +17,22 @@ public final class ContentSceneFactory: SceneFactory {
 
 extension ContentSceneFactory {
     func calendar(with navigator: Navigator<ContentSceneFactory>) -> CalendarView {
-        CalendarView()
+        CalendarView(viewModel: CalendarViewModel(navigator: navigator))
     }
 
     func dashboard(with navigator: Navigator<ContentSceneFactory>) -> DashboardView {
-        DashboardView()
+        DashboardView(viewModel: DashboardViewModel(navigator: navigator))
     }
 
     func day(with navigator: Navigator<ContentSceneFactory>) -> DayView {
-        DayView()
+        DayView(viewModel: DayViewModel(navigator: navigator))
     }
 
     func settings(with navigator: Navigator<ContentSceneFactory>) -> SettingsView {
-        SettingsView()
+        SettingsView(viewModel: SettingsViewModel(navigator: navigator))
     }
 
     func task(with navigator: Navigator<ContentSceneFactory>) -> TaskView {
-        TaskView()
+        TaskView(viewModel: TaskViewModel(navigator: navigator))
     }
 }
