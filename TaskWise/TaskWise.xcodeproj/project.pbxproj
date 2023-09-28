@@ -316,20 +316,12 @@
 		7988A0352AAE352C00C63265 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				7988A0362AAE353300C63265 /* Core */,
-			);
-			path = Navigation;
-			sourceTree = "<group>";
-		};
-		7988A0362AAE353300C63265 /* Core */ = {
-			isa = PBXGroup;
-			children = (
 				7988A03A2AAE35C200C63265 /* Coordinator.swift */,
 				7988A0392AAE35C200C63265 /* Navigator.swift */,
 				7988A0382AAE35C100C63265 /* SceneFactory.swift */,
 				7988A03B2AAE35C200C63265 /* Screen.swift */,
 			);
-			path = Core;
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 		7988A0372AAE357600C63265 /* Utility */ = {
