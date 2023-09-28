@@ -22,6 +22,11 @@
 		795CC8EC2ABAF28A0093C4BC /* SettingsViewModel+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CC8EB2ABAF28A0093C4BC /* SettingsViewModel+Mock.swift */; };
 		795CC8EE2ABAF63B0093C4BC /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CC8ED2ABAF63B0093C4BC /* TaskViewModel.swift */; };
 		795CC8F02ABAF8F70093C4BC /* TaskViewModel+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CC8EF2ABAF8F70093C4BC /* TaskViewModel+Mock.swift */; };
+		79616F432AC5ABB700F4A95C /* CloudDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79616F422AC5ABB700F4A95C /* CloudDataService.swift */; };
+		79616F482AC5CD4000F4A95C /* CloudItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79616F472AC5CD4000F4A95C /* CloudItem.swift */; };
+		79616F4A2AC5CE0000F4A95C /* CloudError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79616F492AC5CE0000F4A95C /* CloudError.swift */; };
+		79616F4C2AC5CE7700F4A95C /* CloudKitHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79616F4B2AC5CE7700F4A95C /* CloudKitHandler.swift */; };
+		79616F502AC5CFED00F4A95C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79616F4F2AC5CFED00F4A95C /* Task.swift */; };
 		7988A02C2AAE2EAC00C63265 /* DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988A02B2AAE2EAC00C63265 /* DI.swift */; };
 		7988A0332AAE307E00C63265 /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988A0322AAE307E00C63265 /* Localized.swift */; };
 		7988A03C2AAE35C200C63265 /* SceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988A0382AAE35C100C63265 /* SceneFactory.swift */; };
@@ -89,6 +94,12 @@
 		795CC8EB2ABAF28A0093C4BC /* SettingsViewModel+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsViewModel+Mock.swift"; sourceTree = "<group>"; };
 		795CC8ED2ABAF63B0093C4BC /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 		795CC8EF2ABAF8F70093C4BC /* TaskViewModel+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskViewModel+Mock.swift"; sourceTree = "<group>"; };
+		795F70D82AC456B400C556C9 /* TaskWise.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TaskWise.entitlements; sourceTree = "<group>"; };
+		79616F422AC5ABB700F4A95C /* CloudDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudDataService.swift; sourceTree = "<group>"; };
+		79616F472AC5CD4000F4A95C /* CloudItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudItem.swift; sourceTree = "<group>"; };
+		79616F492AC5CE0000F4A95C /* CloudError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudError.swift; sourceTree = "<group>"; };
+		79616F4B2AC5CE7700F4A95C /* CloudKitHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitHandler.swift; sourceTree = "<group>"; };
+		79616F4F2AC5CFED00F4A95C /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		7988A02B2AAE2EAC00C63265 /* DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DI.swift; sourceTree = "<group>"; };
 		7988A0322AAE307E00C63265 /* Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
 		7988A0382AAE35C100C63265 /* SceneFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneFactory.swift; sourceTree = "<group>"; };
@@ -188,10 +199,13 @@
 				7988A02D2AAE2F7A00C63265 /* App */,
 				7988A0532AAE386F00C63265 /* Core */,
 				7988A02E2AAE2F8400C63265 /* DI */,
+				79616F4D2AC5CEB800F4A95C /* Domain */,
 				798B08B72AB8516F00311D93 /* Navigation */,
 				790A810C2AAE19A700283D7E /* Preview Content */,
 				790A81312AAE282800283D7E /* Resources */,
 				7988A0342AAE310700C63265 /* Scene */,
+				795F70D92AC458F800C556C9 /* Service */,
+				795F70D82AC456B400C556C9 /* TaskWise.entitlements */,
 			);
 			path = TaskWise;
 			sourceTree = "<group>";
@@ -261,6 +275,40 @@
 			path = IconButton;
 			sourceTree = "<group>";
 		};
+		795F70D92AC458F800C556C9 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				79616F4E2AC5CF1400F4A95C /* Data */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		79616F462AC5CD2600F4A95C /* ICloud */ = {
+			isa = PBXGroup;
+			children = (
+				79616F492AC5CE0000F4A95C /* CloudError.swift */,
+				79616F472AC5CD4000F4A95C /* CloudItem.swift */,
+				79616F4B2AC5CE7700F4A95C /* CloudKitHandler.swift */,
+			);
+			path = ICloud;
+			sourceTree = "<group>";
+		};
+		79616F4D2AC5CEB800F4A95C /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				79616F4F2AC5CFED00F4A95C /* Task.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		79616F4E2AC5CF1400F4A95C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				79616F422AC5ABB700F4A95C /* CloudDataService.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		7988A02D2AAE2F7A00C63265 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -324,12 +372,12 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
-		7988A0372AAE357600C63265 /* Utility */ = {
+		7988A0372AAE357600C63265 /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				7988A0402AAE35F600C63265 /* NetworkMonitor.swift */,
 			);
-			path = Utility;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		7988A0422AAE361400C63265 /* Extensions */ = {
@@ -351,8 +399,9 @@
 			isa = PBXGroup;
 			children = (
 				7988A0422AAE361400C63265 /* Extensions */,
+				79616F462AC5CD2600F4A95C /* ICloud */,
 				7988A0352AAE352C00C63265 /* Navigation */,
-				7988A0372AAE357600C63265 /* Utility */,
+				7988A0372AAE357600C63265 /* Network */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -673,6 +722,7 @@
 				798B08CC2AB85C8400311D93 /* DayView.swift in Sources */,
 				798B08BD2AB8525500311D93 /* ContentScreen.swift in Sources */,
 				798B08B92AB8522D00311D93 /* ContentCoordinator.swift in Sources */,
+				79616F482AC5CD4000F4A95C /* CloudItem.swift in Sources */,
 				79C16F4D2ABB4FDB00BA362B /* CheckBoxStyle.swift in Sources */,
 				7988A04E2AAE362400C63265 /* String+Extensions.swift in Sources */,
 				799D48E32ABC394400C149E3 /* CalendarViewModel+Mock.swift in Sources */,
@@ -681,6 +731,7 @@
 				798B08BB2AB8524800311D93 /* ContentSceneFactory.swift in Sources */,
 				7988A04F2AAE362400C63265 /* CGFloat+Extensions.swift in Sources */,
 				7988A03C2AAE35C200C63265 /* SceneFactory.swift in Sources */,
+				79616F432AC5ABB700F4A95C /* CloudDataService.swift in Sources */,
 				7988A02C2AAE2EAC00C63265 /* DI.swift in Sources */,
 				790A81072AAE19A700283D7E /* TaskWiseApp.swift in Sources */,
 				795CC8EE2ABAF63B0093C4BC /* TaskViewModel.swift in Sources */,
@@ -693,15 +744,18 @@
 				7988A03E2AAE35C200C63265 /* Coordinator.swift in Sources */,
 				795CC8EC2ABAF28A0093C4BC /* SettingsViewModel+Mock.swift in Sources */,
 				7988A0512AAE362400C63265 /* PassthroughSubject+Extensions.swift in Sources */,
+				79616F4A2AC5CE0000F4A95C /* CloudError.swift in Sources */,
 				7988A0502AAE362400C63265 /* Double+Extensions.swift in Sources */,
 				7988A0412AAE35F600C63265 /* NetworkMonitor.swift in Sources */,
 				791F0D092ABCA6AA00B7F408 /* DayViewModel.swift in Sources */,
+				79616F4C2AC5CE7700F4A95C /* CloudKitHandler.swift in Sources */,
 				7988A03F2AAE35C200C63265 /* Screen.swift in Sources */,
 				7988A04C2AAE362400C63265 /* Image+Extensions.swift in Sources */,
 				795CC8F02ABAF8F70093C4BC /* TaskViewModel+Mock.swift in Sources */,
 				7988A04D2AAE362400C63265 /* Publisher+Extensions.swift in Sources */,
 				792155172AB9DD710044CDED /* DashboardViewModel+Mock.swift in Sources */,
 				7988A04B2AAE362400C63265 /* Int+Extensions.swift in Sources */,
+				79616F502AC5CFED00F4A95C /* Task.swift in Sources */,
 				795CC8EA2ABAEF3B0093C4BC /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -865,6 +919,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TaskWise/TaskWise.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TaskWise/Preview Content\"";
@@ -895,6 +950,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TaskWise/TaskWise.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TaskWise/Preview Content\"";

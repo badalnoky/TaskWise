@@ -1,4 +1,5 @@
 import Combine
+import Foundation
 
 public extension Publisher {
     func sink(
@@ -13,5 +14,12 @@ public extension Publisher {
         } receiveValue: { value in
             receiveValue(value)
         }
+    }
+
+    func sinkOnMainQueue(
+        receiveValue: @escaping ((Self.Output) -> Void),
+        receiveError: @escaping ((Self.Failure) -> Void)
+    ) -> AnyCancellable {
+        receive(on: DispatchQueue.main).sink(receiveValue: receiveValue, receiveError: receiveError)
     }
 }
