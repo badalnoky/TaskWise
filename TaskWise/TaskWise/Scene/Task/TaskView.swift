@@ -7,15 +7,16 @@ struct TaskView {
 extension TaskView: View {
     var body: some View {
         VStack(spacing: .padding16) {
-            IconButton(.edit) {}
+            IconButton(.edit, action: viewModel.didTapEdit)
                 .frame(maxWidth: .infinity, alignment: .trailing)
 
-            Text(viewModel.name)
+            TextField(String.empty, text: $viewModel.name)
                 .font(.largeTitle)
                 .bold()
                 .frame(maxWidth: .infinity, alignment: .leading)
 
-            Text(viewModel.description)
+            TextField(String.empty, text: $viewModel.description, axis: .vertical)
+                .lineLimit(5)
                 .font(.headline)
                 .bold()
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -24,8 +25,8 @@ extension TaskView: View {
                 Text(Str.taskPriorityLabel)
                 Spacer()
                 Picker(String.empty, selection: $viewModel.selectedPriority) {
-                    ForEach(viewModel.priorities, id: \.self) {
-                        Text($0)
+                    ForEach(viewModel.priorities, id: \.level) {
+                        Text($0.name)
                     }
                 }
             }
@@ -35,7 +36,7 @@ extension TaskView: View {
                 Spacer()
                 Picker(String.empty, selection: $viewModel.selectedCategory) {
                     ForEach(viewModel.categories, id: \.self) {
-                        Text($0)
+                        Text($0.name)
                     }
                 }
             }
@@ -77,9 +78,7 @@ extension TaskView: View {
 
             ColorPicker(Str.taskColorLabel, selection: $viewModel.color)
 
-            Spacer()
-
-            Button(Str.taskDeleteButton) {}
+            Button(viewModel.isEditable ? Str.taskSaveButton : Str.taskDeleteButton) {}
                 .buttonStyle(.borderedProminent)
         }
     }

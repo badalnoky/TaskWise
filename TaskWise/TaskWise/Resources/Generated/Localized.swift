@@ -40,14 +40,16 @@ internal enum Str {
     internal static let taskCategoryLabel = String(localized: "Task.categoryLabel", defaultValue: "Category")
     /// Color
     internal static let taskColorLabel = String(localized: "Task.colorLabel", defaultValue: "Color")
-    /// Delete task
-    internal static let taskDeleteButton = String(localized: "Task.deleteButton", defaultValue: "Delete task")
+    /// Delete
+    internal static let taskDeleteButton = String(localized: "Task.deleteButton", defaultValue: "Delete")
     /// Ends
     internal static let taskEndsLabel = String(localized: "Task.endsLabel", defaultValue: "Ends")
     /// Priority
     internal static let taskPriorityLabel = String(localized: "Task.priorityLabel", defaultValue: "Priority")
     /// Repeats
     internal static let taskRepeatLabel = String(localized: "Task.repeatLabel", defaultValue: "Repeats")
+    /// Save
+    internal static let taskSaveButton = String(localized: "Task.saveButton", defaultValue: "Save")
     /// Starts
     internal static let taskStartsLabel = String(localized: "Task.startsLabel", defaultValue: "Starts")
     /// Steps

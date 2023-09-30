@@ -1,25 +1,44 @@
 import CloudKit
+import SwiftData
+import SwiftUI
 
-// TODO: Build this to an actual object
-struct Task: CloudItem {
-    var title: String
-    var record: CKRecord
+@Model final class Task {
+    @Attribute(.unique) var id: UUID
+    @Attribute(.spotlight) var title: String
+    var taskDescription: String
+    var priority: Priority
+    var category: Category
+    var date: Date
+    var hasTimeConstraints: Bool
+    var startDateTime: Date
+    var endDateTime: Date
+    var steps: [TaskStep]
+    var colorComponents: ColorComponents
+    var column: TaskColumn
 
-    init(title: String) {
+    init(
+        title: String,
+        description: String,
+        priority: Priority,
+        category: Category,
+        date: Date,
+        hasTimeConstraints: Bool,
+        startDateTime: Date,
+        endDateTime: Date,
+        steps: [TaskStep],
+        colorComponents: ColorComponents
+    ) {
+        self.id = UUID()
         self.title = title
-        let record = CKRecord(recordType: "Tasks")
-        record["title"] = title
-        self.record = record
-    }
-
-    init?(from record: CKRecord) {
-        guard let title = record["title"] as? String else { return nil }
-        self.title = title
-        self.record = record
-    }
-
-    mutating func update(title: String) {
-        self.title = title
-        self.record["title"] = title
+        self.taskDescription = description
+        self.priority = priority
+        self.category = category
+        self.date = date
+        self.hasTimeConstraints = hasTimeConstraints
+        self.startDateTime = startDateTime
+        self.endDateTime = endDateTime
+        self.steps = steps
+        self.colorComponents = colorComponents
+        self.column = .TODO
     }
 }

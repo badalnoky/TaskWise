@@ -3,14 +3,23 @@ import SwiftUI
 @Observable final class TaskViewModel {
     private let navigator: Navigator<ContentSceneFactory>
 
-    var isEditable: Bool
+    var isEditable = false
 
     var name: String = "Task name"
     var description: String = "This is the very long descriptions of the task, that should be multiple lines of text."
-    var priorities: [String] = ["High", "Medium", "Low"]
-    var selectedPriority: String = "High"
-    var categories: [String] = ["Homework", "Work", "Exercise", "Other"]
-    var selectedCategory: String = "Homework"
+    var priorities: [Priority] = [
+        Priority(name: "Low", level: 1),
+        Priority(name: "Medium", level: 2),
+        Priority(name: "High", level: 3)
+    ]
+    var selectedPriority = Priority(name: "Low", level: 1)
+    var categories: [Category] = [
+        Category(name: "Homework"),
+        Category(name: "Work"),
+        Category(name: "Exercise"),
+        Category(name: "Other")
+    ]
+    var selectedCategory = Category(name: "Homework")
     var starts: Date = .now
     var ends: Date = .now.advanced(by: .hour)
     var repeats: [String] = ["Never", "Weekly", "Biweekly", "Yearly"]
@@ -19,16 +28,16 @@ import SwiftUI
     var steps: [String] = ["these", "are", "the", "steps"]
     var color: Color = .blue
 
-    init(navigator: Navigator<ContentSceneFactory>, isEditable: Bool = false) {
+    init(navigator: Navigator<ContentSceneFactory>) {
         self.navigator = navigator
-        self.isEditable = isEditable
     }
 }
 
 extension TaskViewModel {
     func didTapEdit() {
+        isEditable.toggle()
     }
 
-    func didTapDelete() {
+    func didTapAction() {
     }
 }

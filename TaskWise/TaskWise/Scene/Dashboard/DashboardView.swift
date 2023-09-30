@@ -43,11 +43,11 @@ extension DashboardView: View {
                                 }
                                 ScrollView {
                                     ForEach(viewModel.tasks, id: \.self) { task in
-                                        Text(task)
+                                        Text(task.title)
                                             .padding()
                                             .frame(width: geometry.size.width)
                                             .onTapGesture {
-                                                viewModel.didTapTask(task)
+                                                viewModel.didTapTask(task.title)
                                             }
                                     }
                                 }

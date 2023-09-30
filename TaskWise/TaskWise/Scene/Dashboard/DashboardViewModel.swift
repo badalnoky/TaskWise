@@ -4,7 +4,7 @@ import Foundation
     private var navigator: Navigator<ContentSceneFactory>
 
     let date: Date = .now
-    let tasks: [String] = ["this", "is", "a", "list", "of", "tasks"]
+    let tasks: [Task] = []
 
     init(navigator: Navigator<ContentSceneFactory>) {
         self.navigator = navigator
