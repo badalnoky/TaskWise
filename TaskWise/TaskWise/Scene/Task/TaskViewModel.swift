@@ -5,7 +5,7 @@ import SwiftUI
 
     var isEditable = false
 
-    var name: String = "Task name"
+    var title: String = "Task name"
     var description: String = "This is the very long descriptions of the task, that should be multiple lines of text."
     var priorities: [Priority] = [
         Priority(name: "Low", level: 1),
@@ -39,5 +39,19 @@ extension TaskViewModel {
     }
 
     func didTapAction() {
+        if isEditable {
+            let task = Task(
+                title: title,
+                description: description,
+                priority: selectedPriority,
+                category: selectedCategory,
+                date: starts,
+                hasTimeConstraints: false,
+                startDateTime: starts,
+                endDateTime: ends,
+                steps: [],
+                colorComponents: color.components
+            )
+        }
     }
 }

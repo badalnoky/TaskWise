@@ -21,6 +21,7 @@ extension DashboardViewModel {
     }
 
     func didTapAddTask() {
+        navigator.showTask()
     }
 
     func didTapTask(_ task: String) {

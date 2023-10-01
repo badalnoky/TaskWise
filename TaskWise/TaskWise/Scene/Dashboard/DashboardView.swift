@@ -1,7 +1,9 @@
+import SwiftData
 import SwiftUI
 
 struct DashboardView {
     let viewModel: DashboardViewModel
+    @Query private var tasks: [Task]
 }
 
 extension DashboardView: View {
@@ -39,10 +41,10 @@ extension DashboardView: View {
                                         .font(.title)
                                         .bold()
                                         .frame(maxWidth: .infinity, alignment: .center)
-                                    IconButton(.add) {}
+                                    IconButton(.add, action: viewModel.didTapAddTask)
                                 }
                                 ScrollView {
-                                    ForEach(viewModel.tasks, id: \.self) { task in
+                                    ForEach(tasks, id: \.self) { task in
                                         Text(task.title)
                                             .padding()
                                             .frame(width: geometry.size.width)

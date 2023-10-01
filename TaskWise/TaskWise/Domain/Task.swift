@@ -3,18 +3,18 @@ import SwiftData
 import SwiftUI
 
 @Model final class Task {
-    @Attribute(.unique) var id: UUID
-    @Attribute(.spotlight) var title: String
-    var taskDescription: String
-    var priority: Priority
-    var category: Category
-    var date: Date
-    var hasTimeConstraints: Bool
-    var startDateTime: Date
-    var endDateTime: Date
-    var steps: [TaskStep]
-    var colorComponents: ColorComponents
-    var column: TaskColumn
+    var id = UUID()
+    var title = String.empty
+    var taskDescription = String.empty
+    var priority = Priority(name: String.empty, level: 1)
+    var category = Category(name: String.empty)
+    var date = Date.now
+    var hasTimeConstraints = false
+    var startDateTime = Date.now
+    var endDateTime = Date.now
+    var steps: [TaskStep] = []
+    var colorComponents = ColorComponents(red: 0, green: 0, blue: 0, alpha: 0)
+    var column = TaskColumn.TODO
 
     init(
         title: String,
