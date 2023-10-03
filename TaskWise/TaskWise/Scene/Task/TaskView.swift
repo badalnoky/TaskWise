@@ -103,7 +103,8 @@ extension TaskView {
                 startDateTime: viewModel.starts,
                 endDateTime: viewModel.ends,
                 steps: [],
-                colorComponents: viewModel.color.components
+                colorComponents: viewModel.color.components,
+                column: TaskColumn.defaultColumns[0]
             )
 
             context.insert(task)

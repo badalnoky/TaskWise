@@ -1,4 +1,3 @@
-import CloudKit
 import SwiftData
 import SwiftUI
 
@@ -6,15 +5,15 @@ import SwiftUI
     var id = UUID()
     var title = String.empty
     var taskDescription = String.empty
-    var priority = Priority(name: String.empty, level: 1)
-    var category = Category(name: String.empty)
+    var priority = Priority.defaultPriorities[0]
+    var category = Category.defaultCategories[0]
     var date = Date.now
     var hasTimeConstraints = false
     var startDateTime = Date.now
     var endDateTime = Date.now
     var steps: [TaskStep] = []
     var colorComponents = ColorComponents(red: 0, green: 0, blue: 0, alpha: 0)
-    var column = TaskColumn.TODO
+    var column = TaskColumn.defaultColumns[0]
 
     init(
         title: String,
@@ -26,7 +25,8 @@ import SwiftUI
         startDateTime: Date,
         endDateTime: Date,
         steps: [TaskStep],
-        colorComponents: ColorComponents
+        colorComponents: ColorComponents,
+        column: TaskColumn
     ) {
         self.id = UUID()
         self.title = title
@@ -39,6 +39,6 @@ import SwiftUI
         self.endDateTime = endDateTime
         self.steps = steps
         self.colorComponents = colorComponents
-        self.column = .TODO
+        self.column = column
     }
 }

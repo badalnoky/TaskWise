@@ -7,23 +7,19 @@ import SwiftUI
 
     var title: String = "Task name"
     var description: String = "This is the very long descriptions of the task, that should be multiple lines of text."
-    var priorities: [Priority] = [
-        Priority(name: "Low", level: 1),
-        Priority(name: "Medium", level: 2),
-        Priority(name: "High", level: 3)
-    ]
-    var selectedPriority = Priority(name: "Low", level: 1)
-    var categories: [Category] = [
-        Category(name: "Homework"),
-        Category(name: "Work"),
-        Category(name: "Exercise"),
-        Category(name: "Other")
-    ]
-    var selectedCategory = Category(name: "Homework")
+    var priorities: [Priority] = Priority.defaultPriorities
+    var selectedPriority = Priority.defaultPriorities[0]
+    var categories: [Category] = Category.defaultCategories
+    var selectedCategory = Category.defaultCategories[0]
     var starts: Date = .now
     var ends: Date = .now.advanced(by: .hour)
     var repeats: [String] = ["Never", "Weekly", "Biweekly", "Yearly"]
     var selectedRepeats: String = "Never"
+    var taskSteps: [TaskStep] = [
+        TaskStep(isDone: false, label: "step1"),
+        TaskStep(isDone: true, label: "step2"),
+        TaskStep(isDone: false, label: "step3")
+    ]
     var stepIsCompleted: [Bool] = [true, false, false, false]
     var steps: [String] = ["these", "are", "the", "steps"]
     var color: Color = .blue
@@ -39,19 +35,5 @@ extension TaskViewModel {
     }
 
     func didTapAction() {
-        if isEditable {
-            let task = Task(
-                title: title,
-                description: description,
-                priority: selectedPriority,
-                category: selectedCategory,
-                date: starts,
-                hasTimeConstraints: false,
-                startDateTime: starts,
-                endDateTime: ends,
-                steps: [],
-                colorComponents: color.components
-            )
-        }
     }
 }
