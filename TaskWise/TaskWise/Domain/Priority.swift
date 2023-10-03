@@ -25,11 +25,3 @@ extension Priority {
         Priority(name: .empty, level: .zero)
     }
 }
-
-@Model final class CustomPriority {
-    var priority = Priority.defaultPriorities[0]
-
-    init(priority: Priority) {
-        self.priority = priority
-    }
-}

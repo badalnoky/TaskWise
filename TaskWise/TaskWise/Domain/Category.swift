@@ -25,11 +25,3 @@ extension Category {
         Category(name: .empty)
     }
 }
-
-@Model final class CustomCategory {
-    var category = Category.defaultCategories[0]
-
-    init(category: Category) {
-        self.category = category
-    }
-}

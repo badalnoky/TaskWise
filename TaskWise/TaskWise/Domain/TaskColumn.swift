@@ -25,11 +25,3 @@ extension TaskColumn {
         TaskColumn(name: .empty, index: .zero)
     }
 }
-
-@Model final class CustomColumn {
-    var column = TaskColumn.defaultColumns[0]
-
-    init(column: TaskColumn) {
-        self.column = column
-    }
-}
