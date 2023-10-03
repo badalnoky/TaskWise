@@ -20,6 +20,12 @@ extension Category {
     }
 }
 
+extension Category {
+    static var mock: Category {
+        Category(name: .empty)
+    }
+}
+
 @Model final class CustomCategory {
     var category = Category.defaultCategories[0]
 

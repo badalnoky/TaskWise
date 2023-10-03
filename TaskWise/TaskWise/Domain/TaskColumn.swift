@@ -20,6 +20,12 @@ extension TaskColumn {
     }
 }
 
+extension TaskColumn {
+    static var mock: TaskColumn {
+        TaskColumn(name: .empty, index: .zero)
+    }
+}
+
 @Model final class CustomColumn {
     var column = TaskColumn.defaultColumns[0]
 

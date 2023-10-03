@@ -20,6 +20,12 @@ extension Priority {
     }
 }
 
+extension Priority {
+    static var mock: Priority {
+        Priority(name: .empty, level: .zero)
+    }
+}
+
 @Model final class CustomPriority {
     var priority = Priority.defaultPriorities[0]
 

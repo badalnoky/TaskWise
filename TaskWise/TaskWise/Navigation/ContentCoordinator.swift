@@ -3,6 +3,10 @@ import Foundation
 public final class ContentCoordinator: Coordinator<ContentSceneFactory>, ObservableObject {}
 
 public extension Navigator where Factory == ContentSceneFactory {
+    func showAddTask() {
+        push(screen: .addTask)
+    }
+
     func showCalendar() {
         push(screen: .calendar)
     }
@@ -15,7 +19,7 @@ public extension Navigator where Factory == ContentSceneFactory {
         push(screen: .settings)
     }
 
-    func showTask() {
-        push(screen: .task)
+    func showTask(_ task: Task) {
+        push(screen: .task(task))
     }
 }

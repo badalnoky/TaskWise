@@ -56,6 +56,9 @@
 		799D48E32ABC394400C149E3 /* CalendarViewModel+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799D48E22ABC394400C149E3 /* CalendarViewModel+Mock.swift */; };
 		79C16F4D2ABB4FDB00BA362B /* CheckBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C16F4C2ABB4FDB00BA362B /* CheckBoxStyle.swift */; };
 		79C16F4F2ABB5C6B00BA362B /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C16F4E2ABB5C6B00BA362B /* CalendarViewModel.swift */; };
+		79D9835D2ACC9260002A8222 /* AddTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D9835C2ACC9260002A8222 /* AddTaskViewModel.swift */; };
+		79D9835F2ACC9285002A8222 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D9835E2ACC9285002A8222 /* AddTaskView.swift */; };
+		79D983612ACC934D002A8222 /* AddTaskViewModel+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D983602ACC934D002A8222 /* AddTaskViewModel+Mock.swift */; };
 		79EAF75F2AB9EC3D00FC05BE /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EAF75E2AB9EC3D00FC05BE /* View+Extensions.swift */; };
 		7A9A901567717541BBD96A02 /* Pods_TaskWise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD32EFC3A22C26F3A0A07A5 /* Pods_TaskWise.framework */; };
 		7FC2DAEE3DB409238E5DA726 /* libPods-TaskWiseTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6A56D56A0816CFDB820555 /* libPods-TaskWiseTests.a */; };
@@ -134,6 +137,9 @@
 		79C16F4C2ABB4FDB00BA362B /* CheckBoxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxStyle.swift; sourceTree = "<group>"; };
 		79C16F4E2ABB5C6B00BA362B /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		79C1B36B2AC9982C00BDCC6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		79D9835C2ACC9260002A8222 /* AddTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewModel.swift; sourceTree = "<group>"; };
+		79D9835E2ACC9285002A8222 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
+		79D983602ACC934D002A8222 /* AddTaskViewModel+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddTaskViewModel+Mock.swift"; sourceTree = "<group>"; };
 		79EAF75E2AB9EC3D00FC05BE /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		91C2B2216449795E4EF13BE8 /* Pods-TaskWise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskWise.debug.xcconfig"; path = "Target Support Files/Pods-TaskWise/Pods-TaskWise.debug.xcconfig"; sourceTree = "<group>"; };
 		982159FDF24FAD927584113A /* Pods-TaskWiseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskWiseTests.debug.xcconfig"; path = "Target Support Files/Pods-TaskWiseTests/Pods-TaskWiseTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -260,6 +266,7 @@
 		792155152AB9DCC60044CDED /* Mock */ = {
 			isa = PBXGroup;
 			children = (
+				79D983602ACC934D002A8222 /* AddTaskViewModel+Mock.swift */,
 				799D48E22ABC394400C149E3 /* CalendarViewModel+Mock.swift */,
 				792155162AB9DD710044CDED /* DashboardViewModel+Mock.swift */,
 				791F0D0A2ABCA89100B7F408 /* DayViewModel+Mock.swift */,
@@ -358,6 +365,7 @@
 		7988A0342AAE310700C63265 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				79D9835B2ACC924F002A8222 /* AddTask */,
 				798B08C62AB85C1000311D93 /* Calendar */,
 				798B08C22AB85B9500311D93 /* Dashboard */,
 				798B08C52AB85C0500311D93 /* Day */,
@@ -473,6 +481,15 @@
 				79C16F4C2ABB4FDB00BA362B /* CheckBoxStyle.swift */,
 			);
 			path = Styles;
+			sourceTree = "<group>";
+		};
+		79D9835B2ACC924F002A8222 /* AddTask */ = {
+			isa = PBXGroup;
+			children = (
+				79D9835E2ACC9285002A8222 /* AddTaskView.swift */,
+				79D9835C2ACC9260002A8222 /* AddTaskViewModel.swift */,
+			);
+			path = AddTask;
 			sourceTree = "<group>";
 		};
 		8CEBAA51A4C881F8694DD290 /* Frameworks */ = {
@@ -724,6 +741,7 @@
 			files = (
 				7988A0332AAE307E00C63265 /* Localized.swift in Sources */,
 				79EAF75F2AB9EC3D00FC05BE /* View+Extensions.swift in Sources */,
+				79D9835F2ACC9285002A8222 /* AddTaskView.swift in Sources */,
 				798B08CE2AB85C9600311D93 /* SettingsView.swift in Sources */,
 				798B08CC2AB85C8400311D93 /* DayView.swift in Sources */,
 				798B08BD2AB8525500311D93 /* ContentScreen.swift in Sources */,
@@ -731,6 +749,7 @@
 				79616F482AC5CD4000F4A95C /* CloudItem.swift in Sources */,
 				79C16F4D2ABB4FDB00BA362B /* CheckBoxStyle.swift in Sources */,
 				7988A04E2AAE362400C63265 /* String+Extensions.swift in Sources */,
+				79D9835D2ACC9260002A8222 /* AddTaskViewModel.swift in Sources */,
 				799D48E32ABC394400C149E3 /* CalendarViewModel+Mock.swift in Sources */,
 				792155202AB9E8450044CDED /* IconButton.swift in Sources */,
 				79C16F4F2ABB5C6B00BA362B /* CalendarViewModel.swift in Sources */,
@@ -745,6 +764,7 @@
 				7988A03D2AAE35C200C63265 /* Navigator.swift in Sources */,
 				798B08D02AB85CAB00311D93 /* TaskView.swift in Sources */,
 				7981E4C92AC88B0500A76001 /* Priority.swift in Sources */,
+				79D983612ACC934D002A8222 /* AddTaskViewModel+Mock.swift in Sources */,
 				791F0D0B2ABCA89100B7F408 /* DayViewModel+Mock.swift in Sources */,
 				792155142AB9DB9F0044CDED /* DashboardViewModel.swift in Sources */,
 				7988A03E2AAE35C200C63265 /* Coordinator.swift in Sources */,

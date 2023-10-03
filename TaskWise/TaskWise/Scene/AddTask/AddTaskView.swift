@@ -1,17 +1,14 @@
 import SwiftUI
 
-struct TaskView {
-    @Bindable var viewModel: TaskViewModel
+struct AddTaskView {
+    @Bindable var viewModel: AddTaskViewModel
     @Environment(\.modelContext) private var context
 }
 
-extension TaskView: View {
+extension AddTaskView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: .padding16) {
-                IconButton(.edit, action: viewModel.didTapEdit)
-                    .frame(maxWidth: .infinity, alignment: .trailing)
-
                 TextField(String.empty, text: $viewModel.title)
                     .font(.largeTitle)
                     .bold()
@@ -81,7 +78,7 @@ extension TaskView: View {
                 ColorPicker(Str.taskColorLabel, selection: $viewModel.color)
 
                 Button(
-                    viewModel.isEditable ? Str.taskSaveButton : Str.taskDeleteButton,
+                    "create",
                     action: didTapAction
                 )
                     .buttonStyle(.borderedProminent)
@@ -90,17 +87,27 @@ extension TaskView: View {
     }
 }
 
-extension TaskView {
+extension AddTaskView {
     func didTapAction() {
-        if viewModel.isEditable {
-            context.insert(viewModel.task)
-        } else {
-            context.delete(viewModel.task)
-            viewModel.dismiss()
-        }
+        let task = Task(
+            title: viewModel.title,
+            description: viewModel.description,
+            priority: viewModel.selectedPriority,
+            category: viewModel.selectedCategory,
+            date: viewModel.starts,
+            hasTimeConstraints: false,
+            startDateTime: viewModel.starts,
+            endDateTime: viewModel.ends,
+            steps: [],
+            colorComponents: viewModel.color.components,
+            column: TaskColumn.defaultColumns[0]
+        )
+
+        context.insert(task)
+        viewModel.dismiss()
     }
 }
 
 #Preview {
-    TaskView(viewModel: .mock)
+    AddTaskView(viewModel: .mock)
 }

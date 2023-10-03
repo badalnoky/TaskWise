@@ -1,8 +1,8 @@
 import SwiftData
 import SwiftUI
 
-@Model final class Task {
-    var id = UUID()
+@Model public final class Task {
+    public var id = UUID()
     var title = String.empty
     var taskDescription = String.empty
     var priority = Priority.defaultPriorities[0]
@@ -40,5 +40,23 @@ import SwiftUI
         self.steps = steps
         self.colorComponents = colorComponents
         self.column = column
+    }
+}
+
+extension Task {
+    static var mock: Task {
+        Task(
+            title: .empty,
+            description: .empty,
+            priority: .mock,
+            category: .mock,
+            date: .now,
+            hasTimeConstraints: false,
+            startDateTime: .now,
+            endDateTime: .now,
+            steps: [],
+            colorComponents: .mock,
+            column: .mock
+        )
     }
 }

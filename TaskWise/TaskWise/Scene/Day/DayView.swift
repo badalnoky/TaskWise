@@ -27,7 +27,7 @@ extension DayView: View {
             }
             ScrollView {
                 ForEach(viewModel.tasks, id: \.self) { task in
-                    Text(task)
+                    Text(task.title)
                         .padding()
                         .onTapGesture {
                             viewModel.didTapTask(task)
