@@ -1,9 +1,7 @@
-import SwiftData
 import SwiftUI
 
 struct DashboardView {
     let viewModel: DashboardViewModel
-    @Query private var tasks: [Task]
 }
 
 extension DashboardView: View {
@@ -33,23 +31,23 @@ extension DashboardView: View {
                         .padding(.padding32)
 
                     TabView {
-                        ForEach(["TODO", "In Progress", "Done"], id: \.self) { column in
+                        ForEach(TaskColumn.defaultColumns, id: \.id) { column in
                             VStack {
                                 HStack {
                                     Color.clear.sized(.iconButtonSize)
-                                    Text(column)
+                                    Text(column.name)
                                         .font(.title)
                                         .bold()
                                         .frame(maxWidth: .infinity, alignment: .center)
                                     IconButton(.add, action: viewModel.didTapAddTask)
                                 }
                                 ScrollView {
-                                    ForEach(tasks, id: \.self) { task in
+                                    ForEach(viewModel.tasks, id: \.id) { task in
                                         Text(task.title)
                                             .padding()
                                             .frame(width: geometry.size.width)
                                             .onTapGesture {
-                                                viewModel.didTapTask(task)
+                                                viewModel.didTapTask()
                                             }
                                     }
                                 }

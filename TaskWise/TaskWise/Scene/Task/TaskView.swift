@@ -2,7 +2,6 @@ import SwiftUI
 
 struct TaskView {
     @Bindable var viewModel: TaskViewModel
-    @Environment(\.modelContext) private var context
 }
 
 extension TaskView: View {
@@ -80,23 +79,9 @@ extension TaskView: View {
 
                 ColorPicker(Str.taskColorLabel, selection: $viewModel.color)
 
-                Button(
-                    viewModel.isEditable ? Str.taskSaveButton : Str.taskDeleteButton,
-                    action: didTapAction
-                )
+                Button(viewModel.isEditable ? Str.taskSaveButton : Str.taskDeleteButton) {}
                     .buttonStyle(.borderedProminent)
             }
-        }
-    }
-}
-
-extension TaskView {
-    func didTapAction() {
-        if viewModel.isEditable {
-            context.insert(viewModel.task)
-        } else {
-            context.delete(viewModel.task)
-            viewModel.dismiss()
         }
     }
 }

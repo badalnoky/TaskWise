@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SettingsView {
-    let viewModel: SettingsViewModel
+    @Bindable var viewModel: SettingsViewModel
 }
 
 extension SettingsView: View {
@@ -46,8 +46,13 @@ extension SettingsView: View {
             }
 
             ScrollView {
-                ForEach(viewModel.priorities, id: \.self) { priority in
-                    Text(priority)
+                ForEach(viewModel.priorities.indices, id: \.self) { idx in
+                    HStack {
+                        TextField("", text: $viewModel.priorities[idx].name)
+
+                        IconButton(.check) {
+                        }
+                    }
                 }
             }
         }

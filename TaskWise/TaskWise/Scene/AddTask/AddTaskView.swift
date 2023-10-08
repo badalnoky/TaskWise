@@ -2,7 +2,6 @@ import SwiftUI
 
 struct AddTaskView {
     @Bindable var viewModel: AddTaskViewModel
-    @Environment(\.modelContext) private var context
 }
 
 extension AddTaskView: View {
@@ -77,34 +76,10 @@ extension AddTaskView: View {
 
                 ColorPicker(Str.taskColorLabel, selection: $viewModel.color)
 
-                Button(
-                    "create",
-                    action: didTapAction
-                )
+                Button("create") {}
                     .buttonStyle(.borderedProminent)
             }
         }
-    }
-}
-
-extension AddTaskView {
-    func didTapAction() {
-        let task = Task(
-            title: viewModel.title,
-            description: viewModel.description,
-            priority: viewModel.selectedPriority,
-            category: viewModel.selectedCategory,
-            date: viewModel.starts,
-            hasTimeConstraints: false,
-            startDateTime: viewModel.starts,
-            endDateTime: viewModel.ends,
-            steps: [],
-            colorComponents: viewModel.color.components,
-            column: TaskColumn.defaultColumns[0]
-        )
-
-        context.insert(task)
-        viewModel.dismiss()
     }
 }
 

@@ -26,11 +26,11 @@ extension DayView: View {
                 IconButton(.add) {}
             }
             ScrollView {
-                ForEach(viewModel.tasks, id: \.self) { task in
+                ForEach(viewModel.tasks, id: \.id) { task in
                     Text(task.title)
                         .padding()
                         .onTapGesture {
-                            viewModel.didTapTask(task)
+                            viewModel.didTapTask()
                         }
                 }
             }

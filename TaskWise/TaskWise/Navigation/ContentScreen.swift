@@ -4,5 +4,5 @@ public enum ContentScreen: Screen {
     case dashboard
     case day
     case settings
-    case task(_: Task)
+    case task
 }

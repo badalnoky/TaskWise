@@ -14,12 +14,6 @@ struct ColorComponents: Codable {
     }
 }
 
-extension ColorComponents {
-    static var mock: ColorComponents {
-        ColorComponents(red: .zero, green: .zero, blue: .zero, alpha: .zero)
-    }
-}
-
 extension Color {
     var components: ColorComponents {
         let ciColor = CIColor(color: UIColor(self))

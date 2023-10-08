@@ -26,6 +26,14 @@
 		79616F4A2AC5CE0000F4A95C /* CloudError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79616F492AC5CE0000F4A95C /* CloudError.swift */; };
 		79616F4C2AC5CE7700F4A95C /* CloudKitHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79616F4B2AC5CE7700F4A95C /* CloudKitHandler.swift */; };
 		79616F502AC5CFED00F4A95C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79616F4F2AC5CFED00F4A95C /* Task.swift */; };
+		797CA0402AD300D00093632D /* Category+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797CA03F2AD300D00093632D /* Category+Defaults.swift */; };
+		797CA0442AD301120093632D /* Category+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797CA0432AD301120093632D /* Category+Mock.swift */; };
+		797CA0462AD3014E0093632D /* ColorComponents+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797CA0452AD3014E0093632D /* ColorComponents+Mock.swift */; };
+		797CA0482AD3017B0093632D /* TaskColumn+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797CA0472AD3017B0093632D /* TaskColumn+Defaults.swift */; };
+		797CA04A2AD301960093632D /* TaskColumn+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797CA0492AD301960093632D /* TaskColumn+Mock.swift */; };
+		797CA04C2AD301CB0093632D /* Priority+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797CA04B2AD301CB0093632D /* Priority+Defaults.swift */; };
+		797CA04E2AD301E30093632D /* Priority+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797CA04D2AD301E30093632D /* Priority+Mock.swift */; };
+		797CA0502AD301F00093632D /* Task+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797CA04F2AD301F00093632D /* Task+Mock.swift */; };
 		7981E4C92AC88B0500A76001 /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7981E4C82AC88B0500A76001 /* Priority.swift */; };
 		7981E4CB2AC88B2500A76001 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7981E4CA2AC88B2500A76001 /* Category.swift */; };
 		7981E4CD2AC88B4400A76001 /* ColorComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7981E4CC2AC88B4400A76001 /* ColorComponents.swift */; };
@@ -106,6 +114,14 @@
 		79616F492AC5CE0000F4A95C /* CloudError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudError.swift; sourceTree = "<group>"; };
 		79616F4B2AC5CE7700F4A95C /* CloudKitHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitHandler.swift; sourceTree = "<group>"; };
 		79616F4F2AC5CFED00F4A95C /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		797CA03F2AD300D00093632D /* Category+Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+Defaults.swift"; sourceTree = "<group>"; };
+		797CA0432AD301120093632D /* Category+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+Mock.swift"; sourceTree = "<group>"; };
+		797CA0452AD3014E0093632D /* ColorComponents+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorComponents+Mock.swift"; sourceTree = "<group>"; };
+		797CA0472AD3017B0093632D /* TaskColumn+Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskColumn+Defaults.swift"; sourceTree = "<group>"; };
+		797CA0492AD301960093632D /* TaskColumn+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskColumn+Mock.swift"; sourceTree = "<group>"; };
+		797CA04B2AD301CB0093632D /* Priority+Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Priority+Defaults.swift"; sourceTree = "<group>"; };
+		797CA04D2AD301E30093632D /* Priority+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Priority+Mock.swift"; sourceTree = "<group>"; };
+		797CA04F2AD301F00093632D /* Task+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Mock.swift"; sourceTree = "<group>"; };
 		7981E4C82AC88B0500A76001 /* Priority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Priority.swift; sourceTree = "<group>"; };
 		7981E4CA2AC88B2500A76001 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		7981E4CC2AC88B4400A76001 /* ColorComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorComponents.swift; sourceTree = "<group>"; };
@@ -266,12 +282,8 @@
 		792155152AB9DCC60044CDED /* Mock */ = {
 			isa = PBXGroup;
 			children = (
-				79D983602ACC934D002A8222 /* AddTaskViewModel+Mock.swift */,
-				799D48E22ABC394400C149E3 /* CalendarViewModel+Mock.swift */,
-				792155162AB9DD710044CDED /* DashboardViewModel+Mock.swift */,
-				791F0D0A2ABCA89100B7F408 /* DayViewModel+Mock.swift */,
-				795CC8EB2ABAF28A0093C4BC /* SettingsViewModel+Mock.swift */,
-				795CC8EF2ABAF8F70093C4BC /* TaskViewModel+Mock.swift */,
+				797CA0412AD300EE0093632D /* Domain */,
+				797CA0422AD300F40093632D /* ViewModel */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -312,14 +324,90 @@
 		79616F4D2AC5CEB800F4A95C /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				7981E4CA2AC88B2500A76001 /* Category.swift */,
-				7981E4CC2AC88B4400A76001 /* ColorComponents.swift */,
-				7981E4C82AC88B0500A76001 /* Priority.swift */,
-				79616F4F2AC5CFED00F4A95C /* Task.swift */,
-				7981E4D22AC8934E00A76001 /* TaskColumn.swift */,
-				7981E4CE2AC88B6A00A76001 /* TaskStep.swift */,
+				797CA0392AD300510093632D /* Category */,
+				797CA03A2AD3005C0093632D /* ColorComponents */,
+				797CA03D2AD3008D0093632D /* Column */,
+				797CA03B2AD300770093632D /* Priority */,
+				797CA03E2AD300950093632D /* Step */,
+				797CA03C2AD300850093632D /* Task */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		797CA0392AD300510093632D /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				7981E4CA2AC88B2500A76001 /* Category.swift */,
+				797CA03F2AD300D00093632D /* Category+Defaults.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		797CA03A2AD3005C0093632D /* ColorComponents */ = {
+			isa = PBXGroup;
+			children = (
+				7981E4CC2AC88B4400A76001 /* ColorComponents.swift */,
+			);
+			path = ColorComponents;
+			sourceTree = "<group>";
+		};
+		797CA03B2AD300770093632D /* Priority */ = {
+			isa = PBXGroup;
+			children = (
+				7981E4C82AC88B0500A76001 /* Priority.swift */,
+				797CA04B2AD301CB0093632D /* Priority+Defaults.swift */,
+			);
+			path = Priority;
+			sourceTree = "<group>";
+		};
+		797CA03C2AD300850093632D /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				79616F4F2AC5CFED00F4A95C /* Task.swift */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
+		797CA03D2AD3008D0093632D /* Column */ = {
+			isa = PBXGroup;
+			children = (
+				7981E4D22AC8934E00A76001 /* TaskColumn.swift */,
+				797CA0472AD3017B0093632D /* TaskColumn+Defaults.swift */,
+			);
+			path = Column;
+			sourceTree = "<group>";
+		};
+		797CA03E2AD300950093632D /* Step */ = {
+			isa = PBXGroup;
+			children = (
+				7981E4CE2AC88B6A00A76001 /* TaskStep.swift */,
+			);
+			path = Step;
+			sourceTree = "<group>";
+		};
+		797CA0412AD300EE0093632D /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				797CA0432AD301120093632D /* Category+Mock.swift */,
+				797CA0452AD3014E0093632D /* ColorComponents+Mock.swift */,
+				797CA04D2AD301E30093632D /* Priority+Mock.swift */,
+				797CA04F2AD301F00093632D /* Task+Mock.swift */,
+				797CA0492AD301960093632D /* TaskColumn+Mock.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		797CA0422AD300F40093632D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				79D983602ACC934D002A8222 /* AddTaskViewModel+Mock.swift */,
+				799D48E22ABC394400C149E3 /* CalendarViewModel+Mock.swift */,
+				792155162AB9DD710044CDED /* DashboardViewModel+Mock.swift */,
+				791F0D0A2ABCA89100B7F408 /* DayViewModel+Mock.swift */,
+				795CC8EB2ABAF28A0093C4BC /* SettingsViewModel+Mock.swift */,
+				795CC8EF2ABAF8F70093C4BC /* TaskViewModel+Mock.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		7988A02D2AAE2F7A00C63265 /* App */ = {
@@ -740,6 +828,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7988A0332AAE307E00C63265 /* Localized.swift in Sources */,
+				797CA04C2AD301CB0093632D /* Priority+Defaults.swift in Sources */,
+				797CA04A2AD301960093632D /* TaskColumn+Mock.swift in Sources */,
 				79EAF75F2AB9EC3D00FC05BE /* View+Extensions.swift in Sources */,
 				79D9835F2ACC9285002A8222 /* AddTaskView.swift in Sources */,
 				798B08CE2AB85C9600311D93 /* SettingsView.swift in Sources */,
@@ -747,12 +837,14 @@
 				798B08BD2AB8525500311D93 /* ContentScreen.swift in Sources */,
 				798B08B92AB8522D00311D93 /* ContentCoordinator.swift in Sources */,
 				79616F482AC5CD4000F4A95C /* CloudItem.swift in Sources */,
+				797CA0402AD300D00093632D /* Category+Defaults.swift in Sources */,
 				79C16F4D2ABB4FDB00BA362B /* CheckBoxStyle.swift in Sources */,
 				7988A04E2AAE362400C63265 /* String+Extensions.swift in Sources */,
 				79D9835D2ACC9260002A8222 /* AddTaskViewModel.swift in Sources */,
 				799D48E32ABC394400C149E3 /* CalendarViewModel+Mock.swift in Sources */,
 				792155202AB9E8450044CDED /* IconButton.swift in Sources */,
 				79C16F4F2ABB5C6B00BA362B /* CalendarViewModel.swift in Sources */,
+				797CA0442AD301120093632D /* Category+Mock.swift in Sources */,
 				798B08BB2AB8524800311D93 /* ContentSceneFactory.swift in Sources */,
 				7988A04F2AAE362400C63265 /* CGFloat+Extensions.swift in Sources */,
 				7988A03C2AAE35C200C63265 /* SceneFactory.swift in Sources */,
@@ -760,6 +852,8 @@
 				790A81072AAE19A700283D7E /* TaskWiseApp.swift in Sources */,
 				795CC8EE2ABAF63B0093C4BC /* TaskViewModel.swift in Sources */,
 				798B08CA2AB85C6A00311D93 /* DashboardView.swift in Sources */,
+				797CA04E2AD301E30093632D /* Priority+Mock.swift in Sources */,
+				797CA0502AD301F00093632D /* Task+Mock.swift in Sources */,
 				798B08C82AB85C5000311D93 /* CalendarView.swift in Sources */,
 				7988A03D2AAE35C200C63265 /* Navigator.swift in Sources */,
 				798B08D02AB85CAB00311D93 /* TaskView.swift in Sources */,
@@ -778,12 +872,14 @@
 				791F0D092ABCA6AA00B7F408 /* DayViewModel.swift in Sources */,
 				79616F4C2AC5CE7700F4A95C /* CloudKitHandler.swift in Sources */,
 				7988A03F2AAE35C200C63265 /* Screen.swift in Sources */,
+				797CA0462AD3014E0093632D /* ColorComponents+Mock.swift in Sources */,
 				7988A04C2AAE362400C63265 /* Image+Extensions.swift in Sources */,
 				795CC8F02ABAF8F70093C4BC /* TaskViewModel+Mock.swift in Sources */,
 				7988A04D2AAE362400C63265 /* Publisher+Extensions.swift in Sources */,
 				792155172AB9DD710044CDED /* DashboardViewModel+Mock.swift in Sources */,
 				7988A04B2AAE362400C63265 /* Int+Extensions.swift in Sources */,
 				79616F502AC5CFED00F4A95C /* Task.swift in Sources */,
+				797CA0482AD3017B0093632D /* TaskColumn+Defaults.swift in Sources */,
 				7981E4CD2AC88B4400A76001 /* ColorComponents.swift in Sources */,
 				795CC8EA2ABAEF3B0093C4BC /* SettingsViewModel.swift in Sources */,
 				7981E4CB2AC88B2500A76001 /* Category.swift in Sources */,

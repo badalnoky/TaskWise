@@ -1,13 +1,3 @@
-import SwiftData
-
-struct Category: Codable, Hashable {
-    let name: String
-
-    init(name: String) {
-        self.name = name
-    }
-}
-
 extension Category {
     static var defaultCategories: [Category] {
         [
@@ -17,11 +7,5 @@ extension Category {
             Category(name: "Freetime"),
             Category(name: "Other")
         ]
-    }
-}
-
-extension Category {
-    static var mock: Category {
-        Category(name: .empty)
     }
 }

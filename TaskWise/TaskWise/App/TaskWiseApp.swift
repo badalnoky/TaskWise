@@ -8,6 +8,5 @@ struct TaskWiseApp: App {
         WindowGroup {
             coordinator.start()
         }
-        .modelContainer(for: Task.self)
     }
 }
