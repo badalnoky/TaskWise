@@ -3,7 +3,7 @@ import Resolver
 
 @Observable final class SettingsViewModel {
     private var navigator: Navigator<ContentSceneFactory>
-    private let dataController: DataController = Resolver.resolve()
+    private let dataController: DataService = Resolver.resolve()
     private var cancellables = Set<AnyCancellable>()
 
     var categories: [Category] = []
@@ -26,14 +26,16 @@ extension SettingsViewModel {
 
     func didTapAddPriority() {
     }
+}
 
-    func registerBindings() {
+private extension SettingsViewModel {
+    private func registerBindings() {
         registerCategoryBinding()
         registerColumnsBinding()
         registerPriorityBinding()
     }
 
-    func registerColumnsBinding() {
+    private func registerColumnsBinding() {
         dataController.fetchColumns()
         dataController.columns
             .sink { [weak self] in
@@ -42,7 +44,7 @@ extension SettingsViewModel {
             .store(in: &cancellables)
     }
 
-    func registerPriorityBinding() {
+    private func registerPriorityBinding() {
         dataController.fetchPriorities()
         dataController.priorities
             .sink { [weak self] in
@@ -51,7 +53,7 @@ extension SettingsViewModel {
             .store(in: &cancellables)
     }
 
-    func registerCategoryBinding() {
+    private func registerCategoryBinding() {
         dataController.fetchCategories()
         dataController.categories
             .sink { [weak self] in

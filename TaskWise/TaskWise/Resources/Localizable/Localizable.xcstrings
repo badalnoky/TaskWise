@@ -34,6 +34,39 @@
         }
       }
     },
+    "DataService.containerFailureMessage" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Core Data failed to load!"
+          }
+        }
+      }
+    },
+    "DataService.containerName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TaskWise"
+          }
+        }
+      }
+    },
+    "DataService.saveFailureMessage" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Could not save the context!"
+          }
+        }
+      }
+    },
     "Day.todoLabel" : {
       "extractionState" : "manual",
       "localizations" : {

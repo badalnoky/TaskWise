@@ -1,20 +1,9 @@
-//
-//  Priority+CoreDataProperties.swift
-//  test
-//
-//  Created by Dálnoky Berci on 08/10/2023.
-//
-// swiftlint: disable: all
-
-import Foundation
 import CoreData
-
+import Foundation
 
 extension Priority {
-
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Priority> {
-        return NSFetchRequest<Priority>(entityName: "Priority")
-    }
+    public static let entityName: String = "Priority"
+    public static let sortingKey: String = "wLevel"
 
     @NSManaged public var wId: UUID?
     @NSManaged public var wLevel: Int16
@@ -23,14 +12,17 @@ extension Priority {
 
     public var id: UUID { wId ?? UUID() }
     public var level: Int { Int(wLevel) }
-    public var name: String { wName ?? "" }
-    public static let entityName: String = "Priority"
+    public var name: String { wName ?? .empty }
 
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Priority> {
+        let request = NSFetchRequest<Priority>(entityName: Self.entityName)
+        request.sortDescriptors = [NSSortDescriptor(key: Self.sortingKey, ascending: true)]
+        return request
+    }
 }
 
 // MARK: Generated accessors for wTasks
 extension Priority {
-
     @objc(addWTasksObject:)
     @NSManaged public func addToWTasks(_ value: Task)
 
@@ -42,9 +34,6 @@ extension Priority {
 
     @objc(removeWTasks:)
     @NSManaged public func removeFromWTasks(_ values: NSSet)
-
 }
 
-extension Priority : Identifiable {
-
-}
+extension Priority: Identifiable {}

@@ -1,20 +1,8 @@
-//
-//  TaskStep+CoreDataProperties.swift
-//  test
-//
-//  Created by Dálnoky Berci on 08/10/2023.
-//
-// swiftlint: disable: all
-
-import Foundation
 import CoreData
-
+import Foundation
 
 extension TaskStep {
-
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<TaskStep> {
-        return NSFetchRequest<TaskStep>(entityName: "TaskStep")
-    }
+    public static let entityName: String = "TaskStep"
 
     @NSManaged public var wIsDone: Bool
     @NSManaged public var wLabel: String?
@@ -22,11 +10,12 @@ extension TaskStep {
     @NSManaged public var wTask: Task?
 
     public var isDone: Bool { wIsDone }
-    public var label: String { wLabel ?? "" }
+    public var label: String { wLabel ?? .empty }
     public var index: Int { Int(wIndex) }
 
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<TaskStep> {
+        NSFetchRequest<TaskStep>(entityName: Self.entityName)
+    }
 }
 
-extension TaskStep : Identifiable {
-
-}
+extension TaskStep: Identifiable {}

@@ -10,6 +10,12 @@ internal enum Str {
     internal static let dashboardTitle = String(localized: "Dashboard.title", defaultValue: "Today")
     /// Todo
     internal static let dashboardTodoLabel = String(localized: "Dashboard.todoLabel", defaultValue: "Todo")
+    /// Core Data failed to load!
+    internal static let dataServiceContainerFailureMessage = String(localized: "DataService.containerFailureMessage", defaultValue: "Core Data failed to load!")
+    /// TaskWise
+    internal static let dataServiceContainerName = String(localized: "DataService.containerName", defaultValue: "TaskWise")
+    /// Could not save the context!
+    internal static let dataServiceSaveFailureMessage = String(localized: "DataService.saveFailureMessage", defaultValue: "Could not save the context!")
     /// Todo
     internal static let dayTodoLabel = String(localized: "Day.todoLabel", defaultValue: "Todo")
     /// plus

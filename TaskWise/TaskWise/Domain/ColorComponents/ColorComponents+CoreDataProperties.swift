@@ -1,20 +1,8 @@
-//
-//  ColorComponents+CoreDataProperties.swift
-//  test
-//
-//  Created by Dálnoky Berci on 08/10/2023.
-//
-// swiftlint: disable: all
-
-import Foundation
 import CoreData
-
+import Foundation
 
 extension ColorComponents {
-
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<ColorComponents> {
-        return NSFetchRequest<ColorComponents>(entityName: "ColorComponents")
-    }
+    public static let entityName: String = "ColorComponents"
 
     @NSManaged public var wAlpha: Double
     @NSManaged public var wBlue: Double
@@ -27,8 +15,9 @@ extension ColorComponents {
     public var green: Double { wGreen }
     public var red: Double { wRed }
 
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<ColorComponents> {
+        NSFetchRequest<ColorComponents>(entityName: Self.entityName)
+    }
 }
 
-extension ColorComponents : Identifiable {
-
-}
+extension ColorComponents: Identifiable {}

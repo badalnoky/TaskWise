@@ -1,20 +1,8 @@
-//
-//  Task+CoreDataProperties.swift
-//  test
-//
-//  Created by Dálnoky Berci on 08/10/2023.
-//
-// swiftlint: disable: all
-
-import Foundation
 import CoreData
-
+import Foundation
 
 extension Task {
-
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Task> {
-        return NSFetchRequest<Task>(entityName: "Task")
-    }
+    public static let entityName: String = "Task"
 
     @NSManaged public var wDate: Date?
     @NSManaged public var wEndDateTime: Date?
@@ -34,8 +22,8 @@ extension Task {
     public var hasTimeConstraints: Bool { wHasTimeConstraints }
     public var id: UUID { wId ?? UUID() }
     public var startDateTime: Date { wStartDateTime ?? .now }
-    public var taskDescription: String { wTaskDescription ?? "" }
-    public var title: String { wTitle ?? "" }
+    public var taskDescription: String { wTaskDescription ?? .empty }
+    public var title: String { wTitle ?? .empty }
     public var category: Category { wCategory ?? Category() }
     public var colorComponents: ColorComponents { wColorComponents ?? ColorComponents() }
     public var column: TaskColumn { wColumn ?? TaskColumn() }
@@ -45,11 +33,13 @@ extension Task {
         return set.sorted { $0.index < $1.index }
     }
 
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Task> {
+        NSFetchRequest<Task>(entityName: Self.entityName)
+    }
 }
 
 // MARK: Generated accessors for wSteps
 extension Task {
-
     @objc(addWStepsObject:)
     @NSManaged public func addToWSteps(_ value: TaskStep)
 
@@ -61,9 +51,6 @@ extension Task {
 
     @objc(removeWSteps:)
     @NSManaged public func removeFromWSteps(_ values: NSSet)
-
 }
 
-extension Task : Identifiable {
-
-}
+extension Task: Identifiable {}

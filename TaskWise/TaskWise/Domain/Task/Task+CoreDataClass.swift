@@ -1,15 +1,5 @@
-//
-//  Task+CoreDataClass.swift
-//  test
-//
-//  Created by Dálnoky Berci on 08/10/2023.
-//
-// swiftlint: disable: all
-
-import Foundation
 import CoreData
+import Foundation
 
 @objc(Task)
-public class Task: NSManagedObject {
-
-}
+public class Task: NSManagedObject {}

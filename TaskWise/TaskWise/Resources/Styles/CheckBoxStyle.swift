@@ -7,7 +7,7 @@ struct CheckboxToggleStyle: ToggleStyle {
                 .stroke(lineWidth: .borderWidth)
                 .sized(.defaultCheckboxSize)
                 .overlay {
-                    Image(systemName: configuration.isOn ? Str.iconsCheck : "")
+                    Image(systemName: configuration.isOn ? Str.iconsCheck : .empty)
                         .fittedToSize(.defaultCheckboxSize)
                 }
                 .onTapGesture {

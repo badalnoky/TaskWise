@@ -15,7 +15,7 @@ extension Resolver {
 
     public static func registerServiceLayer() {
         register {
-            DataController()
+            DataService()
         }.scope(.application)
     }
 }

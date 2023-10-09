@@ -4,7 +4,7 @@ import SwiftUI
 
 @Observable final class AddTaskViewModel {
     private let navigator: Navigator<ContentSceneFactory>
-    private let dataController: DataController = Resolver.resolve()
+    private let dataController: DataService = Resolver.resolve()
     private var cancellables = Set<AnyCancellable>()
 
     var title: String = "Task name"
@@ -36,13 +36,15 @@ extension AddTaskViewModel {
     func dismiss() {
         navigator.pop()
     }
+}
 
-    func registerBindings() {
+private extension AddTaskViewModel {
+    private func registerBindings() {
         registerPriorityBinding()
         registerCategoryBinding()
     }
 
-    func registerPriorityBinding() {
+    private func registerPriorityBinding() {
         dataController.fetchPriorities()
         dataController.priorities
             .sink { [weak self] in
@@ -52,7 +54,7 @@ extension AddTaskViewModel {
             .store(in: &cancellables)
     }
 
-    func registerCategoryBinding() {
+    private func registerCategoryBinding() {
         dataController.fetchCategories()
         dataController.categories
             .sink { [weak self] in
