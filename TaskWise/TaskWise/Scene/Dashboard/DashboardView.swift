@@ -3,7 +3,7 @@ import SwiftUI
 struct DashboardView {
     let viewModel: DashboardViewModel
 }
-
+// swiftlint: disable: closure_body_length
 extension DashboardView: View {
     var body: some View {
         VStack(alignment: .leading) {
@@ -31,7 +31,7 @@ extension DashboardView: View {
                         .padding(.padding32)
 
                     TabView {
-                        ForEach(TaskColumn.defaultColumns, id: \.id) { column in
+                        ForEach(viewModel.columns, id: \.self) { column in
                             VStack {
                                 HStack {
                                     Color.clear.sized(.iconButtonSize)

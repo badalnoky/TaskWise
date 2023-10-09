@@ -1,13 +1,19 @@
-import Foundation
+import Combine
+import Resolver
 
 @Observable final class DashboardViewModel {
     private var navigator: Navigator<ContentSceneFactory>
+    private let dataController: DataController = Resolver.resolve()
+    private var cancellables = Set<AnyCancellable>()
 
     let date: Date = .now
     let tasks: [Task] = []
+    var columns: [TaskColumn] = []
 
     init(navigator: Navigator<ContentSceneFactory>) {
         self.navigator = navigator
+
+        registerBindings()
     }
 }
 
@@ -26,5 +32,14 @@ extension DashboardViewModel {
 
     func didTapTask() {
         navigator.showTask()
+    }
+
+    func registerBindings() {
+        dataController.fetchColumns()
+        dataController.columns
+            .sink { [weak self] in
+                self?.columns = $0
+            }
+            .store(in: &cancellables)
     }
 }

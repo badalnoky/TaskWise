@@ -3,7 +3,7 @@ import SwiftUI
 struct AddTaskView {
     @Bindable var viewModel: AddTaskViewModel
 }
-
+// swiftlint: disable: closure_body_length
 extension AddTaskView: View {
     var body: some View {
         ScrollView {

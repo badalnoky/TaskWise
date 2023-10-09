@@ -3,7 +3,7 @@ import SwiftUI
 struct SettingsView {
     @Bindable var viewModel: SettingsViewModel
 }
-
+// swiftlint: disable: closure_body_length
 extension SettingsView: View {
     var body: some View {
         VStack(spacing: .padding16) {
@@ -21,7 +21,7 @@ extension SettingsView: View {
 
             ScrollView {
                 ForEach(viewModel.categories, id: \.self) { category in
-                    Text(category)
+                    Text(category.name)
                 }
             }
 
@@ -34,7 +34,7 @@ extension SettingsView: View {
 
             ScrollView {
                 ForEach(viewModel.columns, id: \.self) { column in
-                    Text(column)
+                    Text(column.name)
                 }
             }
 
@@ -47,12 +47,8 @@ extension SettingsView: View {
 
             ScrollView {
                 ForEach(viewModel.priorities.indices, id: \.self) { idx in
-                    HStack {
-                        TextField("", text: $viewModel.priorities[idx].name)
-
-                        IconButton(.check) {
-                        }
-                    }
+                    let priority = viewModel.priorities[idx]
+                    Text(priority.name)
                 }
             }
         }
