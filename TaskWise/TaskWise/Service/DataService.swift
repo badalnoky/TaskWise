@@ -80,25 +80,11 @@ extension DataService {
     }
 }
 
-// TODO: Resolve this
 extension DataService {
-    func addTask(
-        id: UUID = UUID(),
-        title: String,
-        description: String,
-        date: Date,
-        hasTimeConstraints: Bool,
-        startDateTime: Date,
-        endDateTime: Date
-    ) {
-        let task = Task(context: container.viewContext)
-        task.wId = id
-        task.wTitle = title
-        task.wTaskDescription = description
-        task.wDate = date
-        task.wHasTimeConstraints = hasTimeConstraints
-        task.wStartDateTime = startDateTime
-        task.wEndDateTime = endDateTime
+    func addTask(_ task: Task.DTO) {
+        fetchColumns()
+        Task.create(from: task, on: container.viewContext, startingIn: columns.value[.zero])
         save()
+        fetchTasks()
     }
 }

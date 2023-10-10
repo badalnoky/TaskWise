@@ -30,6 +30,8 @@
 		79616F482AC5CD4000F4A95C /* CloudItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79616F472AC5CD4000F4A95C /* CloudItem.swift */; };
 		79616F4A2AC5CE0000F4A95C /* CloudError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79616F492AC5CE0000F4A95C /* CloudError.swift */; };
 		79616F4C2AC5CE7700F4A95C /* CloudKitHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79616F4B2AC5CE7700F4A95C /* CloudKitHandler.swift */; };
+		798605612AD5C00B007A64B3 /* Task+DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798605602AD5C00B007A64B3 /* Task+DTO.swift */; };
+		798605632AD5C99E007A64B3 /* ColorComponents+DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798605622AD5C99E007A64B3 /* ColorComponents+DTO.swift */; };
 		7988A02C2AAE2EAC00C63265 /* DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988A02B2AAE2EAC00C63265 /* DI.swift */; };
 		7988A0332AAE307E00C63265 /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988A0322AAE307E00C63265 /* Localized.swift */; };
 		7988A03C2AAE35C200C63265 /* SceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988A0382AAE35C100C63265 /* SceneFactory.swift */; };
@@ -123,6 +125,8 @@
 		79616F472AC5CD4000F4A95C /* CloudItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudItem.swift; sourceTree = "<group>"; };
 		79616F492AC5CE0000F4A95C /* CloudError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudError.swift; sourceTree = "<group>"; };
 		79616F4B2AC5CE7700F4A95C /* CloudKitHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitHandler.swift; sourceTree = "<group>"; };
+		798605602AD5C00B007A64B3 /* Task+DTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+DTO.swift"; sourceTree = "<group>"; };
+		798605622AD5C99E007A64B3 /* ColorComponents+DTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorComponents+DTO.swift"; sourceTree = "<group>"; };
 		7988A02B2AAE2EAC00C63265 /* DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DI.swift; sourceTree = "<group>"; };
 		7988A0322AAE307E00C63265 /* Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
 		7988A0382AAE35C100C63265 /* SceneFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneFactory.swift; sourceTree = "<group>"; };
@@ -561,6 +565,7 @@
 			children = (
 				79CD54982AD33B9600D064C2 /* Task+CoreDataClass.swift */,
 				79CD54972AD33B9600D064C2 /* Task+CoreDataProperties.swift */,
+				798605602AD5C00B007A64B3 /* Task+DTO.swift */,
 			);
 			path = Task;
 			sourceTree = "<group>";
@@ -590,6 +595,7 @@
 			children = (
 				79CD54A22AD33B9600D064C2 /* ColorComponents+CoreDataClass.swift */,
 				79CD54A32AD33B9600D064C2 /* ColorComponents+CoreDataProperties.swift */,
+				798605622AD5C99E007A64B3 /* ColorComponents+DTO.swift */,
 			);
 			path = ColorComponents;
 			sourceTree = "<group>";
@@ -892,6 +898,7 @@
 				79CD54A42AD33B9600D064C2 /* Category+CoreDataProperties.swift in Sources */,
 				7901260F2AD47F1A005620C2 /* UserSettings+Extensions.swift in Sources */,
 				7988A03E2AAE35C200C63265 /* Coordinator.swift in Sources */,
+				798605612AD5C00B007A64B3 /* Task+DTO.swift in Sources */,
 				795CC8EC2ABAF28A0093C4BC /* SettingsViewModel+Mock.swift in Sources */,
 				79CD54B02AD33B9600D064C2 /* ColorComponents+CoreDataClass.swift in Sources */,
 				79CD54A82AD33B9600D064C2 /* DataService.swift in Sources */,
@@ -900,6 +907,7 @@
 				79CD54AE2AD33B9600D064C2 /* Priority+CoreDataProperties.swift in Sources */,
 				7988A0502AAE362400C63265 /* Double+Extensions.swift in Sources */,
 				790126112AD4844C005620C2 /* Priority+Defaults.swift in Sources */,
+				798605632AD5C99E007A64B3 /* ColorComponents+DTO.swift in Sources */,
 				7988A0412AAE35F600C63265 /* NetworkMonitor.swift in Sources */,
 				791F0D092ABCA6AA00B7F408 /* DayViewModel.swift in Sources */,
 				79616F4C2AC5CE7700F4A95C /* CloudKitHandler.swift in Sources */,

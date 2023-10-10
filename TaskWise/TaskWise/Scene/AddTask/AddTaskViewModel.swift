@@ -13,14 +13,29 @@ import SwiftUI
     var selectedPriority = Priority()
     var categories: [Category] = []
     var selectedCategory = Category()
+    var allDay = false
     var starts: Date = .now
     var ends: Date = .now.advanced(by: .hour)
     var repeats: [String] = ["Never", "Weekly", "Biweekly", "Yearly"]
     var selectedRepeats: String = "Never"
-    var taskSteps: [TaskStep] = []
-    var stepIsCompleted: [Bool] = [true, false, false, false]
-    var steps: [String] = ["these", "are", "the", "steps"]
+    var steps: [TaskStep] = []
     var color: Color = .blue
+
+    var task: Task.DTO {
+        Task.DTO(
+            id: UUID(),
+            title: title,
+            description: description,
+            date: starts,
+            hasTimeConstraints: !allDay,
+            startDateTime: starts,
+            endDateTime: ends,
+            category: selectedCategory,
+            priority: selectedPriority,
+            colorComponents: color.components,
+            steps: steps
+        )
+    }
 
     init(navigator: Navigator<ContentSceneFactory>) {
         self.navigator = navigator
@@ -31,6 +46,7 @@ import SwiftUI
 
 extension AddTaskViewModel {
     func didTapCreate() {
+        dataController.addTask(task)
     }
 
     func dismiss() {
