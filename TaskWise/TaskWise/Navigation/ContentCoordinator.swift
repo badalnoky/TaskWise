@@ -19,7 +19,7 @@ public extension Navigator where Factory == ContentSceneFactory {
         push(screen: .settings)
     }
 
-    func showTask() {
-        push(screen: .task)
+    func showTask(_ task: Task) {
+        push(screen: .task(task))
     }
 }

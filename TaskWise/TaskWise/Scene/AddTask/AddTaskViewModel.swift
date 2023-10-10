@@ -7,8 +7,8 @@ import SwiftUI
     private let dataController: DataService = Resolver.resolve()
     private var cancellables = Set<AnyCancellable>()
 
-    var title: String = "Task name"
-    var description: String = "This is the very long descriptions of the task, that should be multiple lines of text."
+    var title: String = .empty
+    var description: String = .empty
     var priorities: [Priority] = []
     var selectedPriority = Priority()
     var categories: [Category] = []
@@ -65,7 +65,7 @@ private extension AddTaskViewModel {
         dataController.priorities
             .sink { [weak self] in
                 self?.priorities = $0
-                self?.selectedPriority = $0[0]
+                self?.selectedPriority = $0[.zero]
             }
             .store(in: &cancellables)
     }
@@ -75,7 +75,7 @@ private extension AddTaskViewModel {
         dataController.categories
             .sink { [weak self] in
                 self?.categories = $0
-                self?.selectedCategory = $0[0]
+                self?.selectedCategory = $0[.zero]
             }
             .store(in: &cancellables)
     }

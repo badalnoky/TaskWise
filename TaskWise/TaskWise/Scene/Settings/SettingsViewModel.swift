@@ -17,6 +17,7 @@ import Resolver
     }
 }
 
+// TODO: Add edit, add, remove capability
 extension SettingsViewModel {
     func didTapAddCategory() {
     }

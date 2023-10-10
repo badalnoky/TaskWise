@@ -42,12 +42,22 @@ extension TaskView: View {
                     }
                 }
 
-                DatePicker(selection: $viewModel.starts, in: Date.now...) {
-                    Text(Str.taskStartsLabel)
+                Toggle(isOn: $viewModel.allDay.animation(.easeInOut)) {
+                    Text("All-day")
                 }
 
-                DatePicker(selection: $viewModel.ends, in: Date.now.addingTimeInterval(.hour)...) {
-                    Text(Str.taskEndsLabel)
+                if !viewModel.allDay {
+                    DatePicker(selection: $viewModel.starts) {
+                        Text(Str.taskStartsLabel)
+                    }
+
+                    DatePicker(selection: $viewModel.ends, displayedComponents: .hourAndMinute) {
+                        Text(Str.taskEndsLabel)
+                    }
+                } else {
+                    DatePicker(selection: $viewModel.starts, displayedComponents: .date) {
+                        Text("Date")
+                    }
                 }
 
                 HStack {
@@ -65,14 +75,16 @@ extension TaskView: View {
 
                 ScrollView {
                     ForEach(viewModel.steps.indices, id: \.self) { idx in
-                        HStack {
-                            Toggle(isOn: $viewModel.stepIsCompleted[idx]) {
-                                Text(viewModel.steps[idx])
-                            }
-                            .toggleStyle(CheckboxToggleStyle())
-                        }
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.vertical, .padding4)
+                        let step = viewModel.steps[idx]
+                        // TODO: Resolve this
+//                        HStack {
+//                            Toggle(isOn: $viewModel.stepIsCompleted[idx]) {
+//                                Text(viewModel.steps[idx])
+//                            }
+//                            .toggleStyle(CheckboxToggleStyle())
+//                        }
+//                        .frame(maxWidth: .infinity, alignment: .leading)
+//                        .padding(.vertical, .padding4)
                     }
                 }
                 .frame(height: 200)

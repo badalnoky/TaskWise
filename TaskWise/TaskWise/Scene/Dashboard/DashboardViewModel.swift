@@ -7,7 +7,7 @@ import Resolver
     private var cancellables = Set<AnyCancellable>()
 
     let date: Date = .now
-    let tasks: [Task] = []
+    var tasks: [Task] = []
     var columns: [TaskColumn] = []
 
     init(navigator: Navigator<ContentSceneFactory>) {
@@ -30,17 +30,31 @@ extension DashboardViewModel {
         navigator.showAddTask()
     }
 
-    func didTapTask() {
-        navigator.showTask()
+    func didTapTask(_ task: Task) {
+        navigator.showTask(task)
     }
 }
 
 private extension DashboardViewModel {
     private func registerBindings() {
+        registerColumnBinding()
+        registerTaskBinding()
+    }
+
+    private func registerColumnBinding() {
         dataController.fetchColumns()
         dataController.columns
             .sink { [weak self] in
                 self?.columns = $0
+            }
+            .store(in: &cancellables)
+    }
+
+    private func registerTaskBinding() {
+        dataController.fetchTasks()
+        dataController.tasks
+            .sink { [weak self] in
+                self?.tasks = $0
             }
             .store(in: &cancellables)
     }

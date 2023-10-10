@@ -11,7 +11,7 @@ public final class ContentSceneFactory: SceneFactory {
         case .dashboard: dashboard(with: navigator)
         case .day: day(with: navigator)
         case .settings: settings(with: navigator)
-        case .task: task(with: navigator)
+        case .task(let item): task(with: navigator, task: item)
         }
     }
 }
@@ -36,7 +36,7 @@ extension ContentSceneFactory {
         SettingsView(viewModel: SettingsViewModel(navigator: navigator))
     }
 
-    func task(with navigator: Navigator<ContentSceneFactory>) -> TaskView {
-        TaskView(viewModel: TaskViewModel(navigator: navigator))
+    func task(with navigator: Navigator<ContentSceneFactory>, task: Task) -> TaskView {
+        TaskView(viewModel: TaskViewModel(navigator: navigator, task: task))
     }
 }

@@ -30,7 +30,7 @@ extension DayView: View {
                     Text(task.title)
                         .padding()
                         .onTapGesture {
-                            viewModel.didTapTask()
+                            viewModel.didTapTask(task)
                         }
                 }
             }

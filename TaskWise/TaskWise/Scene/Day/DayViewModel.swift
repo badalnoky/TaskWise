@@ -15,7 +15,7 @@ extension DayViewModel {
     func didTapAdd() {
     }
 
-    func didTapTask() {
-        navigator.showTask()
+    func didTapTask(_ task: Task) {
+        navigator.showTask(task)
     }
 }

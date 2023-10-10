@@ -47,7 +47,7 @@ extension DashboardView: View {
                                             .padding()
                                             .frame(width: geometry.size.width)
                                             .onTapGesture {
-                                                viewModel.didTapTask()
+                                                viewModel.didTapTask(task)
                                             }
                                     }
                                 }
