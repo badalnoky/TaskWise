@@ -13,6 +13,8 @@ import SwiftUI
     var selectedPriority = Priority()
     var categories: [Category] = []
     var selectedCategory = Category()
+    var columns: [TaskColumn] = []
+    var selectedColumn = TaskColumn()
     var allDay = false
     var starts: Date = .now
     var ends: Date = .now.advanced(by: .hour)
@@ -44,6 +46,7 @@ import SwiftUI
     }
 }
 
+// TODO: add task step modification
 extension AddTaskViewModel {
     func didTapCreate() {
         dataController.addTask(task)
@@ -58,6 +61,7 @@ private extension AddTaskViewModel {
     private func registerBindings() {
         registerPriorityBinding()
         registerCategoryBinding()
+        registerColumnBinding()
     }
 
     private func registerPriorityBinding() {
@@ -76,6 +80,16 @@ private extension AddTaskViewModel {
             .sink { [weak self] in
                 self?.categories = $0
                 self?.selectedCategory = $0[.zero]
+            }
+            .store(in: &cancellables)
+    }
+
+    private func registerColumnBinding() {
+        dataController.fetchColumns()
+        dataController.columns
+            .sink { [weak self] in
+                self?.columns = $0
+                self?.selectedColumn = $0[.zero]
             }
             .store(in: &cancellables)
     }

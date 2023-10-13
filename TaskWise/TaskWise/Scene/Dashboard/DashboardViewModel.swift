@@ -10,13 +10,18 @@ import Resolver
     var tasks: [Task] = []
     var columns: [TaskColumn] = []
 
+    var completionText: String {
+        guard let last = columns.last else { return .empty}
+        return "\(tasks.from(column: last).count)/\(tasks.count)"
+    }
+
     init(navigator: Navigator<ContentSceneFactory>) {
         self.navigator = navigator
 
         registerBindings()
     }
 }
-
+// TODO: add "more" functionallity
 extension DashboardViewModel {
     func didTapCalendar() {
         navigator.showCalendar()

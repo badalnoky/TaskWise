@@ -144,6 +144,17 @@
         }
       }
     },
+    "Icons.more" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ellipsis"
+          }
+        }
+      }
+    },
     "Icons.search" : {
       "extractionState" : "manual",
       "localizations" : {

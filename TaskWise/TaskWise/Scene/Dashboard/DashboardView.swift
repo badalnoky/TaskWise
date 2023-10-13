@@ -11,6 +11,7 @@ extension DashboardView: View {
                 IconButton(.settings, action: viewModel.didTapSettings)
                 Spacer()
                 IconButton(.calendar, action: viewModel.didTapCalendar)
+                IconButton(.add, action: viewModel.didTapAddTask)
             }
 
             Text(Str.dashboardTitle)
@@ -25,10 +26,14 @@ extension DashboardView: View {
 
             GeometryReader { geometry in
                 VStack {
-                    Circle()
-                        .stroke(lineWidth: .indicatorBorderWidth)
-                        .frame(width: geometry.size.width * 0.4)
-                        .padding(.padding32)
+                    ZStack {
+                        Circle()
+                            .stroke(lineWidth: .indicatorBorderWidth)
+                            .frame(width: geometry.size.width * 0.4)
+                            .padding(.padding32)
+                        Text(viewModel.completionText)
+                            .font(.title).bold()
+                    }
 
                     TabView {
                         ForEach(viewModel.columns, id: \.self) { column in
@@ -39,16 +44,19 @@ extension DashboardView: View {
                                         .font(.title)
                                         .bold()
                                         .frame(maxWidth: .infinity, alignment: .center)
-                                    IconButton(.add, action: viewModel.didTapAddTask)
                                 }
                                 ScrollView {
-                                    ForEach(viewModel.tasks, id: \.id) { task in
-                                        Text(task.title)
-                                            .padding()
-                                            .frame(width: geometry.size.width)
-                                            .onTapGesture {
-                                                viewModel.didTapTask(task)
+                                    ForEach(viewModel.tasks.from(column: column), id: \.id) { task in
+                                        HStack {
+                                            Text(task.title)
+                                                .padding()
+                                                .onTapGesture {
+                                                    viewModel.didTapTask(task)
                                             }
+                                            Spacer()
+                                            IconButton(.more) {}
+                                        }
+                                        .frame(width: geometry.size.width)
                                     }
                                 }
                             }

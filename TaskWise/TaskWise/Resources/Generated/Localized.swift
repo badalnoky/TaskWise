@@ -30,6 +30,8 @@ internal enum Str {
     internal static let iconsFilter = String(localized: "Icons.filter", defaultValue: "line.3.horizontal.decrease.circle")
     /// list.bullet.below.rectangle
     internal static let iconsList = String(localized: "Icons.list", defaultValue: "list.bullet.below.rectangle")
+    /// ellipsis
+    internal static let iconsMore = String(localized: "Icons.more", defaultValue: "ellipsis")
     /// magnifyingglass
     internal static let iconsSearch = String(localized: "Icons.search", defaultValue: "magnifyingglass")
     /// gear
