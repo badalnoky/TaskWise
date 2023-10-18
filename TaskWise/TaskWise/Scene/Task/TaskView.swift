@@ -75,8 +75,8 @@ extension TaskView: View {
 
                 ScrollView {
                     ForEach(viewModel.steps.indices, id: \.self) { idx in
-                        let step = viewModel.steps[idx]
                         // TODO: Resolve this
+//                        let step = viewModel.steps[idx]
 //                        HStack {
 //                            Toggle(isOn: $viewModel.stepIsCompleted[idx]) {
 //                                Text(viewModel.steps[idx])
@@ -91,9 +91,16 @@ extension TaskView: View {
 
                 ColorPicker(Str.taskColorLabel, selection: $viewModel.color)
 
-                Button(viewModel.isEditable ? Str.taskSaveButton : Str.taskDeleteButton) {}
+                Button(
+                    viewModel.isEditable ? Str.taskSaveButton : Str.taskDeleteButton,
+                    action: viewModel.didTapAction
+                )
                     .buttonStyle(.borderedProminent)
             }
+        }
+        .alert("Do you want to delete this task?", isPresented: $viewModel.isAlertVisible) {
+            Button("Yes", role: .destructive, action: viewModel.didTapDelete)
+            Button("No", role: .cancel) {}
         }
     }
 }

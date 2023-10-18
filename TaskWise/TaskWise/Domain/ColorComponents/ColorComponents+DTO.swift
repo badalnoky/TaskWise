@@ -15,4 +15,11 @@ extension ColorComponents {
         components.wAlpha = dto.alpha
         return components
     }
+
+    func update(with updated: ColorComponents.DTO) {
+        self.wRed = updated.red
+        self.wGreen = updated.green
+        self.wBlue = updated.blue
+        self.wAlpha = updated.alpha
+    }
 }

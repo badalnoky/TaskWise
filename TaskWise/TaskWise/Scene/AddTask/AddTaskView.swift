@@ -82,8 +82,8 @@ extension AddTaskView: View {
 
                 ScrollView {
                     ForEach(viewModel.steps.indices, id: \.self) { idx in
-                        let step = viewModel.steps[idx]
                         // TODO: Resolve this
+                        //                        let step = viewModel.steps[idx]
 //                        HStack {
 //                            Toggle(isOn: $viewModel.steps[idx].isDone) {
 //                                Text(step.label)

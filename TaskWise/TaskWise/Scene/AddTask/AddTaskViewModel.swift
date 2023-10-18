@@ -23,7 +23,7 @@ import SwiftUI
     var steps: [TaskStep] = []
     var color: Color = .blue
 
-    var task: Task.DTO {
+    private var task: Task.DTO {
         Task.DTO(
             id: UUID(),
             title: title,
@@ -50,6 +50,7 @@ import SwiftUI
 extension AddTaskViewModel {
     func didTapCreate() {
         dataService.addTask(task)
+        dismiss()
     }
 
     func dismiss() {

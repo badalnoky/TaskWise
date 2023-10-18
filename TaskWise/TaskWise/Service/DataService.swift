@@ -27,6 +27,11 @@ public final class DataService {
         } catch { print(Str.dataServiceSaveFailureMessage) }
     }
 
+    private func delete(item: NSManagedObject) {
+        container.viewContext.delete(item)
+        save()
+    }
+
     func fetchTasks() {
         guard let tasks = try? container.viewContext.fetch(Task.fetchRequest()) else { return }
         self.tasks.send(tasks)
@@ -85,6 +90,17 @@ extension DataService {
         // TODO: Add task to prioritiy, category and column
         fetchColumns()
         Task.create(from: task, on: container.viewContext, startingIn: columns.value[.zero])
+        save()
+        fetchTasks()
+    }
+
+    func deleteTask(_ task: Task) {
+        delete(item: task)
+        fetchTasks()
+    }
+
+    func updateTask(_ task: Task, with updated: Task.DTO) {
+        task.update(with: updated, on: container.viewContext)
         save()
         fetchTasks()
     }

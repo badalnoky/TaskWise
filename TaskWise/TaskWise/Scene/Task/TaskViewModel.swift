@@ -9,6 +9,7 @@ import SwiftUI
     private var task: Task
 
     var isEditable = false
+    var isAlertVisible = false
 
     var title: String = .empty
     var description: String = .empty
@@ -23,6 +24,22 @@ import SwiftUI
     var selectedRepeats: String = "Never"
     var steps: [TaskStep] = []
     var color: Color = .blue
+
+    private var updatedTask: Task.DTO {
+        Task.DTO(
+            id: task.id,
+            title: title,
+            description: description,
+            date: starts,
+            hasTimeConstraints: !allDay,
+            startDateTime: starts,
+            endDateTime: ends,
+            category: selectedCategory,
+            priority: selectedPriority,
+            colorComponents: color.components,
+            steps: steps
+        )
+    }
 
     init(navigator: Navigator<ContentSceneFactory>, task: Task) {
         self.navigator = navigator
@@ -45,7 +62,17 @@ extension TaskViewModel {
     }
 
     func didTapAction() {
-        // TODO: Add edit and delete capability
+        if isEditable {
+            // TODO: detect whether there were any real changes in the object -> memento?
+            dataService.updateTask(task, with: updatedTask)
+        } else {
+            isAlertVisible = true
+        }
+    }
+
+    func didTapDelete() {
+        dataService.deleteTask(task)
+        dismiss()
     }
 
     func dismiss() {
