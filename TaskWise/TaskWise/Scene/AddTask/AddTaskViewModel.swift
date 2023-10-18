@@ -4,7 +4,7 @@ import SwiftUI
 
 @Observable final class AddTaskViewModel {
     private let navigator: Navigator<ContentSceneFactory>
-    private let dataController: DataService = Resolver.resolve()
+    private let dataService: DataService = Resolver.resolve()
     private var cancellables = Set<AnyCancellable>()
 
     var title: String = .empty
@@ -49,7 +49,7 @@ import SwiftUI
 // TODO: add task step modification
 extension AddTaskViewModel {
     func didTapCreate() {
-        dataController.addTask(task)
+        dataService.addTask(task)
     }
 
     func dismiss() {
@@ -65,8 +65,8 @@ private extension AddTaskViewModel {
     }
 
     private func registerPriorityBinding() {
-        dataController.fetchPriorities()
-        dataController.priorities
+        dataService.fetchPriorities()
+        dataService.priorities
             .sink { [weak self] in
                 self?.priorities = $0
                 self?.selectedPriority = $0[.zero]
@@ -75,8 +75,8 @@ private extension AddTaskViewModel {
     }
 
     private func registerCategoryBinding() {
-        dataController.fetchCategories()
-        dataController.categories
+        dataService.fetchCategories()
+        dataService.categories
             .sink { [weak self] in
                 self?.categories = $0
                 self?.selectedCategory = $0[.zero]
@@ -85,8 +85,8 @@ private extension AddTaskViewModel {
     }
 
     private func registerColumnBinding() {
-        dataController.fetchColumns()
-        dataController.columns
+        dataService.fetchColumns()
+        dataService.columns
             .sink { [weak self] in
                 self?.columns = $0
                 self?.selectedColumn = $0[.zero]

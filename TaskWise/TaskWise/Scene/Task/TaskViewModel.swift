@@ -4,7 +4,7 @@ import SwiftUI
 
 @Observable final class TaskViewModel {
     private let navigator: Navigator<ContentSceneFactory>
-    private let dataController: DataService = Resolver.resolve()
+    private let dataService: DataService = Resolver.resolve()
     private var cancellables = Set<AnyCancellable>()
     private var task: Task
 
@@ -29,8 +29,6 @@ import SwiftUI
         self.task = task
         self.title = task.title
         self.description = task.taskDescription
-        print(task.startDateTime)
-        print(task.endDateTime)
         self.allDay = !task.hasTimeConstraints
         self.starts = task.startDateTime
         self.ends = task.endDateTime
@@ -62,8 +60,8 @@ private extension TaskViewModel {
     }
 
     private func registerPriorityBinding() {
-        dataController.fetchPriorities()
-        dataController.priorities
+        dataService.fetchPriorities()
+        dataService.priorities
             .sink { [weak self] in
                 self?.priorities = $0
                 self?.selectedPriority = $0.first { $0.id == self?.task.priority.id} ?? $0[.zero]
@@ -72,8 +70,8 @@ private extension TaskViewModel {
     }
 
     private func registerCategoryBinding() {
-        dataController.fetchCategories()
-        dataController.categories
+        dataService.fetchCategories()
+        dataService.categories
             .sink { [weak self] in
                 self?.categories = $0
                 self?.selectedCategory = $0.first { $0.id == self?.task.category.id} ?? $0[.zero]

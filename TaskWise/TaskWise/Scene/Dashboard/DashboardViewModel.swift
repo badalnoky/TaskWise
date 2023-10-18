@@ -3,7 +3,7 @@ import Resolver
 
 @Observable final class DashboardViewModel {
     private var navigator: Navigator<ContentSceneFactory>
-    private let dataController: DataService = Resolver.resolve()
+    private let dataService: DataService = Resolver.resolve()
     private var cancellables = Set<AnyCancellable>()
 
     let date: Date = .now
@@ -47,8 +47,8 @@ private extension DashboardViewModel {
     }
 
     private func registerColumnBinding() {
-        dataController.fetchColumns()
-        dataController.columns
+        dataService.fetchColumns()
+        dataService.columns
             .sink { [weak self] in
                 self?.columns = $0
             }
@@ -56,8 +56,8 @@ private extension DashboardViewModel {
     }
 
     private func registerTaskBinding() {
-        dataController.fetchTasks()
-        dataController.tasks
+        dataService.fetchTasks()
+        dataService.tasks
             .sink { [weak self] in
                 self?.tasks = $0
             }
