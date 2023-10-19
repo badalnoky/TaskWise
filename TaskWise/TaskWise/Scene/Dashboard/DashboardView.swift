@@ -54,7 +54,13 @@ extension DashboardView: View {
                                                     viewModel.didTapTask(task)
                                             }
                                             Spacer()
-                                            IconButton(.more) {}
+                                            Menu {
+                                                Button("Delete") {
+                                                    viewModel.didTapDelete(task: task)
+                                                }
+                                            } label: {
+                                                IconButton(.more) {}
+                                            }
                                         }
                                         .frame(width: geometry.size.width)
                                     }

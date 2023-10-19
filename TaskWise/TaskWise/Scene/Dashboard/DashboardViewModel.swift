@@ -38,6 +38,10 @@ extension DashboardViewModel {
     func didTapTask(_ task: Task) {
         navigator.showTask(task)
     }
+
+    func didTapDelete(task: Task) {
+        dataService.deleteTask(task)
+    }
 }
 
 private extension DashboardViewModel {
