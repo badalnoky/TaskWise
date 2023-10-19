@@ -42,6 +42,16 @@ extension TaskView: View {
                     }
                 }
 
+                HStack {
+                    Text("Starting column")
+                    Spacer()
+                    Picker(String.empty, selection: $viewModel.selectedColumn) {
+                        ForEach(viewModel.columns, id: \.self) {
+                            Text($0.name)
+                        }
+                    }
+                }
+
                 Toggle(isOn: $viewModel.allDay.animation(.easeInOut)) {
                     Text("All-day")
                 }

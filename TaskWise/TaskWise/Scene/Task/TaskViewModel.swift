@@ -17,6 +17,8 @@ import SwiftUI
     var selectedPriority = Priority()
     var categories: [Category] = []
     var selectedCategory = Category()
+    var columns: [TaskColumn] = []
+    var selectedColumn = TaskColumn()
     var allDay = false
     var starts: Date = .now
     var ends: Date = .now.advanced(by: .hour)
@@ -36,7 +38,7 @@ import SwiftUI
             endDateTime: ends,
             category: selectedCategory,
             priority: selectedPriority,
-            column: task.column,
+            column: selectedColumn,
             colorComponents: color.components,
             steps: steps
         )
@@ -85,6 +87,7 @@ private extension TaskViewModel {
     private func registerBindings() {
         registerPriorityBinding()
         registerCategoryBinding()
+        registerColumnBinding()
     }
 
     private func registerPriorityBinding() {
@@ -103,6 +106,16 @@ private extension TaskViewModel {
             .sink { [weak self] in
                 self?.categories = $0
                 self?.selectedCategory = $0.first { $0.id == self?.task.category.id} ?? $0[.zero]
+            }
+            .store(in: &cancellables)
+    }
+
+    private func registerColumnBinding() {
+        dataService.fetchColumns()
+        dataService.columns
+            .sink { [weak self] in
+                self?.columns = $0
+                self?.selectedColumn = $0.first { $0.id == self?.task.column.id} ?? $0[.zero]
             }
             .store(in: &cancellables)
     }
