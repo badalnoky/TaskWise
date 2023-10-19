@@ -36,6 +36,7 @@ import SwiftUI
             endDateTime: ends,
             category: selectedCategory,
             priority: selectedPriority,
+            column: task.column,
             colorComponents: color.components,
             steps: steps
         )

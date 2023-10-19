@@ -87,9 +87,7 @@ extension DataService {
 
 extension DataService {
     func addTask(_ task: Task.DTO) {
-        // TODO: Add task to prioritiy, category and column
-        fetchColumns()
-        Task.create(from: task, on: container.viewContext, startingIn: columns.value[.zero])
+        Task.create(from: task, on: container.viewContext)
         save()
         fetchTasks()
     }

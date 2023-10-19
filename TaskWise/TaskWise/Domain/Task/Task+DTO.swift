@@ -12,12 +12,12 @@ extension Task {
         let endDateTime: Date
         let category: Category
         let priority: Priority
+        let column: TaskColumn
         let colorComponents: ColorComponents.DTO
         let steps: [TaskStep]
-        // TODO: add column
     }
 
-    static func create(from dto: DTO, on context: NSManagedObjectContext, startingIn column: TaskColumn) {
+    static func create(from dto: DTO, on context: NSManagedObjectContext) {
         let task = Task(context: context)
         task.wDate = dto.date
         task.wEndDateTime = dto.endDateTime
@@ -27,7 +27,7 @@ extension Task {
         task.wTaskDescription = dto.description
         task.wTitle = dto.title
         task.wCategory = dto.category
-        task.wColumn = column
+        task.wColumn = dto.column
         task.wPriority = dto.priority
         task.wSteps?.addingObjects(from: dto.steps)
         task.wColorComponents = ColorComponents.create(from: dto.colorComponents, on: context)
@@ -43,9 +43,9 @@ extension Task {
         self.wTitle = updated.title
         self.wCategory = updated.category
         self.wPriority = updated.priority
+        self.wColumn = updated.column
         // FIXME: here adding objects is not the right behaviour, should be update
         self.wSteps?.addingObjects(from: updated.steps)
         self.wColorComponents?.update(with: updated.colorComponents)
-        // TODO: add column
     }
 }
