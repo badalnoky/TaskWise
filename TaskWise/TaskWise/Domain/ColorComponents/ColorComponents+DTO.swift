@@ -7,6 +7,7 @@ extension ColorComponents {
         let blue: Double
         let alpha: Double
     }
+
     static func create(from dto: DTO, on context: NSManagedObjectContext) -> ColorComponents {
         let components = ColorComponents(context: context)
         components.wRed = dto.red

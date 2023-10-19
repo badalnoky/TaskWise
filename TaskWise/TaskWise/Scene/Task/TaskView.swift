@@ -99,8 +99,6 @@ extension TaskView: View {
                 }
                 .frame(height: 200)
 
-                ColorPicker(Str.taskColorLabel, selection: $viewModel.color)
-
                 Button(
                     viewModel.isEditable ? Str.taskSaveButton : Str.taskDeleteButton,
                     action: viewModel.didTapAction

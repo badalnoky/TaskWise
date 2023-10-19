@@ -96,8 +96,6 @@ extension AddTaskView: View {
                 }
                 .frame(height: 200)
 
-                ColorPicker(Str.taskColorLabel, selection: $viewModel.color)
-
                 Button("create", action: viewModel.didTapCreate)
                     .buttonStyle(.borderedProminent)
             }

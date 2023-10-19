@@ -3,6 +3,7 @@
     <entity name="Category" representedClassName="Category" syncable="YES">
         <attribute name="wId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="wName" optional="YES" attributeType="String"/>
+        <relationship name="wColorComponents" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="ColorComponents" inverseName="wCategory" inverseEntity="ColorComponents"/>
         <relationship name="wTasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Task" inverseName="wCategory" inverseEntity="Task"/>
     </entity>
     <entity name="ColorComponents" representedClassName="ColorComponents" syncable="YES">
@@ -10,7 +11,7 @@
         <attribute name="wBlue" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="wGreen" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="wRed" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <relationship name="wTask" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Task" inverseName="wColorComponents" inverseEntity="Task"/>
+        <relationship name="wCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="wColorComponents" inverseEntity="Category"/>
     </entity>
     <entity name="Priority" representedClassName="Priority" syncable="YES">
         <attribute name="wId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
@@ -27,7 +28,6 @@
         <attribute name="wTaskDescription" optional="YES" attributeType="String"/>
         <attribute name="wTitle" optional="YES" attributeType="String"/>
         <relationship name="wCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="wTasks" inverseEntity="Category"/>
-        <relationship name="wColorComponents" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="ColorComponents" inverseName="wTask" inverseEntity="ColorComponents"/>
         <relationship name="wColumn" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TaskColumn" inverseName="wTasks" inverseEntity="TaskColumn"/>
         <relationship name="wPriority" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Priority" inverseName="wTasks" inverseEntity="Priority"/>
         <relationship name="wSteps" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TaskStep" inverseName="wTask" inverseEntity="TaskStep"/>

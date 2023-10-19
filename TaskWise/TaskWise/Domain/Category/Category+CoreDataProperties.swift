@@ -8,9 +8,11 @@ extension Category {
     @NSManaged public var wId: UUID?
     @NSManaged public var wName: String?
     @NSManaged public var wTasks: NSSet?
+    @NSManaged public var wColorComponents: ColorComponents?
 
     public var id: UUID { wId ?? UUID() }
     public var name: String { wName ?? .empty }
+    public var colorComponents: ColorComponents { wColorComponents ?? ColorComponents() }
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Category> {
         let request = NSFetchRequest<Category>(entityName: Self.entityName)

@@ -12,7 +12,6 @@ extension Task {
     @NSManaged public var wTaskDescription: String?
     @NSManaged public var wTitle: String?
     @NSManaged public var wCategory: Category?
-    @NSManaged public var wColorComponents: ColorComponents?
     @NSManaged public var wColumn: TaskColumn?
     @NSManaged public var wPriority: Priority?
     @NSManaged public var wSteps: NSSet?
@@ -25,7 +24,6 @@ extension Task {
     public var taskDescription: String { wTaskDescription ?? .empty }
     public var title: String { wTitle ?? .empty }
     public var category: Category { wCategory ?? Category() }
-    public var colorComponents: ColorComponents { wColorComponents ?? ColorComponents() }
     public var column: TaskColumn { wColumn ?? TaskColumn() }
     public var priority: Priority { wPriority ?? Priority() }
     public var steps: [TaskStep] {

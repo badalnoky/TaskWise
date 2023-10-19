@@ -8,7 +8,7 @@ extension ColorComponents {
     @NSManaged public var wBlue: Double
     @NSManaged public var wGreen: Double
     @NSManaged public var wRed: Double
-    @NSManaged public var wTask: Task?
+    @NSManaged public var wCategory: Category?
 
     public var alpha: Double { wAlpha }
     public var blue: Double { wBlue }

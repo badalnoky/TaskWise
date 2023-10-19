@@ -25,7 +25,6 @@ import SwiftUI
     var repeats: [String] = ["Never", "Weekly", "Biweekly", "Yearly"]
     var selectedRepeats: String = "Never"
     var steps: [TaskStep] = []
-    var color: Color = .blue
 
     private var updatedTask: Task.DTO {
         Task.DTO(
@@ -39,7 +38,6 @@ import SwiftUI
             category: selectedCategory,
             priority: selectedPriority,
             column: selectedColumn,
-            colorComponents: color.components,
             steps: steps
         )
     }
@@ -53,7 +51,6 @@ import SwiftUI
         self.starts = task.startDateTime
         self.ends = task.endDateTime
         self.steps = task.steps
-        self.color = .from(components: task.colorComponents)
 
         registerBindings()
     }
