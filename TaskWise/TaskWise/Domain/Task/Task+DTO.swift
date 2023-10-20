@@ -13,7 +13,7 @@ extension Task {
         let category: Category
         let priority: Priority
         let column: TaskColumn
-        let steps: [TaskStep]
+        let steps: [TaskStep.DTO]
     }
 
     static func create(from dto: DTO, on context: NSManagedObjectContext) {
@@ -28,7 +28,7 @@ extension Task {
         task.wCategory = dto.category
         task.wColumn = dto.column
         task.wPriority = dto.priority
-        task.wSteps?.addingObjects(from: dto.steps)
+        TaskStep.createSteps(for: task, from: dto.steps, on: context)
     }
 
     func update(with updated: Task.DTO, on context: NSManagedObjectContext) {
@@ -43,6 +43,6 @@ extension Task {
         self.wPriority = updated.priority
         self.wColumn = updated.column
         // FIXME: here adding objects is not the right behaviour, should be update
-        self.wSteps?.addingObjects(from: updated.steps)
+//        self.wSteps?.addingObjects(from: updated.steps)
     }
 }

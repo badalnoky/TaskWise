@@ -80,20 +80,22 @@ extension AddTaskView: View {
                 Text(Str.taskStepsLabel)
                     .frame(maxWidth: .infinity, alignment: .leading)
 
-                ScrollView {
-                    ForEach(viewModel.steps.indices, id: \.self) { idx in
-                        // TODO: Resolve this
-                        //                        let step = viewModel.steps[idx]
-//                        HStack {
-//                            Toggle(isOn: $viewModel.steps[idx].isDone) {
-//                                Text(step.label)
-//                            }
-//                            .toggleStyle(CheckboxToggleStyle())
-//                        }
-//                        .frame(maxWidth: .infinity, alignment: .leading)
-//                        .padding(.vertical, .padding4)
-                    }
+                HStack {
+                    TextField(String.empty, text: $viewModel.newStepName)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    IconButton(.add, action: viewModel.didTapAddStep)
                 }
+
+                List {
+                    ForEach(viewModel.steps.indices, id: \.self) {
+                        let step = viewModel.steps[$0]
+                        Text(step.label)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(.init(top: .zero, leading: .zero, bottom: .zero, trailing: .zero))
+                }
+                .listStyle(.plain)
                 .frame(height: 200)
 
                 Button("create", action: viewModel.didTapCreate)

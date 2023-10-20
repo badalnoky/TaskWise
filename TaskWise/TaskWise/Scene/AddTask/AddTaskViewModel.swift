@@ -20,7 +20,8 @@ import SwiftUI
     var ends: Date = .now.advanced(by: .hour)
     var repeats: [String] = ["Never", "Weekly", "Biweekly", "Yearly"]
     var selectedRepeats: String = "Never"
-    var steps: [TaskStep] = []
+    var newStepName: String = .empty
+    var steps: [TaskStep.DTO] = []
 
     private var task: Task.DTO {
         Task.DTO(
@@ -50,6 +51,11 @@ extension AddTaskViewModel {
     func didTapCreate() {
         dataService.addTask(task)
         dismiss()
+    }
+
+    func didTapAddStep() {
+        steps.append(.init(label: newStepName, index: steps.count))
+        newStepName = .empty
     }
 
     func dismiss() {

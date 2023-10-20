@@ -38,7 +38,7 @@ import SwiftUI
             category: selectedCategory,
             priority: selectedPriority,
             column: selectedColumn,
-            steps: steps
+            steps: []
         )
     }
 
