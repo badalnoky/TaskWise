@@ -102,4 +102,10 @@ extension DataService {
         save()
         fetchTasks()
     }
+
+    func toggleIsDone(on step: TaskStep) {
+        step.wIsDone.toggle()
+        save()
+        fetchTasks()
+    }
 }

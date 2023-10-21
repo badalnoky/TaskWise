@@ -6,7 +6,8 @@ import SwiftUI
     private let navigator: Navigator<ContentSceneFactory>
     private let dataService: DataService = Resolver.resolve()
     private var cancellables = Set<AnyCancellable>()
-    private var task: Task
+    private var taskId: UUID
+    private var task = Task()
 
     var isEditable = false
     var isAlertVisible = false
@@ -42,15 +43,9 @@ import SwiftUI
         )
     }
 
-    init(navigator: Navigator<ContentSceneFactory>, task: Task) {
+    init(navigator: Navigator<ContentSceneFactory>, taskId: UUID) {
         self.navigator = navigator
-        self.task = task
-        self.title = task.title
-        self.description = task.taskDescription
-        self.allDay = !task.hasTimeConstraints
-        self.starts = task.startDateTime
-        self.ends = task.endDateTime
-        self.steps = task.steps
+        self.taskId = taskId
 
         registerBindings()
     }
@@ -75,6 +70,10 @@ extension TaskViewModel {
         dismiss()
     }
 
+    func didTapToggle(on step: TaskStep) {
+        dataService.toggleIsDone(on: step)
+    }
+
     func dismiss() {
         navigator.pop()
     }
@@ -82,9 +81,26 @@ extension TaskViewModel {
 
 private extension TaskViewModel {
     private func registerBindings() {
+        registerTaskBinding()
         registerPriorityBinding()
         registerCategoryBinding()
         registerColumnBinding()
+    }
+
+    private func registerTaskBinding() {
+        dataService.fetchTasks()
+        dataService.tasks
+            .sink { [weak self] in
+                guard let task = $0.first(where: { $0.id == self?.taskId }) else { return }
+                self?.task = task
+                self?.title = task.title
+                self?.description = task.taskDescription
+                self?.allDay = !task.hasTimeConstraints
+                self?.starts = task.startDateTime
+                self?.ends = task.endDateTime
+                self?.steps = task.steps
+            }
+            .store(in: &cancellables)
     }
 
     private func registerPriorityBinding() {

@@ -83,20 +83,17 @@ extension TaskView: View {
                 Text(Str.taskStepsLabel)
                     .frame(maxWidth: .infinity, alignment: .leading)
 
-                ScrollView {
-                    ForEach(viewModel.steps.indices, id: \.self) { idx in
-                        // TODO: Resolve this
-//                        let step = viewModel.steps[idx]
-//                        HStack {
-//                            Toggle(isOn: $viewModel.stepIsCompleted[idx]) {
-//                                Text(viewModel.steps[idx])
-//                            }
-//                            .toggleStyle(CheckboxToggleStyle())
-//                        }
-//                        .frame(maxWidth: .infinity, alignment: .leading)
-//                        .padding(.vertical, .padding4)
+                List {
+                    ForEach(viewModel.steps.indices, id: \.self) {
+                        let step = viewModel.steps[$0]
+                        TaskStepView(step: step) {
+                            viewModel.didTapToggle(on: step)
+                        }
                     }
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(.init(top: .zero, leading: .zero, bottom: .zero, trailing: .zero))
                 }
+                .listStyle(.plain)
                 .frame(height: 200)
 
                 Button(

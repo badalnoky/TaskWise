@@ -36,7 +36,7 @@ extension DashboardViewModel {
     }
 
     func didTapTask(_ task: Task) {
-        navigator.showTask(task)
+        navigator.showTask(task.id)
     }
 
     func didTapDelete(task: Task) {

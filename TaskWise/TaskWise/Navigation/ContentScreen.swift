@@ -1,8 +1,10 @@
+import Foundation
+
 public enum ContentScreen: Screen {
     case addTask
     case calendar
     case dashboard
     case day
     case settings
-    case task(_: Task)
+    case task(_: UUID)
 }
