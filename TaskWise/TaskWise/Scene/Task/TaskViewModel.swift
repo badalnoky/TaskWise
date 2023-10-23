@@ -59,6 +59,7 @@ import SwiftUI
     }
 
     // swiftlint: disable: function_body_length
+    // TODO: This is only for previews to not crash, should find better solution
     #if DEBUG
     init() {
         self.navigator = .init(sceneFactory: .init(), root: .dashboard)
