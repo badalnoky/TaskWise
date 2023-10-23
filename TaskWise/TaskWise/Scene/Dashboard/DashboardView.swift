@@ -39,7 +39,6 @@ extension DashboardView: View {
                         ForEach(viewModel.columns, id: \.self) { column in
                             VStack {
                                 HStack {
-                                    Color.clear.sized(.iconButtonSize)
                                     Text(column.name)
                                         .font(.title)
                                         .bold()

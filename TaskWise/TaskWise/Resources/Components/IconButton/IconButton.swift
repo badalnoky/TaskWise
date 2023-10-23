@@ -5,10 +5,14 @@ public struct IconButton: View {
     private var action: () -> Void
 
     public var body: some View {
-        Button(action: action) {
-            icon.fittedToSize(.defaultIconSize)
-        }
-        .sized(.iconButtonSize)
+        Button(
+            action: {
+                withAnimation { action() }
+            },
+            label: {
+                icon.fittedToSize(.defaultIconSize)
+            }
+        )
     }
 
     public init(_ icon: Image, action: @escaping () -> Void) {

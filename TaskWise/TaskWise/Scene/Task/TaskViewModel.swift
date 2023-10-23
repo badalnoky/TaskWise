@@ -9,8 +9,15 @@ import SwiftUI
     private var taskId: UUID
     private var task = Task()
 
-    var isEditable = false
+    var editMode: EditMode = .inactive
     var isAlertVisible = false
+
+    var isEditable: Bool {
+        editMode == .active
+    }
+    var actionButtonLabel: String {
+        isEditable ? Str.taskSaveButton : Str.taskDeleteButton
+    }
 
     var title: String = .empty
     var description: String = .empty
@@ -26,6 +33,7 @@ import SwiftUI
     var repeats: [String] = ["Never", "Weekly", "Biweekly", "Yearly"]
     var selectedRepeats: String = "Never"
     var steps: [TaskStep] = []
+    var newStepName: String = .empty
 
     private var updatedTask: Task.DTO {
         Task.DTO(
@@ -49,11 +57,77 @@ import SwiftUI
 
         registerBindings()
     }
+
+    // swiftlint: disable: function_body_length
+    #if DEBUG
+    init() {
+        self.navigator = .init(sceneFactory: .init(), root: .dashboard)
+        self.taskId = UUID()
+
+        let components = ColorComponents(context: PreviewDataController.global.context)
+        components.wRed = Color.blue.components.red
+        components.wGreen = Color.blue.components.green
+        components.wBlue = Color.blue.components.blue
+        components.wAlpha = Color.blue.components.alpha
+
+        let priority = Priority(context: PreviewDataController.global.context)
+        priority.wId = UUID()
+        priority.wLevel = 1
+        priority.wName = "PreviewPriority"
+
+        let category = Category(context: PreviewDataController.global.context)
+        category.wId = UUID()
+        category.wName = "PreviewCategory"
+        category.wColorComponents = components
+
+        let column = TaskColumn(context: PreviewDataController.global.context)
+        column.wId = UUID()
+        column.wIndex = 1
+        column.wName = "PreviewColumn"
+
+        let task = Task(context: PreviewDataController.global.context)
+        task.wDate = .now
+        task.wEndDateTime = .now
+        task.wHasTimeConstraints = false
+        task.wId = UUID()
+        task.wStartDateTime = .now
+        task.wTaskDescription = "Description"
+        task.wTitle = "Task"
+        task.wCategory = category
+        task.wColumn = column
+        task.wPriority = priority
+
+        let step = TaskStep(context: PreviewDataController.global.context)
+        step.wIndex = .zero
+        step.wLabel = "PreviewStep"
+        step.wIsDone = false
+        step.wTask = task
+
+        self.task = task
+        self.title = task.title
+        self.description = task.taskDescription
+        self.allDay = !task.hasTimeConstraints
+        self.starts = task.startDateTime
+        self.ends = task.endDateTime
+        self.steps = task.steps
+
+        self.priorities = [priority]
+        self.selectedPriority = priority
+        self.categories = [category]
+        self.selectedCategory = category
+        self.columns = [column]
+        self.selectedColumn = column
+    }
+    #endif
 }
 
 extension TaskViewModel {
     func didTapEdit() {
-        isEditable.toggle()
+        if isEditable {
+            editMode = .inactive
+        } else {
+            editMode = .active
+        }
     }
 
     func didTapAction() {
@@ -72,6 +146,23 @@ extension TaskViewModel {
 
     func didTapToggle(on step: TaskStep) {
         dataService.toggleIsDone(on: step)
+    }
+
+    func didChangeLabel(on step: TaskStep, to newLabel: String) {
+        // TODO: update label
+    }
+
+    func didTapDeleteSteps(offsets: IndexSet) {
+        // TODO: delete steps
+    }
+
+    func didMoveStep(source: IndexSet, destination: Int) {
+        // TODO: mod order of steps
+    }
+
+    func didTapAddStep() {
+        // TODO: add steps
+        newStepName = .empty
     }
 
     func dismiss() {

@@ -80,12 +80,6 @@ extension AddTaskView: View {
                 Text(Str.taskStepsLabel)
                     .frame(maxWidth: .infinity, alignment: .leading)
 
-                HStack {
-                    TextField(String.empty, text: $viewModel.newStepName)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    IconButton(.add, action: viewModel.didTapAddStep)
-                }
-
                 List {
                     ForEach(viewModel.steps.indices, id: \.self) {
                         let step = viewModel.steps[$0]
@@ -97,6 +91,12 @@ extension AddTaskView: View {
                 }
                 .listStyle(.plain)
                 .frame(height: 200)
+
+                HStack {
+                    TextField(String.empty, text: $viewModel.newStepName)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    IconButton(.add, action: viewModel.didTapAddStep)
+                }
 
                 Button("create", action: viewModel.didTapCreate)
                     .buttonStyle(.borderedProminent)

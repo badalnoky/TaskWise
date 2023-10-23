@@ -12,11 +12,13 @@ extension TaskView: View {
                     .frame(maxWidth: .infinity, alignment: .trailing)
 
                 TextField(String.empty, text: $viewModel.title)
+                    .textFieldStyle(.roundedBorder)
                     .font(.largeTitle)
                     .bold()
                     .frame(maxWidth: .infinity, alignment: .leading)
 
                 TextField(String.empty, text: $viewModel.description, axis: .vertical)
+                    .textFieldStyle(.roundedBorder)
                     .lineLimit(5)
                     .font(.headline)
                     .bold()
@@ -86,23 +88,39 @@ extension TaskView: View {
                 List {
                     ForEach(viewModel.steps.indices, id: \.self) {
                         let step = viewModel.steps[$0]
-                        TaskStepView(step: step) {
-                            viewModel.didTapToggle(on: step)
-                        }
+                        TaskStepView(
+                            step: step,
+                            isEditable: viewModel.isEditable,
+                            toggleAction: {
+                                viewModel.didTapToggle(on: step)
+                            },
+                            newLabelAcion: {
+                                viewModel.didChangeLabel(on: step, to: $0)
+                            }
+                        )
                     }
+                    .onDelete(perform: viewModel.didTapDeleteSteps)
+                    .onMove(perform: viewModel.didMoveStep)
                     .listRowSeparator(.hidden)
                     .listRowInsets(.init(top: .zero, leading: .zero, bottom: .zero, trailing: .zero))
                 }
                 .listStyle(.plain)
                 .frame(height: 200)
 
-                Button(
-                    viewModel.isEditable ? Str.taskSaveButton : Str.taskDeleteButton,
-                    action: viewModel.didTapAction
-                )
+                if viewModel.isEditable {
+                    HStack {
+                        TextField(String.empty, text: $viewModel.newStepName)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .textFieldStyle(.roundedBorder)
+                        IconButton(.add, action: viewModel.didTapAddStep)
+                    }
+                }
+
+                Button(viewModel.actionButtonLabel, action: viewModel.didTapAction)
                     .buttonStyle(.borderedProminent)
             }
         }
+        .environment(\.editMode, $viewModel.editMode)
         .alert("Do you want to delete this task?", isPresented: $viewModel.isAlertVisible) {
             Button("Yes", role: .destructive, action: viewModel.didTapDelete)
             Button("No", role: .cancel) {}
