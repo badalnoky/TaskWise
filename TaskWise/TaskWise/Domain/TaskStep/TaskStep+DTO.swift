@@ -14,11 +14,11 @@ extension TaskStep {
     }
     static func createSteps(for task: Task, from dtos: [DTO], on context: NSManagedObjectContext) {
         for dto in dtos {
-            TaskStep.create(from: dto, on: context, for: task)
+            TaskStep.create(for: task, from: dto, on: context)
         }
     }
 
-    static func create(from dto: DTO, on context: NSManagedObjectContext, for task: Task) {
+    static func create(for task: Task, from dto: DTO, on context: NSManagedObjectContext) {
         let step = TaskStep(context: context)
         step.wIsDone = dto.isDone
         step.wLabel = dto.label

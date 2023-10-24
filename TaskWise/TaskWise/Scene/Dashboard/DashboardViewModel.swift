@@ -21,7 +21,7 @@ import Resolver
         registerBindings()
     }
 }
-// TODO: add "more" functionallity
+
 extension DashboardViewModel {
     func didTapCalendar() {
         navigator.showCalendar()

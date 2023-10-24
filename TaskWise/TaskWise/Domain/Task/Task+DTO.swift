@@ -42,7 +42,5 @@ extension Task {
         self.wCategory = updated.category
         self.wPriority = updated.priority
         self.wColumn = updated.column
-        // FIXME: here adding objects is not the right behaviour, should be update
-//        self.wSteps?.addingObjects(from: updated.steps)
     }
 }
