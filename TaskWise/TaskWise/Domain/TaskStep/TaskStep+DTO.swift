@@ -1,15 +1,23 @@
 import CoreData
 
 extension TaskStep {
-    struct DTO {
-        let isDone: Bool
-        let label: String
-        let index: Int
+    struct DTO: Hashable {
+        var isDone: Bool
+        var label: String
+        var index: Int
 
         init(isDone: Bool = false, label: String, index: Int) {
             self.isDone = isDone
             self.label = label
             self.index = index
+        }
+
+        mutating func changeIndex(to newIndex: Int) {
+            self.index = newIndex
+        }
+
+        mutating func toggleIsDone() {
+            self.isDone.toggle()
         }
     }
     static func createSteps(for task: Task, from dtos: [DTO], on context: NSManagedObjectContext) {

@@ -46,8 +46,7 @@ extension SettingsView: View {
             }
 
             ScrollView {
-                ForEach(viewModel.priorities.indices, id: \.self) { idx in
-                    let priority = viewModel.priorities[idx]
+                ForEach(viewModel.priorities, id: \.self) { priority in
                     Text(priority.name)
                 }
             }

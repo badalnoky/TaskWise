@@ -6,6 +6,7 @@ import SwiftUI
     private let navigator: Navigator<ContentSceneFactory>
     private let dataService: DataService = Resolver.resolve()
     private var cancellables = Set<AnyCancellable>()
+    var editMode: EditMode = .active
 
     var title: String = .empty
     var description: String = .empty
@@ -46,7 +47,6 @@ import SwiftUI
     }
 }
 
-// TODO: add task step modification
 extension AddTaskViewModel {
     func didTapCreate() {
         dataService.addTask(task)
@@ -56,6 +56,22 @@ extension AddTaskViewModel {
     func didTapAddStep() {
         steps.append(.init(label: newStepName, index: steps.count))
         newStepName = .empty
+    }
+
+    func didTapDeleteSteps(offsets: IndexSet) {
+        steps.remove(atOffsets: offsets)
+    }
+
+    func didMoveStep(source: IndexSet, destination: Int) {
+        steps.move(fromOffsets: source, toOffset: destination)
+        for idx in steps.indices {
+            steps[idx].changeIndex(to: idx)
+        }
+    }
+
+    func didTapToggle(on step: TaskStep.DTO) {
+        guard let idx = steps.firstIndex(of: step) else { return }
+        steps[idx].toggleIsDone()
     }
 
     func dismiss() {

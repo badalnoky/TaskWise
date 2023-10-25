@@ -20,7 +20,11 @@ public struct TaskStepView: View {
                         .sized(.defaultCheckboxSize)
                 }
             }
-            .onTapGesture { toggleAction() }
+            .onTapGesture {
+                withAnimation {
+                    toggleAction()
+                }
+            }
 
             TextField(
                 String.empty,

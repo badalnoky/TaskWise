@@ -86,8 +86,7 @@ extension TaskView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
 
                 List {
-                    ForEach(viewModel.steps.indices, id: \.self) {
-                        let step = viewModel.steps[$0]
+                    ForEach(viewModel.steps, id: \.self) { step in
                         TaskStepView(
                             step: step,
                             isEditable: viewModel.isEditable,

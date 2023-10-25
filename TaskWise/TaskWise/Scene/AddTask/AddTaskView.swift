@@ -9,11 +9,13 @@ extension AddTaskView: View {
         ScrollView {
             VStack(spacing: .padding16) {
                 TextField(String.empty, text: $viewModel.title)
+                    .textFieldStyle(.roundedBorder)
                     .font(.largeTitle)
                     .bold()
                     .frame(maxWidth: .infinity, alignment: .leading)
 
                 TextField(String.empty, text: $viewModel.description, axis: .vertical)
+                    .textFieldStyle(.roundedBorder)
                     .lineLimit(5)
                     .font(.headline)
                     .bold()
@@ -81,11 +83,30 @@ extension AddTaskView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
 
                 List {
-                    ForEach(viewModel.steps.indices, id: \.self) {
-                        let step = viewModel.steps[$0]
-                        Text(step.label)
+                    ForEach($viewModel.steps, id: \.self) { $step in
+                        HStack {
+                            Group {
+                                if step.isDone {
+                                    Image(systemName: Str.iconsCheck)
+                                        .fittedToSize(.defaultCheckboxSize)
+                                } else {
+                                    Circle()
+                                        .stroke(lineWidth: .borderWidth)
+                                        .sized(.defaultCheckboxSize)
+                                }
+                            }
+                            .onTapGesture {
+                                withAnimation {
+                                    viewModel.didTapToggle(on: step)
+                                }
+                            }
+                            TextField(String.empty, text: $step.label)
+                                .textFieldStyle(.roundedBorder)
+                        }
                         .frame(maxWidth: .infinity, alignment: .leading)
                     }
+                    .onDelete(perform: viewModel.didTapDeleteSteps)
+                    .onMove(perform: viewModel.didMoveStep)
                     .listRowSeparator(.hidden)
                     .listRowInsets(.init(top: .zero, leading: .zero, bottom: .zero, trailing: .zero))
                 }
@@ -94,6 +115,7 @@ extension AddTaskView: View {
 
                 HStack {
                     TextField(String.empty, text: $viewModel.newStepName)
+                        .textFieldStyle(.roundedBorder)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     IconButton(.add, action: viewModel.didTapAddStep)
                 }
@@ -102,6 +124,7 @@ extension AddTaskView: View {
                     .buttonStyle(.borderedProminent)
             }
         }
+        .environment(\.editMode, $viewModel.editMode)
     }
 }
 

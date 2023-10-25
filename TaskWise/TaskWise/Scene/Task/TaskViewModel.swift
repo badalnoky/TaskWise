@@ -146,23 +146,26 @@ extension TaskViewModel {
     }
 
     func didTapToggle(on step: TaskStep) {
-        dataService.toggleIsDone(on: step)
+        dataService.toggleIsDone(on: step, for: task)
     }
 
     func didChangeLabel(on step: TaskStep, to newLabel: String) {
-        // TODO: update label
+        dataService.updateStepLabel(on: step, to: newLabel)
     }
 
     func didTapDeleteSteps(offsets: IndexSet) {
-        // TODO: delete steps
+        guard offsets.count == 1, let idx = offsets.first else { return }
+        dataService.delete(step: steps[idx], from: task)
     }
 
     func didMoveStep(source: IndexSet, destination: Int) {
-        // TODO: mod order of steps
+        var updated = steps
+        updated.move(fromOffsets: source, toOffset: destination)
+        dataService.updateOrder(of: updated, on: task)
     }
 
     func didTapAddStep() {
-        // TODO: add steps
+        dataService.addStepFrom(dto: .init(label: newStepName, index: steps.count), to: task)
         newStepName = .empty
     }
 
@@ -177,6 +180,7 @@ private extension TaskViewModel {
         registerPriorityBinding()
         registerCategoryBinding()
         registerColumnBinding()
+        registerStepsBinding()
     }
 
     private func registerTaskBinding() {
@@ -190,7 +194,15 @@ private extension TaskViewModel {
                 self?.allDay = !task.hasTimeConstraints
                 self?.starts = task.startDateTime
                 self?.ends = task.endDateTime
-                self?.steps = task.steps
+                self?.dataService.fetchSteps(for: task)
+            }
+            .store(in: &cancellables)
+    }
+
+    private func registerStepsBinding() {
+        dataService.currentSteps
+            .sink { [weak self] in
+                self?.steps = $0
             }
             .store(in: &cancellables)
     }
