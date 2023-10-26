@@ -12,43 +12,78 @@ extension SettingsView: View {
                 .bold()
                 .frame(maxWidth: .infinity, alignment: .center)
 
-            HStack {
-                Text(Str.settingsCategoriesLabel)
-                    .font(.headline)
-                Spacer()
-                IconButton(.add) {}
-            }
+            TabView {
+                VStack {
+                    HStack {
+                        Spacer()
+                        IconButton(.edit) {
+                            EditMode.toggle(mode: &viewModel.categoryEditMode)
+                        }
+                    }
 
-            ScrollView {
-                ForEach(viewModel.categories, id: \.self) { category in
-                    Text(category.name)
+                    List {
+                        ForEach(viewModel.categories, id: \.self) { category in
+                            Text(category.name)
+                        }
+                        .onDelete { _ in }
+                        .onMove { _, _ in }
+                        .listRowSeparator(.hidden)
+                        .listRowInsets(.init(top: .zero, leading: .zero, bottom: .zero, trailing: .zero))
+                    }
+                    .listStyle(.plain)
                 }
-            }
-
-            HStack {
-                Text(Str.settingsColumnsLabel)
-                    .font(.headline)
-                Spacer()
-                IconButton(.add) {}
-            }
-
-            ScrollView {
-                ForEach(viewModel.columns, id: \.self) { column in
-                    Text(column.name)
+                .tabItem {
+                    Text(Str.settingsCategoriesLabel)
                 }
-            }
+                .environment(\.editMode, $viewModel.categoryEditMode)
 
-            HStack {
-                Text(Str.settingsPrioritiesLabel)
-                    .font(.headline)
-                Spacer()
-                IconButton(.add) {}
-            }
+                VStack {
+                    HStack {
+                        Spacer()
+                        IconButton(.edit) {
+                            EditMode.toggle(mode: &viewModel.columnEditMode)
+                        }
+                    }
 
-            ScrollView {
-                ForEach(viewModel.priorities, id: \.self) { priority in
-                    Text(priority.name)
+                    List {
+                        ForEach(viewModel.columns, id: \.self) { column in
+                            Text(column.name)
+                        }
+                        .onDelete { _ in }
+                        .onMove { _, _ in }
+                        .listRowSeparator(.hidden)
+                        .listRowInsets(.init(top: .zero, leading: .zero, bottom: .zero, trailing: .zero))
+                    }
+                    .listStyle(.plain)
                 }
+                .tabItem {
+                    Text(Str.settingsColumnsLabel)
+                }
+                .environment(\.editMode, $viewModel.columnEditMode)
+
+                VStack {
+                    HStack {
+                        Spacer()
+                        IconButton(.edit) {
+                            EditMode.toggle(mode: &viewModel.priorityEditMode)
+                        }
+                    }
+
+                    List {
+                        ForEach(viewModel.columns, id: \.self) { priority in
+                            Text(priority.name)
+                        }
+                        .onDelete { _ in }
+                        .onMove { _, _ in }
+                        .listRowSeparator(.hidden)
+                        .listRowInsets(.init(top: .zero, leading: .zero, bottom: .zero, trailing: .zero))
+                    }
+                    .listStyle(.plain)
+                }
+                .tabItem {
+                    Text(Str.settingsPrioritiesLabel)
+                }
+                .environment(\.editMode, $viewModel.priorityEditMode)
             }
         }
     }

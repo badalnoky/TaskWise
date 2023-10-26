@@ -1,10 +1,15 @@
 import Combine
 import Resolver
+import SwiftUI
 
 @Observable final class SettingsViewModel {
     private var navigator: Navigator<ContentSceneFactory>
     private let dataService: DataService = Resolver.resolve()
     private var cancellables = Set<AnyCancellable>()
+
+    var categoryEditMode: EditMode = .inactive
+    var priorityEditMode: EditMode = .inactive
+    var columnEditMode: EditMode = .inactive
 
     var categories: [Category] = []
     var columns: [TaskColumn] = []
@@ -17,7 +22,6 @@ import Resolver
     }
 }
 
-// TODO: Add edit, add, remove capability
 extension SettingsViewModel {
     func didTapAddCategory() {
     }

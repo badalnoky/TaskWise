@@ -124,11 +124,7 @@ import SwiftUI
 
 extension TaskViewModel {
     func didTapEdit() {
-        if isEditable {
-            editMode = .inactive
-        } else {
-            editMode = .active
-        }
+        EditMode.toggle(mode: &editMode)
     }
 
     func didTapAction() {
