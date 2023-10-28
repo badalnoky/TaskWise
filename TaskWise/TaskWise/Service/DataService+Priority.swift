@@ -12,13 +12,19 @@ extension DataService {
     }
 
     func updateOrder(of priorities: [Priority]) {
-        // TODO: update order
-        save()
+        updateIndices(on: priorities)
         fetchPriorities()
     }
 
     func deletePriority(_ priority: Priority) {
         // TODO: delete, handle when it has tasks, or it is the last
         fetchPriorities()
+    }
+
+    private func updateIndices(on priorities: [Priority]) {
+        for idx in priorities.indices {
+            priorities[idx].wLevel = Int16(idx + 1)
+        }
+        save()
     }
 }

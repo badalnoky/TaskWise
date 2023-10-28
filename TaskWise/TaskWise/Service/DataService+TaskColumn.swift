@@ -12,13 +12,19 @@ extension DataService {
     }
 
     func updateOrder(of columns: [TaskColumn]) {
-        // TODO: update order
-        save()
+        updateIndices(on: columns)
         fetchColumns()
     }
 
     func deleteColumn(_ column: TaskColumn) {
         // TODO: delete, handle when it has tasks, or it is the last
         fetchColumns()
+    }
+
+    private func updateIndices(on columns: [TaskColumn]) {
+        for idx in columns.indices {
+            columns[idx].wIndex = Int16(idx + 1)
+        }
+        save()
     }
 }

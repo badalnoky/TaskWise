@@ -56,6 +56,18 @@ extension SettingsViewModel {
             dataService.updateColumnName(on: column, to: newName)
         }
     }
+
+    func didMoveColumn(source: IndexSet, destination: Int) {
+        var updated = columns
+        updated.move(fromOffsets: source, toOffset: destination)
+        dataService.updateOrder(of: updated)
+    }
+
+    func didMovePriority(source: IndexSet, destination: Int) {
+        var updated = priorities
+        updated.move(fromOffsets: source, toOffset: destination)
+        dataService.updateOrder(of: updated)
+    }
 }
 
 private extension SettingsViewModel {
