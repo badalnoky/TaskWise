@@ -12,7 +12,7 @@ extension DataService {
     }
 
     func updateColor(on category: Category, with newColor: ColorComponents.DTO) {
-        // TODO: update
+        category.wColorComponents?.update(with: newColor)
         save()
         fetchCategories()
     }

@@ -1,9 +1,5 @@
 import SwiftUI
 
-protocol NamedItem {
-    var name: String { get }
-}
-
 struct EditableText: View {
     @State private var item: NamedItem
     @State private var text: String

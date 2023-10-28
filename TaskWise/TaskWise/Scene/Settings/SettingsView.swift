@@ -40,11 +40,11 @@ extension SettingsView {
                         EditableText(item: category, isEditable: viewModel.categoryEditMode == .active) {
                             viewModel.didChangeName(of: category, to: $0)
                         }
-                        Spacer()
-                        Circle()
-                            .sized(.defaultIconSize)
-                            .foregroundStyle(Color.from(components: category.colorComponents))
+                        CategoryColorPicker(category: category, isEditable: viewModel.categoryEditMode == .active) {
+                            viewModel.didChangeColor(on: category, to: $0)
+                        }
                     }
+                    .padding(.horizontal, .padding16)
                 }
                 .onDelete { _ in }
                 .listRowSeparator(.hidden)

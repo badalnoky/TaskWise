@@ -2,12 +2,17 @@ import SwiftUI
 
 public struct IconButton: View {
     private var icon: Image
+    private var isAnimated: Bool
     private var action: () -> Void
 
     public var body: some View {
         Button(
             action: {
-                withAnimation { action() }
+                if isAnimated {
+                    withAnimation(.smooth) { action() }
+                } else {
+                    action()
+                }
             },
             label: {
                 icon.fittedToSize(.defaultIconSize)
@@ -15,8 +20,9 @@ public struct IconButton: View {
         )
     }
 
-    public init(_ icon: Image, action: @escaping () -> Void) {
+    public init(_ icon: Image, isAnimated: Bool = true, action: @escaping () -> Void) {
         self.icon = icon
+        self.isAnimated = isAnimated
         self.action = action
     }
 }

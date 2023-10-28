@@ -68,6 +68,10 @@ extension SettingsViewModel {
         updated.move(fromOffsets: source, toOffset: destination)
         dataService.updateOrder(of: updated)
     }
+
+    func didChangeColor(on category: Category, to newColor: ColorComponents.DTO) {
+        dataService.updateColor(on: category, with: newColor)
+    }
 }
 
 private extension SettingsViewModel {
