@@ -7,6 +7,9 @@ import SwiftUI
     private let dataService: DataService = Resolver.resolve()
     private var cancellables = Set<AnyCancellable>()
 
+    var isNewCategorySheetPresented = false
+    var currentColor: Color = .blue
+
     var categoryEditMode: EditMode = .inactive
     var priorityEditMode: EditMode = .inactive
     var columnEditMode: EditMode = .inactive
@@ -14,6 +17,10 @@ import SwiftUI
     var categories: [Category] = []
     var columns: [TaskColumn] = []
     var priorities: [Priority] = []
+
+    var newCategoryName: String = .empty
+    var newColumnName: String = .empty
+    var newPriorityName: String = .empty
 
     init(navigator: Navigator<ContentSceneFactory>) {
         self.navigator = navigator
@@ -23,13 +30,21 @@ import SwiftUI
 }
 
 extension SettingsViewModel {
+    func didTapNewCategory() {
+        isNewCategorySheetPresented = true
+    }
     func didTapAddCategory() {
+        dataService.addCategory(.init(id: UUID(), name: newCategoryName, colorComponents: currentColor.components))
+        newCategoryName = .empty
     }
 
-    func didTapAddColumns() {
+    func didTapAddColumn() {
+        dataService.addColumn(.init(id: UUID(), index: columns.count.next, name: newColumnName))
+        newColumnName = .empty
     }
 
     func didTapAddPriority() {
+        dataService.addPriority(.init(id: UUID(), level: priorities.count.next, name: newPriorityName))
     }
 }
 
