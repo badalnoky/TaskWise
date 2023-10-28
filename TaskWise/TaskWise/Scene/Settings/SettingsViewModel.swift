@@ -46,6 +46,16 @@ extension SettingsViewModel {
     func didTapAddPriority() {
         dataService.addPriority(.init(id: UUID(), level: priorities.count.next, name: newPriorityName))
     }
+
+    func didChangeName(of item: NamedItem, to newName: String) {
+        if let priority = item as? Priority {
+            dataService.updatePriorityName(on: priority, to: newName)
+        } else if let category = item as? Category {
+            dataService.updateCategoryName(on: category, to: newName)
+        } else if let column = item as? TaskColumn {
+            dataService.updateColumnName(on: column, to: newName)
+        }
+    }
 }
 
 private extension SettingsViewModel {

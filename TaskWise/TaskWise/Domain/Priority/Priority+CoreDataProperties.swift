@@ -36,4 +36,4 @@ extension Priority {
     @NSManaged public func removeFromWTasks(_ values: NSSet)
 }
 
-extension Priority: Identifiable {}
+extension Priority: Identifiable, NamedItem {}

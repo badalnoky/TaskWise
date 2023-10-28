@@ -36,4 +36,4 @@ extension Category {
     @NSManaged public func removeFromWTasks(_ values: NSSet)
 }
 
-extension Category: Identifiable {}
+extension Category: Identifiable, NamedItem {}

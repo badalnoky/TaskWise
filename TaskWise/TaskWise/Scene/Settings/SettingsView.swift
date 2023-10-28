@@ -37,7 +37,9 @@ extension SettingsView {
             List {
                 ForEach(viewModel.categories, id: \.self) { category in
                     HStack {
-                        Text(category.name)
+                        EditableText(item: category, isEditable: viewModel.categoryEditMode == .active) {
+                            viewModel.didChangeName(of: category, to: $0)
+                        }
                         Spacer()
                         Circle()
                             .sized(.defaultIconSize)
@@ -68,7 +70,6 @@ extension SettingsView {
                 ColorPicker("Color", selection: $viewModel.currentColor)
                 Spacer()
             }
-            .presentationDetents([.medium])
         }
     }
 
@@ -83,7 +84,9 @@ extension SettingsView {
 
             List {
                 ForEach(viewModel.columns, id: \.self) { column in
-                    Text(column.name)
+                    EditableText(item: column, isEditable: viewModel.columnEditMode == .active) {
+                        viewModel.didChangeName(of: column, to: $0)
+                    }
                 }
                 .onDelete { _ in }
                 .onMove { _, _ in }
@@ -118,7 +121,9 @@ extension SettingsView {
 
             List {
                 ForEach(viewModel.priorities, id: \.self) { priority in
-                    Text(priority.name)
+                    EditableText(item: priority, isEditable: viewModel.priorityEditMode == .active) {
+                        viewModel.didChangeName(of: priority, to: $0)
+                    }
                 }
                 .onDelete { _ in }
                 .onMove { _, _ in }

@@ -36,4 +36,4 @@ extension TaskColumn {
     @NSManaged public func removeFromWTasks(_ values: NSSet)
 }
 
-extension TaskColumn: Identifiable {}
+extension TaskColumn: Identifiable, NamedItem {}
