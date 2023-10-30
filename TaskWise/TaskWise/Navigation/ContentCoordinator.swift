@@ -3,8 +3,8 @@ import Foundation
 public final class ContentCoordinator: Coordinator<ContentSceneFactory>, ObservableObject {}
 
 public extension Navigator where Factory == ContentSceneFactory {
-    func showAddTask() {
-        push(screen: .addTask)
+    func showAddTask(with date: Date) {
+        push(screen: .addTask(date))
     }
 
     func showCalendar() {

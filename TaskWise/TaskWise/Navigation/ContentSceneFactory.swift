@@ -6,7 +6,7 @@ public final class ContentSceneFactory: SceneFactory {
     @ViewBuilder
     public func view(for screen: ContentScreen, with navigator: Navigator<ContentSceneFactory>) -> some View {
         switch screen {
-        case .addTask: addTask(with: navigator)
+        case .addTask(let date): addTask(with: navigator, date: date)
         case .calendar: calendar(with: navigator)
         case .dashboard: dashboard(with: navigator)
         case .day(let date): day(with: navigator, date: date)
@@ -17,8 +17,8 @@ public final class ContentSceneFactory: SceneFactory {
 }
 
 extension ContentSceneFactory {
-    func addTask(with navigator: Navigator<ContentSceneFactory>) -> AddTaskView {
-        AddTaskView(viewModel: AddTaskViewModel(navigator: navigator))
+    func addTask(with navigator: Navigator<ContentSceneFactory>, date: Date) -> AddTaskView {
+        AddTaskView(viewModel: AddTaskViewModel(navigator: navigator, date: date))
     }
     func calendar(with navigator: Navigator<ContentSceneFactory>) -> CalendarView {
         CalendarView(viewModel: CalendarViewModel(navigator: navigator))

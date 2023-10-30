@@ -40,8 +40,10 @@ import SwiftUI
         )
     }
 
-    init(navigator: Navigator<ContentSceneFactory>) {
+    init(navigator: Navigator<ContentSceneFactory>, date: Date) {
         self.navigator = navigator
+        self.starts = date
+        self.ends = date.advanced(by: .hour)
 
         registerBindings()
     }

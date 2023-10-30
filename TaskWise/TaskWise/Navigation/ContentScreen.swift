@@ -1,7 +1,7 @@
 import Foundation
 
 public enum ContentScreen: Screen {
-    case addTask
+    case addTask(_ date: Date)
     case calendar
     case dashboard
     case day(_: Date)

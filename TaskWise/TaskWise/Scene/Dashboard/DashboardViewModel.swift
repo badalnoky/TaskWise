@@ -32,7 +32,7 @@ extension DashboardViewModel {
     }
 
     func didTapAddTask() {
-        navigator.showAddTask()
+        navigator.showAddTask(with: date)
     }
 
     func didTapTask(_ task: Task) {
