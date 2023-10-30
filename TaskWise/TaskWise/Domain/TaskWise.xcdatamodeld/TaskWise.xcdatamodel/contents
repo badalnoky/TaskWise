@@ -30,7 +30,7 @@
         <relationship name="wCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="wTasks" inverseEntity="Category"/>
         <relationship name="wColumn" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TaskColumn" inverseName="wTasks" inverseEntity="TaskColumn"/>
         <relationship name="wPriority" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Priority" inverseName="wTasks" inverseEntity="Priority"/>
-        <relationship name="wSteps" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TaskStep" inverseName="wTask" inverseEntity="TaskStep"/>
+        <relationship name="wSteps" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TaskStep" inverseName="wTask" inverseEntity="TaskStep"/>
     </entity>
     <entity name="TaskColumn" representedClassName="TaskColumn" syncable="YES">
         <attribute name="wId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>

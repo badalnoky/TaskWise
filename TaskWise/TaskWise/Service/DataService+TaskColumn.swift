@@ -17,7 +17,16 @@ extension DataService {
     }
 
     func deleteColumn(_ column: TaskColumn) {
-        // TODO: delete, handle when it has tasks, or it is the last
+        // TODO: Resolve this
+        if columns.value.count == 1 {
+            print("return an error saying there needs to be at least one category")
+        } else if (column.wTasks?.count ?? 0) > 0 {
+            print("return an error saying that some task use it")
+        } else {
+            let updatedColumns = columns.value.filter { $0.id != column.id }
+            delete(item: column)
+            updateIndices(on: updatedColumns)
+        }
         fetchColumns()
     }
 

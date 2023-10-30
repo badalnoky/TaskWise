@@ -18,7 +18,14 @@ extension DataService {
     }
 
     func deleteCategory(_ category: Category) {
-        // TODO: delete, handle when it has tasks, or it is the last
+        // TODO: Resolve this
+        if categories.value.count == 1 {
+            print("return an error saying there needs to be at least one category")
+        } else if (category.wTasks?.count ?? 0) > 0 {
+            print("return an error saying that some task use it")
+        } else {
+            delete(item: category)
+        }
         fetchCategories()
     }
 }

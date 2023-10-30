@@ -46,7 +46,7 @@ extension SettingsView {
                     }
                     .padding(.horizontal, .padding16)
                 }
-                .onDelete { _ in }
+                .onDelete(perform: viewModel.didTapDeleteCategory)
                 .listRowSeparator(.hidden)
                 .listRowInsets(.init(top: .zero, leading: .zero, bottom: .zero, trailing: .zero))
             }
@@ -87,7 +87,7 @@ extension SettingsView {
                         viewModel.didChangeName(of: column, to: $0)
                     }
                 }
-                .onDelete { _ in }
+                .onDelete(perform: viewModel.didTapDeleteColumn)
                 .onMove(perform: viewModel.didMoveColumn)
                 .listRowSeparator(.hidden)
                 .listRowInsets(.init(top: .zero, leading: .zero, bottom: .zero, trailing: .zero))
@@ -124,7 +124,7 @@ extension SettingsView {
                         viewModel.didChangeName(of: priority, to: $0)
                     }
                 }
-                .onDelete { _ in }
+                .onDelete(perform: viewModel.didTapDeletePriority)
                 .onMove(perform: viewModel.didMovePriority)
                 .listRowSeparator(.hidden)
                 .listRowInsets(.init(top: .zero, leading: .zero, bottom: .zero, trailing: .zero))

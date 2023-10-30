@@ -36,6 +36,7 @@ extension SettingsViewModel {
     func didTapAddCategory() {
         dataService.addCategory(.init(id: UUID(), name: newCategoryName, colorComponents: currentColor.components))
         newCategoryName = .empty
+        isNewCategorySheetPresented.toggle()
     }
 
     func didTapAddColumn() {
@@ -71,6 +72,21 @@ extension SettingsViewModel {
 
     func didChangeColor(on category: Category, to newColor: ColorComponents.DTO) {
         dataService.updateColor(on: category, with: newColor)
+    }
+
+    func didTapDeleteCategory(offsets: IndexSet) {
+        guard offsets.count == 1, let idx = offsets.first else { return }
+        dataService.deleteCategory(categories[idx])
+    }
+
+    func didTapDeleteColumn(offsets: IndexSet) {
+        guard offsets.count == 1, let idx = offsets.first else { return }
+        dataService.deleteColumn(columns[idx])
+    }
+
+    func didTapDeletePriority(offsets: IndexSet) {
+        guard offsets.count == 1, let idx = offsets.first else { return }
+        dataService.deletePriority(priorities[idx])
     }
 }
 

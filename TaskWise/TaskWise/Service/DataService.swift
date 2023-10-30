@@ -20,7 +20,9 @@ public final class DataService {
 
     private func loadContainer() {
         container.loadPersistentStores { description, error in
-            if error != nil { print(Str.dataServiceContainerFailureMessage) }
+            if error != nil {
+                print(Str.dataServiceContainerFailureMessage)
+            }
         }
     }
 
