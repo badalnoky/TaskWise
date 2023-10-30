@@ -9,7 +9,7 @@ public final class ContentSceneFactory: SceneFactory {
         case .addTask: addTask(with: navigator)
         case .calendar: calendar(with: navigator)
         case .dashboard: dashboard(with: navigator)
-        case .day: day(with: navigator)
+        case .day(let date): day(with: navigator, date: date)
         case .settings: settings(with: navigator)
         case .task(let id): task(with: navigator, taskId: id)
         }
@@ -28,8 +28,8 @@ extension ContentSceneFactory {
         DashboardView(viewModel: DashboardViewModel(navigator: navigator))
     }
 
-    func day(with navigator: Navigator<ContentSceneFactory>) -> DayView {
-        DayView(viewModel: DayViewModel(navigator: navigator))
+    func day(with navigator: Navigator<ContentSceneFactory>, date: Date) -> DayView {
+        DayView(viewModel: DayViewModel(navigator: navigator, date: date))
     }
 
     func settings(with navigator: Navigator<ContentSceneFactory>) -> SettingsView {

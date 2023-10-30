@@ -4,6 +4,7 @@ struct CalendarView {
     @Bindable var viewModel: CalendarViewModel
 }
 
+// swiftlint: disable: closure_body_length
 extension CalendarView: View {
     var body: some View {
         VStack {
@@ -17,6 +18,9 @@ extension CalendarView: View {
 
             DatePicker(String.empty, selection: $viewModel.selectedDate, in: Date.now..., displayedComponents: .date)
                 .datePickerStyle(.graphical)
+                .onChange(of: viewModel.selectedDate) {
+                    viewModel.didTapDate()
+                }
 
             if viewModel.isListed {
                 VStack {

@@ -11,8 +11,8 @@ public extension Navigator where Factory == ContentSceneFactory {
         push(screen: .calendar)
     }
 
-    func showDay() {
-        push(screen: .day)
+    func showDay(_ date: Date) {
+        push(screen: .day(date))
     }
 
     func showSettings() {

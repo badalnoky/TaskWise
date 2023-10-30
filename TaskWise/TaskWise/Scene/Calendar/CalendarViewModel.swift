@@ -4,13 +4,7 @@ import SwiftUI
     private var navigator: Navigator<ContentSceneFactory>
 
     var isListed = false
-    var selectedDate: Date = .now {
-        didSet {
-            if !isListed {
-                self.navigator.showDay()
-            }
-        }
-    }
+    var selectedDate: Date = .now
     var loadedTasks: [String] = ["these", "are", "the", "loaded", "tasks"]
 
     init(navigator: Navigator<ContentSceneFactory>) {
@@ -35,5 +29,13 @@ extension CalendarViewModel {
     }
 
     func didTapTask(_ task: String) {
+    }
+
+    func didTapDate() {
+        self.navigator.showDay(selectedDate)
+    }
+
+    func dismiss() {
+        navigator.pop()
     }
 }
