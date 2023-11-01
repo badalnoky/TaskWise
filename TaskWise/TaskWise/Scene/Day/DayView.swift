@@ -35,7 +35,7 @@ extension DayView: View {
                                     .frame(maxWidth: .infinity, alignment: .center)
                             }
                             ScrollView {
-                                ForEach(viewModel.tasks.from(column: column), id: \.id) { task in
+                                ForEach(viewModel.filteredTasks.from(column: column), id: \.id) { task in
                                     HStack {
                                         Text(task.title)
                                             .padding()
@@ -66,9 +66,8 @@ extension DayView: View {
         .sheet(isPresented: $viewModel.isFilterSheetPresented) {
             VStack {
                 HStack {
-                    Button("Cancel", role: .cancel) { viewModel.isFilterSheetPresented.toggle() }
                     Spacer()
-                    Button("Filter", action: viewModel.didChangeFilter)
+                    Button("Close", role: .cancel) { viewModel.isFilterSheetPresented.toggle() }
                 }
                 TextField(String.empty, text: $viewModel.filterText)
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -77,8 +76,9 @@ extension DayView: View {
                     Text(Str.taskPriorityLabel)
                     Spacer()
                     Picker(String.empty, selection: $viewModel.selectedPriority) {
+                        Text("No selection").tag(nil as Priority?)
                         ForEach(viewModel.priorities, id: \.level) {
-                            Text($0.name).tag($0)
+                            Text($0.name).tag($0 as Priority?)
                         }
                     }
                 }
@@ -87,13 +87,15 @@ extension DayView: View {
                     Text(Str.taskCategoryLabel)
                     Spacer()
                     Picker(String.empty, selection: $viewModel.selectedCategory) {
+                        Text("No selection").tag(nil as Category?)
                         ForEach(viewModel.categories, id: \.self) {
-                            Text($0.name)
+                            Text($0.name).tag($0 as Category?)
                         }
                     }
                 }
                 Spacer()
             }
+            .presentationDetents([.height(.defaultFilterSheetHeight)])
         }
     }
 }

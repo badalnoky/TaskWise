@@ -8,15 +8,27 @@ import Resolver
 
     var isFilterSheetPresented = false
     var filterText: String = .empty
-
     var priorities: [Priority] = []
-    var selectedPriority = Priority()
+    var selectedPriority: Priority?
     var categories: [Category] = []
-    var selectedCategory = Category()
+    var selectedCategory: Category?
 
     let date: Date
     var tasks: [Task] = []
     var columns: [TaskColumn] = []
+
+    var filteredTasks: [Task] {
+        tasks
+            .filter {
+                filterText.isEmpty ? true : ($0.title.caseInsensitiveContains(filterText) || $0.taskDescription.caseInsensitiveContains(filterText))
+            }
+            .filter {
+                selectedPriority == nil ? true : $0.priority.id == selectedPriority?.id
+            }
+            .filter {
+                selectedCategory == nil ? true : $0.category.id == selectedCategory?.id
+            }
+    }
 
     init(navigator: Navigator<ContentSceneFactory>, date: Date) {
         self.navigator = navigator
@@ -33,10 +45,6 @@ extension DayViewModel {
 
     func didTapFilter() {
         isFilterSheetPresented = true
-    }
-
-    func didChangeFilter() {
-        // TODO: add functionality
     }
 
     func didTapTask(_ task: Task) {
@@ -61,7 +69,6 @@ private extension DayViewModel {
         dataService.priorities
             .sink { [weak self] in
                 self?.priorities = $0
-                self?.selectedPriority = $0[.zero]
             }
             .store(in: &cancellables)
     }
@@ -71,7 +78,6 @@ private extension DayViewModel {
         dataService.categories
             .sink { [weak self] in
                 self?.categories = $0
-                self?.selectedCategory = $0[.zero]
             }
             .store(in: &cancellables)
     }

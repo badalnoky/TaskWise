@@ -39,7 +39,7 @@ extension TaskView: View {
                     Spacer()
                     Picker(String.empty, selection: $viewModel.selectedCategory) {
                         ForEach(viewModel.categories, id: \.self) {
-                            Text($0.name)
+                            Text($0.name).tag($0)
                         }
                     }
                 }
@@ -49,7 +49,7 @@ extension TaskView: View {
                     Spacer()
                     Picker(String.empty, selection: $viewModel.selectedColumn) {
                         ForEach(viewModel.columns, id: \.self) {
-                            Text($0.name)
+                            Text($0.name).tag($0)
                         }
                     }
                 }
@@ -77,7 +77,7 @@ extension TaskView: View {
                     Spacer()
                     Picker(String.empty, selection: $viewModel.selectedRepeats) {
                         ForEach(viewModel.repeats, id: \.self) {
-                            Text($0)
+                            Text($0).tag($0)
                         }
                     }
                 }

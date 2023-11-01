@@ -30,4 +30,6 @@ public extension CGFloat {
     static let padding32: CGFloat = 32
     /// 50 pt
     static let padding50: CGFloat = 50
+    /// 150 pt
+    static let defaultFilterSheetHeight: CGFloat = 150
 }
