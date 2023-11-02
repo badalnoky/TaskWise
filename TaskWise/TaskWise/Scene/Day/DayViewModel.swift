@@ -17,6 +17,7 @@ import Resolver
     var tasks: [Task] = []
     var columns: [TaskColumn] = []
 
+    // TODO: this is duplicate of calendar
     var filteredTasks: [Task] {
         tasks
             .filter {

@@ -41,7 +41,7 @@ extension DayView: View {
                                             .padding()
                                             .onTapGesture {
                                                 viewModel.didTapTask(task)
-                                        }
+                                            }
                                         Spacer()
                                         Menu {
                                             Button("Delete") {
