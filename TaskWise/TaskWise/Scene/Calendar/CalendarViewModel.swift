@@ -43,6 +43,12 @@ import SwiftUI
             .sorted { $0.date < $1.date }
     }
 
+    var foundDates: [Date] {
+        foundTasks
+            .map { $0.date }
+            .groupedByDay()
+    }
+
     init(navigator: Navigator<ContentSceneFactory>) {
         self.navigator = navigator
         registerBindings()

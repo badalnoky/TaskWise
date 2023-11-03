@@ -22,14 +22,17 @@ extension CalendarView: View {
                         }
                     }
                     ScrollView {
-                        ForEach(viewModel.foundTasks, id: \.id) { task in
-                            HStack {
-                                Text(task.title)
-                                    .padding()
-                                    .onTapGesture {
-                                        viewModel.didTapTask(task)
-                                    }
-                                Spacer()
+                        ForEach(viewModel.foundDates, id: \.self) { date in
+                            VStack {
+                                Text(date, format: .dateTime.year().month().day(.defaultDigits))
+                                    .bold()
+                                ForEach(viewModel.foundTasks.from(date: date), id: \.id) { task in
+                                    Text(task.title)
+                                        .padding()
+                                        .onTapGesture {
+                                            viewModel.didTapTask(task)
+                                        }
+                                }
                             }
                         }
                     }
