@@ -1,7 +1,7 @@
 #if DEBUG
 extension TaskStep {
     static var mock: TaskStep {
-        let step = TaskStep(context: PreviewDataController.global.context)
+        let step = TaskStep(context: PreviewDataService.global.context)
         step.wIndex = .zero
         step.wLabel = "Step"
         step.wIsDone = false

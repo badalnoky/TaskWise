@@ -4,7 +4,7 @@ import SwiftUI
 
 @Observable final class TaskViewModel {
     private let navigator: Navigator<ContentSceneFactory>
-    private let dataService: DataService = Resolver.resolve()
+    private let dataService: DataServiceInput
     private var cancellables = Set<AnyCancellable>()
     private var taskId: UUID
     private var task = Task()
@@ -51,75 +51,17 @@ import SwiftUI
         )
     }
 
-    init(navigator: Navigator<ContentSceneFactory>, taskId: UUID) {
+    init(
+        navigator: Navigator<ContentSceneFactory>,
+        dataService: DataServiceInput = Resolver.resolve(),
+        taskId: UUID
+    ) {
         self.navigator = navigator
+        self.dataService = dataService
         self.taskId = taskId
 
         registerBindings()
     }
-
-    // swiftlint: disable: function_body_length
-    // TODO: This is only for previews to not crash, should find better solution
-    #if DEBUG
-    init() {
-        self.navigator = .init(sceneFactory: .init(), root: .dashboard)
-        self.taskId = UUID()
-
-        let components = ColorComponents(context: PreviewDataController.global.context)
-        components.wRed = Color.blue.components.red
-        components.wGreen = Color.blue.components.green
-        components.wBlue = Color.blue.components.blue
-        components.wAlpha = Color.blue.components.alpha
-
-        let priority = Priority(context: PreviewDataController.global.context)
-        priority.wId = UUID()
-        priority.wLevel = 1
-        priority.wName = "PreviewPriority"
-
-        let category = Category(context: PreviewDataController.global.context)
-        category.wId = UUID()
-        category.wName = "PreviewCategory"
-        category.wColorComponents = components
-
-        let column = TaskColumn(context: PreviewDataController.global.context)
-        column.wId = UUID()
-        column.wIndex = 1
-        column.wName = "PreviewColumn"
-
-        let task = Task(context: PreviewDataController.global.context)
-        task.wDate = .now
-        task.wEndDateTime = .now
-        task.wHasTimeConstraints = false
-        task.wId = UUID()
-        task.wStartDateTime = .now
-        task.wTaskDescription = "Description"
-        task.wTitle = "Task"
-        task.wCategory = category
-        task.wColumn = column
-        task.wPriority = priority
-
-        let step = TaskStep(context: PreviewDataController.global.context)
-        step.wIndex = .zero
-        step.wLabel = "PreviewStep"
-        step.wIsDone = false
-        step.wTask = task
-
-        self.task = task
-        self.title = task.title
-        self.description = task.taskDescription
-        self.allDay = !task.hasTimeConstraints
-        self.starts = task.startDateTime
-        self.ends = task.endDateTime
-        self.steps = task.steps
-
-        self.priorities = [priority]
-        self.selectedPriority = priority
-        self.categories = [category]
-        self.selectedCategory = category
-        self.columns = [column]
-        self.selectedColumn = column
-    }
-    #endif
 }
 
 extension TaskViewModel {
@@ -150,7 +92,7 @@ extension TaskViewModel {
     }
 
     func didTapDeleteSteps(offsets: IndexSet) {
-        guard offsets.count == 1, let idx = offsets.first else { return }
+        guard offsets.count == .one, let idx = offsets.first else { return }
         dataService.delete(step: steps[idx], from: task)
     }
 

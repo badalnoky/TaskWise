@@ -3,7 +3,7 @@ import SwiftUI
 #if DEBUG
 extension ColorComponents {
     static var mock: ColorComponents {
-        let components = ColorComponents(context: PreviewDataController.global.context)
+        let components = ColorComponents(context: PreviewDataService.global.context)
         components.wRed = Color.blue.components.red
         components.wGreen = Color.blue.components.green
         components.wBlue = Color.blue.components.blue

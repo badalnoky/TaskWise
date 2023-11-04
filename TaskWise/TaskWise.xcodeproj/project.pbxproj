@@ -26,6 +26,7 @@
 		793C64872AED80BC00C9D3FF /* EditableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793C64862AED80BC00C9D3FF /* EditableText.swift */; };
 		793C648A2AED9E7300C9D3FF /* CategoryColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793C64892AED9E7300C9D3FF /* CategoryColorPicker.swift */; };
 		793C648D2AED9F3800C9D3FF /* NamedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793C648C2AED9F3800C9D3FF /* NamedItem.swift */; };
+		7944D7432AF6DD59001A528D /* DataServiceInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7944D7422AF6DD59001A528D /* DataServiceInput.swift */; };
 		795CC8EA2ABAEF3B0093C4BC /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CC8E92ABAEF3B0093C4BC /* SettingsViewModel.swift */; };
 		795CC8EC2ABAF28A0093C4BC /* SettingsViewModel+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CC8EB2ABAF28A0093C4BC /* SettingsViewModel+Mock.swift */; };
 		795CC8EE2ABAF63B0093C4BC /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CC8ED2ABAF63B0093C4BC /* TaskViewModel.swift */; };
@@ -90,7 +91,7 @@
 		79D9835F2ACC9285002A8222 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D9835E2ACC9285002A8222 /* AddTaskView.swift */; };
 		79D983612ACC934D002A8222 /* AddTaskViewModel+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D983602ACC934D002A8222 /* AddTaskViewModel+Mock.swift */; };
 		79E14ACA2AE40B1000FF730D /* TaskStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E14AC92AE40B1000FF730D /* TaskStepView.swift */; };
-		79E14ACE2AE415B200FF730D /* PreviewDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E14ACD2AE415B200FF730D /* PreviewDataProvider.swift */; };
+		79E14ACE2AE415B200FF730D /* PreviewDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E14ACD2AE415B200FF730D /* PreviewDataService.swift */; };
 		79E14AD02AE41A2600FF730D /* Category+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E14ACF2AE41A2600FF730D /* Category+Mock.swift */; };
 		79E14AD22AE41A3500FF730D /* ColorComponents+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E14AD12AE41A3500FF730D /* ColorComponents+Mock.swift */; };
 		79E14AD42AE41A4500FF730D /* Task+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E14AD32AE41A4500FF730D /* Task+Mock.swift */; };
@@ -143,6 +144,7 @@
 		793C64862AED80BC00C9D3FF /* EditableText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableText.swift; sourceTree = "<group>"; };
 		793C64892AED9E7300C9D3FF /* CategoryColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryColorPicker.swift; sourceTree = "<group>"; };
 		793C648C2AED9F3800C9D3FF /* NamedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedItem.swift; sourceTree = "<group>"; };
+		7944D7422AF6DD59001A528D /* DataServiceInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServiceInput.swift; sourceTree = "<group>"; };
 		795CC8E92ABAEF3B0093C4BC /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		795CC8EB2ABAF28A0093C4BC /* SettingsViewModel+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsViewModel+Mock.swift"; sourceTree = "<group>"; };
 		795CC8ED2ABAF63B0093C4BC /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
@@ -209,7 +211,7 @@
 		79D9835E2ACC9285002A8222 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
 		79D983602ACC934D002A8222 /* AddTaskViewModel+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddTaskViewModel+Mock.swift"; sourceTree = "<group>"; };
 		79E14AC92AE40B1000FF730D /* TaskStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStepView.swift; sourceTree = "<group>"; };
-		79E14ACD2AE415B200FF730D /* PreviewDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewDataProvider.swift; sourceTree = "<group>"; };
+		79E14ACD2AE415B200FF730D /* PreviewDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewDataService.swift; sourceTree = "<group>"; };
 		79E14ACF2AE41A2600FF730D /* Category+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+Mock.swift"; sourceTree = "<group>"; };
 		79E14AD12AE41A3500FF730D /* ColorComponents+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorComponents+Mock.swift"; sourceTree = "<group>"; };
 		79E14AD32AE41A4500FF730D /* Task+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Mock.swift"; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 				790A810D2AAE19A700283D7E /* Preview Assets.xcassets */,
 				79E14ACB2AE4157A00FF730D /* Domain */,
 				79E14ACC2AE4158700FF730D /* Service */,
+				797CA0422AD300F40093632D /* ViewModel */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -344,7 +347,6 @@
 				790C190B2AD34B3F008647B8 /* Extensions */,
 				7988A02F2AAE2FB100C63265 /* Generated */,
 				7988A0302AAE2FC600C63265 /* Localizable */,
-				792155152AB9DCC60044CDED /* Mock */,
 				793C648B2AED9F2200C9D3FF /* Protocols */,
 				79C16F4B2ABB4FB600BA362B /* Styles */,
 			);
@@ -358,14 +360,6 @@
 				799070BA2AEA64680051AAC8 /* EditMode+Extensions.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		792155152AB9DCC60044CDED /* Mock */ = {
-			isa = PBXGroup;
-			children = (
-				797CA0422AD300F40093632D /* ViewModel */,
-			);
-			path = Mock;
 			sourceTree = "<group>";
 		};
 		7921551B2AB9E80C0044CDED /* Components */ = {
@@ -407,6 +401,7 @@
 			isa = PBXGroup;
 			children = (
 				793C648C2AED9F3800C9D3FF /* NamedItem.swift */,
+				7944D7422AF6DD59001A528D /* DataServiceInput.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -721,7 +716,7 @@
 		79E14ACC2AE4158700FF730D /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				79E14ACD2AE415B200FF730D /* PreviewDataProvider.swift */,
+				79E14ACD2AE415B200FF730D /* PreviewDataService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -994,6 +989,7 @@
 				79CD54A62AD33B9600D064C2 /* TaskStep+CoreDataClass.swift in Sources */,
 				79C16F4F2ABB5C6B00BA362B /* CalendarViewModel.swift in Sources */,
 				79E14ADA2AE41AED00FF730D /* TaskColumn+Mock.swift in Sources */,
+				7944D7432AF6DD59001A528D /* DataServiceInput.swift in Sources */,
 				79CD54AB2AD33B9600D064C2 /* TaskWise.xcdatamodeld in Sources */,
 				798B08BB2AB8524800311D93 /* ContentSceneFactory.swift in Sources */,
 				79CD54AF2AD33B9600D064C2 /* Priority+CoreDataClass.swift in Sources */,
@@ -1042,7 +1038,7 @@
 				7988A0502AAE362400C63265 /* Double+Extensions.swift in Sources */,
 				790126112AD4844C005620C2 /* Priority+Defaults.swift in Sources */,
 				798605632AD5C99E007A64B3 /* ColorComponents+DTO.swift in Sources */,
-				79E14ACE2AE415B200FF730D /* PreviewDataProvider.swift in Sources */,
+				79E14ACE2AE415B200FF730D /* PreviewDataService.swift in Sources */,
 				7988A0412AAE35F600C63265 /* NetworkMonitor.swift in Sources */,
 				791F0D092ABCA6AA00B7F408 /* DayViewModel.swift in Sources */,
 				799070B52AEA53330051AAC8 /* TaskColumn+DTO.swift in Sources */,

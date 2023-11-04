@@ -4,7 +4,7 @@ import SwiftUI
 
 @Observable final class SettingsViewModel {
     private var navigator: Navigator<ContentSceneFactory>
-    private let dataService: DataService = Resolver.resolve()
+    private let dataService: DataServiceInput
     private var cancellables = Set<AnyCancellable>()
 
     var isNewCategorySheetPresented = false
@@ -22,8 +22,12 @@ import SwiftUI
     var newColumnName: String = .empty
     var newPriorityName: String = .empty
 
-    init(navigator: Navigator<ContentSceneFactory>) {
+    init(
+        navigator: Navigator<ContentSceneFactory>,
+        dataService: DataServiceInput = Resolver.resolve()
+    ) {
         self.navigator = navigator
+        self.dataService = dataService
 
         registerBindings()
     }
@@ -75,17 +79,17 @@ extension SettingsViewModel {
     }
 
     func didTapDeleteCategory(offsets: IndexSet) {
-        guard offsets.count == 1, let idx = offsets.first else { return }
+        guard offsets.count == .one, let idx = offsets.first else { return }
         dataService.deleteCategory(categories[idx])
     }
 
     func didTapDeleteColumn(offsets: IndexSet) {
-        guard offsets.count == 1, let idx = offsets.first else { return }
+        guard offsets.count == .one, let idx = offsets.first else { return }
         dataService.deleteColumn(columns[idx])
     }
 
     func didTapDeletePriority(offsets: IndexSet) {
-        guard offsets.count == 1, let idx = offsets.first else { return }
+        guard offsets.count == .one, let idx = offsets.first else { return }
         dataService.deletePriority(priorities[idx])
     }
 }

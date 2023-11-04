@@ -18,9 +18,9 @@ extension DataService {
 
     func deleteColumn(_ column: TaskColumn) {
         // TODO: Resolve this
-        if columns.value.count == 1 {
+        if columns.value.count == .one {
             print("return an error saying there needs to be at least one category")
-        } else if (column.wTasks?.count ?? 0) > 0 {
+        } else if (column.wTasks?.count ?? .zero) > .zero {
             print("return an error saying that some task use it")
         } else {
             let updatedColumns = columns.value.filter { $0.id != column.id }
@@ -32,7 +32,7 @@ extension DataService {
 
     private func updateIndices(on columns: [TaskColumn]) {
         for idx in columns.indices {
-            columns[idx].wIndex = Int16(idx + 1)
+            columns[idx].wIndex = Int16(idx.next)
         }
         save()
     }

@@ -3,7 +3,7 @@ import Resolver
 
 @Observable final class DayViewModel {
     private var navigator: Navigator<ContentSceneFactory>
-    private let dataService: DataService = Resolver.resolve()
+    private let dataService: DataServiceInput
     private var cancellables = Set<AnyCancellable>()
 
     var isFilterSheetPresented = false
@@ -17,22 +17,17 @@ import Resolver
     var tasks: [Task] = []
     var columns: [TaskColumn] = []
 
-    // TODO: this is duplicate of calendar
     var filteredTasks: [Task] {
-        tasks
-            .filter {
-                filterText.isEmpty ? true : ($0.title.caseInsensitiveContains(filterText) || $0.taskDescription.caseInsensitiveContains(filterText))
-            }
-            .filter {
-                selectedPriority == nil ? true : $0.priority.id == selectedPriority?.id
-            }
-            .filter {
-                selectedCategory == nil ? true : $0.category.id == selectedCategory?.id
-            }
+        tasks.filteredBy(text: filterText, priority: selectedPriority, category: selectedCategory)
     }
 
-    init(navigator: Navigator<ContentSceneFactory>, date: Date) {
+    init(
+        navigator: Navigator<ContentSceneFactory>,
+        dataService: DataServiceInput = Resolver.resolve(),
+        date: Date
+    ) {
         self.navigator = navigator
+        self.dataService = dataService
         self.date = date
 
         registerBindings()

@@ -19,9 +19,9 @@ extension DataService {
 
     func deleteCategory(_ category: Category) {
         // TODO: Resolve this
-        if categories.value.count == 1 {
+        if categories.value.count == .one {
             print("return an error saying there needs to be at least one category")
-        } else if (category.wTasks?.count ?? 0) > 0 {
+        } else if (category.wTasks?.count ?? .zero) > .zero {
             print("return an error saying that some task use it")
         } else {
             delete(item: category)

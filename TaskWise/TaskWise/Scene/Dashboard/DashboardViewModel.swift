@@ -3,7 +3,7 @@ import Resolver
 
 @Observable final class DashboardViewModel {
     private var navigator: Navigator<ContentSceneFactory>
-    private let dataService: DataService = Resolver.resolve()
+    private let dataService: DataServiceInput
     private var cancellables = Set<AnyCancellable>()
 
     let date: Date = .now
@@ -15,8 +15,12 @@ import Resolver
         return "\(tasks.from(column: last).count)/\(tasks.count)"
     }
 
-    init(navigator: Navigator<ContentSceneFactory>) {
+    init(
+        navigator: Navigator<ContentSceneFactory>,
+        dataService: DataServiceInput = Resolver.resolve()
+    ) {
         self.navigator = navigator
+        self.dataService = dataService
 
         registerBindings()
     }

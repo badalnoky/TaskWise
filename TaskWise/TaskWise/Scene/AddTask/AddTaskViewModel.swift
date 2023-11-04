@@ -4,7 +4,7 @@ import SwiftUI
 
 @Observable final class AddTaskViewModel {
     private let navigator: Navigator<ContentSceneFactory>
-    private let dataService: DataService = Resolver.resolve()
+    private let dataService: DataServiceInput
     private var cancellables = Set<AnyCancellable>()
     var editMode: EditMode = .active
 
@@ -40,8 +40,13 @@ import SwiftUI
         )
     }
 
-    init(navigator: Navigator<ContentSceneFactory>, date: Date) {
+    init(
+        navigator: Navigator<ContentSceneFactory>,
+        dataService: DataServiceInput = Resolver.resolve(),
+        date: Date
+    ) {
         self.navigator = navigator
+        self.dataService = dataService
         self.starts = date
         self.ends = date.advanced(by: .hour)
 

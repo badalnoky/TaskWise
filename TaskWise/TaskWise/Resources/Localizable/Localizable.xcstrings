@@ -56,6 +56,17 @@
         }
       }
     },
+    "DataService.previewContainerName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PreviewTaskWise"
+          }
+        }
+      }
+    },
     "DataService.saveFailureMessage" : {
       "extractionState" : "manual",
       "localizations" : {

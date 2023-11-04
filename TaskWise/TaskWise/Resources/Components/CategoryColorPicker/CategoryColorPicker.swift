@@ -17,7 +17,7 @@ struct CategoryColorPicker: View {
                 Circle()
                     .sized(.defaultColorPickerSize)
                     .foregroundStyle(selectedColor)
-                    .opacity(isEditable ? .zero : 1)
+                    .opacity(isEditable ? .zero : .one)
             }
     }
 
@@ -34,5 +34,8 @@ struct CategoryColorPicker: View {
 }
 
 #Preview {
-    CategoryColorPicker(category: .mock, isEditable: false) { _ in }
+    VStack {
+        CategoryColorPicker(category: .mock, isEditable: true) { _ in }
+        CategoryColorPicker(category: .mock, isEditable: false) { _ in }
+    }
 }

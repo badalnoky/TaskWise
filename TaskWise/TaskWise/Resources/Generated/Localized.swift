@@ -14,6 +14,8 @@ internal enum Str {
     internal static let dataServiceContainerFailureMessage = String(localized: "DataService.containerFailureMessage", defaultValue: "Core Data failed to load!")
     /// TaskWise
     internal static let dataServiceContainerName = String(localized: "DataService.containerName", defaultValue: "TaskWise")
+    /// PreviewTaskWise
+    internal static let dataServicePreviewContainerName = String(localized: "DataService.previewContainerName", defaultValue: "PreviewTaskWise")
     /// Could not save the context!
     internal static let dataServiceSaveFailureMessage = String(localized: "DataService.saveFailureMessage", defaultValue: "Could not save the context!")
     /// Todo

@@ -4,7 +4,7 @@ import SwiftUI
 
 @Observable final class CalendarViewModel {
     private var navigator: Navigator<ContentSceneFactory>
-    private let dataService: DataService = Resolver.resolve()
+    private let dataService: DataServiceInput
     private var cancellables = Set<AnyCancellable>()
 
     var isSearching = false
@@ -23,16 +23,7 @@ import SwiftUI
     var columns: [TaskColumn] = []
 
     var filteredTasks: [Task] {
-        tasks
-            .filter {
-                filterText.isEmpty ? true : ($0.title.caseInsensitiveContains(filterText) || $0.taskDescription.caseInsensitiveContains(filterText))
-            }
-            .filter {
-                selectedPriority == nil ? true : $0.priority.id == selectedPriority?.id
-            }
-            .filter {
-                selectedCategory == nil ? true : $0.category.id == selectedCategory?.id
-            }
+        tasks.filteredBy(text: filterText, priority: selectedPriority, category: selectedCategory)
     }
 
     var foundTasks: [Task] {
@@ -49,8 +40,13 @@ import SwiftUI
             .groupedByDay()
     }
 
-    init(navigator: Navigator<ContentSceneFactory>) {
+    init(
+        navigator: Navigator<ContentSceneFactory>,
+        dataService: DataServiceInput = Resolver.resolve()
+    ) {
         self.navigator = navigator
+        self.dataService = dataService
+
         registerBindings()
     }
 }

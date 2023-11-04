@@ -1,10 +1,10 @@
 import Combine
 import CoreData
 
-public final class DataService {
+public final class DataService: DataServiceInput {
     private let container = NSPersistentCloudKitContainer(name: Str.dataServiceContainerName)
+    private var userSettings: UserSettings?
 
-    public var userSettings: UserSettings?
     public var tasks = CurrentValueSubject<[Task], Never>([])
     public var priorities = CurrentValueSubject<[Priority], Never>([])
     public var categories = CurrentValueSubject<[Category], Never>([])

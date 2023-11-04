@@ -18,9 +18,9 @@ extension DataService {
 
     func deletePriority(_ priority: Priority) {
         // TODO: Resolve this
-        if priorities.value.count == 1 {
+        if priorities.value.count == .one {
             print("return an error saying there needs to be at least one category")
-        } else if (priority.wTasks?.count ?? 0) > 0 {
+        } else if (priority.wTasks?.count ?? .zero) > .zero {
             print("return an error saying that some task use it")
         } else {
             let updatedPriorities = priorities.value.filter { $0.id != priority.id }
@@ -32,7 +32,7 @@ extension DataService {
 
     private func updateIndices(on priorities: [Priority]) {
         for idx in priorities.indices {
-            priorities[idx].wLevel = Int16(idx + 1)
+            priorities[idx].wLevel = Int16(idx.next)
         }
         save()
     }
