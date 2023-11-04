@@ -3,7 +3,7 @@ import SwiftUI
 struct DashboardView {
     let viewModel: DashboardViewModel
 }
-
+// swiftlint: disable: closure_body_length
 extension DashboardView: View {
     var body: some View {
         VStack(alignment: .leading) {
@@ -11,6 +11,7 @@ extension DashboardView: View {
                 IconButton(.settings, action: viewModel.didTapSettings)
                 Spacer()
                 IconButton(.calendar, action: viewModel.didTapCalendar)
+                IconButton(.add, action: viewModel.didTapAddTask)
             }
 
             Text(Str.dashboardTitle)
@@ -25,30 +26,42 @@ extension DashboardView: View {
 
             GeometryReader { geometry in
                 VStack {
-                    Circle()
-                        .stroke(lineWidth: .indicatorBorderWidth)
-                        .frame(width: geometry.size.width * 0.4)
-                        .padding(.padding32)
+                    ZStack {
+                        Circle()
+                            .stroke(lineWidth: .indicatorBorderWidth)
+                            .frame(width: geometry.size.width * 0.4)
+                            .padding(.padding32)
+                        Text(viewModel.completionText)
+                            .font(.title).bold()
+                    }
 
                     TabView {
-                        ForEach(["TODO", "In Progress", "Done"], id: \.self) { column in
+                        ForEach(viewModel.columns, id: \.self) { column in
                             VStack {
                                 HStack {
-                                    Color.clear.sized(.iconButtonSize)
-                                    Text(column)
+                                    Text(column.name)
                                         .font(.title)
                                         .bold()
                                         .frame(maxWidth: .infinity, alignment: .center)
-                                    IconButton(.add) {}
                                 }
                                 ScrollView {
-                                    ForEach(viewModel.tasks, id: \.self) { task in
-                                        Text(task)
-                                            .padding()
-                                            .frame(width: geometry.size.width)
-                                            .onTapGesture {
-                                                viewModel.didTapTask(task)
+                                    ForEach(viewModel.tasks.from(column: column), id: \.id) { task in
+                                        HStack {
+                                            Text(task.title)
+                                                .padding()
+                                                .onTapGesture {
+                                                    viewModel.didTapTask(task)
                                             }
+                                            Spacer()
+                                            Menu {
+                                                Button("Delete") {
+                                                    viewModel.didTapDelete(task: task)
+                                                }
+                                            } label: {
+                                                IconButton(.more) {}
+                                            }
+                                        }
+                                        .frame(width: geometry.size.width)
                                     }
                                 }
                             }

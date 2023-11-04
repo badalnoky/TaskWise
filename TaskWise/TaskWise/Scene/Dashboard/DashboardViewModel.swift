@@ -1,13 +1,28 @@
-import Foundation
+import Combine
+import Resolver
 
 @Observable final class DashboardViewModel {
     private var navigator: Navigator<ContentSceneFactory>
+    private let dataService: DataServiceInput
+    private var cancellables = Set<AnyCancellable>()
 
     let date: Date = .now
-    let tasks: [String] = ["this", "is", "a", "list", "of", "tasks"]
+    var tasks: [Task] = []
+    var columns: [TaskColumn] = []
 
-    init(navigator: Navigator<ContentSceneFactory>) {
+    var completionText: String {
+        guard let last = columns.last else { return .empty}
+        return "\(tasks.from(column: last).count)/\(tasks.count)"
+    }
+
+    init(
+        navigator: Navigator<ContentSceneFactory>,
+        dataService: DataServiceInput = Resolver.resolve()
+    ) {
         self.navigator = navigator
+        self.dataService = dataService
+
+        registerBindings()
     }
 }
 
@@ -21,9 +36,39 @@ extension DashboardViewModel {
     }
 
     func didTapAddTask() {
+        navigator.showAddTask(with: date)
     }
 
-    func didTapTask(_ task: String) {
-        navigator.showTask()
+    func didTapTask(_ task: Task) {
+        navigator.showTask(task.id)
+    }
+
+    func didTapDelete(task: Task) {
+        dataService.deleteTask(task)
+    }
+}
+
+private extension DashboardViewModel {
+    private func registerBindings() {
+        registerColumnBinding()
+        registerTaskBinding()
+    }
+
+    private func registerColumnBinding() {
+        dataService.fetchColumns()
+        dataService.columns
+            .sink { [weak self] in
+                self?.columns = $0
+            }
+            .store(in: &cancellables)
+    }
+
+    private func registerTaskBinding() {
+        dataService.fetchTasks()
+        dataService.tasks
+            .sink { [weak self] in
+                self?.tasks = $0
+            }
+            .store(in: &cancellables)
     }
 }

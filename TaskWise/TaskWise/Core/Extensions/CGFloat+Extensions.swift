@@ -1,10 +1,12 @@
 import Foundation
 
 public extension CGFloat {
-    /// 20
+    /// 15
     static let indicatorBorderWidth: CGFloat = 15
     /// 25 pt
     static let defaultIconSize: CGFloat = 25
+    /// 28 pt
+    static let defaultColorPickerSize: CGFloat = 28
     /// 30 pt
     static let defaultCheckboxSize: CGFloat = 30
     /// 35 pt
@@ -28,4 +30,6 @@ public extension CGFloat {
     static let padding32: CGFloat = 32
     /// 50 pt
     static let padding50: CGFloat = 50
+    /// 150 pt
+    static let defaultFilterSheetHeight: CGFloat = 150
 }

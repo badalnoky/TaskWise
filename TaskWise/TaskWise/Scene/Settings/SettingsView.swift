@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SettingsView {
-    let viewModel: SettingsViewModel
+    @Bindable var viewModel: SettingsViewModel
 }
 
 extension SettingsView: View {
@@ -12,45 +12,138 @@ extension SettingsView: View {
                 .bold()
                 .frame(maxWidth: .infinity, alignment: .center)
 
+            TabView {
+                categoryTab
+                columnTab
+                priorityTab
+            }
+        }
+    }
+}
+
+extension SettingsView {
+    var categoryTab: some View {
+        VStack {
             HStack {
-                Text(Str.settingsCategoriesLabel)
-                    .font(.headline)
                 Spacer()
-                IconButton(.add) {}
+                if viewModel.categoryEditMode == .active {
+                    IconButton(.add, action: viewModel.didTapNewCategory)
+                }
+                IconButton(.edit) {
+                    EditMode.toggle(mode: &viewModel.categoryEditMode)
+                }
             }
 
-            ScrollView {
+            List {
                 ForEach(viewModel.categories, id: \.self) { category in
-                    Text(category)
+                    HStack {
+                        EditableText(item: category, isEditable: viewModel.categoryEditMode == .active) {
+                            viewModel.didChangeName(of: category, to: $0)
+                        }
+                        CategoryColorPicker(category: category, isEditable: viewModel.categoryEditMode == .active) {
+                            viewModel.didChangeColor(on: category, to: $0)
+                        }
+                    }
+                    .padding(.horizontal, .padding16)
+                }
+                .onDelete(perform: viewModel.didTapDeleteCategory)
+                .listRowSeparator(.hidden)
+                .listRowInsets(.init(top: .zero, leading: .zero, bottom: .zero, trailing: .zero))
+            }
+            .listStyle(.plain)
+        }
+        .tabItem {
+            Text(Str.settingsCategoriesLabel)
+        }
+        .environment(\.editMode, $viewModel.categoryEditMode)
+        .sheet(isPresented: $viewModel.isNewCategorySheetPresented) {
+            VStack {
+                HStack {
+                    Button("Cancel", role: .cancel) { viewModel.isNewCategorySheetPresented.toggle() }
+                    Spacer()
+                    Button("Save", action: viewModel.didTapAddCategory)
+                }
+                TextField(String.empty, text: $viewModel.newCategoryName)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .textFieldStyle(.roundedBorder)
+                ColorPicker("Color", selection: $viewModel.currentColor)
+                Spacer()
+            }
+        }
+    }
+
+    var columnTab: some View {
+        VStack {
+            HStack {
+                Spacer()
+                IconButton(.edit) {
+                    EditMode.toggle(mode: &viewModel.columnEditMode)
                 }
             }
 
-            HStack {
-                Text(Str.settingsColumnsLabel)
-                    .font(.headline)
-                Spacer()
-                IconButton(.add) {}
-            }
-
-            ScrollView {
+            List {
                 ForEach(viewModel.columns, id: \.self) { column in
-                    Text(column)
+                    EditableText(item: column, isEditable: viewModel.columnEditMode == .active) {
+                        viewModel.didChangeName(of: column, to: $0)
+                    }
                 }
+                .onDelete(perform: viewModel.didTapDeleteColumn)
+                .onMove(perform: viewModel.didMoveColumn)
+                .listRowSeparator(.hidden)
+                .listRowInsets(.init(top: .zero, leading: .zero, bottom: .zero, trailing: .zero))
             }
+            .listStyle(.plain)
 
-            HStack {
-                Text(Str.settingsPrioritiesLabel)
-                    .font(.headline)
-                Spacer()
-                IconButton(.add) {}
-            }
-
-            ScrollView {
-                ForEach(viewModel.priorities, id: \.self) { priority in
-                    Text(priority)
+            if viewModel.columnEditMode == .active {
+                HStack {
+                    TextField(String.empty, text: $viewModel.newColumnName)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .textFieldStyle(.roundedBorder)
+                    IconButton(.add, action: viewModel.didTapAddColumn)
                 }
             }
         }
+        .tabItem {
+            Text(Str.settingsColumnsLabel)
+        }
+        .environment(\.editMode, $viewModel.columnEditMode)
+    }
+
+    var priorityTab: some View {
+        VStack {
+            HStack {
+                Spacer()
+                IconButton(.edit) {
+                    EditMode.toggle(mode: &viewModel.priorityEditMode)
+                }
+            }
+
+            List {
+                ForEach(viewModel.priorities, id: \.self) { priority in
+                    EditableText(item: priority, isEditable: viewModel.priorityEditMode == .active) {
+                        viewModel.didChangeName(of: priority, to: $0)
+                    }
+                }
+                .onDelete(perform: viewModel.didTapDeletePriority)
+                .onMove(perform: viewModel.didMovePriority)
+                .listRowSeparator(.hidden)
+                .listRowInsets(.init(top: .zero, leading: .zero, bottom: .zero, trailing: .zero))
+            }
+            .listStyle(.plain)
+
+            if viewModel.priorityEditMode == .active {
+                HStack {
+                    TextField(String.empty, text: $viewModel.newPriorityName)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .textFieldStyle(.roundedBorder)
+                    IconButton(.add, action: viewModel.didTapAddPriority)
+                }
+            }
+        }
+        .tabItem {
+            Text(Str.settingsPrioritiesLabel)
+        }
+        .environment(\.editMode, $viewModel.priorityEditMode)
     }
 }
 

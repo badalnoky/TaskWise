@@ -10,6 +10,14 @@ internal enum Str {
     internal static let dashboardTitle = String(localized: "Dashboard.title", defaultValue: "Today")
     /// Todo
     internal static let dashboardTodoLabel = String(localized: "Dashboard.todoLabel", defaultValue: "Todo")
+    /// Core Data failed to load!
+    internal static let dataServiceContainerFailureMessage = String(localized: "DataService.containerFailureMessage", defaultValue: "Core Data failed to load!")
+    /// TaskWise
+    internal static let dataServiceContainerName = String(localized: "DataService.containerName", defaultValue: "TaskWise")
+    /// PreviewTaskWise
+    internal static let dataServicePreviewContainerName = String(localized: "DataService.previewContainerName", defaultValue: "PreviewTaskWise")
+    /// Could not save the context!
+    internal static let dataServiceSaveFailureMessage = String(localized: "DataService.saveFailureMessage", defaultValue: "Could not save the context!")
     /// Todo
     internal static let dayTodoLabel = String(localized: "Day.todoLabel", defaultValue: "Todo")
     /// plus
@@ -24,6 +32,8 @@ internal enum Str {
     internal static let iconsFilter = String(localized: "Icons.filter", defaultValue: "line.3.horizontal.decrease.circle")
     /// list.bullet.below.rectangle
     internal static let iconsList = String(localized: "Icons.list", defaultValue: "list.bullet.below.rectangle")
+    /// ellipsis
+    internal static let iconsMore = String(localized: "Icons.more", defaultValue: "ellipsis")
     /// magnifyingglass
     internal static let iconsSearch = String(localized: "Icons.search", defaultValue: "magnifyingglass")
     /// gear
@@ -40,14 +50,16 @@ internal enum Str {
     internal static let taskCategoryLabel = String(localized: "Task.categoryLabel", defaultValue: "Category")
     /// Color
     internal static let taskColorLabel = String(localized: "Task.colorLabel", defaultValue: "Color")
-    /// Delete task
-    internal static let taskDeleteButton = String(localized: "Task.deleteButton", defaultValue: "Delete task")
+    /// Delete
+    internal static let taskDeleteButton = String(localized: "Task.deleteButton", defaultValue: "Delete")
     /// Ends
     internal static let taskEndsLabel = String(localized: "Task.endsLabel", defaultValue: "Ends")
     /// Priority
     internal static let taskPriorityLabel = String(localized: "Task.priorityLabel", defaultValue: "Priority")
     /// Repeats
     internal static let taskRepeatLabel = String(localized: "Task.repeatLabel", defaultValue: "Repeats")
+    /// Save
+    internal static let taskSaveButton = String(localized: "Task.saveButton", defaultValue: "Save")
     /// Starts
     internal static let taskStartsLabel = String(localized: "Task.startsLabel", defaultValue: "Starts")
     /// Steps
