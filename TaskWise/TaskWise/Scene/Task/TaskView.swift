@@ -45,7 +45,7 @@ extension TaskView: View {
                 }
 
                 HStack {
-                    Text("Starting column")
+                    Text("Current column")
                     Spacer()
                     Picker(String.empty, selection: $viewModel.selectedColumn) {
                         ForEach(viewModel.columns, id: \.self) {
@@ -72,15 +72,15 @@ extension TaskView: View {
                     }
                 }
 
-                HStack {
-                    Text(Str.taskRepeatLabel)
-                    Spacer()
-                    Picker(String.empty, selection: $viewModel.selectedRepeats) {
-                        ForEach(viewModel.repeats, id: \.self) {
-                            Text($0).tag($0)
-                        }
-                    }
-                }
+//                HStack {
+//                    Text(Str.taskRepeatLabel)
+//                    Spacer()
+//                    Picker(String.empty, selection: $viewModel.selectedRepeats) {
+//                        ForEach(viewModel.repeats, id: \.self) {
+//                            Text($0).tag($0)
+//                        }
+//                    }
+//                }
 
                 Text(Str.taskStepsLabel)
                     .frame(maxWidth: .infinity, alignment: .leading)

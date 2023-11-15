@@ -69,15 +69,15 @@ extension AddTaskView: View {
                     }
                 }
 
-                HStack {
-                    Text(Str.taskRepeatLabel)
-                    Spacer()
-                    Picker(String.empty, selection: $viewModel.selectedRepeats) {
-                        ForEach(viewModel.repeats, id: \.self) {
-                            Text($0).tag($0)
-                        }
-                    }
-                }
+//                HStack {
+//                    Text(Str.taskRepeatLabel)
+//                    Spacer()
+//                    Picker(String.empty, selection: $viewModel.selectedRepeats) {
+//                        ForEach(viewModel.repeats, id: \.self) {
+//                            Text($0).tag($0)
+//                        }
+//                    }
+//                }
 
                 Text(Str.taskStepsLabel)
                     .frame(maxWidth: .infinity, alignment: .leading)
