@@ -1,0 +1,32 @@
+// swiftlint:disable all
+// Generated using SwiftGen — https://github.com/SwiftGen/SwiftGen
+
+import SwiftUI
+
+{% if families %}
+public enum {{param.enumName|default:"Fonts"}} {
+    {% for family in families %}
+    public enum {{family.name|swiftIdentifier:"pretty"|escapeReservedKeywords}} {
+        {% for font in family.fonts %}
+        public static let {{font.style|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}} = FontAsset(name: "{{font.name}}")
+        {% endfor %}
+    }
+    {% endfor %}
+}
+
+public final class FontAsset {
+    public private(set) var name: String
+
+    fileprivate init(name: String) {
+        self.name = name
+    }
+}
+
+public extension FontAsset {
+    func font(size: CGFloat) -> Font {
+        .custom(name, fixedSize: size)
+    }
+}
+{% else %}
+// No fonts found
+{% endif %}

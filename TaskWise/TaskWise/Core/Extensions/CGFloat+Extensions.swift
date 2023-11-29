@@ -1,6 +1,8 @@
 import Foundation
 
 public extension CGFloat {
+    /// 8 pt
+    static let cornerRadius: CGFloat = 8
     /// 15
     static let indicatorBorderWidth: CGFloat = 15
     /// 25 pt
@@ -21,7 +23,7 @@ public extension CGFloat {
     /// 8 pt
     static let padding8: CGFloat = 8
     /// 12 pt
-    static let cornerRadius: CGFloat = 12
+    static let padding12: CGFloat = 12
     /// 16 pt
     static let padding16: CGFloat = 16
     /// 24 pt

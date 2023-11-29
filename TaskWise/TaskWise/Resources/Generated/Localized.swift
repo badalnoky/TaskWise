@@ -20,8 +20,8 @@ internal enum Str {
     internal static let dataServiceSaveFailureMessage = String(localized: "DataService.saveFailureMessage", defaultValue: "Could not save the context!")
     /// Todo
     internal static let dayTodoLabel = String(localized: "Day.todoLabel", defaultValue: "Todo")
-    /// plus
-    internal static let iconsAdd = String(localized: "Icons.add", defaultValue: "plus")
+    /// plus.app.fill
+    internal static let iconsAdd = String(localized: "Icons.add", defaultValue: "plus.app.fill")
     /// calendar
     internal static let iconsCalendar = String(localized: "Icons.calendar", defaultValue: "calendar")
     /// checkmark.circle.fill

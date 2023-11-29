@@ -16,8 +16,10 @@ public struct IconButton: View {
             },
             label: {
                 icon.fittedToSize(.defaultIconSize)
+                    .foregroundStyle(.accent)
             }
         )
+        .sized(35)
     }
 
     public init(_ icon: Image, isAnimated: Bool = true, action: @escaping () -> Void) {
