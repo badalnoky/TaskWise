@@ -11,14 +11,14 @@ extension View {
             .foregroundColor(style.color)
     }
 
-    func textFieldOverlay() -> some View {
+    func textFieldOverlay(_ isEnabled: Bool = true) -> some View {
         self
             .padding(.vertical, .padding8)
             .padding(.horizontal, .padding8)
             .frame(maxWidth: .infinity, alignment: .center)
             .overlay {
                 RoundedRectangle(cornerRadius: .cornerRadius)
-                    .stroke(Color.accentColor, lineWidth: .borderWidth)
+                    .stroke(Color.accentColor.opacity(isEnabled ? 1 : 0.5), lineWidth: .borderWidth)
             }
             .padding(.borderWidth)
     }
@@ -26,7 +26,7 @@ extension View {
     func defaultViewPadding() -> some View {
         self
             .padding(.vertical, .padding8)
-            .padding(.horizontal, .padding12)
+            .padding(.horizontal, .padding16)
     }
 
     func defaultListRowSettings() -> some View {
@@ -89,5 +89,9 @@ extension View {
                 filterAction: filterAction
             )
         )
+    }
+
+    func taskNavigationBar(editAction: @escaping () -> Void) -> some View {
+        modifier(TaskNavigationBarModifier(editAction: editAction))
     }
 }

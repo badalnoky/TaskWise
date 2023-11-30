@@ -116,10 +116,10 @@ extension CalendarView {
         VStack(spacing: .padding12) {
             HStack {
                 Button("Clear all", action: viewModel.didTapClearFilters)
-                    .buttonStyle(SheetButtonStyle())
+                    .buttonStyle(TextButtonStyle())
                 Spacer()
                 Button("Close") { viewModel.isFilterSheetPresented.toggle() }
-                    .buttonStyle(SheetButtonStyle())
+                    .buttonStyle(TextButtonStyle())
             }
 
             StyledField(style: .base, title: "Search", text: $viewModel.filterText)

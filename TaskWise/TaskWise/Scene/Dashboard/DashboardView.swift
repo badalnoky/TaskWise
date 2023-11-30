@@ -8,8 +8,10 @@ extension DashboardView: View {
     var body: some View {
         VStack(alignment: .leading) {
             StyledText(text: Str.dashboardTitle, style: .title)
+                .padding(.horizontal, .padding8)
 
             StyledDate(date: viewModel.date, style: .date)
+                .padding(.horizontal, .padding8)
 
             GeometryReader { geometry in
                 VStack {

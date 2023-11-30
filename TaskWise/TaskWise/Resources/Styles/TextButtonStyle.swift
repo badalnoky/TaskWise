@@ -1,6 +1,6 @@
 import SwiftUI
 
-public struct SheetButtonStyle: ButtonStyle {
+public struct TextButtonStyle: ButtonStyle {
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .foregroundColor(.accent.opacity(configuration.isPressed ? 0.7 : .one))

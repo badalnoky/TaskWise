@@ -1,6 +1,7 @@
 import SwiftUI
 
 public struct StyledField {
+    @Environment(\.isEnabled) private var isEnabled
     private let style: StyledFieldModel
     private let title: String
     private let text: Binding<String>
@@ -17,11 +18,11 @@ extension StyledField: View {
         if style == .description {
             TextField(title, text: text, axis: .vertical)
                 .lineLimit(3...)
-                .textFieldOverlay()
+                .textFieldOverlay(isEnabled)
                 .textStyle(style.textStyle)
         } else {
             TextField(title, text: text)
-                .textFieldOverlay()
+                .textFieldOverlay(isEnabled)
                 .textStyle(style.textStyle)
         }
     }

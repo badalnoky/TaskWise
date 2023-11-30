@@ -34,9 +34,11 @@
 		794621B72B191CD90060F6CD /* StyledDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794621B62B191CD90060F6CD /* StyledDate.swift */; };
 		794621B92B191CEA0060F6CD /* StyledDateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794621B82B191CEA0060F6CD /* StyledDateModel.swift */; };
 		794621BC2B1922690060F6CD /* DashboardNavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794621BB2B1922690060F6CD /* DashboardNavigationBarModifier.swift */; };
-		794621BE2B192B5A0060F6CD /* SheetButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794621BD2B192B5A0060F6CD /* SheetButtonStyle.swift */; };
+		794621BE2B192B5A0060F6CD /* TextButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794621BD2B192B5A0060F6CD /* TextButtonStyle.swift */; };
 		794621C02B1930900060F6CD /* DayNavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794621BF2B1930900060F6CD /* DayNavigationBarModifier.swift */; };
 		794621C22B1933E40060F6CD /* CalendarNavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794621C12B1933E40060F6CD /* CalendarNavigationBarModifier.swift */; };
+		794621C42B193A8B0060F6CD /* TaskNavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794621C32B193A8B0060F6CD /* TaskNavigationBarModifier.swift */; };
+		794621C62B1942310060F6CD /* BaseTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794621C52B1942310060F6CD /* BaseTextFieldStyle.swift */; };
 		795CC8EA2ABAEF3B0093C4BC /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CC8E92ABAEF3B0093C4BC /* SettingsViewModel.swift */; };
 		795CC8EC2ABAF28A0093C4BC /* SettingsViewModel+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CC8EB2ABAF28A0093C4BC /* SettingsViewModel+Mock.swift */; };
 		795CC8EE2ABAF63B0093C4BC /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CC8ED2ABAF63B0093C4BC /* TaskViewModel.swift */; };
@@ -170,9 +172,11 @@
 		794621B62B191CD90060F6CD /* StyledDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledDate.swift; sourceTree = "<group>"; };
 		794621B82B191CEA0060F6CD /* StyledDateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledDateModel.swift; sourceTree = "<group>"; };
 		794621BB2B1922690060F6CD /* DashboardNavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardNavigationBarModifier.swift; sourceTree = "<group>"; };
-		794621BD2B192B5A0060F6CD /* SheetButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetButtonStyle.swift; sourceTree = "<group>"; };
+		794621BD2B192B5A0060F6CD /* TextButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButtonStyle.swift; sourceTree = "<group>"; };
 		794621BF2B1930900060F6CD /* DayNavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayNavigationBarModifier.swift; sourceTree = "<group>"; };
 		794621C12B1933E40060F6CD /* CalendarNavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarNavigationBarModifier.swift; sourceTree = "<group>"; };
+		794621C32B193A8B0060F6CD /* TaskNavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskNavigationBarModifier.swift; sourceTree = "<group>"; };
+		794621C52B1942310060F6CD /* BaseTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextFieldStyle.swift; sourceTree = "<group>"; };
 		795CC8E92ABAEF3B0093C4BC /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		795CC8EB2ABAF28A0093C4BC /* SettingsViewModel+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsViewModel+Mock.swift"; sourceTree = "<group>"; };
 		795CC8ED2ABAF63B0093C4BC /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
@@ -470,9 +474,10 @@
 		794621BA2B19221F0060F6CD /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
+				794621C12B1933E40060F6CD /* CalendarNavigationBarModifier.swift */,
 				794621BB2B1922690060F6CD /* DashboardNavigationBarModifier.swift */,
 				794621BF2B1930900060F6CD /* DayNavigationBarModifier.swift */,
-				794621C12B1933E40060F6CD /* CalendarNavigationBarModifier.swift */,
+				794621C32B193A8B0060F6CD /* TaskNavigationBarModifier.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -714,10 +719,11 @@
 		79C16F4B2ABB4FB600BA362B /* Styles */ = {
 			isa = PBXGroup;
 			children = (
-				79C16F4C2ABB4FDB00BA362B /* CheckBoxStyle.swift */,
-				7983000D2B17C4D90013B834 /* TextStyle.swift */,
 				7983001B2B17F6520013B834 /* BaseButtonStyle.swift */,
-				794621BD2B192B5A0060F6CD /* SheetButtonStyle.swift */,
+				794621C52B1942310060F6CD /* BaseTextFieldStyle.swift */,
+				79C16F4C2ABB4FDB00BA362B /* CheckBoxStyle.swift */,
+				794621BD2B192B5A0060F6CD /* TextButtonStyle.swift */,
+				7983000D2B17C4D90013B834 /* TextStyle.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -1110,7 +1116,7 @@
 				7983001C2B17F6520013B834 /* BaseButtonStyle.swift in Sources */,
 				79D9835D2ACC9260002A8222 /* AddTaskViewModel.swift in Sources */,
 				799D48E32ABC394400C149E3 /* CalendarViewModel+Mock.swift in Sources */,
-				794621BE2B192B5A0060F6CD /* SheetButtonStyle.swift in Sources */,
+				794621BE2B192B5A0060F6CD /* TextButtonStyle.swift in Sources */,
 				792155202AB9E8450044CDED /* IconButton.swift in Sources */,
 				79CD54A62AD33B9600D064C2 /* TaskStep+CoreDataClass.swift in Sources */,
 				79C16F4F2ABB5C6B00BA362B /* CalendarViewModel.swift in Sources */,
@@ -1118,6 +1124,7 @@
 				79E14ADA2AE41AED00FF730D /* TaskColumn+Mock.swift in Sources */,
 				7944D7432AF6DD59001A528D /* DataServiceInput.swift in Sources */,
 				79CD54AB2AD33B9600D064C2 /* TaskWise.xcdatamodeld in Sources */,
+				794621C62B1942310060F6CD /* BaseTextFieldStyle.swift in Sources */,
 				798B08BB2AB8524800311D93 /* ContentSceneFactory.swift in Sources */,
 				794621B42B1917970060F6CD /* StyledTextModel.swift in Sources */,
 				79CD54AF2AD33B9600D064C2 /* Priority+CoreDataClass.swift in Sources */,
@@ -1177,6 +1184,7 @@
 				79E14ACE2AE415B200FF730D /* PreviewDataService.swift in Sources */,
 				7988A0412AAE35F600C63265 /* NetworkMonitor.swift in Sources */,
 				791F0D092ABCA6AA00B7F408 /* DayViewModel.swift in Sources */,
+				794621C42B193A8B0060F6CD /* TaskNavigationBarModifier.swift in Sources */,
 				799070B52AEA53330051AAC8 /* TaskColumn+DTO.swift in Sources */,
 				79616F4C2AC5CE7700F4A95C /* CloudKitHandler.swift in Sources */,
 				799070BB2AEA64680051AAC8 /* EditMode+Extensions.swift in Sources */,
