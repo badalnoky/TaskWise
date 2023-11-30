@@ -28,6 +28,15 @@
 		793C648A2AED9E7300C9D3FF /* CategoryColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793C64892AED9E7300C9D3FF /* CategoryColorPicker.swift */; };
 		793C648D2AED9F3800C9D3FF /* NamedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793C648C2AED9F3800C9D3FF /* NamedItem.swift */; };
 		7944D7432AF6DD59001A528D /* DataServiceInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7944D7422AF6DD59001A528D /* DataServiceInput.swift */; };
+		794621B02B1915360060F6CD /* StyledText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794621AF2B1915360060F6CD /* StyledText.swift */; };
+		794621B22B19176F0060F6CD /* StyledFieldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794621B12B19176F0060F6CD /* StyledFieldModel.swift */; };
+		794621B42B1917970060F6CD /* StyledTextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794621B32B1917970060F6CD /* StyledTextModel.swift */; };
+		794621B72B191CD90060F6CD /* StyledDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794621B62B191CD90060F6CD /* StyledDate.swift */; };
+		794621B92B191CEA0060F6CD /* StyledDateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794621B82B191CEA0060F6CD /* StyledDateModel.swift */; };
+		794621BC2B1922690060F6CD /* DashboardNavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794621BB2B1922690060F6CD /* DashboardNavigationBarModifier.swift */; };
+		794621BE2B192B5A0060F6CD /* SheetButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794621BD2B192B5A0060F6CD /* SheetButtonStyle.swift */; };
+		794621C02B1930900060F6CD /* DayNavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794621BF2B1930900060F6CD /* DayNavigationBarModifier.swift */; };
+		794621C22B1933E40060F6CD /* CalendarNavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794621C12B1933E40060F6CD /* CalendarNavigationBarModifier.swift */; };
 		795CC8EA2ABAEF3B0093C4BC /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CC8E92ABAEF3B0093C4BC /* SettingsViewModel.swift */; };
 		795CC8EC2ABAF28A0093C4BC /* SettingsViewModel+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CC8EB2ABAF28A0093C4BC /* SettingsViewModel+Mock.swift */; };
 		795CC8EE2ABAF63B0093C4BC /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CC8ED2ABAF63B0093C4BC /* TaskViewModel.swift */; };
@@ -42,6 +51,7 @@
 		798300142B17D75C0013B834 /* TaskRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798300132B17D75C0013B834 /* TaskRow.swift */; };
 		798300172B17E8810013B834 /* CombinedDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798300162B17E8810013B834 /* CombinedDatePicker.swift */; };
 		7983001A2B17EE350013B834 /* StepIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798300192B17EE350013B834 /* StepIcon.swift */; };
+		7983001C2B17F6520013B834 /* BaseButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983001B2B17F6520013B834 /* BaseButtonStyle.swift */; };
 		798605612AD5C00B007A64B3 /* Task+DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798605602AD5C00B007A64B3 /* Task+DTO.swift */; };
 		798605632AD5C99E007A64B3 /* ColorComponents+DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798605622AD5C99E007A64B3 /* ColorComponents+DTO.swift */; };
 		798605652AD5E03C007A64B3 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798605642AD5E03C007A64B3 /* Date+Extensions.swift */; };
@@ -154,6 +164,15 @@
 		793C64892AED9E7300C9D3FF /* CategoryColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryColorPicker.swift; sourceTree = "<group>"; };
 		793C648C2AED9F3800C9D3FF /* NamedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedItem.swift; sourceTree = "<group>"; };
 		7944D7422AF6DD59001A528D /* DataServiceInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServiceInput.swift; sourceTree = "<group>"; };
+		794621AF2B1915360060F6CD /* StyledText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledText.swift; sourceTree = "<group>"; };
+		794621B12B19176F0060F6CD /* StyledFieldModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledFieldModel.swift; sourceTree = "<group>"; };
+		794621B32B1917970060F6CD /* StyledTextModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledTextModel.swift; sourceTree = "<group>"; };
+		794621B62B191CD90060F6CD /* StyledDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledDate.swift; sourceTree = "<group>"; };
+		794621B82B191CEA0060F6CD /* StyledDateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledDateModel.swift; sourceTree = "<group>"; };
+		794621BB2B1922690060F6CD /* DashboardNavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardNavigationBarModifier.swift; sourceTree = "<group>"; };
+		794621BD2B192B5A0060F6CD /* SheetButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetButtonStyle.swift; sourceTree = "<group>"; };
+		794621BF2B1930900060F6CD /* DayNavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayNavigationBarModifier.swift; sourceTree = "<group>"; };
+		794621C12B1933E40060F6CD /* CalendarNavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarNavigationBarModifier.swift; sourceTree = "<group>"; };
 		795CC8E92ABAEF3B0093C4BC /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		795CC8EB2ABAF28A0093C4BC /* SettingsViewModel+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsViewModel+Mock.swift"; sourceTree = "<group>"; };
 		795CC8ED2ABAF63B0093C4BC /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
@@ -169,6 +188,7 @@
 		798300132B17D75C0013B834 /* TaskRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRow.swift; sourceTree = "<group>"; };
 		798300162B17E8810013B834 /* CombinedDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedDatePicker.swift; sourceTree = "<group>"; };
 		798300192B17EE350013B834 /* StepIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepIcon.swift; sourceTree = "<group>"; };
+		7983001B2B17F6520013B834 /* BaseButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButtonStyle.swift; sourceTree = "<group>"; };
 		798605602AD5C00B007A64B3 /* Task+DTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+DTO.swift"; sourceTree = "<group>"; };
 		798605622AD5C99E007A64B3 /* ColorComponents+DTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorComponents+DTO.swift"; sourceTree = "<group>"; };
 		798605642AD5E03C007A64B3 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
@@ -363,6 +383,7 @@
 				790C190B2AD34B3F008647B8 /* Extensions */,
 				7988A02F2AAE2FB100C63265 /* Generated */,
 				7988A0302AAE2FC600C63265 /* Localizable */,
+				794621BA2B19221F0060F6CD /* Modifiers */,
 				793C648B2AED9F2200C9D3FF /* Protocols */,
 				79C16F4B2ABB4FB600BA362B /* Styles */,
 			);
@@ -381,12 +402,14 @@
 		7921551B2AB9E80C0044CDED /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				798300182B17EDA10013B834 /* StepIcon */,
 				793C64882AED9E5900C9D3FF /* CategoryColorPicker */,
 				798300152B17E82A0013B834 /* CombinedDatePicker */,
 				793C64852AED808800C9D3FF /* EditableText */,
 				7921551E2AB9E8360044CDED /* IconButton */,
+				798300182B17EDA10013B834 /* StepIcon */,
+				794621B52B191CC50060F6CD /* StyledDate */,
 				7983000F2B17C57D0013B834 /* StyledField */,
+				794621AE2B1915190060F6CD /* StyledText */,
 				798300122B17D7460013B834 /* TaskRow */,
 				79E14AC82AE40AF300FF730D /* TaskStep */,
 			);
@@ -424,6 +447,34 @@
 				7944D7422AF6DD59001A528D /* DataServiceInput.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		794621AE2B1915190060F6CD /* StyledText */ = {
+			isa = PBXGroup;
+			children = (
+				794621AF2B1915360060F6CD /* StyledText.swift */,
+				794621B32B1917970060F6CD /* StyledTextModel.swift */,
+			);
+			path = StyledText;
+			sourceTree = "<group>";
+		};
+		794621B52B191CC50060F6CD /* StyledDate */ = {
+			isa = PBXGroup;
+			children = (
+				794621B62B191CD90060F6CD /* StyledDate.swift */,
+				794621B82B191CEA0060F6CD /* StyledDateModel.swift */,
+			);
+			path = StyledDate;
+			sourceTree = "<group>";
+		};
+		794621BA2B19221F0060F6CD /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				794621BB2B1922690060F6CD /* DashboardNavigationBarModifier.swift */,
+				794621BF2B1930900060F6CD /* DayNavigationBarModifier.swift */,
+				794621C12B1933E40060F6CD /* CalendarNavigationBarModifier.swift */,
+			);
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 		795F70D92AC458F800C556C9 /* Service */ = {
@@ -474,6 +525,7 @@
 			isa = PBXGroup;
 			children = (
 				798300102B17C8120013B834 /* StyledField.swift */,
+				794621B12B19176F0060F6CD /* StyledFieldModel.swift */,
 			);
 			path = StyledField;
 			sourceTree = "<group>";
@@ -664,6 +716,8 @@
 			children = (
 				79C16F4C2ABB4FDB00BA362B /* CheckBoxStyle.swift */,
 				7983000D2B17C4D90013B834 /* TextStyle.swift */,
+				7983001B2B17F6520013B834 /* BaseButtonStyle.swift */,
+				794621BD2B192B5A0060F6CD /* SheetButtonStyle.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -1049,11 +1103,14 @@
 				798B08B92AB8522D00311D93 /* ContentCoordinator.swift in Sources */,
 				79616F482AC5CD4000F4A95C /* CloudItem.swift in Sources */,
 				79C16F4D2ABB4FDB00BA362B /* CheckBoxStyle.swift in Sources */,
+				794621C22B1933E40060F6CD /* CalendarNavigationBarModifier.swift in Sources */,
 				798605652AD5E03C007A64B3 /* Date+Extensions.swift in Sources */,
 				79CD54AA2AD33B9600D064C2 /* Task+CoreDataClass.swift in Sources */,
 				7988A04E2AAE362400C63265 /* String+Extensions.swift in Sources */,
+				7983001C2B17F6520013B834 /* BaseButtonStyle.swift in Sources */,
 				79D9835D2ACC9260002A8222 /* AddTaskViewModel.swift in Sources */,
 				799D48E32ABC394400C149E3 /* CalendarViewModel+Mock.swift in Sources */,
+				794621BE2B192B5A0060F6CD /* SheetButtonStyle.swift in Sources */,
 				792155202AB9E8450044CDED /* IconButton.swift in Sources */,
 				79CD54A62AD33B9600D064C2 /* TaskStep+CoreDataClass.swift in Sources */,
 				79C16F4F2ABB5C6B00BA362B /* CalendarViewModel.swift in Sources */,
@@ -1062,6 +1119,7 @@
 				7944D7432AF6DD59001A528D /* DataServiceInput.swift in Sources */,
 				79CD54AB2AD33B9600D064C2 /* TaskWise.xcdatamodeld in Sources */,
 				798B08BB2AB8524800311D93 /* ContentSceneFactory.swift in Sources */,
+				794621B42B1917970060F6CD /* StyledTextModel.swift in Sources */,
 				79CD54AF2AD33B9600D064C2 /* Priority+CoreDataClass.swift in Sources */,
 				7988A04F2AAE362400C63265 /* CGFloat+Extensions.swift in Sources */,
 				7988A03C2AAE35C200C63265 /* SceneFactory.swift in Sources */,
@@ -1070,8 +1128,11 @@
 				790126152AD48710005620C2 /* TaskColumn+Defaults.swift in Sources */,
 				7988A02C2AAE2EAC00C63265 /* DI.swift in Sources */,
 				79CD54AD2AD33B9600D064C2 /* TaskColumn+CoreDataProperties.swift in Sources */,
+				794621B72B191CD90060F6CD /* StyledDate.swift in Sources */,
 				790A81072AAE19A700283D7E /* TaskWiseApp.swift in Sources */,
 				7983001A2B17EE350013B834 /* StepIcon.swift in Sources */,
+				794621B92B191CEA0060F6CD /* StyledDateModel.swift in Sources */,
+				794621B02B1915360060F6CD /* StyledText.swift in Sources */,
 				795CC8EE2ABAF63B0093C4BC /* TaskViewModel.swift in Sources */,
 				798B08CA2AB85C6A00311D93 /* DashboardView.swift in Sources */,
 				79CD54B12AD33B9600D064C2 /* ColorComponents+CoreDataProperties.swift in Sources */,
@@ -1080,6 +1141,7 @@
 				79CD54A92AD33B9600D064C2 /* Task+CoreDataProperties.swift in Sources */,
 				798B08C82AB85C5000311D93 /* CalendarView.swift in Sources */,
 				799070BD2AEA6BBC0051AAC8 /* DataService+Fetch.swift in Sources */,
+				794621BC2B1922690060F6CD /* DashboardNavigationBarModifier.swift in Sources */,
 				79CD54A72AD33B9600D064C2 /* TaskStep+CoreDataProperties.swift in Sources */,
 				7988A03D2AAE35C200C63265 /* Navigator.swift in Sources */,
 				79E14AD42AE41A4500FF730D /* Task+Mock.swift in Sources */,
@@ -1091,6 +1153,8 @@
 				791F0D0B2ABCA89100B7F408 /* DayViewModel+Mock.swift in Sources */,
 				79E14AD82AE41ADB00FF730D /* Priority+Mock.swift in Sources */,
 				799070C52AEA717D0051AAC8 /* DataService+Priority.swift in Sources */,
+				794621B22B19176F0060F6CD /* StyledFieldModel.swift in Sources */,
+				794621C02B1930900060F6CD /* DayNavigationBarModifier.swift in Sources */,
 				792155142AB9DB9F0044CDED /* DashboardViewModel.swift in Sources */,
 				79CD54A42AD33B9600D064C2 /* Category+CoreDataProperties.swift in Sources */,
 				7901260F2AD47F1A005620C2 /* UserSettings+Extensions.swift in Sources */,

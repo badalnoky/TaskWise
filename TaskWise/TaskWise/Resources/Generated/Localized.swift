@@ -22,6 +22,8 @@ internal enum Str {
     internal static let dayTodoLabel = String(localized: "Day.todoLabel", defaultValue: "Todo")
     /// plus.app.fill
     internal static let iconsAdd = String(localized: "Icons.add", defaultValue: "plus.app.fill")
+    /// chevron.left
+    internal static let iconsBack = String(localized: "Icons.back", defaultValue: "chevron.left")
     /// calendar
     internal static let iconsCalendar = String(localized: "Icons.calendar", defaultValue: "calendar")
     /// checkmark.circle.fill

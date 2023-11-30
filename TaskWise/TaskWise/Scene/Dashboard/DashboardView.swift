@@ -7,22 +7,9 @@ struct DashboardView {
 extension DashboardView: View {
     var body: some View {
         VStack(alignment: .leading) {
-            HStack {
-                IconButton(.settings, action: viewModel.didTapSettings)
-                Spacer()
-                IconButton(.calendar, action: viewModel.didTapCalendar)
-                IconButton(.add, action: viewModel.didTapAddTask)
-            }
+            StyledText(text: Str.dashboardTitle, style: .title)
 
-            Text(Str.dashboardTitle)
-                .font(.largeTitle)
-                .bold()
-                .frame(maxWidth: .infinity, alignment: .leading)
-
-            Text(viewModel.date, format: .dateTime.month(.wide).day(.defaultDigits))
-                .font(.title)
-                .bold()
-                .frame(maxWidth: .infinity, alignment: .leading)
+            StyledDate(date: viewModel.date, style: .date)
 
             GeometryReader { geometry in
                 VStack {
@@ -47,12 +34,15 @@ extension DashboardView: View {
                                 ScrollView {
                                     ForEach(viewModel.tasks.from(column: column), id: \.id) { task in
                                         HStack {
-                                            Text(task.title)
-                                                .padding()
-                                                .onTapGesture {
-                                                    viewModel.didTapTask(task)
+                                            HStack {
+                                                Text(task.title)
+                                                    .padding()
+                                                Spacer()
                                             }
-                                            Spacer()
+                                            .contentShape(Rectangle())
+                                            .onTapGesture {
+                                                viewModel.didTapTask(task)
+                                            }
                                             Menu {
                                                 Button("Delete") {
                                                     viewModel.didTapDelete(task: task)
@@ -60,6 +50,7 @@ extension DashboardView: View {
                                             } label: {
                                                 IconButton(.more) {}
                                             }
+                                            .padding()
                                         }
                                         .frame(width: geometry.size.width)
                                     }
@@ -74,6 +65,12 @@ extension DashboardView: View {
                 }
             }
         }
+        .dashboardNavigationBar(
+            settingsAction: viewModel.didTapSettings,
+            calendarAction: viewModel.didTapCalendar,
+            addAction: viewModel.didTapAddTask
+        )
+        .defaultViewPadding()
     }
 }
 

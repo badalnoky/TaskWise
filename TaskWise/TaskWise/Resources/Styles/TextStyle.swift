@@ -1,8 +1,10 @@
 import SwiftUI
 
 public enum TextStyle: CaseIterable {
-    /// 36 pt
+    /// 32 pt
     case largeTitle
+    /// 26 pt
+    case title
     /// 20 pt
     case body
     /// 18 pt
@@ -19,6 +21,8 @@ public extension TextStyle {
     var font: Font {
         switch self {
         case .largeTitle:
+            return Fnt.bold.font(size: 36)
+        case .title:
             return Fnt.bold.font(size: 32)
         case .body:
             return Fnt.bold.font(size: 20)

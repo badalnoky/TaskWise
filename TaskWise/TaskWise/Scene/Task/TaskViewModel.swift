@@ -30,9 +30,6 @@ import SwiftUI
     var allDay = false
     var starts: Date = .now
     var ends: Date = .now.advanced(by: .hour)
-    // TODO: add repeat functionality
-//    var repeats: [String] = ["Never", "Weekly", "Biweekly", "Yearly"]
-//    var selectedRepeats: String = "Never"
     var steps: [TaskStep] = []
     var newStepName: String = .empty
 

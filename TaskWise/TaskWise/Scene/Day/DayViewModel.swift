@@ -50,6 +50,12 @@ extension DayViewModel {
     func didTapDelete(task: Task) {
         dataService.deleteTask(task)
     }
+
+    func didTapClearFilters() {
+        selectedCategory = nil
+        selectedPriority = nil
+        filterText = .empty
+    }
 }
 
 private extension DayViewModel {

@@ -48,4 +48,46 @@ extension View {
             .padding(.horizontal, .padding8)
             .padding(.vertical, .padding4)
     }
+
+    func dashboardNavigationBar(
+        settingsAction: @escaping () -> Void,
+        calendarAction: @escaping () -> Void,
+        addAction: @escaping () -> Void
+    ) -> some View {
+        modifier(
+            DashboardNavigationBarModifier(
+                settingsAction: settingsAction,
+                calendarAction: calendarAction,
+                addAction: addAction
+            )
+        )
+    }
+
+    func dayNavigationBar(
+        filterAction: @escaping () -> Void,
+        addAction: @escaping () -> Void
+    ) -> some View {
+        modifier(
+            DayNavigationBarModifier(
+                filterAction: filterAction,
+                addAction: addAction
+            )
+        )
+    }
+
+    func calendarNavigationBar(
+        isListed: Bool,
+        listAction: @escaping () -> Void,
+        searchAction: @escaping () -> Void,
+        filterAction: @escaping () -> Void
+    ) -> some View {
+        modifier(
+            CalendarNavigationBarModifier(
+                isListed: isListed,
+                listAction: listAction,
+                searchAction: searchAction,
+                filterAction: filterAction
+            )
+        )
+    }
 }

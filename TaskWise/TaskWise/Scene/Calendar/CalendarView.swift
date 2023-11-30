@@ -41,17 +41,6 @@ extension CalendarView: View {
                 .transition(.move(edge: .top).combined(with: .opacity))
             } else {
                 VStack {
-                    HStack {
-                        Spacer()
-                        IconButton(.list, action: viewModel.didTapList)
-                        if viewModel.isListed {
-                            IconButton(.filter, action: viewModel.didTapFilter)
-                        }
-                        IconButton(.search) {
-                            viewModel.didToggleSearch()
-                            focused = true
-                        }
-                    }
                     Spacer()
 
                     DatePicker(String.empty, selection: $viewModel.selectedDate, in: Date.now..., displayedComponents: .date)
@@ -107,39 +96,51 @@ extension CalendarView: View {
             }
         }
         .sheet(isPresented: $viewModel.isFilterSheetPresented) {
-            VStack {
-                HStack {
-                    Spacer()
-                    Button("Close", role: .cancel) { viewModel.isFilterSheetPresented.toggle() }
-                }
-                TextField(String.empty, text: $viewModel.filterText)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .textFieldStyle(.roundedBorder)
-                HStack {
-                    Text(Str.taskPriorityLabel)
-                    Spacer()
-                    Picker(String.empty, selection: $viewModel.selectedPriority) {
-                        Text("No selection").tag(nil as Priority?)
-                        ForEach(viewModel.priorities, id: \.level) {
-                            Text($0.name).tag($0 as Priority?)
-                        }
-                    }
-                }
-
-                HStack {
-                    Text(Str.taskCategoryLabel)
-                    Spacer()
-                    Picker(String.empty, selection: $viewModel.selectedCategory) {
-                        Text("No selection").tag(nil as Category?)
-                        ForEach(viewModel.categories, id: \.self) {
-                            Text($0.name).tag($0 as Category?)
-                        }
-                    }
-                }
-                Spacer()
-            }
-            .presentationDetents([.height(.defaultFilterSheetHeight)])
+            filterView
         }
+        .defaultViewPadding()
+        .calendarNavigationBar(
+            isListed: viewModel.isListed,
+            listAction: viewModel.didTapList,
+            searchAction: {
+                viewModel.didToggleSearch()
+                focused = true
+            },
+            filterAction: viewModel.didTapFilter
+        )
+    }
+}
+
+extension CalendarView {
+    var filterView: some View {
+        VStack(spacing: .padding12) {
+            HStack {
+                Button("Clear all", action: viewModel.didTapClearFilters)
+                    .buttonStyle(SheetButtonStyle())
+                Spacer()
+                Button("Close") { viewModel.isFilterSheetPresented.toggle() }
+                    .buttonStyle(SheetButtonStyle())
+            }
+
+            StyledField(style: .base, title: "Search", text: $viewModel.filterText)
+
+            TaskRow(title: Str.taskPriorityLabel, selected: $viewModel.selectedPriority) {
+                Text("No selection").tag(nil as Priority?)
+                ForEach(viewModel.priorities, id: \.level) {
+                    Text($0.name).tag($0 as Priority?)
+                }
+            }
+
+            TaskRow(title: Str.taskCategoryLabel, selected: $viewModel.selectedCategory) {
+                Text("No selection").tag(nil as Category?)
+                ForEach(viewModel.categories, id: \.self) {
+                    Text($0.name).tag($0 as Category?)
+                }
+            }
+            Spacer()
+        }
+        .presentationDetents([.height(.defaultFilterSheetHeight)])
+        .defaultViewPadding()
     }
 }
 

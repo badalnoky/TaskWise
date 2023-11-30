@@ -85,6 +85,12 @@ extension CalendarViewModel {
     func dismiss() {
         navigator.pop()
     }
+
+    func didTapClearFilters() {
+        selectedCategory = nil
+        selectedPriority = nil
+        filterText = .empty
+    }
 }
 
 private extension CalendarViewModel {
