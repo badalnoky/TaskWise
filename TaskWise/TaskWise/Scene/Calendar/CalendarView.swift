@@ -12,28 +12,27 @@ extension CalendarView: View {
             if viewModel.isSearching {
                 VStack {
                     HStack {
-                        TextField(String.empty, text: $viewModel.searchText)
-                            .textFieldStyle(.roundedBorder)
-                            .frame(maxWidth: .infinity, alignment: .leading)
+                        StyledField(style: .base, title: "Search", text: $viewModel.searchText)
                             .focused($focused, equals: true)
                         Button("Cancel") {
                             viewModel.didToggleSearch()
                             focused = false
                         }
+                        .buttonStyle(TextButtonStyle())
                     }
                     ScrollView {
                         ForEach(viewModel.foundDates, id: \.self) { date in
                             VStack {
-                                Text(date, format: .dateTime.year().month().day(.defaultDigits))
-                                    .bold()
+                                StyledDate(date: date, style: .listDate)
+                                Divider()
                                 ForEach(viewModel.foundTasks.from(date: date), id: \.id) { task in
-                                    Text(task.title)
-                                        .padding()
-                                        .onTapGesture {
-                                            viewModel.didTapTask(task)
-                                        }
+                                    Button(task.title) {
+                                        viewModel.didTapTask(task)
+                                    }
+                                    .buttonStyle(ListButtonStyle(color: .from(components: task.category.colorComponents)))
                                 }
                             }
+                            .padding(.vertical, .padding8)
                         }
                     }
                     Spacer()

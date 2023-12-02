@@ -90,6 +90,7 @@
 		799070C32AEA70F50051AAC8 /* DataService+TaskColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799070C22AEA70F50051AAC8 /* DataService+TaskColumn.swift */; };
 		799070C52AEA717D0051AAC8 /* DataService+Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799070C42AEA717D0051AAC8 /* DataService+Priority.swift */; };
 		799D48E32ABC394400C149E3 /* CalendarViewModel+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799D48E22ABC394400C149E3 /* CalendarViewModel+Mock.swift */; };
+		79A519902B1BA29F00B0EEC2 /* ListButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A5198F2B1BA29F00B0EEC2 /* ListButtonStyle.swift */; };
 		79C16F4D2ABB4FDB00BA362B /* CheckBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C16F4C2ABB4FDB00BA362B /* CheckBoxStyle.swift */; };
 		79C16F4F2ABB5C6B00BA362B /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C16F4E2ABB5C6B00BA362B /* CalendarViewModel.swift */; };
 		79CD54A42AD33B9600D064C2 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54902AD33B9600D064C2 /* Category+CoreDataProperties.swift */; };
@@ -229,6 +230,7 @@
 		799070C22AEA70F50051AAC8 /* DataService+TaskColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataService+TaskColumn.swift"; sourceTree = "<group>"; };
 		799070C42AEA717D0051AAC8 /* DataService+Priority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataService+Priority.swift"; sourceTree = "<group>"; };
 		799D48E22ABC394400C149E3 /* CalendarViewModel+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarViewModel+Mock.swift"; sourceTree = "<group>"; };
+		79A5198F2B1BA29F00B0EEC2 /* ListButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListButtonStyle.swift; sourceTree = "<group>"; };
 		79C16F4C2ABB4FDB00BA362B /* CheckBoxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxStyle.swift; sourceTree = "<group>"; };
 		79C16F4E2ABB5C6B00BA362B /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		79C1B36B2AC9982C00BDCC6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -722,6 +724,7 @@
 				7983001B2B17F6520013B834 /* BaseButtonStyle.swift */,
 				794621C52B1942310060F6CD /* BaseTextFieldStyle.swift */,
 				79C16F4C2ABB4FDB00BA362B /* CheckBoxStyle.swift */,
+				79A5198F2B1BA29F00B0EEC2 /* ListButtonStyle.swift */,
 				794621BD2B192B5A0060F6CD /* TextButtonStyle.swift */,
 				7983000D2B17C4D90013B834 /* TextStyle.swift */,
 			);
@@ -1167,6 +1170,7 @@
 				7901260F2AD47F1A005620C2 /* UserSettings+Extensions.swift in Sources */,
 				793C64872AED80BC00C9D3FF /* EditableText.swift in Sources */,
 				7988A03E2AAE35C200C63265 /* Coordinator.swift in Sources */,
+				79A519902B1BA29F00B0EEC2 /* ListButtonStyle.swift in Sources */,
 				799070C12AEA70DC0051AAC8 /* DataService+Category.swift in Sources */,
 				798605612AD5C00B007A64B3 /* Task+DTO.swift in Sources */,
 				79E14ACA2AE40B1000FF730D /* TaskStepView.swift in Sources */,
