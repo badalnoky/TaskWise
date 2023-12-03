@@ -75,6 +75,17 @@ extension View {
         )
     }
 
+    func settingsNavigationBar(
+        isEditing: Bool,
+        editAction: @escaping () -> Void,
+        addAction: @escaping () -> Void
+    ) -> some View {
+        modifier(
+            SettingsNavigationBarModifier(isEditing: isEditing, editAction: editAction, addAction: addAction)
+        )
+    }
+
+    // swiftlint: disable: function_parameter_count
     func calendarNavigationBar(
         isListed: Bool,
         listAction: @escaping () -> Void,
@@ -90,6 +101,7 @@ extension View {
             )
         )
     }
+    // swiftlint: enable: function_parameter_count
 
     func taskNavigationBar(editAction: @escaping () -> Void) -> some View {
         modifier(TaskNavigationBarModifier(editAction: editAction))

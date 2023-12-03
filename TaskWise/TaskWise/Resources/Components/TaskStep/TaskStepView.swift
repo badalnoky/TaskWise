@@ -14,10 +14,12 @@ public struct TaskStepView: View {
                 if step.isDone {
                     Image(systemName: Str.iconsCheck)
                         .fittedToSize(.defaultCheckboxSize)
+                        .foregroundStyle(Color.stepCheck)
                 } else {
                     Circle()
                         .stroke(lineWidth: .borderWidth)
                         .sized(.defaultCheckboxSize)
+                        .foregroundStyle(Color.accentColor)
                 }
             }
             .onTapGesture {

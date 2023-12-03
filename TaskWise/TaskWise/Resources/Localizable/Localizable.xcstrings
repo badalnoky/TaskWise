@@ -205,7 +205,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "My Categories"
+            "value" : "Categories"
           }
         }
       }
@@ -216,7 +216,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "My Columns"
+            "value" : "Columns"
           }
         }
       }
@@ -227,7 +227,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "My priorities"
+            "value" : "Priorities"
           }
         }
       }

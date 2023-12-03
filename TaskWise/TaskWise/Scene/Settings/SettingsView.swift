@@ -6,34 +6,21 @@ struct SettingsView {
 
 extension SettingsView: View {
     var body: some View {
-        VStack(spacing: .padding16) {
-            Text(Str.settingsTitle)
-                .font(.largeTitle)
-                .bold()
-                .frame(maxWidth: .infinity, alignment: .center)
-
-            TabView {
+        VStack {
+            TabView(selection: $viewModel.currentTab) {
                 categoryTab
                 columnTab
                 priorityTab
             }
         }
+        .defaultViewPadding()
+        .settingsNavigationBar(isEditing: viewModel.isEditing, editAction: viewModel.didTapEdit, addAction: viewModel.didTapAdd)
     }
 }
 
 extension SettingsView {
     var categoryTab: some View {
         VStack {
-            HStack {
-                Spacer()
-                if viewModel.categoryEditMode == .active {
-                    IconButton(.add, action: viewModel.didTapNewCategory)
-                }
-                IconButton(.edit) {
-                    EditMode.toggle(mode: &viewModel.categoryEditMode)
-                }
-            }
-
             List {
                 ForEach(viewModel.categories, id: \.self) { category in
                     HStack {
@@ -47,103 +34,101 @@ extension SettingsView {
                     .padding(.horizontal, .padding16)
                 }
                 .onDelete(perform: viewModel.didTapDeleteCategory)
-                .listRowSeparator(.hidden)
-                .listRowInsets(.init(top: .zero, leading: .zero, bottom: .zero, trailing: .zero))
+                .defaultListRowSettings()
             }
             .listStyle(.plain)
         }
-        .tabItem {
-            Text(Str.settingsCategoriesLabel)
-        }
+        .tabItem { Text(Str.settingsCategoriesLabel) }
         .environment(\.editMode, $viewModel.categoryEditMode)
         .sheet(isPresented: $viewModel.isNewCategorySheetPresented) {
-            VStack {
+            VStack(spacing: .padding24) {
                 HStack {
                     Button("Cancel", role: .cancel) { viewModel.isNewCategorySheetPresented.toggle() }
                     Spacer()
-                    Button("Save", action: viewModel.didTapAddCategory)
+                    Button("Add", action: viewModel.didTapAddCategory)
                 }
-                TextField(String.empty, text: $viewModel.newCategoryName)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .textFieldStyle(.roundedBorder)
+                .padding(.top, .padding12)
+                .padding(.horizontal, .padding4)
+                StyledField(style: .base, title: "Category name", text: $viewModel.newCategoryName)
                 ColorPicker("Color", selection: $viewModel.currentColor)
+                    .textStyle(.body)
+                    .padding(.horizontal, .padding4)
                 Spacer()
             }
+            .presentationDetents([.height(.defaultFilterSheetHeight)])
+            .defaultViewPadding()
         }
+        .tag(SettingTabs.category)
     }
 
     var columnTab: some View {
         VStack {
-            HStack {
-                Spacer()
-                IconButton(.edit) {
-                    EditMode.toggle(mode: &viewModel.columnEditMode)
-                }
-            }
-
             List {
                 ForEach(viewModel.columns, id: \.self) { column in
                     EditableText(item: column, isEditable: viewModel.columnEditMode == .active) {
                         viewModel.didChangeName(of: column, to: $0)
                     }
+                    .padding(.horizontal, .padding16)
                 }
                 .onDelete(perform: viewModel.didTapDeleteColumn)
                 .onMove(perform: viewModel.didMoveColumn)
-                .listRowSeparator(.hidden)
-                .listRowInsets(.init(top: .zero, leading: .zero, bottom: .zero, trailing: .zero))
+                .defaultListRowSettings()
             }
             .listStyle(.plain)
-
-            if viewModel.columnEditMode == .active {
-                HStack {
-                    TextField(String.empty, text: $viewModel.newColumnName)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .textFieldStyle(.roundedBorder)
-                    IconButton(.add, action: viewModel.didTapAddColumn)
-                }
-            }
         }
-        .tabItem {
-            Text(Str.settingsColumnsLabel)
-        }
+        .tabItem { Text(Str.settingsColumnsLabel) }
         .environment(\.editMode, $viewModel.columnEditMode)
+        .sheet(isPresented: $viewModel.isNewColumnSheetPresented) {
+            VStack(spacing: .padding24) {
+                HStack {
+                    Button("Cancel", role: .cancel) { viewModel.isNewColumnSheetPresented.toggle() }
+                    Spacer()
+                    Button("Add", action: viewModel.didTapAddColumn)
+                }
+                .padding(.top, .padding12)
+                .padding(.horizontal, .padding4)
+                StyledField(style: .base, title: "Column name", text: $viewModel.newColumnName)
+                Spacer()
+            }
+            .presentationDetents([.height(.defaultFilterSheetHeight)])
+            .defaultViewPadding()
+        }
+        .tag(SettingTabs.column)
     }
 
     var priorityTab: some View {
         VStack {
-            HStack {
-                Spacer()
-                IconButton(.edit) {
-                    EditMode.toggle(mode: &viewModel.priorityEditMode)
-                }
-            }
-
             List {
                 ForEach(viewModel.priorities, id: \.self) { priority in
                     EditableText(item: priority, isEditable: viewModel.priorityEditMode == .active) {
                         viewModel.didChangeName(of: priority, to: $0)
                     }
+                    .padding(.horizontal, .padding16)
                 }
                 .onDelete(perform: viewModel.didTapDeletePriority)
                 .onMove(perform: viewModel.didMovePriority)
-                .listRowSeparator(.hidden)
-                .listRowInsets(.init(top: .zero, leading: .zero, bottom: .zero, trailing: .zero))
+                .defaultListRowSettings()
             }
             .listStyle(.plain)
-
-            if viewModel.priorityEditMode == .active {
-                HStack {
-                    TextField(String.empty, text: $viewModel.newPriorityName)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .textFieldStyle(.roundedBorder)
-                    IconButton(.add, action: viewModel.didTapAddPriority)
-                }
-            }
         }
-        .tabItem {
-            Text(Str.settingsPrioritiesLabel)
-        }
+        .tabItem { Text(Str.settingsPrioritiesLabel) }
         .environment(\.editMode, $viewModel.priorityEditMode)
+        .sheet(isPresented: $viewModel.isNewPrioritySheetPresented) {
+            VStack(spacing: .padding24) {
+                HStack {
+                    Button("Cancel", role: .cancel) { viewModel.isNewPrioritySheetPresented.toggle() }
+                    Spacer()
+                    Button("Add", action: viewModel.didTapAddPriority)
+                }
+                .padding(.top, .padding12)
+                .padding(.horizontal, .padding4)
+                StyledField(style: .base, title: "Priority name", text: $viewModel.newPriorityName)
+                Spacer()
+            }
+            .presentationDetents([.height(.defaultFilterSheetHeight)])
+            .defaultViewPadding()
+        }
+        .tag(SettingTabs.priority)
     }
 }
 

@@ -7,7 +7,11 @@ import SwiftUI
     private let dataService: DataServiceInput
     private var cancellables = Set<AnyCancellable>()
 
+    var currentTab: SettingTabs = .category
+
     var isNewCategorySheetPresented = false
+    var isNewColumnSheetPresented = false
+    var isNewPrioritySheetPresented = false
     var currentColor: Color = .blue
 
     var categoryEditMode: EditMode = .inactive
@@ -22,6 +26,14 @@ import SwiftUI
     var newColumnName: String = .empty
     var newPriorityName: String = .empty
 
+    var isEditing: Bool {
+        switch currentTab {
+        case .column: return columnEditMode.isEditing
+        case .category: return categoryEditMode.isEditing
+        case .priority: return priorityEditMode.isEditing
+        }
+    }
+
     init(
         navigator: Navigator<ContentSceneFactory>,
         dataService: DataServiceInput = Resolver.resolve()
@@ -34,9 +46,6 @@ import SwiftUI
 }
 
 extension SettingsViewModel {
-    func didTapNewCategory() {
-        isNewCategorySheetPresented = true
-    }
     func didTapAddCategory() {
         dataService.addCategory(.init(id: UUID(), name: newCategoryName, colorComponents: currentColor.components))
         newCategoryName = .empty
@@ -91,6 +100,22 @@ extension SettingsViewModel {
     func didTapDeletePriority(offsets: IndexSet) {
         guard offsets.count == .one, let idx = offsets.first else { return }
         dataService.deletePriority(priorities[idx])
+    }
+
+    func didTapEdit() {
+        switch currentTab {
+        case .category: EditMode.toggle(mode: &categoryEditMode)
+        case .column: EditMode.toggle(mode: &columnEditMode)
+        case .priority: EditMode.toggle(mode: &priorityEditMode)
+        }
+    }
+
+    func didTapAdd() {
+        switch currentTab {
+        case .category: isNewCategorySheetPresented = true
+        case .column: isNewColumnSheetPresented = true
+        case .priority: isNewPrioritySheetPresented = true
+        }
     }
 }
 

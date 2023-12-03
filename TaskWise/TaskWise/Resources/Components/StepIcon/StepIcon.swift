@@ -14,10 +14,12 @@ extension StepIcon: View {
             if isDone {
                 Image(systemName: Str.iconsCheck)
                     .fittedToSize(.defaultCheckboxSize)
+                    .foregroundStyle(Color.stepCheck)
             } else {
                 Circle()
                     .stroke(lineWidth: .borderWidth)
                     .sized(.defaultCheckboxSize)
+                    .foregroundStyle(Color.accentColor)
             }
         }
     }

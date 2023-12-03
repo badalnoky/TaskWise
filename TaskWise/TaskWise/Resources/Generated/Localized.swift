@@ -40,12 +40,12 @@ internal enum Str {
     internal static let iconsSearch = String(localized: "Icons.search", defaultValue: "magnifyingglass")
     /// gear
     internal static let iconsSettings = String(localized: "Icons.settings", defaultValue: "gear")
-    /// My Categories
-    internal static let settingsCategoriesLabel = String(localized: "Settings.categoriesLabel", defaultValue: "My Categories")
-    /// My Columns
-    internal static let settingsColumnsLabel = String(localized: "Settings.columnsLabel", defaultValue: "My Columns")
-    /// My priorities
-    internal static let settingsPrioritiesLabel = String(localized: "Settings.prioritiesLabel", defaultValue: "My priorities")
+    /// Categories
+    internal static let settingsCategoriesLabel = String(localized: "Settings.categoriesLabel", defaultValue: "Categories")
+    /// Columns
+    internal static let settingsColumnsLabel = String(localized: "Settings.columnsLabel", defaultValue: "Columns")
+    /// Priorities
+    internal static let settingsPrioritiesLabel = String(localized: "Settings.prioritiesLabel", defaultValue: "Priorities")
     /// Settings
     internal static let settingsTitle = String(localized: "Settings.title", defaultValue: "Settings")
     /// Category

@@ -13,7 +13,7 @@ struct EditableText: View {
             onEditingChanged: { if !$0 { handleChange() } },
             onCommit: handleChange
         )
-        .textFieldStyle(.roundedBorder)
+        .textFieldStyle(BaseTextFieldStyle())
         .disabled(!isEditable)
     }
 
