@@ -101,7 +101,10 @@ private extension DayViewModel {
         dataService.fetchTasks()
         dataService.tasks
             .sink { [weak self] in
-                self?.tasks = $0
+                guard let self = self else { return }
+                self.tasks = $0.filter {
+                    Calendar.current.isDate($0.date, inSameDayAs: self.date)
+                }
             }
             .store(in: &cancellables)
     }

@@ -74,7 +74,7 @@ private extension DashboardViewModel {
 
     private func registerTaskBinding() {
         dataService.fetchTasks()
-        dataService.tasks
+        dataService.todaysTasks
             .sink { [weak self] tasks in
                 withAnimation(.smooth(duration: .defaultAnimationDuration)) {
                     self?.tasks = tasks

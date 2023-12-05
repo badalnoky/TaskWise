@@ -15,12 +15,17 @@ extension CalendarView: View {
                 VStack {
                     Spacer()
 
-                    DatePicker(String.empty, selection: $viewModel.selectedDate, in: Date.now..., displayedComponents: .date)
-                        .datePickerStyle(.graphical)
-                        .onChange(of: viewModel.selectedDate) {
-                            viewModel.didTapDate()
-                        }
-                        .defaultViewPadding()
+                    DatePicker(
+                        String.empty,
+                        selection: $viewModel.selectedDate,
+                        in: Date.now...Date.now.addingTimeInterval(.twoYears),
+                        displayedComponents: .date
+                    )
+                    .datePickerStyle(.graphical)
+                    .onChange(of: viewModel.selectedDate) {
+                        viewModel.didTapDate()
+                    }
+                    .defaultViewPadding()
 
                     if viewModel.isListed {
                         GeometryReader { geometry in

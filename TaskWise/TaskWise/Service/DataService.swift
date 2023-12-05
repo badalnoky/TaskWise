@@ -6,6 +6,7 @@ public final class DataService: DataServiceInput {
     private var userSettings: UserSettings?
 
     public var tasks = CurrentValueSubject<[Task], Never>([])
+    public var todaysTasks = CurrentValueSubject<[Task], Never>([])
     public var priorities = CurrentValueSubject<[Priority], Never>([])
     public var categories = CurrentValueSubject<[Category], Never>([])
     public var columns = CurrentValueSubject<[TaskColumn], Never>([])

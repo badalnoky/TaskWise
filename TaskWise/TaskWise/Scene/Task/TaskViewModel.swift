@@ -69,7 +69,6 @@ extension TaskViewModel {
 
     func didTapAction() {
         if isEditable {
-            // TODO: detect whether there were any real changes in the object -> memento?
             dataService.updateTask(task, with: updatedTask)
         } else {
             isAlertVisible = true

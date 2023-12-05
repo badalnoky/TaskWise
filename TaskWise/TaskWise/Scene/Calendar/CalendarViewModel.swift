@@ -23,7 +23,11 @@ import SwiftUI
     var columns: [TaskColumn] = []
 
     var filteredTasks: [Task] {
-        tasks.filteredBy(text: filterText, priority: selectedPriority, category: selectedCategory)
+        tasks
+            .filter {
+                Calendar.current.isDate($0.date, inSameDayAs: self.selectedDate)
+            }
+            .filteredBy(text: filterText, priority: selectedPriority, category: selectedCategory)
     }
 
     var foundTasks: [Task] {

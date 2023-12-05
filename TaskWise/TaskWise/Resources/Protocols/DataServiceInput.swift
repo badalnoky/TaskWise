@@ -2,6 +2,7 @@ import Combine
 
 protocol DataServiceInput {
     var tasks: CurrentValueSubject<[Task], Never> { get set }
+    var todaysTasks: CurrentValueSubject<[Task], Never> { get set }
     var priorities: CurrentValueSubject<[Priority], Never> { get set }
     var categories: CurrentValueSubject<[Category], Never> { get set }
     var columns: CurrentValueSubject<[TaskColumn], Never> { get set }

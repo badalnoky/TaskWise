@@ -9,6 +9,7 @@ class PreviewDataService: DataServiceInput {
     var context: NSManagedObjectContext { container.viewContext }
 
     var tasks = CurrentValueSubject<[Task], Never>([])
+    var todaysTasks = CurrentValueSubject<[Task], Never>([])
     var priorities = CurrentValueSubject<[Priority], Never>([])
     var categories = CurrentValueSubject<[Category], Never>([])
     var columns = CurrentValueSubject<[TaskColumn], Never>([])
