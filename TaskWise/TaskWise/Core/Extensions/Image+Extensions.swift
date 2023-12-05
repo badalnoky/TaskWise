@@ -1,6 +1,7 @@
 import SwiftUI
 
 extension Image {
+    static let back = Image(systemName: Str.iconsBack)
     static let settings = Image(systemName: Str.iconsSettings)
     static let calendar = Image(systemName: Str.iconsCalendar)
     static let add = Image(systemName: Str.iconsAdd)

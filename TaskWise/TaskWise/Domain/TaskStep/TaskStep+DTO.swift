@@ -20,6 +20,7 @@ extension TaskStep {
             self.isDone.toggle()
         }
     }
+
     static func createSteps(for task: Task, from dtos: [DTO], on context: NSManagedObjectContext) {
         for dto in dtos {
             TaskStep.create(for: task, from: dto, on: context)

@@ -7,60 +7,48 @@ struct DashboardView {
 extension DashboardView: View {
     var body: some View {
         VStack(alignment: .leading) {
-            HStack {
-                IconButton(.settings, action: viewModel.didTapSettings)
-                Spacer()
-                IconButton(.calendar, action: viewModel.didTapCalendar)
-                IconButton(.add, action: viewModel.didTapAddTask)
+            VStack {
+                StyledText(text: Str.dashboardTitle, style: .title)
+                    .padding(.horizontal, .padding8)
+
+                StyledDate(date: viewModel.date, style: .date)
+                    .padding(.horizontal, .padding8)
             }
-
-            Text(Str.dashboardTitle)
-                .font(.largeTitle)
-                .bold()
-                .frame(maxWidth: .infinity, alignment: .leading)
-
-            Text(viewModel.date, format: .dateTime.month(.wide).day(.defaultDigits))
-                .font(.title)
-                .bold()
-                .frame(maxWidth: .infinity, alignment: .leading)
+            .defaultViewPadding()
 
             GeometryReader { geometry in
                 VStack {
-                    ZStack {
-                        Circle()
-                            .stroke(lineWidth: .indicatorBorderWidth)
-                            .frame(width: geometry.size.width * 0.4)
-                            .padding(.padding32)
-                        Text(viewModel.completionText)
-                            .font(.title).bold()
-                    }
+                    TaskProgressIndicator(done: viewModel.doneCount, total: viewModel.totalCount, width: geometry.size.width * .indicatorScaledWidth)
 
                     TabView {
                         ForEach(viewModel.columns, id: \.self) { column in
-                            VStack {
-                                HStack {
-                                    Text(column.name)
-                                        .font(.title)
-                                        .bold()
-                                        .frame(maxWidth: .infinity, alignment: .center)
-                                }
+                            VStack(spacing: .zero) {
+                                ColumnHeader(text: column.name)
                                 ScrollView {
+                                    Color.clear
+                                        .frame(maxWidth: .infinity, alignment: .center)
+                                        .frame(height: .borderWidth)
                                     ForEach(viewModel.tasks.from(column: column), id: \.id) { task in
-                                        HStack {
-                                            Text(task.title)
-                                                .padding()
-                                                .onTapGesture {
-                                                    viewModel.didTapTask(task)
-                                            }
-                                            Spacer()
-                                            Menu {
-                                                Button("Delete") {
-                                                    viewModel.didTapDelete(task: task)
-                                                }
-                                            } label: {
-                                                IconButton(.more) {}
-                                            }
+                                        TaskItemView(
+                                            title: task.title,
+                                            priority: task.priority.name,
+                                            category: task.category.name,
+                                            categoryColor: .from(components: task.category.colorComponents)
+                                        )
+                                        .onTapGesture {
+                                            viewModel.didTapTask(task)
                                         }
+                                        .contextMenu(
+                                            ContextMenu {
+                                                TaskContextMenuItems(
+                                                    task: task,
+                                                    columns: viewModel.columns,
+                                                    changeColumnAction: viewModel.didChangeColumn,
+                                                    deleteAction: viewModel.didTapDelete
+                                                )
+                                            }
+                                        )
+                                        .padding(.horizontal, .padding16)
                                         .frame(width: geometry.size.width)
                                     }
                                 }
@@ -74,6 +62,11 @@ extension DashboardView: View {
                 }
             }
         }
+        .dashboardNavigationBar(
+            settingsAction: viewModel.didTapSettings,
+            calendarAction: viewModel.didTapCalendar,
+            addAction: viewModel.didTapAddTask
+        )
     }
 }
 

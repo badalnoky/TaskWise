@@ -1,6 +1,27 @@
 public extension Double {
-    static let defaultAnimationDuration = 0.3
+    /// 0.1
+    static let indicatorLowOpacity = 0.1
+    /// 0.2
+    static let indicatorBaseOpacity = 0.2
+    /// 0.4
+    static let indicatorScaledWidth = 0.4
+    /// 0.5
+    static let midOpacity = 0.5
+    /// 0.7
+    static let defaultAnimationDuration = 0.7
+    /// 0.7
+    static let pressedOpacity = 0.7
+    /// 1
     static let one: Double = 1
-    static let day: Double = 60 * 60 * 24
+    /// 1.6
+    static let indicatorHighOpacity = 1.6
+    /// 90
+    static let indicatorRotation: Double = 90
+}
+
+public extension Double {
     static let hour: Double = 60 * 60
+    static let day: Double = hour * 24
+    static let year: Double = day * 365
+    static let twoYears: Double = year * 2
 }

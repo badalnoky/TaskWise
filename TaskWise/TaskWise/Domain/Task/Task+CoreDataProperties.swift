@@ -3,6 +3,7 @@ import Foundation
 
 extension Task {
     public static let entityName: String = "Task"
+    public static let filterPredicate: String = " wDate > %@ && wDate < %@"
 
     @NSManaged public var wDate: Date?
     @NSManaged public var wEndDateTime: Date?
@@ -32,7 +33,11 @@ extension Task {
     }
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Task> {
-        NSFetchRequest<Task>(entityName: Self.entityName)
+        let request = NSFetchRequest<Task>(entityName: Self.entityName)
+        let maxDate: NSDate = (Date.now.addingTimeInterval(.twoYears)) as NSDate
+        let minDate: NSDate = (Date.now.addingTimeInterval(-1 * .year)) as NSDate
+        request.predicate = NSPredicate(format: filterPredicate, argumentArray: [minDate, maxDate])
+        return request
     }
 }
 

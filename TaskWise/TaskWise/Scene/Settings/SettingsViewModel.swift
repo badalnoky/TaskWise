@@ -6,8 +6,13 @@ import SwiftUI
     private var navigator: Navigator<ContentSceneFactory>
     private let dataService: DataServiceInput
     private var cancellables = Set<AnyCancellable>()
+    private var hasChanges = false
+
+    var currentTab: SettingTabs = .category
 
     var isNewCategorySheetPresented = false
+    var isNewColumnSheetPresented = false
+    var isNewPrioritySheetPresented = false
     var currentColor: Color = .blue
 
     var categoryEditMode: EditMode = .inactive
@@ -22,6 +27,14 @@ import SwiftUI
     var newColumnName: String = .empty
     var newPriorityName: String = .empty
 
+    var isEditing: Bool {
+        switch currentTab {
+        case .column: return columnEditMode.isEditing
+        case .category: return categoryEditMode.isEditing
+        case .priority: return priorityEditMode.isEditing
+        }
+    }
+
     init(
         navigator: Navigator<ContentSceneFactory>,
         dataService: DataServiceInput = Resolver.resolve()
@@ -34,9 +47,6 @@ import SwiftUI
 }
 
 extension SettingsViewModel {
-    func didTapNewCategory() {
-        isNewCategorySheetPresented = true
-    }
     func didTapAddCategory() {
         dataService.addCategory(.init(id: UUID(), name: newCategoryName, colorComponents: currentColor.components))
         newCategoryName = .empty
@@ -60,37 +70,66 @@ extension SettingsViewModel {
         } else if let column = item as? TaskColumn {
             dataService.updateColumnName(on: column, to: newName)
         }
+        hasChanges = true
     }
 
     func didMoveColumn(source: IndexSet, destination: Int) {
         var updated = columns
         updated.move(fromOffsets: source, toOffset: destination)
         dataService.updateOrder(of: updated)
+        hasChanges = true
     }
 
     func didMovePriority(source: IndexSet, destination: Int) {
         var updated = priorities
         updated.move(fromOffsets: source, toOffset: destination)
         dataService.updateOrder(of: updated)
+        hasChanges = true
     }
 
     func didChangeColor(on category: Category, to newColor: ColorComponents.DTO) {
         dataService.updateColor(on: category, with: newColor)
+        hasChanges = true
     }
 
     func didTapDeleteCategory(offsets: IndexSet) {
         guard offsets.count == .one, let idx = offsets.first else { return }
         dataService.deleteCategory(categories[idx])
+        hasChanges = true
     }
 
     func didTapDeleteColumn(offsets: IndexSet) {
         guard offsets.count == .one, let idx = offsets.first else { return }
         dataService.deleteColumn(columns[idx])
+        hasChanges = true
     }
 
     func didTapDeletePriority(offsets: IndexSet) {
         guard offsets.count == .one, let idx = offsets.first else { return }
         dataService.deletePriority(priorities[idx])
+        hasChanges = true
+    }
+
+    func didTapEdit() {
+        switch currentTab {
+        case .category: EditMode.toggle(mode: &categoryEditMode)
+        case .column: EditMode.toggle(mode: &columnEditMode)
+        case .priority: EditMode.toggle(mode: &priorityEditMode)
+        }
+    }
+
+    func didTapAdd() {
+        switch currentTab {
+        case .category: isNewCategorySheetPresented = true
+        case .column: isNewColumnSheetPresented = true
+        case .priority: isNewPrioritySheetPresented = true
+        }
+    }
+
+    func didFinish() {
+        if hasChanges {
+            dataService.fetchTasks()
+        }
     }
 }
 

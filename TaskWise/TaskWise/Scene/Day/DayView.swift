@@ -8,49 +8,43 @@ struct DayView {
 extension DayView: View {
     var body: some View {
         VStack {
-            HStack {
-                Spacer()
-                IconButton(.filter, action: viewModel.didTapFilter)
-                IconButton(.add, action: viewModel.didTapAdd)
+            VStack {
+                StyledDate(date: viewModel.date, style: .titleDate)
+
+                StyledDate(date: viewModel.date, style: .weekday)
             }
-
-            Text(viewModel.date, format: .dateTime.year().month().day(.defaultDigits))
-                .font(.largeTitle)
-                .bold()
-                .frame(maxWidth: .infinity, alignment: .leading)
-
-            Text(viewModel.date, format: .dateTime.weekday(.wide))
-                .font(.title)
-                .bold()
-                .frame(maxWidth: .infinity, alignment: .leading)
+            .defaultViewPadding()
 
             GeometryReader { geometry in
                 TabView {
                     ForEach(viewModel.columns, id: \.self) { column in
-                        VStack {
-                            HStack {
-                                Text(column.name)
-                                    .font(.title)
-                                    .bold()
-                                    .frame(maxWidth: .infinity, alignment: .center)
-                            }
+                        VStack(spacing: .zero) {
+                            ColumnHeader(text: column.name)
                             ScrollView {
+                                Color.clear
+                                    .frame(maxWidth: .infinity, alignment: .center)
+                                    .frame(height: .borderWidth)
                                 ForEach(viewModel.filteredTasks.from(column: column), id: \.id) { task in
-                                    HStack {
-                                        Text(task.title)
-                                            .padding()
-                                            .onTapGesture {
-                                                viewModel.didTapTask(task)
-                                            }
-                                        Spacer()
-                                        Menu {
-                                            Button("Delete") {
-                                                viewModel.didTapDelete(task: task)
-                                            }
-                                        } label: {
-                                            IconButton(.more) {}
-                                        }
+                                    TaskItemView(
+                                        title: task.title,
+                                        priority: task.priority.name,
+                                        category: task.category.name,
+                                        categoryColor: .from(components: task.category.colorComponents)
+                                    )
+                                    .onTapGesture {
+                                        viewModel.didTapTask(task)
                                     }
+                                    .contextMenu(
+                                        ContextMenu {
+                                            TaskContextMenuItems(
+                                                task: task,
+                                                columns: viewModel.columns,
+                                                changeColumnAction: viewModel.didChangeColumn,
+                                                deleteAction: viewModel.didTapDelete
+                                            )
+                                        }
+                                    )
+                                    .padding(.horizontal, .padding16)
                                     .frame(width: geometry.size.width)
                                 }
                             }
@@ -64,39 +58,42 @@ extension DayView: View {
             }
         }
         .sheet(isPresented: $viewModel.isFilterSheetPresented) {
-            VStack {
-                HStack {
-                    Spacer()
-                    Button("Close", role: .cancel) { viewModel.isFilterSheetPresented.toggle() }
-                }
-                TextField(String.empty, text: $viewModel.filterText)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .textFieldStyle(.roundedBorder)
-                HStack {
-                    Text(Str.taskPriorityLabel)
-                    Spacer()
-                    Picker(String.empty, selection: $viewModel.selectedPriority) {
-                        Text("No selection").tag(nil as Priority?)
-                        ForEach(viewModel.priorities, id: \.level) {
-                            Text($0.name).tag($0 as Priority?)
-                        }
-                    }
-                }
-
-                HStack {
-                    Text(Str.taskCategoryLabel)
-                    Spacer()
-                    Picker(String.empty, selection: $viewModel.selectedCategory) {
-                        Text("No selection").tag(nil as Category?)
-                        ForEach(viewModel.categories, id: \.self) {
-                            Text($0.name).tag($0 as Category?)
-                        }
-                    }
-                }
-                Spacer()
-            }
-            .presentationDetents([.height(.defaultFilterSheetHeight)])
+            filterView
         }
+        .dayNavigationBar(filterAction: viewModel.didTapFilter, addAction: viewModel.didTapAdd)
+    }
+}
+
+extension DayView {
+    var filterView: some View {
+        VStack(spacing: .padding12) {
+            HStack {
+                Button(Str.filterClearAllLabel, action: viewModel.didTapClearFilters)
+                    .buttonStyle(TextButtonStyle())
+                Spacer()
+                Button(Str.filterCloseLabel) { viewModel.isFilterSheetPresented.toggle() }
+                    .buttonStyle(TextButtonStyle())
+            }
+
+            StyledField(style: .base, title: Str.calendarSearchLabel, text: $viewModel.filterText)
+
+            TaskRow(title: Str.taskPriorityLabel, selected: $viewModel.selectedPriority) {
+                Text(Str.filterNoSelectionLabel).tag(nil as Priority?)
+                ForEach(viewModel.priorities, id: \.level) {
+                    Text($0.name).tag($0 as Priority?)
+                }
+            }
+
+            TaskRow(title: Str.taskCategoryLabel, selected: $viewModel.selectedCategory) {
+                Text(Str.filterNoSelectionLabel).tag(nil as Category?)
+                ForEach(viewModel.categories, id: \.self) {
+                    Text($0.name).tag($0 as Category?)
+                }
+            }
+            Spacer()
+        }
+        .presentationDetents([.height(.defaultFilterSheetHeight)])
+        .defaultViewPadding()
     }
 }
 

@@ -4,3 +4,12 @@ json:
   outputs:
     templatePath: Templates/string-assets.stencil
     output: TaskWise/Resources/Generated/Localized.swift
+
+fonts:
+  inputs:
+    - TaskWise/Resources/Assets/Fonts
+  outputs:
+    params:
+      enumName: Fonts
+    templatePath: Templates/fonts-swiftui-swift5.stencil
+    output: TaskWise/Resources/Generated/Fonts.swift

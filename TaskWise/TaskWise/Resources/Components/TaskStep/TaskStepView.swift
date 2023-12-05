@@ -14,10 +14,12 @@ public struct TaskStepView: View {
                 if step.isDone {
                     Image(systemName: Str.iconsCheck)
                         .fittedToSize(.defaultCheckboxSize)
+                        .foregroundStyle(Color.stepCheck)
                 } else {
                     Circle()
                         .stroke(lineWidth: .borderWidth)
                         .sized(.defaultCheckboxSize)
+                        .foregroundStyle(Color.accentColor)
                 }
             }
             .onTapGesture {
@@ -32,9 +34,10 @@ public struct TaskStepView: View {
                 onEditingChanged: { if !$0 { handleChange() } },
                 onCommit: handleChange
             )
-            .textFieldStyle(.roundedBorder)
+            .textFieldStyle(BaseTextFieldStyle())
             .disabled(!isEditable)
         }
+        .padding(.horizontal, .padding4)
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 

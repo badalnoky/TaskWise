@@ -50,6 +50,16 @@ extension DayViewModel {
     func didTapDelete(task: Task) {
         dataService.deleteTask(task)
     }
+
+    func didTapClearFilters() {
+        selectedCategory = nil
+        selectedPriority = nil
+        filterText = .empty
+    }
+
+    func didChangeColumn(to column: TaskColumn, on task: Task) {
+        dataService.updateColumn(to: column, on: task)
+    }
 }
 
 private extension DayViewModel {
@@ -91,7 +101,10 @@ private extension DayViewModel {
         dataService.fetchTasks()
         dataService.tasks
             .sink { [weak self] in
-                self?.tasks = $0
+                guard let self = self else { return }
+                self.tasks = $0.filter {
+                    Calendar.current.isDate($0.date, inSameDayAs: self.date)
+                }
             }
             .store(in: &cancellables)
     }

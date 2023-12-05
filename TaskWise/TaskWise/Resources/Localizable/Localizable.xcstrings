@@ -1,13 +1,90 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "Calendar.todoLabel" : {
+    "Alert.message" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Todo"
+            "value" : "Do you want to delete this task?"
+          }
+        }
+      }
+    },
+    "Alert.no" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No"
+          }
+        }
+      }
+    },
+    "Alert.yes" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yes"
+          }
+        }
+      }
+    },
+    "Calendar.cancelLabel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        }
+      }
+    },
+    "Calendar.searchLabel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search"
+          }
+        }
+      }
+    },
+    "ContextMenu.deleteLabel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete"
+          }
+        }
+      }
+    },
+    "ContextMenu.nextLabel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Move to next column"
+          }
+        }
+      }
+    },
+    "ContextMenu.previousLabel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Move to previous column"
           }
         }
       }
@@ -19,17 +96,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Today"
-          }
-        }
-      }
-    },
-    "Dashboard.todoLabel" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Todo"
           }
         }
       }
@@ -78,13 +144,57 @@
         }
       }
     },
-    "Day.todoLabel" : {
+    "DatePicker.allDayLabel" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Todo"
+            "value" : "All-day"
+          }
+        }
+      }
+    },
+    "DatePicker.dateLabel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Date"
+          }
+        }
+      }
+    },
+    "Filter.clearAllLabel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clear all"
+          }
+        }
+      }
+    },
+    "Filter.closeLabel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Close"
+          }
+        }
+      }
+    },
+    "Filter.noSelectionLabel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No selection"
           }
         }
       }
@@ -95,7 +205,18 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "plus"
+            "value" : "plus.app.fill"
+          }
+        }
+      }
+    },
+    "Icons.back" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "chevron.left"
           }
         }
       }
@@ -122,6 +243,17 @@
         }
       }
     },
+    "Icons.delete" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "trash"
+          }
+        }
+      }
+    },
     "Icons.edit" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -140,6 +272,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "line.3.horizontal.decrease.circle"
+          }
+        }
+      }
+    },
+    "Icons.forward" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "chevron.right"
           }
         }
       }
@@ -188,13 +331,68 @@
         }
       }
     },
+    "Settings.addLabel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add"
+          }
+        }
+      }
+    },
+    "Settings.cancelLabel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        }
+      }
+    },
     "Settings.categoriesLabel" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "My Categories"
+            "value" : "Categories"
+          }
+        }
+      }
+    },
+    "Settings.categoryPlaceholder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Category name"
+          }
+        }
+      }
+    },
+    "Settings.colorLabel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Color"
+          }
+        }
+      }
+    },
+    "Settings.columnPlaceholder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Column name"
           }
         }
       }
@@ -205,7 +403,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "My Columns"
+            "value" : "Columns"
           }
         }
       }
@@ -216,7 +414,18 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "My priorities"
+            "value" : "Priorities"
+          }
+        }
+      }
+    },
+    "Settings.priorityPlaceholder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Priority name"
           }
         }
       }
@@ -254,6 +463,28 @@
         }
       }
     },
+    "Task.createButtonLabel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create task"
+          }
+        }
+      }
+    },
+    "Task.currentColumnLabel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Current column"
+          }
+        }
+      }
+    },
     "Task.deleteButton" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -261,6 +492,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Delete"
+          }
+        }
+      }
+    },
+    "Task.descriptionLabel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Description"
           }
         }
       }
@@ -287,17 +529,6 @@
         }
       }
     },
-    "Task.repeatLabel" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Repeats"
-          }
-        }
-      }
-    },
     "Task.saveButton" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -305,6 +536,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Save"
+          }
+        }
+      }
+    },
+    "Task.startingColumnLabel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Starting column"
           }
         }
       }
@@ -320,6 +562,17 @@
         }
       }
     },
+    "Task.stepLabel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Step"
+          }
+        }
+      }
+    },
     "Task.stepsLabel" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -327,6 +580,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Steps"
+          }
+        }
+      }
+    },
+    "Task.titleLabel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Title"
+          }
+        }
+      }
+    },
+    "TaskItem.priority" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ priority"
           }
         }
       }

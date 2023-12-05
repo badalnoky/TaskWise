@@ -1,7 +1,13 @@
+import Foundation
+
 extension DataService {
     func fetchTasks() {
         guard let tasks = try? context.fetch(Task.fetchRequest()) else { return }
         self.tasks.send(tasks)
+        let todaysTasks = tasks.filter {
+            Calendar.current.isDate($0.date, inSameDayAs: .now)
+        }
+        self.todaysTasks.send(todaysTasks)
     }
 
     func fetchPriorities() {
