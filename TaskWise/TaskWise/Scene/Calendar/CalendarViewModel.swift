@@ -91,6 +91,10 @@ extension CalendarViewModel {
         selectedPriority = nil
         filterText = .empty
     }
+
+    func didChangeColumn(to column: TaskColumn, on task: Task) {
+        dataService.updateColumn(to: column, on: task)
+    }
 }
 
 private extension CalendarViewModel {

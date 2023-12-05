@@ -91,6 +91,9 @@
 		799070C52AEA717D0051AAC8 /* DataService+Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799070C42AEA717D0051AAC8 /* DataService+Priority.swift */; };
 		799D48E32ABC394400C149E3 /* CalendarViewModel+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799D48E22ABC394400C149E3 /* CalendarViewModel+Mock.swift */; };
 		79A519902B1BA29F00B0EEC2 /* ListButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A5198F2B1BA29F00B0EEC2 /* ListButtonStyle.swift */; };
+		79B823EB2B1E71DC0062B6E5 /* ColumnHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B823EA2B1E71DC0062B6E5 /* ColumnHeader.swift */; };
+		79B823EE2B1E77970062B6E5 /* TaskItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B823ED2B1E77970062B6E5 /* TaskItemView.swift */; };
+		79B9625C2B1F799F00D16472 /* TaskContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B9625B2B1F799F00D16472 /* TaskContextMenu.swift */; };
 		79C16F4D2ABB4FDB00BA362B /* CheckBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C16F4C2ABB4FDB00BA362B /* CheckBoxStyle.swift */; };
 		79C16F4F2ABB5C6B00BA362B /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C16F4E2ABB5C6B00BA362B /* CalendarViewModel.swift */; };
 		79C838A82B1D109500F35483 /* SettingsNavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C838A72B1D109500F35483 /* SettingsNavigationBarModifier.swift */; };
@@ -233,6 +236,9 @@
 		799070C42AEA717D0051AAC8 /* DataService+Priority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataService+Priority.swift"; sourceTree = "<group>"; };
 		799D48E22ABC394400C149E3 /* CalendarViewModel+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarViewModel+Mock.swift"; sourceTree = "<group>"; };
 		79A5198F2B1BA29F00B0EEC2 /* ListButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListButtonStyle.swift; sourceTree = "<group>"; };
+		79B823EA2B1E71DC0062B6E5 /* ColumnHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnHeader.swift; sourceTree = "<group>"; };
+		79B823ED2B1E77970062B6E5 /* TaskItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItemView.swift; sourceTree = "<group>"; };
+		79B9625B2B1F799F00D16472 /* TaskContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskContextMenu.swift; sourceTree = "<group>"; };
 		79C16F4C2ABB4FDB00BA362B /* CheckBoxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxStyle.swift; sourceTree = "<group>"; };
 		79C16F4E2ABB5C6B00BA362B /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		79C1B36B2AC9982C00BDCC6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -413,6 +419,7 @@
 			isa = PBXGroup;
 			children = (
 				793C64882AED9E5900C9D3FF /* CategoryColorPicker */,
+				79B823E92B1E71CC0062B6E5 /* ColumnHeader */,
 				798300152B17E82A0013B834 /* CombinedDatePicker */,
 				793C64852AED808800C9D3FF /* EditableText */,
 				7921551E2AB9E8360044CDED /* IconButton */,
@@ -420,6 +427,8 @@
 				794621B52B191CC50060F6CD /* StyledDate */,
 				7983000F2B17C57D0013B834 /* StyledField */,
 				794621AE2B1915190060F6CD /* StyledText */,
+				79B9625A2B1F798B00D16472 /* TaskContextMenu */,
+				79B823EC2B1E77640062B6E5 /* TaskItem */,
 				798300122B17D7460013B834 /* TaskRow */,
 				79E14AC82AE40AF300FF730D /* TaskStep */,
 			);
@@ -722,6 +731,30 @@
 				79C16F4E2ABB5C6B00BA362B /* CalendarViewModel.swift */,
 			);
 			path = Calendar;
+			sourceTree = "<group>";
+		};
+		79B823E92B1E71CC0062B6E5 /* ColumnHeader */ = {
+			isa = PBXGroup;
+			children = (
+				79B823EA2B1E71DC0062B6E5 /* ColumnHeader.swift */,
+			);
+			path = ColumnHeader;
+			sourceTree = "<group>";
+		};
+		79B823EC2B1E77640062B6E5 /* TaskItem */ = {
+			isa = PBXGroup;
+			children = (
+				79B823ED2B1E77970062B6E5 /* TaskItemView.swift */,
+			);
+			path = TaskItem;
+			sourceTree = "<group>";
+		};
+		79B9625A2B1F798B00D16472 /* TaskContextMenu */ = {
+			isa = PBXGroup;
+			children = (
+				79B9625B2B1F799F00D16472 /* TaskContextMenu.swift */,
+			);
+			path = TaskContextMenu;
 			sourceTree = "<group>";
 		};
 		79C16F4B2ABB4FB600BA362B /* Styles */ = {
@@ -1161,6 +1194,7 @@
 				794621BC2B1922690060F6CD /* DashboardNavigationBarModifier.swift in Sources */,
 				79CD54A72AD33B9600D064C2 /* TaskStep+CoreDataProperties.swift in Sources */,
 				7988A03D2AAE35C200C63265 /* Navigator.swift in Sources */,
+				79B823EB2B1E71DC0062B6E5 /* ColumnHeader.swift in Sources */,
 				79E14AD42AE41A4500FF730D /* Task+Mock.swift in Sources */,
 				798B08D02AB85CAB00311D93 /* TaskView.swift in Sources */,
 				79D983612ACC934D002A8222 /* AddTaskViewModel+Mock.swift in Sources */,
@@ -1172,6 +1206,7 @@
 				799070C52AEA717D0051AAC8 /* DataService+Priority.swift in Sources */,
 				794621B22B19176F0060F6CD /* StyledFieldModel.swift in Sources */,
 				794621C02B1930900060F6CD /* DayNavigationBarModifier.swift in Sources */,
+				79B823EE2B1E77970062B6E5 /* TaskItemView.swift in Sources */,
 				792155142AB9DB9F0044CDED /* DashboardViewModel.swift in Sources */,
 				79CD54A42AD33B9600D064C2 /* Category+CoreDataProperties.swift in Sources */,
 				7901260F2AD47F1A005620C2 /* UserSettings+Extensions.swift in Sources */,
@@ -1187,6 +1222,7 @@
 				79CD54A82AD33B9600D064C2 /* DataService.swift in Sources */,
 				793C648A2AED9E7300C9D3FF /* CategoryColorPicker.swift in Sources */,
 				79E14AD62AE41A5D00FF730D /* TaskStep+Mock.swift in Sources */,
+				79B9625C2B1F799F00D16472 /* TaskContextMenu.swift in Sources */,
 				7988A0512AAE362400C63265 /* PassthroughSubject+Extensions.swift in Sources */,
 				79616F4A2AC5CE0000F4A95C /* CloudError.swift in Sources */,
 				79CD54AE2AD33B9600D064C2 /* Priority+CoreDataProperties.swift in Sources */,

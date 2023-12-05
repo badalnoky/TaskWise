@@ -8,38 +8,39 @@ struct DayView {
 extension DayView: View {
     var body: some View {
         VStack {
-            StyledDate(date: viewModel.date, style: .titleDate)
+            VStack {
+                StyledDate(date: viewModel.date, style: .titleDate)
 
-            StyledDate(date: viewModel.date, style: .weekday)
+                StyledDate(date: viewModel.date, style: .weekday)
+            }
+            .defaultViewPadding()
 
             GeometryReader { geometry in
                 TabView {
                     ForEach(viewModel.columns, id: \.self) { column in
-                        VStack {
-                            HStack {
-                                Text(column.name)
-                                    .font(.title)
-                                    .bold()
-                                    .frame(maxWidth: .infinity, alignment: .center)
-                            }
+                        VStack(spacing: .zero) {
+                            ColumnHeader(text: column.name)
                             ScrollView {
+                                Color.clear
+                                    .frame(maxWidth: .infinity, alignment: .center)
+                                    .frame(height: .borderWidth)
                                 ForEach(viewModel.filteredTasks.from(column: column), id: \.id) { task in
-                                    HStack {
-                                        Text(task.title)
-                                            .padding()
-                                            .onTapGesture {
-                                                viewModel.didTapTask(task)
-                                            }
-                                        Spacer()
-                                        Menu {
-                                            Button("Delete") {
-                                                viewModel.didTapDelete(task: task)
-                                            }
-                                        } label: {
-                                            IconButton(.more) {}
+                                    TaskItemView(task: task)
+                                        .onTapGesture {
+                                            viewModel.didTapTask(task)
                                         }
-                                    }
-                                    .frame(width: geometry.size.width)
+                                        .contextMenu(
+                                            ContextMenu {
+                                                TaskContextMenuItems(
+                                                    task: task,
+                                                    columns: viewModel.columns,
+                                                    changeColumnAction: viewModel.didChangeColumn,
+                                                    deleteAction: viewModel.didTapDelete
+                                                )
+                                            }
+                                        )
+                                        .padding(.horizontal, .padding16)
+                                        .frame(width: geometry.size.width)
                                 }
                             }
                         }
@@ -54,7 +55,6 @@ extension DayView: View {
         .sheet(isPresented: $viewModel.isFilterSheetPresented) {
             filterView
         }
-        .defaultViewPadding()
         .dayNavigationBar(filterAction: viewModel.didTapFilter, addAction: viewModel.didTapAdd)
     }
 }

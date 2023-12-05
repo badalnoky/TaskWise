@@ -10,34 +10,7 @@ extension CalendarView: View {
     var body: some View {
         VStack {
             if viewModel.isSearching {
-                VStack {
-                    HStack {
-                        StyledField(style: .base, title: "Search", text: $viewModel.searchText)
-                            .focused($focused, equals: true)
-                        Button("Cancel") {
-                            viewModel.didToggleSearch()
-                            focused = false
-                        }
-                        .buttonStyle(TextButtonStyle())
-                    }
-                    ScrollView {
-                        ForEach(viewModel.foundDates, id: \.self) { date in
-                            VStack {
-                                StyledDate(date: date, style: .listDate)
-                                Divider()
-                                ForEach(viewModel.foundTasks.from(date: date), id: \.id) { task in
-                                    Button(task.title) {
-                                        viewModel.didTapTask(task)
-                                    }
-                                    .buttonStyle(ListButtonStyle(color: .from(components: task.category.colorComponents)))
-                                }
-                            }
-                            .padding(.vertical, .padding8)
-                        }
-                    }
-                    Spacer()
-                }
-                .transition(.move(edge: .top).combined(with: .opacity))
+                searchView
             } else {
                 VStack {
                     Spacer()
@@ -47,36 +20,35 @@ extension CalendarView: View {
                         .onChange(of: viewModel.selectedDate) {
                             viewModel.didTapDate()
                         }
+                        .defaultViewPadding()
 
                     if viewModel.isListed {
                         GeometryReader { geometry in
                             TabView {
                                 ForEach(viewModel.columns, id: \.self) { column in
-                                    VStack {
-                                        HStack {
-                                            Text(column.name)
-                                                .font(.title)
-                                                .bold()
-                                                .frame(maxWidth: .infinity, alignment: .center)
-                                        }
+                                    VStack(spacing: .zero) {
+                                        ColumnHeader(text: column.name)
                                         ScrollView {
+                                            Color.clear
+                                                .frame(maxWidth: .infinity, alignment: .center)
+                                                .frame(height: .borderWidth)
                                             ForEach(viewModel.filteredTasks.from(column: column), id: \.id) { task in
-                                                HStack {
-                                                    Text(task.title)
-                                                        .padding()
-                                                        .onTapGesture {
-                                                            viewModel.didTapTask(task)
-                                                        }
-                                                    Spacer()
-                                                    Menu {
-                                                        Button("Delete") {
-                                                            viewModel.didTapDelete(task: task)
-                                                        }
-                                                    } label: {
-                                                        IconButton(.more) {}
+                                                TaskItemView(task: task)
+                                                    .onTapGesture {
+                                                        viewModel.didTapTask(task)
                                                     }
-                                                }
-                                                .frame(width: geometry.size.width)
+                                                    .contextMenu(
+                                                        ContextMenu {
+                                                            TaskContextMenuItems(
+                                                                task: task,
+                                                                columns: viewModel.columns,
+                                                                changeColumnAction: viewModel.didChangeColumn,
+                                                                deleteAction: viewModel.didTapDelete
+                                                            )
+                                                        }
+                                                    )
+                                                    .padding(.horizontal, .padding16)
+                                                    .frame(width: geometry.size.width)
                                             }
                                         }
                                     }
@@ -97,7 +69,6 @@ extension CalendarView: View {
         .sheet(isPresented: $viewModel.isFilterSheetPresented) {
             filterView
         }
-        .defaultViewPadding()
         .calendarNavigationBar(
             isListed: viewModel.isListed,
             listAction: viewModel.didTapList,
@@ -140,6 +111,38 @@ extension CalendarView {
         }
         .presentationDetents([.height(.defaultFilterSheetHeight)])
         .defaultViewPadding()
+    }
+
+    var searchView: some View {
+        VStack {
+            HStack {
+                StyledField(style: .base, title: "Search", text: $viewModel.searchText)
+                    .focused($focused, equals: true)
+                Button("Cancel") {
+                    viewModel.didToggleSearch()
+                    focused = false
+                }
+                .buttonStyle(TextButtonStyle())
+            }
+            ScrollView {
+                ForEach(viewModel.foundDates, id: \.self) { date in
+                    VStack {
+                        StyledDate(date: date, style: .listDate)
+                        Divider()
+                        ForEach(viewModel.foundTasks.from(date: date), id: \.id) { task in
+                            Button(task.title) {
+                                viewModel.didTapTask(task)
+                            }
+                            .buttonStyle(ListButtonStyle(color: .from(components: task.category.colorComponents)))
+                        }
+                    }
+                    .padding(.vertical, .padding8)
+                }
+            }
+            Spacer()
+        }
+        .defaultViewPadding()
+        .transition(.move(edge: .top).combined(with: .opacity))
     }
 }
 

@@ -106,4 +106,9 @@ extension View {
     func taskNavigationBar(editAction: @escaping () -> Void) -> some View {
         modifier(TaskNavigationBarModifier(editAction: editAction))
     }
+
+    func contrastTo(colorComponents components: ColorComponents) -> some View {
+        let luminance = 0.2126 * components.red + 0.7152 * components.green + 0.0722 * components.blue
+        return  luminance < 0.6 ? self.foregroundColor(.lightContrast) : self.foregroundColor(.darkContrast)
+    }
 }

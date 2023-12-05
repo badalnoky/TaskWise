@@ -46,6 +46,10 @@ extension DashboardViewModel {
     func didTapDelete(task: Task) {
         dataService.deleteTask(task)
     }
+
+    func didChangeColumn(to column: TaskColumn, on task: Task) {
+        dataService.updateColumn(to: column, on: task)
+    }
 }
 
 private extension DashboardViewModel {

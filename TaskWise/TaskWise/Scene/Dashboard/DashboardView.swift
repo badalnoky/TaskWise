@@ -7,11 +7,14 @@ struct DashboardView {
 extension DashboardView: View {
     var body: some View {
         VStack(alignment: .leading) {
-            StyledText(text: Str.dashboardTitle, style: .title)
-                .padding(.horizontal, .padding8)
+            VStack {
+                StyledText(text: Str.dashboardTitle, style: .title)
+                    .padding(.horizontal, .padding8)
 
-            StyledDate(date: viewModel.date, style: .date)
-                .padding(.horizontal, .padding8)
+                StyledDate(date: viewModel.date, style: .date)
+                    .padding(.horizontal, .padding8)
+            }
+            .defaultViewPadding()
 
             GeometryReader { geometry in
                 VStack {
@@ -26,35 +29,29 @@ extension DashboardView: View {
 
                     TabView {
                         ForEach(viewModel.columns, id: \.self) { column in
-                            VStack {
-                                HStack {
-                                    Text(column.name)
-                                        .font(.title)
-                                        .bold()
-                                        .frame(maxWidth: .infinity, alignment: .center)
-                                }
+                            VStack(spacing: .zero) {
+                                ColumnHeader(text: column.name)
                                 ScrollView {
+                                    Color.clear
+                                        .frame(maxWidth: .infinity, alignment: .center)
+                                        .frame(height: .borderWidth)
                                     ForEach(viewModel.tasks.from(column: column), id: \.id) { task in
-                                        HStack {
-                                            HStack {
-                                                Text(task.title)
-                                                    .padding()
-                                                Spacer()
-                                            }
-                                            .contentShape(Rectangle())
+                                        TaskItemView(task: task)
                                             .onTapGesture {
                                                 viewModel.didTapTask(task)
                                             }
-                                            Menu {
-                                                Button("Delete") {
-                                                    viewModel.didTapDelete(task: task)
+                                            .contextMenu(
+                                                ContextMenu {
+                                                    TaskContextMenuItems(
+                                                        task: task,
+                                                        columns: viewModel.columns,
+                                                        changeColumnAction: viewModel.didChangeColumn,
+                                                        deleteAction: viewModel.didTapDelete
+                                                    )
                                                 }
-                                            } label: {
-                                                IconButton(.more) {}
-                                            }
-                                            .padding()
-                                        }
-                                        .frame(width: geometry.size.width)
+                                            )
+                                            .padding(.horizontal, .padding16)
+                                            .frame(width: geometry.size.width)
                                     }
                                 }
                             }
@@ -72,7 +69,6 @@ extension DashboardView: View {
             calendarAction: viewModel.didTapCalendar,
             addAction: viewModel.didTapAddTask
         )
-        .defaultViewPadding()
     }
 }
 
