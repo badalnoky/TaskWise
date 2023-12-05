@@ -19,6 +19,7 @@ public final class DataService: DataServiceInput {
     }
 
     private func loadContainer() {
+        container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
         container.loadPersistentStores { description, error in
             if error != nil {
                 print(Str.dataServiceContainerFailureMessage)
