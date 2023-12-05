@@ -4,7 +4,7 @@ public extension CGFloat {
     /// 8 pt
     static let cornerRadius: CGFloat = 8
     /// 15
-    static let indicatorBorderWidth: CGFloat = 15
+    static let indicatorBorderWidth: CGFloat = 12
     /// 25 pt
     static let defaultIconSize: CGFloat = 25
     /// 28 pt

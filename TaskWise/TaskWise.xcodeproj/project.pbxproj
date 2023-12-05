@@ -94,6 +94,7 @@
 		79B823EB2B1E71DC0062B6E5 /* ColumnHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B823EA2B1E71DC0062B6E5 /* ColumnHeader.swift */; };
 		79B823EE2B1E77970062B6E5 /* TaskItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B823ED2B1E77970062B6E5 /* TaskItemView.swift */; };
 		79B9625C2B1F799F00D16472 /* TaskContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B9625B2B1F799F00D16472 /* TaskContextMenu.swift */; };
+		79B9625F2B1FA6E800D16472 /* TaskProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B9625E2B1FA6E800D16472 /* TaskProgressIndicator.swift */; };
 		79C16F4D2ABB4FDB00BA362B /* CheckBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C16F4C2ABB4FDB00BA362B /* CheckBoxStyle.swift */; };
 		79C16F4F2ABB5C6B00BA362B /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C16F4E2ABB5C6B00BA362B /* CalendarViewModel.swift */; };
 		79C838A82B1D109500F35483 /* SettingsNavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C838A72B1D109500F35483 /* SettingsNavigationBarModifier.swift */; };
@@ -239,6 +240,7 @@
 		79B823EA2B1E71DC0062B6E5 /* ColumnHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnHeader.swift; sourceTree = "<group>"; };
 		79B823ED2B1E77970062B6E5 /* TaskItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItemView.swift; sourceTree = "<group>"; };
 		79B9625B2B1F799F00D16472 /* TaskContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskContextMenu.swift; sourceTree = "<group>"; };
+		79B9625E2B1FA6E800D16472 /* TaskProgressIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskProgressIndicator.swift; sourceTree = "<group>"; };
 		79C16F4C2ABB4FDB00BA362B /* CheckBoxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxStyle.swift; sourceTree = "<group>"; };
 		79C16F4E2ABB5C6B00BA362B /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		79C1B36B2AC9982C00BDCC6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -429,6 +431,7 @@
 				794621AE2B1915190060F6CD /* StyledText */,
 				79B9625A2B1F798B00D16472 /* TaskContextMenu */,
 				79B823EC2B1E77640062B6E5 /* TaskItem */,
+				79B9625D2B1FA6AC00D16472 /* TaskProgressIndicator */,
 				798300122B17D7460013B834 /* TaskRow */,
 				79E14AC82AE40AF300FF730D /* TaskStep */,
 			);
@@ -755,6 +758,14 @@
 				79B9625B2B1F799F00D16472 /* TaskContextMenu.swift */,
 			);
 			path = TaskContextMenu;
+			sourceTree = "<group>";
+		};
+		79B9625D2B1FA6AC00D16472 /* TaskProgressIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				79B9625E2B1FA6E800D16472 /* TaskProgressIndicator.swift */,
+			);
+			path = TaskProgressIndicator;
 			sourceTree = "<group>";
 		};
 		79C16F4B2ABB4FB600BA362B /* Styles */ = {
@@ -1163,6 +1174,7 @@
 				792155202AB9E8450044CDED /* IconButton.swift in Sources */,
 				79CD54A62AD33B9600D064C2 /* TaskStep+CoreDataClass.swift in Sources */,
 				79C16F4F2ABB5C6B00BA362B /* CalendarViewModel.swift in Sources */,
+				79B9625F2B1FA6E800D16472 /* TaskProgressIndicator.swift in Sources */,
 				7983000E2B17C4D90013B834 /* TextStyle.swift in Sources */,
 				79E14ADA2AE41AED00FF730D /* TaskColumn+Mock.swift in Sources */,
 				7944D7432AF6DD59001A528D /* DataServiceInput.swift in Sources */,

@@ -18,14 +18,7 @@ extension DashboardView: View {
 
             GeometryReader { geometry in
                 VStack {
-                    ZStack {
-                        Circle()
-                            .stroke(lineWidth: .indicatorBorderWidth)
-                            .frame(width: geometry.size.width * 0.4)
-                            .padding(.padding32)
-                        Text(viewModel.completionText)
-                            .font(.title).bold()
-                    }
+                    TaskProgressIndicator(done: viewModel.doneCount, total: viewModel.totalCount, width: geometry.size.width * 0.4)
 
                     TabView {
                         ForEach(viewModel.columns, id: \.self) { column in

@@ -1,5 +1,6 @@
 import Combine
 import Resolver
+import SwiftUI
 
 @Observable final class DashboardViewModel {
     private var navigator: Navigator<ContentSceneFactory>
@@ -10,9 +11,13 @@ import Resolver
     var tasks: [Task] = []
     var columns: [TaskColumn] = []
 
-    var completionText: String {
-        guard let last = columns.last else { return .empty}
-        return "\(tasks.from(column: last).count)/\(tasks.count)"
+    var doneCount: Int {
+        guard let last = columns.last else { return .zero }
+        return tasks.from(column: last).count
+    }
+
+    var totalCount: Int {
+        tasks.count
     }
 
     init(
@@ -70,8 +75,10 @@ private extension DashboardViewModel {
     private func registerTaskBinding() {
         dataService.fetchTasks()
         dataService.tasks
-            .sink { [weak self] in
-                self?.tasks = $0
+            .sink { [weak self] tasks in
+                withAnimation(.smooth(duration: .defaultAnimationDuration)) {
+                    self?.tasks = tasks
+                }
             }
             .store(in: &cancellables)
     }
