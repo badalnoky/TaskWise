@@ -75,17 +75,18 @@ extension View {
         )
     }
 
+    // swiftlint: disable: function_parameter_count
     func settingsNavigationBar(
         isEditing: Bool,
         editAction: @escaping () -> Void,
-        addAction: @escaping () -> Void
+        addAction: @escaping () -> Void,
+        finishAction: @escaping () -> Void
     ) -> some View {
         modifier(
-            SettingsNavigationBarModifier(isEditing: isEditing, editAction: editAction, addAction: addAction)
+            SettingsNavigationBarModifier(isEditing: isEditing, editAction: editAction, addAction: addAction, finishAction: finishAction)
         )
     }
 
-    // swiftlint: disable: function_parameter_count
     func calendarNavigationBar(
         isListed: Bool,
         listAction: @escaping () -> Void,
@@ -107,8 +108,13 @@ extension View {
         modifier(TaskNavigationBarModifier(editAction: editAction))
     }
 
-    func contrastTo(colorComponents components: ColorComponents) -> some View {
-        let luminance = 0.2126 * components.red + 0.7152 * components.green + 0.0722 * components.blue
+    func contrastTo(color: Color) -> some View {
+        var red: CGFloat = .zero
+        var green: CGFloat = .zero
+        var blue: CGFloat = .zero
+        var alpha: CGFloat = .zero
+        UIColor(color).getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        let luminance = 0.2126 * red + 0.7152 * green + 0.0722 * blue
         return  luminance < 0.6 ? self.foregroundColor(.lightContrast) : self.foregroundColor(.darkContrast)
     }
 }

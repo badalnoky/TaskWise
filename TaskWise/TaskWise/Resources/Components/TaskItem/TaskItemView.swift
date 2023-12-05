@@ -1,10 +1,16 @@
 import SwiftUI
 
 struct TaskItemView {
-    var task: Task
+    var title: String
+    var priority: String
+    var category: String
+    var categoryColor: Color
 
-    init(task: Task) {
-        self.task = task
+    init(title: String, priority: String, category: String, categoryColor: Color) {
+        self.title = title
+        self.priority = priority
+        self.category = category
+        self.categoryColor = categoryColor
     }
 }
 
@@ -12,20 +18,20 @@ extension TaskItemView: View {
     var body: some View {
         HStack {
             VStack {
-                StyledText(text: task.title, style: .base)
-                Text("\(task.priority.name) priority")
+                StyledText(text: title, style: .base)
+                Text("\(priority) priority")
                     .textStyle(.footnote)
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             .padding(.vertical, .padding8)
 
-            Text(task.category.name)
+            Text(category)
                 .font(TextStyle.footnote.font)
-                .contrastTo(colorComponents: task.category.colorComponents)
+                .contrastTo(color: categoryColor)
                 .padding(.padding4)
                 .background {
                     RoundedRectangle(cornerRadius: .cornerRadius)
-                        .fill(Color.from(components: task.category.colorComponents))
+                        .fill(categoryColor)
                 }
         }
         .padding(.horizontal, .padding8)
@@ -40,5 +46,5 @@ extension TaskItemView: View {
 }
 
 #Preview {
-    TaskItemView(task: .mock)
+    TaskItemView(title: .empty, priority: .empty, category: .empty, categoryColor: .red)
 }

@@ -6,6 +6,7 @@ import SwiftUI
     private var navigator: Navigator<ContentSceneFactory>
     private let dataService: DataServiceInput
     private var cancellables = Set<AnyCancellable>()
+    private var hasChanges = false
 
     var currentTab: SettingTabs = .category
 
@@ -69,37 +70,44 @@ extension SettingsViewModel {
         } else if let column = item as? TaskColumn {
             dataService.updateColumnName(on: column, to: newName)
         }
+        hasChanges = true
     }
 
     func didMoveColumn(source: IndexSet, destination: Int) {
         var updated = columns
         updated.move(fromOffsets: source, toOffset: destination)
         dataService.updateOrder(of: updated)
+        hasChanges = true
     }
 
     func didMovePriority(source: IndexSet, destination: Int) {
         var updated = priorities
         updated.move(fromOffsets: source, toOffset: destination)
         dataService.updateOrder(of: updated)
+        hasChanges = true
     }
 
     func didChangeColor(on category: Category, to newColor: ColorComponents.DTO) {
         dataService.updateColor(on: category, with: newColor)
+        hasChanges = true
     }
 
     func didTapDeleteCategory(offsets: IndexSet) {
         guard offsets.count == .one, let idx = offsets.first else { return }
         dataService.deleteCategory(categories[idx])
+        hasChanges = true
     }
 
     func didTapDeleteColumn(offsets: IndexSet) {
         guard offsets.count == .one, let idx = offsets.first else { return }
         dataService.deleteColumn(columns[idx])
+        hasChanges = true
     }
 
     func didTapDeletePriority(offsets: IndexSet) {
         guard offsets.count == .one, let idx = offsets.first else { return }
         dataService.deletePriority(priorities[idx])
+        hasChanges = true
     }
 
     func didTapEdit() {
@@ -115,6 +123,12 @@ extension SettingsViewModel {
         case .category: isNewCategorySheetPresented = true
         case .column: isNewColumnSheetPresented = true
         case .priority: isNewPrioritySheetPresented = true
+        }
+    }
+
+    func didFinish() {
+        if hasChanges {
+            dataService.fetchTasks()
         }
     }
 }

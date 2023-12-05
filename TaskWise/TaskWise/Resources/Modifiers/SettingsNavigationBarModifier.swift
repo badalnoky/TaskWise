@@ -5,11 +5,18 @@ public struct SettingsNavigationBarModifier: ViewModifier {
     let isEditing: Bool
     let editAction: () -> Void
     let addAction: () -> Void
+    let finishAction: () -> Void
 
-    init(isEditing: Bool, editAction: @escaping () -> Void, addAction: @escaping () -> Void) {
+    init(
+        isEditing: Bool,
+        editAction: @escaping () -> Void,
+        addAction: @escaping () -> Void,
+        finishAction: @escaping () -> Void
+    ) {
         self.isEditing = isEditing
         self.editAction = editAction
         self.addAction = addAction
+        self.finishAction = finishAction
 
         let coloredAppearance = UINavigationBarAppearance()
         coloredAppearance.configureWithTransparentBackground()
@@ -36,7 +43,10 @@ public struct SettingsNavigationBarModifier: ViewModifier {
 
 extension SettingsNavigationBarModifier {
     @ViewBuilder var backButton: some View {
-        IconButton(.back) { presentationMode.wrappedValue.dismiss() }
+        IconButton(.back) {
+            finishAction()
+            presentationMode.wrappedValue.dismiss()
+        }
     }
 
     @ViewBuilder var editButton: some View {

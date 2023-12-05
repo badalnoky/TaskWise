@@ -14,7 +14,12 @@ extension SettingsView: View {
             }
         }
         .defaultViewPadding()
-        .settingsNavigationBar(isEditing: viewModel.isEditing, editAction: viewModel.didTapEdit, addAction: viewModel.didTapAdd)
+        .settingsNavigationBar(
+            isEditing: viewModel.isEditing,
+            editAction: viewModel.didTapEdit,
+            addAction: viewModel.didTapAdd,
+            finishAction: viewModel.didFinish
+        )
     }
 }
 

@@ -25,22 +25,27 @@ extension DayView: View {
                                     .frame(maxWidth: .infinity, alignment: .center)
                                     .frame(height: .borderWidth)
                                 ForEach(viewModel.filteredTasks.from(column: column), id: \.id) { task in
-                                    TaskItemView(task: task)
-                                        .onTapGesture {
-                                            viewModel.didTapTask(task)
+                                    TaskItemView(
+                                        title: task.title,
+                                        priority: task.priority.name,
+                                        category: task.category.name,
+                                        categoryColor: .from(components: task.category.colorComponents)
+                                    )
+                                    .onTapGesture {
+                                        viewModel.didTapTask(task)
+                                    }
+                                    .contextMenu(
+                                        ContextMenu {
+                                            TaskContextMenuItems(
+                                                task: task,
+                                                columns: viewModel.columns,
+                                                changeColumnAction: viewModel.didChangeColumn,
+                                                deleteAction: viewModel.didTapDelete
+                                            )
                                         }
-                                        .contextMenu(
-                                            ContextMenu {
-                                                TaskContextMenuItems(
-                                                    task: task,
-                                                    columns: viewModel.columns,
-                                                    changeColumnAction: viewModel.didChangeColumn,
-                                                    deleteAction: viewModel.didTapDelete
-                                                )
-                                            }
-                                        )
-                                        .padding(.horizontal, .padding16)
-                                        .frame(width: geometry.size.width)
+                                    )
+                                    .padding(.horizontal, .padding16)
+                                    .frame(width: geometry.size.width)
                                 }
                             }
                         }
