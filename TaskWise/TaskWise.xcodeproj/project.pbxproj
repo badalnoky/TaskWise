@@ -465,8 +465,8 @@
 		793C648B2AED9F2200C9D3FF /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				793C648C2AED9F3800C9D3FF /* NamedItem.swift */,
 				7944D7422AF6DD59001A528D /* DataServiceInput.swift */,
+				793C648C2AED9F3800C9D3FF /* NamedItem.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -492,11 +492,7 @@
 		794621BA2B19221F0060F6CD /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
-				794621C12B1933E40060F6CD /* CalendarNavigationBarModifier.swift */,
-				794621BB2B1922690060F6CD /* DashboardNavigationBarModifier.swift */,
-				794621BF2B1930900060F6CD /* DayNavigationBarModifier.swift */,
-				79C838A72B1D109500F35483 /* SettingsNavigationBarModifier.swift */,
-				794621C32B193A8B0060F6CD /* TaskNavigationBarModifier.swift */,
+				79B962602B1FD36700D16472 /* NavigationBars */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -766,6 +762,18 @@
 				79B9625E2B1FA6E800D16472 /* TaskProgressIndicator.swift */,
 			);
 			path = TaskProgressIndicator;
+			sourceTree = "<group>";
+		};
+		79B962602B1FD36700D16472 /* NavigationBars */ = {
+			isa = PBXGroup;
+			children = (
+				794621C12B1933E40060F6CD /* CalendarNavigationBarModifier.swift */,
+				794621BB2B1922690060F6CD /* DashboardNavigationBarModifier.swift */,
+				794621BF2B1930900060F6CD /* DayNavigationBarModifier.swift */,
+				79C838A72B1D109500F35483 /* SettingsNavigationBarModifier.swift */,
+				794621C32B193A8B0060F6CD /* TaskNavigationBarModifier.swift */,
+			);
+			path = NavigationBars;
 			sourceTree = "<group>";
 		};
 		79C16F4B2ABB4FB600BA362B /* Styles */ = {

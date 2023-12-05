@@ -9,9 +9,9 @@ extension TaskView: View {
         ScrollView {
             VStack(spacing: .padding12) {
                 Group {
-                    StyledField(style: .title, title: "Title", text: $viewModel.title)
+                    StyledField(style: .title, title: Str.taskTitleLabel, text: $viewModel.title)
 
-                    StyledField(style: .description, title: "Description", text: $viewModel.description)
+                    StyledField(style: .description, title: Str.taskDescriptionLabel, text: $viewModel.description)
 
                     TaskRow(title: Str.taskPriorityLabel, selected: $viewModel.selectedPriority) {
                         ForEach(viewModel.priorities, id: \.level) {
@@ -25,7 +25,7 @@ extension TaskView: View {
                         }
                     }
 
-                    TaskRow(title: "Current column", selected: $viewModel.selectedColumn) {
+                    TaskRow(title: Str.taskCurrentColumnLabel, selected: $viewModel.selectedColumn) {
                         ForEach(viewModel.columns, id: \.self) {
                             Text($0.name).tag($0)
                         }
@@ -43,9 +43,9 @@ extension TaskView: View {
         }
         .defaultViewPadding()
         .environment(\.editMode, $viewModel.editMode)
-        .alert("Do you want to delete this task?", isPresented: $viewModel.isAlertVisible) {
-            Button("Yes", role: .destructive, action: viewModel.didTapDelete)
-            Button("No", role: .cancel) {}
+        .alert(Str.alertMessage, isPresented: $viewModel.isAlertVisible) {
+            Button(Str.alertYes, role: .destructive, action: viewModel.didTapDelete)
+            Button(Str.alertNo, role: .cancel) {}
         }
         .taskNavigationBar(editAction: viewModel.didTapEdit)
     }
@@ -77,7 +77,7 @@ extension TaskView {
 
             if viewModel.isEditable {
                 HStack {
-                    StyledField(style: .base, title: "Step", text: $viewModel.newStepName)
+                    StyledField(style: .base, title: Str.taskStepLabel, text: $viewModel.newStepName)
                     IconButton(.add, action: viewModel.didTapAddStep)
                 }
             }

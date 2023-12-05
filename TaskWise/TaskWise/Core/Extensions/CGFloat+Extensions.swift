@@ -1,10 +1,16 @@
 import Foundation
 
 public extension CGFloat {
+    /// 2 pt
+    static let borderWidth: CGFloat = 2
+    /// 5 pt
+    static let listCategoryWidth: CGFloat = 5
     /// 8 pt
     static let cornerRadius: CGFloat = 8
-    /// 15
+    /// 12
     static let indicatorBorderWidth: CGFloat = 12
+    /// 13
+    static let listButtonPadding: CGFloat = 13
     /// 25 pt
     static let defaultIconSize: CGFloat = 25
     /// 28 pt
@@ -13,11 +19,13 @@ public extension CGFloat {
     static let defaultCheckboxSize: CGFloat = 30
     /// 35 pt
     static let iconButtonSize: CGFloat = 35
+    /// 200 pt
+    static let defaultListHeight: CGFloat = 200
+    /// 260 pt
+    static let defaultFilterSheetHeight: CGFloat = 260
 }
 
 public extension CGFloat {
-    /// 2 pt
-    static let borderWidth: CGFloat = 2
     /// 4 pt
     static let padding4: CGFloat = 4
     /// 8 pt
@@ -32,6 +40,13 @@ public extension CGFloat {
     static let padding32: CGFloat = 32
     /// 50 pt
     static let padding50: CGFloat = 50
-    /// 150 pt
-    static let defaultFilterSheetHeight: CGFloat = 260
+}
+
+public extension CGFloat {
+    /// 0.2 pt
+    static let indicatorLowerBound: CGFloat = 0.2
+    /// 0.6 pt
+    static let indicatorRange: CGFloat = 0.6
+    /// 0.8 pt
+    static let indicatorGreaterBound: CGFloat = 0.8
 }

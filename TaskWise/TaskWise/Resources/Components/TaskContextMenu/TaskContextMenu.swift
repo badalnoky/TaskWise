@@ -12,20 +12,20 @@ extension TaskContextMenuItems: View {
             Button {
                 changeColumnAction(columns[task.column.index], task)
             } label: {
-                Label("Move to next column", systemImage: "chevron.right")
+                Label(Str.contextMenuNextLabel, systemImage: Str.iconsForward)
             }
         }
         if task.column.index != .one {
             Button {
                 changeColumnAction(columns[task.column.index.previous.previous], task)
             } label: {
-                Label("Move to previous column", systemImage: "chevron.left")
+                Label(Str.contextMenuPreviousLabel, systemImage: Str.iconsBack)
             }
         }
         Button(role: .destructive) {
             deleteAction(task)
         } label: {
-            Label("Delete", systemImage: "trash")
+            Label(Str.contextMenuDeleteLabel, systemImage: Str.iconsDelete)
         }
     }
 }

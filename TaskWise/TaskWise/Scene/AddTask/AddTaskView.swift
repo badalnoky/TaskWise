@@ -8,9 +8,9 @@ extension AddTaskView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: .padding12) {
-                StyledField(style: .title, title: "Title", text: $viewModel.title)
+                StyledField(style: .title, title: Str.taskTitleLabel, text: $viewModel.title)
 
-                StyledField(style: .description, title: "Description", text: $viewModel.description)
+                StyledField(style: .description, title: Str.taskDescriptionLabel, text: $viewModel.description)
 
                 TaskRow(title: Str.taskPriorityLabel, selected: $viewModel.selectedPriority) {
                     ForEach(viewModel.priorities, id: \.level) {
@@ -24,7 +24,7 @@ extension AddTaskView: View {
                     }
                 }
 
-                TaskRow(title: "Starting column", selected: $viewModel.selectedColumn) {
+                TaskRow(title: Str.taskStartingColumnLabel, selected: $viewModel.selectedColumn) {
                     ForEach(viewModel.columns, id: \.self) {
                         Text($0.name).tag($0)
                     }
@@ -34,7 +34,7 @@ extension AddTaskView: View {
 
                 stepView
 
-                Button("Create task", action: viewModel.didTapCreate)
+                Button(Str.taskCreateButtonLabel, action: viewModel.didTapCreate)
                     .buttonStyle(BaseButtonStyle())
             }
         }
@@ -69,7 +69,7 @@ extension AddTaskView {
             .defaultListSettings()
 
             HStack {
-                StyledField(style: .base, title: "Step", text: $viewModel.newStepName)
+                StyledField(style: .base, title: Str.taskStepLabel, text: $viewModel.newStepName)
                 IconButton(.add, action: viewModel.didTapAddStep)
             }
         }

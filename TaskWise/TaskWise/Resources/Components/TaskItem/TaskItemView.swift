@@ -19,7 +19,7 @@ extension TaskItemView: View {
         HStack {
             VStack {
                 StyledText(text: title, style: .base)
-                Text("\(priority) priority")
+                Text(Str.taskItemPriority(priority))
                     .textStyle(.footnote)
                     .frame(maxWidth: .infinity, alignment: .leading)
             }

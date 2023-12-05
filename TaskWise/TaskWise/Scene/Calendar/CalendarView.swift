@@ -95,24 +95,24 @@ extension CalendarView {
     var filterView: some View {
         VStack(spacing: .padding12) {
             HStack {
-                Button("Clear all", action: viewModel.didTapClearFilters)
+                Button(Str.filterClearAllLabel, action: viewModel.didTapClearFilters)
                     .buttonStyle(TextButtonStyle())
                 Spacer()
-                Button("Close") { viewModel.isFilterSheetPresented.toggle() }
+                Button(Str.filterCloseLabel) { viewModel.isFilterSheetPresented.toggle() }
                     .buttonStyle(TextButtonStyle())
             }
 
-            StyledField(style: .base, title: "Search", text: $viewModel.filterText)
+            StyledField(style: .base, title: Str.calendarSearchLabel, text: $viewModel.filterText)
 
             TaskRow(title: Str.taskPriorityLabel, selected: $viewModel.selectedPriority) {
-                Text("No selection").tag(nil as Priority?)
+                Text(Str.filterNoSelectionLabel).tag(nil as Priority?)
                 ForEach(viewModel.priorities, id: \.level) {
                     Text($0.name).tag($0 as Priority?)
                 }
             }
 
             TaskRow(title: Str.taskCategoryLabel, selected: $viewModel.selectedCategory) {
-                Text("No selection").tag(nil as Category?)
+                Text(Str.filterNoSelectionLabel).tag(nil as Category?)
                 ForEach(viewModel.categories, id: \.self) {
                     Text($0.name).tag($0 as Category?)
                 }
@@ -126,9 +126,9 @@ extension CalendarView {
     var searchView: some View {
         VStack {
             HStack {
-                StyledField(style: .base, title: "Search", text: $viewModel.searchText)
+                StyledField(style: .base, title: Str.calendarSearchLabel, text: $viewModel.searchText)
                     .focused($focused, equals: true)
-                Button("Cancel") {
+                Button(Str.calendarCancelLabel) {
                     viewModel.didToggleSearch()
                     focused = false
                 }

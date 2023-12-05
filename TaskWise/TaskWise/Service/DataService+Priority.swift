@@ -19,9 +19,9 @@ extension DataService {
     func deletePriority(_ priority: Priority) {
         // TODO: Resolve this
         if priorities.value.count == .one {
-            print("return an error saying there needs to be at least one category")
+            print("Return an error saying there needs to be at least one category")
         } else if (priority.wTasks?.count ?? .zero) > .zero {
-            print("return an error saying that some task use it")
+            print("Return an error saying that some task use it")
         } else {
             let updatedPriorities = priorities.value.filter { $0.id != priority.id }
             delete(item: priority)

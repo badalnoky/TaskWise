@@ -42,3 +42,17 @@ extension DayNavigationBarModifier {
         IconButton(.add, action: addAction)
     }
 }
+
+extension View {
+    func dayNavigationBar(
+        filterAction: @escaping () -> Void,
+        addAction: @escaping () -> Void
+    ) -> some View {
+        modifier(
+            DayNavigationBarModifier(
+                filterAction: filterAction,
+                addAction: addAction
+            )
+        )
+    }
+}

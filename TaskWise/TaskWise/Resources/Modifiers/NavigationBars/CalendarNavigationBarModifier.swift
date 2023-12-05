@@ -58,3 +58,22 @@ extension CalendarNavigationBarModifier {
         IconButton(.filter, action: filterAction)
     }
 }
+
+extension View {
+    // swiftlint: disable: function_parameter_count
+    func calendarNavigationBar(
+        isListed: Bool,
+        listAction: @escaping () -> Void,
+        searchAction: @escaping () -> Void,
+        filterAction: @escaping () -> Void
+    ) -> some View {
+        modifier(
+            CalendarNavigationBarModifier(
+                isListed: isListed,
+                listAction: listAction,
+                searchAction: searchAction,
+                filterAction: filterAction
+            )
+        )
+    }
+}

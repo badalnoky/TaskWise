@@ -17,7 +17,7 @@ extension StyledField: View {
     public var body: some View {
         if style == .description {
             TextField(title, text: text, axis: .vertical)
-                .lineLimit(3...)
+                .lineLimit(.descriptionLineLimit...)
                 .textFieldOverlay(isEnabled)
                 .textStyle(style.textStyle)
         } else {

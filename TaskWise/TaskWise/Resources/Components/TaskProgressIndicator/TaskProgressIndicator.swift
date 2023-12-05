@@ -5,7 +5,7 @@ public struct TaskProgressIndicator {
     let width: Double
 
     var progress: Double {
-        (0.6 / Double(total)) * Double(done) + 0.2
+        (.indicatorRange / Double(total)) * Double(done) + .indicatorLowerBound
     }
 
     init(done: Int, total: Int, width: Double) {
@@ -19,23 +19,23 @@ extension TaskProgressIndicator: View {
     public var body: some View {
         ZStack {
             Circle()
-                .trim(from: progress, to: 0.8)
-                .stroke(style: StrokeStyle(lineWidth: 12.0, lineCap: .round, lineJoin: .round))
+                .trim(from: progress, to: .indicatorGreaterBound)
+                .stroke(style: StrokeStyle(lineWidth: .indicatorBorderWidth, lineCap: .round, lineJoin: .round))
                 .frame(width: width)
-                .rotationEffect(.degrees(90))
-                .foregroundStyle(.text.opacity(0.2))
+                .rotationEffect(.degrees(.indicatorRotation))
+                .foregroundStyle(.text.opacity(.indicatorBaseOpacity))
 
             Circle()
-                .trim(from: 0.2, to: progress)
-                .stroke(style: StrokeStyle(lineWidth: 12.0, lineCap: .round, lineJoin: .round))
+                .trim(from: .indicatorLowerBound, to: progress)
+                .stroke(style: StrokeStyle(lineWidth: .indicatorBorderWidth, lineCap: .round, lineJoin: .round))
                 .fill(
                     AngularGradient(
-                        gradient: Gradient(colors: [.progress.opacity(0.1), .progress.opacity(1.6)]),
+                        gradient: Gradient(colors: [.progress.opacity(.indicatorLowOpacity), .progress.opacity(.indicatorHighOpacity)]),
                         center: .center
                     )
                 )
                 .frame(width: width)
-                .rotationEffect(.degrees(90))
+                .rotationEffect(.degrees(.indicatorRotation))
 
             Text("\(done)/\(total)")
                 .foregroundStyle(.accent)

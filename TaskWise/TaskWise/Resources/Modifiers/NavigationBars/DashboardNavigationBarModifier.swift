@@ -47,3 +47,19 @@ extension DashboardNavigationBarModifier {
         IconButton(.add, action: addAction)
     }
 }
+
+extension View {
+    func dashboardNavigationBar(
+        settingsAction: @escaping () -> Void,
+        calendarAction: @escaping () -> Void,
+        addAction: @escaping () -> Void
+    ) -> some View {
+        modifier(
+            DashboardNavigationBarModifier(
+                settingsAction: settingsAction,
+                calendarAction: calendarAction,
+                addAction: addAction
+            )
+        )
+    }
+}

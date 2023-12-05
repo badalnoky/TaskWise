@@ -16,7 +16,7 @@ extension CombinedDatePicker: View {
     public var body: some View {
         VStack(spacing: .padding12) {
             Toggle(isOn: allDay.animation(.easeInOut)) {
-                Text("All-day").textStyle(.body)
+                Text(Str.datePickerAllDayLabel).textStyle(.body)
             }
             .padding(.trailing, .padding8)
             .tint(.accent)
@@ -34,7 +34,7 @@ extension CombinedDatePicker: View {
                 }
             } else {
                 DatePicker(selection: starts, in: Date.now..., displayedComponents: .date) {
-                    Text("Date").textStyle(.body)
+                    Text(Str.datePickerDateLabel).textStyle(.body)
                 }
             }
         }

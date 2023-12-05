@@ -19,7 +19,7 @@ public struct IconButton: View {
                     .foregroundStyle(.accent)
             }
         )
-        .sized(35)
+        .sized(.iconButtonSize)
     }
 
     public init(_ icon: Image, isAnimated: Bool = true, action: @escaping () -> Void) {

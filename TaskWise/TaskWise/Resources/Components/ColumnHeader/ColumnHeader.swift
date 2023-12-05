@@ -3,6 +3,7 @@ import SwiftUI
 public struct ColumnHeader {
     var text: String
 }
+
 extension ColumnHeader: View {
     public var body: some View {
         Text(text)

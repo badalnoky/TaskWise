@@ -48,14 +48,14 @@ extension SettingsView {
         .sheet(isPresented: $viewModel.isNewCategorySheetPresented) {
             VStack(spacing: .padding24) {
                 HStack {
-                    Button("Cancel", role: .cancel) { viewModel.isNewCategorySheetPresented.toggle() }
+                    Button(Str.settingsCancelLabel, role: .cancel) { viewModel.isNewCategorySheetPresented.toggle() }
                     Spacer()
-                    Button("Add", action: viewModel.didTapAddCategory)
+                    Button(Str.settingsAddLabel, action: viewModel.didTapAddCategory)
                 }
                 .padding(.top, .padding12)
                 .padding(.horizontal, .padding4)
-                StyledField(style: .base, title: "Category name", text: $viewModel.newCategoryName)
-                ColorPicker("Color", selection: $viewModel.currentColor)
+                StyledField(style: .base, title: Str.settingsCategoryPlaceholder, text: $viewModel.newCategoryName)
+                ColorPicker(Str.settingsColorLabel, selection: $viewModel.currentColor)
                     .textStyle(.body)
                     .padding(.horizontal, .padding4)
                 Spacer()
@@ -86,13 +86,13 @@ extension SettingsView {
         .sheet(isPresented: $viewModel.isNewColumnSheetPresented) {
             VStack(spacing: .padding24) {
                 HStack {
-                    Button("Cancel", role: .cancel) { viewModel.isNewColumnSheetPresented.toggle() }
+                    Button(Str.settingsCancelLabel, role: .cancel) { viewModel.isNewColumnSheetPresented.toggle() }
                     Spacer()
-                    Button("Add", action: viewModel.didTapAddColumn)
+                    Button(Str.settingsAddLabel, action: viewModel.didTapAddColumn)
                 }
                 .padding(.top, .padding12)
                 .padding(.horizontal, .padding4)
-                StyledField(style: .base, title: "Column name", text: $viewModel.newColumnName)
+                StyledField(style: .base, title: Str.settingsColumnPlaceholder, text: $viewModel.newColumnName)
                 Spacer()
             }
             .presentationDetents([.height(.defaultFilterSheetHeight)])
@@ -121,13 +121,13 @@ extension SettingsView {
         .sheet(isPresented: $viewModel.isNewPrioritySheetPresented) {
             VStack(spacing: .padding24) {
                 HStack {
-                    Button("Cancel", role: .cancel) { viewModel.isNewPrioritySheetPresented.toggle() }
+                    Button(Str.settingsCancelLabel, role: .cancel) { viewModel.isNewPrioritySheetPresented.toggle() }
                     Spacer()
-                    Button("Add", action: viewModel.didTapAddPriority)
+                    Button(Str.settingsAddLabel, action: viewModel.didTapAddPriority)
                 }
                 .padding(.top, .padding12)
                 .padding(.horizontal, .padding4)
-                StyledField(style: .base, title: "Priority name", text: $viewModel.newPriorityName)
+                StyledField(style: .base, title: Str.settingsPriorityPlaceholder, text: $viewModel.newPriorityName)
                 Spacer()
             }
             .presentationDetents([.height(.defaultFilterSheetHeight)])

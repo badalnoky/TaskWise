@@ -1,22 +1,11 @@
 import SwiftUI
 
-public struct SettingsNavigationBarModifier: ViewModifier {
+public struct TaskNavigationBarModifier: ViewModifier {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    let isEditing: Bool
     let editAction: () -> Void
-    let addAction: () -> Void
-    let finishAction: () -> Void
 
-    init(
-        isEditing: Bool,
-        editAction: @escaping () -> Void,
-        addAction: @escaping () -> Void,
-        finishAction: @escaping () -> Void
-    ) {
-        self.isEditing = isEditing
+    init(editAction: @escaping () -> Void) {
         self.editAction = editAction
-        self.addAction = addAction
-        self.finishAction = finishAction
 
         let coloredAppearance = UINavigationBarAppearance()
         coloredAppearance.configureWithTransparentBackground()
@@ -32,28 +21,23 @@ public struct SettingsNavigationBarModifier: ViewModifier {
             .navigationBarBackButtonHidden(true)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) { backButton }
-                ToolbarItem(placement: .principal) { Text(Str.settingsTitle).textStyle(.largeTitle) }
-                if isEditing {
-                    ToolbarItem(placement: .topBarTrailing) { addButton }
-                }
                 ToolbarItem(placement: .topBarTrailing) { editButton }
             }
     }
 }
 
-extension SettingsNavigationBarModifier {
+extension TaskNavigationBarModifier {
     @ViewBuilder var backButton: some View {
-        IconButton(.back) {
-            finishAction()
-            presentationMode.wrappedValue.dismiss()
-        }
+        IconButton(.back) { presentationMode.wrappedValue.dismiss() }
     }
 
     @ViewBuilder var editButton: some View {
         IconButton(.edit, action: editAction)
     }
+}
 
-    @ViewBuilder var addButton: some View {
-        IconButton(.add, action: addAction)
+extension View {
+    func taskNavigationBar(editAction: @escaping () -> Void) -> some View {
+        modifier(TaskNavigationBarModifier(editAction: editAction))
     }
 }
