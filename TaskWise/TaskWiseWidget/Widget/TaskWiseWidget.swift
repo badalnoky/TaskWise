@@ -32,6 +32,7 @@ struct TaskWiseWidget: Widget {
 #Preview(as: .accessoryCircular) {
     TaskWiseWidget()
 } timeline: {
+    CompletionEntry(date: .now, completedTasks: 0, totalTasks: 0)
     CompletionEntry(date: .now, completedTasks: 0, totalTasks: 3)
     CompletionEntry(date: .now, completedTasks: 1, totalTasks: 3)
     CompletionEntry(date: .now, completedTasks: 2, totalTasks: 3)
