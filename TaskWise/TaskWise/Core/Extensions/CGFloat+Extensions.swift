@@ -7,10 +7,14 @@ public extension CGFloat {
     static let listCategoryWidth: CGFloat = 5
     /// 8 pt
     static let cornerRadius: CGFloat = 8
+    /// 9 pt
+    static let widgetIndicatorWidth: CGFloat = 9
     /// 12
     static let indicatorBorderWidth: CGFloat = 12
     /// 13
     static let listButtonPadding: CGFloat = 13
+    /// 20
+    static let widgetFontSize: CGFloat = 20
     /// 25 pt
     static let defaultIconSize: CGFloat = 25
     /// 28 pt

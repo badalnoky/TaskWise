@@ -10,6 +10,10 @@ internal enum Str {
     internal static let alertNo = String(localized: "Alert.no", defaultValue: "No")
     /// Yes
     internal static let alertYes = String(localized: "Alert.yes", defaultValue: "Yes")
+    /// group.bercidalnoky.TaskWise
+    internal static let appGroupIdentifier = String(localized: "App.groupIdentifier", defaultValue: "group.bercidalnoky.TaskWise")
+    /// TaskWise.sqlite
+    internal static let appSqlite = String(localized: "App.sqlite", defaultValue: "TaskWise.sqlite")
     /// Cancel
     internal static let calendarCancelLabel = String(localized: "Calendar.cancelLabel", defaultValue: "Cancel")
     /// Search

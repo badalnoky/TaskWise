@@ -34,6 +34,28 @@
         }
       }
     },
+    "App.groupIdentifier" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "group.bercidalnoky.TaskWise"
+          }
+        }
+      }
+    },
+    "App.sqlite" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TaskWise.sqlite"
+          }
+        }
+      }
+    },
     "Calendar.cancelLabel" : {
       "extractionState" : "manual",
       "localizations" : {
