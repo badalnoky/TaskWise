@@ -27,16 +27,19 @@ struct CompletionProvider: TimelineProvider {
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<CompletionEntry>) -> Void) {
+        // swiftlint: disable: force_unwrapping
+        let nextUpdateDate = Calendar.current.date(byAdding: .minute, value: .ten, to: .now)!
+        // swiftlint: enable: force_unwrapping
         SwiftUI.Task {
             do {
                 let tuple = try await service.fetchCompletion()
                 let entry = CompletionEntry(date: .now, completedTasks: tuple.0, totalTasks: tuple.1)
-                let timeline = Timeline(entries: [entry], policy: .never)
+                let timeline = Timeline(entries: [entry], policy: .after(nextUpdateDate))
                 completion(timeline)
             } catch {
                 print(error.localizedDescription)
                 let entry = CompletionEntry(date: .now, completedTasks: .zero, totalTasks: .zero)
-                let timeline = Timeline(entries: [entry], policy: .never)
+                let timeline = Timeline(entries: [entry], policy: .after(nextUpdateDate))
                 completion(timeline)
             }
         }
