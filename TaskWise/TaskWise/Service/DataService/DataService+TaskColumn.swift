@@ -17,7 +17,6 @@ extension DataService {
     }
 
     func deleteColumn(_ column: TaskColumn) {
-        // TODO: Resolve this
         if columns.value.count == .one {
             print("Return an error saying there needs to be at least one category")
         } else if (column.wTasks?.count ?? .zero) > .zero {
