@@ -1,3 +1,4 @@
+import WidgetKit
 extension DataService {
     func addTask(_ task: Task.DTO) {
         Task.create(from: task, on: context)
@@ -15,6 +16,7 @@ extension DataService {
         task.wColumn = column
         save()
         fetchTasks()
+        WidgetCenter.shared.reloadAllTimelines()
     }
 
     func addStepFrom(dto: TaskStep.DTO, to task: Task) {

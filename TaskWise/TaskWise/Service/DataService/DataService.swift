@@ -14,12 +14,24 @@ public final class DataService: DataServiceInput {
 
     public var context: NSManagedObjectContext { container.viewContext }
 
-    init() {
+    init(shouldLoadDefaults: Bool = true) {
         loadContainer()
-        handleDefaultUserSettings()
+        if shouldLoadDefaults {
+            handleDefaultUserSettings()
+        }
     }
 
     private func loadContainer() {
+        // swiftlint: disable: force_unwrapping
+        let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: Str.appGroupIdentifier)!
+        let storeURL = containerURL.appendingPathComponent(Str.appSqlite)
+        let description = container.persistentStoreDescriptions.first!
+        // swiftlint: enable: force_unwrapping
+
+        description.url = storeURL
+        description.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
+
+        container.viewContext.automaticallyMergesChangesFromParent = true
         container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
         container.loadPersistentStores { description, error in
             if error != nil {
