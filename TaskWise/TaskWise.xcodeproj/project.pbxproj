@@ -626,22 +626,22 @@
 			children = (
 				797B4DA92B212398001DAC30 /* TaskWiseWidgetExtension.entitlements */,
 				797B4D7E2B2107D8001DAC30 /* Info.plist */,
+				797B4D782B2107D7001DAC30 /* TaskWiseWidgetBundle.swift */,
 				797B4D992B2115F5001DAC30 /* Resources */,
-				797B4D9B2B211614001DAC30 /* Views */,
-				797B4D982B2115D8001DAC30 /* Widget */,
+				79A0C2E22B227718005B3F04 /* Widgets */,
 			);
 			path = TaskWiseWidget;
 			sourceTree = "<group>";
 		};
-		797B4D982B2115D8001DAC30 /* Widget */ = {
+		797B4D982B2115D8001DAC30 /* CompletionWidget */ = {
 			isa = PBXGroup;
 			children = (
 				797B4DA52B2119D5001DAC30 /* CompletionEntry.swift */,
 				797B4DA32B2119AA001DAC30 /* CompletionProvider.swift */,
+				797B4D882B21118C001DAC30 /* TaskProgressWidgetIndicator.swift */,
 				797B4D7A2B2107D7001DAC30 /* TaskWiseWidget.swift */,
-				797B4D782B2107D7001DAC30 /* TaskWiseWidgetBundle.swift */,
 			);
-			path = Widget;
+			path = CompletionWidget;
 			sourceTree = "<group>";
 		};
 		797B4D992B2115F5001DAC30 /* Resources */ = {
@@ -651,14 +651,6 @@
 				797B4D952B2115CB001DAC30 /* String+Constants.swift */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		797B4D9B2B211614001DAC30 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				797B4D882B21118C001DAC30 /* TaskProgressWidgetIndicator.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		797B4DAB2B212981001DAC30 /* DataService */ = {
@@ -885,6 +877,22 @@
 				79C16F4E2ABB5C6B00BA362B /* CalendarViewModel.swift */,
 			);
 			path = Calendar;
+			sourceTree = "<group>";
+		};
+		79A0C2E12B2276D2005B3F04 /* TasksWidget */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TasksWidget;
+			sourceTree = "<group>";
+		};
+		79A0C2E22B227718005B3F04 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				79A0C2E12B2276D2005B3F04 /* TasksWidget */,
+				797B4D982B2115D8001DAC30 /* CompletionWidget */,
+			);
+			path = Widgets;
 			sourceTree = "<group>";
 		};
 		79B823E92B1E71CC0062B6E5 /* ColumnHeader */ = {
