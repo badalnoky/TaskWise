@@ -63,6 +63,9 @@
 		792155142AB9DB9F0044CDED /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792155132AB9DB9F0044CDED /* DashboardViewModel.swift */; };
 		792155172AB9DD710044CDED /* DashboardViewModel+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792155162AB9DD710044CDED /* DashboardViewModel+Mock.swift */; };
 		792155202AB9E8450044CDED /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7921551F2AB9E8450044CDED /* IconButton.swift */; };
+		792242F32B232EB80004F4FC /* TaskWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792242F22B232EB80004F4FC /* TaskWidget.swift */; };
+		792242F52B232EC60004F4FC /* TaskEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792242F42B232EC60004F4FC /* TaskEntry.swift */; };
+		792242F72B232EE10004F4FC /* TaskProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792242F62B232EE10004F4FC /* TaskProvider.swift */; };
 		792E16A62B16888F005641F4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 792E16A52B16888F005641F4 /* Colors.xcassets */; };
 		793C64872AED80BC00C9D3FF /* EditableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793C64862AED80BC00C9D3FF /* EditableText.swift */; };
 		793C648A2AED9E7300C9D3FF /* CategoryColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793C64892AED9E7300C9D3FF /* CategoryColorPicker.swift */; };
@@ -252,6 +255,9 @@
 		792155132AB9DB9F0044CDED /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		792155162AB9DD710044CDED /* DashboardViewModel+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DashboardViewModel+Mock.swift"; sourceTree = "<group>"; };
 		7921551F2AB9E8450044CDED /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
+		792242F22B232EB80004F4FC /* TaskWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskWidget.swift; sourceTree = "<group>"; };
+		792242F42B232EC60004F4FC /* TaskEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEntry.swift; sourceTree = "<group>"; };
+		792242F62B232EE10004F4FC /* TaskProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskProvider.swift; sourceTree = "<group>"; };
 		792E16A52B16888F005641F4 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		793C64862AED80BC00C9D3FF /* EditableText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableText.swift; sourceTree = "<group>"; };
 		793C64892AED9E7300C9D3FF /* CategoryColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryColorPicker.swift; sourceTree = "<group>"; };
@@ -643,8 +649,8 @@
 			children = (
 				797B4DA52B2119D5001DAC30 /* CompletionEntry.swift */,
 				797B4DA32B2119AA001DAC30 /* CompletionProvider.swift */,
-				797B4D882B21118C001DAC30 /* TaskProgressWidgetIndicator.swift */,
 				797B4D7A2B2107D7001DAC30 /* CompletionWidget.swift */,
+				797B4D882B21118C001DAC30 /* TaskProgressWidgetIndicator.swift */,
 			);
 			path = CompletionWidget;
 			sourceTree = "<group>";
@@ -887,6 +893,9 @@
 		79A0C2E12B2276D2005B3F04 /* TasksWidget */ = {
 			isa = PBXGroup;
 			children = (
+				792242F42B232EC60004F4FC /* TaskEntry.swift */,
+				792242F62B232EE10004F4FC /* TaskProvider.swift */,
+				792242F22B232EB80004F4FC /* TaskWidget.swift */,
 			);
 			path = TasksWidget;
 			sourceTree = "<group>";
@@ -1521,6 +1530,7 @@
 				791CA38F2B225183009A5395 /* TaskStep+CoreDataClass.swift in Sources */,
 				791CA38C2B22517E009A5395 /* TaskColumn+Defaults.swift in Sources */,
 				791CA37B2B225167009A5395 /* Category+Defaults.swift in Sources */,
+				792242F72B232EE10004F4FC /* TaskProvider.swift in Sources */,
 				791CA38B2B22517E009A5395 /* TaskColumn+CoreDataProperties.swift in Sources */,
 				791CA3772B2250CB009A5395 /* DataService.swift in Sources */,
 				791CA3802B22516D009A5395 /* ColorComponents+DTO.swift in Sources */,
@@ -1549,12 +1559,14 @@
 				791CA3862B225176009A5395 /* Task+CoreDataProperties.swift in Sources */,
 				797B4D792B2107D7001DAC30 /* TaskWiseWidgetBundle.swift in Sources */,
 				791CA39B2B2256DB009A5395 /* Date+Extensions.swift in Sources */,
+				792242F32B232EB80004F4FC /* TaskWidget.swift in Sources */,
 				791CA38A2B22517E009A5395 /* TaskColumn+CoreDataClass.swift in Sources */,
 				791CA3932B225188009A5395 /* UserSettings+CoreDataProperties.swift in Sources */,
 				797B4DA42B2119AA001DAC30 /* CompletionProvider.swift in Sources */,
 				791CA3782B2250CB009A5395 /* DateService+Widget.swift in Sources */,
 				791CA3902B225183009A5395 /* TaskStep+DTO.swift in Sources */,
 				797B4D922B211438001DAC30 /* Image+Extensions.swift in Sources */,
+				792242F52B232EC60004F4FC /* TaskEntry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

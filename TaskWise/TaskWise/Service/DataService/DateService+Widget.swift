@@ -8,4 +8,8 @@ extension DataService {
         let doneTasks = tasks.from(column: maxColumn)
         return (doneTasks.count, tasks.count)
     }
+
+    func fetchToday() async throws -> [Task.WidgetDTO] {
+        []
+    }
 }

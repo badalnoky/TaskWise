@@ -1,5 +1,6 @@
 import CoreData
 import Foundation
+import SwiftUI
 
 extension Task {
     public struct DTO {
@@ -42,5 +43,41 @@ extension Task {
         self.wCategory = updated.category
         self.wPriority = updated.priority
         self.wColumn = updated.column
+    }
+}
+
+extension Task {
+    public struct WidgetDTO {
+        let id: UUID
+        let title: String
+        let priority: String
+        let category: String
+        let categoryColor: Color
+
+        public init(
+            id: UUID,
+            title: String,
+            priority: String,
+            category: String,
+            categoryColor: Color
+        ) {
+            self.id = id
+            self.title = title
+            self.priority = priority
+            self.category = category
+            self.categoryColor = categoryColor
+        }
+
+        public init(from task: Task) {
+            self.id = task.id
+            self.title = task.title
+            self.priority = task.priority.name
+            self.category = task.category.name
+            self.categoryColor = .from(components: task.category.colorComponents)
+        }
+
+        static var placeholder: WidgetDTO {
+            .init(id: UUID(), title: "Task", priority: "Low", category: "Freetime", categoryColor: .blue)
+        }
     }
 }

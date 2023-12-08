@@ -5,5 +5,6 @@ import WidgetKit
 struct TaskWiseWidgetBundle: WidgetBundle {
     var body: some Widget {
         CompletionWidget()
+        TaskWidget()
     }
 }
