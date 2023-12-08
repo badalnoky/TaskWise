@@ -7,5 +7,5 @@ extension String {
 
     static let taskWidgetKind: String = "TaskWidget"
     static let taskWidgetConfigurationName: String = "Today's tasks"
-    static let taskWidgetDescription: String = "This widget shows the tasks that you have yet to do today."
+    static let taskWidgetDescription: String = "This widget shows the tasks that you have yet to completetoday."
 }

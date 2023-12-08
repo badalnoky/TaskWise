@@ -53,19 +53,22 @@ extension Task {
         let priority: String
         let category: String
         let categoryColor: Color
+        let columnId: UUID
 
         public init(
             id: UUID,
             title: String,
             priority: String,
             category: String,
-            categoryColor: Color
+            categoryColor: Color,
+            columnId: UUID
         ) {
             self.id = id
             self.title = title
             self.priority = priority
             self.category = category
             self.categoryColor = categoryColor
+            self.columnId = columnId
         }
 
         public init(from task: Task) {
@@ -74,10 +77,20 @@ extension Task {
             self.priority = task.priority.name
             self.category = task.category.name
             self.categoryColor = .from(components: task.category.colorComponents)
+            self.columnId = task.column.id
         }
 
         static var placeholder: WidgetDTO {
-            .init(id: UUID(), title: "Task", priority: "Low", category: "Freetime", categoryColor: .blue)
+            // swiftlint: disable: force_unwrapping
+            .init(
+                id: UUID(),
+                title: "Task",
+                priority: "Low",
+                category: "Freetime",
+                categoryColor: .blue,
+                columnId: UUID(uuidString: "03648B00-ACD7-47E9-8819-63EA18F290C0")!
+            )
+            // swiftlint: enable: force_unwrapping
         }
     }
 }

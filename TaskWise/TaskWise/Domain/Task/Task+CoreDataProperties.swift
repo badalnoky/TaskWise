@@ -40,7 +40,7 @@ extension Task {
         return request
     }
 
-    @nonobjc public class func completionFetchRequest() -> NSFetchRequest<Task> {
+    @nonobjc public class func todaysFetchRequest() -> NSFetchRequest<Task> {
         let request = NSFetchRequest<Task>(entityName: Self.entityName)
         let maxDate: NSDate = (Date.endOfToday) as NSDate
         let minDate: NSDate = (Date.startOfToday) as NSDate

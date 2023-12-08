@@ -5,21 +5,21 @@ struct TaskProvider: TimelineProvider {
     let service = DataService(shouldLoadDefaults: false)
 
     func placeholder(in context: Context) -> TaskEntry {
-        TaskEntry(date: .now, tasks: [.placeholder])
+        TaskEntry(date: .now, tasks: [.placeholder], columns: [.placeholder])
     }
 
     func getSnapshot(in context: Context, completion: @escaping (TaskEntry) -> Void) {
         if context.isPreview {
-            completion(TaskEntry(date: .now, tasks: [.placeholder]))
+            completion(TaskEntry(date: .now, tasks: [.placeholder], columns: [.placeholder]))
         } else {
             SwiftUI.Task {
                 do {
-                    let tasks = try await service.fetchToday()
-                    let entry = TaskEntry(date: .now, tasks: tasks)
+                    let tuple = try await service.fetchToday()
+                    let entry = TaskEntry(date: .now, tasks: tuple.0, columns: tuple.1)
                     completion(entry)
                 } catch {
                     print(error.localizedDescription)
-                    let entry = TaskEntry(date: .now, tasks: [])
+                    let entry = TaskEntry(date: .now, tasks: [], columns: [])
                     completion(entry)
                 }
             }
@@ -32,13 +32,13 @@ struct TaskProvider: TimelineProvider {
         // swiftlint: enable: force_unwrapping
         SwiftUI.Task {
             do {
-                let tasks = try await service.fetchToday()
-                let entry = TaskEntry(date: .now, tasks: tasks)
+                let tuple = try await service.fetchToday()
+                let entry = TaskEntry(date: .now, tasks: tuple.0, columns: tuple.1)
                 let timeline = Timeline(entries: [entry], policy: .after(nextUpdateDate))
                 completion(timeline)
             } catch {
                 print(error.localizedDescription)
-                let entry = TaskEntry(date: .now, tasks: [])
+                let entry = TaskEntry(date: .now, tasks: [], columns: [])
                 let timeline = Timeline(entries: [entry], policy: .after(nextUpdateDate))
                 completion(timeline)
             }

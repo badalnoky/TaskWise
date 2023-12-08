@@ -32,5 +32,5 @@ struct TaskWidget: Widget {
 #Preview(as: .systemMedium) {
     TaskWidget()
 } timeline: {
-    TaskEntry(date: .now, tasks: [])
+    TaskEntry(date: .now, tasks: [.placeholder], columns: [.placeholder])
 }
