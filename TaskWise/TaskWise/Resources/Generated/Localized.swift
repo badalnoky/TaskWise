@@ -54,6 +54,8 @@ internal enum Str {
     internal static let iconsCheck = String(localized: "Icons.check", defaultValue: "checkmark.circle.fill")
     /// trash
     internal static let iconsDelete = String(localized: "Icons.delete", defaultValue: "trash")
+    /// chevron.down
+    internal static let iconsDown = String(localized: "Icons.down", defaultValue: "chevron.down")
     /// pencil
     internal static let iconsEdit = String(localized: "Icons.edit", defaultValue: "pencil")
     /// line.3.horizontal.decrease.circle
@@ -68,6 +70,8 @@ internal enum Str {
     internal static let iconsSearch = String(localized: "Icons.search", defaultValue: "magnifyingglass")
     /// gear
     internal static let iconsSettings = String(localized: "Icons.settings", defaultValue: "gear")
+    /// chevron.up
+    internal static let iconsUp = String(localized: "Icons.up", defaultValue: "chevron.up")
     /// Add
     internal static let settingsAddLabel = String(localized: "Settings.addLabel", defaultValue: "Add")
     /// Cancel

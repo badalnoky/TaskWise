@@ -11,6 +11,8 @@ public enum TextStyle: CaseIterable {
     case callout
     /// 14 pt
     case footnote
+    /// 10 pt
+    case widget
 }
 
 public extension TextStyle {
@@ -30,6 +32,8 @@ public extension TextStyle {
             return Fnt.bold.font(size: 18)
         case .footnote:
             return Fnt.bold.font(size: 14)
+        case .widget:
+            return Fnt.bold.font(size: 12)
         }
     }
 }

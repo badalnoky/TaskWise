@@ -276,6 +276,17 @@
         }
       }
     },
+    "Icons.down" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "chevron.down"
+          }
+        }
+      }
+    },
     "Icons.edit" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -349,6 +360,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "gear"
+          }
+        }
+      }
+    },
+    "Icons.up" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "chevron.up"
           }
         }
       }
