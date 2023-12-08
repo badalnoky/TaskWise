@@ -89,7 +89,7 @@
 		797B4D742B2107D7001DAC30 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 797B4D732B2107D7001DAC30 /* WidgetKit.framework */; };
 		797B4D762B2107D7001DAC30 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 797B4D752B2107D7001DAC30 /* SwiftUI.framework */; };
 		797B4D792B2107D7001DAC30 /* TaskWiseWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797B4D782B2107D7001DAC30 /* TaskWiseWidgetBundle.swift */; };
-		797B4D7B2B2107D7001DAC30 /* TaskWiseWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797B4D7A2B2107D7001DAC30 /* TaskWiseWidget.swift */; };
+		797B4D7B2B2107D7001DAC30 /* CompletionWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797B4D7A2B2107D7001DAC30 /* CompletionWidget.swift */; };
 		797B4D7D2B2107D8001DAC30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 797B4D7C2B2107D8001DAC30 /* Assets.xcassets */; };
 		797B4D812B2107D8001DAC30 /* TaskWiseWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 797B4D722B2107D7001DAC30 /* TaskWiseWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		797B4D8A2B2111FB001DAC30 /* TaskProgressWidgetIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797B4D882B21118C001DAC30 /* TaskProgressWidgetIndicator.swift */; };
@@ -182,6 +182,9 @@
 		79E14AD62AE41A5D00FF730D /* TaskStep+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E14AD52AE41A5D00FF730D /* TaskStep+Mock.swift */; };
 		79E14AD82AE41ADB00FF730D /* Priority+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E14AD72AE41ADB00FF730D /* Priority+Mock.swift */; };
 		79E14ADA2AE41AED00FF730D /* TaskColumn+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E14AD92AE41AED00FF730D /* TaskColumn+Mock.swift */; };
+		79E6584D2B2326FA00DE5A0A /* WidgetTimelineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E6584C2B2326FA00DE5A0A /* WidgetTimelineService.swift */; };
+		79E6584E2B23280100DE5A0A /* String+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797B4D952B2115CB001DAC30 /* String+Constants.swift */; };
+		79E6584F2B2329A300DE5A0A /* WidgetTimelineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E6584C2B2326FA00DE5A0A /* WidgetTimelineService.swift */; };
 		79EAF75F2AB9EC3D00FC05BE /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EAF75E2AB9EC3D00FC05BE /* View+Extensions.swift */; };
 		7A9A901567717541BBD96A02 /* Pods_TaskWise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD32EFC3A22C26F3A0A07A5 /* Pods_TaskWise.framework */; };
 		7FC2DAEE3DB409238E5DA726 /* libPods-TaskWiseTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6A56D56A0816CFDB820555 /* libPods-TaskWiseTests.a */; };
@@ -277,7 +280,7 @@
 		797B4D732B2107D7001DAC30 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		797B4D752B2107D7001DAC30 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		797B4D782B2107D7001DAC30 /* TaskWiseWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskWiseWidgetBundle.swift; sourceTree = "<group>"; };
-		797B4D7A2B2107D7001DAC30 /* TaskWiseWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskWiseWidget.swift; sourceTree = "<group>"; };
+		797B4D7A2B2107D7001DAC30 /* CompletionWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionWidget.swift; sourceTree = "<group>"; };
 		797B4D7C2B2107D8001DAC30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		797B4D7E2B2107D8001DAC30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		797B4D882B21118C001DAC30 /* TaskProgressWidgetIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskProgressWidgetIndicator.swift; sourceTree = "<group>"; };
@@ -365,6 +368,7 @@
 		79E14AD52AE41A5D00FF730D /* TaskStep+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskStep+Mock.swift"; sourceTree = "<group>"; };
 		79E14AD72AE41ADB00FF730D /* Priority+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Priority+Mock.swift"; sourceTree = "<group>"; };
 		79E14AD92AE41AED00FF730D /* TaskColumn+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskColumn+Mock.swift"; sourceTree = "<group>"; };
+		79E6584C2B2326FA00DE5A0A /* WidgetTimelineService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetTimelineService.swift; sourceTree = "<group>"; };
 		79EAF75E2AB9EC3D00FC05BE /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		91C2B2216449795E4EF13BE8 /* Pods-TaskWise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskWise.debug.xcconfig"; path = "Target Support Files/Pods-TaskWise/Pods-TaskWise.debug.xcconfig"; sourceTree = "<group>"; };
 		982159FDF24FAD927584113A /* Pods-TaskWiseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskWiseTests.debug.xcconfig"; path = "Target Support Files/Pods-TaskWiseTests/Pods-TaskWiseTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -607,6 +611,7 @@
 			isa = PBXGroup;
 			children = (
 				797B4DAB2B212981001DAC30 /* DataService */,
+				79E6584B2B2326C600DE5A0A /* WidgetTimelineService */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -639,7 +644,7 @@
 				797B4DA52B2119D5001DAC30 /* CompletionEntry.swift */,
 				797B4DA32B2119AA001DAC30 /* CompletionProvider.swift */,
 				797B4D882B21118C001DAC30 /* TaskProgressWidgetIndicator.swift */,
-				797B4D7A2B2107D7001DAC30 /* TaskWiseWidget.swift */,
+				797B4D7A2B2107D7001DAC30 /* CompletionWidget.swift */,
 			);
 			path = CompletionWidget;
 			sourceTree = "<group>";
@@ -1069,6 +1074,14 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		79E6584B2B2326C600DE5A0A /* WidgetTimelineService */ = {
+			isa = PBXGroup;
+			children = (
+				79E6584C2B2326FA00DE5A0A /* WidgetTimelineService.swift */,
+			);
+			path = WidgetTimelineService;
+			sourceTree = "<group>";
+		};
 		8CEBAA51A4C881F8694DD290 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1370,6 +1383,7 @@
 				79C16F4D2ABB4FDB00BA362B /* CheckBoxStyle.swift in Sources */,
 				794621C22B1933E40060F6CD /* CalendarNavigationBarModifier.swift in Sources */,
 				798605652AD5E03C007A64B3 /* Date+Extensions.swift in Sources */,
+				79E6584D2B2326FA00DE5A0A /* WidgetTimelineService.swift in Sources */,
 				79CD54AA2AD33B9600D064C2 /* Task+CoreDataClass.swift in Sources */,
 				7988A04E2AAE362400C63265 /* String+Extensions.swift in Sources */,
 				7983001C2B17F6520013B834 /* BaseButtonStyle.swift in Sources */,
@@ -1422,6 +1436,7 @@
 				799070B92AEA55150051AAC8 /* Priority+DTO.swift in Sources */,
 				791F0D0B2ABCA89100B7F408 /* DayViewModel+Mock.swift in Sources */,
 				79E14AD82AE41ADB00FF730D /* Priority+Mock.swift in Sources */,
+				79E6584E2B23280100DE5A0A /* String+Constants.swift in Sources */,
 				799070C52AEA717D0051AAC8 /* DataService+Priority.swift in Sources */,
 				794621B22B19176F0060F6CD /* StyledFieldModel.swift in Sources */,
 				794621C02B1930900060F6CD /* DayNavigationBarModifier.swift in Sources */,
@@ -1514,13 +1529,14 @@
 				791CA3852B225171009A5395 /* Priority+DTO.swift in Sources */,
 				791CA3952B2251C9009A5395 /* DataService+TaskColumn.swift in Sources */,
 				79A0C2DF2B226B1E005B3F04 /* TaskWise.xcdatamodeld in Sources */,
+				79E6584F2B2329A300DE5A0A /* WidgetTimelineService.swift in Sources */,
 				791CA3872B225176009A5395 /* Task+Extensions.swift in Sources */,
 				791CA3812B22516D009A5395 /* ColorComponents+CoreDataProperties.swift in Sources */,
 				791CA3942B2251C9009A5395 /* DataService+Category.swift in Sources */,
 				791CA3982B2251C9009A5395 /* DataService+Task.swift in Sources */,
 				791CA3972B2251C9009A5395 /* DataService+Priority.swift in Sources */,
 				791CA3892B225176009A5395 /* Task+CoreDataClass.swift in Sources */,
-				797B4D7B2B2107D7001DAC30 /* TaskWiseWidget.swift in Sources */,
+				797B4D7B2B2107D7001DAC30 /* CompletionWidget.swift in Sources */,
 				791CA38D2B22517E009A5395 /* TaskColumn+DTO.swift in Sources */,
 				791CA37A2B225156009A5395 /* DataServiceInput.swift in Sources */,
 				797B4D972B2115CF001DAC30 /* String+Constants.swift in Sources */,

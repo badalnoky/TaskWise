@@ -1,7 +1,7 @@
 import SwiftUI
 import WidgetKit
 
-public struct TaskWiseWidgetEntryView: View {
+public struct CompletionWidgetEntryView: View {
     var entry: CompletionProvider.Entry
 
     public var body: some View {
@@ -9,28 +9,28 @@ public struct TaskWiseWidgetEntryView: View {
     }
 }
 
-struct TaskWiseWidget: Widget {
-    let kind: String = .widgetKind
+struct CompletionWidget: Widget {
+    let kind: String = .completionWidgetKind
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: CompletionProvider()) { entry in
             if #available(iOS 17.0, *) {
-                TaskWiseWidgetEntryView(entry: entry)
+                CompletionWidgetEntryView(entry: entry)
                     .containerBackground(.fill.tertiary, for: .widget)
             } else {
-                TaskWiseWidgetEntryView(entry: entry)
+                CompletionWidgetEntryView(entry: entry)
                     .padding()
                     .background()
             }
         }
-        .configurationDisplayName(String.widgetConfigurationName)
-        .description(String.widgetDescription)
+        .configurationDisplayName(String.completionWidgetConfigurationName)
+        .description(String.completionWidgetDescription)
         .supportedFamilies([.accessoryCircular])
     }
 }
 
 #Preview(as: .accessoryCircular) {
-    TaskWiseWidget()
+    CompletionWidget()
 } timeline: {
     CompletionEntry(date: .now, completedTasks: 0, totalTasks: 0)
     CompletionEntry(date: .now, completedTasks: 0, totalTasks: 3)
