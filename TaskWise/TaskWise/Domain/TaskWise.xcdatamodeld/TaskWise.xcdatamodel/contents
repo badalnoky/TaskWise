@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22222" systemVersion="23A344" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22222" systemVersion="23B81" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
     <entity name="Category" representedClassName="Category" syncable="YES">
         <attribute name="wId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="wName" optional="YES" attributeType="String"/>
@@ -44,7 +44,7 @@
         <attribute name="wLabel" optional="YES" attributeType="String"/>
         <relationship name="wTask" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Task" inverseName="wSteps" inverseEntity="Task"/>
     </entity>
-    <entity name="UserSettings" representedClassName="UserSettings" syncable="YES" codeGenerationType="class">
+    <entity name="UserSettings" representedClassName="UserSettings" syncable="YES">
         <attribute name="categoriesInitiated" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="columnsInitiated" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="prioritiesInitiated" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>

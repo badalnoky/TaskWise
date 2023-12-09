@@ -4,7 +4,7 @@ public struct TaskProgressIndicator {
     let total: Int
     let width: Double
 
-    var progress: Double {
+    var progress: CGFloat {
         (.indicatorRange / Double(total)) * Double(done) + .indicatorLowerBound
     }
 
@@ -19,7 +19,7 @@ extension TaskProgressIndicator: View {
     public var body: some View {
         ZStack {
             Circle()
-                .trim(from: progress, to: .indicatorGreaterBound)
+                .trim(from: total != .zero ? progress : .indicatorLowerBound, to: .indicatorGreaterBound)
                 .stroke(style: StrokeStyle(lineWidth: .indicatorBorderWidth, lineCap: .round, lineJoin: .round))
                 .frame(width: width)
                 .rotationEffect(.degrees(.indicatorRotation))

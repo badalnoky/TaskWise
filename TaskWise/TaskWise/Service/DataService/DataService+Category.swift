@@ -18,7 +18,6 @@ extension DataService {
     }
 
     func deleteCategory(_ category: Category) {
-        // TODO: Resolve this
         if categories.value.count == .one {
             print("Return an error saying there needs to be at least one category")
         } else if (category.wTasks?.count ?? .zero) > .zero {

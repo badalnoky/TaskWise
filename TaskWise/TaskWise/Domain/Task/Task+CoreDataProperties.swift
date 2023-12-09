@@ -39,6 +39,14 @@ extension Task {
         request.predicate = NSPredicate(format: filterPredicate, argumentArray: [minDate, maxDate])
         return request
     }
+
+    @nonobjc public class func todaysFetchRequest() -> NSFetchRequest<Task> {
+        let request = NSFetchRequest<Task>(entityName: Self.entityName)
+        let maxDate: NSDate = (Date.endOfToday) as NSDate
+        let minDate: NSDate = (Date.startOfToday) as NSDate
+        request.predicate = NSPredicate(format: filterPredicate, argumentArray: [minDate, maxDate])
+        return request
+    }
 }
 
 // MARK: Generated accessors for wSteps

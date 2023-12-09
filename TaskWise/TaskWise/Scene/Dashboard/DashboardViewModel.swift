@@ -10,6 +10,7 @@ import SwiftUI
     let date: Date = .now
     var tasks: [Task] = []
     var columns: [TaskColumn] = []
+    var activeTab: Int = .one
 
     var doneCount: Int {
         guard let last = columns.last else { return .zero }
@@ -54,6 +55,18 @@ extension DashboardViewModel {
 
     func didChangeColumn(to column: TaskColumn, on task: Task) {
         dataService.updateColumn(to: column, on: task)
+    }
+
+    func openAt(_ url: URL) {
+        guard url.scheme == Str.appScheme, url.host == Str.appHost else { return }
+        if url.pathComponents[.one] == Str.appTaskPath {
+            // swiftlint: disable: force_unwrapping
+            let id = UUID(uuidString: url.pathComponents[.one.next])!
+            // swiftlint: enable: force_unwrapping
+            navigator.showTask(id)
+        } else {
+            self.activeTab = Int(url.pathComponents[.one]) ?? .one
+        }
     }
 }
 

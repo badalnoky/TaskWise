@@ -34,6 +34,61 @@
         }
       }
     },
+    "App.groupIdentifier" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "group.bercidalnoky.TaskWise"
+          }
+        }
+      }
+    },
+    "App.host" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dashboard"
+          }
+        }
+      }
+    },
+    "App.scheme" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TaskWiseApp"
+          }
+        }
+      }
+    },
+    "App.sqlite" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TaskWise.sqlite"
+          }
+        }
+      }
+    },
+    "App.taskPath" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Task"
+          }
+        }
+      }
+    },
     "Calendar.cancelLabel" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -63,6 +118,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Delete"
+          }
+        }
+      }
+    },
+    "ContextMenu.doneLabel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Done"
           }
         }
       }
@@ -166,6 +232,28 @@
         }
       }
     },
+    "Defaults.column" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "widgetSelectedColum"
+          }
+        }
+      }
+    },
+    "Defaults.page" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "widgetSelectedPage"
+          }
+        }
+      }
+    },
     "Filter.clearAllLabel" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -243,6 +331,17 @@
         }
       }
     },
+    "Icons.contextCheck" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "checkmark.circle"
+          }
+        }
+      }
+    },
     "Icons.delete" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -250,6 +349,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "trash"
+          }
+        }
+      }
+    },
+    "Icons.down" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "chevron.down"
           }
         }
       }
@@ -327,6 +437,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "gear"
+          }
+        }
+      }
+    },
+    "Icons.up" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "chevron.up"
           }
         }
       }

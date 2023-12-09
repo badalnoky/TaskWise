@@ -11,6 +11,9 @@ extension Image {
     static let list = Image(systemName: Str.iconsList)
     static let filter = Image(systemName: Str.iconsFilter)
     static let more = Image(systemName: Str.iconsMore)
+    static let next = Image(systemName: Str.iconsForward)
+    static let up = Image(systemName: Str.iconsUp)
+    static let down = Image(systemName: Str.iconsDown)
 }
 
 public extension Image {

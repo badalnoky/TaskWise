@@ -1,20 +1,29 @@
+import Foundation
 extension DataService {
     func addTask(_ task: Task.DTO) {
         Task.create(from: task, on: context)
         save()
         fetchTasks()
+        handleWidgetCompletion(taskDate: task.date)
+        handleWidgetTask(taskDate: task.date)
     }
 
     func updateTask(_ task: Task, with updated: Task.DTO) {
         task.update(with: updated, on: context)
         save()
         fetchTasks()
+        handleWidgetCompletion(taskDate: task.date)
+        handleWidgetCompletion(taskDate: updated.date)
+        handleWidgetTask(taskDate: task.date)
+        handleWidgetTask(taskDate: updated.date)
     }
 
     func updateColumn(to column: TaskColumn, on task: Task) {
         task.wColumn = column
         save()
         fetchTasks()
+        handleWidgetCompletion(taskDate: task.date)
+        handleWidgetTask(taskDate: task.date)
     }
 
     func addStepFrom(dto: TaskStep.DTO, to task: Task) {
@@ -56,5 +65,19 @@ extension DataService {
     func deleteTask(_ task: Task) {
         delete(item: task)
         fetchTasks()
+        handleWidgetCompletion(taskDate: task.date)
+        handleWidgetTask(taskDate: task.date)
+    }
+
+    private func handleWidgetCompletion(taskDate: Date) {
+        if Calendar.current.isDate(taskDate, inSameDayAs: .now) {
+            WidgetTimelineService.refreshWidgetOf(kind: .completion)
+        }
+    }
+
+    private func handleWidgetTask(taskDate: Date) {
+        if Calendar.current.isDate(taskDate, inSameDayAs: .now) {
+            WidgetTimelineService.refreshWidgetOf(kind: .task)
+        }
     }
 }

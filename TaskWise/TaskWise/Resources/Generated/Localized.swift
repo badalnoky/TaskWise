@@ -10,12 +10,24 @@ internal enum Str {
     internal static let alertNo = String(localized: "Alert.no", defaultValue: "No")
     /// Yes
     internal static let alertYes = String(localized: "Alert.yes", defaultValue: "Yes")
+    /// group.bercidalnoky.TaskWise
+    internal static let appGroupIdentifier = String(localized: "App.groupIdentifier", defaultValue: "group.bercidalnoky.TaskWise")
+    /// Dashboard
+    internal static let appHost = String(localized: "App.host", defaultValue: "Dashboard")
+    /// TaskWiseApp
+    internal static let appScheme = String(localized: "App.scheme", defaultValue: "TaskWiseApp")
+    /// TaskWise.sqlite
+    internal static let appSqlite = String(localized: "App.sqlite", defaultValue: "TaskWise.sqlite")
+    /// Task
+    internal static let appTaskPath = String(localized: "App.taskPath", defaultValue: "Task")
     /// Cancel
     internal static let calendarCancelLabel = String(localized: "Calendar.cancelLabel", defaultValue: "Cancel")
     /// Search
     internal static let calendarSearchLabel = String(localized: "Calendar.searchLabel", defaultValue: "Search")
     /// Delete
     internal static let contextMenuDeleteLabel = String(localized: "ContextMenu.deleteLabel", defaultValue: "Delete")
+    /// Done
+    internal static let contextMenuDoneLabel = String(localized: "ContextMenu.doneLabel", defaultValue: "Done")
     /// Move to next column
     internal static let contextMenuNextLabel = String(localized: "ContextMenu.nextLabel", defaultValue: "Move to next column")
     /// Move to previous column
@@ -34,6 +46,10 @@ internal enum Str {
     internal static let datePickerAllDayLabel = String(localized: "DatePicker.allDayLabel", defaultValue: "All-day")
     /// Date
     internal static let datePickerDateLabel = String(localized: "DatePicker.dateLabel", defaultValue: "Date")
+    /// widgetSelectedColum
+    internal static let defaultsColumn = String(localized: "Defaults.column", defaultValue: "widgetSelectedColum")
+    /// widgetSelectedPage
+    internal static let defaultsPage = String(localized: "Defaults.page", defaultValue: "widgetSelectedPage")
     /// Clear all
     internal static let filterClearAllLabel = String(localized: "Filter.clearAllLabel", defaultValue: "Clear all")
     /// Close
@@ -48,8 +64,12 @@ internal enum Str {
     internal static let iconsCalendar = String(localized: "Icons.calendar", defaultValue: "calendar")
     /// checkmark.circle.fill
     internal static let iconsCheck = String(localized: "Icons.check", defaultValue: "checkmark.circle.fill")
+    /// checkmark.circle
+    internal static let iconsContextCheck = String(localized: "Icons.contextCheck", defaultValue: "checkmark.circle")
     /// trash
     internal static let iconsDelete = String(localized: "Icons.delete", defaultValue: "trash")
+    /// chevron.down
+    internal static let iconsDown = String(localized: "Icons.down", defaultValue: "chevron.down")
     /// pencil
     internal static let iconsEdit = String(localized: "Icons.edit", defaultValue: "pencil")
     /// line.3.horizontal.decrease.circle
@@ -64,6 +84,8 @@ internal enum Str {
     internal static let iconsSearch = String(localized: "Icons.search", defaultValue: "magnifyingglass")
     /// gear
     internal static let iconsSettings = String(localized: "Icons.settings", defaultValue: "gear")
+    /// chevron.up
+    internal static let iconsUp = String(localized: "Icons.up", defaultValue: "chevron.up")
     /// Add
     internal static let settingsAddLabel = String(localized: "Settings.addLabel", defaultValue: "Add")
     /// Cancel

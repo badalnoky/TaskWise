@@ -20,7 +20,8 @@ public extension Double {
 }
 
 public extension Double {
-    static let hour: Double = 60 * 60
+    static let minute: Double = 60
+    static let hour: Double = minute * 60
     static let day: Double = hour * 24
     static let year: Double = day * 365
     static let twoYears: Double = year * 2
