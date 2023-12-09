@@ -12,8 +12,14 @@ internal enum Str {
     internal static let alertYes = String(localized: "Alert.yes", defaultValue: "Yes")
     /// group.bercidalnoky.TaskWise
     internal static let appGroupIdentifier = String(localized: "App.groupIdentifier", defaultValue: "group.bercidalnoky.TaskWise")
+    /// Dashboard
+    internal static let appHost = String(localized: "App.host", defaultValue: "Dashboard")
+    /// TaskWiseApp
+    internal static let appScheme = String(localized: "App.scheme", defaultValue: "TaskWiseApp")
     /// TaskWise.sqlite
     internal static let appSqlite = String(localized: "App.sqlite", defaultValue: "TaskWise.sqlite")
+    /// Task
+    internal static let appTaskPath = String(localized: "App.taskPath", defaultValue: "Task")
     /// Cancel
     internal static let calendarCancelLabel = String(localized: "Calendar.cancelLabel", defaultValue: "Cancel")
     /// Search

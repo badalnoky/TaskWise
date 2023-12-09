@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct DashboardView {
-    let viewModel: DashboardViewModel
+    @Bindable var viewModel: DashboardViewModel
 }
 // swiftlint: disable: closure_body_length
 extension DashboardView: View {
@@ -20,7 +20,7 @@ extension DashboardView: View {
                 VStack {
                     TaskProgressIndicator(done: viewModel.doneCount, total: viewModel.totalCount, width: geometry.size.width * .indicatorScaledWidth)
 
-                    TabView {
+                    TabView(selection: $viewModel.activeTab) {
                         ForEach(viewModel.columns, id: \.self) { column in
                             VStack(spacing: .zero) {
                                 ColumnHeader(text: column.name)
@@ -55,6 +55,7 @@ extension DashboardView: View {
                             }
                             .frame(width: geometry.size.width)
                             .padding(.bottom, .padding50)
+                            .tag(column.index)
                         }
                     }
                     .tabViewStyle(PageTabViewStyle())
@@ -67,6 +68,7 @@ extension DashboardView: View {
             calendarAction: viewModel.didTapCalendar,
             addAction: viewModel.didTapAddTask
         )
+        .onOpenURL { viewModel.openAt($0) }
     }
 }
 
