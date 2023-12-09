@@ -122,6 +122,17 @@
         }
       }
     },
+    "ContextMenu.doneLabel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Done"
+          }
+        }
+      }
+    },
     "ContextMenu.nextLabel" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -316,6 +327,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "checkmark.circle.fill"
+          }
+        }
+      }
+    },
+    "Icons.contextCheck" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "checkmark.circle"
           }
         }
       }

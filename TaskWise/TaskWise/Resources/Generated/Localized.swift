@@ -26,6 +26,8 @@ internal enum Str {
     internal static let calendarSearchLabel = String(localized: "Calendar.searchLabel", defaultValue: "Search")
     /// Delete
     internal static let contextMenuDeleteLabel = String(localized: "ContextMenu.deleteLabel", defaultValue: "Delete")
+    /// Done
+    internal static let contextMenuDoneLabel = String(localized: "ContextMenu.doneLabel", defaultValue: "Done")
     /// Move to next column
     internal static let contextMenuNextLabel = String(localized: "ContextMenu.nextLabel", defaultValue: "Move to next column")
     /// Move to previous column
@@ -62,6 +64,8 @@ internal enum Str {
     internal static let iconsCalendar = String(localized: "Icons.calendar", defaultValue: "calendar")
     /// checkmark.circle.fill
     internal static let iconsCheck = String(localized: "Icons.check", defaultValue: "checkmark.circle.fill")
+    /// checkmark.circle
+    internal static let iconsContextCheck = String(localized: "Icons.contextCheck", defaultValue: "checkmark.circle")
     /// trash
     internal static let iconsDelete = String(localized: "Icons.delete", defaultValue: "trash")
     /// chevron.down

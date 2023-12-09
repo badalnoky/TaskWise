@@ -90,6 +90,7 @@
 		795E11872B2484E90000F8AA /* TaskItemPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795E11862B2484E90000F8AA /* TaskItemPlaceholder.swift */; };
 		795E118A2B2492CC0000F8AA /* PagingIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795E11892B2492CC0000F8AA /* PagingIntent.swift */; };
 		795E118C2B24A6290000F8AA /* ColumnIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795E118B2B24A6290000F8AA /* ColumnIntent.swift */; };
+		795E118F2B24CBEE0000F8AA /* DoubleAndSingleTapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795E118E2B24CBEE0000F8AA /* DoubleAndSingleTapGesture.swift */; };
 		79616F482AC5CD4000F4A95C /* CloudItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79616F472AC5CD4000F4A95C /* CloudItem.swift */; };
 		79616F4A2AC5CE0000F4A95C /* CloudError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79616F492AC5CE0000F4A95C /* CloudError.swift */; };
 		79616F4C2AC5CE7700F4A95C /* CloudKitHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79616F4B2AC5CE7700F4A95C /* CloudKitHandler.swift */; };
@@ -300,6 +301,7 @@
 		795E11862B2484E90000F8AA /* TaskItemPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItemPlaceholder.swift; sourceTree = "<group>"; };
 		795E11892B2492CC0000F8AA /* PagingIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingIntent.swift; sourceTree = "<group>"; };
 		795E118B2B24A6290000F8AA /* ColumnIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnIntent.swift; sourceTree = "<group>"; };
+		795E118E2B24CBEE0000F8AA /* DoubleAndSingleTapGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleAndSingleTapGesture.swift; sourceTree = "<group>"; };
 		795F70D82AC456B400C556C9 /* TaskWise.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TaskWise.entitlements; sourceTree = "<group>"; };
 		79616F472AC5CD4000F4A95C /* CloudItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudItem.swift; sourceTree = "<group>"; };
 		79616F492AC5CE0000F4A95C /* CloudError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudError.swift; sourceTree = "<group>"; };
@@ -544,6 +546,7 @@
 				7921551B2AB9E80C0044CDED /* Components */,
 				790C190B2AD34B3F008647B8 /* Extensions */,
 				7988A02F2AAE2FB100C63265 /* Generated */,
+				795E118D2B24CBDA0000F8AA /* Gestures */,
 				7988A0302AAE2FC600C63265 /* Localizable */,
 				794621BA2B19221F0060F6CD /* Modifiers */,
 				793C648B2AED9F2200C9D3FF /* Protocols */,
@@ -648,6 +651,14 @@
 				795E118B2B24A6290000F8AA /* ColumnIntent.swift */,
 			);
 			path = Intents;
+			sourceTree = "<group>";
+		};
+		795E118D2B24CBDA0000F8AA /* Gestures */ = {
+			isa = PBXGroup;
+			children = (
+				795E118E2B24CBEE0000F8AA /* DoubleAndSingleTapGesture.swift */,
+			);
+			path = Gestures;
 			sourceTree = "<group>";
 		};
 		795F70D92AC458F800C556C9 /* Service */ = {
@@ -1533,6 +1544,7 @@
 				794621C42B193A8B0060F6CD /* TaskNavigationBarModifier.swift in Sources */,
 				799070B52AEA53330051AAC8 /* TaskColumn+DTO.swift in Sources */,
 				79616F4C2AC5CE7700F4A95C /* CloudKitHandler.swift in Sources */,
+				795E118F2B24CBEE0000F8AA /* DoubleAndSingleTapGesture.swift in Sources */,
 				799070BB2AEA64680051AAC8 /* EditMode+Extensions.swift in Sources */,
 				7988A03F2AAE35C200C63265 /* Screen.swift in Sources */,
 				79CD74D22AD9A27200DCD573 /* Task+Extensions.swift in Sources */,

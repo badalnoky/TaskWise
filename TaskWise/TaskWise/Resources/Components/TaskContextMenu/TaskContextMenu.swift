@@ -8,6 +8,13 @@ public struct TaskContextMenuItems {
 
 extension TaskContextMenuItems: View {
     public var body: some View {
+        if task.column.index != columns.count && task.column.index != columns.count.previous {
+            Button {
+                changeColumnAction(columns[columns.count.previous], task)
+            } label: {
+                Label(Str.contextMenuDoneLabel, systemImage: Str.iconsContextCheck)
+            }
+        }
         if task.column.index != columns.count {
             Button {
                 changeColumnAction(columns[task.column.index], task)
