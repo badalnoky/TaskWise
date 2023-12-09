@@ -40,7 +40,7 @@ public struct TaskWidgetEntryView: View {
             HStack {
                 WidgetColumnButton(type: .previous, condition: entry.selectedIndex != .zero)
                 TaskWidgetHeader(name: selectedColumn.name)
-                    .transition(.push(from: .trailing))
+                    .transition(.scale.combined(with: .opacity))
                 WidgetColumnButton(type: .next, condition: entry.selectedIndex != entry.columns.count.previous)
             }
             .padding(.bottom, .padding12)
@@ -59,7 +59,7 @@ public struct TaskWidgetEntryView: View {
                         }
                         // swiftlint: enable: force_unwrapping
                     }
-                    .transition(.push(from: .bottom))
+                    .transition(.asymmetric(insertion: .push(from: .top), removal: .push(from: .bottom)))
                     if tasksViewed.count < .taskWidgetMaxDisplayed {
                         TaskItemPlaceholder()
                     }
