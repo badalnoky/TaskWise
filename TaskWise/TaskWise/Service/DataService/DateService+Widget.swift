@@ -9,11 +9,12 @@ extension DataService {
         return (doneTasks.count, tasks.count)
     }
 
-    func fetchToday() async throws -> ([Task.WidgetDTO], [TaskColumn.DTO]) {
-        guard let tasks = try? context.fetch(Task.todaysFetchRequest()) else { return ([], []) }
-        guard let columns = try? context.fetch(TaskColumn.fetchRequest()) else { return ([], []) }
+    func fetchToday() async throws -> TaskEntry {
+        guard let tasks = try? context.fetch(Task.todaysFetchRequest()) else { return .empty }
+        guard let columns = try? context.fetch(TaskColumn.fetchRequest()) else { return .empty }
         let taskDtos = tasks.map { Task.WidgetDTO(from: $0) }
         let columnDtos = columns.map { TaskColumn.DTO(from: $0) }
-        return (taskDtos, columnDtos)
+        let (column, page) = WidgetTimelineService.getWidgetState()
+        return TaskEntry(date: .now, tasks: taskDtos, columns: columnDtos, selectedIndex: column, selectedPage: page)
     }
 }

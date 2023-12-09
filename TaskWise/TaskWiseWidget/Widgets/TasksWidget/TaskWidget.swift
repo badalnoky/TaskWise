@@ -4,19 +4,23 @@ import WidgetKit
 public struct TaskWidgetEntryView: View {
     var entry: TaskProvider.Entry
 
-    var selectedIndex: Int = 0
-    var selectedPage: Int = 0
     var minTaskIndex: Int {
-        selectedPage * 3
+        entry.selectedPage * .taskWidgetMaxDisplayed
     }
 
     var maxTaskIndex: Int {
-        let projectedMax = minTaskIndex + 2
+        if tasksForSelected.isEmpty {
+            return .zero
+        }
+        let projectedMax = minTaskIndex.projectedMax
         return projectedMax >= tasksForSelected.count ? tasksForSelected.count.previous : projectedMax
     }
 
     var selectedColumn: TaskColumn.DTO {
-        entry.columns[selectedIndex]
+        if entry.columns.isEmpty {
+            return .placeholder
+        }
+        return entry.columns[entry.selectedIndex]
     }
 
     var tasksForSelected: [Task.WidgetDTO] {
@@ -24,19 +28,23 @@ public struct TaskWidgetEntryView: View {
     }
 
     var tasksViewed: [Task.WidgetDTO] {
-        Array(tasksForSelected[minTaskIndex...maxTaskIndex])
+        if tasksForSelected.isEmpty {
+            return []
+        }
+        return Array(tasksForSelected[minTaskIndex...maxTaskIndex])
     }
 
     public var body: some View {
         VStack(spacing: .zero) {
             HStack {
-                WidgetColumnButton(type: .previous, condition: selectedIndex != 0)
+                WidgetColumnButton(type: .previous, condition: entry.selectedIndex != .zero)
                 TaskWidgetHeader(name: selectedColumn.name)
-                WidgetColumnButton(type: .next, condition: selectedIndex != entry.columns.count)
+                    .transition(.push(from: .trailing))
+                WidgetColumnButton(type: .next, condition: entry.selectedIndex != entry.columns.count.previous)
             }
             .padding(.bottom, .padding12)
             VStack(spacing: .zero) {
-                WidgetPageButton(type: .up, condition: selectedPage != 0)
+                WidgetPageButton(type: .up, condition: entry.selectedPage != .zero && !tasksViewed.isEmpty)
                 VStack {
                     ForEach(tasksViewed, id: \.id) { task in
                         TaskItemView(
@@ -46,11 +54,18 @@ public struct TaskWidgetEntryView: View {
                             categoryColor: task.categoryColor
                         )
                     }
+                    .transition(.push(from: .bottom))
+                    if tasksViewed.count < .taskWidgetMaxDisplayed {
+                        TaskItemPlaceholder()
+                    }
+                    if tasksViewed.count == .one {
+                        TaskItemPlaceholder()
+                    }
                 }
                 .padding(.vertical, .padding12)
-                WidgetPageButton(type: .down, condition: maxTaskIndex != tasksForSelected.count.previous)
+                .frame(maxHeight: .infinity, alignment: .center)
+                WidgetPageButton(type: .down, condition: maxTaskIndex != tasksForSelected.count.previous && !tasksViewed.isEmpty)
             }
-            Spacer()
         }
     }
 }
@@ -78,12 +93,13 @@ struct TaskWidget: Widget {
 #Preview(as: .systemLarge) {
     TaskWidget()
 } timeline: {
-    TaskEntry(
-        date: .now,
-        tasks: [
-            .placeholder, .placeholder, .placeholder, .placeholder,
-            .placeholder, .placeholder, .placeholder, .placeholder
-        ],
-        columns: [.placeholder, .placeholder, .placeholder]
-    )
+    TaskEntry.previewEntry(selectedIndex: .zero, selectedPage: .zero)
+    TaskEntry.previewEntry(selectedIndex: .zero, selectedPage: 1)
+    TaskEntry.previewEntry(selectedIndex: .zero, selectedPage: 2)
+    TaskEntry.previewEntry(selectedIndex: 1, selectedPage: .zero)
+    TaskEntry.previewEntry(selectedIndex: 1, selectedPage: 1)
+    TaskEntry.previewEntry(selectedIndex: 1, selectedPage: 2)
+    TaskEntry.previewEntry(selectedIndex: 2, selectedPage: .zero)
+    TaskEntry.previewEntry(selectedIndex: 2, selectedPage: 1)
+    TaskEntry.previewEntry(selectedIndex: 2, selectedPage: 2)
 }

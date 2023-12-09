@@ -6,14 +6,15 @@ struct WidgetColumnButton: View {
 
     var body: some View {
         if condition {
-            Button(
-                action: {},
-                label: { type.label }
-            )
+            Button(intent: ColumnIntent(direction: type.intentDirection)) {
+                type.label
+            }
             .buttonStyle(WidgetColumnButtonStyle())
+            .frame(width: .columnButtonWidth)
+            .transition(.opacity)
         } else {
             Color.clear
-                .frame(width: 40, height: .zero)
+                .frame(width: .columnButtonWidth, height: .zero)
         }
     }
 }

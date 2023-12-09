@@ -11,3 +11,13 @@ public extension Int {
         self + 1
     }
 }
+
+extension Int {
+    static var previous = 0
+    static var next = 1
+    static var taskWidgetMaxDisplayed = 3
+
+    var projectedMax: Int {
+        self + 2
+    }
+}

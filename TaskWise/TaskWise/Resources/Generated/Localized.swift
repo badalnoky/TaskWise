@@ -38,6 +38,10 @@ internal enum Str {
     internal static let datePickerAllDayLabel = String(localized: "DatePicker.allDayLabel", defaultValue: "All-day")
     /// Date
     internal static let datePickerDateLabel = String(localized: "DatePicker.dateLabel", defaultValue: "Date")
+    /// widgetSelectedColum
+    internal static let defaultsColumn = String(localized: "Defaults.column", defaultValue: "widgetSelectedColum")
+    /// widgetSelectedPage
+    internal static let defaultsPage = String(localized: "Defaults.page", defaultValue: "widgetSelectedPage")
     /// Clear all
     internal static let filterClearAllLabel = String(localized: "Filter.clearAllLabel", defaultValue: "Clear all")
     /// Close

@@ -54,3 +54,12 @@ public extension CGFloat {
     /// 0.8 pt
     static let indicatorGreaterBound: CGFloat = 0.8
 }
+
+public extension CGFloat {
+    /// 25 pt
+    static let pageButtonHeight: CGFloat = 25
+    /// 30 pt
+    static let widgetHeaderHeight: CGFloat = 30
+    /// 40 pt
+    static let columnButtonWidth: CGFloat = 40
+}

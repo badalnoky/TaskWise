@@ -188,6 +188,28 @@
         }
       }
     },
+    "Defaults.column" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "widgetSelectedColum"
+          }
+        }
+      }
+    },
+    "Defaults.page" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "widgetSelectedPage"
+          }
+        }
+      }
+    },
     "Filter.clearAllLabel" : {
       "extractionState" : "manual",
       "localizations" : {

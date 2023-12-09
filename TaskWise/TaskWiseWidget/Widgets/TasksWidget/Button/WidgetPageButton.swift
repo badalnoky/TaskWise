@@ -6,14 +6,15 @@ struct WidgetPageButton: View {
 
     var body: some View {
         if condition {
-            Button(
-                action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: { type.label }
-            )
+            Button(intent: PagingIntent(direction: type.intentDirection)) {
+                type.label
+            }
             .buttonStyle(WidgetPageButtonStyle())
-            .frame(height: 25)
+            .frame(height: .pageButtonHeight)
+            .transition(.opacity)
         } else {
             Color.clear
-                .frame(width: .zero, height: 25)
+                .frame(width: .zero, height: .pageButtonHeight)
         }
     }
 }

@@ -5,22 +5,20 @@ struct TaskProvider: TimelineProvider {
     let service = DataService(shouldLoadDefaults: false)
 
     func placeholder(in context: Context) -> TaskEntry {
-        TaskEntry(date: .now, tasks: [.placeholder], columns: [.placeholder])
+        .placeholder
     }
 
     func getSnapshot(in context: Context, completion: @escaping (TaskEntry) -> Void) {
         if context.isPreview {
-            completion(TaskEntry(date: .now, tasks: [.placeholder], columns: [.placeholder]))
+            completion(.placeholder)
         } else {
             SwiftUI.Task {
                 do {
-                    let tuple = try await service.fetchToday()
-                    let entry = TaskEntry(date: .now, tasks: tuple.0, columns: tuple.1)
+                    let entry = try await service.fetchToday()
                     completion(entry)
                 } catch {
                     print(error.localizedDescription)
-                    let entry = TaskEntry(date: .now, tasks: [], columns: [])
-                    completion(entry)
+                    completion(.empty)
                 }
             }
         }
@@ -32,14 +30,12 @@ struct TaskProvider: TimelineProvider {
         // swiftlint: enable: force_unwrapping
         SwiftUI.Task {
             do {
-                let tuple = try await service.fetchToday()
-                let entry = TaskEntry(date: .now, tasks: tuple.0, columns: tuple.1)
+                let entry = try await service.fetchToday()
                 let timeline = Timeline(entries: [entry], policy: .after(nextUpdateDate))
                 completion(timeline)
             } catch {
                 print(error.localizedDescription)
-                let entry = TaskEntry(date: .now, tasks: [], columns: [])
-                let timeline = Timeline(entries: [entry], policy: .after(nextUpdateDate))
+                let timeline = Timeline(entries: [TaskEntry.empty], policy: .after(nextUpdateDate))
                 completion(timeline)
             }
         }

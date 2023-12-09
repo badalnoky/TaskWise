@@ -14,4 +14,13 @@ public enum WidgetButtonType {
         case .down: .down
         }
     }
+
+    var intentDirection: Int {
+        switch self {
+        case .previous: return .previous
+        case .next: return .next
+        case .up: return .previous
+        case .down: return .next
+        }
+    }
 }

@@ -55,6 +55,7 @@ public final class DataService: DataServiceInput {
 // MARK: Default values
 extension DataService {
     private func handleDefaultUserSettings() {
+        WidgetTimelineService.initiateWidgetDefaults()
         let request = NSFetchRequest<UserSettings>(entityName: UserSettings.entityName)
         guard let settings = try? context.fetch(request).first else {
             self.userSettings = UserSettings(context: context)
