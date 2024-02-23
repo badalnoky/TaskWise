@@ -59,3 +59,19 @@ extension View {
         return  luminance < 0.6 ? self.foregroundColor(.lightContrast) : self.foregroundColor(.darkContrast)
     }
 }
+
+extension View {
+    func selectedStyle(isSelected: Bool) -> some View {
+        self
+            .foregroundStyle(isSelected ? AnyShapeStyle(.background) : AnyShapeStyle(Color.primary))
+            .fontWeight(isSelected ? .bold : .regular)
+            .background(alignment: .center) {
+                Circle().dateSized()
+                    .foregroundStyle(isSelected ? AnyShapeStyle(.tint) : AnyShapeStyle(Color.clear))
+            }
+    }
+
+    func dateSized() -> some View {
+        self.frame(width: .dateSize, height: .dateSize)
+    }
+}

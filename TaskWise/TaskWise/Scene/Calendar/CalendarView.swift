@@ -15,14 +15,7 @@ extension CalendarView: View {
                 VStack {
                     Spacer()
 
-                    DatePicker(
-                        String.empty,
-                        selection: $viewModel.selectedDate,
-                        in: Date.now...Date.now.addingTimeInterval(.twoYears),
-                        displayedComponents: .date
-                    )
-                    .datePickerStyle(.graphical)
-                    .onChange(of: viewModel.selectedDate) {
+                    CalendarDatePicker(selectedDate: $viewModel.selectedDate) {
                         viewModel.didTapDate()
                     }
                     .defaultViewPadding()

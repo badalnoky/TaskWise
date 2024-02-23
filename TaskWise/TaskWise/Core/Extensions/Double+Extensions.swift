@@ -26,3 +26,8 @@ public extension Double {
     static let year: Double = day * 365
     static let twoYears: Double = year * 2
 }
+
+extension Double {
+    static var rightAngle: Double = 90
+    static var transitionDuration = 0.5
+}
