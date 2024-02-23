@@ -63,3 +63,16 @@ public extension CGFloat {
     /// 40 pt
     static let columnButtonWidth: CGFloat = 40
 }
+
+extension CGFloat {
+    /// 3 pt
+    static var minimumGestureDistance: CGFloat = 3
+    /// 8 pt
+    static var calendarVerticalPadding: CGFloat = 8
+    /// 24 pt
+    static var calendarHeaderSpacing: CGFloat = 24
+    /// 44 pt
+    static var dateSize: CGFloat = 44
+    /// 450 pt
+    static let defaultCalendarHeight: CGFloat = 450
+}

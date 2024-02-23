@@ -112,6 +112,9 @@
 		797B4DA72B211BA5001DAC30 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988A0432AAE362400C63265 /* Int+Extensions.swift */; };
 		797B4DAD2B212997001DAC30 /* DataService+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797B4DAC2B212997001DAC30 /* DataService+Category.swift */; };
 		797B4DAF2B2129A2001DAC30 /* DataService+Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797B4DAE2B2129A2001DAC30 /* DataService+Fetch.swift */; };
+		797B58A72B88E2D6003B58A7 /* SwipeGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797B58A62B88E2D6003B58A7 /* SwipeGesture.swift */; };
+		797B58B42B88E57E003B58A7 /* CalendarDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797B58AB2B88E57E003B58A7 /* CalendarDatePicker.swift */; };
+		797B58B52B88E57E003B58A7 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797B58AC2B88E57E003B58A7 /* Weekday.swift */; };
 		798300092B17BFDA0013B834 /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 798300082B17BFDA0013B834 /* ProximaNova-Bold.otf */; };
 		7983000B2B17C0D10013B834 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983000A2B17C0D10013B834 /* Fonts.swift */; };
 		7983000E2B17C4D90013B834 /* TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983000D2B17C4D90013B834 /* TextStyle.swift */; };
@@ -320,6 +323,9 @@
 		797B4DA92B212398001DAC30 /* TaskWiseWidgetExtension.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = TaskWiseWidgetExtension.entitlements; sourceTree = SOURCE_ROOT; };
 		797B4DAC2B212997001DAC30 /* DataService+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataService+Category.swift"; sourceTree = "<group>"; };
 		797B4DAE2B2129A2001DAC30 /* DataService+Fetch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataService+Fetch.swift"; sourceTree = "<group>"; };
+		797B58A62B88E2D6003B58A7 /* SwipeGesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeGesture.swift; sourceTree = "<group>"; };
+		797B58AB2B88E57E003B58A7 /* CalendarDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDatePicker.swift; sourceTree = "<group>"; };
+		797B58AC2B88E57E003B58A7 /* Weekday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
 		798300082B17BFDA0013B834 /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.otf"; sourceTree = "<group>"; };
 		7983000A2B17C0D10013B834 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		7983000D2B17C4D90013B834 /* TextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyle.swift; sourceTree = "<group>"; };
@@ -567,6 +573,7 @@
 		7921551B2AB9E80C0044CDED /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				797B58AA2B88E57E003B58A7 /* CalendarDatePicker */,
 				793C64882AED9E5900C9D3FF /* CategoryColorPicker */,
 				79B823E92B1E71CC0062B6E5 /* ColumnHeader */,
 				798300152B17E82A0013B834 /* CombinedDatePicker */,
@@ -656,6 +663,7 @@
 		795E118D2B24CBDA0000F8AA /* Gestures */ = {
 			isa = PBXGroup;
 			children = (
+				797B58A62B88E2D6003B58A7 /* SwipeGesture.swift */,
 				795E118E2B24CBEE0000F8AA /* DoubleAndSingleTapGesture.swift */,
 			);
 			path = Gestures;
@@ -724,6 +732,15 @@
 				791CA3752B224EB8009A5395 /* DateService+Widget.swift */,
 			);
 			path = DataService;
+			sourceTree = "<group>";
+		};
+		797B58AA2B88E57E003B58A7 /* CalendarDatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				797B58AB2B88E57E003B58A7 /* CalendarDatePicker.swift */,
+				797B58AC2B88E57E003B58A7 /* Weekday.swift */,
+			);
+			path = CalendarDatePicker;
 			sourceTree = "<group>";
 		};
 		797CA0422AD300F40093632D /* ViewModel */ = {
@@ -1440,6 +1457,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				798300172B17E8810013B834 /* CombinedDatePicker.swift in Sources */,
+				797B58A72B88E2D6003B58A7 /* SwipeGesture.swift in Sources */,
 				7988A0332AAE307E00C63265 /* Localized.swift in Sources */,
 				79EAF75F2AB9EC3D00FC05BE /* View+Extensions.swift in Sources */,
 				7988C4B42AE2E126004621EA /* TaskStep+DTO.swift in Sources */,
@@ -1467,6 +1485,7 @@
 				79C838A82B1D109500F35483 /* SettingsNavigationBarModifier.swift in Sources */,
 				792155202AB9E8450044CDED /* IconButton.swift in Sources */,
 				79CD54A62AD33B9600D064C2 /* TaskStep+CoreDataClass.swift in Sources */,
+				797B58B42B88E57E003B58A7 /* CalendarDatePicker.swift in Sources */,
 				79C16F4F2ABB5C6B00BA362B /* CalendarViewModel.swift in Sources */,
 				79B9625F2B1FA6E800D16472 /* TaskProgressIndicator.swift in Sources */,
 				7983000E2B17C4D90013B834 /* TextStyle.swift in Sources */,
@@ -1535,6 +1554,7 @@
 				7988A0512AAE362400C63265 /* PassthroughSubject+Extensions.swift in Sources */,
 				79616F4A2AC5CE0000F4A95C /* CloudError.swift in Sources */,
 				79CD54AE2AD33B9600D064C2 /* Priority+CoreDataProperties.swift in Sources */,
+				797B58B52B88E57E003B58A7 /* Weekday.swift in Sources */,
 				7988A0502AAE362400C63265 /* Double+Extensions.swift in Sources */,
 				790126112AD4844C005620C2 /* Priority+Defaults.swift in Sources */,
 				798605632AD5C99E007A64B3 /* ColorComponents+DTO.swift in Sources */,

@@ -21,3 +21,19 @@ extension Int {
         self + 2
     }
 }
+
+extension Int {
+    static let weekDayCount: Int = 7
+    static let firstMonth: Int = 1
+    static let lastMonth: Int = 12
+    static let plusOne: Int = 1
+    static let minusOne: Int = -1
+    static let defaultTimeframe = 50
+
+    var weekDayOffset: Int {
+        switch self {
+        case 1: return 6
+        default: return self - 2
+        }
+    }
+}
