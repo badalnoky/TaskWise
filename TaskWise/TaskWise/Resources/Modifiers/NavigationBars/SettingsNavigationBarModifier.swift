@@ -32,7 +32,7 @@ public struct SettingsNavigationBarModifier: ViewModifier {
             .navigationBarBackButtonHidden(true)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) { backButton }
-                ToolbarItem(placement: .principal) { Text(Str.settingsTitle).textStyle(.largeTitle) }
+                ToolbarItem(placement: .principal) { Text(Str.Settings.title).textStyle(.largeTitle) }
                 if isEditing {
                     ToolbarItem(placement: .topBarTrailing) { addButton }
                 }

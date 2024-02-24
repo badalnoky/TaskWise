@@ -12,7 +12,7 @@ public struct TaskStepView: View {
         HStack {
             Group {
                 if step.isDone {
-                    Image(systemName: Str.iconsCheck)
+                    Image.check
                         .fittedToSize(.defaultCheckboxSize)
                         .foregroundStyle(Color.stepCheck)
                 } else {

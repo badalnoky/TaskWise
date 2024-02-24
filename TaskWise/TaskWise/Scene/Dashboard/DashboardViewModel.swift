@@ -58,8 +58,8 @@ extension DashboardViewModel {
     }
 
     func openAt(_ url: URL) {
-        guard url.scheme == Str.appScheme, url.host == Str.appHost else { return }
-        if url.pathComponents[.one] == Str.appTaskPath {
+        guard url.scheme == Str.App.scheme, url.host == Str.App.host else { return }
+        if url.pathComponents[.one] == Str.App.taskPath {
             // swiftlint: disable: force_unwrapping
             let id = UUID(uuidString: url.pathComponents[.one.next])!
             // swiftlint: enable: force_unwrapping

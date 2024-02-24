@@ -68,24 +68,24 @@ extension DayView {
     var filterView: some View {
         VStack(spacing: .padding12) {
             HStack {
-                Button(Str.filterClearAllLabel, action: viewModel.didTapClearFilters)
+                Button(Str.Filter.clearAllLabel, action: viewModel.didTapClearFilters)
                     .buttonStyle(TextButtonStyle())
                 Spacer()
-                Button(Str.filterCloseLabel) { viewModel.isFilterSheetPresented.toggle() }
+                Button(Str.Filter.closeLabel) { viewModel.isFilterSheetPresented.toggle() }
                     .buttonStyle(TextButtonStyle())
             }
 
-            StyledField(style: .base, title: Str.calendarSearchLabel, text: $viewModel.filterText)
+            StyledField(style: .base, title: Str.Calendar.searchLabel, text: $viewModel.filterText)
 
-            TaskRow(title: Str.taskPriorityLabel, selected: $viewModel.selectedPriority) {
-                Text(Str.filterNoSelectionLabel).tag(nil as Priority?)
+            TaskRow(title: Str.Task.priorityLabel, selected: $viewModel.selectedPriority) {
+                Text(Str.Filter.noSelectionLabel).tag(nil as Priority?)
                 ForEach(viewModel.priorities, id: \.level) {
                     Text($0.name).tag($0 as Priority?)
                 }
             }
 
-            TaskRow(title: Str.taskCategoryLabel, selected: $viewModel.selectedCategory) {
-                Text(Str.filterNoSelectionLabel).tag(nil as Category?)
+            TaskRow(title: Str.Task.categoryLabel, selected: $viewModel.selectedCategory) {
+                Text(Str.Filter.noSelectionLabel).tag(nil as Category?)
                 ForEach(viewModel.categories, id: \.self) {
                     Text($0.name).tag($0 as Category?)
                 }

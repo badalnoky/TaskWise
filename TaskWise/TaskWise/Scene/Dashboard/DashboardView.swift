@@ -8,7 +8,7 @@ extension DashboardView: View {
     var body: some View {
         VStack(alignment: .leading) {
             VStack {
-                StyledText(text: Str.dashboardTitle, style: .title)
+                StyledText(text: Str.Dashboard.title, style: .title)
                     .padding(.horizontal, .padding8)
 
                 StyledDate(date: viewModel.date, style: .date)
