@@ -12,7 +12,7 @@ extension StepIcon: View {
     public var body: some View {
         Group {
             if isDone {
-                Image(systemName: Str.iconsCheck)
+                Image.check
                     .fittedToSize(.defaultCheckboxSize)
                     .foregroundStyle(Color.stepCheck)
             } else {

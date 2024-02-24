@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct AddTaskView {
+    private typealias Txt = Str.Task
     @Bindable var viewModel: AddTaskViewModel
 }
 
@@ -8,23 +9,23 @@ extension AddTaskView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: .padding12) {
-                StyledField(style: .title, title: Str.taskTitleLabel, text: $viewModel.title)
+                StyledField(style: .title, title: Txt.titleLabel, text: $viewModel.title)
 
-                StyledField(style: .description, title: Str.taskDescriptionLabel, text: $viewModel.description)
+                StyledField(style: .description, title: Txt.descriptionLabel, text: $viewModel.description)
 
-                TaskRow(title: Str.taskPriorityLabel, selected: $viewModel.selectedPriority) {
+                TaskRow(title: Txt.priorityLabel, selected: $viewModel.selectedPriority) {
                     ForEach(viewModel.priorities, id: \.level) {
                         Text($0.name).tag($0)
                     }
                 }
 
-                TaskRow(title: Str.taskCategoryLabel, selected: $viewModel.selectedCategory) {
+                TaskRow(title: Txt.categoryLabel, selected: $viewModel.selectedCategory) {
                     ForEach(viewModel.categories, id: \.self) {
                         Text($0.name).tag($0)
                     }
                 }
 
-                TaskRow(title: Str.taskStartingColumnLabel, selected: $viewModel.selectedColumn) {
+                TaskRow(title: Txt.startingColumnLabel, selected: $viewModel.selectedColumn) {
                     ForEach(viewModel.columns, id: \.self) {
                         Text($0.name).tag($0)
                     }
@@ -34,7 +35,7 @@ extension AddTaskView: View {
 
                 stepView
 
-                Button(Str.taskCreateButtonLabel, action: viewModel.didTapCreate)
+                Button(Txt.createButtonLabel, action: viewModel.didTapCreate)
                     .buttonStyle(BaseButtonStyle())
             }
         }
@@ -47,7 +48,7 @@ extension AddTaskView: View {
 extension AddTaskView {
     var stepView: some View {
         VStack(spacing: .padding12) {
-            StyledText(text: Str.taskStepsLabel, style: .base)
+            StyledText(text: Txt.stepsLabel, style: .base)
 
             List {
                 ForEach($viewModel.steps, id: \.self) { $step in
@@ -69,7 +70,7 @@ extension AddTaskView {
             .defaultListSettings()
 
             HStack {
-                StyledField(style: .base, title: Str.taskStepLabel, text: $viewModel.newStepName)
+                StyledField(style: .base, title: Txt.stepLabel, text: $viewModel.newStepName)
                 IconButton(.add, action: viewModel.didTapAddStep)
             }
         }

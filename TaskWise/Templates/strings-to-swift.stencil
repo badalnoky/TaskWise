@@ -1,0 +1,98 @@
+// swiftlint:disable all
+// Generated using SwiftGen — https://github.com/SwiftGen/SwiftGen
+// Template created by: Bertalan Dálnoky
+{% if tables.count > 0 %}
+{% set accessModifier %}{% if param.publicAccess %}public{% else %}internal{% endif %}{% endset %}
+{% set enumName %}{{param.enumName|default:"Str"}}{% endset %}
+import Foundation
+
+{%- macro parametersBlock value -%}
+  {%- set list -%}
+    {{
+      value|
+      replace:'[ \t\r\n\v\fA-Za-z0-9_:,!\.\?\/\-]*%#@[ \t\r\n\v\fA-Za-z0-9_]*@[ \t\r\n\v\fA-Za-z0-9_:,!\.\?\/\-]*','~',"regex"|
+      replace:'[ \t\r\n\v\fA-Za-z0-9_:,!\.\?\/\-]*%f[ \t\r\n\v\fA-Za-z0-9_:,!\.\?\/\-]*','^',"regex"|
+      replace:'[ \t\r\n\v\fA-Za-z0-9_:,!\.\?\/\-]*%d[ \t\r\n\v\fA-Za-z0-9_:,!\.\?\/\-]*','±',"regex"|
+      replace:'[ \t\r\n\v\fA-Za-z0-9_:,!\.\?\/\-]*%@[ \t\r\n\v\fA-Za-z0-9_:,!\.\?\/\-]*','§',"regex"
+    }}
+  {%- endset -%}
+  {%- for i in 0...list.count -%}
+    {%- set char -%}{{list[i]}}{%- endset -%}
+    {%- if char == '§' -%}
+      _ p{{forloop.counter}}: String
+    {%- elif char == '±' -%}
+      _ p{{forloop.counter}}: Int
+    {%- elif char == '~' -%}
+      _ p{{forloop.counter}}: Int
+    {%- elif char == '^' -%}
+      _ p{{forloop.counter}}: Double
+    {%- endif -%}
+{{ ", " if forloop.counter < list.count }}
+  {%- endfor -%}
+{%- endmacro -%}
+
+{%- macro argumentsBlock value -%}
+  {%- set list -%}
+    {{
+      value|
+      replace:'[ \t\r\n\v\fA-Za-z0-9_:,!\.\?\/\-]*%#@[ \t\r\n\v\fA-Za-z0-9_]*@[ \t\r\n\v\fA-Za-z0-9_:,!\.\?\/\-]*','~',"regex"|
+      replace:'[ \t\r\n\v\fA-Za-z0-9_:,!\.\?\/\-]*%f[ \t\r\n\v\fA-Za-z0-9_:,!\.\?\/\-]*','^',"regex"|
+      replace:'[ \t\r\n\v\fA-Za-z0-9_:,!\.\?\/\-]*%d[ \t\r\n\v\fA-Za-z0-9_:,!\.\?\/\-]*','±',"regex"|
+      replace:'[ \t\r\n\v\fA-Za-z0-9_:,!\.\?\/\-]*%@[ \t\r\n\v\fA-Za-z0-9_:,!\.\?\/\-]*','§',"regex"
+    }}
+  {%- endset -%}
+  {%- for i in 0...list.count -%}
+    {%- set char -%}{{list[i]}}{%- endset -%}
+    {%- if char == '~' or char == '^' or char == '±' or char == '§' -%}
+      p{{forloop.counter}}
+    {%- endif -%}
+    {{ ", " if forloop.counter < list.count }}
+  {%- endfor -%}
+{%- endmacro -%}
+
+{% macro recursiveBlock table item %}
+{% filter indent:4," ",true %}
+  {% for string in item.strings %}
+    {% for line in string.comment|default:string.translation|split:"\n" %}
+/// {{line}}
+    {% endfor %}
+    {% set translation string.translation|replace:'"','\"'|replace:'  ','\t' %}
+    {% if string.types %}
+{{accessModifier}} static func {{string.name||swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}}({% call parametersBlock string.translation %}) -> String {
+    _sf(
+        format: String(localized: "{{string.key}}" , defaultValue: "{{string.translation}}"),
+        with: {% call argumentsBlock string.translation %}
+    )
+}
+    {% else %}
+{{accessModifier}} static let {{string.name||swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}} = String(localized: "{{string.key}}", defaultValue: "{{string.translation}}")
+    {% endif %}
+  {% endfor %}
+  {% for child in item.children %}
+{{accessModifier}} enum {{child.name|swiftIdentifier:"pretty"|escapeReservedKeywords}} {
+{% call recursiveBlock table child %}
+}
+  {% endfor %}
+{% endfilter %}
+{% endmacro %}
+
+{{accessModifier}} enum {{enumName}} {
+{% if tables.count > 1 or param.forceFileNameEnum %}
+  {% for table in tables %}
+{{accessModifier}} enum {{table.name|swiftIdentifier:"pretty"|escapeReservedKeywords}} {
+{% call recursiveBlock table.name table.levels %}
+}
+  {% endfor %}
+{% else %}
+{% call recursiveBlock tables.first.name tables.first.levels %}
+{% endif %}
+}
+
+extension {{enumName}} {
+    private static func _sf(format: String, with args: CVarArg...) -> String {
+        String(format: format, locale: Locale.current, arguments: args)
+    }
+}
+{% else %}
+// No files found
+{% endif %}

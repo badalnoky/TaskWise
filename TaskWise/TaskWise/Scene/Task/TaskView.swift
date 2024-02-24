@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct TaskView {
+    private typealias Txt = Str.Task
     @Bindable var viewModel: TaskViewModel
 }
 
@@ -9,23 +10,23 @@ extension TaskView: View {
         ScrollView {
             VStack(spacing: .padding12) {
                 Group {
-                    StyledField(style: .title, title: Str.taskTitleLabel, text: $viewModel.title)
+                    StyledField(style: .title, title: Txt.titleLabel, text: $viewModel.title)
 
-                    StyledField(style: .description, title: Str.taskDescriptionLabel, text: $viewModel.description)
+                    StyledField(style: .description, title: Txt.descriptionLabel, text: $viewModel.description)
 
-                    TaskRow(title: Str.taskPriorityLabel, selected: $viewModel.selectedPriority) {
+                    TaskRow(title: Txt.priorityLabel, selected: $viewModel.selectedPriority) {
                         ForEach(viewModel.priorities, id: \.level) {
                             Text($0.name).tag($0)
                         }
                     }
 
-                    TaskRow(title: Str.taskCategoryLabel, selected: $viewModel.selectedCategory) {
+                    TaskRow(title: Txt.categoryLabel, selected: $viewModel.selectedCategory) {
                         ForEach(viewModel.categories, id: \.self) {
                             Text($0.name).tag($0)
                         }
                     }
 
-                    TaskRow(title: Str.taskCurrentColumnLabel, selected: $viewModel.selectedColumn) {
+                    TaskRow(title: Txt.currentColumnLabel, selected: $viewModel.selectedColumn) {
                         ForEach(viewModel.columns, id: \.self) {
                             Text($0.name).tag($0)
                         }
@@ -43,9 +44,9 @@ extension TaskView: View {
         }
         .defaultViewPadding()
         .environment(\.editMode, $viewModel.editMode)
-        .alert(Str.alertMessage, isPresented: $viewModel.isAlertVisible) {
-            Button(Str.alertYes, role: .destructive, action: viewModel.didTapDelete)
-            Button(Str.alertNo, role: .cancel) {}
+        .alert(Str.Alert.message, isPresented: $viewModel.isAlertVisible) {
+            Button(Str.Alert.yes, role: .destructive, action: viewModel.didTapDelete)
+            Button(Str.Alert.no, role: .cancel) {}
         }
         .taskNavigationBar(editAction: viewModel.didTapEdit)
     }
@@ -54,7 +55,7 @@ extension TaskView: View {
 extension TaskView {
     var stepView: some View {
         VStack(spacing: .padding12) {
-            StyledText(text: Str.taskStepsLabel, style: .base)
+            StyledText(text: Txt.stepLabel, style: .base)
 
             List {
                 ForEach(viewModel.steps, id: \.self) { step in
@@ -77,7 +78,7 @@ extension TaskView {
 
             if viewModel.isEditable {
                 HStack {
-                    StyledField(style: .base, title: Str.taskStepLabel, text: $viewModel.newStepName)
+                    StyledField(style: .base, title: Txt.stepLabel, text: $viewModel.newStepName)
                     IconButton(.add, action: viewModel.didTapAddStep)
                 }
             }

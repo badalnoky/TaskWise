@@ -30,5 +30,5 @@ public struct IconButton: View {
 }
 
 #Preview {
-    IconButton(Image(systemName: Str.iconsSettings)) {}
+    IconButton(Image.settings) {}
 }

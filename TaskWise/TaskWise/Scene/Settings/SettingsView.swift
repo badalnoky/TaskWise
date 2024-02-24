@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct SettingsView {
+    private typealias Txt = Str.Settings
     @Bindable var viewModel: SettingsViewModel
 }
 
@@ -43,19 +44,19 @@ extension SettingsView {
             }
             .listStyle(.plain)
         }
-        .tabItem { Text(Str.settingsCategoriesLabel) }
+        .tabItem { Text(Txt.categoriesLabel) }
         .environment(\.editMode, $viewModel.categoryEditMode)
         .sheet(isPresented: $viewModel.isNewCategorySheetPresented) {
             VStack(spacing: .padding24) {
                 HStack {
-                    Button(Str.settingsCancelLabel, role: .cancel) { viewModel.isNewCategorySheetPresented.toggle() }
+                    Button(Txt.cancelLabel, role: .cancel) { viewModel.isNewCategorySheetPresented.toggle() }
                     Spacer()
-                    Button(Str.settingsAddLabel, action: viewModel.didTapAddCategory)
+                    Button(Txt.addLabel, action: viewModel.didTapAddCategory)
                 }
                 .padding(.top, .padding12)
                 .padding(.horizontal, .padding4)
-                StyledField(style: .base, title: Str.settingsCategoryPlaceholder, text: $viewModel.newCategoryName)
-                ColorPicker(Str.settingsColorLabel, selection: $viewModel.currentColor)
+                StyledField(style: .base, title: Txt.categoryPlaceholder, text: $viewModel.newCategoryName)
+                ColorPicker(Txt.colorLabel, selection: $viewModel.currentColor)
                     .textStyle(.body)
                     .padding(.horizontal, .padding4)
                 Spacer()
@@ -81,18 +82,18 @@ extension SettingsView {
             }
             .listStyle(.plain)
         }
-        .tabItem { Text(Str.settingsColumnsLabel) }
+        .tabItem { Text(Txt.columnsLabel) }
         .environment(\.editMode, $viewModel.columnEditMode)
         .sheet(isPresented: $viewModel.isNewColumnSheetPresented) {
             VStack(spacing: .padding24) {
                 HStack {
-                    Button(Str.settingsCancelLabel, role: .cancel) { viewModel.isNewColumnSheetPresented.toggle() }
+                    Button(Txt.cancelLabel, role: .cancel) { viewModel.isNewColumnSheetPresented.toggle() }
                     Spacer()
-                    Button(Str.settingsAddLabel, action: viewModel.didTapAddColumn)
+                    Button(Txt.addLabel, action: viewModel.didTapAddColumn)
                 }
                 .padding(.top, .padding12)
                 .padding(.horizontal, .padding4)
-                StyledField(style: .base, title: Str.settingsColumnPlaceholder, text: $viewModel.newColumnName)
+                StyledField(style: .base, title: Txt.columnPlaceholder, text: $viewModel.newColumnName)
                 Spacer()
             }
             .presentationDetents([.height(.defaultFilterSheetHeight)])
@@ -116,18 +117,18 @@ extension SettingsView {
             }
             .listStyle(.plain)
         }
-        .tabItem { Text(Str.settingsPrioritiesLabel) }
+        .tabItem { Text(Txt.prioritiesLabel) }
         .environment(\.editMode, $viewModel.priorityEditMode)
         .sheet(isPresented: $viewModel.isNewPrioritySheetPresented) {
             VStack(spacing: .padding24) {
                 HStack {
-                    Button(Str.settingsCancelLabel, role: .cancel) { viewModel.isNewPrioritySheetPresented.toggle() }
+                    Button(Txt.cancelLabel, role: .cancel) { viewModel.isNewPrioritySheetPresented.toggle() }
                     Spacer()
-                    Button(Str.settingsAddLabel, action: viewModel.didTapAddPriority)
+                    Button(Txt.addLabel, action: viewModel.didTapAddPriority)
                 }
                 .padding(.top, .padding12)
                 .padding(.horizontal, .padding4)
-                StyledField(style: .base, title: Str.settingsPriorityPlaceholder, text: $viewModel.newPriorityName)
+                StyledField(style: .base, title: Txt.priorityPlaceholder, text: $viewModel.newPriorityName)
                 Spacer()
             }
             .presentationDetents([.height(.defaultFilterSheetHeight)])

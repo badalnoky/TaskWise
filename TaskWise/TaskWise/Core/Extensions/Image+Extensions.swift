@@ -1,19 +1,20 @@
 import SwiftUI
 
 extension Image {
-    static let back = Image(systemName: Str.iconsBack)
-    static let settings = Image(systemName: Str.iconsSettings)
-    static let calendar = Image(systemName: Str.iconsCalendar)
-    static let add = Image(systemName: Str.iconsAdd)
-    static let edit = Image(systemName: Str.iconsEdit)
-    static let check = Image(systemName: Str.iconsCheck)
-    static let search = Image(systemName: Str.iconsSearch)
-    static let list = Image(systemName: Str.iconsList)
-    static let filter = Image(systemName: Str.iconsFilter)
-    static let more = Image(systemName: Str.iconsMore)
-    static let next = Image(systemName: Str.iconsForward)
-    static let up = Image(systemName: Str.iconsUp)
-    static let down = Image(systemName: Str.iconsDown)
+    private typealias Icons = Str.Icons
+    static let back = Image(systemName: Icons.back)
+    static let settings = Image(systemName: Icons.settings)
+    static let calendar = Image(systemName: Icons.calendar)
+    static let add = Image(systemName: Icons.add)
+    static let edit = Image(systemName: Icons.edit)
+    static let check = Image(systemName: Icons.check)
+    static let search = Image(systemName: Icons.search)
+    static let list = Image(systemName: Icons.list)
+    static let filter = Image(systemName: Icons.filter)
+    static let more = Image(systemName: Icons.more)
+    static let next = Image(systemName: Icons.forward)
+    static let up = Image(systemName: Icons.up)
+    static let down = Image(systemName: Icons.down)
 }
 
 public extension Image {

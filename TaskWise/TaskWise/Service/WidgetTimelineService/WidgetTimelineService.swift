@@ -2,39 +2,40 @@ import Foundation
 import WidgetKit
 
 public enum WidgetTimelineService {
+    private typealias Txt = Str.Defaults
     static func refreshWidgetOf(kind: TaskWiseWidgetKind) {
         WidgetCenter.shared.reloadTimelines(ofKind: kind.kind)
     }
 
     static func initiateWidgetDefaults() {
-        UserDefaults.standard.set(Int.zero, forKey: Str.defaultsPage)
-        UserDefaults.standard.set(Int.zero, forKey: Str.defaultsColumn)
+        UserDefaults.standard.set(Int.zero, forKey: Txt.page)
+        UserDefaults.standard.set(Int.zero, forKey: Txt.column)
     }
 
     static func changePageIn(direction: Int) {
-        var page = UserDefaults.standard.integer(forKey: Str.defaultsPage)
+        var page = UserDefaults.standard.integer(forKey: Txt.page)
         if direction == .zero {
             page = page.previous
         } else {
             page = page.next
         }
-        UserDefaults.standard.set(page, forKey: Str.defaultsPage)
+        UserDefaults.standard.set(page, forKey: Txt.page)
     }
 
     static func changeColumnIn(direction: Int) {
-        var column = UserDefaults.standard.integer(forKey: Str.defaultsColumn)
+        var column = UserDefaults.standard.integer(forKey: Txt.column)
         if direction == .zero {
             column = column.previous
         } else {
             column = column.next
         }
-        UserDefaults.standard.set(Int.zero, forKey: Str.defaultsPage)
-        UserDefaults.standard.set(column, forKey: Str.defaultsColumn)
+        UserDefaults.standard.set(Int.zero, forKey: Txt.page)
+        UserDefaults.standard.set(column, forKey: Txt.column)
     }
 
     static func getWidgetState() -> (Int, Int) {
-        let column = UserDefaults.standard.integer(forKey: Str.defaultsColumn)
-        let page = UserDefaults.standard.integer(forKey: Str.defaultsPage)
+        let column = UserDefaults.standard.integer(forKey: Txt.column)
+        let page = UserDefaults.standard.integer(forKey: Txt.page)
         return (column, page)
     }
 }

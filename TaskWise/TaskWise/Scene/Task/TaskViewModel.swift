@@ -16,7 +16,7 @@ import SwiftUI
         editMode == .active
     }
     var actionButtonLabel: String {
-        isEditable ? Str.taskSaveButton : Str.taskDeleteButton
+        isEditable ? Str.Task.saveButton : Str.Task.deleteButton
     }
 
     var title: String = .empty

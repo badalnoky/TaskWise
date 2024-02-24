@@ -1192,6 +1192,7 @@
 			buildPhases = (
 				3CC7A2FEB40B39D088A243F9 /* [CP] Check Pods Manifest.lock */,
 				790A81352AAE2BF100283D7E /* SwiftGen */,
+				791A06F32B89F68A0041AE42 /* StringGen */,
 				790A81302AAE223900283D7E /* SwiftLint */,
 				790A80FF2AAE19A600283D7E /* Sources */,
 				790A81002AAE19A600283D7E /* Frameworks */,
@@ -1426,6 +1427,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\"\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
+		};
+		791A06F32B89F68A0041AE42 /* StringGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = StringGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  ${PODS_ROOT}/SwiftGen/bin/swiftgen config run --config ${PROJECT_DIR}/stringgen.yml\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
 		};
 		80CA417FE7CAA5314BE9DC95 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

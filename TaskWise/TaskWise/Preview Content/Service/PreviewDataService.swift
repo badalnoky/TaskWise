@@ -5,7 +5,7 @@ import SwiftUI
 #if DEBUG
 class PreviewDataService: DataServiceInput {
     static let global = PreviewDataService()
-    private let container = NSPersistentContainer(name: Str.dataServicePreviewContainerName)
+    private let container = NSPersistentContainer(name: Str.DataService.previewContainerName)
     var context: NSManagedObjectContext { container.viewContext }
 
     var tasks = CurrentValueSubject<[Task], Never>([])
@@ -19,7 +19,7 @@ class PreviewDataService: DataServiceInput {
         // swiftlint: disable: force_unwrapping
         container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         container.loadPersistentStores { description, error in
-            if error != nil { print(Str.dataServiceContainerFailureMessage) }
+            if error != nil { print(Str.DataService.containerFailureMessage) }
         }
     }
 

@@ -12,27 +12,27 @@ extension TaskContextMenuItems: View {
             Button {
                 changeColumnAction(columns[columns.count.previous], task)
             } label: {
-                Label(Str.contextMenuDoneLabel, systemImage: Str.iconsContextCheck)
+                Label(Str.ContextMenu.doneLabel, systemImage: Str.Icons.contextCheck)
             }
         }
         if task.column.index != columns.count {
             Button {
                 changeColumnAction(columns[task.column.index], task)
             } label: {
-                Label(Str.contextMenuNextLabel, systemImage: Str.iconsForward)
+                Label(Str.ContextMenu.nextLabel, systemImage: Str.Icons.forward)
             }
         }
         if task.column.index != .one {
             Button {
                 changeColumnAction(columns[task.column.index.previous.previous], task)
             } label: {
-                Label(Str.contextMenuPreviousLabel, systemImage: Str.iconsBack)
+                Label(Str.ContextMenu.previousLabel, systemImage: Str.Icons.back)
             }
         }
         Button(role: .destructive) {
             deleteAction(task)
         } label: {
-            Label(Str.contextMenuDeleteLabel, systemImage: Str.iconsDelete)
+            Label(Str.ContextMenu.deleteLabel, systemImage: Str.Icons.delete)
         }
     }
 }

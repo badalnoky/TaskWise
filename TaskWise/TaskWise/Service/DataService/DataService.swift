@@ -2,7 +2,8 @@ import Combine
 import CoreData
 
 public final class DataService: DataServiceInput {
-    private let container = NSPersistentCloudKitContainer(name: Str.dataServiceContainerName)
+    private typealias Txt = Str.DataService
+    private let container = NSPersistentCloudKitContainer(name: Txt.containerName)
     private var userSettings: UserSettings?
 
     public var tasks = CurrentValueSubject<[Task], Never>([])
@@ -23,8 +24,8 @@ public final class DataService: DataServiceInput {
 
     private func loadContainer() {
         // swiftlint: disable: force_unwrapping
-        let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: Str.appGroupIdentifier)!
-        let storeURL = containerURL.appendingPathComponent(Str.appSqlite)
+        let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: Str.App.groupIdentifier)!
+        let storeURL = containerURL.appendingPathComponent(Str.App.sqlite)
         let description = container.persistentStoreDescriptions.first!
         // swiftlint: enable: force_unwrapping
 
@@ -35,7 +36,7 @@ public final class DataService: DataServiceInput {
         container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
         container.loadPersistentStores { description, error in
             if error != nil {
-                print(Str.dataServiceContainerFailureMessage)
+                print(Txt.containerFailureMessage)
             }
         }
     }
@@ -43,7 +44,7 @@ public final class DataService: DataServiceInput {
     func save() {
         do {
             try context.save()
-        } catch { print(Str.dataServiceSaveFailureMessage) }
+        } catch { print(Txt.saveFailureMessage) }
     }
 
     func delete(item: NSManagedObject) {

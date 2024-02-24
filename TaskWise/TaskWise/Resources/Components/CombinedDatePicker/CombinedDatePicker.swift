@@ -16,25 +16,25 @@ extension CombinedDatePicker: View {
     public var body: some View {
         VStack(spacing: .padding12) {
             Toggle(isOn: allDay.animation(.easeInOut)) {
-                Text(Str.datePickerAllDayLabel).textStyle(.body)
+                Text(Str.DatePicker.allDayLabel).textStyle(.body)
             }
             .padding(.trailing, .padding8)
             .tint(.accent)
 
             if !allDay.wrappedValue {
                 DatePicker(selection: starts, in: Date.now...) {
-                    Text(Str.taskStartsLabel)
+                    Text(Str.Task.startsLabel)
                         .textStyle(.body)
                 }
                 .tint(.appTint)
 
                 DatePicker(selection: ends, in: Date.now.addingTimeInterval(.hour)..., displayedComponents: .hourAndMinute) {
-                    Text(Str.taskEndsLabel)
+                    Text(Str.Task.endsLabel)
                         .textStyle(.body)
                 }
             } else {
                 DatePicker(selection: starts, in: Date.now..., displayedComponents: .date) {
-                    Text(Str.datePickerDateLabel).textStyle(.body)
+                    Text(Str.DatePicker.dateLabel).textStyle(.body)
                 }
             }
         }
