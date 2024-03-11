@@ -123,6 +123,10 @@
 		797EE2692B9E7078002173B1 /* Angulargradient+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797EE2682B9E7078002173B1 /* Angulargradient+Extensions.swift */; };
 		797EE26B2B9E78EF002173B1 /* RGBType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797EE26A2B9E78EF002173B1 /* RGBType.swift */; };
 		797EE26C2B9E791B002173B1 /* RGBType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797EE26A2B9E78EF002173B1 /* RGBType.swift */; };
+		798055B02B9F17D000129BBA /* RepeatingTasks+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798055AA2B9F17D000129BBA /* RepeatingTasks+CoreDataClass.swift */; };
+		798055B12B9F17D000129BBA /* RepeatingTasks+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798055AA2B9F17D000129BBA /* RepeatingTasks+CoreDataClass.swift */; };
+		798055B22B9F17D000129BBA /* RepeatingTasks+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798055AB2B9F17D000129BBA /* RepeatingTasks+CoreDataProperties.swift */; };
+		798055B32B9F17D000129BBA /* RepeatingTasks+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798055AB2B9F17D000129BBA /* RepeatingTasks+CoreDataProperties.swift */; };
 		798300092B17BFDA0013B834 /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 798300082B17BFDA0013B834 /* ProximaNova-Bold.otf */; };
 		7983000B2B17C0D10013B834 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983000A2B17C0D10013B834 /* Fonts.swift */; };
 		7983000E2B17C4D90013B834 /* TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983000D2B17C4D90013B834 /* TextStyle.swift */; };
@@ -341,6 +345,8 @@
 		797EE2642B9E700D002173B1 /* GradientSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientSlider.swift; sourceTree = "<group>"; };
 		797EE2682B9E7078002173B1 /* Angulargradient+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Angulargradient+Extensions.swift"; sourceTree = "<group>"; };
 		797EE26A2B9E78EF002173B1 /* RGBType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBType.swift; sourceTree = "<group>"; };
+		798055AA2B9F17D000129BBA /* RepeatingTasks+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RepeatingTasks+CoreDataClass.swift"; sourceTree = "<group>"; };
+		798055AB2B9F17D000129BBA /* RepeatingTasks+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RepeatingTasks+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		798300082B17BFDA0013B834 /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.otf"; sourceTree = "<group>"; };
 		7983000A2B17C0D10013B834 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		7983000D2B17C4D90013B834 /* TextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyle.swift; sourceTree = "<group>"; };
@@ -786,6 +792,15 @@
 			path = IntegratedColorPicker;
 			sourceTree = "<group>";
 		};
+		798055B42B9F185400129BBA /* RepeatingTasks */ = {
+			isa = PBXGroup;
+			children = (
+				798055AA2B9F17D000129BBA /* RepeatingTasks+CoreDataClass.swift */,
+				798055AB2B9F17D000129BBA /* RepeatingTasks+CoreDataProperties.swift */,
+			);
+			path = RepeatingTasks;
+			sourceTree = "<group>";
+		};
 		798300072B17BFC20013B834 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -1083,11 +1098,12 @@
 				79CD548F2AD33B9600D064C2 /* Category */,
 				79CD54A12AD33B9600D064C2 /* ColorComponents */,
 				79CD549E2AD33B9600D064C2 /* Priority */,
+				798055B42B9F185400129BBA /* RepeatingTasks */,
 				79CD54962AD33B9600D064C2 /* Task */,
 				79CD549B2AD33B9600D064C2 /* TaskColumn */,
 				79CD54922AD33B9600D064C2 /* TaskStep */,
-				7901260C2AD47EAC005620C2 /* UserSettings */,
 				79CD54992AD33B9600D064C2 /* TaskWise.xcdatamodeld */,
+				7901260C2AD47EAC005620C2 /* UserSettings */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -1530,6 +1546,7 @@
 				7988A04E2AAE362400C63265 /* String+Extensions.swift in Sources */,
 				7983001C2B17F6520013B834 /* BaseButtonStyle.swift in Sources */,
 				79D9835D2ACC9260002A8222 /* AddTaskViewModel.swift in Sources */,
+				798055B22B9F17D000129BBA /* RepeatingTasks+CoreDataProperties.swift in Sources */,
 				799D48E32ABC394400C149E3 /* CalendarViewModel+Mock.swift in Sources */,
 				794621BE2B192B5A0060F6CD /* TextButtonStyle.swift in Sources */,
 				79C838A82B1D109500F35483 /* SettingsNavigationBarModifier.swift in Sources */,
@@ -1620,6 +1637,7 @@
 				791F0D092ABCA6AA00B7F408 /* DayViewModel.swift in Sources */,
 				794621C42B193A8B0060F6CD /* TaskNavigationBarModifier.swift in Sources */,
 				799070B52AEA53330051AAC8 /* TaskColumn+DTO.swift in Sources */,
+				798055B02B9F17D000129BBA /* RepeatingTasks+CoreDataClass.swift in Sources */,
 				79616F4C2AC5CE7700F4A95C /* CloudKitHandler.swift in Sources */,
 				795E118F2B24CBEE0000F8AA /* DoubleAndSingleTapGesture.swift in Sources */,
 				799070BB2AEA64680051AAC8 /* EditMode+Extensions.swift in Sources */,
@@ -1688,6 +1706,7 @@
 				791CA3912B225188009A5395 /* UserSettings+Extensions.swift in Sources */,
 				79B3490A2B23B15100AAB0A9 /* ColumnHeader.swift in Sources */,
 				791CA3852B225171009A5395 /* Priority+DTO.swift in Sources */,
+				798055B12B9F17D000129BBA /* RepeatingTasks+CoreDataClass.swift in Sources */,
 				791CA3952B2251C9009A5395 /* DataService+TaskColumn.swift in Sources */,
 				79A0C2DF2B226B1E005B3F04 /* TaskWise.xcdatamodeld in Sources */,
 				79E6584F2B2329A300DE5A0A /* WidgetTimelineService.swift in Sources */,
@@ -1695,6 +1714,7 @@
 				791CA3812B22516D009A5395 /* ColorComponents+CoreDataProperties.swift in Sources */,
 				791A06FD2B8A03040041AE42 /* UserSettings+CoreDataClass.swift in Sources */,
 				791CA3942B2251C9009A5395 /* DataService+Category.swift in Sources */,
+				798055B32B9F17D000129BBA /* RepeatingTasks+CoreDataProperties.swift in Sources */,
 				79B349172B23CEBE00AAB0A9 /* TaskWidgetHeader.swift in Sources */,
 				791CA3982B2251C9009A5395 /* DataService+Task.swift in Sources */,
 				791CA3972B2251C9009A5395 /* DataService+Priority.swift in Sources */,

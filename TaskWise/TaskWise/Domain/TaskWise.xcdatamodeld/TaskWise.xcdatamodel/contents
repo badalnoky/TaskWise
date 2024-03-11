@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22222" systemVersion="23B81" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22222" systemVersion="23B92" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
     <entity name="Category" representedClassName="Category" syncable="YES">
         <attribute name="wId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="wName" optional="YES" attributeType="String"/>
@@ -19,6 +19,13 @@
         <attribute name="wName" optional="YES" attributeType="String"/>
         <relationship name="wTasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Task" inverseName="wPriority" inverseEntity="Task"/>
     </entity>
+    <entity name="RepeatingTasks" representedClassName="RepeatingTasks" syncable="YES">
+        <attribute name="end" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="wId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="wLastUpdated" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="wStart" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="wTasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Task" inverseName="repeatingTasks" inverseEntity="Task"/>
+    </entity>
     <entity name="Task" representedClassName="Task" syncable="YES">
         <attribute name="wDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="wEndDateTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -27,6 +34,7 @@
         <attribute name="wStartDateTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="wTaskDescription" optional="YES" attributeType="String"/>
         <attribute name="wTitle" optional="YES" attributeType="String"/>
+        <relationship name="repeatingTasks" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RepeatingTasks" inverseName="wTasks" inverseEntity="RepeatingTasks"/>
         <relationship name="wCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="wTasks" inverseEntity="Category"/>
         <relationship name="wColumn" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TaskColumn" inverseName="wTasks" inverseEntity="TaskColumn"/>
         <relationship name="wPriority" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Priority" inverseName="wTasks" inverseEntity="Priority"/>
