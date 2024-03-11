@@ -121,6 +121,10 @@ internal enum Str {
         internal static let columnPlaceholder = String(localized: "Settings.columnPlaceholder", defaultValue: "Column name")
         /// Columns
         internal static let columnsLabel = String(localized: "Settings.columnsLabel", defaultValue: "Columns")
+        /// High
+        internal static let examplePriority = String(localized: "Settings.examplePriority", defaultValue: "High")
+        /// Example
+        internal static let exampleTitle = String(localized: "Settings.exampleTitle", defaultValue: "Example")
         /// Priorities
         internal static let prioritiesLabel = String(localized: "Settings.prioritiesLabel", defaultValue: "Priorities")
         /// Priority name

@@ -7,8 +7,8 @@ struct IntegratedColorPicker<Content: View> {
     }
 
     var selectedColor: Binding<Color>
-    @State private var activeTab: ColorPickerTab = .grid
     private var isEditable = false
+    @State private var activeTab: ColorPickerTab = .grid
     @State private var isActive = false
     let previewContent: () -> Content
 
@@ -52,7 +52,8 @@ extension IntegratedColorPicker: View {
                     case .sliders: ColorSlider(selectedColor: selectedColor)
                     }
                 }
-                .padding(.horizontal, .colorPickerHorizontalPadding)
+                .frame(maxHeight: .infinity, alignment: .top)
+                .padding(.colorPickerHorizontalPadding)
                 .presentationDetents([.fraction(.colorPickerDetent)])
             }
     }

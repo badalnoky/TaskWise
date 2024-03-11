@@ -8,10 +8,17 @@ struct CategoryColorPicker: View {
 
     var body: some View {
         IntegratedColorPicker(selectedColor: $selectedColor, isEditable: isEditable) {
-            Circle().frame(width: 50, height: 50).foregroundStyle(selectedColor)
+            TaskItemView(
+                title: Str.Settings.exampleTitle,
+                priority: Str.Settings.examplePriority,
+                category: category.name,
+                categoryColor: selectedColor
+            )
         }
         .onChange(of: selectedColor) {
-            colorChangedAction(selectedColor.components)
+            withAnimation {
+                colorChangedAction(selectedColor.components)
+            }
         }
     }
 
