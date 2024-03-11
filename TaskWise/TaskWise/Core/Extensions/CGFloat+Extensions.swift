@@ -76,3 +76,27 @@ extension CGFloat {
     /// 450 pt
     static let defaultCalendarHeight: CGFloat = 450
 }
+
+extension CGFloat {
+    static let grayScaleUnit: CGFloat = 1 / 11
+    static let minimumGestureTranslation: CGFloat = 0.1
+    static let colorPickerDetent: CGFloat = 0.75
+    static let one: CGFloat = 1
+    static let colorSliderShadowRadius: CGFloat = 1
+    static let baseLineWidth: CGFloat = 2
+    static let colorPickerEditingWidth: CGFloat = 3
+    static let colorSliderMinOffset: CGFloat = 4
+    static let componentSliderSpacing: CGFloat = 4
+    static let maxColorValue: CGFloat = 255
+    static let colorPickerAspectRatio: CGFloat = 12 / 10
+    static let calendarCornerRadius: CGFloat = 10
+    static let colorPickerVerticalPadding: CGFloat = 12
+    static let colorPickerHorizontalPadding: CGFloat = 16
+    static let colorSliderSpacing: CGFloat = 18
+    static let colorPickerEditingSize: CGFloat = 21
+    static let colorPickerBaseSize: CGFloat = 28
+    static let colorSliderSize: CGFloat = 30
+    static let colorSliderHeight: CGFloat = 36
+    static let colorValueTextfieldWidth: CGFloat = 56
+    static let hexCodeTextfieldWidth: CGFloat = 90
+}

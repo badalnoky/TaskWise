@@ -7,18 +7,12 @@ struct CategoryColorPicker: View {
     private var colorChangedAction: (ColorComponents.DTO) -> Void
 
     var body: some View {
-        ColorPicker(String.empty, selection: $selectedColor, supportsOpacity: true)
-            .labelsHidden()
-            .disabled(!isEditable)
-            .onChange(of: selectedColor) {
-                colorChangedAction(selectedColor.components)
-            }
-            .overlay {
-                Circle()
-                    .sized(.defaultColorPickerSize)
-                    .foregroundStyle(selectedColor)
-                    .opacity(isEditable ? .zero : .one)
-            }
+        IntegratedColorPicker(selectedColor: $selectedColor, isEditable: isEditable) {
+            Circle().frame(width: 50, height: 50).foregroundStyle(selectedColor)
+        }
+        .onChange(of: selectedColor) {
+            colorChangedAction(selectedColor.components)
+        }
     }
 
     init(

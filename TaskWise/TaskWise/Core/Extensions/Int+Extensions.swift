@@ -37,3 +37,12 @@ extension Int {
         }
     }
 }
+
+extension Int {
+    static let maxHexCodeDigits: Int = 6
+    static let colorGridMaxY: Int = 9
+    static let colorGridRowCount: Int = 10
+    static let colorGridMaxX: Int = 11
+    static let colorGridColumnCount: Int = 12
+    static let maxColorValue: Int = 255
+}
