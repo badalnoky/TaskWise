@@ -529,6 +529,28 @@
         }
       }
     },
+    "Settings.examplePriority" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "High"
+          }
+        }
+      }
+    },
+    "Settings.exampleTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Example"
+          }
+        }
+      }
+    },
     "Settings.prioritiesLabel" : {
       "extractionState" : "manual",
       "localizations" : {

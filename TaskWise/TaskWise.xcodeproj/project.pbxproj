@@ -115,6 +115,14 @@
 		797B58A72B88E2D6003B58A7 /* SwipeGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797B58A62B88E2D6003B58A7 /* SwipeGesture.swift */; };
 		797B58B42B88E57E003B58A7 /* CalendarDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797B58AB2B88E57E003B58A7 /* CalendarDatePicker.swift */; };
 		797B58B52B88E57E003B58A7 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797B58AC2B88E57E003B58A7 /* Weekday.swift */; };
+		797EE25D2B9E6FC2002173B1 /* IntegratedColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797EE25C2B9E6FC1002173B1 /* IntegratedColorPicker.swift */; };
+		797EE25F2B9E6FD4002173B1 /* ColorGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797EE25E2B9E6FD4002173B1 /* ColorGrid.swift */; };
+		797EE2612B9E6FD9002173B1 /* ColorSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797EE2602B9E6FD9002173B1 /* ColorSlider.swift */; };
+		797EE2632B9E7008002173B1 /* ComponentSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797EE2622B9E7008002173B1 /* ComponentSlider.swift */; };
+		797EE2652B9E700D002173B1 /* GradientSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797EE2642B9E700D002173B1 /* GradientSlider.swift */; };
+		797EE2692B9E7078002173B1 /* Angulargradient+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797EE2682B9E7078002173B1 /* Angulargradient+Extensions.swift */; };
+		797EE26B2B9E78EF002173B1 /* RGBType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797EE26A2B9E78EF002173B1 /* RGBType.swift */; };
+		797EE26C2B9E791B002173B1 /* RGBType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797EE26A2B9E78EF002173B1 /* RGBType.swift */; };
 		798300092B17BFDA0013B834 /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 798300082B17BFDA0013B834 /* ProximaNova-Bold.otf */; };
 		7983000B2B17C0D10013B834 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983000A2B17C0D10013B834 /* Fonts.swift */; };
 		7983000E2B17C4D90013B834 /* TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983000D2B17C4D90013B834 /* TextStyle.swift */; };
@@ -326,6 +334,13 @@
 		797B58A62B88E2D6003B58A7 /* SwipeGesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeGesture.swift; sourceTree = "<group>"; };
 		797B58AB2B88E57E003B58A7 /* CalendarDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDatePicker.swift; sourceTree = "<group>"; };
 		797B58AC2B88E57E003B58A7 /* Weekday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
+		797EE25C2B9E6FC1002173B1 /* IntegratedColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntegratedColorPicker.swift; sourceTree = "<group>"; };
+		797EE25E2B9E6FD4002173B1 /* ColorGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorGrid.swift; sourceTree = "<group>"; };
+		797EE2602B9E6FD9002173B1 /* ColorSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSlider.swift; sourceTree = "<group>"; };
+		797EE2622B9E7008002173B1 /* ComponentSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentSlider.swift; sourceTree = "<group>"; };
+		797EE2642B9E700D002173B1 /* GradientSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientSlider.swift; sourceTree = "<group>"; };
+		797EE2682B9E7078002173B1 /* Angulargradient+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Angulargradient+Extensions.swift"; sourceTree = "<group>"; };
+		797EE26A2B9E78EF002173B1 /* RGBType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBType.swift; sourceTree = "<group>"; };
 		798300082B17BFDA0013B834 /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.otf"; sourceTree = "<group>"; };
 		7983000A2B17C0D10013B834 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		7983000D2B17C4D90013B834 /* TextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyle.swift; sourceTree = "<group>"; };
@@ -564,6 +579,7 @@
 		790C190B2AD34B3F008647B8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				797EE2682B9E7078002173B1 /* Angulargradient+Extensions.swift */,
 				790C190C2AD34B52008647B8 /* Color+Extensions.swift */,
 				799070BA2AEA64680051AAC8 /* EditMode+Extensions.swift */,
 			);
@@ -579,6 +595,7 @@
 				798300152B17E82A0013B834 /* CombinedDatePicker */,
 				793C64852AED808800C9D3FF /* EditableText */,
 				7921551E2AB9E8360044CDED /* IconButton */,
+				797EE25B2B9E6FAA002173B1 /* IntegratedColorPicker */,
 				798300182B17EDA10013B834 /* StepIcon */,
 				794621B52B191CC50060F6CD /* StyledDate */,
 				7983000F2B17C57D0013B834 /* StyledField */,
@@ -754,6 +771,19 @@
 				795CC8EF2ABAF8F70093C4BC /* TaskViewModel+Mock.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		797EE25B2B9E6FAA002173B1 /* IntegratedColorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				797EE25E2B9E6FD4002173B1 /* ColorGrid.swift */,
+				797EE2602B9E6FD9002173B1 /* ColorSlider.swift */,
+				797EE2622B9E7008002173B1 /* ComponentSlider.swift */,
+				797EE2642B9E700D002173B1 /* GradientSlider.swift */,
+				797EE25C2B9E6FC1002173B1 /* IntegratedColorPicker.swift */,
+				797EE26A2B9E78EF002173B1 /* RGBType.swift */,
+			);
+			path = IntegratedColorPicker;
 			sourceTree = "<group>";
 		};
 		798300072B17BFC20013B834 /* Fonts */ = {
@@ -1476,6 +1506,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				797EE2652B9E700D002173B1 /* GradientSlider.swift in Sources */,
 				798300172B17E8810013B834 /* CombinedDatePicker.swift in Sources */,
 				797B58A72B88E2D6003B58A7 /* SwipeGesture.swift in Sources */,
 				7988A0332AAE307E00C63265 /* Localized.swift in Sources */,
@@ -1503,7 +1534,9 @@
 				794621BE2B192B5A0060F6CD /* TextButtonStyle.swift in Sources */,
 				79C838A82B1D109500F35483 /* SettingsNavigationBarModifier.swift in Sources */,
 				792155202AB9E8450044CDED /* IconButton.swift in Sources */,
+				797EE2632B9E7008002173B1 /* ComponentSlider.swift in Sources */,
 				79CD54A62AD33B9600D064C2 /* TaskStep+CoreDataClass.swift in Sources */,
+				797EE2612B9E6FD9002173B1 /* ColorSlider.swift in Sources */,
 				797B58B42B88E57E003B58A7 /* CalendarDatePicker.swift in Sources */,
 				79C16F4F2ABB5C6B00BA362B /* CalendarViewModel.swift in Sources */,
 				79B9625F2B1FA6E800D16472 /* TaskProgressIndicator.swift in Sources */,
@@ -1538,16 +1571,19 @@
 				798B08C82AB85C5000311D93 /* CalendarView.swift in Sources */,
 				794621BC2B1922690060F6CD /* DashboardNavigationBarModifier.swift in Sources */,
 				79CD54A72AD33B9600D064C2 /* TaskStep+CoreDataProperties.swift in Sources */,
+				797EE25D2B9E6FC2002173B1 /* IntegratedColorPicker.swift in Sources */,
 				7988A03D2AAE35C200C63265 /* Navigator.swift in Sources */,
 				79B823EB2B1E71DC0062B6E5 /* ColumnHeader.swift in Sources */,
 				79E14AD42AE41A4500FF730D /* Task+Mock.swift in Sources */,
 				798B08D02AB85CAB00311D93 /* TaskView.swift in Sources */,
 				79D983612ACC934D002A8222 /* AddTaskViewModel+Mock.swift in Sources */,
 				790C190D2AD34B52008647B8 /* Color+Extensions.swift in Sources */,
+				797EE25F2B9E6FD4002173B1 /* ColorGrid.swift in Sources */,
 				798300112B17C8120013B834 /* StyledField.swift in Sources */,
 				799070B92AEA55150051AAC8 /* Priority+DTO.swift in Sources */,
 				791F0D0B2ABCA89100B7F408 /* DayViewModel+Mock.swift in Sources */,
 				79E14AD82AE41ADB00FF730D /* Priority+Mock.swift in Sources */,
+				797EE26B2B9E78EF002173B1 /* RGBType.swift in Sources */,
 				79E6584E2B23280100DE5A0A /* String+Constants.swift in Sources */,
 				799070C52AEA717D0051AAC8 /* DataService+Priority.swift in Sources */,
 				791A06FB2B8A02E90041AE42 /* UserSettings+CoreDataProperties.swift in Sources */,
@@ -1565,6 +1601,7 @@
 				798605612AD5C00B007A64B3 /* Task+DTO.swift in Sources */,
 				79E14ACA2AE40B1000FF730D /* TaskStepView.swift in Sources */,
 				795CC8EC2ABAF28A0093C4BC /* SettingsViewModel+Mock.swift in Sources */,
+				797EE2692B9E7078002173B1 /* Angulargradient+Extensions.swift in Sources */,
 				79B349202B23DD4100AAB0A9 /* WidgetPageButtonStyle.swift in Sources */,
 				79CD54B02AD33B9600D064C2 /* ColorComponents+CoreDataClass.swift in Sources */,
 				79CD54A82AD33B9600D064C2 /* DataService.swift in Sources */,
@@ -1679,6 +1716,7 @@
 				791CA3862B225176009A5395 /* Task+CoreDataProperties.swift in Sources */,
 				797B4D792B2107D7001DAC30 /* TaskWiseWidgetBundle.swift in Sources */,
 				79B3490B2B23B15C00AAB0A9 /* TextStyle.swift in Sources */,
+				797EE26C2B9E791B002173B1 /* RGBType.swift in Sources */,
 				791CA39B2B2256DB009A5395 /* Date+Extensions.swift in Sources */,
 				792242F32B232EB80004F4FC /* TaskWidget.swift in Sources */,
 				791CA38A2B22517E009A5395 /* TaskColumn+CoreDataClass.swift in Sources */,

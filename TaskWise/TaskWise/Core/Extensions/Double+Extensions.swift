@@ -1,3 +1,4 @@
+import Foundation
 public extension Double {
     /// 0.1
     static let indicatorLowOpacity = 0.1
@@ -30,4 +31,10 @@ public extension Double {
 extension Double {
     static var rightAngle: Double = 90
     static var transitionDuration = 0.5
+}
+
+extension Double {
+    var normalized: CGFloat {
+        self / .maxColorValue
+    }
 }

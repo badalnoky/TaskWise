@@ -50,6 +50,8 @@
 "Settings.colorLabel" = "Color";
 "Settings.columnPlaceholder" = "Column name";
 "Settings.columnsLabel" = "Columns";
+"Settings.examplePriority" = "High";
+"Settings.exampleTitle" = "Example";
 "Settings.prioritiesLabel" = "Priorities";
 "Settings.priorityPlaceholder" = "Priority name";
 "Settings.title" = "Settings";

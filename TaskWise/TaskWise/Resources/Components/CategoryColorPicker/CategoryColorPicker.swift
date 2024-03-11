@@ -7,18 +7,19 @@ struct CategoryColorPicker: View {
     private var colorChangedAction: (ColorComponents.DTO) -> Void
 
     var body: some View {
-        ColorPicker(String.empty, selection: $selectedColor, supportsOpacity: true)
-            .labelsHidden()
-            .disabled(!isEditable)
-            .onChange(of: selectedColor) {
+        IntegratedColorPicker(selectedColor: $selectedColor, isEditable: isEditable) {
+            TaskItemView(
+                title: Str.Settings.exampleTitle,
+                priority: Str.Settings.examplePriority,
+                category: category.name,
+                categoryColor: selectedColor
+            )
+        }
+        .onChange(of: selectedColor) {
+            withAnimation {
                 colorChangedAction(selectedColor.components)
             }
-            .overlay {
-                Circle()
-                    .sized(.defaultColorPickerSize)
-                    .foregroundStyle(selectedColor)
-                    .opacity(isEditable ? .zero : .one)
-            }
+        }
     }
 
     init(
