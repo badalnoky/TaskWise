@@ -13,13 +13,18 @@ struct RepeatBehaviourPicker {
     var startingDate: Date
     var repeatBehaviour: Binding<RepeatBehaviour>
 
+    // TODO: this needs to be checked for correct strings
     var customRepeatLabel: String {
+        var tempIndices = indices
         var indicesLabel: String = .empty
         if repeatUnit != .day {
             indicesLabel = Str.RepeatBehaviorPicker.followingDays
         }
         if repeatUnit == .week {
-            indices.forEach {
+            if tempIndices.contains(where: { $0 > Weekday.allCases.count }) {
+                tempIndices = []
+            }
+            tempIndices.forEach {
                 indicesLabel += Str.RepeatBehaviorPicker.weekdaySeparator(Weekday.allCases[$0].rawValue)
             }
             indicesLabel.removeLast(.two)
@@ -40,18 +45,14 @@ struct RepeatBehaviourPicker {
 
 extension RepeatBehaviourPicker: View {
     var body: some View {
-        VStack {
-            HStack(spacing: .zero) {
-                Text(Str.RepeatBehaviorPicker.repeatLabel)
-                Spacer()
-                Picker(String.empty, selection: $repeatFrequency) {
-                    ForEach(RepeatFrequency.allCases, id: \.self) {
-                        Text($0.rawValue)
-                    }
+        VStack(spacing: .padding12) {
+            TaskRow(title: Str.RepeatBehaviorPicker.repeatLabel, selected: $repeatFrequency) {
+                ForEach(RepeatFrequency.allCases, id: \.self) {
+                    Text($0.rawValue)
                 }
-                .onChange(of: repeatFrequency) {
-                    repeatBehaviour.wrappedValue.frequency = repeatFrequency
-                }
+            }
+            .onChange(of: repeatFrequency) {
+                repeatBehaviour.wrappedValue.frequency = repeatFrequency
             }
             if repeatFrequency == .custom {
                 customFrequencyButton
@@ -71,33 +72,25 @@ extension RepeatBehaviourPicker: View {
 
 extension RepeatBehaviourPicker {
     private var endBehaviorPicker: some View {
-        HStack(spacing: .zero) {
-            Text(Str.RepeatBehaviorPicker.endRepeatLabel)
-            Spacer()
-            Picker(String.empty, selection: $repeatEnd) {
-                ForEach(RepeatEnd.allCases, id: \.self) {
-                    Text($0.rawValue)
-                }
+        TaskRow(title: Str.RepeatBehaviorPicker.endRepeatLabel, selected: $repeatEnd) {
+            ForEach(RepeatEnd.allCases, id: \.self) {
+                Text($0.rawValue)
             }
-            .onChange(of: repeatEnd) {
-                repeatBehaviour.wrappedValue.endBehaviour = repeatEnd
-            }
+        }
+        .onChange(of: repeatEnd) {
+            repeatBehaviour.wrappedValue.endBehaviour = repeatEnd
         }
     }
 
     private var endDatePicker: some View {
-        HStack(spacing: .zero) {
+        DatePicker(selection: $selectedEndDate, in: .now..., displayedComponents: .date) {
             Text(Str.RepeatBehaviorPicker.endDateLabel)
-            Spacer()
-            DatePicker(
-                String.empty,
-                selection: $selectedEndDate,
-                in: .now...,
-                displayedComponents: .date
-            )
-            .onChange(of: selectedEndDate) {
-                repeatBehaviour.wrappedValue.end = selectedEndDate
-            }
+                .textStyle(.body)
+        }
+        .padding(.leading, .padding4)
+        .frame(height: .defaultRowHeight)
+        .onChange(of: selectedEndDate) {
+            repeatBehaviour.wrappedValue.end = selectedEndDate
         }
     }
 
@@ -105,12 +98,15 @@ extension RepeatBehaviourPicker {
         Button(action: { isCustomSheetPresented = true }) {
             HStack {
                 Text(customRepeatLabel)
-                    .foregroundStyle(.black)
+                    .textStyle(.body)
                     .multilineTextAlignment(.leading)
                 Spacer()
                 Image.next
             }
         }
+        .frame(minHeight: .defaultRowHeight)
+        .padding(.leading, .padding4)
+        .padding(.trailing, .padding16)
     }
 
     private var weekView: some View {
@@ -125,16 +121,17 @@ extension RepeatBehaviourPicker {
                         indices = indices.sorted()
                     }
                 }
-                .foregroundStyle(.black)
+                .foregroundStyle(isSelected ? Color.white : Color.black )
                 .font(.footnote)
                 .frame(maxWidth: .infinity)
                 .padding(.padding4)
                 .background {
-                    Rectangle()
+                    RoundedRectangle(cornerRadius: .cornerRadius)
                         .fill(isSelected ? Color.accentColor : Color.clear)
                 }
             }
         }
+        .padding(.padding12)
         .onChange(of: indices) {
             repeatBehaviour.wrappedValue.schedule = .init(unit: repeatUnit, unitFrequency: unitFrequency, indices: indices)
         }
@@ -152,15 +149,16 @@ extension RepeatBehaviourPicker {
                         indices = indices.sorted()
                     }
                 }
-                .foregroundStyle(.black)
+                .foregroundStyle(isSelected ? Color.white : Color.black )
                 .frame(maxWidth: .infinity)
                 .padding(.padding4)
                 .background {
-                    Rectangle()
+                    RoundedRectangle(cornerRadius: .cornerRadius)
                         .fill(isSelected ? Color.accentColor : Color.clear)
                 }
             }
         }
+        .padding(.padding12)
         .onChange(of: indices) {
             repeatBehaviour.wrappedValue.schedule = .init(unit: repeatUnit, unitFrequency: unitFrequency, indices: indices)
         }
@@ -191,31 +189,31 @@ extension RepeatBehaviourPicker {
 
     private var behaviorSheetHeaderView: some View {
         VStack {
-            HStack(spacing: .zero) {
+            HStack {
                 Button(Str.RepeatBehaviorPicker.backButtonLabel) { isCustomSheetPresented = false }
+                    .buttonStyle(TextButtonStyle())
                 Spacer()
             }
-            HStack(spacing: .zero) {
-                Text(Str.RepeatBehaviorPicker.frequencyLabel)
-                Spacer()
-                Picker(String.empty, selection: $repeatUnit) {
-                    ForEach(RepeatUnit.allCases, id: \.self) {
-                        Text($0.rawValue)
-                    }
-                }
-                .onChange(of: repeatUnit) {
-                    unitFrequency = .one
-                    indices = []
-                    repeatBehaviour.wrappedValue.schedule = .init(unit: repeatUnit, unitFrequency: unitFrequency, indices: indices)
+            TaskRow(title: Str.RepeatBehaviorPicker.frequencyLabel, selected: $repeatUnit) {
+                ForEach(RepeatUnit.allCases, id: \.self) {
+                    Text($0.rawValue)
                 }
             }
+            .onChange(of: repeatUnit) {
+                unitFrequency = .one
+                indices = []
+                repeatBehaviour.wrappedValue.schedule = .init(unit: repeatUnit, unitFrequency: unitFrequency, indices: indices)
+            }
+            // TODO: this needs to be checked for correct strings
             Button(action: { isUnitFrequencyPresented.toggle() }) {
                 HStack {
                     Text(Str.RepeatBehaviorPicker.everyLabel)
-                        .foregroundStyle(.black)
+                        .textStyle(.body)
                     Spacer()
                     Text(Str.RepeatBehaviorPicker.repeatEveryLabel(unitFrequency, repeatUnit.rawValue))
                 }
+                .padding(.leading, .padding4)
+                .padding(.trailing, .padding16)
             }
         }
     }
@@ -234,7 +232,7 @@ extension RepeatBehaviourPicker {
             }
             Spacer()
         }
-        .padding()
+        .defaultViewPadding()
         .presentationDetents([.medium])
     }
 }

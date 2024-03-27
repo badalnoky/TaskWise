@@ -23,6 +23,8 @@ public extension CGFloat {
     static let defaultCheckboxSize: CGFloat = 30
     /// 35 pt
     static let iconButtonSize: CGFloat = 35
+    /// 44 pt
+    static let defaultRowHeight: CGFloat = 44
     /// 200 pt
     static let defaultListHeight: CGFloat = 200
     /// 260 pt

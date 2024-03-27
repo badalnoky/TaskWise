@@ -19,6 +19,7 @@ import SwiftUI
     var allDay = false
     var starts: Date = .now
     var ends: Date = .now.advanced(by: .hour)
+    var repeatBehaviour: RepeatBehaviour = .empty
     var newStepName: String = .empty
     var steps: [TaskStep.DTO] = []
 
