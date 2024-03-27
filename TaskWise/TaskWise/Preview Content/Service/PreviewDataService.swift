@@ -64,5 +64,10 @@ class PreviewDataService: DataServiceInput {
     func updateColumnName(on column: TaskColumn, to newName: String) {}
     func updateOrder(of columns: [TaskColumn]) {}
     func deleteColumn(_ column: TaskColumn) {}
+    func fetchRepeatingTasks() {}
+    func createRepeatingTasks() {}
+    func deleteRepeatingTasks() {}
+    func deleteTaskFromRepeatingTasks() {}
+    func updateRepeatingTasks() {}
 }
 #endif

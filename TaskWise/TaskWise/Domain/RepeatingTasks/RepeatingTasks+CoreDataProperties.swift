@@ -3,6 +3,7 @@ import Foundation
 
 extension RepeatingTasks {
     public static let entityName: String = "RepeatingTasks"
+
     @NSManaged public var end: Date?
     @NSManaged public var wId: UUID?
     @NSManaged public var wLastUpdated: Date?
@@ -16,7 +17,7 @@ extension RepeatingTasks {
         let set = wTasks as? Set<Task> ?? []
         return set.sorted { $0.date < $1.date }
     }
-    public var idIndefinite: Bool { end == nil }
+    public var isIndefinite: Bool { end == nil }
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<RepeatingTasks> {
         NSFetchRequest<RepeatingTasks>(entityName: entityName)

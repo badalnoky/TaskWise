@@ -106,6 +106,57 @@ internal enum Str {
         /// chevron.up
         internal static let up = String(localized: "Icons.up", defaultValue: "chevron.up")
     }
+    internal enum RepeatBehaviorPicker {
+        /// Back
+        internal static let backButtonLabel = String(localized: "RepeatBehaviorPicker.backButtonLabel", defaultValue: "Back")
+        /// Repeats every %d %@ 
+        internal static func customRepeatLabel(_ p1: Int, _ p2: String) -> String {
+            _sf(
+                format: String(localized: "RepeatBehaviorPicker.customRepeatLabel" , defaultValue: "Repeats every %d %@ "),
+                with: p1, p2
+            )
+        }
+        /// %d
+        internal static func dayButtonLabel(_ p1: Int) -> String {
+            _sf(
+                format: String(localized: "RepeatBehaviorPicker.dayButtonLabel" , defaultValue: "%d"),
+                with: p1
+            )
+        }
+        /// %d., 
+        internal static func daySeparator(_ p1: Int) -> String {
+            _sf(
+                format: String(localized: "RepeatBehaviorPicker.daySeparator" , defaultValue: "%d., "),
+                with: p1
+            )
+        }
+        /// End date
+        internal static let endDateLabel = String(localized: "RepeatBehaviorPicker.endDateLabel", defaultValue: "End date")
+        /// End repeating
+        internal static let endRepeatLabel = String(localized: "RepeatBehaviorPicker.endRepeatLabel", defaultValue: "End repeating")
+        /// Every
+        internal static let everyLabel = String(localized: "RepeatBehaviorPicker.everyLabel", defaultValue: "Every")
+        /// on the following days: 
+        internal static let followingDays = String(localized: "RepeatBehaviorPicker.followingDays", defaultValue: "on the following days: ")
+        /// Frequency
+        internal static let frequencyLabel = String(localized: "RepeatBehaviorPicker.frequencyLabel", defaultValue: "Frequency")
+        /// %d %@
+        internal static func repeatEveryLabel(_ p1: Int, _ p2: String) -> String {
+            _sf(
+                format: String(localized: "RepeatBehaviorPicker.repeatEveryLabel" , defaultValue: "%d %@"),
+                with: p1, p2
+            )
+        }
+        /// Repeat
+        internal static let repeatLabel = String(localized: "RepeatBehaviorPicker.repeatLabel", defaultValue: "Repeat")
+        /// %@, 
+        internal static func weekdaySeparator(_ p1: String) -> String {
+            _sf(
+                format: String(localized: "RepeatBehaviorPicker.weekdaySeparator" , defaultValue: "%@, "),
+                with: p1
+            )
+        }
+    }
     internal enum Settings {
         /// Add
         internal static let addLabel = String(localized: "Settings.addLabel", defaultValue: "Add")

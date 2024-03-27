@@ -29,4 +29,7 @@ extension DataService {
         guard let steps = try? context.fetch(TaskStep.fetchRequest(for: task)) else { return }
         self.currentSteps.send(steps)
     }
+
+    func fetchRepeatingTasks() {
+    }
 }

@@ -13,6 +13,7 @@ protocol DataServiceInput {
     func fetchCategories()
     func fetchColumns()
     func fetchSteps(for task: Task)
+    func fetchRepeatingTasks()
 
     func addCategory(_ category: Category.DTO)
     func updateCategoryName(on category: Category, to newName: String)
@@ -38,4 +39,9 @@ protocol DataServiceInput {
     func updateColumnName(on column: TaskColumn, to newName: String)
     func updateOrder(of columns: [TaskColumn])
     func deleteColumn(_ column: TaskColumn)
+
+    func createRepeatingTasks()
+    func deleteRepeatingTasks()
+    func deleteTaskFromRepeatingTasks()
+    func updateRepeatingTasks()
 }

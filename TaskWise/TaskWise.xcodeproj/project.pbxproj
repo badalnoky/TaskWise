@@ -82,6 +82,13 @@
 		794621C22B1933E40060F6CD /* CalendarNavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794621C12B1933E40060F6CD /* CalendarNavigationBarModifier.swift */; };
 		794621C42B193A8B0060F6CD /* TaskNavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794621C32B193A8B0060F6CD /* TaskNavigationBarModifier.swift */; };
 		794621C62B1942310060F6CD /* BaseTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794621C52B1942310060F6CD /* BaseTextFieldStyle.swift */; };
+		794AC27E2BB424D900DAC0F9 /* WeekDay+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794AC27D2BB424D900DAC0F9 /* WeekDay+Extensions.swift */; };
+		794AC2802BB424E000DAC0F9 /* RepeatUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794AC27F2BB424E000DAC0F9 /* RepeatUnit.swift */; };
+		794AC2822BB424E800DAC0F9 /* RepeatFrequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794AC2812BB424E800DAC0F9 /* RepeatFrequency.swift */; };
+		794AC2842BB424EF00DAC0F9 /* RepeatEnd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794AC2832BB424EF00DAC0F9 /* RepeatEnd.swift */; };
+		794AC2862BB424F800DAC0F9 /* RepeatBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794AC2852BB424F800DAC0F9 /* RepeatBehaviour.swift */; };
+		794AC2882BB424FD00DAC0F9 /* CustomRepeatSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794AC2872BB424FD00DAC0F9 /* CustomRepeatSchedule.swift */; };
+		794AC28A2BB425BF00DAC0F9 /* RepeatBehaviourPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794AC2892BB425BF00DAC0F9 /* RepeatBehaviourPicker.swift */; };
 		795CC8EA2ABAEF3B0093C4BC /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CC8E92ABAEF3B0093C4BC /* SettingsViewModel.swift */; };
 		795CC8EC2ABAF28A0093C4BC /* SettingsViewModel+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CC8EB2ABAF28A0093C4BC /* SettingsViewModel+Mock.swift */; };
 		795CC8EE2ABAF63B0093C4BC /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CC8ED2ABAF63B0093C4BC /* TaskViewModel.swift */; };
@@ -168,6 +175,8 @@
 		799070BF2AEA6BE90051AAC8 /* DataService+Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799070BE2AEA6BE90051AAC8 /* DataService+Task.swift */; };
 		799070C32AEA70F50051AAC8 /* DataService+TaskColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799070C22AEA70F50051AAC8 /* DataService+TaskColumn.swift */; };
 		799070C52AEA717D0051AAC8 /* DataService+Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799070C42AEA717D0051AAC8 /* DataService+Priority.swift */; };
+		799A42872B9F289300041AA3 /* DataService+RepeatingTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799A42862B9F289300041AA3 /* DataService+RepeatingTasks.swift */; };
+		799A42882B9F2AD200041AA3 /* DataService+RepeatingTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799A42862B9F289300041AA3 /* DataService+RepeatingTasks.swift */; };
 		799D48E32ABC394400C149E3 /* CalendarViewModel+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799D48E22ABC394400C149E3 /* CalendarViewModel+Mock.swift */; };
 		79A0C2DF2B226B1E005B3F04 /* TaskWise.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54992AD33B9600D064C2 /* TaskWise.xcdatamodeld */; };
 		79A519902B1BA29F00B0EEC2 /* ListButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A5198F2B1BA29F00B0EEC2 /* ListButtonStyle.swift */; };
@@ -186,6 +195,7 @@
 		79B3491E2B23DBBC00AAB0A9 /* WidgetButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B3491D2B23DBBC00AAB0A9 /* WidgetButtonType.swift */; };
 		79B349202B23DD4100AAB0A9 /* WidgetPageButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B3491F2B23DD4100AAB0A9 /* WidgetPageButtonStyle.swift */; };
 		79B349212B23DD6000AAB0A9 /* WidgetPageButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B3491F2B23DD4100AAB0A9 /* WidgetPageButtonStyle.swift */; };
+		79B52F7E2BAB28FB007CF9BA /* RepeatingTask+DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B52F7D2BAB28FB007CF9BA /* RepeatingTask+DTO.swift */; };
 		79B823EB2B1E71DC0062B6E5 /* ColumnHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B823EA2B1E71DC0062B6E5 /* ColumnHeader.swift */; };
 		79B823EE2B1E77970062B6E5 /* TaskItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B823ED2B1E77970062B6E5 /* TaskItemView.swift */; };
 		79B9625C2B1F799F00D16472 /* TaskContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B9625B2B1F799F00D16472 /* TaskContextMenu.swift */; };
@@ -309,6 +319,13 @@
 		794621C12B1933E40060F6CD /* CalendarNavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarNavigationBarModifier.swift; sourceTree = "<group>"; };
 		794621C32B193A8B0060F6CD /* TaskNavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskNavigationBarModifier.swift; sourceTree = "<group>"; };
 		794621C52B1942310060F6CD /* BaseTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextFieldStyle.swift; sourceTree = "<group>"; };
+		794AC27D2BB424D900DAC0F9 /* WeekDay+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WeekDay+Extensions.swift"; sourceTree = "<group>"; };
+		794AC27F2BB424E000DAC0F9 /* RepeatUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeatUnit.swift; sourceTree = "<group>"; };
+		794AC2812BB424E800DAC0F9 /* RepeatFrequency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeatFrequency.swift; sourceTree = "<group>"; };
+		794AC2832BB424EF00DAC0F9 /* RepeatEnd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeatEnd.swift; sourceTree = "<group>"; };
+		794AC2852BB424F800DAC0F9 /* RepeatBehaviour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeatBehaviour.swift; sourceTree = "<group>"; };
+		794AC2872BB424FD00DAC0F9 /* CustomRepeatSchedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRepeatSchedule.swift; sourceTree = "<group>"; };
+		794AC2892BB425BF00DAC0F9 /* RepeatBehaviourPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeatBehaviourPicker.swift; sourceTree = "<group>"; };
 		795CC8E92ABAEF3B0093C4BC /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		795CC8EB2ABAF28A0093C4BC /* SettingsViewModel+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsViewModel+Mock.swift"; sourceTree = "<group>"; };
 		795CC8ED2ABAF63B0093C4BC /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
@@ -388,6 +405,7 @@
 		799070BE2AEA6BE90051AAC8 /* DataService+Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataService+Task.swift"; sourceTree = "<group>"; };
 		799070C22AEA70F50051AAC8 /* DataService+TaskColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataService+TaskColumn.swift"; sourceTree = "<group>"; };
 		799070C42AEA717D0051AAC8 /* DataService+Priority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataService+Priority.swift"; sourceTree = "<group>"; };
+		799A42862B9F289300041AA3 /* DataService+RepeatingTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataService+RepeatingTasks.swift"; sourceTree = "<group>"; };
 		799D48E22ABC394400C149E3 /* CalendarViewModel+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarViewModel+Mock.swift"; sourceTree = "<group>"; };
 		79A5198F2B1BA29F00B0EEC2 /* ListButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListButtonStyle.swift; sourceTree = "<group>"; };
 		79B349122B23CBA500AAB0A9 /* WidgetColumnButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetColumnButtonStyle.swift; sourceTree = "<group>"; };
@@ -396,6 +414,7 @@
 		79B3491A2B23D9FD00AAB0A9 /* WidgetPageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetPageButton.swift; sourceTree = "<group>"; };
 		79B3491D2B23DBBC00AAB0A9 /* WidgetButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetButtonType.swift; sourceTree = "<group>"; };
 		79B3491F2B23DD4100AAB0A9 /* WidgetPageButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetPageButtonStyle.swift; sourceTree = "<group>"; };
+		79B52F7D2BAB28FB007CF9BA /* RepeatingTask+DTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RepeatingTask+DTO.swift"; sourceTree = "<group>"; };
 		79B823EA2B1E71DC0062B6E5 /* ColumnHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnHeader.swift; sourceTree = "<group>"; };
 		79B823ED2B1E77970062B6E5 /* TaskItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItemView.swift; sourceTree = "<group>"; };
 		79B9625B2B1F799F00D16472 /* TaskContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskContextMenu.swift; sourceTree = "<group>"; };
@@ -602,6 +621,7 @@
 				793C64852AED808800C9D3FF /* EditableText */,
 				7921551E2AB9E8360044CDED /* IconButton */,
 				797EE25B2B9E6FAA002173B1 /* IntegratedColorPicker */,
+				794AC27C2BB424B400DAC0F9 /* RepeatBehaviorPicker */,
 				798300182B17EDA10013B834 /* StepIcon */,
 				794621B52B191CC50060F6CD /* StyledDate */,
 				7983000F2B17C57D0013B834 /* StyledField */,
@@ -672,6 +692,20 @@
 				79B962602B1FD36700D16472 /* NavigationBars */,
 			);
 			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		794AC27C2BB424B400DAC0F9 /* RepeatBehaviorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				794AC2872BB424FD00DAC0F9 /* CustomRepeatSchedule.swift */,
+				794AC2852BB424F800DAC0F9 /* RepeatBehaviour.swift */,
+				794AC2892BB425BF00DAC0F9 /* RepeatBehaviourPicker.swift */,
+				794AC2832BB424EF00DAC0F9 /* RepeatEnd.swift */,
+				794AC2812BB424E800DAC0F9 /* RepeatFrequency.swift */,
+				794AC27F2BB424E000DAC0F9 /* RepeatUnit.swift */,
+				794AC27D2BB424D900DAC0F9 /* WeekDay+Extensions.swift */,
+			);
+			path = RepeatBehaviorPicker;
 			sourceTree = "<group>";
 		};
 		795E11882B2492B60000F8AA /* Intents */ = {
@@ -750,6 +784,7 @@
 				797B4DAC2B212997001DAC30 /* DataService+Category.swift */,
 				797B4DAE2B2129A2001DAC30 /* DataService+Fetch.swift */,
 				799070C42AEA717D0051AAC8 /* DataService+Priority.swift */,
+				799A42862B9F289300041AA3 /* DataService+RepeatingTasks.swift */,
 				799070BE2AEA6BE90051AAC8 /* DataService+Task.swift */,
 				799070C22AEA70F50051AAC8 /* DataService+TaskColumn.swift */,
 				791CA3752B224EB8009A5395 /* DateService+Widget.swift */,
@@ -797,6 +832,7 @@
 			children = (
 				798055AA2B9F17D000129BBA /* RepeatingTasks+CoreDataClass.swift */,
 				798055AB2B9F17D000129BBA /* RepeatingTasks+CoreDataProperties.swift */,
+				79B52F7D2BAB28FB007CF9BA /* RepeatingTask+DTO.swift */,
 			);
 			path = RepeatingTasks;
 			sourceTree = "<group>";
@@ -1563,16 +1599,19 @@
 				791CA3762B224EB8009A5395 /* DateService+Widget.swift in Sources */,
 				79CD54AB2AD33B9600D064C2 /* TaskWise.xcdatamodeld in Sources */,
 				794621C62B1942310060F6CD /* BaseTextFieldStyle.swift in Sources */,
+				794AC2822BB424E800DAC0F9 /* RepeatFrequency.swift in Sources */,
 				795E11832B24798C0000F8AA /* TaskEntry.swift in Sources */,
 				798B08BB2AB8524800311D93 /* ContentSceneFactory.swift in Sources */,
 				794621B42B1917970060F6CD /* StyledTextModel.swift in Sources */,
 				79CD54AF2AD33B9600D064C2 /* Priority+CoreDataClass.swift in Sources */,
 				7988A04F2AAE362400C63265 /* CGFloat+Extensions.swift in Sources */,
 				7988A03C2AAE35C200C63265 /* SceneFactory.swift in Sources */,
+				794AC28A2BB425BF00DAC0F9 /* RepeatBehaviourPicker.swift in Sources */,
 				79CD54AC2AD33B9600D064C2 /* TaskColumn+CoreDataClass.swift in Sources */,
 				799070C32AEA70F50051AAC8 /* DataService+TaskColumn.swift in Sources */,
 				790126152AD48710005620C2 /* TaskColumn+Defaults.swift in Sources */,
 				7988A02C2AAE2EAC00C63265 /* DI.swift in Sources */,
+				799A42872B9F289300041AA3 /* DataService+RepeatingTasks.swift in Sources */,
 				79CD54AD2AD33B9600D064C2 /* TaskColumn+CoreDataProperties.swift in Sources */,
 				794621B72B191CD90060F6CD /* StyledDate.swift in Sources */,
 				790A81072AAE19A700283D7E /* TaskWiseApp.swift in Sources */,
@@ -1595,6 +1634,7 @@
 				798B08D02AB85CAB00311D93 /* TaskView.swift in Sources */,
 				79D983612ACC934D002A8222 /* AddTaskViewModel+Mock.swift in Sources */,
 				790C190D2AD34B52008647B8 /* Color+Extensions.swift in Sources */,
+				794AC27E2BB424D900DAC0F9 /* WeekDay+Extensions.swift in Sources */,
 				797EE25F2B9E6FD4002173B1 /* ColorGrid.swift in Sources */,
 				798300112B17C8120013B834 /* StyledField.swift in Sources */,
 				799070B92AEA55150051AAC8 /* Priority+DTO.swift in Sources */,
@@ -1606,6 +1646,7 @@
 				791A06FB2B8A02E90041AE42 /* UserSettings+CoreDataProperties.swift in Sources */,
 				794621B22B19176F0060F6CD /* StyledFieldModel.swift in Sources */,
 				794621C02B1930900060F6CD /* DayNavigationBarModifier.swift in Sources */,
+				794AC2862BB424F800DAC0F9 /* RepeatBehaviour.swift in Sources */,
 				79B823EE2B1E77970062B6E5 /* TaskItemView.swift in Sources */,
 				792155142AB9DB9F0044CDED /* DashboardViewModel.swift in Sources */,
 				79CD54A42AD33B9600D064C2 /* Category+CoreDataProperties.swift in Sources */,
@@ -1620,13 +1661,16 @@
 				795CC8EC2ABAF28A0093C4BC /* SettingsViewModel+Mock.swift in Sources */,
 				797EE2692B9E7078002173B1 /* Angulargradient+Extensions.swift in Sources */,
 				79B349202B23DD4100AAB0A9 /* WidgetPageButtonStyle.swift in Sources */,
+				794AC2882BB424FD00DAC0F9 /* CustomRepeatSchedule.swift in Sources */,
 				79CD54B02AD33B9600D064C2 /* ColorComponents+CoreDataClass.swift in Sources */,
 				79CD54A82AD33B9600D064C2 /* DataService.swift in Sources */,
 				793C648A2AED9E7300C9D3FF /* CategoryColorPicker.swift in Sources */,
 				79E14AD62AE41A5D00FF730D /* TaskStep+Mock.swift in Sources */,
 				79B9625C2B1F799F00D16472 /* TaskContextMenu.swift in Sources */,
+				794AC2842BB424EF00DAC0F9 /* RepeatEnd.swift in Sources */,
 				7988A0512AAE362400C63265 /* PassthroughSubject+Extensions.swift in Sources */,
 				79616F4A2AC5CE0000F4A95C /* CloudError.swift in Sources */,
+				79B52F7E2BAB28FB007CF9BA /* RepeatingTask+DTO.swift in Sources */,
 				79CD54AE2AD33B9600D064C2 /* Priority+CoreDataProperties.swift in Sources */,
 				797B58B52B88E57E003B58A7 /* Weekday.swift in Sources */,
 				7988A0502AAE362400C63265 /* Double+Extensions.swift in Sources */,
@@ -1635,6 +1679,7 @@
 				79E14ACE2AE415B200FF730D /* PreviewDataService.swift in Sources */,
 				7988A0412AAE35F600C63265 /* NetworkMonitor.swift in Sources */,
 				791F0D092ABCA6AA00B7F408 /* DayViewModel.swift in Sources */,
+				794AC2802BB424E000DAC0F9 /* RepeatUnit.swift in Sources */,
 				794621C42B193A8B0060F6CD /* TaskNavigationBarModifier.swift in Sources */,
 				799070B52AEA53330051AAC8 /* TaskColumn+DTO.swift in Sources */,
 				798055B02B9F17D000129BBA /* RepeatingTasks+CoreDataClass.swift in Sources */,
@@ -1692,6 +1737,7 @@
 				79B3490E2B23B18700AAB0A9 /* StyledText.swift in Sources */,
 				797B4DA62B2119D5001DAC30 /* CompletionEntry.swift in Sources */,
 				79B3491B2B23D9FD00AAB0A9 /* WidgetPageButton.swift in Sources */,
+				799A42882B9F2AD200041AA3 /* DataService+RepeatingTasks.swift in Sources */,
 				791CA37E2B225167009A5395 /* Category+DTO.swift in Sources */,
 				791CA3832B225171009A5395 /* Priority+Defaults.swift in Sources */,
 				791CA38F2B225183009A5395 /* TaskStep+CoreDataClass.swift in Sources */,

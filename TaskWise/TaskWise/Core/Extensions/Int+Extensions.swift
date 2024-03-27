@@ -1,5 +1,6 @@
 public extension Int {
     static var one: Int = 1
+    static var two: Int = 2
     static var ten: Int = 10
     static var descriptionLineLimit: Int = 3
 
@@ -24,10 +25,13 @@ extension Int {
 
 extension Int {
     static let weekDayCount: Int = 7
+    static let yearWeekCount: Int = 52
+    static let yearMonthCount: Int = 12
     static let firstMonth: Int = 1
     static let lastMonth: Int = 12
     static let plusOne: Int = 1
     static let minusOne: Int = -1
+    static let maxMonthlyDayCount = 31
     static let defaultTimeframe = 50
 
     var weekDayOffset: Int {
