@@ -29,8 +29,11 @@ extension CombinedDatePicker: View {
                 }
                 .tint(.appTint)
                 .frame(height: .defaultRowHeight)
+                .onChange(of: starts.wrappedValue) {
+                    ends.wrappedValue = starts.wrappedValue.addingTimeInterval(.hour)
+                }
 
-                DatePicker(selection: ends, in: Date.now.addingTimeInterval(.hour)..., displayedComponents: .hourAndMinute) {
+                DatePicker(selection: ends, in: starts.wrappedValue.addingTimeInterval(.minute)..., displayedComponents: .hourAndMinute) {
                     Text(Str.Task.endsLabel)
                         .textStyle(.body)
                 }
