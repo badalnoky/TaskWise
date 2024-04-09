@@ -502,18 +502,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "End date"
-          }
-        }
-      }
-    },
-    "RepeatBehaviorPicker.endRepeatLabel" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "End repeating"
+            "value" : "End repeating on"
           }
         }
       }

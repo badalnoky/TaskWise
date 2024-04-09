@@ -130,10 +130,8 @@ internal enum Str {
                 with: p1
             )
         }
-        /// End date
-        internal static let endDateLabel = String(localized: "RepeatBehaviorPicker.endDateLabel", defaultValue: "End date")
-        /// End repeating
-        internal static let endRepeatLabel = String(localized: "RepeatBehaviorPicker.endRepeatLabel", defaultValue: "End repeating")
+        /// End repeating on
+        internal static let endDateLabel = String(localized: "RepeatBehaviorPicker.endDateLabel", defaultValue: "End repeating on")
         /// Every
         internal static let everyLabel = String(localized: "RepeatBehaviorPicker.everyLabel", defaultValue: "Every")
         /// on the following days: 

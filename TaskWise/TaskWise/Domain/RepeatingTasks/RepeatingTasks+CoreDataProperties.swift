@@ -4,7 +4,8 @@ import Foundation
 extension RepeatingTasks {
     public static let entityName: String = "RepeatingTasks"
 
-    @NSManaged public var end: Date?
+    @NSManaged public var wBehavior: String?
+    @NSManaged public var wEnd: Date?
     @NSManaged public var wId: UUID?
     @NSManaged public var wLastUpdated: Date?
     @NSManaged public var wStart: Date?
@@ -13,11 +14,16 @@ extension RepeatingTasks {
     public var id: UUID { wId ?? UUID() }
     public var lastUpdated: Date { wLastUpdated ?? .now }
     public var start: Date { wStart ?? .now }
+    public var end: Date { wEnd ?? .now }
     public var tasks: [Task] {
         let set = wTasks as? Set<Task> ?? []
         return set.sorted { $0.date < $1.date }
     }
-    public var isIndefinite: Bool { end == nil }
+
+    public var behaviour: RepeatBehaviour {
+        guard let encoded = wBehavior else { return .empty }
+        return RepeatBehaviour.decode(encoded, end)
+    }
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<RepeatingTasks> {
         NSFetchRequest<RepeatingTasks>(entityName: entityName)

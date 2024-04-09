@@ -55,7 +55,7 @@ import SwiftUI
 
 extension AddTaskViewModel {
     func didTapCreate() {
-        dataService.addTask(task)
+        dataService.createTasks(from: task, with: repeatBehaviour)
         dismiss()
     }
 

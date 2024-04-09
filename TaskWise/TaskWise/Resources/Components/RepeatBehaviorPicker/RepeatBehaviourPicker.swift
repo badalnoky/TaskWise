@@ -2,8 +2,7 @@ import SwiftUI
 
 struct RepeatBehaviourPicker {
     @State private var repeatFrequency: RepeatFrequency = .never
-    @State private var repeatEnd: RepeatEnd = .never
-    @State private var selectedEndDate: Date = .now
+    @State private var selectedEndDate: Date = .now.endOfDay
     @State private var isCustomSheetPresented = false
     @State private var repeatUnit: RepeatUnit = .day
     @State private var unitFrequency: Int = .one
@@ -58,39 +57,25 @@ extension RepeatBehaviourPicker: View {
                 customFrequencyButton
             }
             if repeatFrequency != .never {
-                endBehaviorPicker
-            }
-            if repeatEnd != .never {
                 endDatePicker
             }
         }
-        .sheet(isPresented: $isCustomSheetPresented) {
+        .sheet(isPresented: $isCustomSheetPresented, onDismiss: validateAndCorrect) {
             customBehaviorSheet
         }
     }
 }
 
 extension RepeatBehaviourPicker {
-    private var endBehaviorPicker: some View {
-        TaskRow(title: Str.RepeatBehaviorPicker.endRepeatLabel, selected: $repeatEnd) {
-            ForEach(RepeatEnd.allCases, id: \.self) {
-                Text($0.rawValue)
-            }
-        }
-        .onChange(of: repeatEnd) {
-            repeatBehaviour.wrappedValue.endBehaviour = repeatEnd
-        }
-    }
-
     private var endDatePicker: some View {
-        DatePicker(selection: $selectedEndDate, in: .now..., displayedComponents: .date) {
+        DatePicker(selection: $selectedEndDate, in: startingDate..., displayedComponents: .date) {
             Text(Str.RepeatBehaviorPicker.endDateLabel)
                 .textStyle(.body)
         }
         .padding(.leading, .padding4)
         .frame(height: .defaultRowHeight)
         .onChange(of: selectedEndDate) {
-            repeatBehaviour.wrappedValue.end = selectedEndDate
+            repeatBehaviour.wrappedValue.end = selectedEndDate.endOfDay
         }
     }
 
@@ -234,6 +219,14 @@ extension RepeatBehaviourPicker {
         }
         .defaultViewPadding()
         .presentationDetents([.medium])
+    }
+}
+
+extension RepeatBehaviourPicker {
+    private func validateAndCorrect() {
+        if repeatBehaviour.wrappedValue.schedule.unit != .day, repeatBehaviour.wrappedValue.schedule.indices.isEmpty {
+            repeatUnit = .day
+        }
     }
 }
 

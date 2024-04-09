@@ -50,3 +50,12 @@ extension Int {
     static let colorGridColumnCount: Int = 12
     static let maxColorValue: Int = 255
 }
+
+extension Int {
+    var weekdayIndice: Int {
+        switch self {
+        case 6: return 1
+        default: return self + 2
+        }
+    }
+}

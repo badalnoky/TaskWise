@@ -47,8 +47,7 @@
 "RepeatBehaviorPicker.customRepeatLabel" = "Repeats every %d %@ ";
 "RepeatBehaviorPicker.dayButtonLabel" = "%d";
 "RepeatBehaviorPicker.daySeparator" = "%d., ";
-"RepeatBehaviorPicker.endDateLabel" = "End date";
-"RepeatBehaviorPicker.endRepeatLabel" = "End repeating";
+"RepeatBehaviorPicker.endDateLabel" = "End repeating on";
 "RepeatBehaviorPicker.everyLabel" = "Every";
 "RepeatBehaviorPicker.followingDays" = "on the following days: ";
 "RepeatBehaviorPicker.frequencyLabel" = "Frequency";

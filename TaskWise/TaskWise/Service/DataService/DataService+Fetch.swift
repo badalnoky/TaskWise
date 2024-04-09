@@ -31,5 +31,7 @@ extension DataService {
     }
 
     func fetchRepeatingTasks() {
+        guard let repeatingTasks = try? context.fetch(RepeatingTasks.fetchRequest()) else { return }
+        self.repeatingTasks.send(repeatingTasks)
     }
 }

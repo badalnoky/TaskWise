@@ -17,4 +17,16 @@ extension DataService {
         let (column, page) = WidgetTimelineService.getWidgetState()
         return TaskEntry(date: .now, tasks: taskDtos, columns: columnDtos, selectedIndex: column, selectedPage: page)
     }
+
+    func handleWidgetCompletion(taskDate: Date) {
+        if Calendar.current.isDate(taskDate, inSameDayAs: .now) {
+            WidgetTimelineService.refreshWidgetOf(kind: .completion)
+        }
+    }
+
+    func handleWidgetTask(taskDate: Date) {
+        if Calendar.current.isDate(taskDate, inSameDayAs: .now) {
+            WidgetTimelineService.refreshWidgetOf(kind: .task)
+        }
+    }
 }

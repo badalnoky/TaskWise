@@ -2,20 +2,16 @@ import CoreData
 import Foundation
 
 extension RepeatingTasks {
-    public struct DTO {
-        let id: UUID
-        let start: Date
-//        let repeatingBehaviour
-//        let task: Task.DTO
-    }
-
-    static func create(from dto: DTO, on context: NSManagedObjectContext) {
+    static func create(from task: Task.DTO, with behaviour: RepeatBehaviour, on context: NSManagedObjectContext) {
         let repeatingTask = RepeatingTasks(context: context)
-        repeatingTask.wId = dto.id
-        repeatingTask.wStart = dto.start
+        repeatingTask.wId = UUID()
+        repeatingTask.wStart = task.date
         repeatingTask.wLastUpdated = .now
-        // repeatingTask.end = repeatbehaviour
-        // create tasks from sample task with id
-        // task.repeatingTask = repeatingTask
+        repeatingTask.wEnd = behaviour.end
+        repeatingTask.wBehavior = behaviour.encoded
+        for (start, end) in Date.calculateDates(for: behaviour, starting: task.startDateTime, endTime: task.endDateTime) {
+            let dto = task.copyOn(start: start, end: end)
+            Task.createRepeating(from: dto, for: repeatingTask, on: context)
+        }
     }
 }
