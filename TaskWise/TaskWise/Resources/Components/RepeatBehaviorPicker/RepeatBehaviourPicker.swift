@@ -60,6 +60,13 @@ extension RepeatBehaviourPicker: View {
                 endDatePicker
             }
         }
+        .onAppear {
+            self.repeatFrequency = repeatBehaviour.wrappedValue.frequency
+            self.selectedEndDate = repeatBehaviour.wrappedValue.end
+            self.repeatUnit = repeatBehaviour.wrappedValue.schedule.unit
+            self.unitFrequency = repeatBehaviour.wrappedValue.schedule.unitFrequency
+            self.indices = repeatBehaviour.wrappedValue.schedule.indices
+        }
         .sheet(isPresented: $isCustomSheetPresented, onDismiss: validateAndCorrect) {
             customBehaviorSheet
         }
