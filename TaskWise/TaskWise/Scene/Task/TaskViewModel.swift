@@ -30,6 +30,7 @@ import SwiftUI
     var allDay = false
     var starts: Date = .now
     var ends: Date = .now.advanced(by: .hour)
+    var repeatBehaviour: RepeatBehaviour = .empty
     var steps: [TaskStep] = []
     var newStepName: String = .empty
 
@@ -129,6 +130,9 @@ private extension TaskViewModel {
                 self?.allDay = !task.hasTimeConstraints
                 self?.starts = task.startDateTime
                 self?.ends = task.endDateTime
+                if let repeating = task.repeatingTasks {
+                    self?.repeatBehaviour = repeating.behaviour
+                }
                 self?.dataService.fetchSteps(for: task)
             }
             .store(in: &cancellables)

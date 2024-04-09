@@ -33,6 +33,8 @@ extension TaskView: View {
                     }
 
                     CombinedDatePicker(allDay: $viewModel.allDay, starts: $viewModel.starts, ends: $viewModel.ends)
+
+                    RepeatBehaviourPicker(startingDate: viewModel.starts, repeatBehaviour: $viewModel.repeatBehaviour)
                 }
                 .disabled(!viewModel.isEditable)
 
@@ -42,6 +44,7 @@ extension TaskView: View {
                     .buttonStyle(BaseButtonStyle())
             }
         }
+        .scrollIndicators(.never, axes: .vertical)
         .defaultViewPadding()
         .environment(\.editMode, $viewModel.editMode)
         .alert(Str.Alert.message, isPresented: $viewModel.isAlertVisible) {
@@ -56,6 +59,8 @@ extension TaskView {
     var stepView: some View {
         VStack(spacing: .padding12) {
             StyledText(text: Txt.stepLabel, style: .base)
+                .frame(height: .defaultRowHeight)
+                .padding(.leading, .padding4)
 
             List {
                 ForEach(viewModel.steps, id: \.self) { step in
