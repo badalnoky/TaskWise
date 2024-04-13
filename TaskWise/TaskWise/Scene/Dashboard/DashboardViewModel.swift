@@ -11,6 +11,7 @@ import SwiftUI
     var tasks: [Task] = []
     var columns: [TaskColumn] = []
     var activeTab: Int = .one
+    var isAlertPresented = false
 
     var doneCount: Int {
         guard let last = columns.last else { return .zero }
@@ -50,7 +51,20 @@ extension DashboardViewModel {
     }
 
     func didTapDelete(task: Task) {
+        if task.repeatingTasks != nil {
+            isAlertPresented = true
+        } else {
+            dataService.deleteTask(task)
+        }
+    }
+
+    func didTapDeleteOnlyThis(task: Task) {
         dataService.deleteTask(task)
+    }
+
+    func didTapDeleteRepeating(task: Task) {
+        guard let repeating = task.repeatingTasks else { return }
+        dataService.deleteRepeatingTasks(repeating)
     }
 
     func didChangeColumn(to column: TaskColumn, on task: Task) {

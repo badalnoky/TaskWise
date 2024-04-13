@@ -10,13 +10,21 @@ import SwiftUI
     private var task = Task()
 
     var editMode: EditMode = .inactive
-    var isAlertVisible = false
+    var isAlertPresented = false
 
     var isEditable: Bool {
         editMode == .active
     }
     var actionButtonLabel: String {
         isEditable ? Str.Task.saveButton : Str.Task.deleteButton
+    }
+
+    var isRepeating: Bool {
+        task.repeatingTasks != nil
+    }
+
+    var alertMessage: String {
+        Str.Alert.message + ( isRepeating ? Str.Alert.repeatingTask : .empty)
     }
 
     var title: String = .empty
@@ -72,12 +80,18 @@ extension TaskViewModel {
         if isEditable {
             dataService.updateTask(task, with: updatedTask)
         } else {
-            isAlertVisible = true
+            isAlertPresented = true
         }
     }
 
     func didTapDelete() {
         dataService.deleteTask(task)
+        dismiss()
+    }
+
+    func didTapDeleteRepeating() {
+        guard let repeating = task.repeatingTasks else { return }
+        dataService.deleteRepeatingTasks(repeating)
         dismiss()
     }
 

@@ -5,13 +5,17 @@ extension DataService {
         } else {
             RepeatingTasks.create(from: task, with: behaviour, on: context)
             save()
+            fetchTasks()
             fetchRepeatingTasks()
             handleWidgetCompletion(taskDate: task.date)
             handleWidgetTask(taskDate: task.date)
         }
     }
 
-    func deleteRepeatingTasks() {
+    func deleteRepeatingTasks(_ repeating: RepeatingTasks) {
+        delete(item: repeating)
+        fetchTasks()
+        fetchRepeatingTasks()
     }
 
     func deleteTaskFromRepeatingTasks() {

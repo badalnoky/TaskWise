@@ -5,12 +5,18 @@ import Foundation
 
 internal enum Str {
     internal enum Alert {
-        /// Do you want to delete this task?
-        internal static let message = String(localized: "Alert.message", defaultValue: "Do you want to delete this task?")
-        /// No
-        internal static let no = String(localized: "Alert.no", defaultValue: "No")
-        /// Yes
-        internal static let yes = String(localized: "Alert.yes", defaultValue: "Yes")
+        /// Cancel
+        internal static let cancel = String(localized: "Alert.cancel", defaultValue: "Cancel")
+        /// Delete task
+        internal static let delete = String(localized: "Alert.delete", defaultValue: "Delete task")
+        /// Delete all future tasks
+        internal static let deleteAll = String(localized: "Alert.deleteAll", defaultValue: "Delete all future tasks")
+        /// Delete this task only
+        internal static let deleteOnlyThis = String(localized: "Alert.deleteOnlyThis", defaultValue: "Delete this task only")
+        /// Are you sure you want to delete this task?
+        internal static let message = String(localized: "Alert.message", defaultValue: "Are you sure you want to delete this task?")
+        /// This is a repeating task.
+        internal static let repeatingTask = String(localized: "Alert.repeatingTask", defaultValue: "This is a repeating task.")
     }
     internal enum App {
         /// group.bercidalnoky.TaskWise

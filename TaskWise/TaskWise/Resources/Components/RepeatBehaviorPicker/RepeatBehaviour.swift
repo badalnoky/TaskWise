@@ -31,7 +31,10 @@ extension RepeatBehaviour {
     static func decode(_ encoded: String, _ endDate: Date) -> RepeatBehaviour {
         let elements = encoded.split(separator: String.separator, maxSplits: .one)
         let frequency = RepeatFrequency.decode(String(elements[.zero]))
-        let schedule = CustomRepeatSchedule.decode(String(elements[.one]))
+        var schedule = CustomRepeatSchedule.empty
+        if frequency == .custom {
+            schedule = CustomRepeatSchedule.decode(String(elements[.one]))
+        }
         return RepeatBehaviour(frequency: frequency, end: endDate, shedule: schedule)
     }
 }

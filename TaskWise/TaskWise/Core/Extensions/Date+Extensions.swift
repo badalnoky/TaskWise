@@ -85,20 +85,16 @@ extension Date {
 
     // swiftlint: disable: cyclomatic_complexity
     // swiftlint: disable: function_body_length
-    static func calculateDates(for behaviour: RepeatBehaviour, starting: Date, endTime: Date) -> [(starts: Date, ends: Date)] {
+    static func calculateDates(for behaviour: RepeatBehaviour, starting originalStart: Date, endTime: Date) -> [(starts: Date, ends: Date)] {
         var result: [(starts: Date, ends: Date)] = []
-        let span = starting.distance(to: endTime)
-        var start = starting
+        let span = originalStart.distance(to: endTime)
+        var start = originalStart
         var end = endTime
 
         var startDayValue: Int = .zero
         var nextIndiceValue: Int = .zero
         var counter: Int = .zero
-        if behaviour.schedule.unit == .week {
-            startDayValue = Calendar.current.component(.weekday, from: start).weekDayOffset
-        } else if behaviour.schedule.unit == .month {
-            startDayValue = Calendar.current.component(.day, from: start)
-        }
+        startDayValue = start.calculateStartDayValue(behaviour, value: startDayValue)
         if behaviour.schedule.unit != .day {
             if behaviour.schedule.indices.last == startDayValue {
                 nextIndiceValue = behaviour.schedule.indices.first!
@@ -112,27 +108,14 @@ extension Date {
 
         repeat {
             result.append((start, end))
-            var shouldSkip = true
-            if behaviour.schedule.indices.allSatisfy({ $0 > startDayValue }) {
-                shouldSkip = start != starting
-            }
-            let behaviourIndices = behaviour.schedule.indices
-            let normalizedIndex = counter % behaviourIndices.count
-            let day = behaviourIndices[normalizedIndex]
-            if Calendar.current.component(.day, from: start.lastOfMonth) < day {
-                counter += .plusOne
-            }
+            let shouldSkip = calculateShouldSkip(behaviour, startDayValue: startDayValue, isOriginalDate: start != originalStart)
+            counter += start.nextCounter(behaviour, counter: counter)
             switch behaviour.frequency {
             case .daily: start = start.followingDays(amount: .plusOne)
             case .weekly: start = start.followingDays(amount: .weekDayCount)
-            case .monthly: start = start.followingMonth(startingDay: starting)
-            case .yearly: start = start.followingYear(startingDay: starting)
-            case .custom:
-                switch behaviour.schedule.unit {
-                case .day: start = start.followingDays(amount: behaviour.schedule.unitFrequency)
-                case .week: start = start.followingCustomScheduledDay(currentIndex: counter, behaviour: behaviour, shouldSkip: shouldSkip)
-                case .month:  start = start.followingCustomScheduledDay(currentIndex: counter, behaviour: behaviour, shouldSkip: shouldSkip)
-                }
+            case .monthly: start = start.followingMonth(startingDay: originalStart)
+            case .yearly: start = start.followingYear(startingDay: originalStart)
+            case .custom: start = start.calculateDatesForCustomBehaviour(behaviour, counter: counter, shouldSkip: shouldSkip)
             default: start = behaviour.end.endOfDay.addingTimeInterval(.one)
             }
             end = start.addingTimeInterval(span)
@@ -142,6 +125,45 @@ extension Date {
     }
     // swiftlint: enable: cyclomatic_complexity
     // swiftlint: enable: function_body_length
+
+    private static func calculateShouldSkip(_ behaviour: RepeatBehaviour, startDayValue: Int, isOriginalDate: Bool) -> Bool {
+        if behaviour.schedule.indices.allSatisfy({ $0 > startDayValue }) {
+            return isOriginalDate
+        }
+        return true
+    }
+
+    private func calculateStartDayValue(_ behaviour: RepeatBehaviour, value: Int) -> Int {
+        if behaviour.schedule.unit == .week {
+            return Calendar.current.component(.weekday, from: self).weekDayOffset
+        } else if behaviour.schedule.unit == .month {
+            return Calendar.current.component(.day, from: self)
+        }
+        return value
+    }
+
+    private func nextCounter(_ behaviour: RepeatBehaviour, counter: Int) -> Int {
+        var behaviourIndices: [Int]
+        var normalizedIndex: Int
+        var day: Int
+        if !behaviour.schedule.indices.isEmpty {
+            behaviourIndices = behaviour.schedule.indices
+            normalizedIndex = counter % behaviourIndices.count
+            day = behaviourIndices[normalizedIndex]
+            if Calendar.current.component(.day, from: self.lastOfMonth) < day {
+                return .plusOne
+            }
+        }
+        return .zero
+    }
+
+    private func calculateDatesForCustomBehaviour(_ behaviour: RepeatBehaviour, counter: Int, shouldSkip: Bool) -> Date {
+        switch behaviour.schedule.unit {
+        case .day: return self.followingDays(amount: behaviour.schedule.unitFrequency)
+        case .week: return self.followingCustomScheduledDay(currentIndex: counter, behaviour: behaviour, shouldSkip: shouldSkip)
+        case .month:  return self.followingCustomScheduledDay(currentIndex: counter, behaviour: behaviour, shouldSkip: shouldSkip)
+        }
+    }
 
     func followingDays(amount: Int) -> Date {
         Calendar.current.date(byAdding: .day, value: amount, to: self)!

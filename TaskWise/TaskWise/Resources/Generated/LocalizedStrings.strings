@@ -2,9 +2,12 @@
 // Generated using SwiftGen — https://github.com/SwiftGen/SwiftGen
 // Template created by: Bertalan Dálnoky
 
-"Alert.message" = "Do you want to delete this task?";
-"Alert.no" = "No";
-"Alert.yes" = "Yes";
+"Alert.cancel" = "Cancel";
+"Alert.delete" = "Delete task";
+"Alert.deleteAll" = "Delete all future tasks";
+"Alert.deleteOnlyThis" = "Delete this task only";
+"Alert.message" = "Are you sure you want to delete this task?";
+"Alert.repeatingTask" = "This is a repeating task.";
 "App.groupIdentifier" = "group.bercidalnoky.TaskWise";
 "App.host" = "Dashboard";
 "App.scheme" = "TaskWiseApp";

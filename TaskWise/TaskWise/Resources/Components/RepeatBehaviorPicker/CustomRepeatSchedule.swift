@@ -24,8 +24,11 @@ extension CustomRepeatSchedule {
         let elements = encoded.split(separator: String.separator)
         let unit = RepeatUnit.decode(String(elements[.zero]))
         let frequency = Int(elements[.one]) ?? .zero
-        let strIndices = String(elements[.two]).split(separator: String.dash)
-        let indices = strIndices.map { Int($0) ?? .zero }
+        var indices: [Int] = []
+        if unit != .day {
+            let strIndices = String(elements[.two]).split(separator: String.dash)
+            indices = strIndices.map { Int($0) ?? .zero }
+        }
         return CustomRepeatSchedule(unit: unit, unitFrequency: frequency, indices: indices)
     }
 }
