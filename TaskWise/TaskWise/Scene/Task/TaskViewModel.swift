@@ -84,7 +84,11 @@ extension TaskViewModel {
             if isRepeating {
                 isUpdateAlertPresented = true
             } else {
-                dataService.updateTask(task, with: updatedTask)
+                if repeatBehaviour.frequency != .never {
+                    // TODO: update task and schedule repeated tasks
+                } else {
+                    dataService.updateTask(task, with: updatedTask)
+                }
             }
         } else {
             isDeleteAlertPresented = true
@@ -93,7 +97,7 @@ extension TaskViewModel {
 
     func didTapUpdateAll() {
         guard let repeating = task.repeatingTasks else { return }
-        if repeatBehaviourMemento != repeatBehaviour, starts != task.startDateTime, ends != task.endDateTime {
+        if repeatBehaviourMemento != repeatBehaviour || starts != task.startDateTime || ends != task.endDateTime {
             dataService.rescheduleRepeatingTasks(repeating, for: repeatBehaviour, from: updatedTask)
         } else {
             dataService.updateRepeatingTasks(repeating, from: updatedTask)

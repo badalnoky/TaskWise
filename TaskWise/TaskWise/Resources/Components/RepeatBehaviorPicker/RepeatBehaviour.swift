@@ -1,6 +1,6 @@
 import Foundation
 
-public struct RepeatBehaviour: Equatable {
+public struct RepeatBehaviour {
     var frequency: RepeatFrequency
     var end: Date
     var schedule: CustomRepeatSchedule
@@ -9,6 +9,12 @@ public struct RepeatBehaviour: Equatable {
         self.frequency = frequency
         self.end = end
         self.schedule = shedule
+    }
+}
+
+extension RepeatBehaviour: Equatable {
+    public static func == (lhs: RepeatBehaviour, rhs: RepeatBehaviour) -> Bool {
+        lhs.end == rhs.end && lhs.frequency == rhs.frequency && lhs.schedule == rhs.schedule
     }
 }
 

@@ -22,6 +22,8 @@ extension DataService {
         for task in repeating.tasks {
             task.updateRepeating(with: dto, on: context)
         }
+        save()
+        fetchTasks()
     }
 
     func updateStepLabelForRepeating(_ repeating: RepeatingTasks, on step: TaskStep, to newLabel: String) {
