@@ -42,6 +42,10 @@ protocol DataServiceInput {
 
     func createTasks(from task: Task.DTO, with behaviour: RepeatBehaviour)
     func deleteRepeatingTasks(_ repeating: RepeatingTasks)
-    func deleteTaskFromRepeatingTasks()
-    func updateRepeatingTasks()
+    func updateRepeatingTasks(_ repeating: RepeatingTasks, from task: Task.DTO)
+    func updateStepLabelForRepeating(_ repeating: RepeatingTasks, on step: TaskStep, to newLabel: String)
+    func deleteStepForRepeating(_ repeating: RepeatingTasks, step deleted: TaskStep)
+    func updateStepOrderForRepeating(_ repeating: RepeatingTasks, to steps: [TaskStep])
+    func addStepToRepeating(_ repeating: RepeatingTasks, step: TaskStep.DTO)
+    func rescheduleRepeatingTasks(_ repeatingTasks: RepeatingTasks, for behaviour: RepeatBehaviour, from task: Task.DTO)
 }

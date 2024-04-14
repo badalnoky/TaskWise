@@ -18,9 +18,49 @@ extension DataService {
         fetchRepeatingTasks()
     }
 
-    func deleteTaskFromRepeatingTasks() {
+    func updateRepeatingTasks(_ repeating: RepeatingTasks, from dto: Task.DTO) {
+        for task in repeating.tasks {
+            task.updateRepeating(with: dto, on: context)
+        }
     }
 
-    func updateRepeatingTasks() {
+    func updateStepLabelForRepeating(_ repeating: RepeatingTasks, on step: TaskStep, to newLabel: String) {
+        for task in repeating.tasks {
+            if let updated = task.steps.first(where: { taskStep in taskStep.index == step.index}) {
+                updateStepLabel(on: updated, to: newLabel)
+            }
+        }
+    }
+
+    func deleteStepForRepeating(_ repeating: RepeatingTasks, step deleted: TaskStep) {
+        for task in repeating.tasks {
+            if let deleted = task.steps.first(where: { taskStep in taskStep.index == deleted.index}) {
+                delete(step: deleted, from: task)
+            }
+        }
+    }
+
+    func updateStepOrderForRepeating(_ repeating: RepeatingTasks, to steps: [TaskStep]) {
+        let updatedIndices = steps.map { $0.index }
+        for task in repeating.tasks {
+            var updated: [TaskStep] = []
+            for index in updatedIndices {
+                if let nextStep = task.steps.first(where: { taskStep in taskStep.index == index}) {
+                    updated.append(nextStep)
+                }
+            }
+            updateOrder(of: updated, on: task)
+        }
+    }
+
+    func addStepToRepeating(_ repeating: RepeatingTasks, step: TaskStep.DTO) {
+        for task in repeating.tasks {
+            addStepFrom(dto: step, to: task)
+        }
+    }
+
+    func rescheduleRepeatingTasks(_ repeatingTasks: RepeatingTasks, for behaviour: RepeatBehaviour, from task: Task.DTO) {
+        deleteRepeatingTasks(repeatingTasks)
+        createTasks(from: task, with: behaviour)
     }
 }

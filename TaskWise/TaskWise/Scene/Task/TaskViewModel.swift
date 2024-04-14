@@ -10,7 +10,8 @@ import SwiftUI
     private var task = Task()
 
     var editMode: EditMode = .inactive
-    var isAlertPresented = false
+    var isDeleteAlertPresented = false
+    var isUpdateAlertPresented = false
 
     var isEditable: Bool {
         editMode == .active
@@ -23,7 +24,7 @@ import SwiftUI
         task.repeatingTasks != nil
     }
 
-    var alertMessage: String {
+    var deleteAlertMessage: String {
         Str.Alert.message + ( isRepeating ? Str.Alert.repeatingTask : .empty)
     }
 
@@ -41,6 +42,8 @@ import SwiftUI
     var repeatBehaviour: RepeatBehaviour = .empty
     var steps: [TaskStep] = []
     var newStepName: String = .empty
+
+    var repeatBehaviourMemento: RepeatBehaviour = .empty
 
     private var updatedTask: Task.DTO {
         Task.DTO(
@@ -78,10 +81,27 @@ extension TaskViewModel {
 
     func didTapAction() {
         if isEditable {
-            dataService.updateTask(task, with: updatedTask)
+            if isRepeating {
+                isUpdateAlertPresented = true
+            } else {
+                dataService.updateTask(task, with: updatedTask)
+            }
         } else {
-            isAlertPresented = true
+            isDeleteAlertPresented = true
         }
+    }
+
+    func didTapUpdateAll() {
+        guard let repeating = task.repeatingTasks else { return }
+        if repeatBehaviourMemento != repeatBehaviour, starts != task.startDateTime, ends != task.endDateTime {
+            dataService.rescheduleRepeatingTasks(repeating, for: repeatBehaviour, from: updatedTask)
+        } else {
+            dataService.updateRepeatingTasks(repeating, from: updatedTask)
+        }
+    }
+
+    func didTapUpdateOnlyThis() {
+        dataService.updateTask(task, with: updatedTask)
     }
 
     func didTapDelete() {
@@ -100,22 +120,38 @@ extension TaskViewModel {
     }
 
     func didChangeLabel(on step: TaskStep, to newLabel: String) {
-        dataService.updateStepLabel(on: step, to: newLabel)
+        if let repeating = task.repeatingTasks {
+            dataService.updateStepLabelForRepeating(repeating, on: step, to: newLabel)
+        } else {
+            dataService.updateStepLabel(on: step, to: newLabel)
+        }
     }
 
     func didTapDeleteSteps(offsets: IndexSet) {
         guard offsets.count == .one, let idx = offsets.first else { return }
-        dataService.delete(step: steps[idx], from: task)
+        if let repeating = task.repeatingTasks {
+            dataService.deleteStepForRepeating(repeating, step: steps[idx])
+        } else {
+            dataService.delete(step: steps[idx], from: task)
+        }
     }
 
     func didMoveStep(source: IndexSet, destination: Int) {
         var updated = steps
         updated.move(fromOffsets: source, toOffset: destination)
-        dataService.updateOrder(of: updated, on: task)
+        if let repeating = task.repeatingTasks {
+            dataService.updateStepOrderForRepeating(repeating, to: updated)
+        } else {
+            dataService.updateOrder(of: updated, on: task)
+        }
     }
 
     func didTapAddStep() {
-        dataService.addStepFrom(dto: .init(label: newStepName, index: steps.count), to: task)
+        if let repeating = task.repeatingTasks {
+            dataService.addStepToRepeating(repeating, step: .init(label: newStepName, index: steps.count))
+        } else {
+            dataService.addStepFrom(dto: .init(label: newStepName, index: steps.count), to: task)
+        }
         newStepName = .empty
     }
 
@@ -146,6 +182,7 @@ private extension TaskViewModel {
                 self?.ends = task.endDateTime
                 if let repeating = task.repeatingTasks {
                     self?.repeatBehaviour = repeating.behaviour
+                    self?.repeatBehaviourMemento = repeating.behaviour
                 }
                 self?.dataService.fetchSteps(for: task)
             }

@@ -47,7 +47,7 @@ extension TaskView: View {
         .scrollIndicators(.never, axes: .vertical)
         .defaultViewPadding()
         .environment(\.editMode, $viewModel.editMode)
-        .alert(viewModel.alertMessage, isPresented: $viewModel.isAlertPresented) {
+        .alert(viewModel.deleteAlertMessage, isPresented: $viewModel.isDeleteAlertPresented) {
             if viewModel.isRepeating {
                 Button(Str.Alert.deleteOnlyThis, role: .destructive, action: viewModel.didTapDelete)
                 Button(Str.Alert.deleteAll, role: .destructive, action: viewModel.didTapDeleteRepeating)
@@ -56,6 +56,10 @@ extension TaskView: View {
                 Button(Str.Alert.delete, role: .destructive, action: viewModel.didTapDelete)
                 Button(Str.Alert.cancel, role: .cancel) {}
             }
+        }
+        .alert(Str.Alert.updateRepeating, isPresented: $viewModel.isUpdateAlertPresented) {
+            Button(Str.Alert.updateAll, action: viewModel.didTapUpdateAll)
+            Button(Str.Alert.updateOnlyThis, action: viewModel.didTapUpdateOnlyThis)
         }
         .taskNavigationBar(editAction: viewModel.didTapEdit)
     }

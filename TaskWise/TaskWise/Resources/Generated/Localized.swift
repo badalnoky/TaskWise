@@ -17,6 +17,12 @@ internal enum Str {
         internal static let message = String(localized: "Alert.message", defaultValue: "Are you sure you want to delete this task?")
         /// This is a repeating task.
         internal static let repeatingTask = String(localized: "Alert.repeatingTask", defaultValue: "This is a repeating task.")
+        /// Update all future tasks
+        internal static let updateAll = String(localized: "Alert.updateAll", defaultValue: "Update all future tasks")
+        /// Update this task only
+        internal static let updateOnlyThis = String(localized: "Alert.updateOnlyThis", defaultValue: "Update this task only")
+        /// This is a repeating task. Would you like to update this task only or all future tasks?
+        internal static let updateRepeating = String(localized: "Alert.updateRepeating", defaultValue: "This is a repeating task. Would you like to update this task only or all future tasks?")
     }
     internal enum App {
         /// group.bercidalnoky.TaskWise

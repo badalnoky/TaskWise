@@ -1,6 +1,6 @@
 import Foundation
 
-public struct RepeatBehaviour {
+public struct RepeatBehaviour: Equatable {
     var frequency: RepeatFrequency
     var end: Date
     var schedule: CustomRepeatSchedule

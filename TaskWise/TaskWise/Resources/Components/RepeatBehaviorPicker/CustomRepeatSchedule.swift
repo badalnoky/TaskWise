@@ -1,4 +1,4 @@
-public struct CustomRepeatSchedule {
+public struct CustomRepeatSchedule: Equatable {
     let unit: RepeatUnit
     let unitFrequency: Int
     let indices: [Int]

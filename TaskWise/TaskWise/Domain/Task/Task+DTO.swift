@@ -76,6 +76,15 @@ extension Task {
         self.wPriority = updated.priority
         self.wColumn = updated.column
     }
+
+    func updateRepeating(with updated: Task.DTO, on context: NSManagedObjectContext) {
+        self.wHasTimeConstraints = updated.hasTimeConstraints
+        self.wTaskDescription = updated.description
+        self.wTitle = updated.title
+        self.wCategory = updated.category
+        self.wPriority = updated.priority
+        self.wColumn = updated.column
+    }
 }
 
 extension Task {

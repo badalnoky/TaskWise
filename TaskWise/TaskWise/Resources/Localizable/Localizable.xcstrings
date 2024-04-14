@@ -67,6 +67,39 @@
         }
       }
     },
+    "Alert.updateAll" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Update all future tasks"
+          }
+        }
+      }
+    },
+    "Alert.updateOnlyThis" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Update this task only"
+          }
+        }
+      }
+    },
+    "Alert.updateRepeating" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This is a repeating task. Would you like to update this task only or all future tasks?"
+          }
+        }
+      }
+    },
     "App.groupIdentifier" : {
       "extractionState" : "manual",
       "localizations" : {
