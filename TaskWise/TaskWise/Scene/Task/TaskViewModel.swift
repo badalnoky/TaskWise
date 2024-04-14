@@ -85,7 +85,7 @@ extension TaskViewModel {
                 isUpdateAlertPresented = true
             } else {
                 if repeatBehaviour.frequency != .never {
-                    // TODO: update task and schedule repeated tasks
+                    dataService.createTasks(from: updatedTask, with: repeatBehaviour, including: task)
                 } else {
                     dataService.updateTask(task, with: updatedTask)
                 }

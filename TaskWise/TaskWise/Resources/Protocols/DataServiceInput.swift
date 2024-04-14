@@ -41,6 +41,7 @@ protocol DataServiceInput {
     func deleteColumn(_ column: TaskColumn)
 
     func createTasks(from task: Task.DTO, with behaviour: RepeatBehaviour)
+    func createTasks(from updated: Task.DTO, with behaviour: RepeatBehaviour, including task: Task)
     func deleteRepeatingTasks(_ repeating: RepeatingTasks)
     func updateRepeatingTasks(_ repeating: RepeatingTasks, from task: Task.DTO)
     func updateStepLabelForRepeating(_ repeating: RepeatingTasks, on step: TaskStep, to newLabel: String)

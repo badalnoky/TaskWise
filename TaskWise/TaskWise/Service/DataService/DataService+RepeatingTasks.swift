@@ -12,6 +12,14 @@ extension DataService {
         }
     }
 
+    func createTasks(from updated: Task.DTO, with behaviour: RepeatBehaviour, including task: Task) {
+        updateTask(task, with: updated)
+        RepeatingTasks.create(with: behaviour, including: task, on: context)
+        save()
+        fetchTasks()
+        fetchRepeatingTasks()
+    }
+
     func deleteRepeatingTasks(_ repeating: RepeatingTasks) {
         delete(item: repeating)
         fetchTasks()
