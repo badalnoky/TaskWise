@@ -5,12 +5,24 @@ import Foundation
 
 internal enum Str {
     internal enum Alert {
-        /// Do you want to delete this task?
-        internal static let message = String(localized: "Alert.message", defaultValue: "Do you want to delete this task?")
-        /// No
-        internal static let no = String(localized: "Alert.no", defaultValue: "No")
-        /// Yes
-        internal static let yes = String(localized: "Alert.yes", defaultValue: "Yes")
+        /// Cancel
+        internal static let cancel = String(localized: "Alert.cancel", defaultValue: "Cancel")
+        /// Delete task
+        internal static let delete = String(localized: "Alert.delete", defaultValue: "Delete task")
+        /// Delete all future tasks
+        internal static let deleteAll = String(localized: "Alert.deleteAll", defaultValue: "Delete all future tasks")
+        /// Delete this task only
+        internal static let deleteOnlyThis = String(localized: "Alert.deleteOnlyThis", defaultValue: "Delete this task only")
+        /// Are you sure you want to delete this task?
+        internal static let message = String(localized: "Alert.message", defaultValue: "Are you sure you want to delete this task?")
+        /// This is a repeating task.
+        internal static let repeatingTask = String(localized: "Alert.repeatingTask", defaultValue: "This is a repeating task.")
+        /// Update all future tasks
+        internal static let updateAll = String(localized: "Alert.updateAll", defaultValue: "Update all future tasks")
+        /// Update this task only
+        internal static let updateOnlyThis = String(localized: "Alert.updateOnlyThis", defaultValue: "Update this task only")
+        /// This is a repeating task. Would you like to update this task only or all future tasks?
+        internal static let updateRepeating = String(localized: "Alert.updateRepeating", defaultValue: "This is a repeating task. Would you like to update this task only or all future tasks?")
     }
     internal enum App {
         /// group.bercidalnoky.TaskWise
@@ -105,6 +117,50 @@ internal enum Str {
         internal static let settings = String(localized: "Icons.settings", defaultValue: "gear")
         /// chevron.up
         internal static let up = String(localized: "Icons.up", defaultValue: "chevron.up")
+    }
+    internal enum RepeatBehaviorPicker {
+        /// Back
+        internal static let backButtonLabel = String(localized: "RepeatBehaviorPicker.backButtonLabel", defaultValue: "Back")
+        /// Repeats every
+        internal static let customRepeatLabel = String(localized: "RepeatBehaviorPicker.customRepeatLabel", defaultValue: "Repeats every")
+        /// %d
+        internal static func dayButtonLabel(_ p1: Int) -> String {
+            _sf(
+                format: String(localized: "RepeatBehaviorPicker.dayButtonLabel" , defaultValue: "%d"),
+                with: p1
+            )
+        }
+        /// %d., 
+        internal static func daySeparator(_ p1: Int) -> String {
+            _sf(
+                format: String(localized: "RepeatBehaviorPicker.daySeparator" , defaultValue: "%d., "),
+                with: p1
+            )
+        }
+        /// End repeating on
+        internal static let endDateLabel = String(localized: "RepeatBehaviorPicker.endDateLabel", defaultValue: "End repeating on")
+        /// Every
+        internal static let everyLabel = String(localized: "RepeatBehaviorPicker.everyLabel", defaultValue: "Every")
+        /// on the following days: 
+        internal static let followingDays = String(localized: "RepeatBehaviorPicker.followingDays", defaultValue: "on the following days: ")
+        /// Frequency
+        internal static let frequencyLabel = String(localized: "RepeatBehaviorPicker.frequencyLabel", defaultValue: "Frequency")
+        /// %d %@s
+        internal static func repeatEveryLabel(_ p1: Int, _ p2: String) -> String {
+            _sf(
+                format: String(localized: "RepeatBehaviorPicker.repeatEveryLabel" , defaultValue: "%d %@s"),
+                with: p1, p2
+            )
+        }
+        /// Repeat
+        internal static let repeatLabel = String(localized: "RepeatBehaviorPicker.repeatLabel", defaultValue: "Repeat")
+        /// %@, 
+        internal static func weekdaySeparator(_ p1: String) -> String {
+            _sf(
+                format: String(localized: "RepeatBehaviorPicker.weekdaySeparator" , defaultValue: "%@, "),
+                with: p1
+            )
+        }
     }
     internal enum Settings {
         /// Add

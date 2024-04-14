@@ -68,16 +68,4 @@ extension DataService {
         handleWidgetCompletion(taskDate: task.date)
         handleWidgetTask(taskDate: task.date)
     }
-
-    private func handleWidgetCompletion(taskDate: Date) {
-        if Calendar.current.isDate(taskDate, inSameDayAs: .now) {
-            WidgetTimelineService.refreshWidgetOf(kind: .completion)
-        }
-    }
-
-    private func handleWidgetTask(taskDate: Date) {
-        if Calendar.current.isDate(taskDate, inSameDayAs: .now) {
-            WidgetTimelineService.refreshWidgetOf(kind: .task)
-        }
-    }
 }

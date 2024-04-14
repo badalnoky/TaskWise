@@ -50,8 +50,10 @@ extension SettingsView {
             VStack(spacing: .padding24) {
                 HStack {
                     Button(Txt.cancelLabel, role: .cancel) { viewModel.isNewCategorySheetPresented.toggle() }
+                        .buttonStyle(TextButtonStyle())
                     Spacer()
                     Button(Txt.addLabel, action: viewModel.didTapAddCategory)
+                        .buttonStyle(TextButtonStyle())
                 }
                 .padding(.top, .padding12)
                 .padding(.horizontal, .padding4)
@@ -88,8 +90,10 @@ extension SettingsView {
             VStack(spacing: .padding24) {
                 HStack {
                     Button(Txt.cancelLabel, role: .cancel) { viewModel.isNewColumnSheetPresented.toggle() }
+                        .buttonStyle(TextButtonStyle())
                     Spacer()
                     Button(Txt.addLabel, action: viewModel.didTapAddColumn)
+                        .buttonStyle(TextButtonStyle())
                 }
                 .padding(.top, .padding12)
                 .padding(.horizontal, .padding4)
@@ -123,8 +127,10 @@ extension SettingsView {
             VStack(spacing: .padding24) {
                 HStack {
                     Button(Txt.cancelLabel, role: .cancel) { viewModel.isNewPrioritySheetPresented.toggle() }
+                        .buttonStyle(TextButtonStyle())
                     Spacer()
                     Button(Txt.addLabel, action: viewModel.didTapAddPriority)
+                        .buttonStyle(TextButtonStyle())
                 }
                 .padding(.top, .padding12)
                 .padding(.horizontal, .padding4)

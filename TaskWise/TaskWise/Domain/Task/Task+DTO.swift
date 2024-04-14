@@ -15,6 +15,22 @@ extension Task {
         let priority: Priority
         let column: TaskColumn
         let steps: [TaskStep.DTO]
+
+        func copyOn(start: Date, end: Date) -> DTO {
+            .init(
+                id: UUID(),
+                title: self.title,
+                description: self.description,
+                date: start,
+                hasTimeConstraints: self.hasTimeConstraints,
+                startDateTime: start,
+                endDateTime: end,
+                category: self.category,
+                priority: self.priority,
+                column: self.column,
+                steps: self.steps
+            )
+        }
     }
 
     static func create(from dto: DTO, on context: NSManagedObjectContext) {
@@ -32,12 +48,37 @@ extension Task {
         TaskStep.createSteps(for: task, from: dto.steps, on: context)
     }
 
+    static func createRepeating(from sample: DTO, for repeatingTasks: RepeatingTasks, on context: NSManagedObjectContext) {
+        let task = Task(context: context)
+        task.wDate = sample.date
+        task.wEndDateTime = sample.endDateTime
+        task.wHasTimeConstraints = sample.hasTimeConstraints
+        task.wId = UUID()
+        task.wStartDateTime = sample.startDateTime
+        task.wTaskDescription = sample.description
+        task.wTitle = sample.title
+        task.wCategory = sample.category
+        task.wColumn = sample.column
+        task.wPriority = sample.priority
+        TaskStep.createSteps(for: task, from: sample.steps, on: context)
+        task.repeatingTasks = repeatingTasks
+    }
+
     func update(with updated: Task.DTO, on context: NSManagedObjectContext) {
         self.wDate = updated.date
         self.wEndDateTime = updated.endDateTime
         self.wHasTimeConstraints = updated.hasTimeConstraints
         self.wId = updated.id
         self.wStartDateTime = updated.startDateTime
+        self.wTaskDescription = updated.description
+        self.wTitle = updated.title
+        self.wCategory = updated.category
+        self.wPriority = updated.priority
+        self.wColumn = updated.column
+    }
+
+    func updateRepeating(with updated: Task.DTO, on context: NSManagedObjectContext) {
+        self.wHasTimeConstraints = updated.hasTimeConstraints
         self.wTaskDescription = updated.description
         self.wTitle = updated.title
         self.wCategory = updated.category

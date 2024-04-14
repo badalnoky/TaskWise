@@ -12,6 +12,7 @@ public final class DataService: DataServiceInput {
     public var categories = CurrentValueSubject<[Category], Never>([])
     public var columns = CurrentValueSubject<[TaskColumn], Never>([])
     public var currentSteps = CurrentValueSubject<[TaskStep], Never>([])
+    public var repeatingTasks = CurrentValueSubject<[RepeatingTasks], Never>([])
 
     public var context: NSManagedObjectContext { container.viewContext }
 

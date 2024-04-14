@@ -33,6 +33,8 @@ extension AddTaskView: View {
 
                 CombinedDatePicker(allDay: $viewModel.allDay, starts: $viewModel.starts, ends: $viewModel.ends)
 
+                RepeatBehaviourPicker(startingDate: viewModel.starts, repeatBehaviour: $viewModel.repeatBehaviour)
+
                 stepView
 
                 Button(Txt.createButtonLabel, action: viewModel.didTapCreate)
@@ -49,6 +51,8 @@ extension AddTaskView {
     var stepView: some View {
         VStack(spacing: .padding12) {
             StyledText(text: Txt.stepsLabel, style: .base)
+                .frame(height: .defaultRowHeight)
+                .padding(.leading, .padding4)
 
             List {
                 ForEach($viewModel.steps, id: \.self) { $step in

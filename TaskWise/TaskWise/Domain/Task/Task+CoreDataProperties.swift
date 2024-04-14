@@ -5,6 +5,7 @@ extension Task {
     public static let entityName: String = "Task"
     public static let filterPredicate: String = " wDate > %@ && wDate < %@"
 
+    @NSManaged public var repeatingTasks: RepeatingTasks?
     @NSManaged public var wDate: Date?
     @NSManaged public var wEndDateTime: Date?
     @NSManaged public var wHasTimeConstraints: Bool

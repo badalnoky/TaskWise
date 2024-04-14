@@ -9,6 +9,7 @@ import SwiftUI
 
     var isSearching = false
     var searchText: String = .empty
+    var isAlertPresented = false
 
     var isFilterSheetPresented = false
     var filterText: String = .empty
@@ -77,7 +78,20 @@ extension CalendarViewModel {
     }
 
     func didTapDelete(task: Task) {
+        if task.repeatingTasks != nil {
+            isAlertPresented = true
+        } else {
+            dataService.deleteTask(task)
+        }
+    }
+
+    func didTapDeleteOnlyThis(task: Task) {
         dataService.deleteTask(task)
+    }
+
+    func didTapDeleteRepeating(task: Task) {
+        guard let repeating = task.repeatingTasks else { return }
+        dataService.deleteRepeatingTasks(repeating)
     }
 
     func didTapDate() {

@@ -46,6 +46,13 @@ extension DayView: View {
                                     )
                                     .padding(.horizontal, .padding16)
                                     .frame(width: geometry.size.width)
+                                    .alert(Str.Alert.message + Str.Alert.repeatingTask, isPresented: $viewModel.isAlertPresented) {
+                                        Button(Str.Alert.deleteOnlyThis, role: .destructive) {
+                                            viewModel.didTapDeleteOnlyThis(task: task)
+                                        }
+                                        Button(Str.Alert.deleteAll, role: .destructive) { viewModel.didTapDeleteRepeating(task: task) }
+                                        Button(Str.Alert.cancel, role: .cancel) {}
+                                    }
                                 }
                             }
                         }

@@ -7,6 +7,7 @@ import Resolver
     private var cancellables = Set<AnyCancellable>()
 
     var isFilterSheetPresented = false
+    var isAlertPresented = false
     var filterText: String = .empty
     var priorities: [Priority] = []
     var selectedPriority: Priority?
@@ -48,7 +49,20 @@ extension DayViewModel {
     }
 
     func didTapDelete(task: Task) {
+        if task.repeatingTasks != nil {
+            isAlertPresented = true
+        } else {
+            dataService.deleteTask(task)
+        }
+    }
+
+    func didTapDeleteOnlyThis(task: Task) {
         dataService.deleteTask(task)
+    }
+
+    func didTapDeleteRepeating(task: Task) {
+        guard let repeating = task.repeatingTasks else { return }
+        dataService.deleteRepeatingTasks(repeating)
     }
 
     func didTapClearFilters() {

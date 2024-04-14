@@ -33,6 +33,8 @@ extension TaskView: View {
                     }
 
                     CombinedDatePicker(allDay: $viewModel.allDay, starts: $viewModel.starts, ends: $viewModel.ends)
+
+                    RepeatBehaviourPicker(startingDate: viewModel.starts, repeatBehaviour: $viewModel.repeatBehaviour)
                 }
                 .disabled(!viewModel.isEditable)
 
@@ -42,11 +44,22 @@ extension TaskView: View {
                     .buttonStyle(BaseButtonStyle())
             }
         }
+        .scrollIndicators(.never, axes: .vertical)
         .defaultViewPadding()
         .environment(\.editMode, $viewModel.editMode)
-        .alert(Str.Alert.message, isPresented: $viewModel.isAlertVisible) {
-            Button(Str.Alert.yes, role: .destructive, action: viewModel.didTapDelete)
-            Button(Str.Alert.no, role: .cancel) {}
+        .alert(viewModel.deleteAlertMessage, isPresented: $viewModel.isDeleteAlertPresented) {
+            if viewModel.isRepeating {
+                Button(Str.Alert.deleteOnlyThis, role: .destructive, action: viewModel.didTapDelete)
+                Button(Str.Alert.deleteAll, role: .destructive, action: viewModel.didTapDeleteRepeating)
+                Button(Str.Alert.cancel, role: .cancel) {}
+            } else {
+                Button(Str.Alert.delete, role: .destructive, action: viewModel.didTapDelete)
+                Button(Str.Alert.cancel, role: .cancel) {}
+            }
+        }
+        .alert(Str.Alert.updateRepeating, isPresented: $viewModel.isUpdateAlertPresented) {
+            Button(Str.Alert.updateAll, action: viewModel.didTapUpdateAll)
+            Button(Str.Alert.updateOnlyThis, action: viewModel.didTapUpdateOnlyThis)
         }
         .taskNavigationBar(editAction: viewModel.didTapEdit)
     }
@@ -56,6 +69,8 @@ extension TaskView {
     var stepView: some View {
         VStack(spacing: .padding12) {
             StyledText(text: Txt.stepLabel, style: .base)
+                .frame(height: .defaultRowHeight)
+                .padding(.leading, .padding4)
 
             List {
                 ForEach(viewModel.steps, id: \.self) { step in
