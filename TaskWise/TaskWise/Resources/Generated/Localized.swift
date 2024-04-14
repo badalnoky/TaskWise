@@ -121,13 +121,8 @@ internal enum Str {
     internal enum RepeatBehaviorPicker {
         /// Back
         internal static let backButtonLabel = String(localized: "RepeatBehaviorPicker.backButtonLabel", defaultValue: "Back")
-        /// Repeats every %d %@ 
-        internal static func customRepeatLabel(_ p1: Int, _ p2: String) -> String {
-            _sf(
-                format: String(localized: "RepeatBehaviorPicker.customRepeatLabel" , defaultValue: "Repeats every %d %@ "),
-                with: p1, p2
-            )
-        }
+        /// Repeats every
+        internal static let customRepeatLabel = String(localized: "RepeatBehaviorPicker.customRepeatLabel", defaultValue: "Repeats every")
         /// %d
         internal static func dayButtonLabel(_ p1: Int) -> String {
             _sf(
@@ -150,10 +145,10 @@ internal enum Str {
         internal static let followingDays = String(localized: "RepeatBehaviorPicker.followingDays", defaultValue: "on the following days: ")
         /// Frequency
         internal static let frequencyLabel = String(localized: "RepeatBehaviorPicker.frequencyLabel", defaultValue: "Frequency")
-        /// %d %@
+        /// %d %@s
         internal static func repeatEveryLabel(_ p1: Int, _ p2: String) -> String {
             _sf(
-                format: String(localized: "RepeatBehaviorPicker.repeatEveryLabel" , defaultValue: "%d %@"),
+                format: String(localized: "RepeatBehaviorPicker.repeatEveryLabel" , defaultValue: "%d %@s"),
                 with: p1, p2
             )
         }

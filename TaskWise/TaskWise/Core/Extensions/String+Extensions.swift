@@ -5,6 +5,7 @@ public extension String {
     static var capitalPlacholder = "T"
     static var separator = "/"
     static var dash = "-"
+    static var space = " "
 
     static func dashboardLink(index: Int) -> String {
         "TaskWiseApp://Dashboard/\(index)"

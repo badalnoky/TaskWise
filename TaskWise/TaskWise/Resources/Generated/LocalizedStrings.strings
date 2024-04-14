@@ -50,14 +50,14 @@
 "Icons.settings" = "gear";
 "Icons.up" = "chevron.up";
 "RepeatBehaviorPicker.backButtonLabel" = "Back";
-"RepeatBehaviorPicker.customRepeatLabel" = "Repeats every %d %@ ";
+"RepeatBehaviorPicker.customRepeatLabel" = "Repeats every";
 "RepeatBehaviorPicker.dayButtonLabel" = "%d";
 "RepeatBehaviorPicker.daySeparator" = "%d., ";
 "RepeatBehaviorPicker.endDateLabel" = "End repeating on";
 "RepeatBehaviorPicker.everyLabel" = "Every";
 "RepeatBehaviorPicker.followingDays" = "on the following days: ";
 "RepeatBehaviorPicker.frequencyLabel" = "Frequency";
-"RepeatBehaviorPicker.repeatEveryLabel" = "%d %@";
+"RepeatBehaviorPicker.repeatEveryLabel" = "%d %@s";
 "RepeatBehaviorPicker.repeatLabel" = "Repeat";
 "RepeatBehaviorPicker.weekdaySeparator" = "%@, ";
 "Settings.addLabel" = "Add";

@@ -1,7 +1,15 @@
 public enum RepeatUnit: String, CaseIterable {
-    case day = "Days"
-    case week = "Weeks"
-    case month = "Months"
+    case day = "Daily"
+    case week = "Weekly"
+    case month = "Monthly"
+
+    var label: String {
+        switch self {
+        case .day: "Day"
+        case .week: "Week"
+        case .month: "Month"
+        }
+    }
 
     var encoded: String {
         switch self {

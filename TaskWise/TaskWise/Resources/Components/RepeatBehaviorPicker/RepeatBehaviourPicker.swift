@@ -12,7 +12,6 @@ struct RepeatBehaviourPicker {
     var startingDate: Date
     var repeatBehaviour: Binding<RepeatBehaviour>
 
-    // TODO: this needs to be checked for correct strings
     var customRepeatLabel: String {
         var tempIndices = indices
         var indicesLabel: String = .empty
@@ -33,7 +32,12 @@ struct RepeatBehaviourPicker {
             }
             indicesLabel.removeLast(.two)
         }
-        return Str.RepeatBehaviorPicker.customRepeatLabel(unitFrequency, repeatUnit.rawValue) + indicesLabel
+        let unitFrequencyLabel = if unitFrequency == .one {
+            .space + String(Str.RepeatBehaviorPicker.repeatEveryLabel(unitFrequency, repeatUnit.label).dropFirst(2)) + .space
+        } else {
+            .space + Str.RepeatBehaviorPicker.repeatEveryLabel(unitFrequency, repeatUnit.label) + .space
+        }
+        return Str.RepeatBehaviorPicker.customRepeatLabel + unitFrequencyLabel.lowercased() + indicesLabel
     }
 
     init(startingDate: Date, repeatBehaviour: Binding<RepeatBehaviour>) {
@@ -196,13 +200,18 @@ extension RepeatBehaviourPicker {
                 indices = []
                 repeatBehaviour.wrappedValue.schedule = .init(unit: repeatUnit, unitFrequency: unitFrequency, indices: indices)
             }
-            // TODO: this needs to be checked for correct strings
+
             Button(action: { isUnitFrequencyPresented.toggle() }) {
                 HStack {
                     Text(Str.RepeatBehaviorPicker.everyLabel)
                         .textStyle(.body)
                     Spacer()
-                    Text(Str.RepeatBehaviorPicker.repeatEveryLabel(unitFrequency, repeatUnit.rawValue))
+                    let unitFrequencyLabel = if unitFrequency == .one {
+                        String(Str.RepeatBehaviorPicker.repeatEveryLabel(unitFrequency, repeatUnit.label).dropFirst(2))
+                    } else {
+                        Str.RepeatBehaviorPicker.repeatEveryLabel(unitFrequency, repeatUnit.label)
+                    }
+                    Text(unitFrequencyLabel)
                 }
                 .padding(.leading, .padding4)
                 .padding(.trailing, .padding16)
