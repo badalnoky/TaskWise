@@ -199,6 +199,11 @@
 		79B823EE2B1E77970062B6E5 /* TaskItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B823ED2B1E77970062B6E5 /* TaskItemView.swift */; };
 		79B9625C2B1F799F00D16472 /* TaskContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B9625B2B1F799F00D16472 /* TaskContextMenu.swift */; };
 		79B9625F2B1FA6E800D16472 /* TaskProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B9625E2B1FA6E800D16472 /* TaskProgressIndicator.swift */; };
+		79BC64242BDB5E0F0081B299 /* TaskWiseWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BC64232BDB5E0F0081B299 /* TaskWiseWatchApp.swift */; };
+		79BC64262BDB5E0F0081B299 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BC64252BDB5E0F0081B299 /* ContentView.swift */; };
+		79BC64282BDB5E120081B299 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79BC64272BDB5E120081B299 /* Assets.xcassets */; };
+		79BC642B2BDB5E120081B299 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79BC642A2BDB5E120081B299 /* Preview Assets.xcassets */; };
+		79BC642E2BDB5E120081B299 /* TaskWiseWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 79BC64212BDB5E0F0081B299 /* TaskWiseWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		79C16F4D2ABB4FDB00BA362B /* CheckBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C16F4C2ABB4FDB00BA362B /* CheckBoxStyle.swift */; };
 		79C16F4F2ABB5C6B00BA362B /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C16F4E2ABB5C6B00BA362B /* CalendarViewModel.swift */; };
 		79C838A82B1D109500F35483 /* SettingsNavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C838A72B1D109500F35483 /* SettingsNavigationBarModifier.swift */; };
@@ -266,6 +271,13 @@
 			remoteGlobalIDString = 797B4D712B2107D7001DAC30;
 			remoteInfo = TaskWiseWidgetExtension;
 		};
+		79BC642C2BDB5E120081B299 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 790A80FB2AAE19A600283D7E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 79BC64202BDB5E0F0081B299;
+			remoteInfo = "TaskWiseWatch Watch App";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -278,6 +290,17 @@
 				797B4D812B2107D8001DAC30 /* TaskWiseWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79BC642F2BDB5E120081B299 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				79BC642E2BDB5E120081B299 /* TaskWiseWatch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -424,6 +447,11 @@
 		79B823ED2B1E77970062B6E5 /* TaskItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItemView.swift; sourceTree = "<group>"; };
 		79B9625B2B1F799F00D16472 /* TaskContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskContextMenu.swift; sourceTree = "<group>"; };
 		79B9625E2B1FA6E800D16472 /* TaskProgressIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskProgressIndicator.swift; sourceTree = "<group>"; };
+		79BC64212BDB5E0F0081B299 /* TaskWiseWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TaskWiseWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		79BC64232BDB5E0F0081B299 /* TaskWiseWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskWiseWatchApp.swift; sourceTree = "<group>"; };
+		79BC64252BDB5E0F0081B299 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		79BC64272BDB5E120081B299 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		79BC642A2BDB5E120081B299 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		79C16F4C2ABB4FDB00BA362B /* CheckBoxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxStyle.swift; sourceTree = "<group>"; };
 		79C16F4E2ABB5C6B00BA362B /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		79C1B36B2AC9982C00BDCC6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -497,6 +525,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		79BC641E2BDB5E0F0081B299 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -528,6 +563,7 @@
 				790A81162AAE19A700283D7E /* TaskWiseTests */,
 				790A81202AAE19A700283D7E /* TaskWiseUITests */,
 				797B4D772B2107D7001DAC30 /* TaskWiseWidget */,
+				79BC64222BDB5E0F0081B299 /* TaskWiseWatch Watch App */,
 				790A81042AAE19A700283D7E /* Products */,
 				3E1D43BFCC87103E28E2DDD6 /* Pods */,
 				8CEBAA51A4C881F8694DD290 /* Frameworks */,
@@ -541,6 +577,7 @@
 				790A81132AAE19A700283D7E /* TaskWiseTests.xctest */,
 				790A811D2AAE19A700283D7E /* TaskWiseUITests.xctest */,
 				797B4D722B2107D7001DAC30 /* TaskWiseWidgetExtension.appex */,
+				79BC64212BDB5E0F0081B299 /* TaskWiseWatch Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1117,6 +1154,49 @@
 			path = NavigationBars;
 			sourceTree = "<group>";
 		};
+		79BC64222BDB5E0F0081B299 /* TaskWiseWatch Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				79BC64332BDB5EE40081B299 /* App */,
+				79BC64292BDB5E120081B299 /* Preview Content */,
+				79BC64362BDB5F150081B299 /* Resources */,
+				79BC64342BDB5EF50081B299 /* Scene */,
+			);
+			path = "TaskWiseWatch Watch App";
+			sourceTree = "<group>";
+		};
+		79BC64292BDB5E120081B299 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				79BC642A2BDB5E120081B299 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		79BC64332BDB5EE40081B299 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				79BC64232BDB5E0F0081B299 /* TaskWiseWatchApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		79BC64342BDB5EF50081B299 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				79BC64252BDB5E0F0081B299 /* ContentView.swift */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		79BC64362BDB5F150081B299 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				79BC64272BDB5E120081B299 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		79C16F4B2ABB4FB600BA362B /* Styles */ = {
 			isa = PBXGroup;
 			children = (
@@ -1285,11 +1365,13 @@
 				790A81012AAE19A600283D7E /* Resources */,
 				1B6ACB8A8EAA192F86738476 /* [CP] Embed Pods Frameworks */,
 				797B4D822B2107D8001DAC30 /* Embed Foundation Extensions */,
+				79BC642F2BDB5E120081B299 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				797B4D802B2107D8001DAC30 /* PBXTargetDependency */,
+				79BC642D2BDB5E120081B299 /* PBXTargetDependency */,
 			);
 			name = TaskWise;
 			productName = TaskWise;
@@ -1350,6 +1432,23 @@
 			productReference = 797B4D722B2107D7001DAC30 /* TaskWiseWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		79BC64202BDB5E0F0081B299 /* TaskWiseWatch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79BC64322BDB5E120081B299 /* Build configuration list for PBXNativeTarget "TaskWiseWatch Watch App" */;
+			buildPhases = (
+				79BC641D2BDB5E0F0081B299 /* Sources */,
+				79BC641E2BDB5E0F0081B299 /* Frameworks */,
+				79BC641F2BDB5E0F0081B299 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TaskWiseWatch Watch App";
+			productName = "TaskWiseWatch Watch App";
+			productReference = 79BC64212BDB5E0F0081B299 /* TaskWiseWatch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1374,6 +1473,9 @@
 					797B4D712B2107D7001DAC30 = {
 						CreatedOnToolsVersion = 15.0;
 					};
+					79BC64202BDB5E0F0081B299 = {
+						CreatedOnToolsVersion = 15.0;
+					};
 				};
 			};
 			buildConfigurationList = 790A80FE2AAE19A600283D7E /* Build configuration list for PBXProject "TaskWise" */;
@@ -1393,6 +1495,7 @@
 				790A81122AAE19A700283D7E /* TaskWiseTests */,
 				790A811C2AAE19A700283D7E /* TaskWiseUITests */,
 				797B4D712B2107D7001DAC30 /* TaskWiseWidgetExtension */,
+				79BC64202BDB5E0F0081B299 /* TaskWiseWatch Watch App */,
 			);
 		};
 /* End PBXProject section */
@@ -1431,6 +1534,15 @@
 				79B349112B23B70E00AAB0A9 /* ProximaNova-Bold.otf in Resources */,
 				797B4D7D2B2107D8001DAC30 /* Assets.xcassets in Resources */,
 				797B4D8D2B211242001DAC30 /* Colors.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79BC641F2BDB5E0F0081B299 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79BC642B2BDB5E120081B299 /* Preview Assets.xcassets in Resources */,
+				79BC64282BDB5E120081B299 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1808,6 +1920,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		79BC641D2BDB5E0F0081B299 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79BC64262BDB5E0F0081B299 /* ContentView.swift in Sources */,
+				79BC64242BDB5E0F0081B299 /* TaskWiseWatchApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1825,6 +1946,11 @@
 			isa = PBXTargetDependency;
 			target = 797B4D712B2107D7001DAC30 /* TaskWiseWidgetExtension */;
 			targetProxy = 797B4D7F2B2107D8001DAC30 /* PBXContainerItemProxy */;
+		};
+		79BC642D2BDB5E120081B299 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 79BC64202BDB5E0F0081B299 /* TaskWiseWatch Watch App */;
+			targetProxy = 79BC642C2BDB5E120081B299 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -2154,6 +2280,70 @@
 			};
 			name = Release;
 		};
+		79BC64302BDB5E120081B299 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TaskWiseWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 2D3N9A382G;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = TaskWiseWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = me.bercidalnoky.TaskWise;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.bercidalnoky.TaskWise.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		79BC64312BDB5E120081B299 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TaskWiseWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 2D3N9A382G;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = TaskWiseWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = me.bercidalnoky.TaskWise;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.bercidalnoky.TaskWise.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2198,6 +2388,15 @@
 			buildConfigurations = (
 				797B4D832B2107D8001DAC30 /* Debug */,
 				797B4D842B2107D8001DAC30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79BC64322BDB5E120081B299 /* Build configuration list for PBXNativeTarget "TaskWiseWatch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79BC64302BDB5E120081B299 /* Debug */,
+				79BC64312BDB5E120081B299 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
