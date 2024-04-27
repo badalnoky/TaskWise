@@ -5,7 +5,9 @@ import SwiftUI
 struct TaskWiseWatch_Watch_AppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                WatchDashboard()
+            }
         }
     }
 }
