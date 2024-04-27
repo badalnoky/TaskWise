@@ -215,7 +215,7 @@
 		79BC64262BDB5E0F0081B299 /* WatchDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BC64252BDB5E0F0081B299 /* WatchDashboard.swift */; };
 		79BC64282BDB5E120081B299 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79BC64272BDB5E120081B299 /* Assets.xcassets */; };
 		79BC642B2BDB5E120081B299 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79BC642A2BDB5E120081B299 /* Preview Assets.xcassets */; };
-		79BC642E2BDB5E120081B299 /* TaskWiseWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 79BC64212BDB5E0F0081B299 /* TaskWiseWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		79BC642E2BDB5E120081B299 /* TaskWise.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 79BC64212BDB5E0F0081B299 /* TaskWise.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		79C16F4D2ABB4FDB00BA362B /* CheckBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C16F4C2ABB4FDB00BA362B /* CheckBoxStyle.swift */; };
 		79C16F4F2ABB5C6B00BA362B /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C16F4E2ABB5C6B00BA362B /* CalendarViewModel.swift */; };
 		79C838A82B1D109500F35483 /* SettingsNavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C838A72B1D109500F35483 /* SettingsNavigationBarModifier.swift */; };
@@ -310,7 +310,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				79BC642E2BDB5E120081B299 /* TaskWiseWatch Watch App.app in Embed Watch Content */,
+				79BC642E2BDB5E120081B299 /* TaskWise.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -465,7 +465,7 @@
 		79B823ED2B1E77970062B6E5 /* TaskItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItemView.swift; sourceTree = "<group>"; };
 		79B9625B2B1F799F00D16472 /* TaskContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskContextMenu.swift; sourceTree = "<group>"; };
 		79B9625E2B1FA6E800D16472 /* TaskProgressIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskProgressIndicator.swift; sourceTree = "<group>"; };
-		79BC64212BDB5E0F0081B299 /* TaskWiseWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TaskWiseWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		79BC64212BDB5E0F0081B299 /* TaskWise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskWise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79BC64232BDB5E0F0081B299 /* TaskWiseWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskWiseWatchApp.swift; sourceTree = "<group>"; };
 		79BC64252BDB5E0F0081B299 /* WatchDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDashboard.swift; sourceTree = "<group>"; };
 		79BC64272BDB5E120081B299 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -595,7 +595,7 @@
 				790A81132AAE19A700283D7E /* TaskWiseTests.xctest */,
 				790A811D2AAE19A700283D7E /* TaskWiseUITests.xctest */,
 				797B4D722B2107D7001DAC30 /* TaskWiseWidgetExtension.appex */,
-				79BC64212BDB5E0F0081B299 /* TaskWiseWatch Watch App.app */,
+				79BC64212BDB5E0F0081B299 /* TaskWise.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1518,7 +1518,7 @@
 			);
 			name = "TaskWiseWatch Watch App";
 			productName = "TaskWiseWatch Watch App";
-			productReference = 79BC64212BDB5E0F0081B299 /* TaskWiseWatch Watch App.app */;
+			productReference = 79BC64212BDB5E0F0081B299 /* TaskWise.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -2100,6 +2100,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Debug;
 		};
@@ -2157,6 +2158,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Release;
 		};
@@ -2175,11 +2177,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TaskWise/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TaskWise;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2208,11 +2212,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TaskWise/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TaskWise;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2376,7 +2382,6 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = TaskWiseWatch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = me.bercidalnoky.TaskWise;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2386,7 +2391,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.bercidalnoky.TaskWise.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TaskWise;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -2408,7 +2413,6 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = TaskWiseWatch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = me.bercidalnoky.TaskWise;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2418,7 +2422,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.bercidalnoky.TaskWise.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TaskWise;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
