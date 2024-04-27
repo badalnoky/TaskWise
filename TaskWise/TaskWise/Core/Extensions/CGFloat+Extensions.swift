@@ -102,3 +102,34 @@ extension CGFloat {
     static let colorValueTextfieldWidth: CGFloat = 56
     static let hexCodeTextfieldWidth: CGFloat = 90
 }
+
+public extension CGFloat {
+    /// 0.2
+    static let watchIndicatorLowerBound: CGFloat = 0.2
+    /// 0.6
+    static let watchIndicatorRange: CGFloat = 0.6
+    /// 0.8
+    static let watchIndicatorGreaterBound: CGFloat = 0.8
+    /// 4 pt
+    static let watchIndicatorMinLineWidth: CGFloat = 4
+    /// 12 pt
+    static let watchIndicatorMaxLineWidth: CGFloat = 12
+
+    static let watchIndicatorLineWidthRange: CGFloat = watchIndicatorMaxLineWidth - watchIndicatorMinLineWidth
+    /// 70 pt
+    static let watchIndicatorMinWidth: CGFloat = 70
+    /// 185 pt
+    static let watchIndicatorMaxWidth: CGFloat = 185
+
+    static let watchIndicatorWidthRange = watchIndicatorMaxWidth - watchIndicatorMinWidth
+    /// 10 pt
+    static let watchIndicatorMinFontSize: CGFloat = 10
+    /// 34 pt
+    static let watchIndicatorMaxFontSize: CGFloat = 34
+
+    static let watchIndicatorFontRange = watchIndicatorMaxFontSize - watchIndicatorMinFontSize
+    /// 25 pt
+    static let watchMinimumTextSpace: CGFloat = 25
+    /// 0.1
+    static let watchCompletionScale: CGFloat = 0.1
+}
