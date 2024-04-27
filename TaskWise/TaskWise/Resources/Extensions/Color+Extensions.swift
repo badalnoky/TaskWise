@@ -1,17 +1,18 @@
 import SwiftUI
 
 extension Color {
-    var components: ColorComponents.DTO {
-        let ciColor = CIColor(color: UIColor(self))
-        return ColorComponents.DTO(red: ciColor.red, green: ciColor.green, blue: ciColor.blue, alpha: ciColor.alpha)
-    }
-
     static func from(components: ColorComponents) -> Color {
         Color(red: components.red, green: components.green, blue: components.blue, opacity: components.alpha)
     }
 }
 
+#if !os(watchOS)
 extension Color {
+    var components: ColorComponents.DTO {
+        let ciColor = CIColor(color: UIColor(self))
+        return ColorComponents.DTO(red: ciColor.red, green: ciColor.green, blue: ciColor.blue, alpha: ciColor.alpha)
+    }
+
     init(red: Double, green: Double, blue: Double) {
         self.init(cgColor: CGColor(red: red.normalized, green: green.normalized, blue: blue.normalized, alpha: .one))
     }
@@ -35,6 +36,7 @@ extension Color {
         return hexString
     }
 }
+#endif
 
 extension Color {
     static var basePickerColorGrid: [[Color]] {

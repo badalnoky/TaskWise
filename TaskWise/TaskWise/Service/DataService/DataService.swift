@@ -18,9 +18,11 @@ public final class DataService: DataServiceInput {
 
     init(shouldLoadDefaults: Bool = true) {
         loadContainer()
+        #if !os(watchOS)
         if shouldLoadDefaults {
             handleDefaultUserSettings()
         }
+        #endif
     }
 
     private func loadContainer() {
@@ -54,6 +56,7 @@ public final class DataService: DataServiceInput {
     }
 }
 
+#if !os(watchOS)
 // MARK: Default values
 extension DataService {
     private func handleDefaultUserSettings() {
@@ -87,3 +90,4 @@ extension DataService {
         save()
     }
 }
+#endif

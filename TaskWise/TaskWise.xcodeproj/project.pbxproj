@@ -141,6 +141,52 @@
 		797F3BA02BDD8343002226B7 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797F3B9F2BDD8343002226B7 /* TaskCell.swift */; };
 		797F3BA32BDD83CD002226B7 /* TaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797F3BA22BDD83CD002226B7 /* TaskDetailView.swift */; };
 		797F3BA52BDD83E0002226B7 /* TaskDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797F3BA42BDD83E0002226B7 /* TaskDetailViewModel.swift */; };
+		797F3C072BDD92C3002226B7 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54952AD33B9600D064C2 /* DataService.swift */; };
+		797F3C082BDD92D6002226B7 /* DataServiceInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7944D7422AF6DD59001A528D /* DataServiceInput.swift */; };
+		797F3C092BDD92E1002226B7 /* UserSettings+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791A06F82B8A02E20041AE42 /* UserSettings+CoreDataClass.swift */; };
+		797F3C0A2BDD92EB002226B7 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54982AD33B9600D064C2 /* Task+CoreDataClass.swift */; };
+		797F3C0B2BDD92F2002226B7 /* TaskWise.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54992AD33B9600D064C2 /* TaskWise.xcdatamodeld */; };
+		797F3C0C2BDD92FB002226B7 /* UserSettings+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791A06FA2B8A02E90041AE42 /* UserSettings+CoreDataProperties.swift */; };
+		797F3C0D2BDD92FE002226B7 /* UserSettings+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7901260E2AD47F1A005620C2 /* UserSettings+Extensions.swift */; };
+		797F3C0E2BDD9304002226B7 /* TaskStep+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54932AD33B9600D064C2 /* TaskStep+CoreDataClass.swift */; };
+		797F3C0F2BDD9306002226B7 /* TaskStep+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54942AD33B9600D064C2 /* TaskStep+CoreDataProperties.swift */; };
+		797F3C102BDD9308002226B7 /* TaskStep+DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988C4B32AE2E126004621EA /* TaskStep+DTO.swift */; };
+		797F3C112BDD9310002226B7 /* TaskColumn+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD549C2AD33B9600D064C2 /* TaskColumn+CoreDataClass.swift */; };
+		797F3C122BDD9313002226B7 /* TaskColumn+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD549D2AD33B9600D064C2 /* TaskColumn+CoreDataProperties.swift */; };
+		797F3C132BDD9315002226B7 /* TaskColumn+DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799070B42AEA53330051AAC8 /* TaskColumn+DTO.swift */; };
+		797F3C142BDD931F002226B7 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54972AD33B9600D064C2 /* Task+CoreDataProperties.swift */; };
+		797F3C152BDD9322002226B7 /* Task+DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798605602AD5C00B007A64B3 /* Task+DTO.swift */; };
+		797F3C162BDD9324002226B7 /* Task+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD74D12AD9A27200DCD573 /* Task+Extensions.swift */; };
+		797F3C172BDD9328002226B7 /* RepeatingTasks+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798055AA2B9F17D000129BBA /* RepeatingTasks+CoreDataClass.swift */; };
+		797F3C182BDD932A002226B7 /* RepeatingTasks+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798055AB2B9F17D000129BBA /* RepeatingTasks+CoreDataProperties.swift */; };
+		797F3C192BDD932C002226B7 /* RepeatingTask+DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B52F7D2BAB28FB007CF9BA /* RepeatingTask+DTO.swift */; };
+		797F3C1A2BDD9331002226B7 /* Priority+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54A02AD33B9600D064C2 /* Priority+CoreDataClass.swift */; };
+		797F3C1B2BDD9334002226B7 /* Priority+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD549F2AD33B9600D064C2 /* Priority+CoreDataProperties.swift */; };
+		797F3C1C2BDD9338002226B7 /* Priority+DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799070B82AEA55150051AAC8 /* Priority+DTO.swift */; };
+		797F3C1D2BDD935E002226B7 /* ColorComponents+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54A22AD33B9600D064C2 /* ColorComponents+CoreDataClass.swift */; };
+		797F3C1E2BDD9365002226B7 /* ColorComponents+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54A32AD33B9600D064C2 /* ColorComponents+CoreDataProperties.swift */; };
+		797F3C1F2BDD9368002226B7 /* ColorComponents+DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798605622AD5C99E007A64B3 /* ColorComponents+DTO.swift */; };
+		797F3C202BDD936C002226B7 /* Category+DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799070B62AEA55090051AAC8 /* Category+DTO.swift */; };
+		797F3C212BDD936E002226B7 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54902AD33B9600D064C2 /* Category+CoreDataProperties.swift */; };
+		797F3C222BDD9370002226B7 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54912AD33B9600D064C2 /* Category+CoreDataClass.swift */; };
+		797F3C232BDD9381002226B7 /* DataService+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797B4DAC2B212997001DAC30 /* DataService+Category.swift */; };
+		797F3C242BDD9383002226B7 /* DataService+Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797B4DAE2B2129A2001DAC30 /* DataService+Fetch.swift */; };
+		797F3C252BDD9385002226B7 /* DataService+Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799070C42AEA717D0051AAC8 /* DataService+Priority.swift */; };
+		797F3C262BDD9387002226B7 /* DataService+RepeatingTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799A42862B9F289300041AA3 /* DataService+RepeatingTasks.swift */; };
+		797F3C272BDD938B002226B7 /* DataService+Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799070BE2AEA6BE90051AAC8 /* DataService+Task.swift */; };
+		797F3C282BDD938D002226B7 /* DataService+TaskColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799070C22AEA70F50051AAC8 /* DataService+TaskColumn.swift */; };
+		797F3C292BDD938F002226B7 /* DateService+Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791CA3752B224EB8009A5395 /* DateService+Widget.swift */; };
+		797F3C2A2BDD9392002226B7 /* WidgetTimelineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E6584C2B2326FA00DE5A0A /* WidgetTimelineService.swift */; };
+		797F3C2B2BDD939F002226B7 /* RepeatBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794AC2852BB424F800DAC0F9 /* RepeatBehaviour.swift */; };
+		797F3C2C2BDD93A8002226B7 /* NamedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793C648C2AED9F3800C9D3FF /* NamedItem.swift */; };
+		797F3C2D2BDD93C4002226B7 /* TaskEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792242F42B232EC60004F4FC /* TaskEntry.swift */; };
+		797F3C2E2BDD93D1002226B7 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798605642AD5E03C007A64B3 /* Date+Extensions.swift */; };
+		797F3C2F2BDD93DB002226B7 /* RepeatFrequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794AC2812BB424E800DAC0F9 /* RepeatFrequency.swift */; };
+		797F3C302BDD93DF002226B7 /* CustomRepeatSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794AC2872BB424FD00DAC0F9 /* CustomRepeatSchedule.swift */; };
+		797F3C312BDD940B002226B7 /* RepeatUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794AC27F2BB424E000DAC0F9 /* RepeatUnit.swift */; };
+		797F3C322BDD942A002226B7 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790C190C2AD34B52008647B8 /* Color+Extensions.swift */; };
+		797F3C332BDD9432002226B7 /* String+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797B4D952B2115CB001DAC30 /* String+Constants.swift */; };
+		797F3C342BDD943C002226B7 /* RGBType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797EE26A2B9E78EF002173B1 /* RGBType.swift */; };
 		798055B02B9F17D000129BBA /* RepeatingTasks+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798055AA2B9F17D000129BBA /* RepeatingTasks+CoreDataClass.swift */; };
 		798055B12B9F17D000129BBA /* RepeatingTasks+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798055AA2B9F17D000129BBA /* RepeatingTasks+CoreDataClass.swift */; };
 		798055B22B9F17D000129BBA /* RepeatingTasks+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798055AB2B9F17D000129BBA /* RepeatingTasks+CoreDataProperties.swift */; };
@@ -1998,18 +2044,64 @@
 			buildActionMask = 2147483647;
 			files = (
 				7956E78A2BDBACC6008CFC77 /* String+Extensions.swift in Sources */,
+				797F3C292BDD938F002226B7 /* DateService+Widget.swift in Sources */,
+				797F3C0A2BDD92EB002226B7 /* Task+CoreDataClass.swift in Sources */,
+				797F3C202BDD936C002226B7 /* Category+DTO.swift in Sources */,
+				797F3C172BDD9328002226B7 /* RepeatingTasks+CoreDataClass.swift in Sources */,
+				797F3C0B2BDD92F2002226B7 /* TaskWise.xcdatamodeld in Sources */,
+				797F3C282BDD938D002226B7 /* DataService+TaskColumn.swift in Sources */,
+				797F3C242BDD9383002226B7 /* DataService+Fetch.swift in Sources */,
+				797F3C222BDD9370002226B7 /* Category+CoreDataClass.swift in Sources */,
+				797F3C072BDD92C3002226B7 /* DataService.swift in Sources */,
+				797F3C1E2BDD9365002226B7 /* ColorComponents+CoreDataProperties.swift in Sources */,
+				797F3C212BDD936E002226B7 /* Category+CoreDataProperties.swift in Sources */,
+				797F3C272BDD938B002226B7 /* DataService+Task.swift in Sources */,
+				797F3C0E2BDD9304002226B7 /* TaskStep+CoreDataClass.swift in Sources */,
+				797F3C102BDD9308002226B7 /* TaskStep+DTO.swift in Sources */,
+				797F3C1C2BDD9338002226B7 /* Priority+DTO.swift in Sources */,
+				797F3C152BDD9322002226B7 /* Task+DTO.swift in Sources */,
 				792E99DE2BDB89C70008C7A2 /* CompletionView.swift in Sources */,
+				797F3C0C2BDD92FB002226B7 /* UserSettings+CoreDataProperties.swift in Sources */,
+				797F3C2F2BDD93DB002226B7 /* RepeatFrequency.swift in Sources */,
+				797F3C312BDD940B002226B7 /* RepeatUnit.swift in Sources */,
 				797F3B982BDD7D41002226B7 /* Double+Extensions.swift in Sources */,
 				797F3B972BDD7D1E002226B7 /* CGFloat+Extensions.swift in Sources */,
 				797F3B9A2BDD7E48002226B7 /* Localized.swift in Sources */,
+				797F3C1B2BDD9334002226B7 /* Priority+CoreDataProperties.swift in Sources */,
+				797F3C2E2BDD93D1002226B7 /* Date+Extensions.swift in Sources */,
+				797F3C082BDD92D6002226B7 /* DataServiceInput.swift in Sources */,
+				797F3C132BDD9315002226B7 /* TaskColumn+DTO.swift in Sources */,
 				797F3BA52BDD83E0002226B7 /* TaskDetailViewModel.swift in Sources */,
+				797F3C182BDD932A002226B7 /* RepeatingTasks+CoreDataProperties.swift in Sources */,
+				797F3C0F2BDD9306002226B7 /* TaskStep+CoreDataProperties.swift in Sources */,
+				797F3C252BDD9385002226B7 /* DataService+Priority.swift in Sources */,
+				797F3C0D2BDD92FE002226B7 /* UserSettings+Extensions.swift in Sources */,
+				797F3C302BDD93DF002226B7 /* CustomRepeatSchedule.swift in Sources */,
+				797F3C332BDD9432002226B7 /* String+Constants.swift in Sources */,
+				797F3C2B2BDD939F002226B7 /* RepeatBehaviour.swift in Sources */,
+				797F3C322BDD942A002226B7 /* Color+Extensions.swift in Sources */,
 				79BC64262BDB5E0F0081B299 /* WatchDashboard.swift in Sources */,
 				79BC64242BDB5E0F0081B299 /* TaskWiseWatchApp.swift in Sources */,
 				797F3BA02BDD8343002226B7 /* TaskCell.swift in Sources */,
+				797F3C192BDD932C002226B7 /* RepeatingTask+DTO.swift in Sources */,
 				797F3BA32BDD83CD002226B7 /* TaskDetailView.swift in Sources */,
 				792E99E52BDB8B6C0008C7A2 /* WatchDashboardViewModel.swift in Sources */,
+				797F3C122BDD9313002226B7 /* TaskColumn+CoreDataProperties.swift in Sources */,
+				797F3C2A2BDD9392002226B7 /* WidgetTimelineService.swift in Sources */,
+				797F3C1A2BDD9331002226B7 /* Priority+CoreDataClass.swift in Sources */,
+				797F3C232BDD9381002226B7 /* DataService+Category.swift in Sources */,
+				797F3C142BDD931F002226B7 /* Task+CoreDataProperties.swift in Sources */,
 				797F3B992BDD7E05002226B7 /* Image+Extensions.swift in Sources */,
+				797F3C342BDD943C002226B7 /* RGBType.swift in Sources */,
+				797F3C1D2BDD935E002226B7 /* ColorComponents+CoreDataClass.swift in Sources */,
+				797F3C092BDD92E1002226B7 /* UserSettings+CoreDataClass.swift in Sources */,
+				797F3C2C2BDD93A8002226B7 /* NamedItem.swift in Sources */,
+				797F3C162BDD9324002226B7 /* Task+Extensions.swift in Sources */,
+				797F3C112BDD9310002226B7 /* TaskColumn+CoreDataClass.swift in Sources */,
 				797F3B9B2BDD829D002226B7 /* Int+Extensions.swift in Sources */,
+				797F3C1F2BDD9368002226B7 /* ColorComponents+DTO.swift in Sources */,
+				797F3C262BDD9387002226B7 /* DataService+RepeatingTasks.swift in Sources */,
+				797F3C2D2BDD93C4002226B7 /* TaskEntry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
