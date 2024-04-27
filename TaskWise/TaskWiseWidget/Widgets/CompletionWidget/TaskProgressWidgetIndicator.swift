@@ -22,12 +22,12 @@ public struct TaskProgressWidgetIndicator: View {
                 .rotationEffect(.degrees(.indicatorRotation))
                 .foregroundStyle(.white)
 
-            if done == total || total == 0 {
+            if done == total || total == .zero {
                 Image.check
                     .resizable()
                     .padding(.padding12)
             } else {
-                Text("\(done)/\(total)").font(.system(size: .widgetFontSize)).bold()
+                Text(Str.Indicator.completion(done, total)).font(.system(size: .widgetFontSize)).bold()
             }
         }
     }
