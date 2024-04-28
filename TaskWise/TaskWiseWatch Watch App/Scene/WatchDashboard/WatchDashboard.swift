@@ -22,7 +22,7 @@ extension WatchDashboard: View {
 
             NavigationStack {
                 ScrollView {
-                    ForEach(viewModel.tasks, id: \.self) { task in
+                    ForEach(viewModel.firstColumnTasks, id: \.self) { task in
                         NavigationLink(value: task) {
                             TaskCell(
                                 title: task.title,

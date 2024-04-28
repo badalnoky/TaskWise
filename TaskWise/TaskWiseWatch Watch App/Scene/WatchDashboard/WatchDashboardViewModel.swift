@@ -9,6 +9,11 @@ import SwiftUI
     var tasks: [Task] = []
     var columns: [TaskColumn] = []
 
+    var firstColumnTasks: [Task] {
+        guard let first = columns.first else { return [] }
+        return tasks.from(column: first)
+    }
+
     var firstColumnName: String {
         guard let first = columns.first else { return .empty }
         return first.name
