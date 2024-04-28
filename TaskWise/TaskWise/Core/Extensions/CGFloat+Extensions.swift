@@ -132,4 +132,6 @@ public extension CGFloat {
     static let watchMinimumTextSpace: CGFloat = 25
     /// 0.1
     static let watchCompletionScale: CGFloat = 0.1
+    /// 40 pt
+    static let watchCategoryColorHeight: CGFloat = 40
 }

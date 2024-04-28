@@ -3,7 +3,7 @@ import SwiftUI
 struct TaskDetailView {
     var viewModel: TaskDetailViewModel
 
-    init(task: String) {
+    init(task: Task) {
         self.viewModel = TaskDetailViewModel(task: task)
     }
 }
@@ -15,5 +15,5 @@ extension TaskDetailView: View {
 }
 
 #Preview {
-    TaskDetailView(task: "Task")
+    TaskDetailView(task: .mock)
 }

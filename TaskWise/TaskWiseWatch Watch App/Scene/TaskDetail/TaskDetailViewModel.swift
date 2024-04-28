@@ -1,9 +1,9 @@
 import Foundation
 
 @Observable final class TaskDetailViewModel {
-    var task: String
+    var task: Task
 
-    init(task: String) {
+    init(task: Task) {
         self.task = task
     }
 }

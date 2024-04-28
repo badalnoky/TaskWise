@@ -11,7 +11,7 @@ extension WatchDashboard: View {
         TabView(selection: $viewModel.selectedTab) {
             VStack {
                 if viewModel.selectedTab == .zero {
-                    CompletionView(done: viewModel.doneTaskCount, total: viewModel.allTaskCount)
+                    CompletionView(done: viewModel.doneCount, total: viewModel.totalCount)
                         .transition(.scale(scale: .watchCompletionScale, anchor: .topLeading))
                     Text(Date.now, format: .dateTime.month(.wide).day(.defaultDigits))
                         .transition(.scale(scale: .watchCompletionScale, anchor: .topLeading))
@@ -19,17 +19,22 @@ extension WatchDashboard: View {
             }
             .tag(Int.zero)
             .containerBackground(.background.gradient, for: .tabView)
-            .padding()
 
             NavigationStack {
                 ScrollView {
                     ForEach(viewModel.tasks, id: \.self) { task in
                         NavigationLink(value: task) {
-                            TaskCell(task: task)
+                            TaskCell(
+                                title: task.title,
+                                priority: task.priority.name,
+                                category: task.category.name,
+                                categoryColor: .from(components: task.category.colorComponents)
+                            )
                         }
+                        .buttonStyle(.plain)
                     }
                 }
-                .navigationDestination(for: String.self) { task in
+                .navigationDestination(for: Task.self) { task in
                     TaskDetailView(task: task)
                 }
             }
@@ -45,7 +50,7 @@ extension WatchDashboard: View {
         .toolbar(isToolbarPresented ? .visible : .hidden, for: .navigationBar)
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
-                CompletionView(done: viewModel.doneTaskCount, total: viewModel.allTaskCount)
+                CompletionView(done: viewModel.doneCount, total: viewModel.totalCount)
                     .opacity(isToolbarPresented ? .one : .zero)
             }
         }
