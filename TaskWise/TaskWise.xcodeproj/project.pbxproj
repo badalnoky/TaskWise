@@ -234,6 +234,13 @@
 		799070C52AEA717D0051AAC8 /* DataService+Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799070C42AEA717D0051AAC8 /* DataService+Priority.swift */; };
 		799A42872B9F289300041AA3 /* DataService+RepeatingTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799A42862B9F289300041AA3 /* DataService+RepeatingTasks.swift */; };
 		799A42882B9F2AD200041AA3 /* DataService+RepeatingTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799A42862B9F289300041AA3 /* DataService+RepeatingTasks.swift */; };
+		799AED962BDEBD710024144F /* Task+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E14AD32AE41A4500FF730D /* Task+Mock.swift */; };
+		799AED982BDEBDA60024144F /* PreviewDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E14ACD2AE415B200FF730D /* PreviewDataService.swift */; };
+		799AED992BDEBDBA0024144F /* Category+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E14ACF2AE41A2600FF730D /* Category+Mock.swift */; };
+		799AED9A2BDEBDBF0024144F /* Priority+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E14AD72AE41ADB00FF730D /* Priority+Mock.swift */; };
+		799AED9B2BDEBDC20024144F /* TaskColumn+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E14AD92AE41AED00FF730D /* TaskColumn+Mock.swift */; };
+		799AED9C2BDEBDCF0024144F /* ColorComponents+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E14AD12AE41A3500FF730D /* ColorComponents+Mock.swift */; };
+		799AED9D2BDEBE2B0024144F /* TaskStep+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E14AD52AE41A5D00FF730D /* TaskStep+Mock.swift */; };
 		799D48E32ABC394400C149E3 /* CalendarViewModel+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799D48E22ABC394400C149E3 /* CalendarViewModel+Mock.swift */; };
 		79A0C2DF2B226B1E005B3F04 /* TaskWise.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54992AD33B9600D064C2 /* TaskWise.xcdatamodeld */; };
 		79A519902B1BA29F00B0EEC2 /* ListButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A5198F2B1BA29F00B0EEC2 /* ListButtonStyle.swift */; };
@@ -2045,19 +2052,23 @@
 			files = (
 				7956E78A2BDBACC6008CFC77 /* String+Extensions.swift in Sources */,
 				797F3C292BDD938F002226B7 /* DateService+Widget.swift in Sources */,
+				799AED9D2BDEBE2B0024144F /* TaskStep+Mock.swift in Sources */,
 				797F3C0A2BDD92EB002226B7 /* Task+CoreDataClass.swift in Sources */,
 				797F3C202BDD936C002226B7 /* Category+DTO.swift in Sources */,
+				799AED982BDEBDA60024144F /* PreviewDataService.swift in Sources */,
 				797F3C172BDD9328002226B7 /* RepeatingTasks+CoreDataClass.swift in Sources */,
 				797F3C0B2BDD92F2002226B7 /* TaskWise.xcdatamodeld in Sources */,
 				797F3C282BDD938D002226B7 /* DataService+TaskColumn.swift in Sources */,
 				797F3C242BDD9383002226B7 /* DataService+Fetch.swift in Sources */,
 				797F3C222BDD9370002226B7 /* Category+CoreDataClass.swift in Sources */,
+				799AED9A2BDEBDBF0024144F /* Priority+Mock.swift in Sources */,
 				797F3C072BDD92C3002226B7 /* DataService.swift in Sources */,
 				797F3C1E2BDD9365002226B7 /* ColorComponents+CoreDataProperties.swift in Sources */,
 				797F3C212BDD936E002226B7 /* Category+CoreDataProperties.swift in Sources */,
 				797F3C272BDD938B002226B7 /* DataService+Task.swift in Sources */,
 				797F3C0E2BDD9304002226B7 /* TaskStep+CoreDataClass.swift in Sources */,
 				797F3C102BDD9308002226B7 /* TaskStep+DTO.swift in Sources */,
+				799AED9C2BDEBDCF0024144F /* ColorComponents+Mock.swift in Sources */,
 				797F3C1C2BDD9338002226B7 /* Priority+DTO.swift in Sources */,
 				797F3C152BDD9322002226B7 /* Task+DTO.swift in Sources */,
 				792E99DE2BDB89C70008C7A2 /* CompletionView.swift in Sources */,
@@ -2069,6 +2080,7 @@
 				797F3B9A2BDD7E48002226B7 /* Localized.swift in Sources */,
 				797F3C1B2BDD9334002226B7 /* Priority+CoreDataProperties.swift in Sources */,
 				797F3C2E2BDD93D1002226B7 /* Date+Extensions.swift in Sources */,
+				799AED962BDEBD710024144F /* Task+Mock.swift in Sources */,
 				797F3C082BDD92D6002226B7 /* DataServiceInput.swift in Sources */,
 				797F3C132BDD9315002226B7 /* TaskColumn+DTO.swift in Sources */,
 				797F3BA52BDD83E0002226B7 /* TaskDetailViewModel.swift in Sources */,
@@ -2078,6 +2090,7 @@
 				797F3C0D2BDD92FE002226B7 /* UserSettings+Extensions.swift in Sources */,
 				797F3C302BDD93DF002226B7 /* CustomRepeatSchedule.swift in Sources */,
 				797F3C332BDD9432002226B7 /* String+Constants.swift in Sources */,
+				799AED9B2BDEBDC20024144F /* TaskColumn+Mock.swift in Sources */,
 				797F3C2B2BDD939F002226B7 /* RepeatBehaviour.swift in Sources */,
 				797F3C322BDD942A002226B7 /* Color+Extensions.swift in Sources */,
 				79BC64262BDB5E0F0081B299 /* WatchDashboard.swift in Sources */,
@@ -2086,6 +2099,7 @@
 				797F3C192BDD932C002226B7 /* RepeatingTask+DTO.swift in Sources */,
 				797F3BA32BDD83CD002226B7 /* TaskDetailView.swift in Sources */,
 				792E99E52BDB8B6C0008C7A2 /* WatchDashboardViewModel.swift in Sources */,
+				799AED992BDEBDBA0024144F /* Category+Mock.swift in Sources */,
 				797F3C122BDD9313002226B7 /* TaskColumn+CoreDataProperties.swift in Sources */,
 				797F3C2A2BDD9392002226B7 /* WidgetTimelineService.swift in Sources */,
 				797F3C1A2BDD9331002226B7 /* Priority+CoreDataClass.swift in Sources */,
