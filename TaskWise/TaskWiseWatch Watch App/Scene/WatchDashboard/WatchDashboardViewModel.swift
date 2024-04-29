@@ -4,19 +4,21 @@ import SwiftUI
 @Observable final class WatchDashboardViewModel {
     private var dataService: DataService
     private var cancellables = Set<AnyCancellable>()
+    private var tasks: [Task] = []
 
     var selectedTab: Int = .zero
-    var tasks: [Task] = []
     var columns: [TaskColumn] = []
 
-    var firstColumnTasks: [Task] {
-        guard let first = columns.first else { return [] }
-        return tasks.from(column: first)
+    var selectedColumn: Int = .zero
+
+    var tasksForSelected: [Task] {
+        guard !columns.isEmpty else { return [] }
+        return tasks.from(column: columns[selectedColumn])
     }
 
-    var firstColumnName: String {
-        guard let first = columns.first else { return .empty }
-        return first.name
+    var selectedColumnName: String {
+        guard !columns.isEmpty else { return .empty }
+        return columns[selectedColumn].name
     }
 
     var doneCount: Int {
@@ -31,6 +33,16 @@ import SwiftUI
     init() {
         self.dataService = DataService(shouldLoadDefaults: false)
         registerBindings()
+    }
+}
+
+extension WatchDashboardViewModel {
+    func didTapNextColumn() {
+        self.selectedColumn += .one
+    }
+
+    func didTapPreviousColumn() {
+        self.selectedColumn -= .one
     }
 }
 

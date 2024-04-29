@@ -22,7 +22,7 @@ extension WatchDashboard: View {
 
             NavigationStack {
                 ScrollView {
-                    ForEach(viewModel.firstColumnTasks, id: \.self) { task in
+                    ForEach(viewModel.tasksForSelected, id: \.self) { task in
                         NavigationLink(value: task) {
                             TaskCell(
                                 title: task.title,
@@ -53,8 +53,34 @@ extension WatchDashboard: View {
                 CompletionView(done: viewModel.doneCount, total: viewModel.totalCount)
                     .opacity(isToolbarPresented ? .one : .zero)
             }
+
+            if viewModel.selectedColumn != .zero {
+                ToolbarItem(placement: .bottomBar) {
+                    Button(action: viewModel.didTapPreviousColumn) {
+                        Image.back
+                    }
+                    .opacity(isToolbarPresented ? .one : .zero)
+                }
+            } else {
+                ToolbarItem(placement: .bottomBar) {
+                    Color.clear
+                }
+            }
+
+            if viewModel.columns.count > .one, viewModel.selectedColumn != viewModel.columns.count.previous {
+                ToolbarItem(placement: .bottomBar) {
+                    Button(action: viewModel.didTapNextColumn) {
+                        Image.next
+                    }
+                    .opacity(isToolbarPresented ? .one : .zero)
+                }
+            } else {
+                ToolbarItem(placement: .bottomBar) {
+                    Color.clear
+                }
+            }
         }
-        .navigationTitle(viewModel.firstColumnName)
+        .navigationTitle(viewModel.selectedColumnName)
         .navigationBarTitleDisplayMode(.inline)
     }
 }
