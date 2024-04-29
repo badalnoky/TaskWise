@@ -66,6 +66,7 @@
 		792242F32B232EB80004F4FC /* TaskWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792242F22B232EB80004F4FC /* TaskWidget.swift */; };
 		792242F52B232EC60004F4FC /* TaskEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792242F42B232EC60004F4FC /* TaskEntry.swift */; };
 		792242F72B232EE10004F4FC /* TaskProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792242F62B232EE10004F4FC /* TaskProvider.swift */; };
+		792736162BDFC45000F11950 /* WatchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792736152BDFC45000F11950 /* WatchRow.swift */; };
 		792E16A62B16888F005641F4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 792E16A52B16888F005641F4 /* Colors.xcassets */; };
 		792E99DA2BDB6C3F0008C7A2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 792E99D92BDB6C3F0008C7A2 /* Colors.xcassets */; };
 		792E99DE2BDB89C70008C7A2 /* CompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792E99DD2BDB89C70008C7A2 /* CompletionView.swift */; };
@@ -397,6 +398,7 @@
 		792242F22B232EB80004F4FC /* TaskWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskWidget.swift; sourceTree = "<group>"; };
 		792242F42B232EC60004F4FC /* TaskEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEntry.swift; sourceTree = "<group>"; };
 		792242F62B232EE10004F4FC /* TaskProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskProvider.swift; sourceTree = "<group>"; };
+		792736152BDFC45000F11950 /* WatchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchRow.swift; sourceTree = "<group>"; };
 		792E16A52B16888F005641F4 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		792E99D92BDB6C3F0008C7A2 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		792E99DD2BDB89C70008C7A2 /* CompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionView.swift; sourceTree = "<group>"; };
@@ -758,6 +760,14 @@
 			path = IconButton;
 			sourceTree = "<group>";
 		};
+		792736142BDFC42900F11950 /* WatchRow */ = {
+			isa = PBXGroup;
+			children = (
+				792736152BDFC45000F11950 /* WatchRow.swift */,
+			);
+			path = WatchRow;
+			sourceTree = "<group>";
+		};
 		792E99DB2BDB6CDA0008C7A2 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -770,6 +780,7 @@
 		792E99DC2BDB89B50008C7A2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				792736142BDFC42900F11950 /* WatchRow */,
 				797F3B9C2BDD82EC002226B7 /* CompletionView */,
 				797F3B9D2BDD82FD002226B7 /* TaskCell */,
 			);
@@ -2101,6 +2112,7 @@
 				79BC64242BDB5E0F0081B299 /* TaskWiseWatchApp.swift in Sources */,
 				797F3BA02BDD8343002226B7 /* TaskCell.swift in Sources */,
 				797F3C192BDD932C002226B7 /* RepeatingTask+DTO.swift in Sources */,
+				792736162BDFC45000F11950 /* WatchRow.swift in Sources */,
 				797F3BA32BDD83CD002226B7 /* TaskDetailView.swift in Sources */,
 				792E99E52BDB8B6C0008C7A2 /* WatchDashboardViewModel.swift in Sources */,
 				799AED992BDEBDBA0024144F /* Category+Mock.swift in Sources */,
