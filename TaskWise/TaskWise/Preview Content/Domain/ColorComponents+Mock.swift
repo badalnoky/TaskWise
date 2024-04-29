@@ -4,10 +4,10 @@ import SwiftUI
 extension ColorComponents {
     static var mock: ColorComponents {
         let components = ColorComponents(context: PreviewDataService.global.context)
-        components.wRed = Color.blue.components.red
-        components.wGreen = Color.blue.components.green
-        components.wBlue = Color.blue.components.blue
-        components.wAlpha = Color.blue.components.alpha
+        components.wRed = .zero
+        components.wGreen = .zero
+        components.wBlue = .one
+        components.wAlpha = .one
         return components
     }
 }

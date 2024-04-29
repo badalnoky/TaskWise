@@ -118,6 +118,15 @@ internal enum Str {
         /// chevron.up
         internal static let up = String(localized: "Icons.up", defaultValue: "chevron.up")
     }
+    internal enum Indicator {
+        /// %d/%d
+        internal static func completion(_ p1: Int, _ p2: Int) -> String {
+            _sf(
+                format: String(localized: "Indicator.completion" , defaultValue: "%d/%d"),
+                with: p1, p2
+            )
+        }
+    }
     internal enum RepeatBehaviorPicker {
         /// Back
         internal static let backButtonLabel = String(localized: "RepeatBehaviorPicker.backButtonLabel", defaultValue: "Back")

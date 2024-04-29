@@ -37,7 +37,7 @@ extension TaskProgressIndicator: View {
                 .frame(width: width)
                 .rotationEffect(.degrees(.indicatorRotation))
 
-            Text("\(done)/\(total)")
+            Text(Str.Indicator.completion(done, total))
                 .foregroundStyle(.accent)
                 .textStyle(.title)
         }

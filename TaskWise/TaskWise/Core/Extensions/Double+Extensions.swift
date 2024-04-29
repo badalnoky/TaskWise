@@ -38,3 +38,16 @@ extension Double {
         self / .maxColorValue
     }
 }
+
+public extension Double {
+    /// 0.1
+    static let watchIndicatorLowOpacity = 0.1
+    /// 0.2
+    static let watchIndicatorBaseOpacity = 0.2
+    /// 1.6
+    static let watchIndicatorHighOpacity = 1.6
+    /// 90
+    static let watchIndicatorRotation: Double = 90
+    /// 2.5
+    static let watchIndicatorImageRatio = 2.5
+}

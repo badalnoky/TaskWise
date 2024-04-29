@@ -49,6 +49,7 @@
 "Icons.search" = "magnifyingglass";
 "Icons.settings" = "gear";
 "Icons.up" = "chevron.up";
+"Indicator.completion" = "%d/%d";
 "RepeatBehaviorPicker.backButtonLabel" = "Back";
 "RepeatBehaviorPicker.customRepeatLabel" = "Repeats every";
 "RepeatBehaviorPicker.dayButtonLabel" = "%d";
