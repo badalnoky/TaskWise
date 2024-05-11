@@ -88,3 +88,6 @@
 "Task.stepsLabel" = "Steps";
 "Task.titleLabel" = "Title";
 "TaskItem.priority" = "%@ priority";
+"Watch.Widget.done" = "%d done";
+"Watch.Widget.inline" = "%d/%d tasks today";
+"Watch.Widget.today" = "%d tasks today";

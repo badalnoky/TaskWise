@@ -29,11 +29,13 @@ extension View {
             .padding(.horizontal, .padding16)
     }
 
+    #if !os(watchOS)
     func defaultListRowSettings() -> some View {
         self
             .listRowSeparator(.hidden)
             .listRowInsets(.init(top: .zero, leading: .zero, bottom: .zero, trailing: .zero))
     }
+    #endif
 
     func defaultListSettings() -> some View {
         self

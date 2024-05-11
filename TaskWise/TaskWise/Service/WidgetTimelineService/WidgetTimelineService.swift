@@ -43,11 +43,13 @@ public enum WidgetTimelineService {
 public enum TaskWiseWidgetKind {
     case completion
     case task
+    case watch
 
     var kind: String {
         switch self {
         case .completion: String.completionWidgetKind
         case .task: String.taskWidgetKind
+        case .watch: String.watchWidgetKind
         }
     }
 }

@@ -2,44 +2,48 @@ import SwiftUI
 import WidgetKit
 
 struct TaskWiseWatchWidgetEntryView: View {
-    var entry: Provider.Entry
+    @Environment(\.widgetFamily) private var family
+    var entry: CompletionProvider.Entry
 
     var body: some View {
-        VStack {
-            HStack {
-                Text("Time:")
-                Text(entry.date, style: .time)
-            }
-
-            Text("Emoji:")
-            Text(entry.emoji)
+        switch family {
+        case .accessoryCircular: CircularCompletionView(entry: entry)
+        case .accessoryRectangular: RectangularCompletionView(entry: entry)
+        case .accessoryCorner: CircularCompletionView(entry: entry)
+        default: InlineCompletionView(entry: entry)
         }
     }
 }
 
 @main
 struct TaskWiseWatchWidget: Widget {
-    let kind: String = "TaskWiseWatchWidget"
+    let kind: String = .watchWidgetKind
 
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider()) { entry in
+        StaticConfiguration(kind: kind, provider: CompletionProvider()) { entry in
             if #available(watchOS 10.0, *) {
                 TaskWiseWatchWidgetEntryView(entry: entry)
-                    .containerBackground(.fill.tertiary, for: .widget)
+                    .containerBackground(.appTint.gradient, for: .widget)
             } else {
                 TaskWiseWatchWidgetEntryView(entry: entry)
                     .padding()
                     .background()
             }
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName(String.watchWidgetConfigurationName)
+        .description(String.watchWidgetDescription)
+        .supportedFamilies(
+            [.accessoryRectangular, .accessoryCorner, .accessoryCircular, .accessoryInline]
+        )
     }
 }
 
-#Preview(as: .accessoryRectangular) {
+#Preview(as: .accessoryCircular) {
     TaskWiseWatchWidget()
 } timeline: {
-    SimpleEntry(date: .now, emoji: "😀")
-    SimpleEntry(date: .now, emoji: "🤩")
+    CompletionEntry(date: .now, completedTasks: 0, totalTasks: 0)
+    CompletionEntry(date: .now, completedTasks: 0, totalTasks: 3)
+    CompletionEntry(date: .now, completedTasks: 1, totalTasks: 3)
+    CompletionEntry(date: .now, completedTasks: 2, totalTasks: 3)
+    CompletionEntry(date: .now, completedTasks: 3, totalTasks: 3)
 }
