@@ -8,6 +8,7 @@ extension DataService {
             Calendar.current.isDate($0.date, inSameDayAs: .now)
         }
         self.todaysTasks.send(todaysTasks)
+        self.handleWidgetCompletion(taskDate: .now)
     }
 
     func fetchPriorities() {

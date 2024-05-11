@@ -236,6 +236,31 @@ internal enum Str {
             )
         }
     }
+    internal enum Watch {
+        internal enum Widget {
+            /// %d done
+            internal static func done(_ p1: Int) -> String {
+                _sf(
+                    format: String(localized: "Watch.Widget.done" , defaultValue: "%d done"),
+                    with: p1
+                )
+            }
+            /// %d/%d tasks today
+            internal static func inline(_ p1: Int, _ p2: Int) -> String {
+                _sf(
+                    format: String(localized: "Watch.Widget.inline" , defaultValue: "%d/%d tasks today"),
+                    with: p1, p2
+                )
+            }
+            /// %d tasks today
+            internal static func today(_ p1: Int) -> String {
+                _sf(
+                    format: String(localized: "Watch.Widget.today" , defaultValue: "%d tasks today"),
+                    with: p1
+                )
+            }
+        }
+    }
 }
 
 extension Str {

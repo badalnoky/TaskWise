@@ -86,6 +86,8 @@ extension CGFloat {
     static let one: CGFloat = 1
     static let colorSliderShadowRadius: CGFloat = 1
     static let baseLineWidth: CGFloat = 2
+    static let indicitorWidgetCircularWidth: CGFloat = 9
+    static let indicitorWidgetRectangularWidth: CGFloat = 7
     static let colorPickerEditingWidth: CGFloat = 3
     static let colorSliderMinOffset: CGFloat = 4
     static let componentSliderSpacing: CGFloat = 4
@@ -101,6 +103,7 @@ extension CGFloat {
     static let colorSliderHeight: CGFloat = 36
     static let colorValueTextfieldWidth: CGFloat = 56
     static let hexCodeTextfieldWidth: CGFloat = 90
+    static let indicatorWidgetSize: CGFloat = 40
 }
 
 public extension CGFloat {
