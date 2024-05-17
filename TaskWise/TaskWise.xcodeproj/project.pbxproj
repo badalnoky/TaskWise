@@ -843,7 +843,7 @@
 				793C64852AED808800C9D3FF /* EditableText */,
 				7921551E2AB9E8360044CDED /* IconButton */,
 				797EE25B2B9E6FAA002173B1 /* IntegratedColorPicker */,
-				794AC27C2BB424B400DAC0F9 /* RepeatBehaviorPicker */,
+				794AC27C2BB424B400DAC0F9 /* RepeatBehaviourPicker */,
 				798300182B17EDA10013B834 /* StepIcon */,
 				794621B52B191CC50060F6CD /* StyledDate */,
 				7983000F2B17C57D0013B834 /* StyledField */,
@@ -943,7 +943,7 @@
 			path = Modifiers;
 			sourceTree = "<group>";
 		};
-		794AC27C2BB424B400DAC0F9 /* RepeatBehaviorPicker */ = {
+		794AC27C2BB424B400DAC0F9 /* RepeatBehaviourPicker */ = {
 			isa = PBXGroup;
 			children = (
 				794AC2872BB424FD00DAC0F9 /* CustomRepeatSchedule.swift */,
@@ -953,7 +953,7 @@
 				794AC27F2BB424E000DAC0F9 /* RepeatUnit.swift */,
 				794AC27D2BB424D900DAC0F9 /* WeekDay+Extensions.swift */,
 			);
-			path = RepeatBehaviorPicker;
+			path = RepeatBehaviourPicker;
 			sourceTree = "<group>";
 		};
 		794EF1292BEF77ED00C4AE2D /* View */ = {
