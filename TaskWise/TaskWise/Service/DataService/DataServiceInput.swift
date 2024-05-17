@@ -1,5 +1,6 @@
 import Combine
 
+// sourcery: AutoMockable
 protocol DataServiceInput {
     var tasks: CurrentValueSubject<[Task], Never> { get set }
     var todaysTasks: CurrentValueSubject<[Task], Never> { get set }

@@ -933,7 +933,6 @@
 		793C648B2AED9F2200C9D3FF /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				7944D7422AF6DD59001A528D /* DataServiceInput.swift */,
 				793C648C2AED9F3800C9D3FF /* NamedItem.swift */,
 			);
 			path = Protocols;
@@ -1060,6 +1059,7 @@
 		797B4DAB2B212981001DAC30 /* DataService */ = {
 			isa = PBXGroup;
 			children = (
+				7944D7422AF6DD59001A528D /* DataServiceInput.swift */,
 				79CD54952AD33B9600D064C2 /* DataService.swift */,
 				797B4DAC2B212997001DAC30 /* DataService+Category.swift */,
 				797B4DAE2B2129A2001DAC30 /* DataService+Fetch.swift */,
@@ -1712,6 +1712,7 @@
 				3CC7A2FEB40B39D088A243F9 /* [CP] Check Pods Manifest.lock */,
 				790A81352AAE2BF100283D7E /* SwiftGen */,
 				791A06F32B89F68A0041AE42 /* StringGen */,
+				79360E042BF7A2A000F2B445 /* Sourcery */,
 				790A81302AAE223900283D7E /* SwiftLint */,
 				790A80FF2AAE19A600283D7E /* Sources */,
 				790A81002AAE19A600283D7E /* Frameworks */,
@@ -2030,6 +2031,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  ${PODS_ROOT}/SwiftGen/bin/swiftgen config run --config ${PROJECT_DIR}/stringgen.yml\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
+		};
+		79360E042BF7A2A000F2B445 /* Sourcery */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Sourcery;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "Pods/Sourcery/bin/sourcery --sources \"TaskWise/Service\" \\\n--templates \"Templates/Sourcery\" \\\n--output \"TaskWiseTests/Resources/Generated\"\n";
 		};
 		80CA417FE7CAA5314BE9DC95 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
