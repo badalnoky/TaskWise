@@ -165,11 +165,11 @@ extension Date {
         }
     }
 
-    func followingDays(amount: Int) -> Date {
+    private func followingDays(amount: Int) -> Date {
         Calendar.current.date(byAdding: .day, value: amount, to: self)!
     }
 
-    func followingMonth(startingDay: Date) -> Date {
+    private func followingMonth(startingDay: Date) -> Date {
         let startDay = Calendar.current.component(.day, from: startingDay)
         let startHour = Calendar.current.component(.hour, from: startingDay)
         let startMinute = Calendar.current.component(.minute, from: startingDay)
@@ -180,7 +180,7 @@ extension Date {
         )!
     }
 
-    func followingYear(startingDay: Date) -> Date {
+    private func followingYear(startingDay: Date) -> Date {
         let startMonth = Calendar.current.component(.month, from: startingDay)
         let startDay = Calendar.current.component(.day, from: startingDay)
         let startHour = Calendar.current.component(.hour, from: startingDay)
@@ -192,7 +192,7 @@ extension Date {
         )!
     }
 
-    func followingCustomScheduledDay(currentIndex: Int, behaviour: RepeatBehaviour, shouldSkip: Bool) -> Date {
+    private func followingCustomScheduledDay(currentIndex: Int, behaviour: RepeatBehaviour, shouldSkip: Bool) -> Date {
         let behaviourIndices = behaviour.schedule.indices
         let normalizedIndex = currentIndex % behaviourIndices.count
         let day = behaviourIndices[normalizedIndex]
