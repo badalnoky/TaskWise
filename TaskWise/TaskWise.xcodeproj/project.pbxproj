@@ -139,6 +139,12 @@
 		79785A622BFB8B78003C88D6 /* RepeatFrequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794AC2812BB424E800DAC0F9 /* RepeatFrequency.swift */; };
 		79785A632BFB8B7D003C88D6 /* CustomRepeatSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794AC2872BB424FD00DAC0F9 /* CustomRepeatSchedule.swift */; };
 		79785A642BFB8B8A003C88D6 /* RepeatUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794AC27F2BB424E000DAC0F9 /* RepeatUnit.swift */; };
+		79785A652BFB8DC6003C88D6 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798605642AD5E03C007A64B3 /* Date+Extensions.swift */; };
+		79785A662BFB8DDA003C88D6 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790C190C2AD34B52008647B8 /* Color+Extensions.swift */; };
+		79785A672BFB8DF2003C88D6 /* RGBType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797EE26A2B9E78EF002173B1 /* RGBType.swift */; };
+		79785A682BFB8E0A003C88D6 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988A0482AAE362400C63265 /* Double+Extensions.swift */; };
+		79785A692BFB8E1F003C88D6 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988A0432AAE362400C63265 /* Int+Extensions.swift */; };
+		79785A6A2BFB8E27003C88D6 /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988A0472AAE362400C63265 /* CGFloat+Extensions.swift */; };
 		797B4D742B2107D7001DAC30 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 797B4D732B2107D7001DAC30 /* WidgetKit.framework */; };
 		797B4D762B2107D7001DAC30 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 797B4D752B2107D7001DAC30 /* SwiftUI.framework */; };
 		797B4D792B2107D7001DAC30 /* TaskWiseWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797B4D782B2107D7001DAC30 /* TaskWiseWidgetBundle.swift */; };
@@ -2270,6 +2276,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				79785A532BFB8B19003C88D6 /* RepeatingTasks+CoreDataProperties.swift in Sources */,
+				79785A672BFB8DF2003C88D6 /* RGBType.swift in Sources */,
+				79785A652BFB8DC6003C88D6 /* Date+Extensions.swift in Sources */,
 				79785A4C2BFB8B05003C88D6 /* ColorComponents+CoreDataProperties.swift in Sources */,
 				79785A552BFB8B1E003C88D6 /* Task+CoreDataClass.swift in Sources */,
 				7982A4E02BF7886E00DA67D7 /* CalendarViewModelTests.swift in Sources */,
@@ -2288,12 +2296,16 @@
 				79785A602BFB8B57003C88D6 /* NamedItem.swift in Sources */,
 				79785A4F2BFB8B0D003C88D6 /* Priority+CoreDataProperties.swift in Sources */,
 				79785A582BFB8B27003C88D6 /* Task+Extensions.swift in Sources */,
+				79785A692BFB8E1F003C88D6 /* Int+Extensions.swift in Sources */,
+				79785A662BFB8DDA003C88D6 /* Color+Extensions.swift in Sources */,
+				79785A682BFB8E0A003C88D6 /* Double+Extensions.swift in Sources */,
 				79785A632BFB8B7D003C88D6 /* CustomRepeatSchedule.swift in Sources */,
 				79785A4D2BFB8B08003C88D6 /* ColorComponents+DTO.swift in Sources */,
 				79785A542BFB8B1B003C88D6 /* RepeatingTask+DTO.swift in Sources */,
 				7982A4D02BF785BD00DA67D7 /* String+ExtensionsTests.swift in Sources */,
 				79785A472BFB8AF7003C88D6 /* Category+CoreDataClass.swift in Sources */,
 				79785A5B2BFB8B30003C88D6 /* TaskColumn+Defaults.swift in Sources */,
+				79785A6A2BFB8E27003C88D6 /* CGFloat+Extensions.swift in Sources */,
 				79785A5F2BFB8B3D003C88D6 /* TaskStep+DTO.swift in Sources */,
 				7982A4E82BF788BB00DA67D7 /* TaskViewModelTests.swift in Sources */,
 				79785A4B2BFB8B03003C88D6 /* ColorComponents+CoreDataClass.swift in Sources */,
