@@ -9,8 +9,8 @@
 // swiftlint: disable: type_body_length
 // swiftlint: disable: file_length
 
-import TaskWise
 import Combine
+import TaskWise
 import UIKit
 
 class DataServiceInputMock: DataServiceInput {
