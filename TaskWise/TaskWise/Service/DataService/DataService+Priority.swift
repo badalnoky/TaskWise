@@ -11,7 +11,7 @@ extension DataService {
         fetchPriorities()
     }
 
-    func updateOrder(of priorities: [Priority]) {
+    func updateOrder(priorities: [Priority]) {
         updateIndices(on: priorities)
         fetchPriorities()
     }

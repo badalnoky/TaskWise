@@ -219,19 +219,19 @@ class DataServiceInputMock: DataServiceInput {
     }
     // MARK: - updateOrder
 
-    var updateOrderOfCallsCount = 0
-    var updateOrderOfCalled: Bool {
-        updateOrderOfCallsCount > 0
+    var updateOrderPrioritiesCallsCount = 0
+    var updateOrderPrioritiesCalled: Bool {
+        updateOrderPrioritiesCallsCount > 0
     }
-    var updateOrderOfReceivedPriorities: [Priority]?
-    var updateOrderOfReceivedInvocations: [[Priority]] = []
-    var updateOrderOfClosure: (([Priority]) -> Void)?
+    var updateOrderPrioritiesReceivedPriorities: [Priority]?
+    var updateOrderPrioritiesReceivedInvocations: [[Priority]] = []
+    var updateOrderPrioritiesClosure: (([Priority]) -> Void)?
 
-    func updateOrder(of priorities: [Priority]) {
-        updateOrderOfCallsCount += 1
-        updateOrderOfReceivedPriorities = priorities
-        updateOrderOfReceivedInvocations.append(priorities)
-        updateOrderOfClosure?(priorities)
+    func updateOrder(priorities: [Priority]) {
+        updateOrderPrioritiesCallsCount += 1
+        updateOrderPrioritiesReceivedPriorities = priorities
+        updateOrderPrioritiesReceivedInvocations.append(priorities)
+        updateOrderPrioritiesClosure?(priorities)
     }
     // MARK: - deletePriority
 
@@ -427,19 +427,19 @@ class DataServiceInputMock: DataServiceInput {
     }
     // MARK: - updateOrder
 
-    var updateOrderOfCallsCount = 0
-    var updateOrderOfCalled: Bool {
-        updateOrderOfCallsCount > 0
+    var updateOrderColumnsCallsCount = 0
+    var updateOrderColumnsCalled: Bool {
+        updateOrderColumnsCallsCount > 0
     }
-    var updateOrderOfReceivedColumns: [TaskColumn]?
-    var updateOrderOfReceivedInvocations: [[TaskColumn]] = []
-    var updateOrderOfClosure: (([TaskColumn]) -> Void)?
+    var updateOrderColumnsReceivedColumns: [TaskColumn]?
+    var updateOrderColumnsReceivedInvocations: [[TaskColumn]] = []
+    var updateOrderColumnsClosure: (([TaskColumn]) -> Void)?
 
-    func updateOrder(of columns: [TaskColumn]) {
-        updateOrderOfCallsCount += 1
-        updateOrderOfReceivedColumns = columns
-        updateOrderOfReceivedInvocations.append(columns)
-        updateOrderOfClosure?(columns)
+    func updateOrder(columns: [TaskColumn]) {
+        updateOrderColumnsCallsCount += 1
+        updateOrderColumnsReceivedColumns = columns
+        updateOrderColumnsReceivedInvocations.append(columns)
+        updateOrderColumnsClosure?(columns)
     }
     // MARK: - deleteColumn
 
