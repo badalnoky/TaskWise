@@ -2,15 +2,10 @@
 import XCTest
 
 final class RepeatUnitTests: XCTestCase {
-    override func setUpWithError() throws {
-        try super.setUpWithError()
-    }
-
-    override func tearDownWithError() throws {
-        try super.tearDownWithError()
-    }
-
     func test_decode_shouldReturnRepeatUnit() throws {
-        XCTAssert(false)
+        XCTAssertEqual(RepeatUnit.decode("D"), .day)
+        XCTAssertEqual(RepeatUnit.decode("W"), .week)
+        XCTAssertEqual(RepeatUnit.decode("M"), .month)
+        XCTAssertEqual(RepeatUnit.decode("Invalid"), .day)
     }
 }
