@@ -1,13 +1,23 @@
 @testable import TaskWise
 import XCTest
 
+// swiftlint:disable: implicitly_unwrapped_optional
 final class TaskViewModelTests: XCTestCase {
+    private var sut: TaskViewModel!
+    private var dataService: DataServiceInputMock!
+
     override func setUpWithError() throws {
         try super.setUpWithError()
+
+        dataService = .init()
+        sut = .init(navigator: .init(sceneFactory: .init(), root: .dashboard), taskId: UUID())
     }
 
     override func tearDownWithError() throws {
         try super.tearDownWithError()
+
+        sut = nil
+        dataService = nil
     }
 
     func test_didTapEdit_shouldToggleEditmode() throws {
