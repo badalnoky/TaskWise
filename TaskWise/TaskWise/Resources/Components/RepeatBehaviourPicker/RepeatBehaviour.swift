@@ -5,10 +5,10 @@ public struct RepeatBehaviour {
     var end: Date
     var schedule: CustomRepeatSchedule
 
-    init(frequency: RepeatFrequency, end: Date, shedule: CustomRepeatSchedule) {
+    init(frequency: RepeatFrequency, end: Date, schedule: CustomRepeatSchedule) {
         self.frequency = frequency
         self.end = end
-        self.schedule = shedule
+        self.schedule = schedule
     }
 }
 
@@ -23,7 +23,7 @@ extension RepeatBehaviour {
         RepeatBehaviour(
             frequency: .never,
             end: .now,
-            shedule: .empty
+            schedule: .empty
         )
     }
 
@@ -41,6 +41,6 @@ extension RepeatBehaviour {
         if frequency == .custom {
             schedule = CustomRepeatSchedule.decode(String(elements[.one]))
         }
-        return RepeatBehaviour(frequency: frequency, end: endDate, shedule: schedule)
+        return RepeatBehaviour(frequency: frequency, end: endDate, schedule: schedule)
     }
 }
