@@ -10,7 +10,10 @@ final class DashboardViewModelTests: XCTestCase {
         try super.setUpWithError()
 
         dataService = .init()
-        sut = .init(navigator: .init(sceneFactory: .init(), root: .dashboard))
+        sut = .init(
+            navigator: .init(sceneFactory: .init(), root: .dashboard),
+            dataService: dataService
+        )
     }
 
     override func tearDownWithError() throws {

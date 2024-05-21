@@ -8,7 +8,6 @@
 // swiftlint: disable: file_length
 
 import Combine
-import TaskWise
 import UIKit
 
 {% for import in argument.autoMockableImports %}

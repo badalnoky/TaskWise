@@ -10,7 +10,11 @@ final class TaskViewModelTests: XCTestCase {
         try super.setUpWithError()
 
         dataService = .init()
-        sut = .init(navigator: .init(sceneFactory: .init(), root: .dashboard), taskId: UUID())
+        sut = .init(
+            navigator: .init(sceneFactory: .init(), root: .dashboard),
+            dataService: dataService,
+            taskId: UUID()
+        )
     }
 
     override func tearDownWithError() throws {

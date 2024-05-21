@@ -70,6 +70,7 @@
 		792E99DA2BDB6C3F0008C7A2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 792E99D92BDB6C3F0008C7A2 /* Colors.xcassets */; };
 		792E99DE2BDB89C70008C7A2 /* CompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792E99DD2BDB89C70008C7A2 /* CompletionView.swift */; };
 		792E99E52BDB8B6C0008C7A2 /* WatchDashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792E99E42BDB8B6C0008C7A2 /* WatchDashboardViewModel.swift */; };
+		7932A8EC2BFCF9B000846371 /* AutoMockable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7932A8EB2BFCF9B000846371 /* AutoMockable.generated.swift */; };
 		793C64872AED80BC00C9D3FF /* EditableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793C64862AED80BC00C9D3FF /* EditableText.swift */; };
 		793C648A2AED9E7300C9D3FF /* CategoryColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793C64892AED9E7300C9D3FF /* CategoryColorPicker.swift */; };
 		793C648D2AED9F3800C9D3FF /* NamedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793C648C2AED9F3800C9D3FF /* NamedItem.swift */; };
@@ -107,7 +108,6 @@
 		79616F482AC5CD4000F4A95C /* CloudItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79616F472AC5CD4000F4A95C /* CloudItem.swift */; };
 		79616F4A2AC5CE0000F4A95C /* CloudError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79616F492AC5CE0000F4A95C /* CloudError.swift */; };
 		79616F4C2AC5CE7700F4A95C /* CloudKitHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79616F4B2AC5CE7700F4A95C /* CloudKitHandler.swift */; };
-		79785A452BFB7FF8003C88D6 /* AutoMockable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79785A442BFB7FF8003C88D6 /* AutoMockable.generated.swift */; };
 		79785A462BFB8ABD003C88D6 /* DataServiceInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7944D7422AF6DD59001A528D /* DataServiceInput.swift */; };
 		79785A472BFB8AF7003C88D6 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54912AD33B9600D064C2 /* Category+CoreDataClass.swift */; };
 		79785A482BFB8AFA003C88D6 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54902AD33B9600D064C2 /* Category+CoreDataProperties.swift */; };
@@ -537,6 +537,7 @@
 		792E99DD2BDB89C70008C7A2 /* CompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionView.swift; sourceTree = "<group>"; };
 		792E99E42BDB8B6C0008C7A2 /* WatchDashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDashboardViewModel.swift; sourceTree = "<group>"; };
 		792EE6B22BDEC932000814D9 /* TaskWiseWatch Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TaskWiseWatch Watch App.entitlements"; sourceTree = "<group>"; };
+		7932A8EB2BFCF9B000846371 /* AutoMockable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoMockable.generated.swift; sourceTree = "<group>"; };
 		793C64862AED80BC00C9D3FF /* EditableText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableText.swift; sourceTree = "<group>"; };
 		793C64892AED9E7300C9D3FF /* CategoryColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryColorPicker.swift; sourceTree = "<group>"; };
 		793C648C2AED9F3800C9D3FF /* NamedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedItem.swift; sourceTree = "<group>"; };
@@ -573,7 +574,6 @@
 		79616F472AC5CD4000F4A95C /* CloudItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudItem.swift; sourceTree = "<group>"; };
 		79616F492AC5CE0000F4A95C /* CloudError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudError.swift; sourceTree = "<group>"; };
 		79616F4B2AC5CE7700F4A95C /* CloudKitHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitHandler.swift; sourceTree = "<group>"; };
-		79785A442BFB7FF8003C88D6 /* AutoMockable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoMockable.generated.swift; sourceTree = "<group>"; };
 		797B4D722B2107D7001DAC30 /* TaskWiseWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TaskWiseWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		797B4D732B2107D7001DAC30 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		797B4D752B2107D7001DAC30 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -953,6 +953,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		7932A8EA2BFCF9B000846371 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				7932A8EB2BFCF9B000846371 /* AutoMockable.generated.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		793C64852AED808800C9D3FF /* EditableText */ = {
 			isa = PBXGroup;
 			children = (
@@ -1061,14 +1069,6 @@
 				79616F4B2AC5CE7700F4A95C /* CloudKitHandler.swift */,
 			);
 			path = ICloud;
-			sourceTree = "<group>";
-		};
-		79785A432BFB7FF8003C88D6 /* Generated */ = {
-			isa = PBXGroup;
-			children = (
-				79785A442BFB7FF8003C88D6 /* AutoMockable.generated.swift */,
-			);
-			path = Generated;
 			sourceTree = "<group>";
 		};
 		797B4D772B2107D7001DAC30 /* TaskWiseWidget */ = {
@@ -1218,7 +1218,6 @@
 		7982A4D22BF786D700DA67D7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				79785A432BFB7FF8003C88D6 /* Generated */,
 				7982A4D32BF786E600DA67D7 /* Components */,
 			);
 			path = Resources;
@@ -1315,6 +1314,7 @@
 		7988A02F2AAE2FB100C63265 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
+				7932A8EA2BFCF9B000846371 /* Mocks */,
 				7983000A2B17C0D10013B834 /* Fonts.swift */,
 				7988A0322AAE307E00C63265 /* Localized.swift */,
 			);
@@ -2097,7 +2097,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "Pods/Sourcery/bin/sourcery --sources \"TaskWise/Service\" \\\n--templates \"Templates/Sourcery\" \\\n--output \"TaskWiseTests/Resources/Generated\"\n";
+			shellScript = "Pods/Sourcery/bin/sourcery --sources \"TaskWise/Service\" \\\n--templates \"Templates/Sourcery\" \\\n--output \"TaskWise/Resources/Generated/Mocks\"\n";
 		};
 		80CA417FE7CAA5314BE9DC95 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2226,6 +2226,7 @@
 				791A06F92B8A02E20041AE42 /* UserSettings+CoreDataClass.swift in Sources */,
 				7988A03E2AAE35C200C63265 /* Coordinator.swift in Sources */,
 				79A519902B1BA29F00B0EEC2 /* ListButtonStyle.swift in Sources */,
+				7932A8EC2BFCF9B000846371 /* AutoMockable.generated.swift in Sources */,
 				798605612AD5C00B007A64B3 /* Task+DTO.swift in Sources */,
 				79E14ACA2AE40B1000FF730D /* TaskStepView.swift in Sources */,
 				795CC8EC2ABAF28A0093C4BC /* SettingsViewModel+Mock.swift in Sources */,
@@ -2323,7 +2324,6 @@
 				79785A502BFB8B10003C88D6 /* Priority+Defaults.swift in Sources */,
 				79785A622BFB8B78003C88D6 /* RepeatFrequency.swift in Sources */,
 				79785A592BFB8B2B003C88D6 /* TaskColumn+CoreDataClass.swift in Sources */,
-				79785A452BFB7FF8003C88D6 /* AutoMockable.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

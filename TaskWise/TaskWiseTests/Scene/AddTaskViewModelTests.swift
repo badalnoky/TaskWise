@@ -10,7 +10,11 @@ final class AddTaskViewModelTests: XCTestCase {
         try super.setUpWithError()
 
         dataService = .init()
-        sut = .init(navigator: .init(sceneFactory: .init(), root: .dashboard), date: .now)
+        sut = .init(
+            navigator: .init(sceneFactory: .init(), root: .dashboard),
+            dataService: self.dataService,
+            date: .now
+        )
     }
 
     override func tearDownWithError() throws {
@@ -21,7 +25,9 @@ final class AddTaskViewModelTests: XCTestCase {
     }
 
     func test_didTapCreate_shouldInvokeDataServiceCreateTasks() throws {
-        XCTAssert(false)
+        sut.didTapCreate()
+
+        XCTAssert(dataService.createTasksFromWithCalled)
     }
 
     func test_didTapAddStep_shouldAddStep() throws {
