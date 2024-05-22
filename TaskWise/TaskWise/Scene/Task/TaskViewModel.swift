@@ -7,7 +7,7 @@ import SwiftUI
     private let dataService: DataServiceInput
     private var cancellables = Set<AnyCancellable>()
     private var taskId: UUID
-    private var task = Task()
+    private var task = DataServiceInputMock.taskMock
 
     var editMode: EditMode = .inactive
     var isDeleteAlertPresented = false
@@ -31,11 +31,11 @@ import SwiftUI
     var title: String = .empty
     var description: String = .empty
     var priorities: [Priority] = []
-    var selectedPriority = Priority()
+    var selectedPriority = DataServiceInputMock.priorityMock
     var categories: [Category] = []
-    var selectedCategory = Category()
+    var selectedCategory = DataServiceInputMock.categoryMock
     var columns: [TaskColumn] = []
-    var selectedColumn = TaskColumn()
+    var selectedColumn = DataServiceInputMock.columnMock
     var allDay = false
     var starts: Date = .now
     var ends: Date = .now.advanced(by: .hour)

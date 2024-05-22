@@ -10,10 +10,16 @@ final class TaskViewModelTests: XCTestCase {
         try super.setUpWithError()
 
         dataService = .init()
+        dataService.priorities = .init([DataServiceInputMock.priorityMock])
+        dataService.categories = .init([DataServiceInputMock.categoryMock])
+        dataService.columns = .init([DataServiceInputMock.columnMock])
+        dataService.tasks = .init([DataServiceInputMock.repeatedTaskMock])
+        dataService.currentSteps = .init([DataServiceInputMock.stepMock])
+
         sut = .init(
             navigator: .init(sceneFactory: .init(), root: .dashboard),
             dataService: dataService,
-            taskId: UUID()
+            taskId: DataServiceInputMock.taskMock.id
         )
     }
 
@@ -25,7 +31,9 @@ final class TaskViewModelTests: XCTestCase {
     }
 
     func test_didTapEdit_shouldToggleEditmode() throws {
-        XCTAssert(false)
+        sut.didTapEdit()
+
+        XCTAssertEqual(sut.editMode, .active)
     }
 
     func test_didTapAction_whenCalledWhileIsEditebleAndIsRepeatingAreSet_shouldSetIsUpdateAlertPresented() throws {
@@ -33,7 +41,9 @@ final class TaskViewModelTests: XCTestCase {
     }
 
     func test_didTapAction_whenCalledWhileIsEditebleAndIsRepeatingAreNotSet_ishouldSetIsDeleteAlertPresented() throws {
-        XCTAssert(false)
+        sut.didTapAction()
+
+        XCTAssert(sut.isDeleteAlertPresented)
     }
 
     func test_didTapAction_whenCalledWithRepeatingBehaviourSet_shouldInvokeDataServiceCreateTasks() throws {
@@ -53,11 +63,15 @@ final class TaskViewModelTests: XCTestCase {
     }
 
     func test_didTapUpdateOnlyThis_whenCalled_shouldInvokeDataServiceUpdateTask() throws {
-        XCTAssert(false)
+        sut.didTapUpdateOnlyThis()
+
+        XCTAssert(dataService.updateTaskWithCalled)
     }
 
     func test_didTapDelete_whenCalled_shouldInvokeDataServiceDeleteTask() throws {
-        XCTAssert(false)
+        sut.didTapDelete()
+
+        XCTAssert(dataService.deleteTaskCalled)
     }
 
     func test_didTapDeleteRepeating_whenCalled_shouldInvokeDataServiceDeleteRepeatingTasks() throws {
@@ -65,7 +79,9 @@ final class TaskViewModelTests: XCTestCase {
     }
 
     func test_didTapToggle_whenCalled_shouldInvokeDataServiceToggleIsDone() throws {
-        XCTAssert(false)
+        sut.didTapToggle(on: DataServiceInputMock.stepMock)
+
+        XCTAssert(dataService.toggleIsDoneOnForCalled)
     }
 
     func test_didChangeLabel_whenCalledWithRepeatingTask_shouldInvokeDataServiceUpdateStepLabelForRepeating() throws {
@@ -73,7 +89,9 @@ final class TaskViewModelTests: XCTestCase {
     }
 
     func test_didChangeLabel_whenCalledWithNonRepeatingTask_shouldInvokeDataServiceUpdateStepLabel() throws {
-        XCTAssert(false)
+        sut.didChangeLabel(on: DataServiceInputMock.stepMock, to: .empty)
+
+        XCTAssert(dataService.updateStepLabelOnToCalled)
     }
 
     func test_didTapDeleteSteps_whenCalledWithRepeatingTask_shouldInvokeDataServiceDeleteStepForRepeating() throws {
@@ -81,7 +99,9 @@ final class TaskViewModelTests: XCTestCase {
     }
 
     func test_didTapDeleteSteps_whenCalledWithNonRepeatingTask_shouldInvokeDataServiceDelete() throws {
-        XCTAssert(false)
+        sut.didTapDeleteSteps(offsets: [0])
+
+        XCTAssert(dataService.deleteStepFromCalled)
     }
 
     func test_didMoveStep_whenCalledWithRepeatingTask_shouldInvokeDataServiceUpdateStepOrderForRepeating() throws {
@@ -89,7 +109,9 @@ final class TaskViewModelTests: XCTestCase {
     }
 
     func test_didMoveStep_whenCalledWithNonRepeatingTask_shouldInvokeDataServiceUpdateOrder() throws {
-        XCTAssert(false)
+        sut.didMoveStep(source: [0], destination: 1)
+
+        XCTAssert(dataService.updateOrderOfOnCalled)
     }
 
     func test_didTapAddStep_whenCalledWithRepeatingTask_shouldInvokeDataServiceAddStepToRepeating() throws {
@@ -97,6 +119,8 @@ final class TaskViewModelTests: XCTestCase {
     }
 
     func test_didTapAddStep_whenCalledWithNonRepeatingTask_shouldInvokeDataServiceAddStepFrom() throws {
-        XCTAssert(false)
+        sut.didTapAddStep()
+
+        XCTAssert(dataService.addStepFromDtoToCalled)
     }
 }
