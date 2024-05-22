@@ -7,7 +7,7 @@ import SwiftUI
     private let dataService: DataServiceInput
     private var cancellables = Set<AnyCancellable>()
     private var taskId: UUID
-    private var task = DataServiceInputMock.taskMock
+    var task = DataServiceInputMock.repeatedTaskMock
 
     var editMode: EditMode = .inactive
     var isDeleteAlertPresented = false

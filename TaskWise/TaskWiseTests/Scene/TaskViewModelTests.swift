@@ -37,29 +37,37 @@ final class TaskViewModelTests: XCTestCase {
     }
 
     func test_didTapAction_whenCalledWhileIsEditebleAndIsRepeatingAreSet_shouldSetIsUpdateAlertPresented() throws {
-        XCTAssert(false)
+        sut.didTapEdit()
+
+        sut.didTapAction()
+
+        XCTAssert(sut.isUpdateAlertPresented)
     }
 
     func test_didTapAction_whenCalledWhileIsEditebleAndIsRepeatingAreNotSet_ishouldSetIsDeleteAlertPresented() throws {
+        sut.task = DataServiceInputMock.taskMock
         sut.didTapAction()
 
         XCTAssert(sut.isDeleteAlertPresented)
     }
 
     func test_didTapAction_whenCalledWithRepeatingBehaviourSet_shouldInvokeDataServiceCreateTasks() throws {
-        XCTAssert(false)
+        sut.task = DataServiceInputMock.taskMock
+        sut.repeatBehaviour.frequency = .daily
+        sut.didTapEdit()
+
+        sut.didTapAction()
+
+        XCTAssert(dataService.createTasksFromWithIncludingCalled)
     }
 
     func test_didTapAction_whenCalledWithNonRepeating_shouldInvokeDataServiceUpdateTask() throws {
-        XCTAssert(false)
-    }
+        sut.task = DataServiceInputMock.taskMock
+        sut.didTapEdit()
 
-    func test_didTapUpdateAll_whenCalledWithChangedBehaviour_shouldInvokeDataServiceReschedulRepeatingTasks() throws {
-        XCTAssert(false)
-    }
+        sut.didTapAction()
 
-    func test_didTapUpdateAll_whenCalledWithUnchangedBehaviour_shouldInvokeDataServiceUpdateRepeatingTasks() throws {
-        XCTAssert(false)
+        XCTAssert(dataService.updateTaskWithCalled)
     }
 
     func test_didTapUpdateOnlyThis_whenCalled_shouldInvokeDataServiceUpdateTask() throws {
@@ -75,7 +83,9 @@ final class TaskViewModelTests: XCTestCase {
     }
 
     func test_didTapDeleteRepeating_whenCalled_shouldInvokeDataServiceDeleteRepeatingTasks() throws {
-        XCTAssert(false)
+        sut.didTapDeleteRepeating()
+
+        XCTAssert(dataService.deleteRepeatingTasksCalled)
     }
 
     func test_didTapToggle_whenCalled_shouldInvokeDataServiceToggleIsDone() throws {
@@ -85,40 +95,55 @@ final class TaskViewModelTests: XCTestCase {
     }
 
     func test_didChangeLabel_whenCalledWithRepeatingTask_shouldInvokeDataServiceUpdateStepLabelForRepeating() throws {
-        XCTAssert(false)
+        sut.didChangeLabel(on: DataServiceInputMock.stepMock, to: .empty)
+
+        XCTAssert(dataService.updateStepLabelForRepeatingOnToCalled)
     }
 
     func test_didChangeLabel_whenCalledWithNonRepeatingTask_shouldInvokeDataServiceUpdateStepLabel() throws {
+        sut.task = DataServiceInputMock.taskMock
         sut.didChangeLabel(on: DataServiceInputMock.stepMock, to: .empty)
 
         XCTAssert(dataService.updateStepLabelOnToCalled)
     }
 
     func test_didTapDeleteSteps_whenCalledWithRepeatingTask_shouldInvokeDataServiceDeleteStepForRepeating() throws {
-        XCTAssert(false)
+        sut.task = DataServiceInputMock.repeatedTaskMock
+        sut.didTapDeleteSteps(offsets: [0])
+
+        XCTAssert(dataService.deleteStepForRepeatingStepCalled)
     }
 
     func test_didTapDeleteSteps_whenCalledWithNonRepeatingTask_shouldInvokeDataServiceDelete() throws {
+        sut.task = DataServiceInputMock.taskMock
         sut.didTapDeleteSteps(offsets: [0])
 
         XCTAssert(dataService.deleteStepFromCalled)
     }
 
     func test_didMoveStep_whenCalledWithRepeatingTask_shouldInvokeDataServiceUpdateStepOrderForRepeating() throws {
-        XCTAssert(false)
+        sut.task = DataServiceInputMock.repeatedTaskMock
+        sut.didMoveStep(source: [0], destination: 1)
+
+        XCTAssert(dataService.updateStepOrderForRepeatingToCalled)
     }
 
     func test_didMoveStep_whenCalledWithNonRepeatingTask_shouldInvokeDataServiceUpdateOrder() throws {
+        sut.task = DataServiceInputMock.taskMock
         sut.didMoveStep(source: [0], destination: 1)
 
         XCTAssert(dataService.updateOrderOfOnCalled)
     }
 
     func test_didTapAddStep_whenCalledWithRepeatingTask_shouldInvokeDataServiceAddStepToRepeating() throws {
-        XCTAssert(false)
+        sut.task = DataServiceInputMock.repeatedTaskMock
+        sut.didTapAddStep()
+
+        XCTAssert(dataService.addStepToRepeatingStepCalled)
     }
 
     func test_didTapAddStep_whenCalledWithNonRepeatingTask_shouldInvokeDataServiceAddStepFrom() throws {
+        sut.task = DataServiceInputMock.taskMock
         sut.didTapAddStep()
 
         XCTAssert(dataService.addStepFromDtoToCalled)
