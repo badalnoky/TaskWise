@@ -10,6 +10,10 @@ final class SettingsViewModelTests: XCTestCase {
         try super.setUpWithError()
 
         dataService = .init()
+        dataService.priorities = .init([DataServiceInputMock.priorityMock])
+        dataService.categories = .init([DataServiceInputMock.categoryMock])
+        dataService.columns = .init([DataServiceInputMock.columnMock])
+
         sut = .init(
             navigator: .init(sceneFactory: .init(), root: .dashboard),
             dataService: dataService
@@ -24,78 +28,123 @@ final class SettingsViewModelTests: XCTestCase {
     }
 
     func test_didTapAddCategory_whenCalled_shouldInvokeDataServiceAddCategory() throws {
-        XCTAssert(false)
+        sut.didTapAddCategory()
+
+        XCTAssert(dataService.addCategoryCalled)
     }
 
     func test_didTapAddColumn_whenCalled_shouldInvokeDataServiceAddColumn() throws {
-        XCTAssert(false)
+        sut.didTapAddColumn()
+
+        XCTAssert(dataService.addColumnCalled)
     }
 
     func test_didTapAddPriority_whenCalled_shouldInvokeDataServiceAddPriority() throws {
-        XCTAssert(false)
+        sut.didTapAddPriority()
+
+        XCTAssert(dataService.addPriorityCalled)
     }
 
     func test_didChangeName_whenCalledWithPriority_shouldInvokeDataServiceUpdatePriorityName() throws {
-        XCTAssert(false)
+        sut.didChangeName(of: DataServiceInputMock.priorityMock, to: .empty)
+
+        XCTAssert(dataService.updatePriorityNameOnToCalled)
     }
 
     func test_didChangeName_whenCalledWithCategory_shouldInvokeDataServiceUpdateCategoryName() throws {
-        XCTAssert(false)
+        sut.didChangeName(of: DataServiceInputMock.categoryMock, to: .empty)
+
+        XCTAssert(dataService.updateCategoryNameOnToCalled)
     }
 
     func test_didChangeName_whenCalledWithColumn_shouldInvokeDataServiceUpdateColumnName() throws {
-        XCTAssert(false)
+        sut.didChangeName(of: DataServiceInputMock.columnMock, to: .empty)
+
+        XCTAssert(dataService.updateColumnNameOnToCalled)
     }
 
     func test_didMoveColumn_whenCalled_shouldInvokeDataServiceUpdateOrder() throws {
-        XCTAssert(false)
+        sut.didMoveColumn(source: [0], destination: 1)
+
+        XCTAssert(dataService.updateOrderColumnsCalled)
     }
 
     func test_didMovePriority_whenCalled_shouldInvokeDataServiceUpdateOrder() throws {
-        XCTAssert(false)
+        sut.didMovePriority(source: [0], destination: 1)
+
+        XCTAssert(dataService.updateOrderPrioritiesCalled)
     }
 
-    func test_didChangeColor_whenCalled_shouldInvokeDataServiceUpdateOrder() throws {
-        XCTAssert(false)
+    func test_didChangeColor_whenCalled_shouldInvokeDataServiceUpdateColor() throws {
+        sut.didChangeColor(on: DataServiceInputMock.categoryMock, to: .init(red: 1, green: 1, blue: 1, alpha: 1))
+
+        XCTAssert(dataService.updateColorOnWithCalled)
     }
 
     func test_didTapDeleteCategory_whenCalled_shouldInvokeDataServiceDeleteCategory() throws {
-        XCTAssert(false)
+        sut.didTapDeleteCategory(offsets: [0])
+
+        XCTAssert(dataService.deleteCategoryCalled)
     }
 
     func test_didTapDeleteColumn_whenCalled_shouldInvokeDataServiceDeleteColumn() throws {
-        XCTAssert(false)
+        sut.didTapDeleteColumn(offsets: [0])
+
+        XCTAssert(dataService.deleteColumnCalled)
     }
 
     func test_didTapDeletePriority_whenCalled_shouldInvokeDataServiceDeletePriority() throws {
-        XCTAssert(false)
+        sut.didTapDeletePriority(offsets: [0])
+
+        XCTAssert(dataService.deletePriorityCalled)
     }
 
     func test_didTapEdit_whenCalledWhileCurretTabIsPriority_shouldTogglePriorityEditMode() throws {
-        XCTAssert(false)
+        sut.currentTab = .priority
+        sut.didTapEdit()
+
+        XCTAssertEqual(sut.priorityEditMode, .active)
     }
 
     func test_didTapEdit_whenCalledWhileCurretTabIsColumn_shouldToggleColumnEditMode() throws {
-        XCTAssert(false)
+        sut.currentTab = .column
+        sut.didTapEdit()
+
+        XCTAssertEqual(sut.columnEditMode, .active)
     }
 
     func test_didTapEdit_whenCalledWhileCurretTabIsCategory_shouldToggleCategoryEditMode() throws {
-        XCTAssert(false)
+        sut.currentTab = .category
+        sut.didTapEdit()
+
+        XCTAssertEqual(sut.categoryEditMode, .active)
     }
 
     func test_didTapAdd_whenCalledWhileCurretTabIsPriority_shouldSetIsNewPrioritySheetPresented() throws {
-        XCTAssert(false)
+        sut.currentTab = .priority
+        sut.didTapAdd()
+
+        XCTAssert(sut.isNewPrioritySheetPresented)
     }
 
     func test_didTapAdd_whenCalledWhileCurretTabIsColumn_shouldSetIsNewColumnSheetPresented() throws {
-        XCTAssert(false)
+        sut.currentTab = .column
+        sut.didTapAdd()
+
+        XCTAssert(sut.isNewColumnSheetPresented)
     }
 
     func test_didTapAdd_whenCalledWhileCurretTabIsCategory_shouldSetIsNewCategorySheetPresented() throws {
-        XCTAssert(false)
+        sut.currentTab = .category
+        sut.didTapAdd()
+
+        XCTAssert(sut.isNewCategorySheetPresented)
     }
 
     func test_didFinish_whenCalled_shouldInvokeDataServiceFetchTasks() throws {
-        XCTAssert(false)
+        sut.didChangeName(of: DataServiceInputMock.categoryMock, to: .empty)
+        sut.didFinish()
+
+        XCTAssert(dataService.fetchTasksCalled)
     }
 }

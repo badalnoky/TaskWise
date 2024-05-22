@@ -1,3 +1,4 @@
+import Combine
 @testable import TaskWise
 import XCTest
 
@@ -10,6 +11,10 @@ final class AddTaskViewModelTests: XCTestCase {
         try super.setUpWithError()
 
         dataService = .init()
+        dataService.priorities = .init([DataServiceInputMock.priorityMock])
+        dataService.categories = .init([DataServiceInputMock.categoryMock])
+        dataService.columns = .init([DataServiceInputMock.columnMock])
+
         sut = .init(
             navigator: .init(sceneFactory: .init(), root: .dashboard),
             dataService: self.dataService,
@@ -31,18 +36,41 @@ final class AddTaskViewModelTests: XCTestCase {
     }
 
     func test_didTapAddStep_shouldAddStep() throws {
-        XCTAssert(false)
+        sut.newStepName = "NewStepName"
+        sut.didTapAddStep()
+
+        XCTAssertEqual(sut.steps, [.init(isDone: false, label: "NewStepName", index: 0)])
     }
 
     func test_didTapDeleteSteps_shouldRemoveStep() throws {
-        XCTAssert(false)
+        sut.steps.append(.init(isDone: false, label: "NewStepName", index: 0))
+        sut.didTapDeleteSteps(offsets: [0])
+
+        XCTAssert(sut.steps.isEmpty)
     }
 
     func test_didMoveStep_shouldReorderSteps() throws {
-        XCTAssert(false)
+        sut.steps.append(.init(isDone: false, label: "NewStepName1", index: 0))
+        sut.steps.append(.init(isDone: false, label: "NewStepName2", index: 1))
+
+        sut.didMoveStep(source: [0], destination: 2)
+
+        XCTAssertEqual(sut.steps, [
+            .init(isDone: false, label: "NewStepName2", index: 0),
+            .init(isDone: false, label: "NewStepName1", index: 1)
+        ])
     }
 
     func test_didTapToggle_shouldToggleIsDone() throws {
-        XCTAssert(false)
+        sut.steps.append(.init(isDone: false, label: "NewStepName1", index: 0))
+
+        sut.didTapToggle(on: .init(isDone: false, label: "NewStepName1", index: 0))
+
+        guard let step = sut.steps.first else {
+            XCTFail("Should succeed!")
+            return
+        }
+
+        XCTAssert(step.isDone)
     }
 }

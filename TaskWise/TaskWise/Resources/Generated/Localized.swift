@@ -61,6 +61,8 @@ internal enum Str {
         internal static let containerFailureMessage = String(localized: "DataService.containerFailureMessage", defaultValue: "Core Data failed to load!")
         /// TaskWise
         internal static let containerName = String(localized: "DataService.containerName", defaultValue: "TaskWise")
+        /// TaskWiseMock
+        internal static let mockContainer = String(localized: "DataService.mockContainer", defaultValue: "TaskWiseMock")
         /// PreviewTaskWise
         internal static let previewContainerName = String(localized: "DataService.previewContainerName", defaultValue: "PreviewTaskWise")
         /// Could not save the context!
