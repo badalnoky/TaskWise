@@ -49,7 +49,7 @@ class PreviewDataService: DataServiceInput {
     func deleteCategory(_ category: Category) {}
     func addPriority(_ priority: Priority.DTO) {}
     func updatePriorityName(on priority: Priority, to newName: String) {}
-    func updateOrder(of priorities: [Priority]) {}
+    func updateOrder(priorities: [Priority]) {}
     func deletePriority(_ priority: Priority) {}
     func addTask(_ task: Task.DTO) {}
     func updateTask(_ task: Task, with updated: Task.DTO) {}
@@ -62,7 +62,7 @@ class PreviewDataService: DataServiceInput {
     func deleteTask(_ task: Task) {}
     func addColumn(_ column: TaskColumn.DTO) {}
     func updateColumnName(on column: TaskColumn, to newName: String) {}
-    func updateOrder(of columns: [TaskColumn]) {}
+    func updateOrder(columns: [TaskColumn]) {}
     func deleteColumn(_ column: TaskColumn) {}
     func fetchRepeatingTasks() {}
     func createTasks(from task: Task.DTO, with behaviour: RepeatBehaviour) {}

@@ -254,6 +254,17 @@
         }
       }
     },
+    "DataService.mockContainer" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TaskWiseMock"
+          }
+        }
+      }
+    },
     "DataService.previewContainerName" : {
       "extractionState" : "manual",
       "localizations" : {

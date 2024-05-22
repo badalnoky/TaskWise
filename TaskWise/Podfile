@@ -8,6 +8,7 @@ target 'TaskWise' do
   pod 'Resolver'
   pod 'SwiftGen'
   pod 'SwiftLint'
+  pod 'Sourcery'
 end
 
 target 'TaskWiseTests' do

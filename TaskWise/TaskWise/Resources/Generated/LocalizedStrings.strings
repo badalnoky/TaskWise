@@ -25,6 +25,7 @@
 "Dashboard.title" = "Today";
 "DataService.containerFailureMessage" = "Core Data failed to load!";
 "DataService.containerName" = "TaskWise";
+"DataService.mockContainer" = "TaskWiseMock";
 "DataService.previewContainerName" = "PreviewTaskWise";
 "DataService.saveFailureMessage" = "Could not save the context!";
 "DatePicker.allDayLabel" = "All-day";

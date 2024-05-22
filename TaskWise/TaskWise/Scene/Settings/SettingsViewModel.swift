@@ -76,14 +76,14 @@ extension SettingsViewModel {
     func didMoveColumn(source: IndexSet, destination: Int) {
         var updated = columns
         updated.move(fromOffsets: source, toOffset: destination)
-        dataService.updateOrder(of: updated)
+        dataService.updateOrder(columns: updated)
         hasChanges = true
     }
 
     func didMovePriority(source: IndexSet, destination: Int) {
         var updated = priorities
         updated.move(fromOffsets: source, toOffset: destination)
-        dataService.updateOrder(of: updated)
+        dataService.updateOrder(priorities: updated)
         hasChanges = true
     }
 

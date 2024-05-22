@@ -11,7 +11,7 @@ extension DataService {
         fetchColumns()
     }
 
-    func updateOrder(of columns: [TaskColumn]) {
+    func updateOrder(columns: [TaskColumn]) {
         updateIndices(on: columns)
         fetchColumns()
     }

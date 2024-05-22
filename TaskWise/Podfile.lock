@@ -1,24 +1,30 @@
 PODS:
   - Resolver (1.5.0)
+  - Sourcery (2.0.1):
+    - Sourcery/CLI-Only (= 2.0.1)
+  - Sourcery/CLI-Only (2.0.1)
   - SwiftGen (6.6.2)
   - SwiftLint (0.50.3)
 
 DEPENDENCIES:
   - Resolver
+  - Sourcery
   - SwiftGen
   - SwiftLint
 
 SPEC REPOS:
   trunk:
     - Resolver
+    - Sourcery
     - SwiftGen
     - SwiftLint
 
 SPEC CHECKSUMS:
   Resolver: 68984624572763018fd8ec7b8e3e8df0e3b6bba5
+  Sourcery: c873ccac00b051aa0bf2236f86cc3678e403ff27
   SwiftGen: 1366a7f71aeef49954ca5a63ba4bef6b0f24138c
   SwiftLint: 77f7cb2b9bb81ab4a12fcc86448ba3f11afa50c6
 
-PODFILE CHECKSUM: 1f4d8b284f058ea21d66c00c536725596aaa0658
+PODFILE CHECKSUM: 3c4903afb34a075c063cdc458f55a12f6ed1dff9
 
 COCOAPODS: 1.15.2

@@ -1,5 +1,6 @@
 import Combine
 
+// sourcery: AutoMockable
 protocol DataServiceInput {
     var tasks: CurrentValueSubject<[Task], Never> { get set }
     var todaysTasks: CurrentValueSubject<[Task], Never> { get set }
@@ -22,7 +23,7 @@ protocol DataServiceInput {
 
     func addPriority(_ priority: Priority.DTO)
     func updatePriorityName(on priority: Priority, to newName: String)
-    func updateOrder(of priorities: [Priority])
+    func updateOrder(priorities: [Priority])
     func deletePriority(_ priority: Priority)
 
     func addTask(_ task: Task.DTO)
@@ -37,7 +38,7 @@ protocol DataServiceInput {
 
     func addColumn(_ column: TaskColumn.DTO)
     func updateColumnName(on column: TaskColumn, to newName: String)
-    func updateOrder(of columns: [TaskColumn])
+    func updateOrder(columns: [TaskColumn])
     func deleteColumn(_ column: TaskColumn)
 
     func createTasks(from task: Task.DTO, with behaviour: RepeatBehaviour)
