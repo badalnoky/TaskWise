@@ -68,7 +68,7 @@ extension TaskView: View {
 extension TaskView {
     var stepView: some View {
         VStack(spacing: .padding12) {
-            StyledText(text: Txt.stepLabel, style: .base)
+            StyledText(text: Txt.stepsLabel, style: .base)
                 .frame(height: .defaultRowHeight)
                 .padding(.leading, .padding4)
 
