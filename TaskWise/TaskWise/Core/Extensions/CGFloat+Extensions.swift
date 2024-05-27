@@ -137,4 +137,6 @@ public extension CGFloat {
     static let watchCompletionScale: CGFloat = 0.1
     /// 40 pt
     static let watchCategoryColorHeight: CGFloat = 40
+    /// 20 pt
+    static let watchStepIndicatorSize: CGFloat = 20
 }

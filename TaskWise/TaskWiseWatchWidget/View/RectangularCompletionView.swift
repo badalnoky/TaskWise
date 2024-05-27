@@ -26,6 +26,8 @@ struct RectangularCompletionView: View {
                         .resizable()
                         .padding(.padding8)
                         .foregroundStyle(.appTint)
+                } else {
+                    Text(Str.Indicator.completion(entry.completedTasks, entry.totalTasks))
                 }
             }
             .sized(.indicatorWidgetSize)

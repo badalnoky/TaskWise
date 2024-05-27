@@ -8,6 +8,7 @@ struct TaskDetailView {
     }
 }
 
+// swiftlint: disable: closure_body_length
 extension TaskDetailView: View {
     var body: some View {
         ScrollView {
@@ -28,8 +29,27 @@ extension TaskDetailView: View {
                 Text(Str.Task.stepsLabel + .colon)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 ForEach(viewModel.steps) { step in
-                    Text(step.label)
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                    HStack {
+                        Group {
+                            if step.isDone {
+                                Image.check
+                                    .fittedToSize(.watchStepIndicatorSize)
+                                    .foregroundStyle(Color.stepCheck)
+                            } else {
+                                Circle()
+                                    .stroke(lineWidth: .borderWidth)
+                                    .frame(
+                                        width: .watchStepIndicatorSize - .borderWidth,
+                                        height: .watchStepIndicatorSize - .borderWidth
+                                    )
+                                    .foregroundStyle(Color.accentColor)
+                            }
+                        }
+                        .padding(.borderWidth)
+
+                        Text(step.label)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                    }
                 }
             }
         }
