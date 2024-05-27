@@ -105,9 +105,6 @@
 		795E118A2B2492CC0000F8AA /* PagingIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795E11892B2492CC0000F8AA /* PagingIntent.swift */; };
 		795E118C2B24A6290000F8AA /* ColumnIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795E118B2B24A6290000F8AA /* ColumnIntent.swift */; };
 		795E118F2B24CBEE0000F8AA /* DoubleAndSingleTapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795E118E2B24CBEE0000F8AA /* DoubleAndSingleTapGesture.swift */; };
-		79616F482AC5CD4000F4A95C /* CloudItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79616F472AC5CD4000F4A95C /* CloudItem.swift */; };
-		79616F4A2AC5CE0000F4A95C /* CloudError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79616F492AC5CE0000F4A95C /* CloudError.swift */; };
-		79616F4C2AC5CE7700F4A95C /* CloudKitHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79616F4B2AC5CE7700F4A95C /* CloudKitHandler.swift */; };
 		79785A462BFB8ABD003C88D6 /* DataServiceInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7944D7422AF6DD59001A528D /* DataServiceInput.swift */; };
 		79785A472BFB8AF7003C88D6 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54912AD33B9600D064C2 /* Category+CoreDataClass.swift */; };
 		79785A482BFB8AFA003C88D6 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54902AD33B9600D064C2 /* Category+CoreDataProperties.swift */; };
@@ -572,9 +569,6 @@
 		795E118B2B24A6290000F8AA /* ColumnIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnIntent.swift; sourceTree = "<group>"; };
 		795E118E2B24CBEE0000F8AA /* DoubleAndSingleTapGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleAndSingleTapGesture.swift; sourceTree = "<group>"; };
 		795F70D82AC456B400C556C9 /* TaskWise.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TaskWise.entitlements; sourceTree = "<group>"; };
-		79616F472AC5CD4000F4A95C /* CloudItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudItem.swift; sourceTree = "<group>"; };
-		79616F492AC5CE0000F4A95C /* CloudError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudError.swift; sourceTree = "<group>"; };
-		79616F4B2AC5CE7700F4A95C /* CloudKitHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitHandler.swift; sourceTree = "<group>"; };
 		797B4D722B2107D7001DAC30 /* TaskWiseWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TaskWiseWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		797B4D732B2107D7001DAC30 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		797B4D752B2107D7001DAC30 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -657,6 +651,7 @@
 		799070BE2AEA6BE90051AAC8 /* DataService+Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataService+Task.swift"; sourceTree = "<group>"; };
 		799070C22AEA70F50051AAC8 /* DataService+TaskColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataService+TaskColumn.swift"; sourceTree = "<group>"; };
 		799070C42AEA717D0051AAC8 /* DataService+Priority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataService+Priority.swift"; sourceTree = "<group>"; };
+		799886522C03C2540092AD8D /* TaskWise.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TaskWise.xctestplan; sourceTree = "<group>"; };
 		799A42862B9F289300041AA3 /* DataService+RepeatingTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataService+RepeatingTasks.swift"; sourceTree = "<group>"; };
 		799D48E22ABC394400C149E3 /* CalendarViewModel+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarViewModel+Mock.swift"; sourceTree = "<group>"; };
 		79A5198F2B1BA29F00B0EEC2 /* ListButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListButtonStyle.swift; sourceTree = "<group>"; };
@@ -855,6 +850,7 @@
 		790A81162AAE19A700283D7E /* TaskWiseTests */ = {
 			isa = PBXGroup;
 			children = (
+				799886522C03C2540092AD8D /* TaskWise.xctestplan */,
 				7982A4D12BF786C400DA67D7 /* Core */,
 				7982A4D22BF786D700DA67D7 /* Resources */,
 				7982A4DB2BF7881D00DA67D7 /* Scene */,
@@ -1062,16 +1058,6 @@
 				79E6584B2B2326C600DE5A0A /* WidgetTimelineService */,
 			);
 			path = Service;
-			sourceTree = "<group>";
-		};
-		79616F462AC5CD2600F4A95C /* ICloud */ = {
-			isa = PBXGroup;
-			children = (
-				79616F492AC5CE0000F4A95C /* CloudError.swift */,
-				79616F472AC5CD4000F4A95C /* CloudItem.swift */,
-				79616F4B2AC5CE7700F4A95C /* CloudKitHandler.swift */,
-			);
-			path = ICloud;
 			sourceTree = "<group>";
 		};
 		797B4D772B2107D7001DAC30 /* TaskWiseWidget */ = {
@@ -1394,7 +1380,6 @@
 			isa = PBXGroup;
 			children = (
 				7988A0422AAE361400C63265 /* Extensions */,
-				79616F462AC5CD2600F4A95C /* ICloud */,
 				7988A0352AAE352C00C63265 /* Navigation */,
 				7988A0372AAE357600C63265 /* Network */,
 			);
@@ -2154,7 +2139,6 @@
 				7983000B2B17C0D10013B834 /* Fonts.swift in Sources */,
 				798B08BD2AB8525500311D93 /* ContentScreen.swift in Sources */,
 				798B08B92AB8522D00311D93 /* ContentCoordinator.swift in Sources */,
-				79616F482AC5CD4000F4A95C /* CloudItem.swift in Sources */,
 				79C16F4D2ABB4FDB00BA362B /* CheckBoxStyle.swift in Sources */,
 				794621C22B1933E40060F6CD /* CalendarNavigationBarModifier.swift in Sources */,
 				798605652AD5E03C007A64B3 /* Date+Extensions.swift in Sources */,
@@ -2251,7 +2235,6 @@
 				79E14AD62AE41A5D00FF730D /* TaskStep+Mock.swift in Sources */,
 				79B9625C2B1F799F00D16472 /* TaskContextMenu.swift in Sources */,
 				7988A0512AAE362400C63265 /* PassthroughSubject+Extensions.swift in Sources */,
-				79616F4A2AC5CE0000F4A95C /* CloudError.swift in Sources */,
 				79B52F7E2BAB28FB007CF9BA /* RepeatingTask+DTO.swift in Sources */,
 				79CD54AE2AD33B9600D064C2 /* Priority+CoreDataProperties.swift in Sources */,
 				797B58B52B88E57E003B58A7 /* Weekday.swift in Sources */,
@@ -2265,7 +2248,6 @@
 				794621C42B193A8B0060F6CD /* TaskNavigationBarModifier.swift in Sources */,
 				799070B52AEA53330051AAC8 /* TaskColumn+DTO.swift in Sources */,
 				798055B02B9F17D000129BBA /* RepeatingTasks+CoreDataClass.swift in Sources */,
-				79616F4C2AC5CE7700F4A95C /* CloudKitHandler.swift in Sources */,
 				795E118F2B24CBEE0000F8AA /* DoubleAndSingleTapGesture.swift in Sources */,
 				799070BB2AEA64680051AAC8 /* EditMode+Extensions.swift in Sources */,
 				7988A03F2AAE35C200C63265 /* Screen.swift in Sources */,
