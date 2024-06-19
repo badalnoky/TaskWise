@@ -1,5 +1,5 @@
 import CoreData
 import Foundation
 
-@objc(Task)
+@objc(TWTask)
 public class TWTask: NSManagedObject {}
