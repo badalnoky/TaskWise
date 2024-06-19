@@ -1,5 +1,5 @@
 extension DataService {
-    func createTasks(from task: Task.DTO, with behaviour: RepeatBehaviour) {
+    func createTasks(from task: TWTask.DTO, with behaviour: RepeatBehaviour) {
         if behaviour.frequency == .never {
             addTask(task)
         } else {
@@ -12,7 +12,7 @@ extension DataService {
         }
     }
 
-    func createTasks(from updated: Task.DTO, with behaviour: RepeatBehaviour, including task: Task) {
+    func createTasks(from updated: TWTask.DTO, with behaviour: RepeatBehaviour, including task: TWTask) {
         updateTask(task, with: updated)
         RepeatingTasks.create(with: behaviour, including: task, on: context)
         save()
@@ -26,7 +26,7 @@ extension DataService {
         fetchRepeatingTasks()
     }
 
-    func updateRepeatingTasks(_ repeating: RepeatingTasks, from dto: Task.DTO) {
+    func updateRepeatingTasks(_ repeating: RepeatingTasks, from dto: TWTask.DTO) {
         for task in repeating.tasks {
             task.updateRepeating(with: dto, on: context)
         }
@@ -69,7 +69,7 @@ extension DataService {
         }
     }
 
-    func rescheduleRepeatingTasks(_ repeatingTasks: RepeatingTasks, for behaviour: RepeatBehaviour, from task: Task.DTO) {
+    func rescheduleRepeatingTasks(_ repeatingTasks: RepeatingTasks, for behaviour: RepeatBehaviour, from task: TWTask.DTO) {
         deleteRepeatingTasks(repeatingTasks)
         createTasks(from: task, with: behaviour)
     }

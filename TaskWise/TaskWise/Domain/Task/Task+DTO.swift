@@ -2,7 +2,7 @@ import CoreData
 import Foundation
 import SwiftUI
 
-extension Task {
+extension TWTask {
     public struct DTO {
         let id: UUID
         let title: String
@@ -34,7 +34,7 @@ extension Task {
     }
 
     static func create(from dto: DTO, on context: NSManagedObjectContext) {
-        let task = Task(context: context)
+        let task = TWTask(context: context)
         task.wDate = dto.date
         task.wEndDateTime = dto.endDateTime
         task.wHasTimeConstraints = dto.hasTimeConstraints
@@ -49,7 +49,7 @@ extension Task {
     }
 
     static func createRepeating(from sample: DTO, for repeatingTasks: RepeatingTasks, on context: NSManagedObjectContext) {
-        let task = Task(context: context)
+        let task = TWTask(context: context)
         task.wDate = sample.date
         task.wEndDateTime = sample.endDateTime
         task.wHasTimeConstraints = sample.hasTimeConstraints
@@ -64,7 +64,7 @@ extension Task {
         task.repeatingTasks = repeatingTasks
     }
 
-    func update(with updated: Task.DTO, on context: NSManagedObjectContext) {
+    func update(with updated: TWTask.DTO, on context: NSManagedObjectContext) {
         self.wDate = updated.date
         self.wEndDateTime = updated.endDateTime
         self.wHasTimeConstraints = updated.hasTimeConstraints
@@ -77,7 +77,7 @@ extension Task {
         self.wColumn = updated.column
     }
 
-    func updateRepeating(with updated: Task.DTO, on context: NSManagedObjectContext) {
+    func updateRepeating(with updated: TWTask.DTO, on context: NSManagedObjectContext) {
         self.wHasTimeConstraints = updated.hasTimeConstraints
         self.wTaskDescription = updated.description
         self.wTitle = updated.title
@@ -87,7 +87,7 @@ extension Task {
     }
 }
 
-extension Task {
+extension TWTask {
     public struct WidgetDTO {
         let id: UUID
         let title: String
@@ -112,7 +112,7 @@ extension Task {
             self.columnId = columnId
         }
 
-        public init(from task: Task) {
+        public init(from task: TWTask) {
             self.id = task.id
             self.title = task.title
             self.priority = task.priority.name

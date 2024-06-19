@@ -47,8 +47,8 @@ extension DataServiceInputMock {
         return priority
     }
 
-    static var taskMock: Task {
-        let task = Task(context: Self.persistentContainer.viewContext)
+    static var taskMock: TWTask {
+        let task = TWTask(context: Self.persistentContainer.viewContext)
         task.wDate = .now
         task.wEndDateTime = .now
         task.wHasTimeConstraints = false
@@ -72,8 +72,8 @@ extension DataServiceInputMock {
         return repeating
     }
 
-    static var repeatedTaskMock: Task {
-        let task = Task(context: Self.persistentContainer.viewContext)
+    static var repeatedTaskMock: TWTask {
+        let task = TWTask(context: Self.persistentContainer.viewContext)
         task.wDate = .now
         task.wEndDateTime = .now
         task.wHasTimeConstraints = false

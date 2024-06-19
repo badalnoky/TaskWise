@@ -3,7 +3,7 @@ import SwiftUI
 struct TaskDetailView {
     @Bindable var viewModel: TaskDetailViewModel
 
-    init(task: Task) {
+    init(task: TWTask) {
         self.viewModel = TaskDetailViewModel(task: task)
     }
 }

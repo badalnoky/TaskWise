@@ -21,13 +21,13 @@ extension TaskStep {
         }
     }
 
-    static func createSteps(for task: Task, from dtos: [DTO], on context: NSManagedObjectContext) {
+    static func createSteps(for task: TWTask, from dtos: [DTO], on context: NSManagedObjectContext) {
         for dto in dtos {
             TaskStep.create(for: task, from: dto, on: context)
         }
     }
 
-    static func create(for task: Task, from dto: DTO, on context: NSManagedObjectContext) {
+    static func create(for task: TWTask, from dto: DTO, on context: NSManagedObjectContext) {
         let step = TaskStep(context: context)
         step.wIsDone = dto.isDone
         step.wLabel = dto.label

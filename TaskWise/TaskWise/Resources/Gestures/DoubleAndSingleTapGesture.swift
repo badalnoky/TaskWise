@@ -1,10 +1,10 @@
 import SwiftUI
 
 public struct DoubleAndSingleTapGesture {
-    var task: Task
+    var task: TWTask
     var columns: [TaskColumn]
-    var onDoubleTap: (TaskColumn, Task) -> Void
-    var onSingleTap: (Task) -> Void
+    var onDoubleTap: (TaskColumn, TWTask) -> Void
+    var onSingleTap: (TWTask) -> Void
 }
 
 extension DoubleAndSingleTapGesture: Gesture {

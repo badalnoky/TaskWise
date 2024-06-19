@@ -2,7 +2,7 @@ import CoreData
 import Foundation
 
 extension RepeatingTasks {
-    static func create(from task: Task.DTO, with behaviour: RepeatBehaviour, on context: NSManagedObjectContext) {
+    static func create(from task: TWTask.DTO, with behaviour: RepeatBehaviour, on context: NSManagedObjectContext) {
         let repeatingTask = RepeatingTasks(context: context)
         repeatingTask.wId = UUID()
         repeatingTask.wStart = task.date
@@ -11,13 +11,13 @@ extension RepeatingTasks {
         repeatingTask.wBehavior = behaviour.encoded
         for (start, end) in Date.calculateDates(for: behaviour, starting: task.startDateTime, endTime: task.endDateTime) {
             let dto = task.copyOn(start: start, end: end)
-            Task.createRepeating(from: dto, for: repeatingTask, on: context)
+            TWTask.createRepeating(from: dto, for: repeatingTask, on: context)
         }
     }
 
     static func create(
         with behaviour: RepeatBehaviour,
-        including existingTask: Task,
+        including existingTask: TWTask,
         on context: NSManagedObjectContext
     ) {
         let repeatingTask = RepeatingTasks(context: context)
@@ -32,7 +32,7 @@ extension RepeatingTasks {
             for step in existingTask.steps {
                 steps.append(.init(isDone: step.isDone, label: step.label, index: step.index))
             }
-            let dto = Task.DTO(
+            let dto = TWTask.DTO(
                 id: UUID(),
                 title: existingTask.title,
                 description: existingTask.description,
@@ -45,7 +45,7 @@ extension RepeatingTasks {
                 column: existingTask.column,
                 steps: steps
             )
-            Task.createRepeating(from: dto, for: repeatingTask, on: context)
+            TWTask.createRepeating(from: dto, for: repeatingTask, on: context)
         }
     }
 }

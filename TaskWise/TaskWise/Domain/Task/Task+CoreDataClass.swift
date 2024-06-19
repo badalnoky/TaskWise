@@ -2,4 +2,4 @@ import CoreData
 import Foundation
 
 @objc(Task)
-public class Task: NSManagedObject {}
+public class TWTask: NSManagedObject {}

@@ -1,9 +1,9 @@
 import SwiftUI
 public struct TaskContextMenuItems {
-    var task: Task
+    var task: TWTask
     var columns: [TaskColumn]
-    var changeColumnAction: (TaskColumn, Task) -> Void
-    var deleteAction: (Task) -> Void
+    var changeColumnAction: (TaskColumn, TWTask) -> Void
+    var deleteAction: (TWTask) -> Void
 }
 
 extension TaskContextMenuItems: View {

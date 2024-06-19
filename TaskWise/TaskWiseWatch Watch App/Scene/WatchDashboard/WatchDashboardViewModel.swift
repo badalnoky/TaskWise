@@ -4,14 +4,14 @@ import SwiftUI
 @Observable final class WatchDashboardViewModel {
     private var dataService: DataService
     private var cancellables = Set<AnyCancellable>()
-    private var tasks: [Task] = []
+    private var tasks: [TWTask] = []
 
     var selectedTab: Int = .zero
     var columns: [TaskColumn] = []
 
     var selectedColumn: Int = .zero
 
-    var tasksForSelected: [Task] {
+    var tasksForSelected: [TWTask] {
         guard !columns.isEmpty else { return [] }
         return tasks.from(column: columns[selectedColumn])
     }

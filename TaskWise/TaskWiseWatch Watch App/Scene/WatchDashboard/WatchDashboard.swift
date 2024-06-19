@@ -34,7 +34,7 @@ extension WatchDashboard: View {
                         .buttonStyle(.plain)
                     }
                 }
-                .navigationDestination(for: Task.self) { task in
+                .navigationDestination(for: TWTask.self) { task in
                     TaskDetailView(task: task)
                 }
             }

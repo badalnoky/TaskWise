@@ -6,8 +6,8 @@ public final class DataService: DataServiceInput {
     private let container = NSPersistentCloudKitContainer(name: Txt.containerName)
     private var userSettings: UserSettings?
 
-    public var tasks = CurrentValueSubject<[Task], Never>([])
-    public var todaysTasks = CurrentValueSubject<[Task], Never>([])
+    public var tasks = CurrentValueSubject<[TWTask], Never>([])
+    public var todaysTasks = CurrentValueSubject<[TWTask], Never>([])
     public var priorities = CurrentValueSubject<[Priority], Never>([])
     public var categories = CurrentValueSubject<[Category], Never>([])
     public var columns = CurrentValueSubject<[TaskColumn], Never>([])

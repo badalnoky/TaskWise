@@ -15,10 +15,10 @@ import Resolver
     var selectedCategory: Category?
 
     let date: Date
-    var tasks: [Task] = []
+    var tasks: [TWTask] = []
     var columns: [TaskColumn] = []
 
-    var filteredTasks: [Task] {
+    var filteredTasks: [TWTask] {
         tasks.filteredBy(text: filterText, priority: selectedPriority, category: selectedCategory)
     }
 
@@ -44,11 +44,11 @@ extension DayViewModel {
         isFilterSheetPresented = true
     }
 
-    func didTapTask(_ task: Task) {
+    func didTapTask(_ task: TWTask) {
         navigator.showTask(task.id)
     }
 
-    func didTapDelete(task: Task) {
+    func didTapDelete(task: TWTask) {
         if task.repeatingTasks != nil {
             isAlertPresented = true
         } else {
@@ -56,11 +56,11 @@ extension DayViewModel {
         }
     }
 
-    func didTapDeleteOnlyThis(task: Task) {
+    func didTapDeleteOnlyThis(task: TWTask) {
         dataService.deleteTask(task)
     }
 
-    func didTapDeleteRepeating(task: Task) {
+    func didTapDeleteRepeating(task: TWTask) {
         guard let repeating = task.repeatingTasks else { return }
         dataService.deleteRepeatingTasks(repeating)
     }
@@ -71,7 +71,7 @@ extension DayViewModel {
         filterText = .empty
     }
 
-    func didChangeColumn(to column: TaskColumn, on task: Task) {
+    func didChangeColumn(to column: TaskColumn, on task: TWTask) {
         dataService.updateColumn(to: column, on: task)
     }
 }

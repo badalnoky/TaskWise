@@ -9,13 +9,13 @@ extension TaskStep {
     @NSManaged public var wIsDone: Bool
     @NSManaged public var wLabel: String?
     @NSManaged public var wIndex: Int16
-    @NSManaged public var wTask: Task?
+    @NSManaged public var wTask: TWTask?
 
     public var isDone: Bool { wIsDone }
     public var label: String { wLabel ?? .empty }
     public var index: Int { Int(wIndex) }
 
-    @nonobjc public class func fetchRequest(for task: Task) -> NSFetchRequest<TaskStep> {
+    @nonobjc public class func fetchRequest(for task: TWTask) -> NSFetchRequest<TaskStep> {
         let request = NSFetchRequest<TaskStep>(entityName: Self.entityName)
         request.sortDescriptors = [NSSortDescriptor(key: Self.sortingKey, ascending: true)]
         request.predicate = NSPredicate(format: filterPredicate, task.id.uuidString)

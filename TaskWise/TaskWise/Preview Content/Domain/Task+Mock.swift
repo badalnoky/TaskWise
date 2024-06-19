@@ -1,9 +1,9 @@
 import Foundation
 
 #if DEBUG
-extension Task {
-    static var mock: Task {
-        let task = Task(context: PreviewDataService.global.context)
+extension TWTask {
+    static var mock: TWTask {
+        let task = TWTask(context: PreviewDataService.global.context)
         task.wDate = .now
         task.wEndDateTime = .now
         task.wHasTimeConstraints = false

@@ -23,8 +23,8 @@ import SwiftUI
     var newStepName: String = .empty
     var steps: [TaskStep.DTO] = []
 
-    private var task: Task.DTO {
-        Task.DTO(
+    private var task: TWTask.DTO {
+        TWTask.DTO(
             id: UUID(),
             title: title,
             description: description,

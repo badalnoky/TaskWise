@@ -24,10 +24,10 @@ extension Category {
 // MARK: Generated accessors for wTasks
 extension Category {
     @objc(addWTasksObject:)
-    @NSManaged public func addToWTasks(_ value: Task)
+    @NSManaged public func addToWTasks(_ value: TWTask)
 
     @objc(removeWTasksObject:)
-    @NSManaged public func removeFromWTasks(_ value: Task)
+    @NSManaged public func removeFromWTasks(_ value: TWTask)
 
     @objc(addWTasks:)
     @NSManaged public func addToWTasks(_ values: NSSet)

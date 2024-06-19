@@ -13,16 +13,16 @@ import Combine
 import UIKit
 
 class DataServiceInputMock: DataServiceInput {
-    var tasks: CurrentValueSubject<[Task], Never> {
+    var tasks: CurrentValueSubject<[TWTask], Never> {
         get { underlyingTasks }
         set(value) { underlyingTasks = value }
     }
-    var underlyingTasks: CurrentValueSubject<[Task], Never>!
-    var todaysTasks: CurrentValueSubject<[Task], Never> {
+    var underlyingTasks: CurrentValueSubject<[TWTask], Never>!
+    var todaysTasks: CurrentValueSubject<[TWTask], Never> {
         get { underlyingTodaysTasks }
         set(value) { underlyingTodaysTasks = value }
     }
-    var underlyingTodaysTasks: CurrentValueSubject<[Task], Never>!
+    var underlyingTodaysTasks: CurrentValueSubject<[TWTask], Never>!
     var priorities: CurrentValueSubject<[Priority], Never> {
         get { underlyingPriorities }
         set(value) { underlyingPriorities = value }
@@ -98,11 +98,11 @@ class DataServiceInputMock: DataServiceInput {
     var fetchStepsForCalled: Bool {
         fetchStepsForCallsCount > 0
     }
-    var fetchStepsForReceivedTask: Task?
-    var fetchStepsForReceivedInvocations: [Task] = []
-    var fetchStepsForClosure: ((Task) -> Void)?
+    var fetchStepsForReceivedTask: TWTask?
+    var fetchStepsForReceivedInvocations: [TWTask] = []
+    var fetchStepsForClosure: ((TWTask) -> Void)?
 
-    func fetchSteps(for task: Task) {
+    func fetchSteps(for task: TWTask) {
         fetchStepsForCallsCount += 1
         fetchStepsForReceivedTask = task
         fetchStepsForReceivedInvocations.append(task)
@@ -254,11 +254,11 @@ class DataServiceInputMock: DataServiceInput {
     var addTaskCalled: Bool {
         addTaskCallsCount > 0
     }
-    var addTaskReceivedTask: Task.DTO?
-    var addTaskReceivedInvocations: [Task.DTO] = []
-    var addTaskClosure: ((Task.DTO) -> Void)?
+    var addTaskReceivedTask: TWTask.DTO?
+    var addTaskReceivedInvocations: [TWTask.DTO] = []
+    var addTaskClosure: ((TWTask.DTO) -> Void)?
 
-    func addTask(_ task: Task.DTO) {
+    func addTask(_ task: TWTask.DTO) {
         addTaskCallsCount += 1
         addTaskReceivedTask = task
         addTaskReceivedInvocations.append(task)
@@ -270,11 +270,11 @@ class DataServiceInputMock: DataServiceInput {
     var updateTaskWithCalled: Bool {
         updateTaskWithCallsCount > 0
     }
-    var updateTaskWithReceivedArguments: (task: Task, updated: Task.DTO)?
-    var updateTaskWithReceivedInvocations: [(task: Task, updated: Task.DTO)] = []
-    var updateTaskWithClosure: ((Task, Task.DTO) -> Void)?
+    var updateTaskWithReceivedArguments: (task: TWTask, updated: TWTask.DTO)?
+    var updateTaskWithReceivedInvocations: [(task: TWTask, updated: TWTask.DTO)] = []
+    var updateTaskWithClosure: ((TWTask, TWTask.DTO) -> Void)?
 
-    func updateTask(_ task: Task, with updated: Task.DTO) {
+    func updateTask(_ task: TWTask, with updated: TWTask.DTO) {
         updateTaskWithCallsCount += 1
         updateTaskWithReceivedArguments = (task: task, updated: updated)
         updateTaskWithReceivedInvocations.append((task: task, updated: updated))
@@ -286,11 +286,11 @@ class DataServiceInputMock: DataServiceInput {
     var updateColumnToOnCalled: Bool {
         updateColumnToOnCallsCount > 0
     }
-    var updateColumnToOnReceivedArguments: (column: TaskColumn, task: Task)?
-    var updateColumnToOnReceivedInvocations: [(column: TaskColumn, task: Task)] = []
-    var updateColumnToOnClosure: ((TaskColumn, Task) -> Void)?
+    var updateColumnToOnReceivedArguments: (column: TaskColumn, task: TWTask)?
+    var updateColumnToOnReceivedInvocations: [(column: TaskColumn, task: TWTask)] = []
+    var updateColumnToOnClosure: ((TaskColumn, TWTask) -> Void)?
 
-    func updateColumn(to column: TaskColumn, on task: Task) {
+    func updateColumn(to column: TaskColumn, on task: TWTask) {
         updateColumnToOnCallsCount += 1
         updateColumnToOnReceivedArguments = (column: column, task: task)
         updateColumnToOnReceivedInvocations.append((column: column, task: task))
@@ -302,11 +302,11 @@ class DataServiceInputMock: DataServiceInput {
     var addStepFromDtoToCalled: Bool {
         addStepFromDtoToCallsCount > 0
     }
-    var addStepFromDtoToReceivedArguments: (dto: TaskStep.DTO, task: Task)?
-    var addStepFromDtoToReceivedInvocations: [(dto: TaskStep.DTO, task: Task)] = []
-    var addStepFromDtoToClosure: ((TaskStep.DTO, Task) -> Void)?
+    var addStepFromDtoToReceivedArguments: (dto: TaskStep.DTO, task: TWTask)?
+    var addStepFromDtoToReceivedInvocations: [(dto: TaskStep.DTO, task: TWTask)] = []
+    var addStepFromDtoToClosure: ((TaskStep.DTO, TWTask) -> Void)?
 
-    func addStepFrom(dto: TaskStep.DTO, to task: Task) {
+    func addStepFrom(dto: TaskStep.DTO, to task: TWTask) {
         addStepFromDtoToCallsCount += 1
         addStepFromDtoToReceivedArguments = (dto: dto, task: task)
         addStepFromDtoToReceivedInvocations.append((dto: dto, task: task))
@@ -318,11 +318,11 @@ class DataServiceInputMock: DataServiceInput {
     var toggleIsDoneOnForCalled: Bool {
         toggleIsDoneOnForCallsCount > 0
     }
-    var toggleIsDoneOnForReceivedArguments: (step: TaskStep, task: Task)?
-    var toggleIsDoneOnForReceivedInvocations: [(step: TaskStep, task: Task)] = []
-    var toggleIsDoneOnForClosure: ((TaskStep, Task) -> Void)?
+    var toggleIsDoneOnForReceivedArguments: (step: TaskStep, task: TWTask)?
+    var toggleIsDoneOnForReceivedInvocations: [(step: TaskStep, task: TWTask)] = []
+    var toggleIsDoneOnForClosure: ((TaskStep, TWTask) -> Void)?
 
-    func toggleIsDone(on step: TaskStep, for task: Task) {
+    func toggleIsDone(on step: TaskStep, for task: TWTask) {
         toggleIsDoneOnForCallsCount += 1
         toggleIsDoneOnForReceivedArguments = (step: step, task: task)
         toggleIsDoneOnForReceivedInvocations.append((step: step, task: task))
@@ -350,11 +350,11 @@ class DataServiceInputMock: DataServiceInput {
     var updateOrderOfOnCalled: Bool {
         updateOrderOfOnCallsCount > 0
     }
-    var updateOrderOfOnReceivedArguments: (steps: [TaskStep], task: Task)?
-    var updateOrderOfOnReceivedInvocations: [(steps: [TaskStep], task: Task)] = []
-    var updateOrderOfOnClosure: (([TaskStep], Task) -> Void)?
+    var updateOrderOfOnReceivedArguments: (steps: [TaskStep], task: TWTask)?
+    var updateOrderOfOnReceivedInvocations: [(steps: [TaskStep], task: TWTask)] = []
+    var updateOrderOfOnClosure: (([TaskStep], TWTask) -> Void)?
 
-    func updateOrder(of steps: [TaskStep], on task: Task) {
+    func updateOrder(of steps: [TaskStep], on task: TWTask) {
         updateOrderOfOnCallsCount += 1
         updateOrderOfOnReceivedArguments = (steps: steps, task: task)
         updateOrderOfOnReceivedInvocations.append((steps: steps, task: task))
@@ -366,11 +366,11 @@ class DataServiceInputMock: DataServiceInput {
     var deleteStepFromCalled: Bool {
         deleteStepFromCallsCount > 0
     }
-    var deleteStepFromReceivedArguments: (deleted: TaskStep, task: Task)?
-    var deleteStepFromReceivedInvocations: [(deleted: TaskStep, task: Task)] = []
-    var deleteStepFromClosure: ((TaskStep, Task) -> Void)?
+    var deleteStepFromReceivedArguments: (deleted: TaskStep, task: TWTask)?
+    var deleteStepFromReceivedInvocations: [(deleted: TaskStep, task: TWTask)] = []
+    var deleteStepFromClosure: ((TaskStep, TWTask) -> Void)?
 
-    func delete(step deleted: TaskStep, from task: Task) {
+    func delete(step deleted: TaskStep, from task: TWTask) {
         deleteStepFromCallsCount += 1
         deleteStepFromReceivedArguments = (deleted: deleted, task: task)
         deleteStepFromReceivedInvocations.append((deleted: deleted, task: task))
@@ -382,11 +382,11 @@ class DataServiceInputMock: DataServiceInput {
     var deleteTaskCalled: Bool {
         deleteTaskCallsCount > 0
     }
-    var deleteTaskReceivedTask: Task?
-    var deleteTaskReceivedInvocations: [Task] = []
-    var deleteTaskClosure: ((Task) -> Void)?
+    var deleteTaskReceivedTask: TWTask?
+    var deleteTaskReceivedInvocations: [TWTask] = []
+    var deleteTaskClosure: ((TWTask) -> Void)?
 
-    func deleteTask(_ task: Task) {
+    func deleteTask(_ task: TWTask) {
         deleteTaskCallsCount += 1
         deleteTaskReceivedTask = task
         deleteTaskReceivedInvocations.append(task)
@@ -462,11 +462,11 @@ class DataServiceInputMock: DataServiceInput {
     var createTasksFromWithCalled: Bool {
         createTasksFromWithCallsCount > 0
     }
-    var createTasksFromWithReceivedArguments: (task: Task.DTO, behaviour: RepeatBehaviour)?
-    var createTasksFromWithReceivedInvocations: [(task: Task.DTO, behaviour: RepeatBehaviour)] = []
-    var createTasksFromWithClosure: ((Task.DTO, RepeatBehaviour) -> Void)?
+    var createTasksFromWithReceivedArguments: (task: TWTask.DTO, behaviour: RepeatBehaviour)?
+    var createTasksFromWithReceivedInvocations: [(task: TWTask.DTO, behaviour: RepeatBehaviour)] = []
+    var createTasksFromWithClosure: ((TWTask.DTO, RepeatBehaviour) -> Void)?
 
-    func createTasks(from task: Task.DTO, with behaviour: RepeatBehaviour) {
+    func createTasks(from task: TWTask.DTO, with behaviour: RepeatBehaviour) {
         createTasksFromWithCallsCount += 1
         createTasksFromWithReceivedArguments = (task: task, behaviour: behaviour)
         createTasksFromWithReceivedInvocations.append((task: task, behaviour: behaviour))
@@ -478,11 +478,11 @@ class DataServiceInputMock: DataServiceInput {
     var createTasksFromWithIncludingCalled: Bool {
         createTasksFromWithIncludingCallsCount > 0
     }
-    var createTasksFromWithIncludingReceivedArguments: (updated: Task.DTO, behaviour: RepeatBehaviour, task: Task)?
-    var createTasksFromWithIncludingReceivedInvocations: [(updated: Task.DTO, behaviour: RepeatBehaviour, task: Task)] = []
-    var createTasksFromWithIncludingClosure: ((Task.DTO, RepeatBehaviour, Task) -> Void)?
+    var createTasksFromWithIncludingReceivedArguments: (updated: TWTask.DTO, behaviour: RepeatBehaviour, task: TWTask)?
+    var createTasksFromWithIncludingReceivedInvocations: [(updated: TWTask.DTO, behaviour: RepeatBehaviour, task: TWTask)] = []
+    var createTasksFromWithIncludingClosure: ((TWTask.DTO, RepeatBehaviour, TWTask) -> Void)?
 
-    func createTasks(from updated: Task.DTO, with behaviour: RepeatBehaviour, including task: Task) {
+    func createTasks(from updated: TWTask.DTO, with behaviour: RepeatBehaviour, including task: TWTask) {
         createTasksFromWithIncludingCallsCount += 1
         createTasksFromWithIncludingReceivedArguments = (updated: updated, behaviour: behaviour, task: task)
         createTasksFromWithIncludingReceivedInvocations.append((updated: updated, behaviour: behaviour, task: task))
@@ -510,11 +510,11 @@ class DataServiceInputMock: DataServiceInput {
     var updateRepeatingTasksFromCalled: Bool {
         updateRepeatingTasksFromCallsCount > 0
     }
-    var updateRepeatingTasksFromReceivedArguments: (repeating: RepeatingTasks, task: Task.DTO)?
-    var updateRepeatingTasksFromReceivedInvocations: [(repeating: RepeatingTasks, task: Task.DTO)] = []
-    var updateRepeatingTasksFromClosure: ((RepeatingTasks, Task.DTO) -> Void)?
+    var updateRepeatingTasksFromReceivedArguments: (repeating: RepeatingTasks, task: TWTask.DTO)?
+    var updateRepeatingTasksFromReceivedInvocations: [(repeating: RepeatingTasks, task: TWTask.DTO)] = []
+    var updateRepeatingTasksFromClosure: ((RepeatingTasks, TWTask.DTO) -> Void)?
 
-    func updateRepeatingTasks(_ repeating: RepeatingTasks, from task: Task.DTO) {
+    func updateRepeatingTasks(_ repeating: RepeatingTasks, from task: TWTask.DTO) {
         updateRepeatingTasksFromCallsCount += 1
         updateRepeatingTasksFromReceivedArguments = (repeating: repeating, task: task)
         updateRepeatingTasksFromReceivedInvocations.append((repeating: repeating, task: task))
@@ -590,11 +590,11 @@ class DataServiceInputMock: DataServiceInput {
     var rescheduleRepeatingTasksForFromCalled: Bool {
         rescheduleRepeatingTasksForFromCallsCount > 0
     }
-    var rescheduleRepeatingTasksForFromReceivedArguments: (repeatingTasks: RepeatingTasks, behaviour: RepeatBehaviour, task: Task.DTO)?
-    var rescheduleRepeatingTasksForFromReceivedInvocations: [(repeatingTasks: RepeatingTasks, behaviour: RepeatBehaviour, task: Task.DTO)] = []
-    var rescheduleRepeatingTasksForFromClosure: ((RepeatingTasks, RepeatBehaviour, Task.DTO) -> Void)?
+    var rescheduleRepeatingTasksForFromReceivedArguments: (repeatingTasks: RepeatingTasks, behaviour: RepeatBehaviour, task: TWTask.DTO)?
+    var rescheduleRepeatingTasksForFromReceivedInvocations: [(repeatingTasks: RepeatingTasks, behaviour: RepeatBehaviour, task: TWTask.DTO)] = []
+    var rescheduleRepeatingTasksForFromClosure: ((RepeatingTasks, RepeatBehaviour, TWTask.DTO) -> Void)?
 
-    func rescheduleRepeatingTasks(_ repeatingTasks: RepeatingTasks, for behaviour: RepeatBehaviour, from task: Task.DTO) {
+    func rescheduleRepeatingTasks(_ repeatingTasks: RepeatingTasks, for behaviour: RepeatBehaviour, from task: TWTask.DTO) {
         rescheduleRepeatingTasksForFromCallsCount += 1
         rescheduleRepeatingTasksForFromReceivedArguments = (repeatingTasks: repeatingTasks, behaviour: behaviour, task: task)
         rescheduleRepeatingTasksForFromReceivedInvocations.append((repeatingTasks: repeatingTasks, behaviour: behaviour, task: task))

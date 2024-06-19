@@ -45,8 +45,8 @@ import SwiftUI
 
     var repeatBehaviourMemento: RepeatBehaviour = .empty
 
-    private var updatedTask: Task.DTO {
-        Task.DTO(
+    private var updatedTask: TWTask.DTO {
+        TWTask.DTO(
             id: task.id,
             title: title,
             description: description,

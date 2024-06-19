@@ -20,10 +20,10 @@ import SwiftUI
 
     var isListed = false
     var selectedDate: Date = .now
-    var tasks: [Task] = []
+    var tasks: [TWTask] = []
     var columns: [TaskColumn] = []
 
-    var filteredTasks: [Task] {
+    var filteredTasks: [TWTask] {
         tasks
             .filter {
                 Calendar.current.isDate($0.date, inSameDayAs: self.selectedDate)
@@ -31,7 +31,7 @@ import SwiftUI
             .filteredBy(text: filterText, priority: selectedPriority, category: selectedCategory)
     }
 
-    var foundTasks: [Task] {
+    var foundTasks: [TWTask] {
         tasks
             .filter {
                 searchText.isEmpty ? false : ($0.title.caseInsensitiveContains(searchText) || $0.taskDescription.caseInsensitiveContains(searchText))
@@ -73,11 +73,11 @@ extension CalendarViewModel {
         }
     }
 
-    func didTapTask(_ task: Task) {
+    func didTapTask(_ task: TWTask) {
         navigator.showTask(task.id)
     }
 
-    func didTapDelete(task: Task) {
+    func didTapDelete(task: TWTask) {
         if task.repeatingTasks != nil {
             isAlertPresented = true
         } else {
@@ -85,11 +85,11 @@ extension CalendarViewModel {
         }
     }
 
-    func didTapDeleteOnlyThis(task: Task) {
+    func didTapDeleteOnlyThis(task: TWTask) {
         dataService.deleteTask(task)
     }
 
-    func didTapDeleteRepeating(task: Task) {
+    func didTapDeleteRepeating(task: TWTask) {
         guard let repeating = task.repeatingTasks else { return }
         dataService.deleteRepeatingTasks(repeating)
     }
@@ -110,7 +110,7 @@ extension CalendarViewModel {
         filterText = .empty
     }
 
-    func didChangeColumn(to column: TaskColumn, on task: Task) {
+    func didChangeColumn(to column: TaskColumn, on task: TWTask) {
         dataService.updateColumn(to: column, on: task)
     }
 }

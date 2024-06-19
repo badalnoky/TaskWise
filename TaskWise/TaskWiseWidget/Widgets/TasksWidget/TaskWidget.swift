@@ -23,11 +23,11 @@ public struct TaskWidgetEntryView: View {
         return entry.columns[entry.selectedIndex]
     }
 
-    var tasksForSelected: [Task.WidgetDTO] {
+    var tasksForSelected: [TWTask.WidgetDTO] {
         entry.tasks.filter { $0.columnId == selectedColumn.id }
     }
 
-    var tasksViewed: [Task.WidgetDTO] {
+    var tasksViewed: [TWTask.WidgetDTO] {
         if tasksForSelected.isEmpty {
             return []
         }

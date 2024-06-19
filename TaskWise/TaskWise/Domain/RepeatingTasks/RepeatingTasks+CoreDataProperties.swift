@@ -15,8 +15,8 @@ extension RepeatingTasks {
     public var lastUpdated: Date { wLastUpdated ?? .now }
     public var start: Date { wStart ?? .now }
     public var end: Date { wEnd ?? .now }
-    public var tasks: [Task] {
-        let set = wTasks as? Set<Task> ?? []
+    public var tasks: [TWTask] {
+        let set = wTasks as? Set<TWTask> ?? []
         return set.sorted { $0.date < $1.date }
     }
 
@@ -33,10 +33,10 @@ extension RepeatingTasks {
 // MARK: Generated accessors for wTasks
 extension RepeatingTasks {
     @objc(addWTasksObject:)
-    @NSManaged public func addToWTasks(_ value: Task)
+    @NSManaged public func addToWTasks(_ value: TWTask)
 
     @objc(removeWTasksObject:)
-    @NSManaged public func removeFromWTasks(_ value: Task)
+    @NSManaged public func removeFromWTasks(_ value: TWTask)
 
     @objc(addWTasks:)
     @NSManaged public func addToWTasks(_ values: NSSet)

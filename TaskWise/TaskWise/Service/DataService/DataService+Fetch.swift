@@ -2,7 +2,7 @@ import Foundation
 
 extension DataService {
     func fetchTasks() {
-        guard let tasks = try? context.fetch(Task.fetchRequest()) else { return }
+        guard let tasks = try? context.fetch(TWTask.fetchRequest()) else { return }
         self.tasks.send(tasks)
         let todaysTasks = tasks.filter {
             Calendar.current.isDate($0.date, inSameDayAs: .now)
@@ -26,7 +26,7 @@ extension DataService {
         self.columns.send(columns)
     }
 
-    func fetchSteps(for task: Task) {
+    func fetchSteps(for task: TWTask) {
         guard let steps = try? context.fetch(TaskStep.fetchRequest(for: task)) else { return }
         self.currentSteps.send(steps)
     }

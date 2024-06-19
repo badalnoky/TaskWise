@@ -5,7 +5,7 @@ import SwiftUI
     private var dataService: DataService
     private var cancellables = Set<AnyCancellable>()
 
-    var task: Task
+    var task: TWTask
     var title: String = .empty
     var description: String = .empty
     var priority: String = .empty
@@ -15,7 +15,7 @@ import SwiftUI
     var steps: [TaskStep] = []
     var allDay = false
 
-    init(task: Task) {
+    init(task: TWTask) {
         self.dataService = DataService(shouldLoadDefaults: false)
         self.task = task
         registerBindings()
