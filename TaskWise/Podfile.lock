@@ -1,4 +1,5 @@
 PODS:
+  - CalendarDatePicker (1.0.0)
   - Resolver (1.5.0)
   - Sourcery (2.0.1):
     - Sourcery/CLI-Only (= 2.0.1)
@@ -7,6 +8,7 @@ PODS:
   - SwiftLint (0.50.3)
 
 DEPENDENCIES:
+  - CalendarDatePicker (from `https://github.com/badalnoky/CalendarDatePicker.git`)
   - Resolver
   - Sourcery
   - SwiftGen
@@ -19,12 +21,22 @@ SPEC REPOS:
     - SwiftGen
     - SwiftLint
 
+EXTERNAL SOURCES:
+  CalendarDatePicker:
+    :git: https://github.com/badalnoky/CalendarDatePicker.git
+
+CHECKOUT OPTIONS:
+  CalendarDatePicker:
+    :commit: 326e2b6c483b1035e8a4e3a8dcc454a6837f8871
+    :git: https://github.com/badalnoky/CalendarDatePicker.git
+
 SPEC CHECKSUMS:
+  CalendarDatePicker: 1d1c7ca9467bf11b4ea31f00a8fa04f0f6449c8f
   Resolver: 68984624572763018fd8ec7b8e3e8df0e3b6bba5
   Sourcery: c873ccac00b051aa0bf2236f86cc3678e403ff27
   SwiftGen: 1366a7f71aeef49954ca5a63ba4bef6b0f24138c
   SwiftLint: 77f7cb2b9bb81ab4a12fcc86448ba3f11afa50c6
 
-PODFILE CHECKSUM: 3c4903afb34a075c063cdc458f55a12f6ed1dff9
+PODFILE CHECKSUM: 4ab093e3738bf11965107916f5bcdfe0f55ea57a
 
 COCOAPODS: 1.15.2

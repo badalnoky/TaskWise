@@ -67,19 +67,6 @@ public extension CGFloat {
 }
 
 extension CGFloat {
-    /// 3 pt
-    static var minimumGestureDistance: CGFloat = 3
-    /// 8 pt
-    static var calendarVerticalPadding: CGFloat = 8
-    /// 24 pt
-    static var calendarHeaderSpacing: CGFloat = 24
-    /// 44 pt
-    static var dateSize: CGFloat = 44
-    /// 450 pt
-    static let defaultCalendarHeight: CGFloat = 450
-}
-
-extension CGFloat {
     static let grayScaleUnit: CGFloat = 1 / 11
     static let minimumGestureTranslation: CGFloat = 0.1
     static let colorPickerDetent: CGFloat = 0.75

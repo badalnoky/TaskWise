@@ -29,28 +29,8 @@ extension Array where Element == Date {
 
 // swiftlint: disable: force_unwrapping
 extension Date {
-    static var currentYearAsInt: Int {
-        Calendar.current.dateComponents(in: .current, from: .now).year!
-    }
-
-    static var currentMonthAsInt: Int {
-        Calendar.current.dateComponents(in: .current, from: .now).month!
-    }
-
-    static var currentYearRange: [Int] {
-        Array((Date.currentYearAsInt - .defaultTimeframe)...(currentYearAsInt + .defaultTimeframe))
-    }
-
     var firstOfMonth: Date {
         Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: self))!
-    }
-
-    var nextMonth: Date {
-        Calendar.current.date(byAdding: .month, value: .plusOne, to: self)!
-    }
-
-    var previousMonth: Date {
-        Calendar.current.date(byAdding: .month, value: .minusOne, to: self)!
     }
 
     func currentMonth() -> [Date] {
@@ -62,14 +42,6 @@ extension Date {
             date = Calendar.current.date(byAdding: .day, value: .plusOne, to: date)!
         }
         return dates
-    }
-
-    func monthPreset() -> Int {
-        Calendar.current.component(.weekday, from: self.firstOfMonth).weekDayOffset
-    }
-
-    func monthPostset() -> Int {
-        .weekDayCount - ((self.monthPreset() + self.currentMonth().count) % .weekDayCount)
     }
 }
 

@@ -29,11 +29,6 @@ public extension Double {
 }
 
 extension Double {
-    static var rightAngle: Double = 90
-    static var transitionDuration = 0.5
-}
-
-extension Double {
     var normalized: CGFloat {
         self / .maxColorValue
     }

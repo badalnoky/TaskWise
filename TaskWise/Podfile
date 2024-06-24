@@ -9,6 +9,7 @@ target 'TaskWise' do
   pod 'SwiftGen'
   pod 'SwiftLint'
   pod 'Sourcery'
+  pod 'CalendarDatePicker', :git => 'https://github.com/badalnoky/CalendarDatePicker.git'
 end
 
 target 'TaskWiseTests' do
