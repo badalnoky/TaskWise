@@ -1,14 +1,16 @@
 PODS:
   - CalendarDatePicker (1.0.0)
-  - Resolver (1.5.0)
-  - Sourcery (2.0.1):
-    - Sourcery/CLI-Only (= 2.0.1)
-  - Sourcery/CLI-Only (2.0.1)
-  - SwiftGen (6.6.2)
-  - SwiftLint (0.50.3)
+  - IntegratedColorPicker (1.0.0)
+  - Resolver (1.5.1)
+  - Sourcery (2.2.5):
+    - Sourcery/CLI-Only (= 2.2.5)
+  - Sourcery/CLI-Only (2.2.5)
+  - SwiftGen (6.6.3)
+  - SwiftLint (0.55.1)
 
 DEPENDENCIES:
   - CalendarDatePicker (from `https://github.com/badalnoky/CalendarDatePicker.git`)
+  - IntegratedColorPicker (from `https://github.com/badalnoky/IntegratedColorPicker.git`)
   - Resolver
   - Sourcery
   - SwiftGen
@@ -24,19 +26,25 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   CalendarDatePicker:
     :git: https://github.com/badalnoky/CalendarDatePicker.git
+  IntegratedColorPicker:
+    :git: https://github.com/badalnoky/IntegratedColorPicker.git
 
 CHECKOUT OPTIONS:
   CalendarDatePicker:
     :commit: 326e2b6c483b1035e8a4e3a8dcc454a6837f8871
     :git: https://github.com/badalnoky/CalendarDatePicker.git
+  IntegratedColorPicker:
+    :commit: bcbba13b749a431e7207b342a6ec7718158eb203
+    :git: https://github.com/badalnoky/IntegratedColorPicker.git
 
 SPEC CHECKSUMS:
   CalendarDatePicker: 1d1c7ca9467bf11b4ea31f00a8fa04f0f6449c8f
-  Resolver: 68984624572763018fd8ec7b8e3e8df0e3b6bba5
-  Sourcery: c873ccac00b051aa0bf2236f86cc3678e403ff27
-  SwiftGen: 1366a7f71aeef49954ca5a63ba4bef6b0f24138c
-  SwiftLint: 77f7cb2b9bb81ab4a12fcc86448ba3f11afa50c6
+  IntegratedColorPicker: ff6c7a0b825f6f3464579352148e9c10385fcba7
+  Resolver: 0e2ce51257e9366c54afe1b9e9be25059e9b9300
+  Sourcery: 088e2f5a70844da8bc439f9eb9d88f35fc702f93
+  SwiftGen: 4993cbf71cbc4886f775e26f8d5c3a1188ec9f99
+  SwiftLint: 3fe909719babe5537c552ee8181c0031392be933
 
-PODFILE CHECKSUM: 4ab093e3738bf11965107916f5bcdfe0f55ea57a
+PODFILE CHECKSUM: 17364f2a0b416d2a4400b6a36d7012ca8bb031a6
 
 COCOAPODS: 1.15.2
