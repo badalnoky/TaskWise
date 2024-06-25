@@ -4,12 +4,6 @@ public struct RepeatBehaviour {
     var frequency: RepeatFrequency
     var end: Date
     var schedule: CustomRepeatSchedule
-
-    init(frequency: RepeatFrequency, end: Date, schedule: CustomRepeatSchedule) {
-        self.frequency = frequency
-        self.end = end
-        self.schedule = schedule
-    }
 }
 
 extension RepeatBehaviour: Equatable {

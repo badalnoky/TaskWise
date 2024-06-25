@@ -122,7 +122,7 @@ extension TWTask {
         }
 
         static var placeholder: WidgetDTO {
-            // swiftlint: disable: force_unwrapping
+            // swiftlint: disable force_unwrapping
             .init(
                 id: UUID(),
                 title: "Task",
@@ -131,7 +131,7 @@ extension TWTask {
                 categoryColor: .blue,
                 columnId: UUID(uuidString: "03648B00-ACD7-47E9-8819-63EA18F290C0")!
             )
-            // swiftlint: enable: force_unwrapping
+            // swiftlint: enable force_unwrapping
         }
     }
 }

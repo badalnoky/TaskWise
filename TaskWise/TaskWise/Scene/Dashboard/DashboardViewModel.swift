@@ -74,9 +74,9 @@ extension DashboardViewModel {
     func openAt(_ url: URL) {
         guard url.scheme == Str.App.scheme, url.host == Str.App.host else { return }
         if url.pathComponents[.one] == Str.App.taskPath {
-            // swiftlint: disable: force_unwrapping
+            // swiftlint: disable force_unwrapping
             let id = UUID(uuidString: url.pathComponents[.one.next])!
-            // swiftlint: enable: force_unwrapping
+            // swiftlint: enable force_unwrapping
             navigator.showTask(id)
         } else {
             self.activeTab = Int(url.pathComponents[.one]) ?? .one

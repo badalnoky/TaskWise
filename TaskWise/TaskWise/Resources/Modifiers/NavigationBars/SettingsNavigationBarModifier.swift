@@ -59,7 +59,7 @@ extension SettingsNavigationBarModifier {
 }
 
 extension View {
-    // swiftlint: disable: function_parameter_count
+    // swiftlint: disable function_parameter_count
     func settingsNavigationBar(
         isEditing: Bool,
         editAction: @escaping () -> Void,

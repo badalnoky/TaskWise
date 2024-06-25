@@ -34,7 +34,7 @@ public struct TaskWidgetEntryView: View {
         return Array(tasksForSelected[minTaskIndex...maxTaskIndex])
     }
 
-    // swiftlint: disable: closure_body_length
+    // swiftlint: disable closure_body_length
     public var body: some View {
         VStack(spacing: .zero) {
             HStack {
@@ -48,7 +48,7 @@ public struct TaskWidgetEntryView: View {
                 WidgetPageButton(type: .up, condition: entry.selectedPage != .zero && !tasksViewed.isEmpty)
                 VStack {
                     ForEach(tasksViewed, id: \.id) { task in
-                        // swiftlint: disable: force_unwrapping
+                        // swiftlint: disable force_unwrapping
                         Link(destination: URL(string: .taskLink(id: task.id))!) {
                             TaskItemView(
                                 title: task.title,
@@ -57,7 +57,7 @@ public struct TaskWidgetEntryView: View {
                                 categoryColor: task.categoryColor
                             )
                         }
-                        // swiftlint: enable: force_unwrapping
+                        // swiftlint: enable force_unwrapping
                     }
                     .transition(.asymmetric(insertion: .push(from: .top), removal: .push(from: .bottom)))
                     if tasksViewed.count < .taskWidgetMaxDisplayed {
@@ -72,9 +72,9 @@ public struct TaskWidgetEntryView: View {
                 WidgetPageButton(type: .down, condition: maxTaskIndex != tasksForSelected.count.previous && !tasksViewed.isEmpty)
             }
         }
-        // swiftlint: disable: force_unwrapping
+        // swiftlint: disable force_unwrapping
         .widgetURL(URL(string: .dashboardLink(index: entry.selectedIndex.next))!)
-        // swiftlint: enable: force_unwrapping
+        // swiftlint: enable force_unwrapping
     }
 }
 

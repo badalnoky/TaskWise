@@ -1,13 +1,13 @@
 // Generated using Sourcery 2.2.5 — https://github.com/krzysztofzablocki/Sourcery
 // DO NOT EDIT
-// swiftlint: disable: superfluous_disable_command
-// swiftlint: disable: type_contents_order
-// swiftlint: disable: implicitly_unwrapped_optional
-// swiftlint: disable: line_length
-// swiftlint: disable: identifier_name
-// swiftlint: disable: let_var_whitespace
-// swiftlint: disable: type_body_length
-// swiftlint: disable: file_length
+// swiftlint: disable superfluous_disable_command
+// swiftlint: disable type_contents_order
+// swiftlint: disable implicitly_unwrapped_optional
+// swiftlint: disable line_length
+// swiftlint: disable identifier_name
+// swiftlint: disable let_var_whitespace
+// swiftlint: disable type_body_length
+// swiftlint: disable file_length
 
 import Combine
 import UIKit

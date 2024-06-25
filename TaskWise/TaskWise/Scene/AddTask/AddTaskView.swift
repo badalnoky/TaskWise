@@ -2,6 +2,7 @@ import SwiftUI
 
 struct AddTaskView {
     private typealias Txt = Str.Task
+
     @Bindable var viewModel: AddTaskViewModel
 }
 

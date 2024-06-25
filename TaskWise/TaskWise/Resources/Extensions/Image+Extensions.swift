@@ -2,6 +2,7 @@ import SwiftUI
 
 extension Image {
     private typealias Icons = Str.Icons
+
     static let back = Image(systemName: Icons.back)
     static let settings = Image(systemName: Icons.settings)
     static let calendar = Image(systemName: Icons.calendar)

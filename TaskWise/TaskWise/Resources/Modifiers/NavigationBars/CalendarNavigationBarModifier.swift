@@ -60,7 +60,7 @@ extension CalendarNavigationBarModifier {
 }
 
 extension View {
-    // swiftlint: disable: function_parameter_count
+    // swiftlint: disable function_parameter_count
     func calendarNavigationBar(
         isListed: Bool,
         listAction: @escaping () -> Void,

@@ -1,6 +1,6 @@
 import SwiftUI
 
-// swiftlint: disable: identifier_name
+// swiftlint: disable identifier_name
 public struct BaseTextFieldStyle: TextFieldStyle {
     @Environment(\.isEnabled) private var isEnabled
 

@@ -6,7 +6,7 @@ struct CalendarView {
     @FocusState var focused: Bool
 }
 
-// swiftlint: disable: closure_body_length
+// swiftlint: disable closure_body_length
 extension CalendarView: View {
     var body: some View {
         VStack {

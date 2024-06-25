@@ -1,4 +1,5 @@
 disabled_rules:
+  - blanket_disable_command
   - empty_enum_arguments
   - multiple_closures_with_trailing_closure
   - nesting
@@ -6,7 +7,6 @@ disabled_rules:
   - switch_case_on_newline
   - unused_closure_parameter
 opt_in_rules:
-  - anyobject_protocol
   - closure_body_length
   - collection_alignment
   - contains_over_filter_count
@@ -78,8 +78,6 @@ excluded:
   - Carthage
   - DerivedData
   - Pods
-anyobject_protocol:
-  severity: error
 closing_brace:
   severity: error
 closure_parameter_position:
@@ -134,15 +132,12 @@ function_parameter_count:
 identifier_name:
   min_length: 2
   max_length: 50
-  severity: error
 implicit_getter:
   severity: error
 implicit_return:
   severity: warning
 indentation_width:
   include_comments: false
-  severity: error
-inert_defer:
   severity: error
 is_disjoint:
   severity: error
@@ -254,12 +249,9 @@ trailing_whitespace:
   severity: error
 type_name:
   max_length: 50
-  severity: error
 unneeded_break_in_switch:
   severity: error
 unneeded_parentheses_in_closure_argument:
-  severity: error
-unused_capture_list:
   severity: error
 unused_control_flow_label:
   severity: error

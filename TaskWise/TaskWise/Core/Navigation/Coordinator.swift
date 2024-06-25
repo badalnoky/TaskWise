@@ -1,7 +1,7 @@
 import Combine
 import SwiftUI
 
-// swiftlint: disable: explicit_init
+// swiftlint: disable explicit_init
 
 public protocol CoordinatorInput {
     associatedtype Factory: SceneFactory

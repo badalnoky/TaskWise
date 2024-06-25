@@ -2,7 +2,7 @@ import Combine
 @testable import TaskWise
 import XCTest
 
-// swiftlint:disable: implicitly_unwrapped_optional
+// swiftlint: disable implicitly_unwrapped_optional
 final class AddTaskViewModelTests: XCTestCase {
     private var sut: AddTaskViewModel!
     private var dataService: DataServiceInputMock!

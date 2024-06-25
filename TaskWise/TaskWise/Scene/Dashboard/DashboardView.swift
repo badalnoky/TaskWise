@@ -3,7 +3,7 @@ import SwiftUI
 struct DashboardView {
     @Bindable var viewModel: DashboardViewModel
 }
-// swiftlint: disable: closure_body_length
+// swiftlint: disable closure_body_length
 extension DashboardView: View {
     var body: some View {
         VStack(alignment: .leading) {

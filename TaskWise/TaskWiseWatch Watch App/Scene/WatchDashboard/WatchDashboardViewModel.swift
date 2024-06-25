@@ -76,7 +76,7 @@ private extension WatchDashboardViewModel {
 
 #if DEBUG
 private extension WatchDashboardViewModel {
-    // swiftlint: disable: all
+    // swiftlint: disable all
     func addDemoData() {
         if let isInitialized = UserDefaults.standard.value(forKey: "demoInit") as? Bool, isInitialized != true {
             let low = Priority(context: self.dataService.context)

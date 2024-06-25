@@ -1,7 +1,7 @@
 @testable import TaskWise
 import XCTest
 
-// swiftlint:disable: implicitly_unwrapped_optional
+// swiftlint: disable implicitly_unwrapped_optional
 final class CalendarViewModelTests: XCTestCase {
     private var sut: CalendarViewModel!
     private var dataService: DataServiceInputMock!

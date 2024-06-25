@@ -1,3 +1,4 @@
+import IntegratedColorPicker
 import SwiftUI
 
 struct CategoryColorPicker: View {

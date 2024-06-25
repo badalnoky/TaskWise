@@ -3,6 +3,7 @@ import CoreData
 
 public final class DataService: DataServiceInput {
     private typealias Txt = Str.DataService
+
     private let container = NSPersistentCloudKitContainer(name: Txt.containerName)
     private var userSettings: UserSettings?
 
@@ -26,11 +27,11 @@ public final class DataService: DataServiceInput {
     }
 
     private func loadContainer() {
-        // swiftlint: disable: force_unwrapping
+        // swiftlint: disable force_unwrapping
         let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: Str.App.groupIdentifier)!
         let storeURL = containerURL.appendingPathComponent(Str.App.sqlite)
         let description = container.persistentStoreDescriptions.first!
-        // swiftlint: enable: force_unwrapping
+        // swiftlint: enable force_unwrapping
 
         description.url = storeURL
         description.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)

@@ -4,7 +4,7 @@ struct DayView {
     @Bindable var viewModel: DayViewModel
 }
 
-// swiftlint: disable: closure_body_length
+// swiftlint: disable closure_body_length
 extension DayView: View {
     var body: some View {
         VStack {

@@ -19,9 +19,9 @@ extension TaskColumn {
         }
 
         static var placeholder: DTO {
-            // swiftlint: disable: force_unwrapping
+            // swiftlint: disable force_unwrapping
             .init(id: UUID(uuidString: "03648B00-ACD7-47E9-8819-63EA18F290C0")!, index: 1, name: "TODO")
-            // swiftlint: enable: force_unwrapping
+            // swiftlint: enable force_unwrapping
         }
     }
 

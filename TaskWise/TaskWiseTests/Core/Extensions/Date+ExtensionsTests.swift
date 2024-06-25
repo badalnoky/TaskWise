@@ -1,7 +1,7 @@
 @testable import TaskWise
 import XCTest
 
-// swiftlint: disable: force_unwrapping
+// swiftlint: disable force_unwrapping
 final class DateExtensionsTests: XCTestCase {
     func test_groupedByDay_shouldReturnFilteredArray() throws {
         let calendar = Calendar.current

@@ -9,9 +9,9 @@ extension Date {
         var components = DateComponents()
         components.day = 1
         components.second = -1
-        // swiftlint: disable: force_unwrapping
+        // swiftlint: disable force_unwrapping
         return Calendar.current.date(byAdding: components, to: startOfToday)!
-        // swiftlint: enable: force_unwrapping
+        // swiftlint: enable force_unwrapping
     }
 }
 
@@ -27,7 +27,7 @@ extension Array where Element == Date {
     }
 }
 
-// swiftlint: disable: force_unwrapping
+// swiftlint: disable force_unwrapping
 extension Date {
     var firstOfMonth: Date {
         Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: self))!
@@ -55,8 +55,8 @@ extension Date {
         return Calendar.current.date(byAdding: DateComponents(day: .plusOne, second: .minusOne), to: start)!
     }
 
-    // swiftlint: disable: cyclomatic_complexity
-    // swiftlint: disable: function_body_length
+    // swiftlint: disable cyclomatic_complexity
+    // swiftlint: disable function_body_length
     static func calculateDates(for behaviour: RepeatBehaviour, starting originalStart: Date, endTime: Date) -> [(starts: Date, ends: Date)] {
         var result: [(starts: Date, ends: Date)] = []
         let span = originalStart.distance(to: endTime)
@@ -95,8 +95,8 @@ extension Date {
         } while start < behaviour.end.endOfDay
         return result
     }
-    // swiftlint: enable: cyclomatic_complexity
-    // swiftlint: enable: function_body_length
+    // swiftlint: enable cyclomatic_complexity
+    // swiftlint: enable function_body_length
 
     private static func calculateShouldSkip(_ behaviour: RepeatBehaviour, startDayValue: Int, isOriginalDate: Bool) -> Bool {
         if behaviour.schedule.indices.allSatisfy({ $0 > startDayValue }) {
@@ -184,4 +184,4 @@ extension Date {
         )!
     }
 }
-// swiftlint: enable: force_unwrapping
+// swiftlint: enable force_unwrapping

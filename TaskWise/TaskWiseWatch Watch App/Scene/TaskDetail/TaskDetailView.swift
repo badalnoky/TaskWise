@@ -8,7 +8,7 @@ struct TaskDetailView {
     }
 }
 
-// swiftlint: disable: closure_body_length
+// swiftlint: disable closure_body_length
 extension TaskDetailView: View {
     var body: some View {
         ScrollView {

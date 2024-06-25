@@ -27,9 +27,9 @@ struct CompletionProvider: TimelineProvider {
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<CompletionEntry>) -> Void) {
-        // swiftlint: disable: force_unwrapping
+        // swiftlint: disable force_unwrapping
         let nextUpdateDate = Calendar.current.date(byAdding: .minute, value: .ten, to: .now)!
-        // swiftlint: enable: force_unwrapping
+        // swiftlint: enable force_unwrapping
         Task {
             do {
                 let tuple = try await service.fetchCompletion()

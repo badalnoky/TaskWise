@@ -5,13 +5,6 @@ struct TaskItemView {
     var priority: String
     var category: String
     var categoryColor: Color
-
-    init(title: String, priority: String, category: String, categoryColor: Color) {
-        self.title = title
-        self.priority = priority
-        self.category = category
-        self.categoryColor = categoryColor
-    }
 }
 
 extension TaskItemView: View {

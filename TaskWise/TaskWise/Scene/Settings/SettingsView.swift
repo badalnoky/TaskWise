@@ -2,6 +2,7 @@ import SwiftUI
 
 struct SettingsView {
     private typealias Txt = Str.Settings
+
     @Bindable var viewModel: SettingsViewModel
 }
 
