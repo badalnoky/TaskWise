@@ -1815,7 +1815,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					790A81022AAE19A600283D7E = {
 						CreatedOnToolsVersion = 15.0;
@@ -2644,7 +2644,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 91C2B2216449795E4EF13BE8 /* Pods-TaskWise.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TaskWise/TaskWise.entitlements;
@@ -2683,7 +2682,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A9790524961B82E82E6F6AD5 /* Pods-TaskWise.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TaskWise/TaskWise.entitlements;
@@ -2722,7 +2720,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 982159FDF24FAD927584113A /* Pods-TaskWiseTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2743,7 +2740,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E56C80BB80154BCA4A77A454 /* Pods-TaskWiseTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2763,7 +2759,6 @@
 		790A812E2AAE19A700283D7E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2D3N9A382G;
@@ -2782,7 +2777,6 @@
 		790A812F2AAE19A700283D7E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2D3N9A382G;
@@ -2863,7 +2857,6 @@
 		79BC64302BDB5E120081B299 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "TaskWiseWatch Watch App/TaskWiseWatch Watch App.entitlements";
@@ -2897,7 +2890,6 @@
 		79BC64312BDB5E120081B299 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "TaskWiseWatch Watch App/TaskWiseWatch Watch App.entitlements";

@@ -49,8 +49,8 @@ extension CombinedDatePicker: View {
 }
 
 #Preview {
-    @State var isAllDay = false
-    @State var starts: Date = .now
-    @State var ends: Date = .now
-    return CombinedDatePicker(allDay: $isAllDay, starts: $starts, ends: $ends)
+    @Previewable @State var isAllDay = false
+    @Previewable @State var starts: Date = .now
+    @Previewable @State var ends: Date = .now
+    CombinedDatePicker(allDay: $isAllDay, starts: $starts, ends: $ends)
 }

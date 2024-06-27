@@ -31,8 +31,8 @@ extension TaskRow: View {
 }
 
 #Preview {
-    @State var selected: String = "First"
-    return TaskRow(title: "Title", selected: $selected) {
+    @Previewable @State var selected: String = "First"
+    TaskRow(title: "Title", selected: $selected) {
         ForEach(["First", "Second", "Third"], id: \.self) {
             Text($0).tag($0)
         }

@@ -247,7 +247,7 @@ extension RepeatBehaviourPicker {
 }
 
 #Preview {
-    @State var behaviour: RepeatBehaviour = .empty
-    @State var startingDate: Date = .now
-    return RepeatBehaviourPicker(startingDate: startingDate, repeatBehaviour: $behaviour)
+    @Previewable @State var behaviour: RepeatBehaviour = .empty
+    @Previewable @State var startingDate: Date = .now
+    RepeatBehaviourPicker(startingDate: startingDate, repeatBehaviour: $behaviour)
 }

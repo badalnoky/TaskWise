@@ -29,8 +29,8 @@ extension StyledField: View {
 }
 
 #Preview {
-    @State var text: String = .empty
-    return VStack {
+    @Previewable @State var text: String = .empty
+    VStack {
         StyledField(style: .base, title: "Step", text: $text)
         StyledField(style: .largeTitle, title: "Title", text: $text)
         StyledField(style: .title, title: "Title", text: $text)
