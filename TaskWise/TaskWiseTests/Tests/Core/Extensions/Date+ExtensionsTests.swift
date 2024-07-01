@@ -3,7 +3,7 @@ import Testing
 import XCTest
 
 // swiftlint: disable force_unwrapping
-@Suite("Date+Extensions")
+@Suite("Date+Extensions", .tags(.utility))
 struct DateExtensionsTests {
     @Test("Grouping dates by day")
     func groupedByDay() {

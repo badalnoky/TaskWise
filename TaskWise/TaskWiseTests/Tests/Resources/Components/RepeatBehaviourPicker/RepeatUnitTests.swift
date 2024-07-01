@@ -1,7 +1,7 @@
 @testable import TaskWise
 import Testing
 
-@Suite("RepeatUnit")
+@Suite("RepeatUnit", .tags(.utility))
 struct RepeatUnitTests {
     @Test("Decode")
     func decode() {

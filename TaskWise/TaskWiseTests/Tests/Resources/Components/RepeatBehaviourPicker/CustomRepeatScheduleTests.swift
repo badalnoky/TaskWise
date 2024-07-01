@@ -1,7 +1,7 @@
 @testable import TaskWise
 import Testing
 
-@Suite("CustomRepeatSchedule")
+@Suite("CustomRepeatSchedule", .tags(.utility))
 struct CustomRepeatScheduleTests {
     @Test(
         "Encoded",

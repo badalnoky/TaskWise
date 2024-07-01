@@ -1,7 +1,7 @@
 @testable import TaskWise
 import Testing
 
-@Suite("String+Extensions")
+@Suite("String+Extensions", .tags(.utility))
 struct StringExtensionsTests {
     @Test(
         "Case insensitve contains",

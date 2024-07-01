@@ -2,7 +2,7 @@ import Foundation
 @testable import TaskWise
 import Testing
 
-@Suite("RepeatBehaviour")
+@Suite("RepeatBehaviour", .tags(.utility))
 struct RepeatBehaviourTests {
     @Test("Encode")
     func encode() {
