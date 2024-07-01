@@ -1,14 +1,14 @@
 @testable import TaskWise
-import XCTest
+import Testing
 
 // swiftlint: disable implicitly_unwrapped_optional
-final class SettingsViewModelTests: XCTestCase {
+// swiftlint: disable type_contents_order
+@Suite("SettingsViewModel", .tags(.viewModel))
+final class SettingsViewModelTests {
     private var sut: SettingsViewModel!
     private var dataService: DataServiceInputMock!
 
-    override func setUpWithError() throws {
-        try super.setUpWithError()
-
+    init() {
         dataService = .init()
         dataService.priorities = .init([DataServiceInputMock.priorityMock])
         dataService.categories = .init([DataServiceInputMock.categoryMock])
@@ -20,131 +20,148 @@ final class SettingsViewModelTests: XCTestCase {
         )
     }
 
-    override func tearDownWithError() throws {
-        try super.tearDownWithError()
-
+    deinit {
         sut = nil
         dataService = nil
     }
 
-    func test_didTapAddCategory_whenCalled_shouldInvokeDataServiceAddCategory() throws {
+    @Test("Add category button tap")
+    func didTapAddCategory() {
         sut.didTapAddCategory()
 
-        XCTAssert(dataService.addCategoryCalled)
+        #expect(dataService.addCategoryCalled)
     }
 
-    func test_didTapAddColumn_whenCalled_shouldInvokeDataServiceAddColumn() throws {
+    @Test("Add column button tap")
+    func didTapAddColumn() {
         sut.didTapAddColumn()
 
-        XCTAssert(dataService.addColumnCalled)
+        #expect(dataService.addColumnCalled)
     }
 
-    func test_didTapAddPriority_whenCalled_shouldInvokeDataServiceAddPriority() throws {
+    @Test("Add priority button tap")
+    func didTapAddPriority() {
         sut.didTapAddPriority()
 
-        XCTAssert(dataService.addPriorityCalled)
+        #expect(dataService.addPriorityCalled)
     }
 
-    func test_didChangeName_whenCalledWithPriority_shouldInvokeDataServiceUpdatePriorityName() throws {
+    @Test("Change name with priority")
+    func didChangeName_withPriority() {
         sut.didChangeName(of: DataServiceInputMock.priorityMock, to: .empty)
 
-        XCTAssert(dataService.updatePriorityNameOnToCalled)
+        #expect(dataService.updatePriorityNameOnToCalled)
     }
 
-    func test_didChangeName_whenCalledWithCategory_shouldInvokeDataServiceUpdateCategoryName() throws {
+    @Test("Change name with category")
+    func didChangeName_withCategory() {
         sut.didChangeName(of: DataServiceInputMock.categoryMock, to: .empty)
 
-        XCTAssert(dataService.updateCategoryNameOnToCalled)
+        #expect(dataService.updateCategoryNameOnToCalled)
     }
 
-    func test_didChangeName_whenCalledWithColumn_shouldInvokeDataServiceUpdateColumnName() throws {
+    @Test("Change name with column")
+    func didChangeName_withColumn() {
         sut.didChangeName(of: DataServiceInputMock.columnMock, to: .empty)
 
-        XCTAssert(dataService.updateColumnNameOnToCalled)
+        #expect(dataService.updateColumnNameOnToCalled)
     }
 
-    func test_didMoveColumn_whenCalled_shouldInvokeDataServiceUpdateOrder() throws {
+    @Test("Move column")
+    func didMoveColumn() {
         sut.didMoveColumn(source: [0], destination: 1)
 
-        XCTAssert(dataService.updateOrderColumnsCalled)
+        #expect(dataService.updateOrderColumnsCalled)
     }
 
-    func test_didMovePriority_whenCalled_shouldInvokeDataServiceUpdateOrder() throws {
+    @Test("Move priority")
+    func didMovePriority() {
         sut.didMovePriority(source: [0], destination: 1)
 
-        XCTAssert(dataService.updateOrderPrioritiesCalled)
+        #expect(dataService.updateOrderPrioritiesCalled)
     }
 
-    func test_didChangeColor_whenCalled_shouldInvokeDataServiceUpdateColor() throws {
+    @Test("Change color")
+    func didChangeColor() {
         sut.didChangeColor(on: DataServiceInputMock.categoryMock, to: .init(red: 1, green: 1, blue: 1, alpha: 1))
 
-        XCTAssert(dataService.updateColorOnWithCalled)
+        #expect(dataService.updateColorOnWithCalled)
     }
 
-    func test_didTapDeleteCategory_whenCalled_shouldInvokeDataServiceDeleteCategory() throws {
+    @Test("Delete category button tap")
+    func didTapDeleteCategory() {
         sut.didTapDeleteCategory(offsets: [0])
 
-        XCTAssert(dataService.deleteCategoryCalled)
+        #expect(dataService.deleteCategoryCalled)
     }
 
-    func test_didTapDeleteColumn_whenCalled_shouldInvokeDataServiceDeleteColumn() throws {
+    @Test("Delete column button tap")
+    func didTapDeleteColumn() {
         sut.didTapDeleteColumn(offsets: [0])
 
-        XCTAssert(dataService.deleteColumnCalled)
+        #expect(dataService.deleteColumnCalled)
     }
 
-    func test_didTapDeletePriority_whenCalled_shouldInvokeDataServiceDeletePriority() throws {
+    @Test("Delete priority button tap")
+    func didTapDeletePriority() {
         sut.didTapDeletePriority(offsets: [0])
 
-        XCTAssert(dataService.deletePriorityCalled)
+        #expect(dataService.deletePriorityCalled)
     }
 
-    func test_didTapEdit_whenCalledWhileCurretTabIsPriority_shouldTogglePriorityEditMode() throws {
+    @Test("Edit button tap while current tab is priority")
+    func didTapEdit_withPriorityTab() {
         sut.currentTab = .priority
         sut.didTapEdit()
 
-        XCTAssertEqual(sut.priorityEditMode, .active)
+        #expect(sut.priorityEditMode == .active)
     }
 
-    func test_didTapEdit_whenCalledWhileCurretTabIsColumn_shouldToggleColumnEditMode() throws {
+    @Test("Edit button tap while current tab is column")
+    func didTapEdit_withColumnTab() {
         sut.currentTab = .column
         sut.didTapEdit()
 
-        XCTAssertEqual(sut.columnEditMode, .active)
+        #expect(sut.columnEditMode == .active)
     }
 
-    func test_didTapEdit_whenCalledWhileCurretTabIsCategory_shouldToggleCategoryEditMode() throws {
+    @Test("Edit button tap while current tab is category")
+    func didTapEdit_withCategoryTab() {
         sut.currentTab = .category
         sut.didTapEdit()
 
-        XCTAssertEqual(sut.categoryEditMode, .active)
+        #expect(sut.categoryEditMode == .active)
     }
 
-    func test_didTapAdd_whenCalledWhileCurretTabIsPriority_shouldSetIsNewPrioritySheetPresented() throws {
+    @Test("Add button tap while current tab is priority")
+    func didTapAdd_withPriorityTab() {
         sut.currentTab = .priority
         sut.didTapAdd()
 
-        XCTAssert(sut.isNewPrioritySheetPresented)
+        #expect(sut.isNewPrioritySheetPresented)
     }
 
-    func test_didTapAdd_whenCalledWhileCurretTabIsColumn_shouldSetIsNewColumnSheetPresented() throws {
+    @Test("Add button tap while current tab is column")
+    func didTapAdd_withColumnTab() {
         sut.currentTab = .column
         sut.didTapAdd()
 
-        XCTAssert(sut.isNewColumnSheetPresented)
+        #expect(sut.isNewColumnSheetPresented)
     }
 
-    func test_didTapAdd_whenCalledWhileCurretTabIsCategory_shouldSetIsNewCategorySheetPresented() throws {
+    @Test("Add button tap while current tab is category")
+    func didTapAdd_withCategoryTab() {
         sut.currentTab = .category
         sut.didTapAdd()
 
-        XCTAssert(sut.isNewCategorySheetPresented)
+        #expect(sut.isNewCategorySheetPresented)
     }
 
-    func test_didFinish_whenCalled_shouldInvokeDataServiceFetchTasks() throws {
+    @Test("Finish")
+    func didFinish() {
         sut.didChangeName(of: DataServiceInputMock.categoryMock, to: .empty)
         sut.didFinish()
 
-        XCTAssert(dataService.fetchTasksCalled)
+        #expect(dataService.fetchTasksCalled)
     }
 }

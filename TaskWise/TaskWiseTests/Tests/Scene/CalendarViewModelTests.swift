@@ -1,14 +1,14 @@
 @testable import TaskWise
-import XCTest
+import Testing
 
 // swiftlint: disable implicitly_unwrapped_optional
-final class CalendarViewModelTests: XCTestCase {
+// swiftlint: disable type_contents_order
+@Suite("CalendarViewModel", .tags(.viewModel))
+final class CalendarViewModelTests {
     private var sut: CalendarViewModel!
     private var dataService: DataServiceInputMock!
 
-    override func setUpWithError() throws {
-        try super.setUpWithError()
-
+    init() {
         dataService = .init()
         dataService.priorities = .init([DataServiceInputMock.priorityMock])
         dataService.categories = .init([DataServiceInputMock.categoryMock])
@@ -21,70 +21,77 @@ final class CalendarViewModelTests: XCTestCase {
         )
     }
 
-    override func tearDownWithError() throws {
-        try super.tearDownWithError()
-
+    deinit {
         sut = nil
         dataService = nil
     }
 
-    func test_didTapList_shouldToggleIsListed() throws {
+    @Test("List button tap")
+    func didTapList() {
         sut.didTapList()
 
-        XCTAssert(sut.isListed)
+        #expect(sut.isListed)
     }
 
-    func test_didTapFilter_shouldSetIsFilterSheetPresented() throws {
+    @Test("Filter button tap")
+    func didTapFilter() {
         sut.didTapFilter()
 
-        XCTAssert(sut.isFilterSheetPresented)
+        #expect(sut.isFilterSheetPresented)
     }
 
-    func test_didToggleSearch_shouldToggleIsSearching() throws {
+    @Test("Search button tap")
+    func didToggleSearch() {
         sut.didToggleSearch()
 
-        XCTAssert(sut.isSearching)
+        #expect(sut.isSearching)
     }
 
-    func test_didTapDelete_whenCalledWithRepeatedTask_shouldSetIsAlertPresented() throws {
+    @Test("Delete repeated button tap")
+    func didTapDelete_withRepeated() {
         sut.didTapDelete(task: DataServiceInputMock.repeatedTaskMock)
 
-        XCTAssert(sut.isAlertPresented)
+        #expect(sut.isAlertPresented)
     }
 
-    func test_didTapDelete_whenCalledWithNonRepeatedTask_shouldInvokeDataServiceDeleteTask() throws {
+    @Test("Delete non repeated button tap")
+    func didTapDelete_withNonRepeated() {
         sut.didTapDelete(task: DataServiceInputMock.taskMock)
 
-        XCTAssert(dataService.deleteTaskCalled)
+        #expect(dataService.deleteTaskCalled)
     }
 
-    func test_didTapDeleteOnlyThis_shouldInvokeDataServiceDeleteTask() throws {
+    @Test("Delete only this button tap")
+    func didTapDeleteOnlyThis() {
         sut.didTapDeleteOnlyThis(task: DataServiceInputMock.repeatedTaskMock)
 
-        XCTAssert(dataService.deleteTaskCalled)
+        #expect(dataService.deleteTaskCalled)
     }
 
-    func test_didTapDeleteRepeating_shouldInvokeDataServiceDeleteRepeatingTask() throws {
+    @Test("Delete repeating button tap")
+    func didTapDeleteRepeating() {
         sut.didTapDeleteRepeating(task: DataServiceInputMock.repeatedTaskMock)
 
-        XCTAssert(dataService.deleteRepeatingTasksCalled)
+        #expect(dataService.deleteRepeatingTasksCalled)
     }
 
-    func test_didTapClearFilters_shouldClearFilterFields() throws {
+    @Test("Clear filters button tap")
+    func didTapClearFilters() {
         sut.selectedCategory = DataServiceInputMock.categoryMock
         sut.selectedPriority = DataServiceInputMock.priorityMock
         sut.filterText = "searchText"
 
         sut.didTapClearFilters()
 
-        XCTAssertNil(sut.selectedCategory)
-        XCTAssertNil(sut.selectedPriority)
-        XCTAssert(sut.filterText.isEmpty)
+        #expect(sut.selectedCategory == nil)
+        #expect(sut.selectedPriority == nil)
+        #expect(sut.filterText.isEmpty)
     }
 
-    func test_didChangeColumn_shouldInvokeDataServiceUpdateColumn() throws {
+    @Test("Column change")
+    func didChangeColumn() {
         sut.didChangeColumn(to: DataServiceInputMock.columnMock, on: DataServiceInputMock.taskMock)
 
-        XCTAssert(dataService.updateColumnToOnCalled)
+        #expect(dataService.updateColumnToOnCalled)
     }
 }

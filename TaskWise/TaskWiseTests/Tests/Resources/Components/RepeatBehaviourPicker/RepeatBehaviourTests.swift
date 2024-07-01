@@ -12,7 +12,7 @@ struct RepeatBehaviourTests {
     }
 
     @Test("Decode")
-    func test_decode_shouldReturnRepeatBehaviour() {
+    func decode() {
         let encodedString = "D"
         let endDate = Date()
         let decodedBehaviour = RepeatBehaviour.decode(encodedString, endDate)

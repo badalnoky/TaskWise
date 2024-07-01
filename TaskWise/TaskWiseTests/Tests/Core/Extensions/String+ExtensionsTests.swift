@@ -16,13 +16,13 @@ struct StringExtensionsTests {
     }
 
     @Test("Separator appendment")
-    func test_withSeparator_shouldReturnStringWithAppendedSeparator() throws {
+    func withSeparator() {
         let text = "Hello"
         #expect(text.withSeparator() == "Hello/", "The string should be appended with a separator '/'")
     }
 
     @Test("Dash appendment")
-    func test_withDash_shouldReturnStringWithAppendedDash() throws {
+    func withDash() {
         let text = "Hello"
         #expect(text.withDash() == "Hello-", "The string should be appended with a dash '-'")
     }

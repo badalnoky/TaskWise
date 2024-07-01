@@ -1,14 +1,14 @@
 @testable import TaskWise
-import XCTest
+import Testing
 
 // swiftlint: disable implicitly_unwrapped_optional
-final class DashboardViewModelTests: XCTestCase {
+// swiftlint: disable type_contents_order
+@Suite("DashboardViewModel", .tags(.viewModel))
+final class DashboardViewModelTests {
     private var sut: DashboardViewModel!
     private var dataService: DataServiceInputMock!
 
-    override func setUpWithError() throws {
-        try super.setUpWithError()
-
+    init() {
         dataService = .init()
         dataService.columns = .init([DataServiceInputMock.columnMock])
         dataService.todaysTasks = .init([DataServiceInputMock.taskMock])
@@ -20,40 +20,43 @@ final class DashboardViewModelTests: XCTestCase {
         )
     }
 
-    override func tearDownWithError() throws {
-        try super.tearDownWithError()
-
+    deinit {
         sut = nil
         dataService = nil
     }
 
-    func test_didTapDelete_whenCalledWithRepeatedTask_shouldSetIsAlertPresented() throws {
+    @Test("Delete repeated button tap")
+    func didTapDelete_withRepeated() {
         sut.didTapDelete(task: DataServiceInputMock.repeatedTaskMock)
 
-        XCTAssert(sut.isAlertPresented)
+        #expect(sut.isAlertPresented)
     }
 
-    func test_didTapDelete_whenCalledWithNonRepeatedTask_shouldInvokeDataServiceDeleteTask() throws {
+    @Test("Delete non repeated button tap")
+    func didTapDelet_withNonRepeated() {
         sut.didTapDelete(task: DataServiceInputMock.taskMock)
 
-        XCTAssert(dataService.deleteTaskCalled)
+        #expect(dataService.deleteTaskCalled)
     }
 
-    func test_didTapDeleteOnlyThis_shouldInvokeDataServiceDeleteTask() throws {
+    @Test("Delete only this button tap")
+    func didTapDeleteOnlyThis() {
         sut.didTapDeleteOnlyThis(task: DataServiceInputMock.taskMock)
 
-        XCTAssert(dataService.deleteTaskCalled)
+        #expect(dataService.deleteTaskCalled)
     }
 
-    func test_didTapDeleteRepeating_shouldInvokeDataServiceDeleteRepeatingTask() throws {
+    @Test("Delete repeating button tap")
+    func didTapDeleteRepeating() {
         sut.didTapDeleteRepeating(task: DataServiceInputMock.repeatedTaskMock)
 
-        XCTAssert(dataService.deleteRepeatingTasksCalled)
+        #expect(dataService.deleteRepeatingTasksCalled)
     }
 
-    func test_didChangeColumn_shouldInvokeDataServiceUpdateColumn() throws {
+    @Test("Column change")
+    func didChangeColumn() {
         sut.didChangeColumn(to: DataServiceInputMock.columnMock, on: DataServiceInputMock.taskMock)
 
-        XCTAssert(dataService.updateColumnToOnCalled)
+        #expect(dataService.updateColumnToOnCalled)
     }
 }
