@@ -412,6 +412,7 @@
 		79F9F54F2BFE0155009262F2 /* DataServiceInputMock+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F9F54E2BFE0155009262F2 /* DataServiceInputMock+Extensions.swift */; };
 		7A9A901567717541BBD96A02 /* Pods_TaskWise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD32EFC3A22C26F3A0A07A5 /* Pods_TaskWise.framework */; };
 		7FC2DAEE3DB409238E5DA726 /* libPods-TaskWiseTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6A56D56A0816CFDB820555 /* libPods-TaskWiseTests.a */; };
+		9197AAC52C32B7E700A5EDDC /* Test+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9197AABF2C32B6DC00A5EDDC /* Test+Extensions.swift */; };
 		91B85EC22C2D70AD0030CD7E /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988A0462AAE362400C63265 /* String+Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -686,6 +687,7 @@
 		79EAF75E2AB9EC3D00FC05BE /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		79F5D5A42BDEEE1E006573BD /* TaskWiseWatch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "TaskWiseWatch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		79F9F54E2BFE0155009262F2 /* DataServiceInputMock+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataServiceInputMock+Extensions.swift"; sourceTree = "<group>"; };
+		9197AABF2C32B6DC00A5EDDC /* Test+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Test+Extensions.swift"; sourceTree = "<group>"; };
 		91C2B2216449795E4EF13BE8 /* Pods-TaskWise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskWise.debug.xcconfig"; path = "Target Support Files/Pods-TaskWise/Pods-TaskWise.debug.xcconfig"; sourceTree = "<group>"; };
 		982159FDF24FAD927584113A /* Pods-TaskWiseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskWiseTests.debug.xcconfig"; path = "Target Support Files/Pods-TaskWiseTests/Pods-TaskWiseTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A9790524961B82E82E6F6AD5 /* Pods-TaskWise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskWise.release.xcconfig"; path = "Target Support Files/Pods-TaskWise/Pods-TaskWise.release.xcconfig"; sourceTree = "<group>"; };
@@ -827,9 +829,8 @@
 			isa = PBXGroup;
 			children = (
 				799886522C03C2540092AD8D /* TaskWise.xctestplan */,
-				7982A4D12BF786C400DA67D7 /* Core */,
-				7982A4D22BF786D700DA67D7 /* Resources */,
-				7982A4DB2BF7881D00DA67D7 /* Scene */,
+				9197AAC42C32B72A00A5EDDC /* Tests */,
+				9197AAC32C32B71600A5EDDC /* Utility */,
 			);
 			path = TaskWiseTests;
 			sourceTree = "<group>";
@@ -1688,6 +1689,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9197AAC32C32B71600A5EDDC /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				9197AABF2C32B6DC00A5EDDC /* Test+Extensions.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		9197AAC42C32B72A00A5EDDC /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				7982A4D12BF786C400DA67D7 /* Core */,
+				7982A4D22BF786D700DA67D7 /* Resources */,
+				7982A4DB2BF7881D00DA67D7 /* Scene */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2245,6 +2264,7 @@
 				7982A4E62BF788AA00DA67D7 /* SettingsViewModelTests.swift in Sources */,
 				79785A562BFB8B21003C88D6 /* Task+CoreDataProperties.swift in Sources */,
 				79785A572BFB8B24003C88D6 /* Task+DTO.swift in Sources */,
+				9197AAC52C32B7E700A5EDDC /* Test+Extensions.swift in Sources */,
 				79785A4A2BFB8B00003C88D6 /* Category+DTO.swift in Sources */,
 				79785A502BFB8B10003C88D6 /* Priority+Defaults.swift in Sources */,
 				79785A622BFB8B78003C88D6 /* RepeatFrequency.swift in Sources */,
