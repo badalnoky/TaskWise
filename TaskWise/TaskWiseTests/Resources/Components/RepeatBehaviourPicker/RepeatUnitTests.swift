@@ -1,11 +1,13 @@
 @testable import TaskWise
-import XCTest
+import Testing
 
-final class RepeatUnitTests: XCTestCase {
-    func test_decode_shouldReturnRepeatUnit() throws {
-        XCTAssertEqual(RepeatUnit.decode("D"), .day)
-        XCTAssertEqual(RepeatUnit.decode("W"), .week)
-        XCTAssertEqual(RepeatUnit.decode("M"), .month)
-        XCTAssertEqual(RepeatUnit.decode("Invalid"), .day)
+@Suite("RepeatUnit")
+struct RepeatUnitTests {
+    @Test("Decode")
+    func decode() {
+        #expect(RepeatUnit.decode("D") == .day)
+        #expect(RepeatUnit.decode("W") == .week)
+        #expect(RepeatUnit.decode("M") == .month)
+        #expect(RepeatUnit.decode("Invalid") == .day)
     }
 }

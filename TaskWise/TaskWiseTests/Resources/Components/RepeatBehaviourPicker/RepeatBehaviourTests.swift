@@ -1,19 +1,23 @@
+import Foundation
 @testable import TaskWise
-import XCTest
+import Testing
 
-final class RepeatBehaviourTests: XCTestCase {
-    func test_encode_shouldReturnString() throws {
+@Suite("RepeatBehaviour")
+struct RepeatBehaviourTests {
+    @Test("Encode")
+    func encode() {
         let behaviour = RepeatBehaviour(frequency: .weekly, end: Date(), schedule: .empty)
         let encodedString = behaviour.encoded
-        XCTAssertEqual(encodedString, "W/D/1")
+        #expect(encodedString == "W/D/1")
     }
 
-    func test_decode_shouldReturnRepeatBehaviour() throws {
+    @Test("Decode")
+    func test_decode_shouldReturnRepeatBehaviour() {
         let encodedString = "D"
         let endDate = Date()
         let decodedBehaviour = RepeatBehaviour.decode(encodedString, endDate)
-        XCTAssertEqual(decodedBehaviour.frequency, .daily)
-        XCTAssertEqual(decodedBehaviour.end, endDate)
-        XCTAssertEqual(decodedBehaviour.schedule, .empty)
+        #expect(decodedBehaviour.frequency == .daily)
+        #expect(decodedBehaviour.end == endDate)
+        #expect(decodedBehaviour.schedule == .empty)
     }
 }

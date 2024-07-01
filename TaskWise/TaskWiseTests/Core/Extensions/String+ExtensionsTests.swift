@@ -1,24 +1,29 @@
 @testable import TaskWise
-import XCTest
+import Testing
 
-final class StringExtensionsTests: XCTestCase {
-    func test_caseInsensitiveContains_whenCalledWithMatchingString_shouldReturnTrue() throws {
+@Suite("String+Extensions")
+struct StringExtensionsTests {
+    @Test(
+        "Case insensitve contains",
+        arguments: zip(["hello", "goodbye"], [true, false])
+    )
+    func caseInsensitiveContains(word: String, isContained: Bool) {
         let text = "Hello, World!"
-        XCTAssertTrue(text.caseInsensitiveContains("hello"), "The substring 'hello' should be found in 'Hello, World!'")
+        #expect(
+            text.caseInsensitiveContains(word) == isContained,
+            "The substring \(word) should \(isContained ? String.empty : "not ")be found in 'Hello, World!'"
+        )
     }
 
-    func test_caseInsensitiveContains_whenCalledWithNotMatchingString_shouldReturnFalse() throws {
-        let text = "Hello, World!"
-        XCTAssertFalse(text.caseInsensitiveContains("goodbye"), "The substring 'goodbye' should not be found in 'Hello, World!'")
-    }
-
+    @Test("Separator appendment")
     func test_withSeparator_shouldReturnStringWithAppendedSeparator() throws {
         let text = "Hello"
-        XCTAssertEqual(text.withSeparator(), "Hello/", "The string should be appended with a separator '/'")
+        #expect(text.withSeparator() == "Hello/", "The string should be appended with a separator '/'")
     }
 
+    @Test("Dash appendment")
     func test_withDash_shouldReturnStringWithAppendedDash() throws {
         let text = "Hello"
-        XCTAssertEqual(text.withDash(), "Hello-", "The string should be appended with a dash '-'")
+        #expect(text.withDash() == "Hello-", "The string should be appended with a dash '-'")
     }
 }

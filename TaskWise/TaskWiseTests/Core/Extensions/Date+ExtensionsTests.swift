@@ -1,9 +1,12 @@
 @testable import TaskWise
+import Testing
 import XCTest
 
 // swiftlint: disable force_unwrapping
-final class DateExtensionsTests: XCTestCase {
-    func test_groupedByDay_shouldReturnFilteredArray() throws {
+@Suite("Date+Extensions")
+struct DateExtensionsTests {
+    @Test("Grouping dates by day")
+    func groupedByDay() {
         let calendar = Calendar.current
 
         let date1 = calendar.date(bySettingHour: 10, minute: 0, second: 0, of: Date())!
@@ -15,12 +18,13 @@ final class DateExtensionsTests: XCTestCase {
 
         let result = dates.groupedByDay()
 
-        XCTAssertEqual(result.count, 2, "The result should contain two unique days")
-        XCTAssertTrue(result.contains(date1), "The result should contain the first date of the first day")
-        XCTAssertTrue(result.contains(date3), "The result should contain the first date of the second day")
+        #expect(result.count == 2, "The result should contain two unique days")
+        #expect(result.contains(date1), "The result should contain the first date of the first day")
+        #expect(result.contains(date3), "The result should contain the first date of the second day")
     }
 
-    func test_currentMonth_shouldReturnArrayOfAMonth() throws {
+    @Test("Current month default case")
+    func currentMonthDefault() {
         let calendar = Calendar.current
         let today = Date()
 
@@ -38,35 +42,28 @@ final class DateExtensionsTests: XCTestCase {
 
         let result = today.currentMonth()
 
-        XCTAssertEqual(result.count, expectedCount, "The result should contain \(expectedCount) dates")
-        XCTAssertEqual(result, dates, "The result should match the expected dates for the current month")
+        #expect(result.count == expectedCount, "The result should contain \(expectedCount) dates")
+        #expect(result == dates, "The result should match the expected dates for the current month")
     }
 
-    func test_currentMonth_whenCalledWithLeapYearFebruary_shouldReturnArrayOfAMonth() throws {
+    @Test(
+        "Current month is february",
+        arguments: zip([2020, 2021], [29, 28])
+    )
+    func currentMonthFebruary(year: Int, dayCount: Int) {
         let calendar = Calendar.current
-        let components = DateComponents(year: 2020, month: 2, day: 1)
+        let components = DateComponents(year: year, month: 2, day: 1)
         let date = calendar.date(from: components)!
 
         let result = date.currentMonth()
 
-        XCTAssertEqual(result.count, 29, "February 2020 should contain 29 days")
+        XCTAssertEqual(result.count, dayCount, "February \(year) should contain \(dayCount) days")
         XCTAssertEqual(calendar.component(.day, from: result.first!), 1, "The first day should be 1")
-        XCTAssertEqual(calendar.component(.day, from: result.last!), 29, "The last day should be 29")
+        XCTAssertEqual(calendar.component(.day, from: result.last!), dayCount, "The last day should be \(dayCount)")
     }
 
-    func test_currentMonth_whenCalledWithNonLeapYearFebruary_shouldReturnArrayOfAMonth() throws {
-        let calendar = Calendar.current
-        let components = DateComponents(year: 2021, month: 2, day: 1)
-        let date = calendar.date(from: components)!
-
-        let result = date.currentMonth()
-
-        XCTAssertEqual(result.count, 28, "February 2021 should contain 28 days")
-        XCTAssertEqual(calendar.component(.day, from: result.first!), 1, "The first day should be 1")
-        XCTAssertEqual(calendar.component(.day, from: result.last!), 28, "The last day should be 28")
-    }
-
-    func test_calculateDates_shouldReturnArrayForBehaviour() throws {
+    @Test("Calculate dates for a given behaviour")
+    func calculateDatesForBehaviour() {
         let calendar = Calendar.current
         let originalStart = calendar.date(from: DateComponents(year: 2024, month: 5, day: 1, hour: 10))!
         let endTime = calendar.date(from: DateComponents(year: 2024, month: 5, day: 1, hour: 12))!
@@ -78,12 +75,12 @@ final class DateExtensionsTests: XCTestCase {
         )
         let result = Date.calculateDates(for: behaviour, starting: originalStart, endTime: endTime)
 
-        XCTAssertEqual(result.count, 10, "There should be 10 occurrences")
+        #expect(result.count == 10, "There should be 10 occurrences")
         for (index, occurrence) in result.enumerated() {
             let expectedStart = calendar.date(from: DateComponents(year: 2024, month: 5, day: 1 + index, hour: 10))!
             let expectedEnd = calendar.date(from: DateComponents(year: 2024, month: 5, day: 1 + index, hour: 12))!
-            XCTAssertEqual(occurrence.starts, expectedStart, "Start date should match the expected start date")
-            XCTAssertEqual(occurrence.ends, expectedEnd, "End date should match the expected end date")
+            #expect(occurrence.starts == expectedStart, "Start date should match the expected start date")
+            #expect(occurrence.ends == expectedEnd, "End date should match the expected end date")
         }
     }
 }
