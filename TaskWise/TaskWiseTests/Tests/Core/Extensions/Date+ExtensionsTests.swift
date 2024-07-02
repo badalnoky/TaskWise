@@ -1,6 +1,6 @@
+import Foundation
 @testable import TaskWise
 import Testing
-import XCTest
 
 // swiftlint: disable force_unwrapping
 @Suite("Date+Extensions", .tags(.utility))
@@ -57,9 +57,9 @@ struct DateExtensionsTests {
 
         let result = date.currentMonth()
 
-        XCTAssertEqual(result.count, dayCount, "February \(year) should contain \(dayCount) days")
-        XCTAssertEqual(calendar.component(.day, from: result.first!), 1, "The first day should be 1")
-        XCTAssertEqual(calendar.component(.day, from: result.last!), dayCount, "The last day should be \(dayCount)")
+        #expect(result.count == dayCount, "February \(year) should contain \(dayCount) days")
+        #expect(calendar.component(.day, from: result.first!) == 1, "The first day should be 1")
+        #expect(calendar.component(.day, from: result.last!) == dayCount, "The last day should be \(dayCount)")
     }
 
     @Test("Calculate dates for a given behaviour")
