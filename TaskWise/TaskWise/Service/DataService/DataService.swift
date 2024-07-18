@@ -5,7 +5,6 @@ public final class DataService: DataServiceInput {
     private typealias Txt = Str.DataService
 
     private let container = NSPersistentCloudKitContainer(name: Txt.containerName)
-    private var userSettings: UserSettings?
 
     public var tasks = CurrentValueSubject<[TWTask], Never>([])
     public var todaysTasks = CurrentValueSubject<[TWTask], Never>([])
@@ -62,33 +61,31 @@ public final class DataService: DataServiceInput {
 extension DataService {
     private func handleDefaultUserSettings() {
         WidgetTimelineService.initiateWidgetDefaults()
-        let request = NSFetchRequest<UserSettings>(entityName: UserSettings.entityName)
-        guard let settings = try? context.fetch(request).first else {
-            self.userSettings = UserSettings(context: context)
-            initiateDefaultPriorities()
-            initiateDefaultCategories()
-            initiateDefaultColumns()
-            return
-        }
-        self.userSettings = settings
+        initiateDefaultPriorities()
+        initiateDefaultCategories()
+        initiateDefaultColumns()
+        return
     }
 
     private func initiateDefaultPriorities() {
-        Priority.initiateDefaultsWith(context: context)
-        userSettings?.prioritiesInitiated = true
-        save()
+        guard let priorities = try? context.fetch(Priority.fetchRequest()), !priorities.isEmpty else {
+            Priority.initiateDefaultsWith(context: context)
+            return
+        }
     }
 
     private func initiateDefaultCategories() {
-        Category.initiateDefaultsWith(context: context)
-        userSettings?.categoriesInitiated = true
-        save()
+        guard let categories = try? context.fetch(Category.fetchRequest()), !categories.isEmpty else {
+            Category.initiateDefaultsWith(context: context)
+            return
+        }
     }
 
     private func initiateDefaultColumns() {
-        TaskColumn.initiateDefaultsWith(context: context)
-        userSettings?.columnsInitiated = true
-        save()
+        guard let columns = try? context.fetch(TaskColumn.fetchRequest()), !columns.isEmpty else {
+            TaskColumn.initiateDefaultsWith(context: context)
+            return
+        }
     }
 }
 #endif

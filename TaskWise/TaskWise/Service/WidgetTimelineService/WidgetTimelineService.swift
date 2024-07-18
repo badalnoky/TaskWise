@@ -8,8 +8,12 @@ public enum WidgetTimelineService {
     }
 
     static func initiateWidgetDefaults() {
-        UserDefaults.standard.set(Int.zero, forKey: Txt.page)
-        UserDefaults.standard.set(Int.zero, forKey: Txt.column)
+        if UserDefaults.standard.object(forKey: Txt.page) == nil {
+            UserDefaults.standard.set(Int.zero, forKey: Txt.page)
+        }
+        if UserDefaults.standard.object(forKey: Txt.column) == nil {
+            UserDefaults.standard.set(Int.zero, forKey: Txt.column)
+        }
     }
 
     static func changePageIn(direction: Int) {
