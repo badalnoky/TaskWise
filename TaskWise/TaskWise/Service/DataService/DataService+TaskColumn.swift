@@ -16,11 +16,11 @@ extension DataService {
         fetchColumns()
     }
 
-    func deleteColumn(_ column: TaskColumn) {
+    func deleteColumn(_ column: TaskColumn) throws {
         if columns.value.count == .one {
-            print("Return an error saying there needs to be at least one category")
+            throw DataOperationError.lastOfKind(type: TaskColumn.entityName)
         } else if (column.wTasks?.count ?? .zero) > .zero {
-            print("Return an error saying that some task use it")
+            throw DataOperationError.existingRelationship(type: TaskColumn.entityName)
         } else {
             let updatedColumns = columns.value.filter { $0.id != column.id }
             delete(item: column)

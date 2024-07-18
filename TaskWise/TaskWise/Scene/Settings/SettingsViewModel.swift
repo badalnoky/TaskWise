@@ -27,6 +27,9 @@ import SwiftUI
     var newColumnName: String = .empty
     var newPriorityName: String = .empty
 
+    var isAlertPresented = false
+    var alertMessage: String = .empty
+
     var isEditing: Bool {
         switch currentTab {
         case .column: return columnEditMode.isEditing
@@ -94,20 +97,23 @@ extension SettingsViewModel {
 
     func didTapDeleteCategory(offsets: IndexSet) {
         guard offsets.count == .one, let idx = offsets.first else { return }
-        dataService.deleteCategory(categories[idx])
-        hasChanges = true
+        handle {
+            try dataService.deleteCategory(categories[idx])
+        }
     }
 
     func didTapDeleteColumn(offsets: IndexSet) {
         guard offsets.count == .one, let idx = offsets.first else { return }
-        dataService.deleteColumn(columns[idx])
-        hasChanges = true
+        handle {
+            try dataService.deleteColumn(columns[idx])
+        }
     }
 
     func didTapDeletePriority(offsets: IndexSet) {
         guard offsets.count == .one, let idx = offsets.first else { return }
-        dataService.deletePriority(priorities[idx])
-        hasChanges = true
+        handle {
+            try dataService.deletePriority(priorities[idx])
+        }
     }
 
     func didTapEdit() {
@@ -129,6 +135,22 @@ extension SettingsViewModel {
     func didFinish() {
         if hasChanges {
             dataService.fetchTasks()
+        }
+    }
+
+    private func handle(_ operation: () throws -> Void) {
+        do {
+            try operation()
+            hasChanges = true
+        } catch DataOperationError.existingRelationship(let type) {
+            isAlertPresented = true
+            alertMessage = Str.Error.existingRelationship(type)
+        } catch DataOperationError.lastOfKind(let type) {
+            isAlertPresented = true
+            alertMessage = Str.Error.lastOfKind(type)
+        } catch {
+            isAlertPresented = true
+            alertMessage = Str.Error.generic
         }
     }
 }

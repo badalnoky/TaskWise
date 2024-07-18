@@ -56,6 +56,17 @@
         }
       }
     },
+    "Alert.ok" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        }
+      }
+    },
     "Alert.repeatingTask" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -327,6 +338,50 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "widgetSelectedPage"
+          }
+        }
+      }
+    },
+    "Error.existingRelationship" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This %@ has Tasks attached to it, therefore it cannot be deleted!"
+          }
+        }
+      }
+    },
+    "Error.generic" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An unexpected error occurred!"
+          }
+        }
+      }
+    },
+    "Error.lastOfKind" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "There must be at least one %@!"
+          }
+        }
+      }
+    },
+    "Error.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error"
           }
         }
       }

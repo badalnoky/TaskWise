@@ -19,12 +19,12 @@ protocol DataServiceInput {
     func addCategory(_ category: Category.DTO)
     func updateCategoryName(on category: Category, to newName: String)
     func updateColor(on category: Category, with newColor: ColorComponents.DTO)
-    func deleteCategory(_ category: Category)
+    func deleteCategory(_ category: Category) throws
 
     func addPriority(_ priority: Priority.DTO)
     func updatePriorityName(on priority: Priority, to newName: String)
     func updateOrder(priorities: [Priority])
-    func deletePriority(_ priority: Priority)
+    func deletePriority(_ priority: Priority) throws
 
     func addTask(_ task: TWTask.DTO)
     func updateTask(_ task: TWTask, with updated: TWTask.DTO)
@@ -39,7 +39,7 @@ protocol DataServiceInput {
     func addColumn(_ column: TaskColumn.DTO)
     func updateColumnName(on column: TaskColumn, to newName: String)
     func updateOrder(columns: [TaskColumn])
-    func deleteColumn(_ column: TaskColumn)
+    func deleteColumn(_ column: TaskColumn) throws
 
     func createTasks(from task: TWTask.DTO, with behaviour: RepeatBehaviour)
     func createTasks(from updated: TWTask.DTO, with behaviour: RepeatBehaviour, including task: TWTask)

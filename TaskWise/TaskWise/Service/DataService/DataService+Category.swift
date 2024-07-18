@@ -17,11 +17,11 @@ extension DataService {
         fetchCategories()
     }
 
-    func deleteCategory(_ category: Category) {
+    func deleteCategory(_ category: Category) throws {
         if categories.value.count == .one {
-            print("Return an error saying there needs to be at least one category")
+            throw DataOperationError.lastOfKind(type: Category.entityName)
         } else if (category.wTasks?.count ?? .zero) > .zero {
-            print("Return an error saying that some task use it")
+            throw DataOperationError.existingRelationship(type: Category.entityName)
         } else {
             delete(item: category)
         }

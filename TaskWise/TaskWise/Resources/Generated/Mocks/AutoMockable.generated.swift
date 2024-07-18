@@ -170,19 +170,23 @@ class DataServiceInputMock: DataServiceInput {
     }
     // MARK: - deleteCategory
 
+    var deleteCategoryThrowableError: Error?
     var deleteCategoryCallsCount = 0
     var deleteCategoryCalled: Bool {
         deleteCategoryCallsCount > 0
     }
     var deleteCategoryReceivedCategory: Category?
     var deleteCategoryReceivedInvocations: [Category] = []
-    var deleteCategoryClosure: ((Category) -> Void)?
+    var deleteCategoryClosure: ((Category) throws -> Void)?
 
-    func deleteCategory(_ category: Category) {
+    func deleteCategory(_ category: Category) throws {
+        if let error = deleteCategoryThrowableError {
+            throw error
+        }
         deleteCategoryCallsCount += 1
         deleteCategoryReceivedCategory = category
         deleteCategoryReceivedInvocations.append(category)
-        deleteCategoryClosure?(category)
+        try deleteCategoryClosure?(category)
     }
     // MARK: - addPriority
 
@@ -234,19 +238,23 @@ class DataServiceInputMock: DataServiceInput {
     }
     // MARK: - deletePriority
 
+    var deletePriorityThrowableError: Error?
     var deletePriorityCallsCount = 0
     var deletePriorityCalled: Bool {
         deletePriorityCallsCount > 0
     }
     var deletePriorityReceivedPriority: Priority?
     var deletePriorityReceivedInvocations: [Priority] = []
-    var deletePriorityClosure: ((Priority) -> Void)?
+    var deletePriorityClosure: ((Priority) throws -> Void)?
 
-    func deletePriority(_ priority: Priority) {
+    func deletePriority(_ priority: Priority) throws {
+        if let error = deletePriorityThrowableError {
+            throw error
+        }
         deletePriorityCallsCount += 1
         deletePriorityReceivedPriority = priority
         deletePriorityReceivedInvocations.append(priority)
-        deletePriorityClosure?(priority)
+        try deletePriorityClosure?(priority)
     }
     // MARK: - addTask
 
@@ -442,19 +450,23 @@ class DataServiceInputMock: DataServiceInput {
     }
     // MARK: - deleteColumn
 
+    var deleteColumnThrowableError: Error?
     var deleteColumnCallsCount = 0
     var deleteColumnCalled: Bool {
         deleteColumnCallsCount > 0
     }
     var deleteColumnReceivedColumn: TaskColumn?
     var deleteColumnReceivedInvocations: [TaskColumn] = []
-    var deleteColumnClosure: ((TaskColumn) -> Void)?
+    var deleteColumnClosure: ((TaskColumn) throws -> Void)?
 
-    func deleteColumn(_ column: TaskColumn) {
+    func deleteColumn(_ column: TaskColumn) throws {
+        if let error = deleteColumnThrowableError {
+            throw error
+        }
         deleteColumnCallsCount += 1
         deleteColumnReceivedColumn = column
         deleteColumnReceivedInvocations.append(column)
-        deleteColumnClosure?(column)
+        try deleteColumnClosure?(column)
     }
     // MARK: - createTasks
 

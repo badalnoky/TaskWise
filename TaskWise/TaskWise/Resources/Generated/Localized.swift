@@ -15,6 +15,8 @@ internal enum Str {
         internal static let deleteOnlyThis = String(localized: "Alert.deleteOnlyThis", defaultValue: "Delete this task only")
         /// Are you sure you want to delete this task?
         internal static let message = String(localized: "Alert.message", defaultValue: "Are you sure you want to delete this task?")
+        /// OK
+        internal static let ok = String(localized: "Alert.ok", defaultValue: "OK")
         /// This is a repeating task.
         internal static let repeatingTask = String(localized: "Alert.repeatingTask", defaultValue: "This is a repeating task.")
         /// Update all future tasks
@@ -79,6 +81,26 @@ internal enum Str {
         internal static let column = String(localized: "Defaults.column", defaultValue: "widgetSelectedColum")
         /// widgetSelectedPage
         internal static let page = String(localized: "Defaults.page", defaultValue: "widgetSelectedPage")
+    }
+    internal enum Error {
+        /// This %@ has Tasks attached to it, therefore it cannot be deleted!
+        internal static func existingRelationship(_ p1: String) -> String {
+            _sf(
+                format: String(localized: "Error.existingRelationship" , defaultValue: "This %@ has Tasks attached to it, therefore it cannot be deleted!"),
+                with: p1
+            )
+        }
+        /// An unexpected error occurred!
+        internal static let generic = String(localized: "Error.generic", defaultValue: "An unexpected error occurred!")
+        /// There must be at least one %@!
+        internal static func lastOfKind(_ p1: String) -> String {
+            _sf(
+                format: String(localized: "Error.lastOfKind" , defaultValue: "There must be at least one %@!"),
+                with: p1
+            )
+        }
+        /// Error
+        internal static let title = String(localized: "Error.title", defaultValue: "Error")
     }
     internal enum Filter {
         /// Clear all

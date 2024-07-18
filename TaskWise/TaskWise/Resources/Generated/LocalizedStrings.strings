@@ -7,6 +7,7 @@
 "Alert.deleteAll" = "Delete all future tasks";
 "Alert.deleteOnlyThis" = "Delete this task only";
 "Alert.message" = "Are you sure you want to delete this task?";
+"Alert.ok" = "OK";
 "Alert.repeatingTask" = "This is a repeating task.";
 "Alert.updateAll" = "Update all future tasks";
 "Alert.updateOnlyThis" = "Update this task only";
@@ -32,6 +33,10 @@
 "DatePicker.dateLabel" = "Date";
 "Defaults.column" = "widgetSelectedColum";
 "Defaults.page" = "widgetSelectedPage";
+"Error.existingRelationship" = "This %@ has Tasks attached to it, therefore it cannot be deleted!";
+"Error.generic" = "An unexpected error occurred!";
+"Error.lastOfKind" = "There must be at least one %@!";
+"Error.title" = "Error";
 "Filter.clearAllLabel" = "Clear all";
 "Filter.closeLabel" = "Close";
 "Filter.noSelectionLabel" = "No selection";

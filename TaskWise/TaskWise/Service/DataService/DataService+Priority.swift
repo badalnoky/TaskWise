@@ -16,11 +16,11 @@ extension DataService {
         fetchPriorities()
     }
 
-    func deletePriority(_ priority: Priority) {
+    func deletePriority(_ priority: Priority) throws {
         if priorities.value.count == .one {
-            print("Return an error saying there needs to be at least one category")
+            throw DataOperationError.lastOfKind(type: Priority.entityName)
         } else if (priority.wTasks?.count ?? .zero) > .zero {
-            print("Return an error saying that some task use it")
+            throw DataOperationError.existingRelationship(type: Priority.entityName)
         } else {
             let updatedPriorities = priorities.value.filter { $0.id != priority.id }
             delete(item: priority)

@@ -22,6 +22,9 @@ extension SettingsView: View {
             addAction: viewModel.didTapAdd,
             finishAction: viewModel.didFinish
         )
+        .alert(viewModel.alertMessage, isPresented: $viewModel.isAlertPresented) {
+            Button(Str.Alert.ok, role: .cancel) {}
+        }
     }
 }
 
