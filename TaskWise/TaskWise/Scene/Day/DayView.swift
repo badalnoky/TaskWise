@@ -24,7 +24,7 @@ extension DayView: View {
                                 Color.clear
                                     .frame(maxWidth: .infinity, alignment: .center)
                                     .frame(height: .borderWidth)
-                                ForEach(viewModel.filteredTasks.from(column: column), id: \.id) { task in
+                                ForEach(viewModel.filteredTasks.from(column: column).sortedByDateAndPriority, id: \.id) { task in
                                     TaskItemView(
                                         title: task.title,
                                         priority: task.priority.name,

@@ -1,6 +1,10 @@
 import Foundation
 
 extension Array where Element == TWTask {
+    var sortedByDateAndPriority: [TWTask] {
+        self.sorted { $0.priority.level > $1.priority.level }.sorted { $0.startDateTime < $1.startDateTime}
+    }
+
     func from(column: TaskColumn) -> [TWTask] {
         self.filter { $0.column.id == column.id }
     }
