@@ -33,6 +33,7 @@
 "DatePicker.dateLabel" = "Date";
 "Defaults.column" = "widgetSelectedColum";
 "Defaults.page" = "widgetSelectedPage";
+"Error.empty" = "This field cannot be empty.";
 "Error.existingRelationship" = "This %@ has Tasks attached to it, therefore it cannot be deleted!";
 "Error.generic" = "An unexpected error occurred!";
 "Error.lastOfKind" = "There must be at least one %@!";

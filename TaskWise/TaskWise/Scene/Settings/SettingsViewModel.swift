@@ -30,6 +30,10 @@ import SwiftUI
     var isAlertPresented = false
     var alertMessage: String = .empty
 
+    var isAddDisabled: Bool {
+        newColumnName.isEmpty && newCategoryName.isEmpty && newPriorityName.isEmpty
+    }
+
     var isEditing: Bool {
         switch currentTab {
         case .column: return columnEditMode.isEditing
@@ -136,6 +140,16 @@ extension SettingsViewModel {
         if hasChanges {
             dataService.fetchTasks()
         }
+    }
+
+    func closeSheet() {
+        isNewCategorySheetPresented = false
+        isNewColumnSheetPresented = false
+        isNewPrioritySheetPresented = false
+
+        newCategoryName = .empty
+        newColumnName = .empty
+        newPriorityName = .empty
     }
 
     private func handle(_ operation: () throws -> Void) {

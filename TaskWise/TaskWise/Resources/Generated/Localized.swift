@@ -83,6 +83,8 @@ internal enum Str {
         internal static let page = String(localized: "Defaults.page", defaultValue: "widgetSelectedPage")
     }
     internal enum Error {
+        /// This field cannot be empty.
+        internal static let empty = String(localized: "Error.empty", defaultValue: "This field cannot be empty.")
         /// This %@ has Tasks attached to it, therefore it cannot be deleted!
         internal static func existingRelationship(_ p1: String) -> String {
             _sf(

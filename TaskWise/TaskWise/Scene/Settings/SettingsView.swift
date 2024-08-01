@@ -53,11 +53,12 @@ extension SettingsView {
         .sheet(isPresented: $viewModel.isNewCategorySheetPresented) {
             VStack(spacing: .padding24) {
                 HStack {
-                    Button(Txt.cancelLabel, role: .cancel) { viewModel.isNewCategorySheetPresented.toggle() }
+                    Button(Txt.cancelLabel, role: .cancel, action: viewModel.closeSheet)
                         .buttonStyle(TextButtonStyle())
                     Spacer()
                     Button(Txt.addLabel, action: viewModel.didTapAddCategory)
                         .buttonStyle(TextButtonStyle())
+                        .disabled(viewModel.isAddDisabled)
                 }
                 .padding(.top, .padding12)
                 .padding(.horizontal, .padding4)
@@ -93,11 +94,12 @@ extension SettingsView {
         .sheet(isPresented: $viewModel.isNewColumnSheetPresented) {
             VStack(spacing: .padding24) {
                 HStack {
-                    Button(Txt.cancelLabel, role: .cancel) { viewModel.isNewColumnSheetPresented.toggle() }
+                    Button(Txt.cancelLabel, role: .cancel, action: viewModel.closeSheet)
                         .buttonStyle(TextButtonStyle())
                     Spacer()
                     Button(Txt.addLabel, action: viewModel.didTapAddColumn)
                         .buttonStyle(TextButtonStyle())
+                        .disabled(viewModel.isAddDisabled)
                 }
                 .padding(.top, .padding12)
                 .padding(.horizontal, .padding4)
@@ -130,11 +132,12 @@ extension SettingsView {
         .sheet(isPresented: $viewModel.isNewPrioritySheetPresented) {
             VStack(spacing: .padding24) {
                 HStack {
-                    Button(Txt.cancelLabel, role: .cancel) { viewModel.isNewPrioritySheetPresented.toggle() }
+                    Button(Txt.cancelLabel, role: .cancel, action: viewModel.closeSheet)
                         .buttonStyle(TextButtonStyle())
                     Spacer()
                     Button(Txt.addLabel, action: viewModel.didTapAddPriority)
                         .buttonStyle(TextButtonStyle())
+                        .disabled(viewModel.isAddDisabled)
                 }
                 .padding(.top, .padding12)
                 .padding(.horizontal, .padding4)

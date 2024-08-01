@@ -342,6 +342,17 @@
         }
       }
     },
+    "Error.empty" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This field cannot be empty."
+          }
+        }
+      }
+    },
     "Error.existingRelationship" : {
       "extractionState" : "manual",
       "localizations" : {
