@@ -22,6 +22,15 @@ import SwiftUI
     var repeatBehaviour: RepeatBehaviour = .empty
     var newStepName: String = .empty
     var steps: [TaskStep.DTO] = []
+    var isStepViewExpanded = false
+
+    var isStepCreationDisabled: Bool {
+        newStepName.isEmpty
+    }
+
+    var isCreationDisabled: Bool {
+        title.isEmpty
+    }
 
     private var task: TWTask.DTO {
         TWTask.DTO(

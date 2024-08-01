@@ -1,6 +1,8 @@
 import SwiftUI
 
 public struct BaseButtonStyle: ButtonStyle {
+    @Environment(\.isEnabled) private var isEnabled
+
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .foregroundColor(configuration.isPressed ? .accent : .button)
@@ -13,7 +15,7 @@ public struct BaseButtonStyle: ButtonStyle {
             }
             .background(
                 RoundedRectangle(cornerRadius: .cornerRadius)
-                    .fill(configuration.isPressed ? .button : .accent)
+                    .fill(isEnabled ? (configuration.isPressed ? .button : .accent) : .accent.opacity(.midOpacity))
             )
             .padding(.borderWidth)
     }

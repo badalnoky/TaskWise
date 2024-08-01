@@ -1,6 +1,8 @@
 import SwiftUI
 
 public struct IconButton: View {
+    @Environment(\.isEnabled) private var isEnabled
+
     private var icon: Image
     private var isAnimated: Bool
     private var action: () -> Void
@@ -16,7 +18,7 @@ public struct IconButton: View {
             },
             label: {
                 icon.fittedToSize(.defaultIconSize)
-                    .foregroundStyle(.accent)
+                    .foregroundStyle(.accent.opacity(isEnabled ? .one : .midOpacity))
             }
         )
         .sized(.iconButtonSize)

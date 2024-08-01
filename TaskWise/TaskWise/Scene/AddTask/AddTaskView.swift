@@ -40,6 +40,7 @@ extension AddTaskView: View {
 
                 Button(Txt.createButtonLabel, action: viewModel.didTapCreate)
                     .buttonStyle(BaseButtonStyle())
+                    .disabled(viewModel.isCreationDisabled)
             }
         }
         .scrollIndicators(.never, axes: .vertical)
@@ -51,34 +52,52 @@ extension AddTaskView: View {
 extension AddTaskView {
     var stepView: some View {
         VStack(spacing: .padding12) {
-            StyledText(text: Txt.stepsLabel, style: .base)
-                .frame(height: .defaultRowHeight)
-                .padding(.leading, .padding4)
-
-            List {
-                ForEach($viewModel.steps, id: \.self) { $step in
-                    HStack {
-                        StepIcon(isDone: step.isDone)
-                            .onTapGesture {
-                                withAnimation { viewModel.didTapToggle(on: step) }
-                            }
-                        TextField(String.empty, text: $step.label)
-                            .textFieldOverlay()
-                            .textStyle(.body)
-                    }
-                    .stepRowSettings()
-                }
-                .onDelete(perform: viewModel.didTapDeleteSteps)
-                .onMove(perform: viewModel.didMoveStep)
-                .defaultListRowSettings()
-            }
-            .defaultListSettings()
-
             HStack {
-                StyledField(style: .base, title: Txt.stepLabel, text: $viewModel.newStepName)
-                IconButton(.add, action: viewModel.didTapAddStep)
+                StyledText(text: Txt.stepsLabel, style: .base)
+                    .frame(height: .defaultRowHeight)
+                    .padding(.leading, .padding4)
+                Image(systemName: viewModel.isStepViewExpanded ? Str.Icons.down : Str.Icons.forward)
+                    .contentTransition(.symbolEffect(.replace.wholeSymbol))
+                    .foregroundStyle(.accent)
+                    .padding(.trailing, .padding4)
+            }
+            .onTapGesture {
+                withAnimation {
+                    viewModel.isStepViewExpanded.toggle()
+                }
+            }
+
+            if viewModel.isStepViewExpanded {
+                stepList
+
+                HStack {
+                    StyledField(style: .base, title: Txt.stepLabel, text: $viewModel.newStepName)
+                    IconButton(.add, action: viewModel.didTapAddStep)
+                        .disabled(viewModel.isStepCreationDisabled)
+                }
             }
         }
+    }
+
+    var stepList: some View {
+        List {
+            ForEach($viewModel.steps, id: \.self) { $step in
+                HStack {
+                    StepIcon(isDone: step.isDone)
+                        .onTapGesture {
+                            withAnimation { viewModel.didTapToggle(on: step) }
+                        }
+                    TextField(String.empty, text: $step.label)
+                        .textFieldOverlay()
+                        .textStyle(.body)
+                }
+                .stepRowSettings()
+            }
+            .onDelete(perform: viewModel.didTapDeleteSteps)
+            .onMove(perform: viewModel.didMoveStep)
+            .defaultListRowSettings()
+        }
+        .defaultListSettings()
     }
 }
 

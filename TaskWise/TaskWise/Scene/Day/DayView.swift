@@ -31,9 +31,14 @@ extension DayView: View {
                                         category: task.category.name,
                                         categoryColor: .from(components: task.category.colorComponents)
                                     )
-                                    .onTapGesture {
-                                        viewModel.didTapTask(task)
-                                    }
+                                    .gesture(
+                                        DoubleAndSingleTapGesture(
+                                            task: task,
+                                            columns: viewModel.columns,
+                                            onDoubleTap: viewModel.didChangeColumn,
+                                            onSingleTap: viewModel.didTapTask
+                                        )
+                                    )
                                     .contextMenu(
                                         ContextMenu {
                                             TaskContextMenuItems(
