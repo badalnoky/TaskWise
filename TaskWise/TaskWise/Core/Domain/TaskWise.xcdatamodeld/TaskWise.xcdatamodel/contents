@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23173.10" systemVersion="24A5264n" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Category" representedClassName="Category" syncable="YES">
+        <attribute name="wId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="wName" optional="YES" attributeType="String"/>
+        <relationship name="wColorComponents" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="ColorComponents" inverseName="wCategory" inverseEntity="ColorComponents"/>
+        <relationship name="wTasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TWTask" inverseName="wCategory" inverseEntity="TWTask"/>
+    </entity>
+    <entity name="ColorComponents" representedClassName="ColorComponents" syncable="YES">
+        <attribute name="wAlpha" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="wBlue" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="wGreen" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="wRed" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="wCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="wColorComponents" inverseEntity="Category"/>
+    </entity>
+    <entity name="Priority" representedClassName="Priority" syncable="YES">
+        <attribute name="wId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="wLevel" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="wName" optional="YES" attributeType="String"/>
+        <relationship name="wTasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TWTask" inverseName="wPriority" inverseEntity="TWTask"/>
+    </entity>
+    <entity name="RepeatingTasks" representedClassName="RepeatingTasks" syncable="YES">
+        <attribute name="wBehavior" optional="YES" attributeType="String"/>
+        <attribute name="wEnd" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="wId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="wLastUpdated" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="wStart" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="wTasks" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TWTask" inverseName="repeatingTasks" inverseEntity="TWTask"/>
+    </entity>
+    <entity name="TaskColumn" representedClassName="TaskColumn" syncable="YES">
+        <attribute name="wId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="wIndex" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="wName" optional="YES" attributeType="String"/>
+        <relationship name="wTasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TWTask" inverseName="wColumn" inverseEntity="TWTask"/>
+    </entity>
+    <entity name="TaskStep" representedClassName="TaskStep" syncable="YES">
+        <attribute name="wIndex" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="wIsDone" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="wLabel" optional="YES" attributeType="String"/>
+        <relationship name="wTask" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TWTask" inverseName="wSteps" inverseEntity="TWTask"/>
+    </entity>
+    <entity name="TWTask" representedClassName="TWTask" syncable="YES">
+        <attribute name="wDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="wEndDateTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="wHasTimeConstraints" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="wId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="wStartDateTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="wTaskDescription" optional="YES" attributeType="String"/>
+        <attribute name="wTitle" optional="YES" attributeType="String"/>
+        <relationship name="repeatingTasks" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RepeatingTasks" inverseName="wTasks" inverseEntity="RepeatingTasks"/>
+        <relationship name="wCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="wTasks" inverseEntity="Category"/>
+        <relationship name="wColumn" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TaskColumn" inverseName="wTasks" inverseEntity="TaskColumn"/>
+        <relationship name="wPriority" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Priority" inverseName="wTasks" inverseEntity="Priority"/>
+        <relationship name="wSteps" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TaskStep" inverseName="wTask" inverseEntity="TaskStep"/>
+    </entity>
+    <entity name="UserSettings" representedClassName="UserSettings" syncable="YES">
+        <attribute name="categoriesInitiated" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="columnsInitiated" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="prioritiesInitiated" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+    </entity>
+</model>

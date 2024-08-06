@@ -1,5 +1,5 @@
 strings:
-  inputs: TaskWise/Resources/Generated/LocalizedStrings.strings
+  inputs: TaskWise/Core/Resources/Generated/LocalizedStrings.strings
   outputs:
     templatePath: Templates/strings-to-swift.stencil
-    output: TaskWise/Resources/Generated/Localized.swift
+    output: TaskWise/Core/Resources/Generated/Localized.swift

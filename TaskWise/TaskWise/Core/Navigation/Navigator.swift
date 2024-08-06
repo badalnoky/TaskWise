@@ -1,7 +1,7 @@
 import Combine
 import SwiftUI
 
-// swiftlint: disable: force_cast
+// swiftlint: disable force_cast
 
 public protocol NavigatorInput: View {
     associatedtype Factory: SceneFactory

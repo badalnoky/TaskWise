@@ -12,7 +12,7 @@ struct TaskProvider: TimelineProvider {
         if context.isPreview {
             completion(.placeholder)
         } else {
-            SwiftUI.Task {
+            Task {
                 do {
                     let entry = try await service.fetchToday()
                     completion(entry)
@@ -25,10 +25,10 @@ struct TaskProvider: TimelineProvider {
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<TaskEntry>) -> Void) {
-        // swiftlint: disable: force_unwrapping
+        // swiftlint: disable force_unwrapping
         let nextUpdateDate = Calendar.current.date(byAdding: .minute, value: .ten, to: .now)!
-        // swiftlint: enable: force_unwrapping
-        SwiftUI.Task {
+        // swiftlint: enable force_unwrapping
+        Task {
             do {
                 let entry = try await service.fetchToday()
                 let timeline = Timeline(entries: [entry], policy: .after(nextUpdateDate))

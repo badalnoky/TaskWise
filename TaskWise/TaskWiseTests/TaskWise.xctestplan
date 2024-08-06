@@ -1,0 +1,46 @@
+{
+  "configurations" : [
+    {
+      "id" : "936952A3-39C9-4575-8A45-DEB199BE5CFE",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:TaskWise.xcodeproj",
+          "identifier" : "790A81022AAE19A600283D7E",
+          "name" : "TaskWise"
+        }
+      ]
+    },
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:TaskWise.xcodeproj",
+      "identifier" : "790A81022AAE19A600283D7E",
+      "name" : "TaskWise"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:TaskWise.xcodeproj",
+        "identifier" : "790A81122AAE19A700283D7E",
+        "name" : "TaskWiseTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:TaskWise.xcodeproj",
+        "identifier" : "790A811C2AAE19A700283D7E",
+        "name" : "TaskWiseUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
