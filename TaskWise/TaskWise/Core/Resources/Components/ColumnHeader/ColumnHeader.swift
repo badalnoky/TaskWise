@@ -16,9 +16,7 @@ extension ColumnHeader: View {
                 VStack(spacing: .zero) {
                     Rectangle()
                         .fill(.accent)
-                        .clipShape(
-                            .rect(topLeadingRadius: .padding16, topTrailingRadius: .padding16)
-                        )
+                        .clipShape(.rect(topLeadingRadius: .padding16, topTrailingRadius: .padding16))
                 }
             }
             .padding(.horizontal, .padding16)
