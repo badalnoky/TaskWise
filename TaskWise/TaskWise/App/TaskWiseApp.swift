@@ -6,7 +6,13 @@ struct TaskWiseApp: App {
     @StateObject var coordinator: ContentCoordinator = Resolver.resolve()
     var body: some Scene {
         WindowGroup {
-            coordinator.start()
+            #if os(iOS)
+            if UIScreen.main.traitCollection.userInterfaceIdiom == .pad {
+            } else {
+                coordinator.start()
+            }
+            #elseif os(macOS)
+            #endif
         }
     }
 }

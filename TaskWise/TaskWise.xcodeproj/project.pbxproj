@@ -808,13 +808,9 @@
 				79C1B36B2AC9982C00BDCC6D /* Info.plist */,
 				7988A02D2AAE2F7A00C63265 /* App */,
 				7988A0532AAE386F00C63265 /* Core */,
-				7988A02E2AAE2F8400C63265 /* DI */,
-				79CD548E2AD33B9600D064C2 /* Domain */,
-				798B08B72AB8516F00311D93 /* Navigation */,
-				790A810C2AAE19A700283D7E /* Preview Content */,
-				790A81312AAE282800283D7E /* Resources */,
-				7988A0342AAE310700C63265 /* Scene */,
-				795F70D92AC458F800C556C9 /* Service */,
+				79964A832C627768000EF203 /* iOS */,
+				79964A842C627777000EF203 /* iPadOS */,
+				79964A852C627780000EF203 /* MacOS */,
 			);
 			path = TaskWise;
 			sourceTree = "<group>";
@@ -1329,8 +1325,12 @@
 		7988A0532AAE386F00C63265 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				79CD548E2AD33B9600D064C2 /* Domain */,
 				7988A0352AAE352C00C63265 /* Navigation */,
 				7988A0372AAE357600C63265 /* Network */,
+				790A810C2AAE19A700283D7E /* Preview Content */,
+				790A81312AAE282800283D7E /* Resources */,
+				795F70D92AC458F800C556C9 /* Service */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -1389,6 +1389,30 @@
 				79C16F4E2ABB5C6B00BA362B /* CalendarViewModel.swift */,
 			);
 			path = Calendar;
+			sourceTree = "<group>";
+		};
+		79964A832C627768000EF203 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				7988A02E2AAE2F8400C63265 /* DI */,
+				798B08B72AB8516F00311D93 /* Navigation */,
+				7988A0342AAE310700C63265 /* Scene */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		79964A842C627777000EF203 /* iPadOS */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = iPadOS;
+			sourceTree = "<group>";
+		};
+		79964A852C627780000EF203 /* MacOS */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MacOS;
 			sourceTree = "<group>";
 		};
 		79A0C2E12B2276D2005B3F04 /* TasksWidget */ = {
@@ -2068,7 +2092,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "Pods/Sourcery/bin/sourcery --sources \"TaskWise/Service\" \\\n--templates \"Templates/Sourcery\" \\\n--output \"TaskWise/Resources/Generated/Mocks\"\n";
+			shellScript = "Pods/Sourcery/bin/sourcery --sources \"TaskWise/Core/Service\" \\\n--templates \"Templates/Sourcery\" \\\n--output \"TaskWise/Core/Resources/Generated/Mocks\"\n";
 		};
 		80CA417FE7CAA5314BE9DC95 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2689,7 +2713,7 @@
 				CODE_SIGN_ENTITLEMENTS = TaskWise/TaskWise.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"TaskWise/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"TaskWise/Core/Preview Content\"";
 				DEVELOPMENT_TEAM = 2D3N9A382G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -2728,7 +2752,7 @@
 				CODE_SIGN_ENTITLEMENTS = TaskWise/TaskWise.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"TaskWise/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"TaskWise/Core/Preview Content\"";
 				DEVELOPMENT_TEAM = 2D3N9A382G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

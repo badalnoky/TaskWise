@@ -1,15 +1,15 @@
 json:
-  inputs: TaskWise/Resources/Localizable/Localizable.xcstrings
+  inputs: TaskWise/Core/Resources/Localizable/Localizable.xcstrings
   filter: .+\.xcstrings$
   outputs:
     templatePath: Templates/string-assets-to-strings.stencil
-    output: TaskWise/Resources/Generated/LocalizedStrings.strings
+    output: TaskWise/Core/Resources/Generated/LocalizedStrings.strings
 
 fonts:
   inputs:
-    - TaskWise/Resources/Assets/Fonts
+    - TaskWise/Core/Resources/Assets/Fonts
   outputs:
     params:
       enumName: Fonts
     templatePath: Templates/fonts-swiftui-swift5.stencil
-    output: TaskWise/Resources/Generated/Fonts.swift
+    output: TaskWise/Core/Resources/Generated/Fonts.swift
