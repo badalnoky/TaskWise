@@ -24,8 +24,8 @@ extension ContentSceneFactory {
         CalendarView(viewModel: CalendarViewModel(navigator: navigator))
     }
 
-    func dashboard(with navigator: Navigator<ContentSceneFactory>) -> DashboardView {
-        DashboardView(viewModel: DashboardViewModel(navigator: navigator))
+    func dashboard(with navigator: Navigator<ContentSceneFactory>) -> PhoneDashboardView {
+        PhoneDashboardView(viewModel: PhoneDashboardViewModel(navigator: navigator))
     }
 
     func day(with navigator: Navigator<ContentSceneFactory>, date: Date) -> DayView {

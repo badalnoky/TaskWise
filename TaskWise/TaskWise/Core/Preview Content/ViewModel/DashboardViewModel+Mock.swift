@@ -1,7 +1,7 @@
 #if DEBUG
-extension DashboardViewModel {
-    static var mock: DashboardViewModel {
-        DashboardViewModel(navigator: .init(sceneFactory: .init(), root: .dashboard))
+extension PhoneDashboardViewModel {
+    static var mock: PhoneDashboardViewModel {
+        PhoneDashboardViewModel(navigator: .init(sceneFactory: .init(), root: .dashboard))
     }
 }
 #endif

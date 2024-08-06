@@ -2,7 +2,7 @@ import Combine
 import Resolver
 import SwiftUI
 
-@Observable final class DashboardViewModel {
+@Observable final class PhoneDashboardViewModel {
     private var navigator: Navigator<ContentSceneFactory>
     private let dataService: DataServiceInput
     private var cancellables = Set<AnyCancellable>()
@@ -33,7 +33,7 @@ import SwiftUI
     }
 }
 
-extension DashboardViewModel {
+extension PhoneDashboardViewModel {
     func didTapCalendar() {
         navigator.showCalendar()
     }
@@ -84,7 +84,7 @@ extension DashboardViewModel {
     }
 }
 
-private extension DashboardViewModel {
+private extension PhoneDashboardViewModel {
     private func registerBindings() {
         registerColumnBinding()
         registerTaskBinding()

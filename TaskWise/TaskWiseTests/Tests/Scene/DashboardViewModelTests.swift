@@ -3,9 +3,9 @@ import Testing
 
 // swiftlint: disable implicitly_unwrapped_optional
 // swiftlint: disable type_contents_order
-@Suite("DashboardViewModel", .tags(.viewModel))
-final class DashboardViewModelTests {
-    private var sut: DashboardViewModel!
+@Suite("PhoneDashboardViewModel", .tags(.viewModel))
+final class PhoneDashboardViewModelTests {
+    private var sut: PhoneDashboardViewModel!
     private var dataService: DataServiceInputMock!
 
     init() {

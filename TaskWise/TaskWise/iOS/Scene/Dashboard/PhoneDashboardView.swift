@@ -1,10 +1,10 @@
 import SwiftUI
 
-struct DashboardView {
-    @Bindable var viewModel: DashboardViewModel
+struct PhoneDashboardView {
+    @Bindable var viewModel: PhoneDashboardViewModel
 }
 // swiftlint: disable closure_body_length
-extension DashboardView: View {
+extension PhoneDashboardView: View {
     var body: some View {
         VStack(alignment: .leading) {
             VStack {
@@ -84,5 +84,5 @@ extension DashboardView: View {
 }
 
 #Preview {
-    DashboardView(viewModel: .mock)
+    PhoneDashboardView(viewModel: .mock)
 }
