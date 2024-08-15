@@ -529,6 +529,28 @@
         }
       }
     },
+    "Icons.flag" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "flag"
+          }
+        }
+      }
+    },
+    "Icons.flagFilled" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "flag.fill"
+          }
+        }
+      }
+    },
     "Icons.forward" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -580,6 +602,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "gear"
+          }
+        }
+      }
+    },
+    "Icons.tag" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "tag"
+          }
+        }
+      }
+    },
+    "Icons.tagFilled" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "tag.fill"
           }
         }
       }

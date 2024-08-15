@@ -48,7 +48,9 @@ extension SettingsView {
             }
             .listStyle(.plain)
         }
-        .tabItem { Text(Txt.categoriesLabel) }
+        .tabItem {
+            Label(Txt.categoriesLabel, systemImage: Str.Icons.tag)
+        }
         .environment(\.editMode, $viewModel.categoryEditMode)
         .sheet(isPresented: $viewModel.isNewCategorySheetPresented) {
             VStack(spacing: .padding24) {
@@ -89,7 +91,9 @@ extension SettingsView {
             }
             .listStyle(.plain)
         }
-        .tabItem { Text(Txt.columnsLabel) }
+        .tabItem {
+            Label(Txt.columnsLabel, image: .column)
+        }
         .environment(\.editMode, $viewModel.columnEditMode)
         .sheet(isPresented: $viewModel.isNewColumnSheetPresented) {
             VStack(spacing: .padding24) {
@@ -127,7 +131,9 @@ extension SettingsView {
             }
             .listStyle(.plain)
         }
-        .tabItem { Text(Txt.prioritiesLabel) }
+        .tabItem {
+            Label(Txt.prioritiesLabel, systemImage: Str.Icons.flag)
+        }
         .environment(\.editMode, $viewModel.priorityEditMode)
         .sheet(isPresented: $viewModel.isNewPrioritySheetPresented) {
             VStack(spacing: .padding24) {

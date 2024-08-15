@@ -8,6 +8,8 @@ public extension Double {
     static let indicatorScaledWidth = 0.4
     /// 0.5
     static let midOpacity = 0.5
+    /// 0.3
+    static let lowOpacity = 0.3
     /// 0.7
     static let defaultAnimationDuration = 0.7
     /// 0.7

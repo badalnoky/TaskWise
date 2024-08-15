@@ -131,6 +131,10 @@ internal enum Str {
         internal static let edit = String(localized: "Icons.edit", defaultValue: "pencil")
         /// line.3.horizontal.decrease.circle
         internal static let filter = String(localized: "Icons.filter", defaultValue: "line.3.horizontal.decrease.circle")
+        /// flag
+        internal static let flag = String(localized: "Icons.flag", defaultValue: "flag")
+        /// flag.fill
+        internal static let flagFilled = String(localized: "Icons.flagFilled", defaultValue: "flag.fill")
         /// chevron.right
         internal static let forward = String(localized: "Icons.forward", defaultValue: "chevron.right")
         /// list.bullet.below.rectangle
@@ -141,6 +145,10 @@ internal enum Str {
         internal static let search = String(localized: "Icons.search", defaultValue: "magnifyingglass")
         /// gear
         internal static let settings = String(localized: "Icons.settings", defaultValue: "gear")
+        /// tag
+        internal static let tag = String(localized: "Icons.tag", defaultValue: "tag")
+        /// tag.fill
+        internal static let tagFilled = String(localized: "Icons.tagFilled", defaultValue: "tag.fill")
         /// chevron.up
         internal static let up = String(localized: "Icons.up", defaultValue: "chevron.up")
     }

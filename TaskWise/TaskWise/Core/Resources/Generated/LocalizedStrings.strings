@@ -50,11 +50,15 @@
 "Icons.down" = "chevron.down";
 "Icons.edit" = "pencil";
 "Icons.filter" = "line.3.horizontal.decrease.circle";
+"Icons.flag" = "flag";
+"Icons.flagFilled" = "flag.fill";
 "Icons.forward" = "chevron.right";
 "Icons.list" = "list.bullet.below.rectangle";
 "Icons.more" = "ellipsis";
 "Icons.search" = "magnifyingglass";
 "Icons.settings" = "gear";
+"Icons.tag" = "tag";
+"Icons.tagFilled" = "tag.fill";
 "Icons.up" = "chevron.up";
 "Indicator.completion" = "%d/%d";
 "RepeatBehaviorPicker.backButtonLabel" = "Back";
