@@ -15,7 +15,6 @@ extension SettingsView: View {
                 priorityTab
             }
         }
-        .defaultViewPadding()
         .settingsNavigationBar(
             isEditing: viewModel.isEditing,
             editAction: viewModel.didTapEdit,
@@ -30,23 +29,28 @@ extension SettingsView: View {
 
 extension SettingsView {
     var categoryTab: some View {
-        VStack {
-            List {
+        ScrollView {
+            VStack {
                 ForEach(viewModel.categories, id: \.self) { category in
-                    HStack {
-                        EditableText(item: category, isEditable: viewModel.categoryEditMode == .active) {
-                            viewModel.didChangeName(of: category, to: $0)
+                    ListItemView(
+                        isEditable: viewModel.categoryEditMode == .active,
+                        deleteAction: { viewModel.didTapDeleteCategory(category) }
+                    ) {
+                        HStack {
+                            EditableText(item: category, isEditable: viewModel.categoryEditMode == .active) {
+                                viewModel.didChangeName(of: category, to: $0)
+                            }
+                            Spacer()
+                            CategoryColorPicker(category: category, isEditable: viewModel.categoryEditMode == .active) {
+                                viewModel.didChangeColor(on: category, to: $0)
+                            }
+                            .padding(.horizontal, .padding8)
                         }
-                        CategoryColorPicker(category: category, isEditable: viewModel.categoryEditMode == .active) {
-                            viewModel.didChangeColor(on: category, to: $0)
-                        }
+                        .padding(.horizontal, .padding8)
                     }
-                    .padding(.horizontal, .padding16)
                 }
-                .onDelete(perform: viewModel.didTapDeleteCategory)
-                .defaultListRowSettings()
             }
-            .listStyle(.plain)
+            .defaultViewPadding()
         }
         .tabItem {
             Label(Txt.categoriesLabel, systemImage: Str.Icons.tag)
@@ -77,19 +81,23 @@ extension SettingsView {
     }
 
     var columnTab: some View {
-        VStack {
-            List {
-                ForEach(viewModel.columns, id: \.self) { column in
+        ScrollView {
+            VStack {
+                ReorderableList(
+                    highLabel: Txt.firstLabel,
+                    lowLabel: Txt.lastLabel,
+                    isEditable: viewModel.columnEditMode == .active,
+                    items: viewModel.columns,
+                    deleteAction: { viewModel.didTapDeleteColumn($0) },
+                    moveAction: viewModel.didMoveColumn
+                ) { column in
                     EditableText(item: column, isEditable: viewModel.columnEditMode == .active) {
                         viewModel.didChangeName(of: column, to: $0)
                     }
                     .padding(.horizontal, .padding16)
                 }
-                .onDelete(perform: viewModel.didTapDeleteColumn)
-                .onMove(perform: viewModel.didMoveColumn)
-                .defaultListRowSettings()
+                .defaultViewPadding()
             }
-            .listStyle(.plain)
         }
         .tabItem {
             Label(Txt.columnsLabel, image: .column)
@@ -117,19 +125,23 @@ extension SettingsView {
     }
 
     var priorityTab: some View {
-        VStack {
-            List {
-                ForEach(viewModel.priorities, id: \.self) { priority in
+        ScrollView {
+            VStack {
+                ReorderableList(
+                    highLabel: Txt.highLabel,
+                    lowLabel: Txt.lowLabel,
+                    isEditable: viewModel.priorityEditMode == .active,
+                    items: viewModel.priorities,
+                    deleteAction: { viewModel.didTapDeletePriority($0) },
+                    moveAction: viewModel.didMovePriority(source:destination:)
+                ) { priority in
                     EditableText(item: priority, isEditable: viewModel.priorityEditMode == .active) {
                         viewModel.didChangeName(of: priority, to: $0)
                     }
                     .padding(.horizontal, .padding16)
                 }
-                .onDelete(perform: viewModel.didTapDeletePriority)
-                .onMove(perform: viewModel.didMovePriority)
-                .defaultListRowSettings()
+                .defaultViewPadding()
             }
-            .listStyle(.plain)
         }
         .tabItem {
             Label(Txt.prioritiesLabel, systemImage: Str.Icons.flag)

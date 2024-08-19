@@ -24,15 +24,11 @@ extension ListItemView: View {
             HStack {
                 content()
             }
-            .padding(.horizontal, .padding12)
             .frame(height: .listItemHeight)
-            .background {
-                Rectangle()
-                    .fill(.green.opacity(.midOpacity))
-            }
+            .background { Rectangle().fill(.appBackground) }
 
             Button(action: deleteAction) {
-                Image(systemName: "trash")
+                Image.trash
                     .resizable()
                     .scaledToFit()
                     .padding(.vertical, .padding12)
@@ -47,6 +43,8 @@ extension ListItemView: View {
             }
         }
         .clipShape(RoundedRectangle(cornerRadius: .padding12))
+        .edgeShadows()
+        .padding(.vertical, .padding4)
         .gesture(
             DragGesture(minimumDistance: .minimumDragDistance)
                 .onChanged { gesture in

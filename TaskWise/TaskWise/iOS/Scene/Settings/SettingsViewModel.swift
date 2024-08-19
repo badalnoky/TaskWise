@@ -99,24 +99,21 @@ extension SettingsViewModel {
         hasChanges = true
     }
 
-    func didTapDeleteCategory(offsets: IndexSet) {
-        guard offsets.count == .one, let idx = offsets.first else { return }
+    func didTapDeleteCategory(_ category: Category) {
         handle {
-            try dataService.deleteCategory(categories[idx])
+            try dataService.deleteCategory(category)
         }
     }
 
-    func didTapDeleteColumn(offsets: IndexSet) {
-        guard offsets.count == .one, let idx = offsets.first else { return }
+    func didTapDeleteColumn(_ column: TaskColumn) {
         handle {
-            try dataService.deleteColumn(columns[idx])
+            try dataService.deleteColumn(column)
         }
     }
 
-    func didTapDeletePriority(offsets: IndexSet) {
-        guard offsets.count == .one, let idx = offsets.first else { return }
+    func didTapDeletePriority(_ priority: Priority) {
         handle {
-            try dataService.deletePriority(priorities[idx])
+            try dataService.deletePriority(priority)
         }
     }
 

@@ -1,11 +1,14 @@
 import SwiftUI
 
-struct ReorderableList<Item: NamedItem & Equatable & Identifiable> {
+struct ReorderableList<Item: NamedItem & Equatable & Identifiable, Content: View> {
     var highLabel: String
     var lowLabel: String
     var isEditable: Bool
-    var deleteAction: () -> Void
-    @State var items: [Item]
+    var actualItems: [Item]
+    var deleteAction: (Item) -> Void
+    var moveAction: (IndexSet, Int) -> Void
+    var content: (Item) -> Content
+    @State var shownItems: [Item] = []
     @State var draggedItem: Item?
 
     init(
@@ -13,13 +16,18 @@ struct ReorderableList<Item: NamedItem & Equatable & Identifiable> {
         lowLabel: String,
         isEditable: Bool,
         items: [Item],
-        deleteAction: @escaping () -> Void
+        deleteAction: @escaping (Item) -> Void,
+        moveAction: @escaping (IndexSet, Int) -> Void,
+        @ViewBuilder content: @escaping (Item) -> Content
     ) {
         self.highLabel = highLabel
         self.lowLabel = lowLabel
         self.isEditable = isEditable
-        self.items = items
+        self.actualItems = items
+        self.shownItems = items
         self.deleteAction = deleteAction
+        self.moveAction = moveAction
+        self.content = content
     }
 }
 
@@ -28,12 +36,11 @@ extension ReorderableList: View {
         HStack {
             orderIndicator
             VStack {
-                ForEach(items, id: \.id) { item in
-                    ListItemView(isEditable: isEditable, deleteAction: deleteAction) {
-                        HStack {
-                            Text(item.name)
-                            Spacer()
-                        }
+                ForEach(actualItems, id: \.id) { item in
+                    ListItemView(isEditable: isEditable) {
+                        deleteAction(item)
+                    } content: {
+                        content(item)
                     }
                     .onDrag {
                         self.draggedItem = item
@@ -43,8 +50,9 @@ extension ReorderableList: View {
                         of: [.text],
                         delegate: DropViewDelegate(
                             destinationItem: item,
-                            items: $items,
-                            draggedItem: $draggedItem
+                            items: $shownItems,
+                            draggedItem: $draggedItem,
+                            moveAction: moveAction
                         )
                     )
                 }
@@ -68,7 +76,7 @@ private extension ReorderableList {
                     .background(
                         Capsule()
                             .fill(.white)
-                            .shadow(radius: .shadowRadius)
+                            .edgeShadows()
                     )
                 Spacer()
                 Text(lowLabel)
@@ -76,7 +84,7 @@ private extension ReorderableList {
                     .background(
                         Capsule()
                             .fill(.white)
-                            .shadow(radius: .shadowRadius)
+                            .edgeShadows()
                     )
             }
         }

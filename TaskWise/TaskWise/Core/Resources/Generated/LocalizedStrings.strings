@@ -59,6 +59,7 @@
 "Icons.settings" = "gear";
 "Icons.tag" = "tag";
 "Icons.tagFilled" = "tag.fill";
+"Icons.trash" = "trash";
 "Icons.up" = "chevron.up";
 "Indicator.completion" = "%d/%d";
 "RepeatBehaviorPicker.backButtonLabel" = "Back";
@@ -81,6 +82,10 @@
 "Settings.columnsLabel" = "Columns";
 "Settings.examplePriority" = "High";
 "Settings.exampleTitle" = "Example";
+"Settings.firstLabel" = "First";
+"Settings.highLabel" = "High";
+"Settings.lastLabel" = "Last";
+"Settings.lowLabel" = "Low";
 "Settings.prioritiesLabel" = "Priorities";
 "Settings.priorityPlaceholder" = "Priority name";
 "Settings.title" = "Settings";

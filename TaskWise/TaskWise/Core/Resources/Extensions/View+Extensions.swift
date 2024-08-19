@@ -2,7 +2,7 @@ import SwiftUI
 
 extension View {
     func sized(_ size: CGFloat) -> some View {
-        self.frame(width: size, height: size)
+        self.frame(width: size, height: size, alignment: .center)
     }
 
     func textStyle(_ style: TextStyle) -> some View {
@@ -18,7 +18,7 @@ extension View {
             .frame(maxWidth: .infinity, alignment: .center)
             .overlay {
                 RoundedRectangle(cornerRadius: .cornerRadius)
-                    .stroke(Color.accentColor.opacity(isEnabled ? .one : .midOpacity), lineWidth: .borderWidth)
+                    .stroke(Color.accentColor.opacity(isEnabled ? .one : .zero), lineWidth: .borderWidth)
             }
             .padding(.borderWidth)
     }
@@ -59,5 +59,11 @@ extension View {
         UIColor(color).getRed(&red, green: &green, blue: &blue, alpha: &alpha)
         let luminance = 0.2126 * red + 0.7152 * green + 0.0722 * blue
         return  luminance < 0.6 ? self.foregroundColor(.lightContrast) : self.foregroundColor(.darkContrast)
+    }
+
+    func edgeShadows() -> some View {
+        self
+            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 5, y: 5)
+            .shadow(color: Color.white.opacity(0.7), radius: 5, x: -2.5, y: -2.5)
     }
 }

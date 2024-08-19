@@ -4,6 +4,7 @@ struct DropViewDelegate<Item: NamedItem & Equatable & Identifiable>: DropDelegat
     let destinationItem: Item
     @Binding var items: [Item]
     @Binding var draggedItem: Item?
+    var moveAction: (IndexSet, Int) -> Void
 
     func dropUpdated(info: DropInfo) -> DropProposal? {
         DropProposal(operation: .move)
@@ -20,8 +21,11 @@ struct DropViewDelegate<Item: NamedItem & Equatable & Identifiable>: DropDelegat
             if let fromIndex {
                 let toIndex = items.firstIndex(of: destinationItem)
                 if let toIndex, fromIndex != toIndex {
+                    let fromOffset = IndexSet(integer: fromIndex)
+                    let toOffset = (toIndex > fromIndex ? (toIndex + .one) : toIndex)
                     withAnimation {
-                        self.items.move(fromOffsets: IndexSet(integer: fromIndex), toOffset: (toIndex > fromIndex ? (toIndex + 1) : toIndex))
+                        self.items.move(fromOffsets: fromOffset, toOffset: toOffset)
+                        moveAction(fromOffset, toOffset)
                     }
                 }
             }
