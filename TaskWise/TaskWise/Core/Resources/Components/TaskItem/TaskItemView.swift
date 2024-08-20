@@ -29,11 +29,12 @@ extension TaskItemView: View {
         }
         .padding(.horizontal, .padding8)
         .frame(maxWidth: .infinity, alignment: .center)
-        .overlay {
-            RoundedRectangle(cornerRadius: .cornerRadius)
-                .stroke(.accent, lineWidth: .borderWidth)
+        .background {
+            RoundedRectangle(cornerRadius: .padding12)
+                .fill(Color.appBackground)
         }
-        .padding(.borderWidth)
+        .clipped()
+        .edgeShadows()
         .contentShape(RoundedRectangle(cornerRadius: .cornerRadius))
     }
 }

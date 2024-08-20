@@ -63,7 +63,7 @@ extension View {
 
     func edgeShadows() -> some View {
         self
-            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 5, y: 5)
-            .shadow(color: Color.white.opacity(0.7), radius: 5, x: -2.5, y: -2.5)
+            .shadow(color: Color.lowerShadow, radius: 5, x: 5, y: 5)
+            .shadow(color: Color.upperShadow, radius: 5, x: -2.5, y: -2.5)
     }
 }

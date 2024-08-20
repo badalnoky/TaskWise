@@ -76,8 +76,10 @@ extension SettingsView {
             }
             .presentationDetents([.height(.defaultFilterSheetHeight)])
             .defaultViewPadding()
+            .background(Color.appBackground)
         }
         .tag(SettingTabs.category)
+        .background(Color.appBackground)
     }
 
     var columnTab: some View {
@@ -120,8 +122,10 @@ extension SettingsView {
             }
             .presentationDetents([.height(.defaultFilterSheetHeight)])
             .defaultViewPadding()
+            .background(Color.appBackground)
         }
         .tag(SettingTabs.column)
+        .background(Color.appBackground)
     }
 
     var priorityTab: some View {
@@ -164,8 +168,10 @@ extension SettingsView {
             }
             .presentationDetents([.height(.defaultFilterSheetHeight)])
             .defaultViewPadding()
+            .background(Color.appBackground)
         }
         .tag(SettingTabs.priority)
+        .background(Color.appBackground)
     }
 }
 

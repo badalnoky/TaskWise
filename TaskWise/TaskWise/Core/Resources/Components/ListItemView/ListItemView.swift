@@ -39,7 +39,7 @@ extension ListItemView: View {
             .frame(height: .listItemHeight)
             .background {
                 Rectangle()
-                    .fill(.red.opacity(.midOpacity))
+                    .fill(Color.delete)
             }
         }
         .clipShape(RoundedRectangle(cornerRadius: .padding12))

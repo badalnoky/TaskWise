@@ -24,8 +24,10 @@ public struct Navigator<Factory: SceneFactory>: NavigatorInput {
     public var body: some View {
         NavigationStack(path: $presentationStack) {
             factory.view(for: root, with: self as! Factory.SpecificNavigator)
+                .background(Color.appBackground)
                 .navigationDestination(for: Factory.FlowScreen.self) { screen in
                     factory.view(for: screen, with: self as! Factory.SpecificNavigator)
+                        .background(Color.appBackground)
                 }
         }
     }

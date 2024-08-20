@@ -20,10 +20,10 @@ public struct IconButton: View {
                 icon.fittedToSize(.defaultIconSize)
                     .foregroundStyle(.accent.opacity(isEnabled ? .one : .midOpacity))
                     .background {
-                        RoundedRectangle(cornerRadius: 12).fill(Color.appBackground).sized(.iconButtonSize)
+                        RoundedRectangle(cornerRadius: .padding12).fill(Color.appBackground).sized(.iconButtonSize)
                     }
-                    .shadow(color: Color.black.opacity(0.2), radius: 2, x: 2, y: 2)
-                    .shadow(color: Color.white.opacity(0.7), radius: 2, x: -1, y: -1)
+                    .shadow(color: Color.lowerShadow, radius: 2, x: 2, y: 2)
+                    .shadow(color: Color.upperShadow, radius: 2, x: -1, y: -1)
             }
         )
     }

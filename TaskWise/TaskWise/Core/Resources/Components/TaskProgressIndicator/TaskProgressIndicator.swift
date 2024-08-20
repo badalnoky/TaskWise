@@ -24,6 +24,15 @@ extension TaskProgressIndicator: View {
                 .frame(width: width)
                 .rotationEffect(.degrees(.indicatorRotation))
                 .foregroundStyle(.text.opacity(.indicatorBaseOpacity))
+                .background {
+                    Circle()
+                        .trim(from: .indicatorLowerBound, to: .indicatorGreaterBound)
+                        .stroke(style: StrokeStyle(lineWidth: .shadowLineWidth, lineCap: .round, lineJoin: .round))
+                        .frame(width: width)
+                        .rotationEffect(.degrees(.indicatorRotation))
+                        .foregroundStyle(.appBackground)
+                }
+                .edgeShadows()
 
             Circle()
                 .trim(from: .indicatorLowerBound, to: progress)

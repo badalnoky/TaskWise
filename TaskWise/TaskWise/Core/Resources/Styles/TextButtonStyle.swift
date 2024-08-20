@@ -9,5 +9,9 @@ public struct TextButtonStyle: ButtonStyle {
             .textStyle(.body)
             .padding(.horizontal, .padding8)
             .padding(.vertical, .padding8)
+            .background {
+                RoundedRectangle(cornerRadius: .padding12).fill(Color.appBackground)
+            }
+            .edgeShadows()
     }
 }

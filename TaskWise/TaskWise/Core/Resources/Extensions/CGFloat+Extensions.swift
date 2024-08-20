@@ -27,6 +27,8 @@ public extension CGFloat {
     static let widgetFontSize: CGFloat = 20
     /// 25 pt
     static let defaultIconSize: CGFloat = 25
+    /// 25 pt
+    static let shadowLineWidth: CGFloat = 25
     /// 28 pt
     static let defaultColorPickerSize: CGFloat = 28
     /// 30 pt

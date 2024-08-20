@@ -72,18 +72,18 @@ private extension ReorderableList {
                 .shadow(radius: .mutedShadowRadius, y: .orderIndicatorOffset)
             VStack {
                 Text(highLabel)
-                    .padding(.padding6)
+                    .padding(.padding8)
                     .background(
-                        Capsule()
-                            .fill(.white)
+                        RoundedRectangle(cornerRadius: .padding12)
+                            .fill(.appBackground)
                             .edgeShadows()
                     )
                 Spacer()
                 Text(lowLabel)
-                    .padding(.padding6)
+                    .padding(.padding8)
                     .background(
-                        Capsule()
-                            .fill(.white)
+                        RoundedRectangle(cornerRadius: .padding12)
+                            .fill(.appBackground)
                             .edgeShadows()
                     )
             }
