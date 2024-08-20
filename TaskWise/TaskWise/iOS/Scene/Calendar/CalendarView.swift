@@ -14,12 +14,10 @@ extension CalendarView: View {
                 searchView
             } else {
                 VStack {
-                    Spacer()
-
                     CalendarDatePicker(selectedDate: $viewModel.selectedDate) {
                         viewModel.didTapDate()
                     }
-                    .defaultViewPadding()
+                    .padding(.horizontal, .padding16)
 
                     if viewModel.isListed {
                         GeometryReader { geometry in
@@ -122,6 +120,7 @@ extension CalendarView {
         }
         .presentationDetents([.height(.defaultFilterSheetHeight)])
         .defaultViewPadding()
+        .background(Color.appBackground)
     }
 
     var searchView: some View {
