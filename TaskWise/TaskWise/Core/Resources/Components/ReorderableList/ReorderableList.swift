@@ -73,19 +73,11 @@ private extension ReorderableList {
             VStack {
                 Text(highLabel)
                     .padding(.padding8)
-                    .background(
-                        RoundedRectangle(cornerRadius: .padding12)
-                            .fill(.appBackground)
-                            .edgeShadows()
-                    )
+                    .neumorphic()
                 Spacer()
                 Text(lowLabel)
                     .padding(.padding8)
-                    .background(
-                        RoundedRectangle(cornerRadius: .padding12)
-                            .fill(.appBackground)
-                            .edgeShadows()
-                    )
+                    .neumorphic()
             }
         }
     }

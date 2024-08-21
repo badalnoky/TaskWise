@@ -66,4 +66,13 @@ extension View {
             .shadow(color: Color.lowerShadow, radius: 5, x: 5, y: 5)
             .shadow(color: Color.upperShadow, radius: 5, x: -2.5, y: -2.5)
     }
+
+    func neumorphic() -> some View {
+        self
+            .background(
+                RoundedRectangle(cornerRadius: .padding12)
+                    .fill(.appBackground)
+                    .edgeShadows()
+            )
+    }
 }

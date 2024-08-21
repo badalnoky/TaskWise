@@ -49,11 +49,18 @@ struct RepeatBehaviourPicker {
 extension RepeatBehaviourPicker: View {
     var body: some View {
         VStack(spacing: .padding12) {
-            TaskRow(title: Str.RepeatBehaviorPicker.repeatLabel, selected: $repeatFrequency) {
-                ForEach(RepeatFrequency.allCases, id: \.self) {
-                    Text($0.rawValue)
+            HStack(spacing: .zero) {
+                Text(Str.RepeatBehaviorPicker.repeatLabel)
+                    .textStyle(.body)
+                Spacer()
+                Picker(String.empty, selection: $repeatFrequency) {
+                    ForEach(RepeatFrequency.allCases, id: \.self) {
+                        Text($0.rawValue)
+                    }
                 }
             }
+            .padding(.horizontal, .padding4)
+            .frame(height: .defaultRowHeight)
             .onChange(of: repeatFrequency) {
                 repeatBehaviour.wrappedValue.frequency = repeatFrequency
             }
@@ -73,7 +80,9 @@ extension RepeatBehaviourPicker: View {
         }
         .sheet(isPresented: $isCustomSheetPresented, onDismiss: validateAndCorrect) {
             customBehaviorSheet
+                .background(Color.appBackground)
         }
+        .neumorphic()
     }
 }
 
@@ -83,7 +92,7 @@ extension RepeatBehaviourPicker {
             Text(Str.RepeatBehaviorPicker.endDateLabel)
                 .textStyle(.body)
         }
-        .padding(.leading, .padding4)
+        .padding(.horizontal, .padding4)
         .frame(height: .defaultRowHeight)
         .onChange(of: selectedEndDate) {
             repeatBehaviour.wrappedValue.end = selectedEndDate.endOfDay
@@ -183,13 +192,35 @@ extension RepeatBehaviourPicker {
         }
     }
 
+    private var frequencyButton: some View {
+        Button(action: { isUnitFrequencyPresented.toggle() }) {
+            HStack {
+                Text(Str.RepeatBehaviorPicker.everyLabel)
+                    .textStyle(.body)
+                Spacer()
+                let unitFrequencyLabel = if unitFrequency == .one {
+                    String(Str.RepeatBehaviorPicker.repeatEveryLabel(unitFrequency, repeatUnit.label).dropFirst(2))
+                } else {
+                    Str.RepeatBehaviorPicker.repeatEveryLabel(unitFrequency, repeatUnit.label)
+                }
+                Text(unitFrequencyLabel)
+            }
+            .padding(.leading, .padding4)
+            .padding(.trailing, .padding16)
+        }
+        .frame(height: .defaultRowHeight)
+        .neumorphic()
+    }
+
     private var behaviorSheetHeaderView: some View {
-        VStack {
+        VStack(spacing: .padding12) {
             HStack {
                 Button(Str.RepeatBehaviorPicker.backButtonLabel) { isCustomSheetPresented = false }
                     .buttonStyle(TextButtonStyle())
                 Spacer()
             }
+            .padding(.top, .padding12)
+
             TaskRow(title: Str.RepeatBehaviorPicker.frequencyLabel, selected: $repeatUnit) {
                 ForEach(RepeatUnit.allCases, id: \.self) {
                     Text($0.rawValue)
@@ -201,21 +232,7 @@ extension RepeatBehaviourPicker {
                 repeatBehaviour.wrappedValue.schedule = .init(unit: repeatUnit, unitFrequency: unitFrequency, indices: indices)
             }
 
-            Button(action: { isUnitFrequencyPresented.toggle() }) {
-                HStack {
-                    Text(Str.RepeatBehaviorPicker.everyLabel)
-                        .textStyle(.body)
-                    Spacer()
-                    let unitFrequencyLabel = if unitFrequency == .one {
-                        String(Str.RepeatBehaviorPicker.repeatEveryLabel(unitFrequency, repeatUnit.label).dropFirst(2))
-                    } else {
-                        Str.RepeatBehaviorPicker.repeatEveryLabel(unitFrequency, repeatUnit.label)
-                    }
-                    Text(unitFrequencyLabel)
-                }
-                .padding(.leading, .padding4)
-                .padding(.trailing, .padding16)
-            }
+            frequencyButton
         }
     }
 

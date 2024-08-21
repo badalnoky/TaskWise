@@ -42,6 +42,7 @@ extension CombinedDatePicker: View {
                 DatePicker(selection: starts, in: Date.now..., displayedComponents: .date) {
                     Text(Str.DatePicker.dateLabel).textStyle(.body)
                 }
+                .frame(height: .defaultRowHeight)
             }
         }
         .padding(.horizontal, .padding4)

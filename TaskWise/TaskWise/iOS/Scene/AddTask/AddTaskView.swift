@@ -10,9 +10,7 @@ extension AddTaskView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: .padding12) {
-                StyledField(style: .title, title: Txt.titleLabel, text: $viewModel.title)
-
-                StyledField(style: .description, title: Txt.descriptionLabel, text: $viewModel.description)
+                titleAndDescriptionView
 
                 TaskRow(title: Txt.priorityLabel, selected: $viewModel.selectedPriority) {
                     ForEach(viewModel.priorities, id: \.level) {
@@ -33,6 +31,7 @@ extension AddTaskView: View {
                 }
 
                 CombinedDatePicker(allDay: $viewModel.allDay, starts: $viewModel.starts, ends: $viewModel.ends)
+                    .neumorphic()
 
                 RepeatBehaviourPicker(startingDate: viewModel.starts, repeatBehaviour: $viewModel.repeatBehaviour)
 
@@ -42,34 +41,49 @@ extension AddTaskView: View {
                     .buttonStyle(BaseButtonStyle())
                     .disabled(viewModel.isCreationDisabled)
             }
+            .defaultViewPadding()
         }
         .scrollIndicators(.never, axes: .vertical)
         .environment(\.editMode, $viewModel.editMode)
-        .defaultViewPadding()
     }
 }
 
 extension AddTaskView {
+    var titleAndDescriptionView: some View {
+        VStack(spacing: .padding12) {
+            StyledField(style: .title, title: Txt.titleLabel, text: $viewModel.title)
+
+            StyledField(style: .description, title: Txt.descriptionLabel, text: $viewModel.description)
+        }
+        .padding(.padding4)
+        .neumorphic()
+    }
+
     var stepView: some View {
         VStack(spacing: .padding12) {
-            HStack {
-                StyledText(text: Txt.stepsLabel, style: .base)
-                    .frame(height: .defaultRowHeight)
-                    .padding(.leading, .padding4)
-                Image(systemName: viewModel.isStepViewExpanded ? Str.Icons.down : Str.Icons.forward)
-                    .contentTransition(.symbolEffect(.replace.wholeSymbol))
-                    .foregroundStyle(.accent)
-                    .padding(.trailing, .padding4)
-            }
-            .onTapGesture {
-                withAnimation {
-                    viewModel.isStepViewExpanded.toggle()
+            VStack(spacing: .padding12) {
+                HStack {
+                    StyledText(text: Txt.stepsLabel, style: .base)
+                        .frame(height: .defaultRowHeight)
+                        .padding(.leading, .padding4)
+                    Image(systemName: viewModel.isStepViewExpanded ? Str.Icons.down : Str.Icons.forward)
+                        .contentTransition(.symbolEffect(.replace.wholeSymbol))
+                        .foregroundStyle(.accent)
+                        .padding(.trailing, .padding4)
+                }
+                .onTapGesture {
+                    withAnimation {
+                        viewModel.isStepViewExpanded.toggle()
+                    }
+                }
+
+                if viewModel.isStepViewExpanded {
+                    stepList
                 }
             }
+            .neumorphic()
 
             if viewModel.isStepViewExpanded {
-                stepList
-
                 HStack {
                     StyledField(style: .base, title: Txt.stepLabel, text: $viewModel.newStepName)
                     IconButton(.add, action: viewModel.didTapAddStep)

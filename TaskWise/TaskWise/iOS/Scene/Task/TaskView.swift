@@ -44,9 +44,9 @@ extension TaskView: View {
                 Button(viewModel.actionButtonLabel, action: viewModel.didTapAction)
                     .buttonStyle(BaseButtonStyle())
             }
+            .defaultViewPadding()
         }
         .scrollIndicators(.never, axes: .vertical)
-        .defaultViewPadding()
         .environment(\.editMode, $viewModel.editMode)
         .alert(viewModel.deleteAlertMessage, isPresented: $viewModel.isDeleteAlertPresented) {
             if viewModel.isRepeating {

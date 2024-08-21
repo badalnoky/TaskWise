@@ -27,11 +27,7 @@ extension TaskRow: View {
         }
         .padding(.horizontal, .padding4)
         .frame(height: .defaultRowHeight)
-        .background(
-            RoundedRectangle(cornerRadius: .padding12)
-                .fill(.appBackground)
-                .edgeShadows()
-        )
+        .neumorphic()
     }
 }
 
