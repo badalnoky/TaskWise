@@ -11,9 +11,7 @@ extension TaskView: View {
         ScrollView {
             VStack(spacing: .padding12) {
                 Group {
-                    StyledField(style: .title, title: Txt.titleLabel, text: $viewModel.title)
-
-                    StyledField(style: .description, title: Txt.descriptionLabel, text: $viewModel.description)
+                    titleAndDescriptionView
 
                     TaskRow(title: Txt.priorityLabel, selected: $viewModel.selectedPriority) {
                         ForEach(viewModel.priorities, id: \.level) {
@@ -34,6 +32,7 @@ extension TaskView: View {
                     }
 
                     CombinedDatePicker(allDay: $viewModel.allDay, starts: $viewModel.starts, ends: $viewModel.ends)
+                        .neumorphic()
 
                     RepeatBehaviourPicker(startingDate: viewModel.starts, repeatBehaviour: $viewModel.repeatBehaviour)
                 }
@@ -67,30 +66,39 @@ extension TaskView: View {
 }
 
 extension TaskView {
+    var titleAndDescriptionView: some View {
+        VStack(spacing: .padding12) {
+            StyledField(style: .title, title: Txt.titleLabel, text: $viewModel.title)
+
+            StyledField(style: .description, title: Txt.descriptionLabel, text: $viewModel.description)
+        }
+        .padding(.padding4)
+        .neumorphic()
+    }
+
     var stepView: some View {
         VStack(spacing: .padding12) {
-            StyledText(text: Txt.stepsLabel, style: .base)
-                .frame(height: .defaultRowHeight)
-                .padding(.leading, .padding4)
-
-            List {
-                ForEach(viewModel.steps, id: \.self) { step in
-                    TaskStepView(
-                        step: step,
-                        isEditable: viewModel.isEditable,
-                        toggleAction: {
-                            viewModel.didTapToggle(on: step)
-                        },
-                        newLabelAcion: {
-                            viewModel.didChangeLabel(on: step, to: $0)
-                        }
-                    )
+            VStack(spacing: .padding12) {
+                HStack {
+                    StyledText(text: Txt.stepsLabel, style: .base)
+                        .frame(height: .defaultRowHeight)
+                        .padding(.leading, .padding4)
+                    Image(systemName: viewModel.isStepViewExpanded ? Str.Icons.down : Str.Icons.forward)
+                        .contentTransition(.symbolEffect(.replace.wholeSymbol))
+                        .foregroundStyle(.accent)
+                        .padding(.trailing, .padding4)
                 }
-                .onDelete(perform: viewModel.didTapDeleteSteps)
-                .onMove(perform: viewModel.didMoveStep)
-                .defaultListRowSettings()
+                .onTapGesture {
+                    withAnimation {
+                        viewModel.isStepViewExpanded.toggle()
+                    }
+                }
+
+                if viewModel.isStepViewExpanded {
+                    stepList
+                }
             }
-            .defaultListSettings()
+            .neumorphic()
 
             if viewModel.isEditable {
                 HStack {
@@ -100,6 +108,27 @@ extension TaskView {
             }
         }
         .padding(.horizontal, .padding4)
+    }
+
+    var stepList: some View {
+        List {
+            ForEach(viewModel.steps, id: \.self) { step in
+                TaskStepView(
+                    step: step,
+                    isEditable: viewModel.isEditable,
+                    toggleAction: {
+                        viewModel.didTapToggle(on: step)
+                    },
+                    newLabelAcion: {
+                        viewModel.didChangeLabel(on: step, to: $0)
+                    }
+                )
+            }
+            .onDelete(perform: viewModel.didTapDeleteSteps)
+            .onMove(perform: viewModel.didMoveStep)
+            .defaultListRowSettings()
+        }
+        .defaultListSettings()
     }
 }
 

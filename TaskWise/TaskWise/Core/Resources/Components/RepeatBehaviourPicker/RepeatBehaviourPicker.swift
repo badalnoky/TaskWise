@@ -126,7 +126,7 @@ extension RepeatBehaviourPicker {
                         indices = indices.sorted()
                     }
                 }
-                .foregroundStyle(isSelected ? Color.white : Color.black )
+                .foregroundStyle(isSelected ? .white : Color.text)
                 .font(.footnote)
                 .frame(maxWidth: .infinity)
                 .padding(.padding4)

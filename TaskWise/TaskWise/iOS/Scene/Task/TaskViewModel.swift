@@ -42,6 +42,7 @@ import SwiftUI
     var repeatBehaviour: RepeatBehaviour = .empty
     var steps: [TaskStep] = []
     var newStepName: String = .empty
+    var isStepViewExpanded = false
 
     var repeatBehaviourMemento: RepeatBehaviour = .empty
 
@@ -197,6 +198,9 @@ private extension TaskViewModel {
         dataService.currentSteps
             .sink { [weak self] in
                 self?.steps = $0
+                if let steps = self?.steps, !steps.isEmpty {
+                    self?.isStepViewExpanded = true
+                }
             }
             .store(in: &cancellables)
     }

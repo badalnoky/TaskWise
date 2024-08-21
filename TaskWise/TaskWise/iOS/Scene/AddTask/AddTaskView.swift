@@ -88,6 +88,7 @@ extension AddTaskView {
                     StyledField(style: .base, title: Txt.stepLabel, text: $viewModel.newStepName)
                     IconButton(.add, action: viewModel.didTapAddStep)
                         .disabled(viewModel.isStepCreationDisabled)
+                        .padding(.trailing, .padding4)
                 }
             }
         }
