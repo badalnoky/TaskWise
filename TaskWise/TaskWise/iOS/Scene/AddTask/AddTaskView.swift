@@ -95,24 +95,27 @@ extension AddTaskView {
     }
 
     var stepList: some View {
-        List {
+        ScrollView {
             ForEach($viewModel.steps, id: \.self) { $step in
-                HStack {
-                    StepIcon(isDone: step.isDone)
-                        .onTapGesture {
-                            withAnimation { viewModel.didTapToggle(on: step) }
-                        }
-                    TextField(String.empty, text: $step.label)
-                        .textFieldOverlay()
-                        .textStyle(.body)
+                ListItemView(
+                    isEditable: true,
+                    deleteAction: { viewModel.didTapDeleteSteps(step) }
+                ) {
+                    HStack {
+                        StepIcon(isDone: step.isDone)
+                            .onTapGesture {
+                                withAnimation { viewModel.didTapToggle(on: step) }
+                            }
+                        TextField(String.empty, text: $step.label)
+                            .textFieldOverlay()
+                            .textStyle(.body)
+                    }
+                    .padding(.horizontal, .padding4)
                 }
-                .stepRowSettings()
             }
-            .onDelete(perform: viewModel.didTapDeleteSteps)
-            .onMove(perform: viewModel.didMoveStep)
-            .defaultListRowSettings()
+            .padding(.horizontal, .padding12)
         }
-        .defaultListSettings()
+        .frame(height: .defaultListHeight)
     }
 }
 

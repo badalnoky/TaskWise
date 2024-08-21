@@ -85,7 +85,7 @@ extension SettingsView {
     var columnTab: some View {
         ScrollView {
             VStack {
-                ReorderableList(
+                OrderIndicatedList(
                     highLabel: Txt.firstLabel,
                     lowLabel: Txt.lastLabel,
                     isEditable: viewModel.columnEditMode == .active,
@@ -131,7 +131,7 @@ extension SettingsView {
     var priorityTab: some View {
         ScrollView {
             VStack {
-                ReorderableList(
+                OrderIndicatedList(
                     highLabel: Txt.highLabel,
                     lowLabel: Txt.lowLabel,
                     isEditable: viewModel.priorityEditMode == .active,

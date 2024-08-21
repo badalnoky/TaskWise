@@ -13,6 +13,9 @@ struct ListItemView<Content: View> {
         @ViewBuilder content: @escaping () -> Content
     ) {
         self.isEditable = isEditable
+        if isEditable {
+            self.deletButtonWidth = .listDeleteButtonMaxWidth
+        }
         self.deleteAction = deleteAction
         self.content = content
     }

@@ -111,8 +111,13 @@ extension TaskView {
     }
 
     var stepList: some View {
-        List {
-            ForEach(viewModel.steps, id: \.self) { step in
+        ScrollView {
+            ReorderableList(
+                isEditable: viewModel.isEditable,
+                items: viewModel.steps,
+                deleteAction: { viewModel.didTapDeleteSteps($0) },
+                moveAction: viewModel.didMoveStep
+            ) { step in
                 TaskStepView(
                     step: step,
                     isEditable: viewModel.isEditable,
@@ -124,11 +129,8 @@ extension TaskView {
                     }
                 )
             }
-            .onDelete(perform: viewModel.didTapDeleteSteps)
-            .onMove(perform: viewModel.didMoveStep)
-            .defaultListRowSettings()
         }
-        .defaultListSettings()
+        .frame(height: .defaultListHeight)
     }
 }
 

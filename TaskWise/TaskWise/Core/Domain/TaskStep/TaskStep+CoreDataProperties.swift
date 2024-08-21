@@ -23,4 +23,6 @@ extension TaskStep {
     }
 }
 
-extension TaskStep: Identifiable {}
+extension TaskStep: Identifiable, NamedItem {
+    var name: String { label }
+}

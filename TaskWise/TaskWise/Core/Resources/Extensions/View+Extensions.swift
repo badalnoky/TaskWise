@@ -29,28 +29,6 @@ extension View {
             .padding(.horizontal, .padding16)
     }
 
-    #if !os(watchOS)
-    func defaultListRowSettings() -> some View {
-        self
-            .listRowSeparator(.hidden)
-            .listRowInsets(.init(top: .zero, leading: .zero, bottom: .zero, trailing: .zero))
-    }
-    #endif
-
-    func defaultListSettings() -> some View {
-        self
-            .listStyle(.plain)
-            .frame(height: .defaultListHeight)
-            .scrollContentBackground(.hidden)
-    }
-
-    func stepRowSettings() -> some View {
-        self
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.horizontal, .padding8)
-            .padding(.vertical, .padding4)
-    }
-
     func contrastTo(color: Color) -> some View {
         var red: CGFloat = .zero
         var green: CGFloat = .zero

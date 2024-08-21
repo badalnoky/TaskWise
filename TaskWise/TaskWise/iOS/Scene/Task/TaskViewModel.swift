@@ -132,12 +132,11 @@ extension TaskViewModel {
         }
     }
 
-    func didTapDeleteSteps(offsets: IndexSet) {
-        guard offsets.count == .one, let idx = offsets.first else { return }
+    func didTapDeleteSteps(_ step: TaskStep) {
         if let repeating = task.repeatingTasks {
-            dataService.deleteStepForRepeating(repeating, step: steps[idx])
+            dataService.deleteStepForRepeating(repeating, step: step)
         } else {
-            dataService.delete(step: steps[idx], from: task)
+            dataService.delete(step: step, from: task)
         }
     }
 
