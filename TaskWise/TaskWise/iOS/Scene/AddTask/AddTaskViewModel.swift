@@ -73,8 +73,9 @@ extension AddTaskViewModel {
         newStepName = .empty
     }
 
-    func didTapDeleteSteps(offsets: IndexSet) {
-        steps.remove(atOffsets: offsets)
+    func didTapDeleteSteps(_ step: TaskStep.DTO) {
+        guard let stepIdx = steps.firstIndex(of: step) else { return }
+        steps.remove(at: stepIdx)
     }
 
     func didMoveStep(source: IndexSet, destination: Int) {

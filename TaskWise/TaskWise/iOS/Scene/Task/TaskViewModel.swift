@@ -42,6 +42,7 @@ import SwiftUI
     var repeatBehaviour: RepeatBehaviour = .empty
     var steps: [TaskStep] = []
     var newStepName: String = .empty
+    var isStepViewExpanded = false
 
     var repeatBehaviourMemento: RepeatBehaviour = .empty
 
@@ -131,12 +132,11 @@ extension TaskViewModel {
         }
     }
 
-    func didTapDeleteSteps(offsets: IndexSet) {
-        guard offsets.count == .one, let idx = offsets.first else { return }
+    func didTapDeleteSteps(_ step: TaskStep) {
         if let repeating = task.repeatingTasks {
-            dataService.deleteStepForRepeating(repeating, step: steps[idx])
+            dataService.deleteStepForRepeating(repeating, step: step)
         } else {
-            dataService.delete(step: steps[idx], from: task)
+            dataService.delete(step: step, from: task)
         }
     }
 
@@ -197,6 +197,9 @@ private extension TaskViewModel {
         dataService.currentSteps
             .sink { [weak self] in
                 self?.steps = $0
+                if let steps = self?.steps, !steps.isEmpty {
+                    self?.isStepViewExpanded = true
+                }
             }
             .store(in: &cancellables)
     }

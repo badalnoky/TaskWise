@@ -2,7 +2,7 @@ import SwiftUI
 
 extension View {
     func sized(_ size: CGFloat) -> some View {
-        self.frame(width: size, height: size)
+        self.frame(width: size, height: size, alignment: .center)
     }
 
     func textStyle(_ style: TextStyle) -> some View {
@@ -18,7 +18,7 @@ extension View {
             .frame(maxWidth: .infinity, alignment: .center)
             .overlay {
                 RoundedRectangle(cornerRadius: .cornerRadius)
-                    .stroke(Color.accentColor.opacity(isEnabled ? .one : .midOpacity), lineWidth: .borderWidth)
+                    .stroke(Color.accentColor.opacity(isEnabled ? .one : .zero), lineWidth: .borderWidth)
             }
             .padding(.borderWidth)
     }
@@ -29,28 +29,6 @@ extension View {
             .padding(.horizontal, .padding16)
     }
 
-    #if !os(watchOS)
-    func defaultListRowSettings() -> some View {
-        self
-            .listRowSeparator(.hidden)
-            .listRowInsets(.init(top: .zero, leading: .zero, bottom: .zero, trailing: .zero))
-    }
-    #endif
-
-    func defaultListSettings() -> some View {
-        self
-            .listStyle(.plain)
-            .frame(height: .defaultListHeight)
-            .scrollContentBackground(.hidden)
-    }
-
-    func stepRowSettings() -> some View {
-        self
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.horizontal, .padding8)
-            .padding(.vertical, .padding4)
-    }
-
     func contrastTo(color: Color) -> some View {
         var red: CGFloat = .zero
         var green: CGFloat = .zero
@@ -59,5 +37,20 @@ extension View {
         UIColor(color).getRed(&red, green: &green, blue: &blue, alpha: &alpha)
         let luminance = 0.2126 * red + 0.7152 * green + 0.0722 * blue
         return  luminance < 0.6 ? self.foregroundColor(.lightContrast) : self.foregroundColor(.darkContrast)
+    }
+
+    func edgeShadows() -> some View {
+        self
+            .shadow(color: Color.lowerShadow, radius: 5, x: 5, y: 5)
+            .shadow(color: Color.upperShadow, radius: 5, x: -2.5, y: -2.5)
+    }
+
+    func neumorphic() -> some View {
+        self
+            .background(
+                RoundedRectangle(cornerRadius: .padding12)
+                    .fill(.appBackground)
+                    .edgeShadows()
+            )
     }
 }

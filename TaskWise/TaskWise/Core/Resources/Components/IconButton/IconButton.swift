@@ -19,9 +19,13 @@ public struct IconButton: View {
             label: {
                 icon.fittedToSize(.defaultIconSize)
                     .foregroundStyle(.accent.opacity(isEnabled ? .one : .midOpacity))
+                    .background {
+                        RoundedRectangle(cornerRadius: .padding12).fill(Color.appBackground).sized(.iconButtonSize)
+                    }
+                    .shadow(color: Color.lowerShadow, radius: 2, x: 2, y: 2)
+                    .shadow(color: Color.upperShadow, radius: 2, x: -1, y: -1)
             }
         )
-        .sized(.iconButtonSize)
     }
 
     public init(_ icon: Image, isAnimated: Bool = true, action: @escaping () -> Void) {

@@ -16,6 +16,7 @@ extension Image {
     static let next = Image(systemName: Icons.forward)
     static let up = Image(systemName: Icons.up)
     static let down = Image(systemName: Icons.down)
+    static let trash = Image(systemName: Icons.trash)
 }
 
 public extension Image {
@@ -23,6 +24,6 @@ public extension Image {
         self
             .resizable()
             .scaledToFit()
-            .frame(width: size, height: size)
+            .frame(width: size, height: size, alignment: .center)
     }
 }

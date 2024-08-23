@@ -27,6 +27,7 @@ extension TaskRow: View {
         }
         .padding(.horizontal, .padding4)
         .frame(height: .defaultRowHeight)
+        .neumorphic()
     }
 }
 

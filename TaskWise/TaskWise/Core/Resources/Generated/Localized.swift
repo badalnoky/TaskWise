@@ -131,6 +131,10 @@ internal enum Str {
         internal static let edit = String(localized: "Icons.edit", defaultValue: "pencil")
         /// line.3.horizontal.decrease.circle
         internal static let filter = String(localized: "Icons.filter", defaultValue: "line.3.horizontal.decrease.circle")
+        /// flag
+        internal static let flag = String(localized: "Icons.flag", defaultValue: "flag")
+        /// flag.fill
+        internal static let flagFilled = String(localized: "Icons.flagFilled", defaultValue: "flag.fill")
         /// chevron.right
         internal static let forward = String(localized: "Icons.forward", defaultValue: "chevron.right")
         /// list.bullet.below.rectangle
@@ -141,6 +145,12 @@ internal enum Str {
         internal static let search = String(localized: "Icons.search", defaultValue: "magnifyingglass")
         /// gear
         internal static let settings = String(localized: "Icons.settings", defaultValue: "gear")
+        /// tag
+        internal static let tag = String(localized: "Icons.tag", defaultValue: "tag")
+        /// tag.fill
+        internal static let tagFilled = String(localized: "Icons.tagFilled", defaultValue: "tag.fill")
+        /// trash
+        internal static let trash = String(localized: "Icons.trash", defaultValue: "trash")
         /// chevron.up
         internal static let up = String(localized: "Icons.up", defaultValue: "chevron.up")
     }
@@ -216,6 +226,14 @@ internal enum Str {
         internal static let examplePriority = String(localized: "Settings.examplePriority", defaultValue: "High")
         /// Example
         internal static let exampleTitle = String(localized: "Settings.exampleTitle", defaultValue: "Example")
+        /// First
+        internal static let firstLabel = String(localized: "Settings.firstLabel", defaultValue: "First")
+        /// High
+        internal static let highLabel = String(localized: "Settings.highLabel", defaultValue: "High")
+        /// Last
+        internal static let lastLabel = String(localized: "Settings.lastLabel", defaultValue: "Last")
+        /// Low
+        internal static let lowLabel = String(localized: "Settings.lowLabel", defaultValue: "Low")
         /// Priorities
         internal static let prioritiesLabel = String(localized: "Settings.prioritiesLabel", defaultValue: "Priorities")
         /// Priority name

@@ -3,20 +3,32 @@ import Foundation
 public extension CGFloat {
     /// 2 pt
     static let borderWidth: CGFloat = 2
+    /// 3 pt
+    static let mutedShadowRadius: CGFloat = 3
+    /// 4 pt
+    static let shadowRadius: CGFloat = 4
+    /// 5 pt
+    static let orderIndicatorRectangleWidth: CGFloat = 5
     /// 5 pt
     static let listCategoryWidth: CGFloat = 5
     /// 8 pt
     static let cornerRadius: CGFloat = 8
     /// 9 pt
     static let widgetIndicatorWidth: CGFloat = 9
+    /// 10 pt
+    static let orderIndicatorOffset: CGFloat = 10
     /// 12
     static let indicatorBorderWidth: CGFloat = 12
     /// 13
     static let listButtonPadding: CGFloat = 13
     /// 20
+    static let minimumDragDistance: CGFloat = 20
+    /// 20
     static let widgetFontSize: CGFloat = 20
     /// 25 pt
     static let defaultIconSize: CGFloat = 25
+    /// 25 pt
+    static let shadowLineWidth: CGFloat = 25
     /// 28 pt
     static let defaultColorPickerSize: CGFloat = 28
     /// 30 pt
@@ -25,6 +37,10 @@ public extension CGFloat {
     static let iconButtonSize: CGFloat = 35
     /// 44 pt
     static let defaultRowHeight: CGFloat = 44
+    /// 50 pt
+    static let listItemHeight: CGFloat = 50
+    /// 80 pt
+    static let listDeleteButtonMaxWidth: CGFloat = 80
     /// 200 pt
     static let defaultListHeight: CGFloat = 200
     /// 260 pt
@@ -36,6 +52,8 @@ public extension CGFloat {
     static let padding4: CGFloat = 4
     /// 8 pt
     static let padding8: CGFloat = 8
+    /// 6 pt
+    static let padding6: CGFloat = 6
     /// 12 pt
     static let padding12: CGFloat = 12
     /// 16 pt
@@ -107,4 +125,14 @@ public extension CGFloat {
     static let watchCategoryColorHeight: CGFloat = 40
     /// 20 pt
     static let watchStepIndicatorSize: CGFloat = 20
+}
+
+public extension CGFloat {
+    var half: CGFloat {
+        self / 2
+    }
+
+    var negative: CGFloat {
+        self * -1
+    }
 }

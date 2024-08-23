@@ -106,6 +106,7 @@ extension DayView {
         }
         .presentationDetents([.height(.defaultFilterSheetHeight)])
         .defaultViewPadding()
+        .background(Color.appBackground)
     }
 }
 
