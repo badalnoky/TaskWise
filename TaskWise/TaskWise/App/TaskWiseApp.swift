@@ -14,7 +14,7 @@ struct TaskWiseApp: App {
 
             // MARK: iPad
             if  UIScreen.main.traitCollection.userInterfaceIdiom == .pad {
-                PadDashboardView()
+                PadNavigator()
             }
 
             // MARK: Mac

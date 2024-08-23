@@ -62,6 +62,10 @@
 "Icons.trash" = "trash";
 "Icons.up" = "chevron.up";
 "Indicator.completion" = "%d/%d";
+"Pad.Navigation.dashboardIcon" = "rectangle.3.group";
+"Pad.Navigation.dashboardLabel" = "Dashboard";
+"Pad.Navigation.settingsIcon" = "gear";
+"Pad.Navigation.settingsLabel" = "Settings";
 "RepeatBehaviorPicker.backButtonLabel" = "Back";
 "RepeatBehaviorPicker.customRepeatLabel" = "Repeats every";
 "RepeatBehaviorPicker.dayButtonLabel" = "%d";
