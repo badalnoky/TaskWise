@@ -3,13 +3,16 @@ import SwiftUI
 public struct PadDashboardNavigationBarModifier: ViewModifier {
     let searchAction: () -> Void
     let filterAction: () -> Void
+    let addAction: () -> Void
 
     init(
         searchAction: @escaping () -> Void,
-        filterAction: @escaping () -> Void
+        filterAction: @escaping () -> Void,
+        addAction: @escaping () -> Void
     ) {
         self.searchAction = searchAction
         self.filterAction = filterAction
+        self.addAction = addAction
 
         let coloredAppearance = UINavigationBarAppearance()
         coloredAppearance.configureWithTransparentBackground()
@@ -26,11 +29,16 @@ public struct PadDashboardNavigationBarModifier: ViewModifier {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) { filterButton }
                 ToolbarItem(placement: .topBarTrailing) { searchButton }
+                ToolbarItem(placement: .topBarTrailing) { addButton }
             }
     }
 }
 
 extension PadDashboardNavigationBarModifier {
+    @ViewBuilder var addButton: some View {
+        IconButton(.add, action: addAction)
+    }
+
     @ViewBuilder var searchButton: some View {
         IconButton(.search, action: searchAction)
     }
@@ -43,12 +51,14 @@ extension PadDashboardNavigationBarModifier {
 extension View {
     func padDashboardNavigationBar(
         searchAction: @escaping () -> Void,
-        filterAction: @escaping () -> Void
+        filterAction: @escaping () -> Void,
+        addAction: @escaping () -> Void
     ) -> some View {
         modifier(
             PadDashboardNavigationBarModifier(
                 searchAction: searchAction,
-                filterAction: filterAction
+                filterAction: filterAction,
+                addAction: addAction
             )
         )
     }
