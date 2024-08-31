@@ -164,6 +164,10 @@ internal enum Str {
         }
     }
     internal enum Pad {
+        internal enum Dashboard {
+            /// Today
+            internal static let todayTitle = String(localized: "Pad.Dashboard.todayTitle", defaultValue: "Today")
+        }
         internal enum Navigation {
             /// rectangle.3.group
             internal static let dashboardIcon = String(localized: "Pad.Navigation.dashboardIcon", defaultValue: "rectangle.3.group")

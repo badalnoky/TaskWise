@@ -8,12 +8,12 @@ struct TaskWiseApp: App {
         WindowGroup {
             // MARK: iPhone
             #if os(iOS)
-            if UIScreen.main.traitCollection.userInterfaceIdiom != .pad {
+            if UIScreen.isPhone {
                 coordinator.start()
             }
 
             // MARK: iPad
-            if  UIScreen.main.traitCollection.userInterfaceIdiom == .pad {
+            if  UIScreen.isPad {
                 PadNavigator()
             }
 

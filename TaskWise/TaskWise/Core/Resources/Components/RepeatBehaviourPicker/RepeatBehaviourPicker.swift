@@ -250,8 +250,9 @@ extension RepeatBehaviourPicker {
             }
             Spacer()
         }
+        .frame(minWidth: UIScreen.isPhone ? .zero : .popoverWidth)
         .defaultViewPadding()
-        .presentationDetents([.medium])
+        .presentationDetents(UIScreen.isPhone ? [.medium] : [.height(.popoverMinHeight)])
     }
 }
 

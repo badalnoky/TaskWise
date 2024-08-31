@@ -1,18 +1,25 @@
 import SwiftUI
 
 public struct PadDashboardNavigationBarModifier: ViewModifier {
-    let searchAction: () -> Void
-    let filterAction: () -> Void
-    let addAction: () -> Void
+    var filterText: Binding<String>
+    var selectedPriority: Binding<Priority?>
+    var selectedCategory: Binding<Category?>
+    var didTapTaskAction: (TWTask) -> Void
+
+    @State private var isAddTaskOpen = false
+    @State private var isFilterOpen = false
+    @State private var isSearchOpen = false
 
     init(
-        searchAction: @escaping () -> Void,
-        filterAction: @escaping () -> Void,
-        addAction: @escaping () -> Void
+        filterText: Binding<String>,
+        selectedPriority: Binding<Priority?>,
+        selectedCategory: Binding<Category?>,
+        didTapTaskAction: @escaping (TWTask) -> Void
     ) {
-        self.searchAction = searchAction
-        self.filterAction = filterAction
-        self.addAction = addAction
+        self.filterText = filterText
+        self.selectedPriority = selectedPriority
+        self.selectedCategory = selectedCategory
+        self.didTapTaskAction = didTapTaskAction
 
         let coloredAppearance = UINavigationBarAppearance()
         coloredAppearance.configureWithTransparentBackground()
@@ -36,29 +43,45 @@ public struct PadDashboardNavigationBarModifier: ViewModifier {
 
 extension PadDashboardNavigationBarModifier {
     @ViewBuilder var addButton: some View {
-        IconButton(.add, action: addAction)
+        IconButton(.add) { isAddTaskOpen = true }
+            .popover(isPresented: $isAddTaskOpen) {
+                AddTaskPopoverView()
+            }
     }
 
     @ViewBuilder var searchButton: some View {
-        IconButton(.search, action: searchAction)
+        IconButton(.search) { isSearchOpen = true }
+            .popover(isPresented: $isSearchOpen) {
+                SearchPopoverView(didTapTaskAction: didTapTaskAction)
+            }
     }
 
     @ViewBuilder var filterButton: some View {
-        IconButton(.filter, action: filterAction)
+        IconButton(.filter) { isFilterOpen = true }
+            .popover(isPresented: $isFilterOpen) {
+                FilterPopoverView(
+                    filterText: filterText,
+                    selectedPriority: selectedPriority,
+                    selectedCategory: selectedCategory
+                )
+            }
     }
 }
 
+// swiftlint: disable function_parameter_count
 extension View {
     func padDashboardNavigationBar(
-        searchAction: @escaping () -> Void,
-        filterAction: @escaping () -> Void,
-        addAction: @escaping () -> Void
+        filterText: Binding<String>,
+        selectedPriority: Binding<Priority?>,
+        selectedCategory: Binding<Category?>,
+        didTapTaskAction: @escaping (TWTask) -> Void
     ) -> some View {
         modifier(
             PadDashboardNavigationBarModifier(
-                searchAction: searchAction,
-                filterAction: filterAction,
-                addAction: addAction
+                filterText: filterText,
+                selectedPriority: selectedPriority,
+                selectedCategory: selectedCategory,
+                didTapTaskAction: didTapTaskAction
             )
         )
     }

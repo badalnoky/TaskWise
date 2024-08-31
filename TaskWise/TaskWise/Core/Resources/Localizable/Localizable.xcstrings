@@ -661,6 +661,17 @@
         }
       }
     },
+    "Pad.Dashboard.todayTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Today"
+          }
+        }
+      }
+    },
     "Pad.Navigation.dashboardIcon" : {
       "extractionState" : "manual",
       "localizations" : {

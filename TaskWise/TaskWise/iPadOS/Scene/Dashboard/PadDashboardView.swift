@@ -2,6 +2,8 @@ import CalendarDatePicker
 import SwiftUI
 
 struct PadDashboardView {
+    private typealias Txt = Str.Pad.Dashboard
+
     @Bindable var viewModel: PadDashboardViewModel
 
     init() {
@@ -14,38 +16,15 @@ extension PadDashboardView: View {
         VStack(spacing: .padding32) {
             topTiles
 
-            GeometryReader { geometry in
-                ScrollView(.horizontal) {
-                    HStack(spacing: .zero) {
-                        ForEach(viewModel.columns, id: \.self) { column in
-                            VStack(spacing: .padding8) {
-                                ColumnHeader(text: column)
-                                ScrollView {
-                                    ForEach(0...100, id: \.self) { task in
-                                        Text("\(task)")
-                                            .frame(maxWidth: .infinity)
-                                            .padding(.vertical, .padding8)
-                                            .neumorphic()
-                                    }
-                                    .padding(.horizontal, .padding16)
-                                }
-                            }
-                            .frame(width: geometry.size.width / 3)
-                        }
-                    }
-                    .scrollTargetLayout()
-                }
-                .scrollTargetBehavior(.viewAligned)
-            }
-            .frame(maxHeight: .infinity)
-            .padding(.horizontal, .padding12)
+            columns
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.appBackground)
         .padDashboardNavigationBar(
-            searchAction: {},
-            filterAction: {},
-            addAction: {}
+            filterText: $viewModel.filterText,
+            selectedPriority: $viewModel.selectedPriority,
+            selectedCategory: $viewModel.selectedCategory,
+            didTapTaskAction: viewModel.didTapSearchedTask
         )
     }
 }
@@ -54,17 +33,18 @@ private extension PadDashboardView {
     var topTiles: some View {
         HStack(alignment: .top, spacing: .padding32) {
             VStack(spacing: .zero) {
-                StyledText(text: "Today", style: .title)
-
-                StyledDate(date: .now, style: .date)
+                StyledDate(date: viewModel.selectedDate, style: .date)
+                StyledDate(date: viewModel.selectedDate, style: .weekday)
+                StyledText(text: Txt.todayTitle, style: .title).opacity(viewModel.isToday ? .one : .zero)
 
                 Spacer()
 
                 TaskProgressIndicator(
-                    done: 3,
-                    total: 6,
-                    width: 200
+                    done: viewModel.doneCount,
+                    total: viewModel.totalCount,
+                    width: .padIndicatorSize
                 )
+                .frame(minHeight: .defaultListHeight)
 
                 Spacer()
             }
@@ -77,6 +57,39 @@ private extension PadDashboardView {
                 .neumorphic()
         }
         .padding(.padding32)
+    }
+
+    var columns: some View {
+        GeometryReader { geometry in
+            ScrollView(.horizontal) {
+                HStack(spacing: .zero) {
+                    ForEach(viewModel.columns, id: \.self) { column in
+                        VStack(spacing: .padding8) {
+                            ColumnHeader(text: column.name)
+                            ScrollView {
+                                Color.clear
+                                    .frame(maxWidth: .infinity, alignment: .center)
+                                    .frame(height: .borderWidth)
+                                ForEach(viewModel.tasks.from(column: column).sortedByDateAndPriority, id: \.id) { task in
+                                    TaskItemView(
+                                        title: task.title,
+                                        priority: task.priority.name,
+                                        category: task.category.name,
+                                        categoryColor: .from(components: task.category.colorComponents)
+                                    )
+                                }
+                                .padding(.horizontal, .padding16)
+                            }
+                        }
+                        .frame(width: geometry.size.width.third)
+                    }
+                }
+                .scrollTargetLayout()
+            }
+            .scrollTargetBehavior(.viewAligned)
+        }
+        .frame(maxHeight: .infinity)
+        .padding(.horizontal, .padding12)
     }
 }
 

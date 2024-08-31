@@ -62,6 +62,7 @@
 "Icons.trash" = "trash";
 "Icons.up" = "chevron.up";
 "Indicator.completion" = "%d/%d";
+"Pad.Dashboard.todayTitle" = "Today";
 "Pad.Navigation.dashboardIcon" = "rectangle.3.group";
 "Pad.Navigation.dashboardLabel" = "Dashboard";
 "Pad.Navigation.settingsIcon" = "gear";
