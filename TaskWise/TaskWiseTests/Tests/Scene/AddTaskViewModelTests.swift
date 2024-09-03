@@ -45,22 +45,9 @@ final class AddTaskViewModelTests {
     @Test("Delete button tap")
     func didTapDeleteSteps() {
         sut.steps.append(.init(isDone: false, label: "NewStepName", index: 0))
-        sut.didTapDeleteSteps(offsets: [0])
+        sut.didTapDeleteSteps(.init(isDone: false, label: "NewStepName", index: 0))
 
         #expect(sut.steps.isEmpty)
-    }
-
-    @Test("Moved step")
-    func didMoveStep() {
-        sut.steps.append(.init(isDone: false, label: "NewStepName1", index: 0))
-        sut.steps.append(.init(isDone: false, label: "NewStepName2", index: 1))
-
-        sut.didMoveStep(source: [0], destination: 2)
-
-        #expect(sut.steps == [
-            .init(isDone: false, label: "NewStepName2", index: 0),
-            .init(isDone: false, label: "NewStepName1", index: 1)
-        ])
     }
 
     @Test("Toggle tap")

@@ -421,6 +421,13 @@
 		79E6584D2B2326FA00DE5A0A /* WidgetTimelineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E6584C2B2326FA00DE5A0A /* WidgetTimelineService.swift */; };
 		79E6584E2B23280100DE5A0A /* String+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797B4D952B2115CB001DAC30 /* String+Constants.swift */; };
 		79E6584F2B2329A300DE5A0A /* WidgetTimelineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E6584C2B2326FA00DE5A0A /* WidgetTimelineService.swift */; };
+		79E9452E2C86329000EEE6E9 /* TaskPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E9452D2C86328200EEE6E9 /* TaskPopoverView.swift */; };
+		79E945302C86329900EEE6E9 /* TaskPopoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E9452F2C86329400EEE6E9 /* TaskPopoverViewModel.swift */; };
+		79E945382C875F8C00EEE6E9 /* Dispatch+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E945372C875F8300EEE6E9 /* Dispatch+Extensions.swift */; };
+		79E945392C875F8C00EEE6E9 /* Dispatch+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E945372C875F8300EEE6E9 /* Dispatch+Extensions.swift */; };
+		79E9453A2C875F8C00EEE6E9 /* Dispatch+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E945372C875F8300EEE6E9 /* Dispatch+Extensions.swift */; };
+		79E9453B2C875F8C00EEE6E9 /* Dispatch+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E945372C875F8300EEE6E9 /* Dispatch+Extensions.swift */; };
+		79E9453C2C875F8C00EEE6E9 /* Dispatch+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E945372C875F8300EEE6E9 /* Dispatch+Extensions.swift */; };
 		79EAF75F2AB9EC3D00FC05BE /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EAF75E2AB9EC3D00FC05BE /* View+Extensions.swift */; };
 		79F0218D2BB877A900E12DAF /* RepeatBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794AC2852BB424F800DAC0F9 /* RepeatBehaviour.swift */; };
 		79F0218E2BB877B600E12DAF /* CustomRepeatSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794AC2872BB424FD00DAC0F9 /* CustomRepeatSchedule.swift */; };
@@ -726,6 +733,9 @@
 		79E1763F2BE2B678006577A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		79E176412BE2B678006577A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79E6584C2B2326FA00DE5A0A /* WidgetTimelineService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetTimelineService.swift; sourceTree = "<group>"; };
+		79E9452D2C86328200EEE6E9 /* TaskPopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskPopoverView.swift; sourceTree = "<group>"; };
+		79E9452F2C86329400EEE6E9 /* TaskPopoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskPopoverViewModel.swift; sourceTree = "<group>"; };
+		79E945372C875F8300EEE6E9 /* Dispatch+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dispatch+Extensions.swift"; sourceTree = "<group>"; };
 		79EAF75E2AB9EC3D00FC05BE /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		79F5D5A42BDEEE1E006573BD /* TaskWiseWatch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "TaskWiseWatch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		79F9F54E2BFE0155009262F2 /* DataServiceInputMock+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataServiceInputMock+Extensions.swift"; sourceTree = "<group>"; };
@@ -1149,6 +1159,8 @@
 		795F54E82C7DE9230047E141 /* Task */ = {
 			isa = PBXGroup;
 			children = (
+				79E9452D2C86328200EEE6E9 /* TaskPopoverView.swift */,
+				79E9452F2C86329400EEE6E9 /* TaskPopoverViewModel.swift */,
 			);
 			path = Task;
 			sourceTree = "<group>";
@@ -1458,6 +1470,7 @@
 				7988A0472AAE362400C63265 /* CGFloat+Extensions.swift */,
 				790C190C2AD34B52008647B8 /* Color+Extensions.swift */,
 				798605642AD5E03C007A64B3 /* Date+Extensions.swift */,
+				79E945372C875F8300EEE6E9 /* Dispatch+Extensions.swift */,
 				7988A0482AAE362400C63265 /* Double+Extensions.swift */,
 				799070BA2AEA64680051AAC8 /* EditMode+Extensions.swift */,
 				7988A0442AAE362400C63265 /* Image+Extensions.swift */,
@@ -2350,6 +2363,7 @@
 				7911B20C2C82003000E7D1D4 /* FilterPopoverViewModel.swift in Sources */,
 				790A81072AAE19A700283D7E /* TaskWiseApp.swift in Sources */,
 				7983001A2B17EE350013B834 /* StepIcon.swift in Sources */,
+				79E9453C2C875F8C00EEE6E9 /* Dispatch+Extensions.swift in Sources */,
 				794621B92B191CEA0060F6CD /* StyledDateModel.swift in Sources */,
 				794621B02B1915360060F6CD /* StyledText.swift in Sources */,
 				792EC2042C62BC5E00982732 /* PadDashboardView.swift in Sources */,
@@ -2362,6 +2376,7 @@
 				79CD54A92AD33B9600D064C2 /* Task+CoreDataProperties.swift in Sources */,
 				798B08C82AB85C5000311D93 /* CalendarView.swift in Sources */,
 				794621BC2B1922690060F6CD /* DashboardNavigationBarModifier.swift in Sources */,
+				79E945302C86329900EEE6E9 /* TaskPopoverViewModel.swift in Sources */,
 				79CD54A72AD33B9600D064C2 /* TaskStep+CoreDataProperties.swift in Sources */,
 				7988A03D2AAE35C200C63265 /* Navigator.swift in Sources */,
 				79B823EB2B1E71DC0062B6E5 /* ColumnHeader.swift in Sources */,
@@ -2409,6 +2424,7 @@
 				797B58B52B88E57E003B58A7 /* Weekday.swift in Sources */,
 				7988A0502AAE362400C63265 /* Double+Extensions.swift in Sources */,
 				790126112AD4844C005620C2 /* Priority+Defaults.swift in Sources */,
+				79E9452E2C86329000EEE6E9 /* TaskPopoverView.swift in Sources */,
 				798605632AD5C99E007A64B3 /* ColorComponents+DTO.swift in Sources */,
 				79E14ACE2AE415B200FF730D /* PreviewDataService.swift in Sources */,
 				7988A0412AAE35F600C63265 /* NetworkMonitor.swift in Sources */,
@@ -2464,6 +2480,7 @@
 				79785A662BFB8DDA003C88D6 /* Color+Extensions.swift in Sources */,
 				79785A682BFB8E0A003C88D6 /* Double+Extensions.swift in Sources */,
 				79785A632BFB8B7D003C88D6 /* CustomRepeatSchedule.swift in Sources */,
+				79E945392C875F8C00EEE6E9 /* Dispatch+Extensions.swift in Sources */,
 				79785A4D2BFB8B08003C88D6 /* ColorComponents+DTO.swift in Sources */,
 				79785A542BFB8B1B003C88D6 /* RepeatingTask+DTO.swift in Sources */,
 				7982A4D02BF785BD00DA67D7 /* String+ExtensionsTests.swift in Sources */,
@@ -2554,6 +2571,7 @@
 				797B4D7B2B2107D7001DAC30 /* CompletionWidget.swift in Sources */,
 				791CA38D2B22517E009A5395 /* TaskColumn+DTO.swift in Sources */,
 				79B3491E2B23DBBC00AAB0A9 /* WidgetButtonType.swift in Sources */,
+				79E945382C875F8C00EEE6E9 /* Dispatch+Extensions.swift in Sources */,
 				791CA37A2B225156009A5395 /* DataServiceInput.swift in Sources */,
 				797B4D972B2115CF001DAC30 /* String+Constants.swift in Sources */,
 				79B349212B23DD6000AAB0A9 /* WidgetPageButtonStyle.swift in Sources */,
@@ -2636,6 +2654,7 @@
 				79BC64262BDB5E0F0081B299 /* WatchDashboard.swift in Sources */,
 				79BC64242BDB5E0F0081B299 /* TaskWiseWatchApp.swift in Sources */,
 				797F3BA02BDD8343002226B7 /* TaskCell.swift in Sources */,
+				79E9453B2C875F8C00EEE6E9 /* Dispatch+Extensions.swift in Sources */,
 				797F3C192BDD932C002226B7 /* RepeatingTask+DTO.swift in Sources */,
 				792736162BDFC45000F11950 /* WatchRow.swift in Sources */,
 				797F3BA32BDD83CD002226B7 /* TaskDetailView.swift in Sources */,
@@ -2682,6 +2701,7 @@
 				79884AA62BEF6FA40041FD88 /* RepeatFrequency.swift in Sources */,
 				79884A822BEF6EA90041FD88 /* Double+Extensions.swift in Sources */,
 				79884A7E2BEF6E5A0041FD88 /* DataService.swift in Sources */,
+				79E9453A2C875F8C00EEE6E9 /* Dispatch+Extensions.swift in Sources */,
 				79884A872BEF6ED30041FD88 /* Category+CoreDataProperties.swift in Sources */,
 				79884A7B2BEF6DB80041FD88 /* CompletionProvider.swift in Sources */,
 				79884AB62BEF70950041FD88 /* String+Constants.swift in Sources */,

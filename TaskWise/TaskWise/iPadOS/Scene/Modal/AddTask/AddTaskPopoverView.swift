@@ -3,12 +3,14 @@ import SwiftUI
 struct AddTaskPopoverView {
     private typealias Txt = Str.Task
 
+    @Environment(\.dismiss) var dismiss
     @Bindable var viewModel: AddTaskPopoverViewModel
 
     init() {
         self.viewModel = AddTaskPopoverViewModel()
     }
 }
+
 extension AddTaskPopoverView: View {
     var body: some View {
         ScrollView {
@@ -40,7 +42,10 @@ extension AddTaskPopoverView: View {
 
                 stepView
 
-                Button(Txt.createButtonLabel, action: viewModel.didTapCreate)
+                Button(Txt.createButtonLabel) {
+                    viewModel.didTapCreate()
+                    dismiss()
+                }
                     .buttonStyle(BaseButtonStyle())
             }
             .frame(width: .popoverWidth)
@@ -100,12 +105,12 @@ extension AddTaskPopoverView {
             ForEach($viewModel.steps, id: \.self) { $step in
                 ListItemView(
                     isEditable: true,
-                    deleteAction: {  }
+                    deleteAction: { viewModel.didTapDeleteSteps(step) }
                 ) {
                     HStack {
                         StepIcon(isDone: step.isDone)
                             .onTapGesture {
-                                withAnimation {  }
+                                withAnimation { viewModel.didTapToggle(on: step) }
                             }
                         TextField(String.empty, text: $step.label)
                             .textFieldOverlay()

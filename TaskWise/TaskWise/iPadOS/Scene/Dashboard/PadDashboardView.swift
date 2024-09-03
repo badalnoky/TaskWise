@@ -26,6 +26,17 @@ extension PadDashboardView: View {
             selectedCategory: $viewModel.selectedCategory,
             didTapTaskAction: viewModel.didTapSearchedTask
         )
+        .sheet(isPresented: $viewModel.isTaskPresented) {
+            if let task = viewModel.presentedTask {
+                TaskPopoverView(
+                    dataService: viewModel.dataService,
+                    task: task,
+                    priorities: viewModel.priorities,
+                    categories: viewModel.categories,
+                    columns: viewModel.columns
+                )
+            }
+        }
     }
 }
 
@@ -59,6 +70,7 @@ private extension PadDashboardView {
         .padding(.padding32)
     }
 
+    // swiftlint: disable closure_body_length
     var columns: some View {
         GeometryReader { geometry in
             ScrollView(.horizontal) {
@@ -67,16 +79,40 @@ private extension PadDashboardView {
                         VStack(spacing: .padding8) {
                             ColumnHeader(text: column.name)
                             ScrollView {
-                                Color.clear
-                                    .frame(maxWidth: .infinity, alignment: .center)
-                                    .frame(height: .borderWidth)
-                                ForEach(viewModel.tasks.from(column: column).sortedByDateAndPriority, id: \.id) { task in
+                                Color.clear.frame(maxWidth: .infinity, alignment: .center).frame(height: .borderWidth)
+                                ForEach(
+                                    viewModel.filteredTasks.from(column: column).sortedByDateAndPriority,
+                                    id: \.id
+                                ) { task in
                                     TaskItemView(
                                         title: task.title,
                                         priority: task.priority.name,
                                         category: task.category.name,
                                         categoryColor: .from(components: task.category.colorComponents)
                                     )
+                                    .gesture(
+                                        DoubleAndSingleTapGesture(
+                                            task: task,
+                                            columns: viewModel.columns,
+                                            onDoubleTap: viewModel.didChangeColumn,
+                                            onSingleTap: viewModel.didTapTask
+                                        )
+                                    )
+                                    .contextMenu(
+                                        ContextMenu {
+                                            TaskContextMenuItems(
+                                                task: task,
+                                                columns: viewModel.columns,
+                                                changeColumnAction: viewModel.didChangeColumn,
+                                                deleteAction: viewModel.didTapDelete
+                                            )
+                                        }
+                                    )
+                                    .alert(Str.Alert.message + Str.Alert.repeatingTask, isPresented: $viewModel.isAlertPresented) {
+                                        Button(Str.Alert.deleteOnlyThis, role: .destructive) { viewModel.didTapDeleteOnlyThis(task: task) }
+                                        Button(Str.Alert.deleteAll, role: .destructive) { viewModel.didTapDeleteRepeating(task: task) }
+                                        Button(Str.Alert.cancel, role: .cancel) {}
+                                    }
                                 }
                                 .padding(.horizontal, .padding16)
                             }

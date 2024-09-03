@@ -3,7 +3,7 @@ import Resolver
 import SwiftUI
 
 @Observable final class PadDashboardViewModel {
-    private let dataService: DataServiceInput
+    let dataService: DataServiceInput
     private var cancellables = Set<AnyCancellable>()
 
     var selectedDate: Date = .now
@@ -15,11 +15,13 @@ import SwiftUI
     var selectedPriority: Priority?
     var selectedCategory: Category?
 
+    var isAlertPresented = false
+    var isTaskPresented = false
+    var presentedTask: TWTask?
+
     var filteredTasks: [TWTask] {
         tasks
-            .filter {
-                Calendar.current.isDate($0.date, inSameDayAs: self.selectedDate)
-            }
+            .from(date: selectedDate)
             .filteredBy(text: filterText, priority: selectedPriority, category: selectedCategory)
     }
 
@@ -44,22 +46,35 @@ import SwiftUI
 }
 
 extension PadDashboardViewModel {
-    func didToggleSearch() {
-    }
-
-    func didTapFilter() {
-    }
-
-    func didTapAddTask() {
-    }
-
-    func didChangeColumn(to column: TaskColumn, on task: TWTask) {
-    }
-
     func didTapTask(_ task: TWTask) {
+        presentedTask = task
+        isTaskPresented = true
     }
 
     func didTapSearchedTask(_ task: TWTask) {
+        selectedDate = task.startDateTime
+        didTapTask(task)
+    }
+
+    func didTapDelete(task: TWTask) {
+        if task.repeatingTasks != nil {
+            isAlertPresented = true
+        } else {
+            dataService.deleteTask(task)
+        }
+    }
+
+    func didTapDeleteOnlyThis(task: TWTask) {
+        dataService.deleteTask(task)
+    }
+
+    func didTapDeleteRepeating(task: TWTask) {
+        guard let repeating = task.repeatingTasks else { return }
+        dataService.deleteRepeatingTasks(repeating)
+    }
+
+    func didChangeColumn(to column: TaskColumn, on task: TWTask) {
+        dataService.updateColumn(to: column, on: task)
     }
 }
 

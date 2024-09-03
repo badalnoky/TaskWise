@@ -22,6 +22,22 @@ import Resolver
     var steps: [TaskStep.DTO] = []
     var isStepViewExpanded = false
 
+    private var task: TWTask.DTO {
+        TWTask.DTO(
+            id: UUID(),
+            title: title,
+            description: description,
+            date: starts,
+            hasTimeConstraints: !allDay,
+            startDateTime: starts,
+            endDateTime: ends,
+            category: selectedCategory,
+            priority: selectedPriority,
+            column: selectedColumn,
+            steps: steps
+        )
+    }
+
     init(dataService: DataServiceInput = Resolver.resolve()) {
         self.dataService = dataService
         self.starts = .now
@@ -33,9 +49,22 @@ import Resolver
 
 extension AddTaskPopoverViewModel {
     func didTapCreate() {
+        dataService.createTasks(from: task, with: repeatBehaviour)
     }
 
     func didTapAddStep() {
+        steps.append(.init(label: newStepName, index: steps.count))
+        newStepName = .empty
+    }
+
+    func didTapDeleteSteps(_ step: TaskStep.DTO) {
+        guard let stepIdx = steps.firstIndex(of: step) else { return }
+        steps.remove(at: stepIdx)
+    }
+
+    func didTapToggle(on step: TaskStep.DTO) {
+        guard let idx = steps.firstIndex(of: step) else { return }
+        steps[idx].toggleIsDone()
     }
 }
 

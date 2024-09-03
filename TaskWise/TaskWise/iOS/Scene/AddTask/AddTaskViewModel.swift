@@ -78,13 +78,6 @@ extension AddTaskViewModel {
         steps.remove(at: stepIdx)
     }
 
-    func didMoveStep(source: IndexSet, destination: Int) {
-        steps.move(fromOffsets: source, toOffset: destination)
-        for idx in steps.indices {
-            steps[idx].changeIndex(to: idx)
-        }
-    }
-
     func didTapToggle(on step: TaskStep.DTO) {
         guard let idx = steps.firstIndex(of: step) else { return }
         steps[idx].toggleIsDone()
