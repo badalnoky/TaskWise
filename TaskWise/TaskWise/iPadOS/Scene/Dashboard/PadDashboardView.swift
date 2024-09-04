@@ -37,6 +37,7 @@ extension PadDashboardView: View {
                 )
             }
         }
+        .onOpenURL { viewModel.openAt($0) }
     }
 }
 

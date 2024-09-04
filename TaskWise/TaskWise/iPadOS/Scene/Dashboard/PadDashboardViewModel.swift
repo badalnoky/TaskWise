@@ -76,6 +76,14 @@ extension PadDashboardViewModel {
     func didChangeColumn(to column: TaskColumn, on task: TWTask) {
         dataService.updateColumn(to: column, on: task)
     }
+
+    func openAt(_ url: URL) {
+        guard url.scheme == Str.App.scheme, url.host == Str.App.host else { return }
+        if
+            url.pathComponents[.one] == Str.App.taskPath,
+            let id = UUID(uuidString: url.pathComponents[.one.next]),
+            let task = tasks.first(where: { $0.id == id }) { didTapTask(task) }
+    }
 }
 
 extension PadDashboardViewModel {
