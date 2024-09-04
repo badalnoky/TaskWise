@@ -99,7 +99,7 @@
 		794621C62B1942310060F6CD /* BaseTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794621C52B1942310060F6CD /* BaseTextFieldStyle.swift */; };
 		7948F4F12C6DFC7F009838C9 /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7948F4EF2C6DFC7F009838C9 /* ListItemView.swift */; };
 		7948F4F52C6DFC8C009838C9 /* OrderIndicatedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7948F4F22C6DFC8C009838C9 /* OrderIndicatedList.swift */; };
-		7948F4F62C6DFC8C009838C9 /* DropViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7948F4F32C6DFC8C009838C9 /* DropViewDelegate.swift */; };
+		7948F4F62C6DFC8C009838C9 /* ReorderDropViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7948F4F32C6DFC8C009838C9 /* ReorderDropViewDelegate.swift */; };
 		794AC2802BB424E000DAC0F9 /* RepeatUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794AC27F2BB424E000DAC0F9 /* RepeatUnit.swift */; };
 		794AC2822BB424E800DAC0F9 /* RepeatFrequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794AC2812BB424E800DAC0F9 /* RepeatFrequency.swift */; };
 		794AC2862BB424F800DAC0F9 /* RepeatBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794AC2852BB424F800DAC0F9 /* RepeatBehaviour.swift */; };
@@ -121,6 +121,7 @@
 		795F54EA2C7DE9A00047E141 /* AddTaskPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795F54E92C7DE9A00047E141 /* AddTaskPopoverView.swift */; };
 		795F54EC2C7DE9BA0047E141 /* AddTaskPopoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795F54EB2C7DE9B70047E141 /* AddTaskPopoverViewModel.swift */; };
 		795F54F22C7DF6C80047E141 /* UIScreen+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795F54ED2C7DF6BB0047E141 /* UIScreen+Extensions.swift */; };
+		79724C7B2C88C411001A299B /* DashboardDropViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79724C7A2C88C401001A299B /* DashboardDropViewDelegate.swift */; };
 		79785A462BFB8ABD003C88D6 /* DataServiceInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7944D7422AF6DD59001A528D /* DataServiceInput.swift */; };
 		79785A472BFB8AF7003C88D6 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54912AD33B9600D064C2 /* Category+CoreDataClass.swift */; };
 		79785A482BFB8AFA003C88D6 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54902AD33B9600D064C2 /* Category+CoreDataProperties.swift */; };
@@ -581,7 +582,7 @@
 		794621C52B1942310060F6CD /* BaseTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextFieldStyle.swift; sourceTree = "<group>"; };
 		7948F4EF2C6DFC7F009838C9 /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
 		7948F4F22C6DFC8C009838C9 /* OrderIndicatedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderIndicatedList.swift; sourceTree = "<group>"; };
-		7948F4F32C6DFC8C009838C9 /* DropViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropViewDelegate.swift; sourceTree = "<group>"; };
+		7948F4F32C6DFC8C009838C9 /* ReorderDropViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderDropViewDelegate.swift; sourceTree = "<group>"; };
 		794AC27F2BB424E000DAC0F9 /* RepeatUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeatUnit.swift; sourceTree = "<group>"; };
 		794AC2812BB424E800DAC0F9 /* RepeatFrequency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeatFrequency.swift; sourceTree = "<group>"; };
 		794AC2852BB424F800DAC0F9 /* RepeatBehaviour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeatBehaviour.swift; sourceTree = "<group>"; };
@@ -602,6 +603,7 @@
 		795F54EB2C7DE9B70047E141 /* AddTaskPopoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskPopoverViewModel.swift; sourceTree = "<group>"; };
 		795F54ED2C7DF6BB0047E141 /* UIScreen+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extensions.swift"; sourceTree = "<group>"; };
 		795F70D82AC456B400C556C9 /* TaskWise.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TaskWise.entitlements; sourceTree = "<group>"; };
+		79724C7A2C88C401001A299B /* DashboardDropViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardDropViewDelegate.swift; sourceTree = "<group>"; };
 		797B4D722B2107D7001DAC30 /* TaskWiseWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TaskWiseWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		797B4D732B2107D7001DAC30 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		797B4D752B2107D7001DAC30 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -897,6 +899,7 @@
 			children = (
 				7988A0312AAE2FD100C63265 /* Assets */,
 				7921551B2AB9E80C0044CDED /* Components */,
+				79724C7C2C88C423001A299B /* Delegates */,
 				91E84F4C2C4933A600C4945E /* Error */,
 				7988A0422AAE361400C63265 /* Extensions */,
 				7988A02F2AAE2FB100C63265 /* Generated */,
@@ -1102,7 +1105,6 @@
 			isa = PBXGroup;
 			children = (
 				799D0F892C76049800B62B50 /* ReorderableList.swift */,
-				7948F4F32C6DFC8C009838C9 /* DropViewDelegate.swift */,
 			);
 			path = ReorderableList;
 			sourceTree = "<group>";
@@ -1183,6 +1185,15 @@
 				795F54E82C7DE9230047E141 /* Task */,
 			);
 			path = Modal;
+			sourceTree = "<group>";
+		};
+		79724C7C2C88C423001A299B /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				79724C7A2C88C401001A299B /* DashboardDropViewDelegate.swift */,
+				7948F4F32C6DFC8C009838C9 /* ReorderDropViewDelegate.swift */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 		797B4D772B2107D7001DAC30 /* TaskWiseWidget */ = {
@@ -2347,7 +2358,7 @@
 				794AC28A2BB425BF00DAC0F9 /* RepeatBehaviourPicker.swift in Sources */,
 				795F54F22C7DF6C80047E141 /* UIScreen+Extensions.swift in Sources */,
 				7948F4F52C6DFC8C009838C9 /* OrderIndicatedList.swift in Sources */,
-				7948F4F62C6DFC8C009838C9 /* DropViewDelegate.swift in Sources */,
+				7948F4F62C6DFC8C009838C9 /* ReorderDropViewDelegate.swift in Sources */,
 				79CD54AC2AD33B9600D064C2 /* TaskColumn+CoreDataClass.swift in Sources */,
 				799070C32AEA70F50051AAC8 /* DataService+TaskColumn.swift in Sources */,
 				790126152AD48710005620C2 /* TaskColumn+Defaults.swift in Sources */,
@@ -2403,6 +2414,7 @@
 				79C838AA2B1D230B00F35483 /* SettingsModel.swift in Sources */,
 				793C64872AED80BC00C9D3FF /* EditableText.swift in Sources */,
 				791A06F92B8A02E20041AE42 /* UserSettings+CoreDataClass.swift in Sources */,
+				79724C7B2C88C411001A299B /* DashboardDropViewDelegate.swift in Sources */,
 				7988A03E2AAE35C200C63265 /* Coordinator.swift in Sources */,
 				79A519902B1BA29F00B0EEC2 /* ListButtonStyle.swift in Sources */,
 				7932A8EC2BFCF9B000846371 /* AutoMockable.generated.swift in Sources */,

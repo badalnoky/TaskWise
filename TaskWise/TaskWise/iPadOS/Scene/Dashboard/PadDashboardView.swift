@@ -91,6 +91,10 @@ private extension PadDashboardView {
                                         category: task.category.name,
                                         categoryColor: .from(components: task.category.colorComponents)
                                     )
+                                    .onDrag {
+                                        viewModel.draggedTask = task
+                                        return NSItemProvider()
+                                    }
                                     .gesture(
                                         DoubleAndSingleTapGesture(
                                             task: task,
@@ -117,6 +121,14 @@ private extension PadDashboardView {
                                 }
                                 .padding(.horizontal, .padding16)
                             }
+                            .onDrop(
+                                of: [.text],
+                                delegate: DashboardDropViewDelegate(
+                                    destinationColumn: column,
+                                    draggedItem: $viewModel.draggedTask,
+                                    moveAction: viewModel.didChangeColumn
+                                )
+                            )
                         }
                         .frame(width: geometry.size.width.third)
                     }

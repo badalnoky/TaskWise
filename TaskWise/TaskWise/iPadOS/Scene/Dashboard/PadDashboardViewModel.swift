@@ -18,6 +18,7 @@ import SwiftUI
     var isAlertPresented = false
     var isTaskPresented = false
     var presentedTask: TWTask?
+    var draggedTask: TWTask?
 
     var filteredTasks: [TWTask] {
         tasks
@@ -31,11 +32,11 @@ import SwiftUI
 
     var doneCount: Int {
         guard let last = columns.last else { return .zero }
-        return tasks.from(column: last).count
+        return tasks.from(date: selectedDate).from(column: last).count
     }
 
     var totalCount: Int {
-        tasks.count
+        tasks.from(date: selectedDate).count
     }
 
     init(dataService: DataServiceInput = Resolver.resolve()) {

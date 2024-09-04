@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct DropViewDelegate<Item: NamedItem & Equatable & Identifiable>: DropDelegate {
+struct ReorderDropViewDelegate<Item: NamedItem & Equatable & Identifiable>: DropDelegate {
     let destinationItem: Item
     @Binding var items: [Item]
     @Binding var draggedItem: Item?
@@ -17,10 +17,8 @@ struct DropViewDelegate<Item: NamedItem & Equatable & Identifiable>: DropDelegat
 
     func dropEntered(info: DropInfo) {
         if let draggedItem {
-            let fromIndex = items.firstIndex(of: draggedItem)
-            if let fromIndex {
-                let toIndex = items.firstIndex(of: destinationItem)
-                if let toIndex, fromIndex != toIndex {
+            if let fromIndex = items.firstIndex(of: draggedItem) {
+                if let toIndex = items.firstIndex(of: destinationItem), fromIndex != toIndex {
                     let fromOffset = IndexSet(integer: fromIndex)
                     let toOffset = (toIndex > fromIndex ? (toIndex + .one) : toIndex)
                     withAnimation {
