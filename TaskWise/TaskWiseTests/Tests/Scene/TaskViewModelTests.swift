@@ -116,7 +116,7 @@ final class TaskViewModelTests {
     @Test("Delete steps with repeating task")
     func didTapDeleteSteps_withRepeatingTask() {
         sut.task = DataServiceInputMock.repeatedTaskMock
-        sut.didTapDeleteSteps(offsets: [0])
+        sut.didTapDeleteSteps(DataServiceInputMock.stepMock)
 
         #expect(dataService.deleteStepForRepeatingStepCalled)
     }
@@ -124,7 +124,7 @@ final class TaskViewModelTests {
     @Test("Delete steps with non-repeating task")
     func didTapDeleteSteps_withNonRepeatingTask() {
         sut.task = DataServiceInputMock.taskMock
-        sut.didTapDeleteSteps(offsets: [0])
+        sut.didTapDeleteSteps(DataServiceInputMock.stepMock)
 
         #expect(dataService.deleteStepFromCalled)
     }

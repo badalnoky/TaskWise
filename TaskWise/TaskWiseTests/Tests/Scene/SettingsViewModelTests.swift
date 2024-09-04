@@ -90,21 +90,21 @@ final class SettingsViewModelTests {
 
     @Test("Delete category button tap")
     func didTapDeleteCategory() {
-        sut.didTapDeleteCategory(offsets: [0])
+        sut.didTapDeleteCategory(DataServiceInputMock.categoryMock)
 
         #expect(dataService.deleteCategoryCalled)
     }
 
     @Test("Delete column button tap")
     func didTapDeleteColumn() {
-        sut.didTapDeleteColumn(offsets: [0])
+        sut.didTapDeleteColumn(DataServiceInputMock.columnMock)
 
         #expect(dataService.deleteColumnCalled)
     }
 
     @Test("Delete priority button tap")
     func didTapDeletePriority() {
-        sut.didTapDeletePriority(offsets: [0])
+        sut.didTapDeletePriority(DataServiceInputMock.priorityMock)
 
         #expect(dataService.deletePriorityCalled)
     }
