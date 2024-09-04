@@ -122,6 +122,9 @@
 		795F54EC2C7DE9BA0047E141 /* AddTaskPopoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795F54EB2C7DE9B70047E141 /* AddTaskPopoverViewModel.swift */; };
 		795F54F22C7DF6C80047E141 /* UIScreen+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795F54ED2C7DF6BB0047E141 /* UIScreen+Extensions.swift */; };
 		79724C7B2C88C411001A299B /* DashboardDropViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79724C7A2C88C401001A299B /* DashboardDropViewDelegate.swift */; };
+		79724C802C88C9C8001A299B /* TaskPopoverViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79724C7F2C88C9B7001A299B /* TaskPopoverViewModelTests.swift */; };
+		79724C842C88CA43001A299B /* AddTaskPopoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79724C832C88CA3B001A299B /* AddTaskPopoverViewModel.swift */; };
+		79724C882C88CAE3001A299B /* PadDashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79724C872C88CADD001A299B /* PadDashboardViewModel.swift */; };
 		79785A462BFB8ABD003C88D6 /* DataServiceInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7944D7422AF6DD59001A528D /* DataServiceInput.swift */; };
 		79785A472BFB8AF7003C88D6 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54912AD33B9600D064C2 /* Category+CoreDataClass.swift */; };
 		79785A482BFB8AFA003C88D6 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54902AD33B9600D064C2 /* Category+CoreDataProperties.swift */; };
@@ -604,6 +607,9 @@
 		795F54ED2C7DF6BB0047E141 /* UIScreen+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extensions.swift"; sourceTree = "<group>"; };
 		795F70D82AC456B400C556C9 /* TaskWise.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TaskWise.entitlements; sourceTree = "<group>"; };
 		79724C7A2C88C401001A299B /* DashboardDropViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardDropViewDelegate.swift; sourceTree = "<group>"; };
+		79724C7F2C88C9B7001A299B /* TaskPopoverViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskPopoverViewModelTests.swift; sourceTree = "<group>"; };
+		79724C832C88CA3B001A299B /* AddTaskPopoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskPopoverViewModel.swift; sourceTree = "<group>"; };
+		79724C872C88CADD001A299B /* PadDashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadDashboardViewModel.swift; sourceTree = "<group>"; };
 		797B4D722B2107D7001DAC30 /* TaskWiseWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TaskWiseWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		797B4D732B2107D7001DAC30 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		797B4D752B2107D7001DAC30 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -1196,6 +1202,29 @@
 			path = Delegates;
 			sourceTree = "<group>";
 		};
+		79724C7D2C88C96A001A299B /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				7982A4DD2BF7885D00DA67D7 /* AddTaskViewModelTests.swift */,
+				7982A4DF2BF7886E00DA67D7 /* CalendarViewModelTests.swift */,
+				7982A4E12BF7887A00DA67D7 /* DashboardViewModelTests.swift */,
+				7982A4E32BF7888A00DA67D7 /* DayViewModelTests.swift */,
+				7982A4E52BF788AA00DA67D7 /* SettingsViewModelTests.swift */,
+				7982A4E72BF788BB00DA67D7 /* TaskViewModelTests.swift */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		79724C7E2C88C97A001A299B /* iPadOS */ = {
+			isa = PBXGroup;
+			children = (
+				79724C832C88CA3B001A299B /* AddTaskPopoverViewModel.swift */,
+				79724C872C88CADD001A299B /* PadDashboardViewModel.swift */,
+				79724C7F2C88C9B7001A299B /* TaskPopoverViewModelTests.swift */,
+			);
+			path = iPadOS;
+			sourceTree = "<group>";
+		};
 		797B4D772B2107D7001DAC30 /* TaskWiseWidget */ = {
 			isa = PBXGroup;
 			children = (
@@ -1348,12 +1377,8 @@
 		7982A4DB2BF7881D00DA67D7 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				7982A4DD2BF7885D00DA67D7 /* AddTaskViewModelTests.swift */,
-				7982A4DF2BF7886E00DA67D7 /* CalendarViewModelTests.swift */,
-				7982A4E12BF7887A00DA67D7 /* DashboardViewModelTests.swift */,
-				7982A4E32BF7888A00DA67D7 /* DayViewModelTests.swift */,
-				7982A4E52BF788AA00DA67D7 /* SettingsViewModelTests.swift */,
-				7982A4E72BF788BB00DA67D7 /* TaskViewModelTests.swift */,
+				79724C7D2C88C96A001A299B /* iOS */,
+				79724C7E2C88C97A001A299B /* iPadOS */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -2477,6 +2502,7 @@
 				7982A4CC2BF7850E00DA67D7 /* Date+ExtensionsTests.swift in Sources */,
 				7982A4E22BF7887A00DA67D7 /* DashboardViewModelTests.swift in Sources */,
 				79785A492BFB8AFD003C88D6 /* Category+Defaults.swift in Sources */,
+				79724C802C88C9C8001A299B /* TaskPopoverViewModelTests.swift in Sources */,
 				7982A4DA2BF7878500DA67D7 /* RepeatUnitTests.swift in Sources */,
 				79785A462BFB8ABD003C88D6 /* DataServiceInput.swift in Sources */,
 				79785A5D2BFB8B37003C88D6 /* TaskStep+CoreDataClass.swift in Sources */,
@@ -2489,6 +2515,7 @@
 				79785A4F2BFB8B0D003C88D6 /* Priority+CoreDataProperties.swift in Sources */,
 				79785A582BFB8B27003C88D6 /* Task+Extensions.swift in Sources */,
 				79785A692BFB8E1F003C88D6 /* Int+Extensions.swift in Sources */,
+				79724C882C88CAE3001A299B /* PadDashboardViewModel.swift in Sources */,
 				79785A662BFB8DDA003C88D6 /* Color+Extensions.swift in Sources */,
 				79785A682BFB8E0A003C88D6 /* Double+Extensions.swift in Sources */,
 				79785A632BFB8B7D003C88D6 /* CustomRepeatSchedule.swift in Sources */,
@@ -2517,6 +2544,7 @@
 				79785A502BFB8B10003C88D6 /* Priority+Defaults.swift in Sources */,
 				79785A622BFB8B78003C88D6 /* RepeatFrequency.swift in Sources */,
 				79785A592BFB8B2B003C88D6 /* TaskColumn+CoreDataClass.swift in Sources */,
+				79724C842C88CA43001A299B /* AddTaskPopoverViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

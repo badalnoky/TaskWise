@@ -3,21 +3,20 @@ import Testing
 
 // swiftlint: disable implicitly_unwrapped_optional
 // swiftlint: disable type_contents_order
-@Suite("PhoneDashboardViewModel", .tags(.viewModel))
-final class PhoneDashboardViewModelTests {
-    private var sut: PhoneDashboardViewModel!
+@Suite("PadDashboardViewModel", .tags(.viewModel))
+final class PadDashboardViewModelTests {
+    private var sut: PadDashboardViewModel!
     private var dataService: DataServiceInputMock!
 
     init() {
         dataService = .init()
+        dataService.priorities = .init([DataServiceInputMock.priorityMock])
+        dataService.categories = .init([DataServiceInputMock.categoryMock])
         dataService.columns = .init([DataServiceInputMock.columnMock])
         dataService.todaysTasks = .init([DataServiceInputMock.taskMock])
         dataService.tasks = .init([DataServiceInputMock.taskMock])
 
-        sut = .init(
-            navigator: .init(sceneFactory: .init(), root: .dashboard),
-            dataService: dataService
-        )
+        sut = .init(dataService: self.dataService)
     }
 
     deinit {
@@ -25,15 +24,22 @@ final class PhoneDashboardViewModelTests {
         dataService = nil
     }
 
-    @Test("Delete repeated button tap")
-    func didTapDelete_withRepeated() {
-        sut.didTapDelete(task: DataServiceInputMock.repeatedTaskMock)
+    @Test("Task tap")
+    func didTapTask() {
+        sut.didTapTask(DataServiceInputMock.taskMock)
+        #expect(sut.presentedTask != nil)
+        #expect(sut.isTaskPresented)
+    }
 
-        #expect(sut.isAlertPresented)
+    @Test("Searched task tap")
+    func didTapSearchedTask() {
+        sut.didTapSearchedTask(DataServiceInputMock.taskMock)
+        #expect(sut.presentedTask != nil)
+        #expect(sut.isTaskPresented)
     }
 
     @Test("Delete non repeated button tap")
-    func didTapDelet_withNonRepeated() {
+    func didTapDelete_withNonRepeated() {
         sut.didTapDelete(task: DataServiceInputMock.taskMock)
 
         #expect(dataService.deleteTaskCalled)
