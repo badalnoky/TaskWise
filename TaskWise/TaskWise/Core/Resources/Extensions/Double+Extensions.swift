@@ -20,6 +20,8 @@ public extension Double {
     static let indicatorHighOpacity = 1.6
     /// 90
     static let indicatorRotation: Double = 90
+    /// 200
+    static let padIndicatorSize: Double = 200
 }
 
 public extension Double {

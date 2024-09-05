@@ -3,9 +3,9 @@ import Testing
 
 // swiftlint: disable implicitly_unwrapped_optional
 // swiftlint: disable type_contents_order
-@Suite("SettingsViewModel", .tags(.viewModel))
-final class SettingsViewModelTests {
-    private var sut: SettingsViewModel!
+@Suite("PadSettingsViewModel", .tags(.viewModel))
+final class PadSettingsViewModelTests {
+    private var sut: PadSettingsViewModel!
     private var dataService: DataServiceInputMock!
 
     init() {
@@ -14,10 +14,7 @@ final class SettingsViewModelTests {
         dataService.categories = .init([DataServiceInputMock.categoryMock])
         dataService.columns = .init([DataServiceInputMock.columnMock])
 
-        sut = .init(
-            navigator: .init(sceneFactory: .init(), root: .dashboard),
-            dataService: dataService
-        )
+        sut = .init(dataService: self.dataService)
     }
 
     deinit {
@@ -90,78 +87,64 @@ final class SettingsViewModelTests {
 
     @Test("Delete category button tap")
     func didTapDeleteCategory() {
-        sut.didTapDeleteCategory(offsets: [0])
+        sut.didTapDeleteCategory(DataServiceInputMock.categoryMock)
 
         #expect(dataService.deleteCategoryCalled)
     }
 
     @Test("Delete column button tap")
     func didTapDeleteColumn() {
-        sut.didTapDeleteColumn(offsets: [0])
+        sut.didTapDeleteColumn(DataServiceInputMock.columnMock)
 
         #expect(dataService.deleteColumnCalled)
     }
 
     @Test("Delete priority button tap")
     func didTapDeletePriority() {
-        sut.didTapDeletePriority(offsets: [0])
+        sut.didTapDeletePriority(DataServiceInputMock.priorityMock)
 
         #expect(dataService.deletePriorityCalled)
     }
 
-    @Test("Edit button tap while current tab is priority")
+    @Test("Edit priority button tap")
     func didTapEdit_withPriorityTab() {
-        sut.currentTab = .priority
-        sut.didTapEdit()
+        sut.didTapEditPriority()
 
-        #expect(sut.priorityEditMode == .active)
+        #expect(sut.isEditingPriority)
     }
 
-    @Test("Edit button tap while current tab is column")
+    @Test("Edit column button tap")
     func didTapEdit_withColumnTab() {
-        sut.currentTab = .column
-        sut.didTapEdit()
+        sut.didTapEditColumn()
 
-        #expect(sut.columnEditMode == .active)
+        #expect(sut.isEditingColumn)
     }
 
-    @Test("Edit button tap while current tab is category")
+    @Test("Edit category button tap")
     func didTapEdit_withCategoryTab() {
-        sut.currentTab = .category
-        sut.didTapEdit()
+        sut.didTapEditCategory()
 
-        #expect(sut.categoryEditMode == .active)
+        #expect(sut.isEditingCategory)
     }
 
-    @Test("Add button tap while current tab is priority")
+    @Test("Add priority button tap")
     func didTapAdd_withPriorityTab() {
-        sut.currentTab = .priority
-        sut.didTapAdd()
+        sut.didTapNewPriority()
 
         #expect(sut.isNewPrioritySheetPresented)
     }
 
-    @Test("Add button tap while current tab is column")
+    @Test("Add column button tap")
     func didTapAdd_withColumnTab() {
-        sut.currentTab = .column
-        sut.didTapAdd()
+        sut.didTapNewColumn()
 
         #expect(sut.isNewColumnSheetPresented)
     }
 
-    @Test("Add button tap while current tab is category")
+    @Test("Add category button tap")
     func didTapAdd_withCategoryTab() {
-        sut.currentTab = .category
-        sut.didTapAdd()
+        sut.didTapNewCategory()
 
         #expect(sut.isNewCategorySheetPresented)
-    }
-
-    @Test("Finish")
-    func didFinish() {
-        sut.didChangeName(of: DataServiceInputMock.categoryMock, to: .empty)
-        sut.didFinish()
-
-        #expect(dataService.fetchTasksCalled)
     }
 }

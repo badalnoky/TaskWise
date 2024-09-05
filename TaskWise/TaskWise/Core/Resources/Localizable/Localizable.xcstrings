@@ -661,6 +661,61 @@
         }
       }
     },
+    "Pad.Dashboard.todayTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Today"
+          }
+        }
+      }
+    },
+    "Pad.Navigation.dashboardIcon" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "rectangle.3.group"
+          }
+        }
+      }
+    },
+    "Pad.Navigation.dashboardLabel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dashboard"
+          }
+        }
+      }
+    },
+    "Pad.Navigation.settingsIcon" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "gear"
+          }
+        }
+      }
+    },
+    "Pad.Navigation.settingsLabel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        }
+      }
+    },
     "RepeatBehaviorPicker.backButtonLabel" : {
       "extractionState" : "manual",
       "localizations" : {

@@ -45,6 +45,10 @@ public extension CGFloat {
     static let defaultListHeight: CGFloat = 200
     /// 260 pt
     static let defaultFilterSheetHeight: CGFloat = 260
+    /// 400 pt
+    static let popoverWidth: CGFloat = 400
+    /// 800 pt
+    static let popoverMinHeight: CGFloat = 800
 }
 
 public extension CGFloat {
@@ -134,5 +138,9 @@ public extension CGFloat {
 
     var negative: CGFloat {
         self * -1
+    }
+
+    var third: CGFloat {
+        self / 3
     }
 }

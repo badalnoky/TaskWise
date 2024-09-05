@@ -6,7 +6,7 @@ PODS:
     - Sourcery/CLI-Only (= 2.2.5)
   - Sourcery/CLI-Only (2.2.5)
   - SwiftGen (6.6.3)
-  - SwiftLint (0.55.1)
+  - SwiftLint (0.56.2)
 
 DEPENDENCIES:
   - CalendarDatePicker (from `https://github.com/badalnoky/CalendarDatePicker.git`)
@@ -31,10 +31,10 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   CalendarDatePicker:
-    :commit: 326e2b6c483b1035e8a4e3a8dcc454a6837f8871
+    :commit: d147499ef015fdc79e9a030ff7b25c5823174661
     :git: https://github.com/badalnoky/CalendarDatePicker.git
   IntegratedColorPicker:
-    :commit: bcbba13b749a431e7207b342a6ec7718158eb203
+    :commit: 462ed791125b8b2088b6f62633646226f69f8c90
     :git: https://github.com/badalnoky/IntegratedColorPicker.git
 
 SPEC CHECKSUMS:
@@ -43,7 +43,7 @@ SPEC CHECKSUMS:
   Resolver: 0e2ce51257e9366c54afe1b9e9be25059e9b9300
   Sourcery: 088e2f5a70844da8bc439f9eb9d88f35fc702f93
   SwiftGen: 4993cbf71cbc4886f775e26f8d5c3a1188ec9f99
-  SwiftLint: 3fe909719babe5537c552ee8181c0031392be933
+  SwiftLint: bd7cfb914762ab5f0cbb632964849571db075706
 
 PODFILE CHECKSUM: 17364f2a0b416d2a4400b6a36d7012ca8bb031a6
 

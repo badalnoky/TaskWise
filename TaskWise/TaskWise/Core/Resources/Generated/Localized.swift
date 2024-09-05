@@ -163,6 +163,22 @@ internal enum Str {
             )
         }
     }
+    internal enum Pad {
+        internal enum Dashboard {
+            /// Today
+            internal static let todayTitle = String(localized: "Pad.Dashboard.todayTitle", defaultValue: "Today")
+        }
+        internal enum Navigation {
+            /// rectangle.3.group
+            internal static let dashboardIcon = String(localized: "Pad.Navigation.dashboardIcon", defaultValue: "rectangle.3.group")
+            /// Dashboard
+            internal static let dashboardLabel = String(localized: "Pad.Navigation.dashboardLabel", defaultValue: "Dashboard")
+            /// gear
+            internal static let settingsIcon = String(localized: "Pad.Navigation.settingsIcon", defaultValue: "gear")
+            /// Settings
+            internal static let settingsLabel = String(localized: "Pad.Navigation.settingsLabel", defaultValue: "Settings")
+        }
+    }
     internal enum RepeatBehaviorPicker {
         /// Back
         internal static let backButtonLabel = String(localized: "RepeatBehaviorPicker.backButtonLabel", defaultValue: "Back")

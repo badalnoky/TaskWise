@@ -1,12 +1,10 @@
 import Combine
+import Foundation
 import Resolver
-import SwiftUI
 
-@Observable final class AddTaskViewModel {
-    private let navigator: Navigator<ContentSceneFactory>
+@Observable final class AddTaskPopoverViewModel {
     private let dataService: DataServiceInput
     private var cancellables = Set<AnyCancellable>()
-    var editMode: EditMode = .active
 
     var title: String = .empty
     var description: String = .empty
@@ -24,14 +22,6 @@ import SwiftUI
     var steps: [TaskStep.DTO] = []
     var isStepViewExpanded = false
 
-    var isStepCreationDisabled: Bool {
-        newStepName.isEmpty
-    }
-
-    var isCreationDisabled: Bool {
-        title.isEmpty
-    }
-
     private var task: TWTask.DTO {
         TWTask.DTO(
             id: UUID(),
@@ -48,24 +38,18 @@ import SwiftUI
         )
     }
 
-    init(
-        navigator: Navigator<ContentSceneFactory>,
-        dataService: DataServiceInput = Resolver.resolve(),
-        date: Date
-    ) {
-        self.navigator = navigator
+    init(dataService: DataServiceInput = Resolver.resolve()) {
         self.dataService = dataService
-        self.starts = date
-        self.ends = date.advanced(by: .hour)
+        self.starts = .now
+        self.ends = self.starts.advanced(by: .hour)
 
         registerBindings()
     }
 }
 
-extension AddTaskViewModel {
+extension AddTaskPopoverViewModel {
     func didTapCreate() {
         dataService.createTasks(from: task, with: repeatBehaviour)
-        dismiss()
     }
 
     func didTapAddStep() {
@@ -82,13 +66,9 @@ extension AddTaskViewModel {
         guard let idx = steps.firstIndex(of: step) else { return }
         steps[idx].toggleIsDone()
     }
-
-    func dismiss() {
-        navigator.pop()
-    }
 }
 
-private extension AddTaskViewModel {
+private extension AddTaskPopoverViewModel {
     private func registerBindings() {
         registerPriorityBinding()
         registerCategoryBinding()

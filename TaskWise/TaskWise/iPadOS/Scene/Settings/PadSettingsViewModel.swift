@@ -2,30 +2,25 @@ import Combine
 import Resolver
 import SwiftUI
 
-@Observable final class SettingsViewModel {
-    private var navigator: Navigator<ContentSceneFactory>
+@Observable final class PadSettingsViewModel {
     private let dataService: DataServiceInput
     private var cancellables = Set<AnyCancellable>()
-    private var hasChanges = false
-
-    var currentTab: SettingTabs = .category
-
-    var isNewCategorySheetPresented = false
-    var isNewColumnSheetPresented = false
-    var isNewPrioritySheetPresented = false
-    var currentColor: Color = .blue
-
-    var categoryEditMode: EditMode = .inactive
-    var priorityEditMode: EditMode = .inactive
-    var columnEditMode: EditMode = .inactive
 
     var categories: [Category] = []
     var columns: [TaskColumn] = []
     var priorities: [Priority] = []
 
+    var isNewCategorySheetPresented = false
+    var isNewColumnSheetPresented = false
+    var isNewPrioritySheetPresented = false
     var newCategoryName: String = .empty
     var newColumnName: String = .empty
     var newPriorityName: String = .empty
+    var currentColor: Color = .blue
+
+    var isEditingCategory = false
+    var isEditingPriority = false
+    var isEditingColumn = false
 
     var isAlertPresented = false
     var alertMessage: String = .empty
@@ -34,18 +29,14 @@ import SwiftUI
         newColumnName.isEmpty && newCategoryName.isEmpty && newPriorityName.isEmpty
     }
 
-    init(
-        navigator: Navigator<ContentSceneFactory>,
-        dataService: DataServiceInput = Resolver.resolve()
-    ) {
-        self.navigator = navigator
+    init(dataService: DataServiceInput = Resolver.resolve()) {
         self.dataService = dataService
 
         registerBindings()
     }
 }
 
-extension SettingsViewModel {
+extension PadSettingsViewModel {
     func didTapAddCategory() {
         dataService.addCategory(.init(id: UUID(), name: newCategoryName, colorComponents: currentColor.components))
         newCategoryName = .empty
@@ -69,26 +60,26 @@ extension SettingsViewModel {
         } else if let column = item as? TaskColumn {
             dataService.updateColumnName(on: column, to: newName)
         }
-        hasChanges = true
+        dataService.fetchTasks()
     }
 
     func didMoveColumn(source: IndexSet, destination: Int) {
         var updated = columns
         updated.move(fromOffsets: source, toOffset: destination)
         dataService.updateOrder(columns: updated)
-        hasChanges = true
+        dataService.fetchTasks()
     }
 
     func didMovePriority(source: IndexSet, destination: Int) {
         var updated = priorities
         updated.move(fromOffsets: source, toOffset: destination)
         dataService.updateOrder(priorities: updated)
-        hasChanges = true
+        dataService.fetchTasks()
     }
 
     func didChangeColor(on category: Category, to newColor: ColorComponents.DTO) {
         dataService.updateColor(on: category, with: newColor)
-        hasChanges = true
+        dataService.fetchTasks()
     }
 
     func didTapDeleteCategory(_ category: Category) {
@@ -109,26 +100,28 @@ extension SettingsViewModel {
         }
     }
 
-    func didTapEdit() {
-        switch currentTab {
-        case .category: EditMode.toggle(mode: &categoryEditMode)
-        case .column: EditMode.toggle(mode: &columnEditMode)
-        case .priority: EditMode.toggle(mode: &priorityEditMode)
-        }
+    func didTapEditCategory() {
+        isEditingCategory.toggle()
     }
 
-    func didTapAdd() {
-        switch currentTab {
-        case .category: isNewCategorySheetPresented = true
-        case .column: isNewColumnSheetPresented = true
-        case .priority: isNewPrioritySheetPresented = true
-        }
+    func didTapEditPriority() {
+        isEditingPriority.toggle()
     }
 
-    func didFinish() {
-        if hasChanges {
-            dataService.fetchTasks()
-        }
+    func didTapEditColumn() {
+        isEditingColumn.toggle()
+    }
+
+    func didTapNewCategory() {
+        isNewCategorySheetPresented = true
+    }
+
+    func didTapNewPriority() {
+        isNewPrioritySheetPresented = true
+    }
+
+    func didTapNewColumn() {
+        isNewColumnSheetPresented = true
     }
 
     func closeSheet() {
@@ -144,7 +137,7 @@ extension SettingsViewModel {
     private func handle(_ operation: () throws -> Void) {
         do {
             try operation()
-            hasChanges = true
+            dataService.fetchTasks()
         } catch DataOperationError.existingRelationship(let type) {
             isAlertPresented = true
             alertMessage = Str.Error.existingRelationship(type)
@@ -158,7 +151,7 @@ extension SettingsViewModel {
     }
 }
 
-private extension SettingsViewModel {
+private extension PadSettingsViewModel {
     private func registerBindings() {
         registerCategoryBinding()
         registerColumnsBinding()

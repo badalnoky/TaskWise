@@ -2,18 +2,15 @@ import SwiftUI
 
 public struct SettingsNavigationBarModifier: ViewModifier {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    let isEditing: Bool
     let editAction: () -> Void
     let addAction: () -> Void
     let finishAction: () -> Void
 
     init(
-        isEditing: Bool,
         editAction: @escaping () -> Void,
         addAction: @escaping () -> Void,
         finishAction: @escaping () -> Void
     ) {
-        self.isEditing = isEditing
         self.editAction = editAction
         self.addAction = addAction
         self.finishAction = finishAction
@@ -33,9 +30,7 @@ public struct SettingsNavigationBarModifier: ViewModifier {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) { backButton }
                 ToolbarItem(placement: .principal) { Text(Str.Settings.title).textStyle(.largeTitle) }
-                if isEditing {
-                    ToolbarItem(placement: .topBarTrailing) { addButton }
-                }
+                ToolbarItem(placement: .topBarTrailing) { addButton }
                 ToolbarItem(placement: .topBarTrailing) { editButton }
             }
     }
@@ -59,15 +54,13 @@ extension SettingsNavigationBarModifier {
 }
 
 extension View {
-    // swiftlint: disable function_parameter_count
     func settingsNavigationBar(
-        isEditing: Bool,
         editAction: @escaping () -> Void,
         addAction: @escaping () -> Void,
         finishAction: @escaping () -> Void
     ) -> some View {
         modifier(
-            SettingsNavigationBarModifier(isEditing: isEditing, editAction: editAction, addAction: addAction, finishAction: finishAction)
+            SettingsNavigationBarModifier(editAction: editAction, addAction: addAction, finishAction: finishAction)
         )
     }
 }

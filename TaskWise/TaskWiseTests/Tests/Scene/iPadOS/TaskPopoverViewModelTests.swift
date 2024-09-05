@@ -3,9 +3,9 @@ import Testing
 
 // swiftlint: disable implicitly_unwrapped_optional
 // swiftlint: disable type_contents_order
-@Suite("TaskViewModel", .tags(.viewModel))
-final class TaskViewModelTests {
-    private var sut: TaskViewModel!
+@Suite("TaskPopoverViewModel", .tags(.viewModel))
+final class TaskPopoverViewModelTests {
+    private var sut: TaskPopoverViewModel!
     private var dataService: DataServiceInputMock!
 
     init() {
@@ -17,9 +17,11 @@ final class TaskViewModelTests {
         dataService.currentSteps = .init([DataServiceInputMock.stepMock])
 
         sut = .init(
-            navigator: .init(sceneFactory: .init(), root: .dashboard),
-            dataService: dataService,
-            taskId: DataServiceInputMock.taskMock.id
+            dataService: self.dataService,
+            task: DataServiceInputMock.repeatedTaskMock,
+            priorities: [DataServiceInputMock.priorityMock],
+            categories: [DataServiceInputMock.categoryMock],
+            columns: [DataServiceInputMock.columnMock]
         )
     }
 
@@ -32,7 +34,7 @@ final class TaskViewModelTests {
     func didTapEdit() {
         sut.didTapEdit()
 
-        #expect(sut.editMode == .active)
+        #expect(sut.isEditable == true)
     }
 
     @Test("Action tap while editable and repeating set")
@@ -61,20 +63,18 @@ final class TaskViewModelTests {
         #expect(dataService.createTasksFromWithIncludingCalled)
     }
 
-    @Test("Action tap with non-repeating task")
-    func didTapAction_withNonRepeatingTask() {
-        sut.task = DataServiceInputMock.taskMock
-        sut.didTapEdit()
-        sut.didTapAction()
-
-        #expect(dataService.updateTaskWithCalled)
-    }
-
     @Test("Update only this tap")
     func didTapUpdateOnlyThis() {
         sut.didTapUpdateOnlyThis()
 
         #expect(dataService.updateTaskWithCalled)
+    }
+
+    @Test("Update all tap")
+    func didTapUpdateAll() {
+        sut.didTapUpdateAll()
+
+        #expect(dataService.updateRepeatingTasksFromCalled)
     }
 
     @Test("Delete tap")
@@ -116,7 +116,7 @@ final class TaskViewModelTests {
     @Test("Delete steps with repeating task")
     func didTapDeleteSteps_withRepeatingTask() {
         sut.task = DataServiceInputMock.repeatedTaskMock
-        sut.didTapDeleteSteps(offsets: [0])
+        sut.didTapDeleteSteps(DataServiceInputMock.stepMock)
 
         #expect(dataService.deleteStepForRepeatingStepCalled)
     }
@@ -124,7 +124,7 @@ final class TaskViewModelTests {
     @Test("Delete steps with non-repeating task")
     func didTapDeleteSteps_withNonRepeatingTask() {
         sut.task = DataServiceInputMock.taskMock
-        sut.didTapDeleteSteps(offsets: [0])
+        sut.didTapDeleteSteps(DataServiceInputMock.stepMock)
 
         #expect(dataService.deleteStepFromCalled)
     }

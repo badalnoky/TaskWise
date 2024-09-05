@@ -41,7 +41,7 @@ extension ReorderableList: View {
                     }
                     .onDrop(
                         of: [.text],
-                        delegate: DropViewDelegate(
+                        delegate: ReorderDropViewDelegate(
                             destinationItem: item,
                             items: $shownItems,
                             draggedItem: $draggedItem,

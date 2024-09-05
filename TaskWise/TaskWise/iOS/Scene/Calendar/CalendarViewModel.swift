@@ -25,9 +25,7 @@ import SwiftUI
 
     var filteredTasks: [TWTask] {
         tasks
-            .filter {
-                Calendar.current.isDate($0.date, inSameDayAs: self.selectedDate)
-            }
+            .from(date: self.selectedDate)
             .filteredBy(text: filterText, priority: selectedPriority, category: selectedCategory)
     }
 
