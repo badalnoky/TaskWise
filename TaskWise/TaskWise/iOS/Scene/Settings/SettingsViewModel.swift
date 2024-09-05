@@ -34,14 +34,6 @@ import SwiftUI
         newColumnName.isEmpty && newCategoryName.isEmpty && newPriorityName.isEmpty
     }
 
-    var isEditing: Bool {
-        switch currentTab {
-        case .column: return columnEditMode.isEditing
-        case .category: return categoryEditMode.isEditing
-        case .priority: return priorityEditMode.isEditing
-        }
-    }
-
     init(
         navigator: Navigator<ContentSceneFactory>,
         dataService: DataServiceInput = Resolver.resolve()

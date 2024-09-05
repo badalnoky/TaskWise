@@ -34,7 +34,7 @@ CHECKOUT OPTIONS:
     :commit: d147499ef015fdc79e9a030ff7b25c5823174661
     :git: https://github.com/badalnoky/CalendarDatePicker.git
   IntegratedColorPicker:
-    :commit: bcbba13b749a431e7207b342a6ec7718158eb203
+    :commit: 462ed791125b8b2088b6f62633646226f69f8c90
     :git: https://github.com/badalnoky/IntegratedColorPicker.git
 
 SPEC CHECKSUMS:

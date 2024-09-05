@@ -348,7 +348,6 @@
 		799070BF2AEA6BE90051AAC8 /* DataService+Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799070BE2AEA6BE90051AAC8 /* DataService+Task.swift */; };
 		799070C32AEA70F50051AAC8 /* DataService+TaskColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799070C22AEA70F50051AAC8 /* DataService+TaskColumn.swift */; };
 		799070C52AEA717D0051AAC8 /* DataService+Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799070C42AEA717D0051AAC8 /* DataService+Priority.swift */; };
-		799476AE2C79C17300071E98 /* PadDashboardViewModel+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799476AD2C79C16600071E98 /* PadDashboardViewModel+Mock.swift */; };
 		799A42872B9F289300041AA3 /* DataService+RepeatingTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799A42862B9F289300041AA3 /* DataService+RepeatingTasks.swift */; };
 		799A42882B9F2AD200041AA3 /* DataService+RepeatingTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799A42862B9F289300041AA3 /* DataService+RepeatingTasks.swift */; };
 		799AED962BDEBD710024144F /* Task+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E14AD32AE41A4500FF730D /* Task+Mock.swift */; };
@@ -683,7 +682,6 @@
 		799070BE2AEA6BE90051AAC8 /* DataService+Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataService+Task.swift"; sourceTree = "<group>"; };
 		799070C22AEA70F50051AAC8 /* DataService+TaskColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataService+TaskColumn.swift"; sourceTree = "<group>"; };
 		799070C42AEA717D0051AAC8 /* DataService+Priority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataService+Priority.swift"; sourceTree = "<group>"; };
-		799476AD2C79C16600071E98 /* PadDashboardViewModel+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PadDashboardViewModel+Mock.swift"; sourceTree = "<group>"; };
 		799886522C03C2540092AD8D /* TaskWise.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TaskWise.xctestplan; sourceTree = "<group>"; };
 		799A42862B9F289300041AA3 /* DataService+RepeatingTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataService+RepeatingTasks.swift"; sourceTree = "<group>"; };
 		799D0F892C76049800B62B50 /* ReorderableList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderableList.swift; sourceTree = "<group>"; };
@@ -1276,7 +1274,6 @@
 		797CA0422AD300F40093632D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				799476AD2C79C16600071E98 /* PadDashboardViewModel+Mock.swift */,
 				79D983602ACC934D002A8222 /* AddTaskViewModel+Mock.swift */,
 				799D48E22ABC394400C149E3 /* CalendarViewModel+Mock.swift */,
 				792155162AB9DD710044CDED /* DashboardViewModel+Mock.swift */,
@@ -2457,7 +2454,6 @@
 				7988A0512AAE362400C63265 /* PassthroughSubject+Extensions.swift in Sources */,
 				79B52F7E2BAB28FB007CF9BA /* RepeatingTask+DTO.swift in Sources */,
 				79CD54AE2AD33B9600D064C2 /* Priority+CoreDataProperties.swift in Sources */,
-				799476AE2C79C17300071E98 /* PadDashboardViewModel+Mock.swift in Sources */,
 				797B58B52B88E57E003B58A7 /* Weekday.swift in Sources */,
 				7988A0502AAE362400C63265 /* Double+Extensions.swift in Sources */,
 				790126112AD4844C005620C2 /* Priority+Defaults.swift in Sources */,

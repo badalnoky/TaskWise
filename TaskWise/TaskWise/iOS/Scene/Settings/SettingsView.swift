@@ -1,3 +1,4 @@
+import IntegratedColorPicker
 import SwiftUI
 
 struct SettingsView {
@@ -16,7 +17,6 @@ extension SettingsView: View {
             }
         }
         .settingsNavigationBar(
-            isEditing: viewModel.isEditing,
             editAction: viewModel.didTapEdit,
             addAction: viewModel.didTapAdd,
             finishAction: viewModel.didFinish
@@ -69,9 +69,19 @@ extension SettingsView {
                 .padding(.top, .padding12)
                 .padding(.horizontal, .padding4)
                 StyledField(style: .base, title: Txt.categoryPlaceholder, text: $viewModel.newCategoryName)
-                ColorPicker(Txt.colorLabel, selection: $viewModel.currentColor)
-                    .textStyle(.body)
-                    .padding(.horizontal, .padding4)
+                HStack {
+                    StyledText(text: Txt.colorLabel, style: .base)
+                    Spacer()
+                    IntegratedColorPicker(selectedColor: $viewModel.currentColor, isEditable: true) {
+                        TaskItemView(
+                            title: Txt.exampleTitle,
+                            priority: Txt.examplePriority,
+                            category: viewModel.newCategoryName,
+                            categoryColor: viewModel.currentColor
+                        )
+                    }
+                }
+                .padding(.horizontal, .padding4)
                 Spacer()
             }
             .presentationDetents([.height(.defaultFilterSheetHeight)])
