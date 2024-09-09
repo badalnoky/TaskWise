@@ -7,7 +7,6 @@ struct TaskWiseApp: App {
     var body: some Scene {
         WindowGroup {
             // MARK: iPhone
-            #if os(iOS)
             if UIScreen.isPhone {
                 coordinator.start()
             }
@@ -16,11 +15,6 @@ struct TaskWiseApp: App {
             if  UIScreen.isPad {
                 PadNavigator()
             }
-
-            // MARK: Mac
-            #elseif os(macOS)
-            MacDashboardView()
-            #endif
         }
     }
 }

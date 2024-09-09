@@ -80,7 +80,6 @@
 		792E99DE2BDB89C70008C7A2 /* CompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792E99DD2BDB89C70008C7A2 /* CompletionView.swift */; };
 		792E99E52BDB8B6C0008C7A2 /* WatchDashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792E99E42BDB8B6C0008C7A2 /* WatchDashboardViewModel.swift */; };
 		792EC2042C62BC5E00982732 /* PadDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792EC2032C62BC5E00982732 /* PadDashboardView.swift */; };
-		792EC2072C62BD3D00982732 /* MacDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792EC2062C62BD3D00982732 /* MacDashboardView.swift */; };
 		7932A8EC2BFCF9B000846371 /* AutoMockable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7932A8EB2BFCF9B000846371 /* AutoMockable.generated.swift */; };
 		793C64872AED80BC00C9D3FF /* EditableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793C64862AED80BC00C9D3FF /* EditableText.swift */; };
 		793C648A2AED9E7300C9D3FF /* CategoryColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793C64892AED9E7300C9D3FF /* CategoryColorPicker.swift */; };
@@ -361,6 +360,16 @@
 		799D48E32ABC394400C149E3 /* CalendarViewModel+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799D48E22ABC394400C149E3 /* CalendarViewModel+Mock.swift */; };
 		79A0C2DF2B226B1E005B3F04 /* TaskWise.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54992AD33B9600D064C2 /* TaskWise.xcdatamodeld */; };
 		79A519902B1BA29F00B0EEC2 /* ListButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A5198F2B1BA29F00B0EEC2 /* ListButtonStyle.swift */; };
+		79ABB4312C8F0DF9001D8AF0 /* TaskWiseMacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ABB4302C8F0DF9001D8AF0 /* TaskWiseMacApp.swift */; };
+		79ABB4352C8F0DFA001D8AF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79ABB4342C8F0DFA001D8AF0 /* Assets.xcassets */; };
+		79ABB4382C8F0DFA001D8AF0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79ABB4372C8F0DFA001D8AF0 /* Preview Assets.xcassets */; };
+		79ABB4432C8F0DFA001D8AF0 /* TaskWiseMacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ABB4422C8F0DFA001D8AF0 /* TaskWiseMacTests.swift */; };
+		79ABB44D2C8F0DFB001D8AF0 /* TaskWiseMacUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ABB44C2C8F0DFB001D8AF0 /* TaskWiseMacUITests.swift */; };
+		79ABB45A2C8F0E51001D8AF0 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79ABB4592C8F0E51001D8AF0 /* Colors.xcassets */; };
+		79ABB45E2C8F0F74001D8AF0 /* MacDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792EC2062C62BD3D00982732 /* MacDashboardView.swift */; };
+		79ABB45F2C8F14F8001D8AF0 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988A0462AAE362400C63265 /* String+Extensions.swift */; };
+		79ABB4602C8F14F8001D8AF0 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988A0462AAE362400C63265 /* String+Extensions.swift */; };
+		79ABB4612C8F14F8001D8AF0 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988A0462AAE362400C63265 /* String+Extensions.swift */; };
 		79B3490A2B23B15100AAB0A9 /* ColumnHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B823EA2B1E71DC0062B6E5 /* ColumnHeader.swift */; };
 		79B3490B2B23B15C00AAB0A9 /* TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983000D2B17C4D90013B834 /* TextStyle.swift */; };
 		79B3490C2B23B16900AAB0A9 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983000A2B17C0D10013B834 /* Fonts.swift */; };
@@ -471,6 +480,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 797B4D712B2107D7001DAC30;
 			remoteInfo = TaskWiseWidgetExtension;
+		};
+		79ABB43F2C8F0DFA001D8AF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 790A80FB2AAE19A600283D7E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 79ABB42D2C8F0DF9001D8AF0;
+			remoteInfo = TaskWiseMac;
+		};
+		79ABB4492C8F0DFB001D8AF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 790A80FB2AAE19A600283D7E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 79ABB42D2C8F0DF9001D8AF0;
+			remoteInfo = TaskWiseMac;
 		};
 		79BC642C2BDB5E120081B299 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -688,6 +711,16 @@
 		799D0F892C76049800B62B50 /* ReorderableList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderableList.swift; sourceTree = "<group>"; };
 		799D48E22ABC394400C149E3 /* CalendarViewModel+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarViewModel+Mock.swift"; sourceTree = "<group>"; };
 		79A5198F2B1BA29F00B0EEC2 /* ListButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListButtonStyle.swift; sourceTree = "<group>"; };
+		79ABB42E2C8F0DF9001D8AF0 /* TaskWiseMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskWiseMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		79ABB4302C8F0DF9001D8AF0 /* TaskWiseMacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskWiseMacApp.swift; sourceTree = "<group>"; };
+		79ABB4342C8F0DFA001D8AF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		79ABB4372C8F0DFA001D8AF0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		79ABB4392C8F0DFA001D8AF0 /* TaskWiseMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TaskWiseMac.entitlements; sourceTree = "<group>"; };
+		79ABB43E2C8F0DFA001D8AF0 /* TaskWiseMacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskWiseMacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		79ABB4422C8F0DFA001D8AF0 /* TaskWiseMacTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskWiseMacTests.swift; sourceTree = "<group>"; };
+		79ABB4482C8F0DFA001D8AF0 /* TaskWiseMacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskWiseMacUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		79ABB44C2C8F0DFB001D8AF0 /* TaskWiseMacUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskWiseMacUITests.swift; sourceTree = "<group>"; };
+		79ABB4592C8F0E51001D8AF0 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		79B349122B23CBA500AAB0A9 /* WidgetColumnButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetColumnButtonStyle.swift; sourceTree = "<group>"; };
 		79B349162B23CEBE00AAB0A9 /* TaskWidgetHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskWidgetHeader.swift; sourceTree = "<group>"; };
 		79B349182B23CF2A00AAB0A9 /* WidgetColumnButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetColumnButton.swift; sourceTree = "<group>"; };
@@ -789,6 +822,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		79ABB42B2C8F0DF9001D8AF0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79ABB43B2C8F0DFA001D8AF0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79ABB4452C8F0DFA001D8AF0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		79BC641E2BDB5E0F0081B299 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -838,6 +892,9 @@
 				797B4D772B2107D7001DAC30 /* TaskWiseWidget */,
 				79BC64222BDB5E0F0081B299 /* TaskWiseWatch Watch App */,
 				79E1763C2BE2B676006577A8 /* TaskWiseWatchWidget */,
+				79ABB42F2C8F0DF9001D8AF0 /* TaskWiseMac */,
+				79ABB4412C8F0DFA001D8AF0 /* TaskWiseMacTests */,
+				79ABB44B2C8F0DFB001D8AF0 /* TaskWiseMacUITests */,
 				790A81042AAE19A700283D7E /* Products */,
 				3E1D43BFCC87103E28E2DDD6 /* Pods */,
 				8CEBAA51A4C881F8694DD290 /* Frameworks */,
@@ -853,6 +910,9 @@
 				797B4D722B2107D7001DAC30 /* TaskWiseWidgetExtension.appex */,
 				79BC64212BDB5E0F0081B299 /* TaskWise.app */,
 				79E176392BE2B676006577A8 /* TaskWiseWatchWidgetExtension.appex */,
+				79ABB42E2C8F0DF9001D8AF0 /* TaskWiseMac.app */,
+				79ABB43E2C8F0DFA001D8AF0 /* TaskWiseMacTests.xctest */,
+				79ABB4482C8F0DFA001D8AF0 /* TaskWiseMacUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -866,7 +926,6 @@
 				7988A0532AAE386F00C63265 /* Core */,
 				79964A832C627768000EF203 /* iOS */,
 				79964A842C627777000EF203 /* iPadOS */,
-				79964A852C627780000EF203 /* MacOS */,
 			);
 			path = TaskWise;
 			sourceTree = "<group>";
@@ -1608,14 +1667,6 @@
 			path = iPadOS;
 			sourceTree = "<group>";
 		};
-		79964A852C627780000EF203 /* MacOS */ = {
-			isa = PBXGroup;
-			children = (
-				792EC2052C62BD1800982732 /* Scene */,
-			);
-			path = MacOS;
-			sourceTree = "<group>";
-		};
 		799D0F882C76044C00B62B50 /* OrderIndicatedList */ = {
 			isa = PBXGroup;
 			children = (
@@ -1644,6 +1695,67 @@
 				797B4D982B2115D8001DAC30 /* CompletionWidget */,
 			);
 			path = Widgets;
+			sourceTree = "<group>";
+		};
+		79ABB42F2C8F0DF9001D8AF0 /* TaskWiseMac */ = {
+			isa = PBXGroup;
+			children = (
+				79ABB4392C8F0DFA001D8AF0 /* TaskWiseMac.entitlements */,
+				79ABB45B2C8F0EED001D8AF0 /* App */,
+				79ABB45C2C8F0F36001D8AF0 /* Resources */,
+				792EC2052C62BD1800982732 /* Scene */,
+			);
+			path = TaskWiseMac;
+			sourceTree = "<group>";
+		};
+		79ABB4362C8F0DFA001D8AF0 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				79ABB4372C8F0DFA001D8AF0 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		79ABB4412C8F0DFA001D8AF0 /* TaskWiseMacTests */ = {
+			isa = PBXGroup;
+			children = (
+				79ABB4422C8F0DFA001D8AF0 /* TaskWiseMacTests.swift */,
+			);
+			path = TaskWiseMacTests;
+			sourceTree = "<group>";
+		};
+		79ABB44B2C8F0DFB001D8AF0 /* TaskWiseMacUITests */ = {
+			isa = PBXGroup;
+			children = (
+				79ABB44C2C8F0DFB001D8AF0 /* TaskWiseMacUITests.swift */,
+			);
+			path = TaskWiseMacUITests;
+			sourceTree = "<group>";
+		};
+		79ABB45B2C8F0EED001D8AF0 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				79ABB4302C8F0DF9001D8AF0 /* TaskWiseMacApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		79ABB45C2C8F0F36001D8AF0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				79ABB4362C8F0DFA001D8AF0 /* Preview Content */,
+				79ABB45D2C8F0F46001D8AF0 /* Assets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		79ABB45D2C8F0F46001D8AF0 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				79ABB4592C8F0E51001D8AF0 /* Colors.xcassets */,
+				79ABB4342C8F0DFA001D8AF0 /* Assets.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		79B3491C2B23DB8200AAB0A9 /* Button */ = {
@@ -2039,6 +2151,59 @@
 			productReference = 797B4D722B2107D7001DAC30 /* TaskWiseWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		79ABB42D2C8F0DF9001D8AF0 /* TaskWiseMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79ABB4502C8F0DFB001D8AF0 /* Build configuration list for PBXNativeTarget "TaskWiseMac" */;
+			buildPhases = (
+				79ABB42A2C8F0DF9001D8AF0 /* Sources */,
+				79ABB42B2C8F0DF9001D8AF0 /* Frameworks */,
+				79ABB42C2C8F0DF9001D8AF0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TaskWiseMac;
+			productName = TaskWiseMac;
+			productReference = 79ABB42E2C8F0DF9001D8AF0 /* TaskWiseMac.app */;
+			productType = "com.apple.product-type.application";
+		};
+		79ABB43D2C8F0DFA001D8AF0 /* TaskWiseMacTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79ABB4532C8F0DFB001D8AF0 /* Build configuration list for PBXNativeTarget "TaskWiseMacTests" */;
+			buildPhases = (
+				79ABB43A2C8F0DFA001D8AF0 /* Sources */,
+				79ABB43B2C8F0DFA001D8AF0 /* Frameworks */,
+				79ABB43C2C8F0DFA001D8AF0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				79ABB4402C8F0DFA001D8AF0 /* PBXTargetDependency */,
+			);
+			name = TaskWiseMacTests;
+			productName = TaskWiseMacTests;
+			productReference = 79ABB43E2C8F0DFA001D8AF0 /* TaskWiseMacTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		79ABB4472C8F0DFA001D8AF0 /* TaskWiseMacUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79ABB4562C8F0DFB001D8AF0 /* Build configuration list for PBXNativeTarget "TaskWiseMacUITests" */;
+			buildPhases = (
+				79ABB4442C8F0DFA001D8AF0 /* Sources */,
+				79ABB4452C8F0DFA001D8AF0 /* Frameworks */,
+				79ABB4462C8F0DFA001D8AF0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				79ABB44A2C8F0DFB001D8AF0 /* PBXTargetDependency */,
+			);
+			name = TaskWiseMacUITests;
+			productName = TaskWiseMacUITests;
+			productReference = 79ABB4482C8F0DFA001D8AF0 /* TaskWiseMacUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		79BC64202BDB5E0F0081B299 /* TaskWiseWatch Watch App */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 79BC64322BDB5E120081B299 /* Build configuration list for PBXNativeTarget "TaskWiseWatch Watch App" */;
@@ -2082,7 +2247,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1500;
+				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					790A81022AAE19A600283D7E = {
@@ -2098,6 +2263,17 @@
 					};
 					797B4D712B2107D7001DAC30 = {
 						CreatedOnToolsVersion = 15.0;
+					};
+					79ABB42D2C8F0DF9001D8AF0 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					79ABB43D2C8F0DFA001D8AF0 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 79ABB42D2C8F0DF9001D8AF0;
+					};
+					79ABB4472C8F0DFA001D8AF0 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 79ABB42D2C8F0DF9001D8AF0;
 					};
 					79BC64202BDB5E0F0081B299 = {
 						CreatedOnToolsVersion = 15.0;
@@ -2126,6 +2302,9 @@
 				797B4D712B2107D7001DAC30 /* TaskWiseWidgetExtension */,
 				79BC64202BDB5E0F0081B299 /* TaskWiseWatch Watch App */,
 				79E176382BE2B676006577A8 /* TaskWiseWatchWidgetExtension */,
+				79ABB42D2C8F0DF9001D8AF0 /* TaskWiseMac */,
+				79ABB43D2C8F0DFA001D8AF0 /* TaskWiseMacTests */,
+				79ABB4472C8F0DFA001D8AF0 /* TaskWiseMacUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -2164,6 +2343,30 @@
 				79B349112B23B70E00AAB0A9 /* ProximaNova-Bold.otf in Resources */,
 				797B4D7D2B2107D8001DAC30 /* Assets.xcassets in Resources */,
 				797B4D8D2B211242001DAC30 /* Colors.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79ABB42C2C8F0DF9001D8AF0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79ABB45A2C8F0E51001D8AF0 /* Colors.xcassets in Resources */,
+				79ABB4382C8F0DFA001D8AF0 /* Preview Assets.xcassets in Resources */,
+				79ABB4352C8F0DFA001D8AF0 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79ABB43C2C8F0DFA001D8AF0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79ABB4462C8F0DFA001D8AF0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2448,7 +2651,6 @@
 				795CC8EC2ABAF28A0093C4BC /* SettingsViewModel+Mock.swift in Sources */,
 				79B349202B23DD4100AAB0A9 /* WidgetPageButtonStyle.swift in Sources */,
 				794AC2882BB424FD00DAC0F9 /* CustomRepeatSchedule.swift in Sources */,
-				792EC2072C62BD3D00982732 /* MacDashboardView.swift in Sources */,
 				79CD54B02AD33B9600D064C2 /* ColorComponents+CoreDataClass.swift in Sources */,
 				79CD54A82AD33B9600D064C2 /* DataService.swift in Sources */,
 				793C648A2AED9E7300C9D3FF /* CategoryColorPicker.swift in Sources */,
@@ -2644,6 +2846,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		79ABB42A2C8F0DF9001D8AF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79ABB4312C8F0DF9001D8AF0 /* TaskWiseMacApp.swift in Sources */,
+				79ABB45F2C8F14F8001D8AF0 /* String+Extensions.swift in Sources */,
+				79ABB45E2C8F0F74001D8AF0 /* MacDashboardView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79ABB43A2C8F0DFA001D8AF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79ABB4602C8F14F8001D8AF0 /* String+Extensions.swift in Sources */,
+				79ABB4432C8F0DFA001D8AF0 /* TaskWiseMacTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79ABB4442C8F0DFA001D8AF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79ABB44D2C8F0DFB001D8AF0 /* TaskWiseMacUITests.swift in Sources */,
+				79ABB4612C8F14F8001D8AF0 /* String+Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		79BC641D2BDB5E0F0081B299 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2807,6 +3037,16 @@
 			isa = PBXTargetDependency;
 			target = 797B4D712B2107D7001DAC30 /* TaskWiseWidgetExtension */;
 			targetProxy = 797B4D7F2B2107D8001DAC30 /* PBXContainerItemProxy */;
+		};
+		79ABB4402C8F0DFA001D8AF0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 79ABB42D2C8F0DF9001D8AF0 /* TaskWiseMac */;
+			targetProxy = 79ABB43F2C8F0DFA001D8AF0 /* PBXContainerItemProxy */;
+		};
+		79ABB44A2C8F0DFB001D8AF0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 79ABB42D2C8F0DF9001D8AF0 /* TaskWiseMac */;
+			targetProxy = 79ABB4492C8F0DFB001D8AF0 /* PBXContainerItemProxy */;
 		};
 		79BC642D2BDB5E120081B299 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2973,7 +3213,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.bercidalnoky.TaskWise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -3012,7 +3252,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.bercidalnoky.TaskWise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -3036,7 +3276,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.bercidalnoky.TaskWiseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -3061,7 +3301,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.bercidalnoky.TaskWiseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -3084,7 +3324,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.bercidalnoky.TaskWiseUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -3107,7 +3347,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.bercidalnoky.TaskWiseUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -3144,7 +3384,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -3180,13 +3420,159 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		79ABB4512C8F0DFB001D8AF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TaskWiseMac/TaskWiseMac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TaskWiseMac/Resources/Preview Content\"";
+				DEVELOPMENT_TEAM = 2D3N9A382G;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = TaskWise;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.bercidalnoky.TaskWiseMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		79ABB4522C8F0DFB001D8AF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TaskWiseMac/TaskWiseMac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TaskWiseMac/Resources/Preview Content\"";
+				DEVELOPMENT_TEAM = 2D3N9A382G;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = TaskWise;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.bercidalnoky.TaskWiseMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		79ABB4542C8F0DFB001D8AF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2D3N9A382G;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.bercidalnoky.TaskWiseMacTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TaskWiseMac.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TaskWiseMac";
+			};
+			name = Debug;
+		};
+		79ABB4552C8F0DFB001D8AF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2D3N9A382G;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.bercidalnoky.TaskWiseMacTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TaskWiseMac.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TaskWiseMac";
+			};
+			name = Release;
+		};
+		79ABB4572C8F0DFB001D8AF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2D3N9A382G;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.bercidalnoky.TaskWiseMacUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = TaskWiseMac;
+			};
+			name = Debug;
+		};
+		79ABB4582C8F0DFB001D8AF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2D3N9A382G;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.bercidalnoky.TaskWiseMacUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = TaskWiseMac;
 			};
 			name = Release;
 		};
@@ -3364,6 +3750,33 @@
 			buildConfigurations = (
 				797B4D832B2107D8001DAC30 /* Debug */,
 				797B4D842B2107D8001DAC30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79ABB4502C8F0DFB001D8AF0 /* Build configuration list for PBXNativeTarget "TaskWiseMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79ABB4512C8F0DFB001D8AF0 /* Debug */,
+				79ABB4522C8F0DFB001D8AF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79ABB4532C8F0DFB001D8AF0 /* Build configuration list for PBXNativeTarget "TaskWiseMacTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79ABB4542C8F0DFB001D8AF0 /* Debug */,
+				79ABB4552C8F0DFB001D8AF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79ABB4562C8F0DFB001D8AF0 /* Build configuration list for PBXNativeTarget "TaskWiseMacUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79ABB4572C8F0DFB001D8AF0 /* Debug */,
+				79ABB4582C8F0DFB001D8AF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
