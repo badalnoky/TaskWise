@@ -332,6 +332,69 @@
 		7988A0502AAE362400C63265 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988A0482AAE362400C63265 /* Double+Extensions.swift */; };
 		7988A0512AAE362400C63265 /* PassthroughSubject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988A0492AAE362400C63265 /* PassthroughSubject+Extensions.swift */; };
 		7988C4B42AE2E126004621EA /* TaskStep+DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988C4B32AE2E126004621EA /* TaskStep+DTO.swift */; };
+		798A6CAF2C9068DF00DBB696 /* MacDashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798A6CAE2C9068D600DBB696 /* MacDashboardViewModel.swift */; };
+		798A6CB02C906A3800DBB696 /* DataServiceInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7944D7422AF6DD59001A528D /* DataServiceInput.swift */; };
+		798A6CB12C906A6B00DBB696 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54982AD33B9600D064C2 /* Task+CoreDataClass.swift */; };
+		798A6CB22C906A6F00DBB696 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54972AD33B9600D064C2 /* Task+CoreDataProperties.swift */; };
+		798A6CB42C906A9200DBB696 /* Priority+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54A02AD33B9600D064C2 /* Priority+CoreDataClass.swift */; };
+		798A6CB52C906A9D00DBB696 /* Priority+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD549F2AD33B9600D064C2 /* Priority+CoreDataProperties.swift */; };
+		798A6CB62C906AAF00DBB696 /* NamedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793C648C2AED9F3800C9D3FF /* NamedItem.swift */; };
+		798A6CB72C906ABB00DBB696 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54912AD33B9600D064C2 /* Category+CoreDataClass.swift */; };
+		798A6CB82C906AC300DBB696 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54902AD33B9600D064C2 /* Category+CoreDataProperties.swift */; };
+		798A6CB92C906AC900DBB696 /* TaskWise.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54992AD33B9600D064C2 /* TaskWise.xcdatamodeld */; };
+		798A6CBA2C906ADC00DBB696 /* ColorComponents+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54A22AD33B9600D064C2 /* ColorComponents+CoreDataClass.swift */; };
+		798A6CBB2C906AE200DBB696 /* ColorComponents+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54A32AD33B9600D064C2 /* ColorComponents+CoreDataProperties.swift */; };
+		798A6CBC2C906BE700DBB696 /* TaskColumn+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD549C2AD33B9600D064C2 /* TaskColumn+CoreDataClass.swift */; };
+		798A6CBD2C906BED00DBB696 /* TaskColumn+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD549D2AD33B9600D064C2 /* TaskColumn+CoreDataProperties.swift */; };
+		798A6CBE2C906BFB00DBB696 /* TaskStep+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54932AD33B9600D064C2 /* TaskStep+CoreDataClass.swift */; };
+		798A6CBF2C906C0100DBB696 /* TaskStep+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54942AD33B9600D064C2 /* TaskStep+CoreDataProperties.swift */; };
+		798A6CC02C906C2200DBB696 /* RepeatingTasks+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798055AA2B9F17D000129BBA /* RepeatingTasks+CoreDataClass.swift */; };
+		798A6CC12C906C2800DBB696 /* RepeatingTasks+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798055AB2B9F17D000129BBA /* RepeatingTasks+CoreDataProperties.swift */; };
+		798A6CC22C906C5700DBB696 /* RepeatBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794AC2852BB424F800DAC0F9 /* RepeatBehaviour.swift */; };
+		798A6CC32C906C6600DBB696 /* CustomRepeatSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794AC2872BB424FD00DAC0F9 /* CustomRepeatSchedule.swift */; };
+		798A6CC42C906C7300DBB696 /* RepeatFrequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794AC2812BB424E800DAC0F9 /* RepeatFrequency.swift */; };
+		798A6CC52C906C7800DBB696 /* RepeatUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794AC27F2BB424E000DAC0F9 /* RepeatUnit.swift */; };
+		798A6CC62C906C7E00DBB696 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797B58AC2B88E57E003B58A7 /* Weekday.swift */; };
+		798A6CC72C906C9400DBB696 /* Category+DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799070B62AEA55090051AAC8 /* Category+DTO.swift */; };
+		798A6CC82C906CA500DBB696 /* ColorComponents+DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798605622AD5C99E007A64B3 /* ColorComponents+DTO.swift */; };
+		798A6CC92C906CAE00DBB696 /* Priority+DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799070B82AEA55150051AAC8 /* Priority+DTO.swift */; };
+		798A6CCA2C906CB500DBB696 /* RepeatingTask+DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B52F7D2BAB28FB007CF9BA /* RepeatingTask+DTO.swift */; };
+		798A6CCB2C906CBD00DBB696 /* Task+DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798605602AD5C00B007A64B3 /* Task+DTO.swift */; };
+		798A6CCC2C906CC400DBB696 /* TaskColumn+DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799070B42AEA53330051AAC8 /* TaskColumn+DTO.swift */; };
+		798A6CCD2C906CCA00DBB696 /* TaskStep+DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988C4B32AE2E126004621EA /* TaskStep+DTO.swift */; };
+		798A6CCE2C906CFE00DBB696 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988A0482AAE362400C63265 /* Double+Extensions.swift */; };
+		798A6CCF2C906D1200DBB696 /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988A0472AAE362400C63265 /* CGFloat+Extensions.swift */; };
+		798A6CD02C906D2B00DBB696 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798605642AD5E03C007A64B3 /* Date+Extensions.swift */; };
+		798A6CD12C906D4400DBB696 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988A0432AAE362400C63265 /* Int+Extensions.swift */; };
+		798A6CD22C906D8800DBB696 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790C190C2AD34B52008647B8 /* Color+Extensions.swift */; };
+		798A6CDB2C91C2A300DBB696 /* Task+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD74D12AD9A27200DCD573 /* Task+Extensions.swift */; };
+		798A6CDC2C91C30F00DBB696 /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988A0322AAE307E00C63265 /* Localized.swift */; };
+		798A6CDD2C91C37500DBB696 /* TaskItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B823ED2B1E77970062B6E5 /* TaskItemView.swift */; };
+		798A6CDE2C91C38E00DBB696 /* StyledText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794621AF2B1915360060F6CD /* StyledText.swift */; };
+		798A6CDF2C91C3A800DBB696 /* StyledTextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794621B32B1917970060F6CD /* StyledTextModel.swift */; };
+		798A6CE02C91C3D400DBB696 /* StyledDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794621B62B191CD90060F6CD /* StyledDate.swift */; };
+		798A6CE12C91C3E500DBB696 /* StyledDateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794621B82B191CEA0060F6CD /* StyledDateModel.swift */; };
+		798A6CE22C91C40600DBB696 /* ColumnHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B823EA2B1E71DC0062B6E5 /* ColumnHeader.swift */; };
+		798A6CE32C91C59800DBB696 /* TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983000D2B17C4D90013B834 /* TextStyle.swift */; };
+		798A6CE42C91C5C400DBB696 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983000A2B17C0D10013B834 /* Fonts.swift */; };
+		798A6CE52C91C60200DBB696 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EAF75E2AB9EC3D00FC05BE /* View+Extensions.swift */; };
+		798A6D032C91CD6500DBB696 /* DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798A6D022C91CD6100DBB696 /* DI.swift */; };
+		798A6D042C91CD9100DBB696 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54952AD33B9600D064C2 /* DataService.swift */; };
+		798A6D052C91CDA200DBB696 /* DataService+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797B4DAC2B212997001DAC30 /* DataService+Category.swift */; };
+		798A6D062C91CDA700DBB696 /* DataService+Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797B4DAE2B2129A2001DAC30 /* DataService+Fetch.swift */; };
+		798A6D072C91CDAD00DBB696 /* DataService+Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799070C42AEA717D0051AAC8 /* DataService+Priority.swift */; };
+		798A6D082C91CDB300DBB696 /* DataService+RepeatingTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799A42862B9F289300041AA3 /* DataService+RepeatingTasks.swift */; };
+		798A6D092C91CDB900DBB696 /* DataService+Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799070BE2AEA6BE90051AAC8 /* DataService+Task.swift */; };
+		798A6D0A2C91CDC800DBB696 /* DataService+TaskColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799070C22AEA70F50051AAC8 /* DataService+TaskColumn.swift */; };
+		798A6D0B2C91CDCF00DBB696 /* DateService+Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791CA3752B224EB8009A5395 /* DateService+Widget.swift */; };
+		798A6D0C2C91CDEA00DBB696 /* TaskEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792242F42B232EC60004F4FC /* TaskEntry.swift */; };
+		798A6D0D2C91CDFB00DBB696 /* DataOperationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E84F4D2C4933AF00C4945E /* DataOperationError.swift */; };
+		798A6D0E2C91CE0B00DBB696 /* WidgetTimelineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E6584C2B2326FA00DE5A0A /* WidgetTimelineService.swift */; };
+		798A6D0F2C91CE3100DBB696 /* Priority+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790126102AD4844C005620C2 /* Priority+Defaults.swift */; };
+		798A6D102C91CE3F00DBB696 /* Category+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790126122AD48684005620C2 /* Category+Defaults.swift */; };
+		798A6D112C91CE5F00DBB696 /* TaskColumn+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790126142AD48710005620C2 /* TaskColumn+Defaults.swift */; };
+		798A6D122C91CE7A00DBB696 /* String+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797B4D952B2115CB001DAC30 /* String+Constants.swift */; };
+		798A6D132C91D05300DBB696 /* TaskProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B9625E2B1FA6E800D16472 /* TaskProgressIndicator.swift */; };
 		798B08B92AB8522D00311D93 /* ContentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798B08B82AB8522D00311D93 /* ContentCoordinator.swift */; };
 		798B08BB2AB8524800311D93 /* ContentSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798B08BA2AB8524800311D93 /* ContentSceneFactory.swift */; };
 		798B08BD2AB8525500311D93 /* ContentScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798B08BC2AB8525500311D93 /* ContentScreen.swift */; };
@@ -457,6 +520,7 @@
 		91E84F4F2C49347200C4945E /* DataOperationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E84F4D2C4933AF00C4945E /* DataOperationError.swift */; };
 		91E84F502C49348600C4945E /* DataOperationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E84F4D2C4933AF00C4945E /* DataOperationError.swift */; };
 		91E84F512C49349900C4945E /* DataOperationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E84F4D2C4933AF00C4945E /* DataOperationError.swift */; };
+		D96E82924045AC5F277EB3AF /* Pods_TaskWiseMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B6D7A5F0204F59A7E3345C /* Pods_TaskWiseMac.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -548,6 +612,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		17B6D7A5F0204F59A7E3345C /* Pods_TaskWiseMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaskWiseMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A6A56D56A0816CFDB820555 /* libPods-TaskWiseTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TaskWiseTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7901260E2AD47F1A005620C2 /* UserSettings+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserSettings+Extensions.swift"; sourceTree = "<group>"; };
 		790126102AD4844C005620C2 /* Priority+Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Priority+Defaults.swift"; sourceTree = "<group>"; };
@@ -691,6 +756,8 @@
 		7988A0482AAE362400C63265 /* Double+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		7988A0492AAE362400C63265 /* PassthroughSubject+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PassthroughSubject+Extensions.swift"; sourceTree = "<group>"; };
 		7988C4B32AE2E126004621EA /* TaskStep+DTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskStep+DTO.swift"; sourceTree = "<group>"; };
+		798A6CAE2C9068D600DBB696 /* MacDashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacDashboardViewModel.swift; sourceTree = "<group>"; };
+		798A6D022C91CD6100DBB696 /* DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DI.swift; sourceTree = "<group>"; };
 		798B08B82AB8522D00311D93 /* ContentCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCoordinator.swift; sourceTree = "<group>"; };
 		798B08BA2AB8524800311D93 /* ContentSceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSceneFactory.swift; sourceTree = "<group>"; };
 		798B08BC2AB8525500311D93 /* ContentScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentScreen.swift; sourceTree = "<group>"; };
@@ -787,6 +854,8 @@
 		A9790524961B82E82E6F6AD5 /* Pods-TaskWise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskWise.release.xcconfig"; path = "Target Support Files/Pods-TaskWise/Pods-TaskWise.release.xcconfig"; sourceTree = "<group>"; };
 		DAD32EFC3A22C26F3A0A07A5 /* Pods_TaskWise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaskWise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E56C80BB80154BCA4A77A454 /* Pods-TaskWiseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskWiseTests.release.xcconfig"; path = "Target Support Files/Pods-TaskWiseTests/Pods-TaskWiseTests.release.xcconfig"; sourceTree = "<group>"; };
+		ED6F965C8B1B98BA47DD13F9 /* Pods-TaskWiseMac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskWiseMac.debug.xcconfig"; path = "Target Support Files/Pods-TaskWiseMac/Pods-TaskWiseMac.debug.xcconfig"; sourceTree = "<group>"; };
+		F07173C6DA9291531BFD3E81 /* Pods-TaskWiseMac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskWiseMac.release.xcconfig"; path = "Target Support Files/Pods-TaskWiseMac/Pods-TaskWiseMac.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -826,6 +895,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D96E82924045AC5F277EB3AF /* Pods_TaskWiseMac.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -869,6 +939,8 @@
 				A9790524961B82E82E6F6AD5 /* Pods-TaskWise.release.xcconfig */,
 				982159FDF24FAD927584113A /* Pods-TaskWiseTests.debug.xcconfig */,
 				E56C80BB80154BCA4A77A454 /* Pods-TaskWiseTests.release.xcconfig */,
+				ED6F965C8B1B98BA47DD13F9 /* Pods-TaskWiseMac.debug.xcconfig */,
+				F07173C6DA9291531BFD3E81 /* Pods-TaskWiseMac.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1095,7 +1167,7 @@
 		792EC2052C62BD1800982732 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				792EC2062C62BD3D00982732 /* MacDashboardView.swift */,
+				798A6CAD2C9068CA00DBB696 /* Dashboard */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -1592,6 +1664,23 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		798A6CAD2C9068CA00DBB696 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				792EC2062C62BD3D00982732 /* MacDashboardView.swift */,
+				798A6CAE2C9068D600DBB696 /* MacDashboardViewModel.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		798A6D012C91CD5A00DBB696 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				798A6D022C91CD6100DBB696 /* DI.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
 		798B08B72AB8516F00311D93 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -1700,6 +1789,7 @@
 		79ABB42F2C8F0DF9001D8AF0 /* TaskWiseMac */ = {
 			isa = PBXGroup;
 			children = (
+				798A6D012C91CD5A00DBB696 /* DI */,
 				79ABB4392C8F0DFA001D8AF0 /* TaskWiseMac.entitlements */,
 				79ABB45B2C8F0EED001D8AF0 /* App */,
 				79ABB45C2C8F0F36001D8AF0 /* Resources */,
@@ -2037,6 +2127,7 @@
 				6A6A56D56A0816CFDB820555 /* libPods-TaskWiseTests.a */,
 				797B4D732B2107D7001DAC30 /* WidgetKit.framework */,
 				797B4D752B2107D7001DAC30 /* SwiftUI.framework */,
+				17B6D7A5F0204F59A7E3345C /* Pods_TaskWiseMac.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -2155,9 +2246,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 79ABB4502C8F0DFB001D8AF0 /* Build configuration list for PBXNativeTarget "TaskWiseMac" */;
 			buildPhases = (
+				ABDC84C0998A5327B1C7DCAB /* [CP] Check Pods Manifest.lock */,
 				79ABB42A2C8F0DF9001D8AF0 /* Sources */,
 				79ABB42B2C8F0DF9001D8AF0 /* Frameworks */,
 				79ABB42C2C8F0DF9001D8AF0 /* Resources */,
+				B741152EB8FE8715120A7109 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2529,6 +2622,45 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		ABDC84C0998A5327B1C7DCAB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TaskWiseMac-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B741152EB8FE8715120A7109 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TaskWiseMac/Pods-TaskWiseMac-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TaskWiseMac/Pods-TaskWiseMac-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TaskWiseMac/Pods-TaskWiseMac-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -2850,9 +2982,72 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				798A6CC22C906C5700DBB696 /* RepeatBehaviour.swift in Sources */,
 				79ABB4312C8F0DF9001D8AF0 /* TaskWiseMacApp.swift in Sources */,
+				798A6D0C2C91CDEA00DBB696 /* TaskEntry.swift in Sources */,
+				798A6CE02C91C3D400DBB696 /* StyledDate.swift in Sources */,
+				798A6CCD2C906CCA00DBB696 /* TaskStep+DTO.swift in Sources */,
+				798A6D062C91CDA700DBB696 /* DataService+Fetch.swift in Sources */,
+				798A6CCC2C906CC400DBB696 /* TaskColumn+DTO.swift in Sources */,
+				798A6CE32C91C59800DBB696 /* TextStyle.swift in Sources */,
+				798A6CC92C906CAE00DBB696 /* Priority+DTO.swift in Sources */,
+				798A6D0A2C91CDC800DBB696 /* DataService+TaskColumn.swift in Sources */,
+				798A6CBA2C906ADC00DBB696 /* ColorComponents+CoreDataClass.swift in Sources */,
+				798A6D032C91CD6500DBB696 /* DI.swift in Sources */,
+				798A6CD12C906D4400DBB696 /* Int+Extensions.swift in Sources */,
+				798A6CC02C906C2200DBB696 /* RepeatingTasks+CoreDataClass.swift in Sources */,
+				798A6CB02C906A3800DBB696 /* DataServiceInput.swift in Sources */,
+				798A6CB92C906AC900DBB696 /* TaskWise.xcdatamodeld in Sources */,
+				798A6CDF2C91C3A800DBB696 /* StyledTextModel.swift in Sources */,
+				798A6CBF2C906C0100DBB696 /* TaskStep+CoreDataProperties.swift in Sources */,
+				798A6CB72C906ABB00DBB696 /* Category+CoreDataClass.swift in Sources */,
+				798A6D122C91CE7A00DBB696 /* String+Constants.swift in Sources */,
+				798A6CC62C906C7E00DBB696 /* Weekday.swift in Sources */,
+				798A6CE42C91C5C400DBB696 /* Fonts.swift in Sources */,
+				798A6CE52C91C60200DBB696 /* View+Extensions.swift in Sources */,
+				798A6CBB2C906AE200DBB696 /* ColorComponents+CoreDataProperties.swift in Sources */,
+				798A6CCB2C906CBD00DBB696 /* Task+DTO.swift in Sources */,
+				798A6D112C91CE5F00DBB696 /* TaskColumn+Defaults.swift in Sources */,
+				798A6CB62C906AAF00DBB696 /* NamedItem.swift in Sources */,
 				79ABB45F2C8F14F8001D8AF0 /* String+Extensions.swift in Sources */,
+				798A6CCF2C906D1200DBB696 /* CGFloat+Extensions.swift in Sources */,
+				798A6CC52C906C7800DBB696 /* RepeatUnit.swift in Sources */,
 				79ABB45E2C8F0F74001D8AF0 /* MacDashboardView.swift in Sources */,
+				798A6CB22C906A6F00DBB696 /* Task+CoreDataProperties.swift in Sources */,
+				798A6D0B2C91CDCF00DBB696 /* DateService+Widget.swift in Sources */,
+				798A6CE12C91C3E500DBB696 /* StyledDateModel.swift in Sources */,
+				798A6CBE2C906BFB00DBB696 /* TaskStep+CoreDataClass.swift in Sources */,
+				798A6CC32C906C6600DBB696 /* CustomRepeatSchedule.swift in Sources */,
+				798A6CCA2C906CB500DBB696 /* RepeatingTask+DTO.swift in Sources */,
+				798A6CCE2C906CFE00DBB696 /* Double+Extensions.swift in Sources */,
+				798A6D0D2C91CDFB00DBB696 /* DataOperationError.swift in Sources */,
+				798A6CDC2C91C30F00DBB696 /* Localized.swift in Sources */,
+				798A6D092C91CDB900DBB696 /* DataService+Task.swift in Sources */,
+				798A6D042C91CD9100DBB696 /* DataService.swift in Sources */,
+				798A6CC72C906C9400DBB696 /* Category+DTO.swift in Sources */,
+				798A6D0E2C91CE0B00DBB696 /* WidgetTimelineService.swift in Sources */,
+				798A6CDE2C91C38E00DBB696 /* StyledText.swift in Sources */,
+				798A6D102C91CE3F00DBB696 /* Category+Defaults.swift in Sources */,
+				798A6CC12C906C2800DBB696 /* RepeatingTasks+CoreDataProperties.swift in Sources */,
+				798A6CB82C906AC300DBB696 /* Category+CoreDataProperties.swift in Sources */,
+				798A6D072C91CDAD00DBB696 /* DataService+Priority.swift in Sources */,
+				798A6CBD2C906BED00DBB696 /* TaskColumn+CoreDataProperties.swift in Sources */,
+				798A6CB42C906A9200DBB696 /* Priority+CoreDataClass.swift in Sources */,
+				798A6CD02C906D2B00DBB696 /* Date+Extensions.swift in Sources */,
+				798A6D0F2C91CE3100DBB696 /* Priority+Defaults.swift in Sources */,
+				798A6D052C91CDA200DBB696 /* DataService+Category.swift in Sources */,
+				798A6CDB2C91C2A300DBB696 /* Task+Extensions.swift in Sources */,
+				798A6D132C91D05300DBB696 /* TaskProgressIndicator.swift in Sources */,
+				798A6CC42C906C7300DBB696 /* RepeatFrequency.swift in Sources */,
+				798A6CC82C906CA500DBB696 /* ColorComponents+DTO.swift in Sources */,
+				798A6CB12C906A6B00DBB696 /* Task+CoreDataClass.swift in Sources */,
+				798A6CB52C906A9D00DBB696 /* Priority+CoreDataProperties.swift in Sources */,
+				798A6D082C91CDB300DBB696 /* DataService+RepeatingTasks.swift in Sources */,
+				798A6CD22C906D8800DBB696 /* Color+Extensions.swift in Sources */,
+				798A6CE22C91C40600DBB696 /* ColumnHeader.swift in Sources */,
+				798A6CBC2C906BE700DBB696 /* TaskColumn+CoreDataClass.swift in Sources */,
+				798A6CAF2C9068DF00DBB696 /* MacDashboardViewModel.swift in Sources */,
+				798A6CDD2C91C37500DBB696 /* TaskItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3432,6 +3627,7 @@
 		};
 		79ABB4512C8F0DFB001D8AF0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED6F965C8B1B98BA47DD13F9 /* Pods-TaskWiseMac.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -3439,11 +3635,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"TaskWiseMac/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 2D3N9A382G;
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = TaskWise;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -3464,6 +3662,7 @@
 		};
 		79ABB4522C8F0DFB001D8AF0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F07173C6DA9291531BFD3E81 /* Pods-TaskWiseMac.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -3471,11 +3670,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"TaskWiseMac/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 2D3N9A382G;
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = TaskWise;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -3500,6 +3701,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 2D3N9A382G;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -3521,6 +3723,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 2D3N9A382G;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -3541,6 +3744,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 2D3N9A382G;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -3561,6 +3765,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 2D3N9A382G;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;

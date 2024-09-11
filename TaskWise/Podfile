@@ -1,8 +1,7 @@
-platform :ios, '17.0'
-
 inhibit_all_warnings!
 
 target 'TaskWise' do
+  platform :ios, '17.0'
   use_frameworks!
 
   pod 'Resolver'
@@ -15,6 +14,16 @@ end
 
 target 'TaskWiseTests' do
   inherit! :search_paths
+end
+
+target 'TaskWiseMac' do
+  platform :osx, '14.0'
+  use_frameworks!
+
+  pod 'Resolver'
+  pod 'SwiftGen'
+  pod 'SwiftLint'
+  pod 'Sourcery'
 end
 
 post_install do |installer|

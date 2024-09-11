@@ -34,7 +34,14 @@ extension View {
         var green: CGFloat = .zero
         var blue: CGFloat = .zero
         var alpha: CGFloat = .zero
+        #if os(macOS)
+        let color = CIColor(color: NSColor(color))!
+        red = color.red
+        green = color.green
+        blue = color.blue
+        #else
         UIColor(color).getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        #endif
         let luminance = 0.2126 * red + 0.7152 * green + 0.0722 * blue
         return  luminance < 0.6 ? self.foregroundColor(.lightContrast) : self.foregroundColor(.darkContrast)
     }
