@@ -460,6 +460,19 @@
 		79BC642E2BDB5E120081B299 /* TaskWise.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 79BC64212BDB5E0F0081B299 /* TaskWise.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		79C16F4D2ABB4FDB00BA362B /* CheckBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C16F4C2ABB4FDB00BA362B /* CheckBoxStyle.swift */; };
 		79C16F4F2ABB5C6B00BA362B /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C16F4E2ABB5C6B00BA362B /* CalendarViewModel.swift */; };
+		79C423282C930DD300BE73BC /* ColumnHeaderStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C423272C930DCC00BE73BC /* ColumnHeaderStyle.swift */; };
+		79C423292C930DD300BE73BC /* ColumnHeaderStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C423272C930DCC00BE73BC /* ColumnHeaderStyle.swift */; };
+		79C4232A2C930DD300BE73BC /* ColumnHeaderStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C423272C930DCC00BE73BC /* ColumnHeaderStyle.swift */; };
+		79C4232B2C933B9400BE73BC /* DoubleAndSingleTapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795E118E2B24CBEE0000F8AA /* DoubleAndSingleTapGesture.swift */; };
+		79C4232C2C933BCF00BE73BC /* TaskContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B9625B2B1F799F00D16472 /* TaskContextMenu.swift */; };
+		79C4232D2C933CD500BE73BC /* Task+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E14AD32AE41A4500FF730D /* Task+Mock.swift */; };
+		79C4232E2C933CE900BE73BC /* PreviewDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E14ACD2AE415B200FF730D /* PreviewDataService.swift */; };
+		79C4232F2C933D0000BE73BC /* Priority+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E14AD72AE41ADB00FF730D /* Priority+Mock.swift */; };
+		79C423302C933D0700BE73BC /* Category+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E14ACF2AE41A2600FF730D /* Category+Mock.swift */; };
+		79C423312C933D1000BE73BC /* ColorComponents+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E14AD12AE41A3500FF730D /* ColorComponents+Mock.swift */; };
+		79C423322C933D2E00BE73BC /* TaskColumn+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E14AD92AE41AED00FF730D /* TaskColumn+Mock.swift */; };
+		79C423332C933D4900BE73BC /* TaskStep+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E14AD52AE41A5D00FF730D /* TaskStep+Mock.swift */; };
+		79C423342C933E3100BE73BC /* DashboardDropViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79724C7A2C88C401001A299B /* DashboardDropViewDelegate.swift */; };
 		79C838A82B1D109500F35483 /* SettingsNavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C838A72B1D109500F35483 /* SettingsNavigationBarModifier.swift */; };
 		79C838AA2B1D230B00F35483 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C838A92B1D230B00F35483 /* SettingsModel.swift */; };
 		79CD54A42AD33B9600D064C2 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54902AD33B9600D064C2 /* Category+CoreDataProperties.swift */; };
@@ -807,6 +820,7 @@
 		79C16F4C2ABB4FDB00BA362B /* CheckBoxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxStyle.swift; sourceTree = "<group>"; };
 		79C16F4E2ABB5C6B00BA362B /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		79C1B36B2AC9982C00BDCC6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		79C423272C930DCC00BE73BC /* ColumnHeaderStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnHeaderStyle.swift; sourceTree = "<group>"; };
 		79C838A72B1D109500F35483 /* SettingsNavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNavigationBarModifier.swift; sourceTree = "<group>"; };
 		79C838A92B1D230B00F35483 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		79CD54902AD33B9600D064C2 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -1862,6 +1876,7 @@
 		79B823E92B1E71CC0062B6E5 /* ColumnHeader */ = {
 			isa = PBXGroup;
 			children = (
+				79C423272C930DCC00BE73BC /* ColumnHeaderStyle.swift */,
 				79B823EA2B1E71DC0062B6E5 /* ColumnHeader.swift */,
 			);
 			path = ColumnHeader;
@@ -2694,6 +2709,7 @@
 				799D48E32ABC394400C149E3 /* CalendarViewModel+Mock.swift in Sources */,
 				7911B20F2C82005F00E7D1D4 /* SearchPopoverViewModel.swift in Sources */,
 				794621BE2B192B5A0060F6CD /* TextButtonStyle.swift in Sources */,
+				79C423292C930DD300BE73BC /* ColumnHeaderStyle.swift in Sources */,
 				79C838A82B1D109500F35483 /* SettingsNavigationBarModifier.swift in Sources */,
 				792155202AB9E8450044CDED /* IconButton.swift in Sources */,
 				791C824B2C78F183007D4627 /* PadSettingsViewModel.swift in Sources */,
@@ -2944,6 +2960,7 @@
 				791CA3892B225176009A5395 /* Task+CoreDataClass.swift in Sources */,
 				797B4D7B2B2107D7001DAC30 /* CompletionWidget.swift in Sources */,
 				791CA38D2B22517E009A5395 /* TaskColumn+DTO.swift in Sources */,
+				79C4232A2C930DD300BE73BC /* ColumnHeaderStyle.swift in Sources */,
 				79B3491E2B23DBBC00AAB0A9 /* WidgetButtonType.swift in Sources */,
 				79E945382C875F8C00EEE6E9 /* Dispatch+Extensions.swift in Sources */,
 				791CA37A2B225156009A5395 /* DataServiceInput.swift in Sources */,
@@ -2993,6 +3010,8 @@
 				798A6CC92C906CAE00DBB696 /* Priority+DTO.swift in Sources */,
 				798A6D0A2C91CDC800DBB696 /* DataService+TaskColumn.swift in Sources */,
 				798A6CBA2C906ADC00DBB696 /* ColorComponents+CoreDataClass.swift in Sources */,
+				79C4232C2C933BCF00BE73BC /* TaskContextMenu.swift in Sources */,
+				79C4232E2C933CE900BE73BC /* PreviewDataService.swift in Sources */,
 				798A6D032C91CD6500DBB696 /* DI.swift in Sources */,
 				798A6CD12C906D4400DBB696 /* Int+Extensions.swift in Sources */,
 				798A6CC02C906C2200DBB696 /* RepeatingTasks+CoreDataClass.swift in Sources */,
@@ -3007,15 +3026,18 @@
 				798A6CE52C91C60200DBB696 /* View+Extensions.swift in Sources */,
 				798A6CBB2C906AE200DBB696 /* ColorComponents+CoreDataProperties.swift in Sources */,
 				798A6CCB2C906CBD00DBB696 /* Task+DTO.swift in Sources */,
+				79C4232D2C933CD500BE73BC /* Task+Mock.swift in Sources */,
 				798A6D112C91CE5F00DBB696 /* TaskColumn+Defaults.swift in Sources */,
 				798A6CB62C906AAF00DBB696 /* NamedItem.swift in Sources */,
 				79ABB45F2C8F14F8001D8AF0 /* String+Extensions.swift in Sources */,
+				79C423312C933D1000BE73BC /* ColorComponents+Mock.swift in Sources */,
 				798A6CCF2C906D1200DBB696 /* CGFloat+Extensions.swift in Sources */,
 				798A6CC52C906C7800DBB696 /* RepeatUnit.swift in Sources */,
 				79ABB45E2C8F0F74001D8AF0 /* MacDashboardView.swift in Sources */,
 				798A6CB22C906A6F00DBB696 /* Task+CoreDataProperties.swift in Sources */,
 				798A6D0B2C91CDCF00DBB696 /* DateService+Widget.swift in Sources */,
 				798A6CE12C91C3E500DBB696 /* StyledDateModel.swift in Sources */,
+				79C4232F2C933D0000BE73BC /* Priority+Mock.swift in Sources */,
 				798A6CBE2C906BFB00DBB696 /* TaskStep+CoreDataClass.swift in Sources */,
 				798A6CC32C906C6600DBB696 /* CustomRepeatSchedule.swift in Sources */,
 				798A6CCA2C906CB500DBB696 /* RepeatingTask+DTO.swift in Sources */,
@@ -3024,6 +3046,7 @@
 				798A6CDC2C91C30F00DBB696 /* Localized.swift in Sources */,
 				798A6D092C91CDB900DBB696 /* DataService+Task.swift in Sources */,
 				798A6D042C91CD9100DBB696 /* DataService.swift in Sources */,
+				79C423302C933D0700BE73BC /* Category+Mock.swift in Sources */,
 				798A6CC72C906C9400DBB696 /* Category+DTO.swift in Sources */,
 				798A6D0E2C91CE0B00DBB696 /* WidgetTimelineService.swift in Sources */,
 				798A6CDE2C91C38E00DBB696 /* StyledText.swift in Sources */,
@@ -3033,10 +3056,12 @@
 				798A6D072C91CDAD00DBB696 /* DataService+Priority.swift in Sources */,
 				798A6CBD2C906BED00DBB696 /* TaskColumn+CoreDataProperties.swift in Sources */,
 				798A6CB42C906A9200DBB696 /* Priority+CoreDataClass.swift in Sources */,
+				79C423282C930DD300BE73BC /* ColumnHeaderStyle.swift in Sources */,
 				798A6CD02C906D2B00DBB696 /* Date+Extensions.swift in Sources */,
 				798A6D0F2C91CE3100DBB696 /* Priority+Defaults.swift in Sources */,
 				798A6D052C91CDA200DBB696 /* DataService+Category.swift in Sources */,
 				798A6CDB2C91C2A300DBB696 /* Task+Extensions.swift in Sources */,
+				79C423332C933D4900BE73BC /* TaskStep+Mock.swift in Sources */,
 				798A6D132C91D05300DBB696 /* TaskProgressIndicator.swift in Sources */,
 				798A6CC42C906C7300DBB696 /* RepeatFrequency.swift in Sources */,
 				798A6CC82C906CA500DBB696 /* ColorComponents+DTO.swift in Sources */,
@@ -3047,7 +3072,10 @@
 				798A6CE22C91C40600DBB696 /* ColumnHeader.swift in Sources */,
 				798A6CBC2C906BE700DBB696 /* TaskColumn+CoreDataClass.swift in Sources */,
 				798A6CAF2C9068DF00DBB696 /* MacDashboardViewModel.swift in Sources */,
+				79C4232B2C933B9400BE73BC /* DoubleAndSingleTapGesture.swift in Sources */,
 				798A6CDD2C91C37500DBB696 /* TaskItemView.swift in Sources */,
+				79C423322C933D2E00BE73BC /* TaskColumn+Mock.swift in Sources */,
+				79C423342C933E3100BE73BC /* DashboardDropViewDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
