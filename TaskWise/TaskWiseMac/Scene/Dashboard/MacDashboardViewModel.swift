@@ -5,7 +5,7 @@ import SwiftUI
 @Observable final class MacDashboardViewModel {
     let dataService: DataServiceInput
     private var cancellables = Set<AnyCancellable>()
-    
+
     var selectedDate: Date = .now
     var tasks: [TWTask] = []
     var filterText: String = .empty
@@ -15,10 +15,20 @@ import SwiftUI
     var selectedPriority: Priority?
     var selectedCategory: Category?
 
+    var isAlertPresented = false
+    var isAddTaskOpen = false
+    var isSearchOpen = false
+    var isFilterOpen = false
+    var isSettingsOpen = false
+
     var filteredTasks: [TWTask] {
         tasks
             .from(date: selectedDate)
             .filteredBy(text: filterText, priority: selectedPriority, category: selectedCategory)
+    }
+
+    var isToday: Bool {
+        Calendar.current.isDate(selectedDate, inSameDayAs: .now)
     }
 
     var doneCount: Int {
@@ -28,10 +38,6 @@ import SwiftUI
 
     var totalCount: Int {
         tasks.from(date: selectedDate).count
-    }
-
-    var isToday: Bool {
-        Calendar.current.isDate(selectedDate, inSameDayAs: .now)
     }
 
     init(dataService: DataServiceInput = Resolver.resolve()) {
@@ -50,6 +56,36 @@ extension MacDashboardViewModel {
     }
 
     func didTapDelete(task: TWTask) {
+        if task.repeatingTasks != nil {
+            isAlertPresented = true
+        } else {
+            dataService.deleteTask(task)
+        }
+    }
+
+    func didTapDeleteOnlyThis(task: TWTask) {
+        dataService.deleteTask(task)
+    }
+
+    func didTapDeleteRepeating(task: TWTask) {
+        guard let repeating = task.repeatingTasks else { return }
+        dataService.deleteRepeatingTasks(repeating)
+    }
+
+    func didTapAdd() {
+        isAddTaskOpen = true
+    }
+
+    func didTapSearch() {
+        isSearchOpen = true
+    }
+
+    func didTapFilter() {
+        isFilterOpen = true
+    }
+
+    func didTapSettings() {
+        isSettingsOpen = true
     }
 }
 

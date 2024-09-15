@@ -12,6 +12,7 @@ public struct CombinedDatePicker {
     }
 }
 
+// swiftlint: disable closure_body_length
 extension CombinedDatePicker: View {
     public var body: some View {
         VStack(spacing: .padding12) {
@@ -21,11 +22,17 @@ extension CombinedDatePicker: View {
             .padding(.trailing, .padding8)
             .tint(.accent)
             .frame(height: .defaultRowHeight)
+            #if os(macOS)
+            .frame(maxWidth: .infinity, alignment: .trailing)
+            #endif
 
             if !allDay.wrappedValue {
                 DatePicker(selection: starts, in: Date.now...) {
                     Text(Str.Task.startsLabel)
                         .textStyle(.body)
+                    #if os(macOS)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    #endif
                 }
                 .tint(.appTint)
                 .frame(height: .defaultRowHeight)
@@ -36,11 +43,17 @@ extension CombinedDatePicker: View {
                 DatePicker(selection: ends, in: starts.wrappedValue.addingTimeInterval(.minute)..., displayedComponents: .hourAndMinute) {
                     Text(Str.Task.endsLabel)
                         .textStyle(.body)
+                    #if os(macOS)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    #endif
                 }
                 .frame(height: .defaultRowHeight)
             } else {
                 DatePicker(selection: starts, in: Date.now..., displayedComponents: .date) {
                     Text(Str.DatePicker.dateLabel).textStyle(.body)
+                    #if os(macOS)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    #endif
                 }
                 .frame(height: .defaultRowHeight)
             }

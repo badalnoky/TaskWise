@@ -10,7 +10,9 @@
 // swiftlint: disable file_length
 
 import Combine
+#if !os(macOS)
 import UIKit
+#endif
 
 class DataServiceInputMock: DataServiceInput {
     var tasks: CurrentValueSubject<[TWTask], Never> {

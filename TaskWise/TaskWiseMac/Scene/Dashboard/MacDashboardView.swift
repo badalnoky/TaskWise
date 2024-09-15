@@ -14,6 +14,8 @@ struct MacDashboardView {
 extension MacDashboardView: View {
     var body: some View {
         VStack(spacing: .padding4) {
+            topBar
+
             topTiles
 
             columns
@@ -25,6 +27,31 @@ extension MacDashboardView: View {
 }
 
 extension MacDashboardView {
+    var topBar: some View {
+        HStack {
+            MacIconButton(image: .settings, action: viewModel.didTapSettings)
+                .popover(isPresented: $viewModel.isSettingsOpen) {
+                }
+
+            Spacer()
+
+            MacIconButton(image: .filter, action: viewModel.didTapFilter)
+                .popover(isPresented: $viewModel.isFilterOpen) {
+                }
+
+            MacIconButton(image: .search, action: viewModel.didTapSearch)
+                .popover(isPresented: $viewModel.isSearchOpen) {
+                }
+
+            MacIconButton(image: .add, action: viewModel.didTapAdd)
+                .popover(isPresented: $viewModel.isAddTaskOpen) {
+                    MacAddTaskPopoverView()
+                }
+        }
+        .padding(.vertical, .padding16)
+        .padding(.horizontal, .padding12)
+    }
+
     var topTiles: some View {
         HStack(alignment: .top, spacing: .padding32) {
             VStack(spacing: .zero) {
@@ -71,14 +98,6 @@ extension MacDashboardView {
                                         category: task.category.name,
                                         categoryColor: .from(components: task.category.colorComponents)
                                     )
-                                    .gesture(
-                                        DoubleAndSingleTapGesture(
-                                            task: task,
-                                            columns: viewModel.columns,
-                                            onDoubleTap: viewModel.didChangeColumn,
-                                            onSingleTap: viewModel.didTapTask
-                                        )
-                                    )
                                     .contextMenu(
                                         ContextMenu {
                                             TaskContextMenuItems(
@@ -89,6 +108,11 @@ extension MacDashboardView {
                                             )
                                         }
                                     )
+                                    .alert(Str.Alert.message + Str.Alert.repeatingTask, isPresented: $viewModel.isAlertPresented) {
+                                        Button(Str.Alert.deleteOnlyThis, role: .destructive) { viewModel.didTapDeleteOnlyThis(task: task) }
+                                        Button(Str.Alert.deleteAll, role: .destructive) { viewModel.didTapDeleteRepeating(task: task) }
+                                        Button(Str.Alert.cancel, role: .cancel) {}
+                                    }
                                 }
                                 .padding(.horizontal, .padding16)
                             }

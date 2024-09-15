@@ -8,7 +8,9 @@
 // swiftlint: disable file_length
 
 import Combine
+#if !os(macOS)
 import UIKit
+#endif
 
 {% for import in argument.autoMockableImports %}
 import {{ import }}

@@ -35,7 +35,9 @@ extension View {
         var blue: CGFloat = .zero
         var alpha: CGFloat = .zero
         #if os(macOS)
+        // swiftlint: disable force_unwrapping
         let color = CIColor(color: NSColor(color))!
+        // swiftlint: enable force_unwrapping
         red = color.red
         green = color.green
         blue = color.blue

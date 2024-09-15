@@ -30,20 +30,23 @@ extension ListItemView: View {
             .frame(height: .listItemHeight)
             .background { Rectangle().fill(.appBackground) }
 
-            Button(action: deleteAction) {
-                Image.trash
-                    .resizable()
-                    .scaledToFit()
-                    .padding(.vertical, .padding12)
-                    .foregroundStyle(.black)
-            }
-            .padding(.horizontal, deletButtonWidth == .listDeleteButtonMaxWidth ? .padding12 : .zero)
-            .frame(width: deletButtonWidth)
-            .frame(height: .listItemHeight)
-            .background {
-                Rectangle()
-                    .fill(Color.delete)
-            }
+            Rectangle()
+                .foregroundStyle(Color.delete)
+                .padding(.horizontal, deletButtonWidth == .listDeleteButtonMaxWidth ? .padding12 : .zero)
+                .frame(width: deletButtonWidth)
+                .frame(height: .listItemHeight)
+                .background {
+                    Rectangle()
+                        .fill(Color.delete)
+                }
+                .overlay {
+                    Image.trash
+                        .resizable()
+                        .scaledToFit()
+                        .padding(.vertical, .padding12)
+                        .foregroundStyle(.black)
+                }
+                .onTapGesture(perform: deleteAction)
         }
         .clipShape(RoundedRectangle(cornerRadius: .padding12))
         .edgeShadows()
