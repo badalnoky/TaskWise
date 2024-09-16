@@ -45,6 +45,7 @@
 "Icons.back" = "chevron.left";
 "Icons.calendar" = "calendar";
 "Icons.check" = "checkmark.circle.fill";
+"Icons.close" = "xmark";
 "Icons.contextCheck" = "checkmark.circle";
 "Icons.delete" = "trash";
 "Icons.down" = "chevron.down";

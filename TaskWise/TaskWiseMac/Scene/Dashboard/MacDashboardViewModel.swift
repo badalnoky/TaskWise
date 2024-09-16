@@ -20,6 +20,8 @@ import SwiftUI
     var isSearchOpen = false
     var isFilterOpen = false
     var isSettingsOpen = false
+    var isTaskPresented = false
+    var presentedTask: TWTask?
 
     var filteredTasks: [TWTask] {
         tasks
@@ -49,10 +51,13 @@ import SwiftUI
 
 extension MacDashboardViewModel {
     func didTapTask(_ task: TWTask) {
+        presentedTask = task
+        isTaskPresented = true
     }
 
-    func didChangeColumn(to column: TaskColumn, on task: TWTask) {
-        dataService.updateColumn(to: column, on: task)
+    func didTapSearchedTask(_ task: TWTask) {
+        selectedDate = task.startDateTime
+        presentedTask = task
     }
 
     func didTapDelete(task: TWTask) {
@@ -70,6 +75,10 @@ extension MacDashboardViewModel {
     func didTapDeleteRepeating(task: TWTask) {
         guard let repeating = task.repeatingTasks else { return }
         dataService.deleteRepeatingTasks(repeating)
+    }
+
+    func didChangeColumn(to column: TaskColumn, on task: TWTask) {
+        dataService.updateColumn(to: column, on: task)
     }
 
     func didTapAdd() {

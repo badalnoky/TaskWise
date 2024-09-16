@@ -23,6 +23,17 @@ extension MacDashboardView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.appBackground)
         .frame(minWidth: .macMinSize, minHeight: .macMinSize)
+        .sheet(isPresented: $viewModel.isTaskPresented) {
+            if let task = viewModel.presentedTask {
+                MacTaskPopoverView(
+                    dataService: viewModel.dataService,
+                    task: task,
+                    priorities: viewModel.priorities,
+                    categories: viewModel.categories,
+                    columns: viewModel.columns
+                )
+            }
+        }
     }
 }
 
@@ -37,10 +48,16 @@ extension MacDashboardView {
 
             MacIconButton(image: .filter, action: viewModel.didTapFilter)
                 .popover(isPresented: $viewModel.isFilterOpen) {
+                    FilterPopoverView(
+                        filterText: $viewModel.filterText,
+                        selectedPriority: $viewModel.selectedPriority,
+                        selectedCategory: $viewModel.selectedCategory
+                    )
                 }
 
             MacIconButton(image: .search, action: viewModel.didTapSearch)
                 .popover(isPresented: $viewModel.isSearchOpen) {
+                    SearchPopoverView(didTapTaskAction: viewModel.didTapSearchedTask)
                 }
 
             MacIconButton(image: .add, action: viewModel.didTapAdd)
@@ -98,6 +115,9 @@ extension MacDashboardView {
                                         category: task.category.name,
                                         categoryColor: .from(components: task.category.colorComponents)
                                     )
+                                    .onTapGesture {
+                                        viewModel.didTapTask(task)
+                                    }
                                     .contextMenu(
                                         ContextMenu {
                                             TaskContextMenuItems(

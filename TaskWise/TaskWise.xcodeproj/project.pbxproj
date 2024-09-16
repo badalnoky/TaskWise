@@ -258,6 +258,18 @@
 		798605612AD5C00B007A64B3 /* Task+DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798605602AD5C00B007A64B3 /* Task+DTO.swift */; };
 		798605632AD5C99E007A64B3 /* ColorComponents+DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798605622AD5C99E007A64B3 /* ColorComponents+DTO.swift */; };
 		798605652AD5E03C007A64B3 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798605642AD5E03C007A64B3 /* Date+Extensions.swift */; };
+		7987E07F2C988986003474BB /* FilterPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7911B2092C82003000E7D1D4 /* FilterPopoverView.swift */; };
+		7987E0802C98899A003474BB /* FilterPopoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7911B20A2C82003000E7D1D4 /* FilterPopoverViewModel.swift */; };
+		7987E0812C989093003474BB /* SeachPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7911B2102C82006B00E7D1D4 /* SeachPopoverView.swift */; };
+		7987E0822C9890A9003474BB /* SearchPopoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7911B20E2C82005900E7D1D4 /* SearchPopoverViewModel.swift */; };
+		7987E0832C9890DE003474BB /* ListButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A5198F2B1BA29F00B0EEC2 /* ListButtonStyle.swift */; };
+		7987E0872C989330003474BB /* MacTaskPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7987E0862C989328003474BB /* MacTaskPopoverView.swift */; };
+		7987E0892C989342003474BB /* MacTaskPopoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7987E0882C98933B003474BB /* MacTaskPopoverViewModel.swift */; };
+		7987E08C2C989474003474BB /* ReorderableList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799D0F892C76049800B62B50 /* ReorderableList.swift */; };
+		7987E08D2C989484003474BB /* ReorderDropViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7948F4F32C6DFC8C009838C9 /* ReorderDropViewDelegate.swift */; };
+		7987E08E2C98949A003474BB /* TaskStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E14AC92AE40B1000FF730D /* TaskStepView.swift */; };
+		7987E08F2C9894B5003474BB /* BaseTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794621C52B1942310060F6CD /* BaseTextFieldStyle.swift */; };
+		7987E0902C989516003474BB /* Dispatch+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E945372C875F8300EEE6E9 /* Dispatch+Extensions.swift */; };
 		79884A792BEF6C890041FD88 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 792E16A52B16888F005641F4 /* Colors.xcassets */; };
 		79884A7B2BEF6DB80041FD88 /* CompletionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797B4DA32B2119AA001DAC30 /* CompletionProvider.swift */; };
 		79884A7C2BEF6DF60041FD88 /* CompletionEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797B4DA52B2119D5001DAC30 /* CompletionEntry.swift */; };
@@ -773,6 +785,8 @@
 		798605602AD5C00B007A64B3 /* Task+DTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+DTO.swift"; sourceTree = "<group>"; };
 		798605622AD5C99E007A64B3 /* ColorComponents+DTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorComponents+DTO.swift"; sourceTree = "<group>"; };
 		798605642AD5E03C007A64B3 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		7987E0862C989328003474BB /* MacTaskPopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacTaskPopoverView.swift; sourceTree = "<group>"; };
+		7987E0882C98933B003474BB /* MacTaskPopoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacTaskPopoverViewModel.swift; sourceTree = "<group>"; };
 		79884AB72BEF73270041FD88 /* TaskWiseWatchWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TaskWiseWatchWidgetExtension.entitlements; sourceTree = "<group>"; };
 		7988A02B2AAE2EAC00C63265 /* DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DI.swift; sourceTree = "<group>"; };
 		7988A0322AAE307E00C63265 /* Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
@@ -1595,6 +1609,15 @@
 			path = StepIcon;
 			sourceTree = "<group>";
 		};
+		7987E0852C98931D003474BB /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				7987E0862C989328003474BB /* MacTaskPopoverView.swift */,
+				7987E0882C98933B003474BB /* MacTaskPopoverViewModel.swift */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
 		7988A02D2AAE2F7A00C63265 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -2012,6 +2035,7 @@
 			isa = PBXGroup;
 			children = (
 				79C988122C96F17A0086A510 /* AddTask */,
+				7987E0852C98931D003474BB /* Task */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -2314,6 +2338,9 @@
 			buildConfigurationList = 79ABB4502C8F0DFB001D8AF0 /* Build configuration list for PBXNativeTarget "TaskWiseMac" */;
 			buildPhases = (
 				ABDC84C0998A5327B1C7DCAB /* [CP] Check Pods Manifest.lock */,
+				7987E0922C989CA7003474BB /* SwiftGen */,
+				7987E0932C989CAB003474BB /* StringGen */,
+				7987E0942C989CAE003474BB /* SwiftLint */,
 				79ABB42A2C8F0DF9001D8AF0 /* Sources */,
 				79ABB42B2C8F0DF9001D8AF0 /* Frameworks */,
 				79ABB42C2C8F0DF9001D8AF0 /* Resources */,
@@ -2667,6 +2694,63 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "Pods/Sourcery/bin/sourcery --sources \"TaskWise/Core/Service\" \\\n--templates \"Templates/Sourcery\" \\\n--output \"TaskWise/Core/Resources/Generated/Mocks\"\n";
+		};
+		7987E0922C989CA7003474BB /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\"\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
+		};
+		7987E0932C989CAB003474BB /* StringGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = StringGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  ${PODS_ROOT}/SwiftGen/bin/swiftgen config run --config ${PROJECT_DIR}/stringgen.yml\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
+		};
+		7987E0942C989CAE003474BB /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		80CA417FE7CAA5314BE9DC95 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -3071,6 +3155,7 @@
 				798A6CBA2C906ADC00DBB696 /* ColorComponents+CoreDataClass.swift in Sources */,
 				79C4232C2C933BCF00BE73BC /* TaskContextMenu.swift in Sources */,
 				79C4232E2C933CE900BE73BC /* PreviewDataService.swift in Sources */,
+				7987E08C2C989474003474BB /* ReorderableList.swift in Sources */,
 				798A6D032C91CD6500DBB696 /* DI.swift in Sources */,
 				798A6CD12C906D4400DBB696 /* Int+Extensions.swift in Sources */,
 				798A6CC02C906C2200DBB696 /* RepeatingTasks+CoreDataClass.swift in Sources */,
@@ -3080,7 +3165,11 @@
 				79C988142C96F18A0086A510 /* MacAddTaskPopoverViewModel.swift in Sources */,
 				798A6CBF2C906C0100DBB696 /* TaskStep+CoreDataProperties.swift in Sources */,
 				798A6CB72C906ABB00DBB696 /* Category+CoreDataClass.swift in Sources */,
+				7987E0902C989516003474BB /* Dispatch+Extensions.swift in Sources */,
 				798A6D122C91CE7A00DBB696 /* String+Constants.swift in Sources */,
+				7987E0832C9890DE003474BB /* ListButtonStyle.swift in Sources */,
+				7987E08D2C989484003474BB /* ReorderDropViewDelegate.swift in Sources */,
+				7987E08F2C9894B5003474BB /* BaseTextFieldStyle.swift in Sources */,
 				79C988162C96F1F30086A510 /* DataServiceInputMock+Extensions.swift in Sources */,
 				798A6CC62C906C7E00DBB696 /* Weekday.swift in Sources */,
 				79C988152C96F1CD0086A510 /* AutoMockable.generated.swift in Sources */,
@@ -3099,12 +3188,14 @@
 				798A6CC52C906C7800DBB696 /* RepeatUnit.swift in Sources */,
 				79ABB45E2C8F0F74001D8AF0 /* MacDashboardView.swift in Sources */,
 				798A6CB22C906A6F00DBB696 /* Task+CoreDataProperties.swift in Sources */,
+				7987E07F2C988986003474BB /* FilterPopoverView.swift in Sources */,
 				798A6D0B2C91CDCF00DBB696 /* DateService+Widget.swift in Sources */,
 				79C988062C96EC0B0086A510 /* IconButtonStyle.swift in Sources */,
 				798A6CE12C91C3E500DBB696 /* StyledDateModel.swift in Sources */,
 				79C9881C2C96F2D50086A510 /* ListItemView.swift in Sources */,
 				79C4232F2C933D0000BE73BC /* Priority+Mock.swift in Sources */,
 				798A6CBE2C906BFB00DBB696 /* TaskStep+CoreDataClass.swift in Sources */,
+				7987E0802C98899A003474BB /* FilterPopoverViewModel.swift in Sources */,
 				798A6CC32C906C6600DBB696 /* CustomRepeatSchedule.swift in Sources */,
 				798A6CCA2C906CB500DBB696 /* RepeatingTask+DTO.swift in Sources */,
 				79C988032C96E8E50086A510 /* Image+Extensions.swift in Sources */,
@@ -3113,20 +3204,25 @@
 				79C9881A2C96F29E0086A510 /* StyledFieldModel.swift in Sources */,
 				798A6CDC2C91C30F00DBB696 /* Localized.swift in Sources */,
 				798A6D092C91CDB900DBB696 /* DataService+Task.swift in Sources */,
+				7987E0892C989342003474BB /* MacTaskPopoverViewModel.swift in Sources */,
 				798A6D042C91CD9100DBB696 /* DataService.swift in Sources */,
 				79C423302C933D0700BE73BC /* Category+Mock.swift in Sources */,
 				798A6CC72C906C9400DBB696 /* Category+DTO.swift in Sources */,
+				7987E0872C989330003474BB /* MacTaskPopoverView.swift in Sources */,
 				798A6D0E2C91CE0B00DBB696 /* WidgetTimelineService.swift in Sources */,
 				798A6CDE2C91C38E00DBB696 /* StyledText.swift in Sources */,
+				7987E08E2C98949A003474BB /* TaskStepView.swift in Sources */,
 				798A6D102C91CE3F00DBB696 /* Category+Defaults.swift in Sources */,
 				798A6CC12C906C2800DBB696 /* RepeatingTasks+CoreDataProperties.swift in Sources */,
 				798A6CB82C906AC300DBB696 /* Category+CoreDataProperties.swift in Sources */,
 				798A6D072C91CDAD00DBB696 /* DataService+Priority.swift in Sources */,
 				798A6CBD2C906BED00DBB696 /* TaskColumn+CoreDataProperties.swift in Sources */,
 				798A6CB42C906A9200DBB696 /* Priority+CoreDataClass.swift in Sources */,
+				7987E0822C9890A9003474BB /* SearchPopoverViewModel.swift in Sources */,
 				79C423282C930DD300BE73BC /* ColumnHeaderStyle.swift in Sources */,
 				798A6CD02C906D2B00DBB696 /* Date+Extensions.swift in Sources */,
 				798A6D0F2C91CE3100DBB696 /* Priority+Defaults.swift in Sources */,
+				7987E0812C989093003474BB /* SeachPopoverView.swift in Sources */,
 				798A6D052C91CDA200DBB696 /* DataService+Category.swift in Sources */,
 				798A6CDB2C91C2A300DBB696 /* Task+Extensions.swift in Sources */,
 				79C423332C933D4900BE73BC /* TaskStep+Mock.swift in Sources */,

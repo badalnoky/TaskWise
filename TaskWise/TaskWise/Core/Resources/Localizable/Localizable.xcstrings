@@ -474,6 +474,17 @@
         }
       }
     },
+    "Icons.close" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "xmark"
+          }
+        }
+      }
+    },
     "Icons.contextCheck" : {
       "extractionState" : "manual",
       "localizations" : {

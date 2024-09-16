@@ -121,6 +121,8 @@ internal enum Str {
         internal static let calendar = String(localized: "Icons.calendar", defaultValue: "calendar")
         /// checkmark.circle.fill
         internal static let check = String(localized: "Icons.check", defaultValue: "checkmark.circle.fill")
+        /// xmark
+        internal static let close = String(localized: "Icons.close", defaultValue: "xmark")
         /// checkmark.circle
         internal static let contextCheck = String(localized: "Icons.contextCheck", defaultValue: "checkmark.circle")
         /// trash
