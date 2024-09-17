@@ -6,7 +6,7 @@ target 'TaskWise' do
 
   pod 'Resolver'
   pod 'SwiftGen'
-  pod 'SwiftLint'
+  pod 'SwiftLint', '0.56.2'
   pod 'Sourcery'
   pod 'CalendarDatePicker', :git => 'https://github.com/badalnoky/CalendarDatePicker.git'
   pod 'IntegratedColorPicker', :git => 'https://github.com/badalnoky/IntegratedColorPicker.git'
@@ -22,7 +22,7 @@ target 'TaskWiseMac' do
 
   pod 'Resolver'
   pod 'SwiftGen'
-  pod 'SwiftLint'
+  pod 'SwiftLint', '0.56.2'
   pod 'Sourcery'
   pod 'CalendarDatePicker', :git => 'https://github.com/badalnoky/CalendarDatePicker.git'
 end
