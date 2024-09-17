@@ -13,6 +13,9 @@ extension View {
 
     func textFieldOverlay(_ isEnabled: Bool = true) -> some View {
         self
+            #if os(macOS)
+            .textFieldStyle(.plain)
+            #endif
             .padding(.vertical, .padding8)
             .padding(.horizontal, .padding8)
             .frame(maxWidth: .infinity, alignment: .center)

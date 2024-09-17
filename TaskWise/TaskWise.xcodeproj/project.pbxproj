@@ -3851,7 +3851,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.bercidalnoky.TaskWiseMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -3886,7 +3886,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.bercidalnoky.TaskWiseMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
