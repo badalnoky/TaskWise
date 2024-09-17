@@ -2,32 +2,32 @@ import Combine
 import Resolver
 import SwiftUI
 
-@Observable final class MacTaskPopoverViewModel {
+final class MacTaskPopoverViewModel: ObservableObject {
     private let dataService: DataServiceInput
     private var cancellables = Set<AnyCancellable>()
     var task: TWTask
 
-    var isEditable = false
-    var isDeleteAlertPresented = false
-    var isUpdateAlertPresented = false
+    @Published var isEditable = false
+    @Published var isDeleteAlertPresented = false
+    @Published var isUpdateAlertPresented = false
 
-    var title: String = .empty
-    var description: String = .empty
-    var priorities: [Priority] = []
-    var selectedPriority: Priority
-    var categories: [Category] = []
-    var selectedCategory: Category
-    var columns: [TaskColumn] = []
-    var selectedColumn: TaskColumn
-    var allDay = false
-    var starts: Date = .now
-    var ends: Date = .now.advanced(by: .hour)
-    var repeatBehaviour: RepeatBehaviour = .empty
-    var steps: [TaskStep] = []
-    var newStepName: String = .empty
-    var isStepViewExpanded = false
+    @Published var title: String = .empty
+    @Published var description: String = .empty
+    @Published var priorities: [Priority] = []
+    @Published var selectedPriority: Priority
+    @Published var categories: [Category] = []
+    @Published var selectedCategory: Category
+    @Published var columns: [TaskColumn] = []
+    @Published var selectedColumn: TaskColumn
+    @Published var allDay = false
+    @Published var starts: Date = .now
+    @Published var ends: Date = .now.advanced(by: .hour)
+    @Published var repeatBehaviour: RepeatBehaviour = .empty
+    @Published var steps: [TaskStep] = []
+    @Published var newStepName: String = .empty
+    @Published var isStepViewExpanded = false
 
-    var repeatBehaviourMemento: RepeatBehaviour = .empty
+    private var repeatBehaviourMemento: RepeatBehaviour = .empty
 
     var actionButtonLabel: String {
         isEditable ? Str.Task.saveButton : Str.Task.deleteButton

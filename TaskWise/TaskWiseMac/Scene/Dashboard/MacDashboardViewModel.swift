@@ -56,8 +56,9 @@ extension MacDashboardViewModel {
     }
 
     func didTapSearchedTask(_ task: TWTask) {
+        isSearchOpen = false
         selectedDate = task.startDateTime
-        presentedTask = task
+        didTapTask(task)
     }
 
     func didTapDelete(task: TWTask) {

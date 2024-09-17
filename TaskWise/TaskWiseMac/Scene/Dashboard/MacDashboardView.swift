@@ -26,11 +26,13 @@ extension MacDashboardView: View {
         .sheet(isPresented: $viewModel.isTaskPresented) {
             if let task = viewModel.presentedTask {
                 MacTaskPopoverView(
-                    dataService: viewModel.dataService,
-                    task: task,
-                    priorities: viewModel.priorities,
-                    categories: viewModel.categories,
-                    columns: viewModel.columns
+                    viewModel: .init(
+                        dataService: viewModel.dataService,
+                        task: task,
+                        priorities: viewModel.priorities,
+                        categories: viewModel.categories,
+                        columns: viewModel.columns
+                    )
                 )
             }
         }

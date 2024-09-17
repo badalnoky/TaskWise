@@ -22,6 +22,7 @@ public struct TaskStepView: View {
                         .foregroundStyle(Color.accentColor)
                 }
             }
+            .contentShape(Circle())
             .onTapGesture {
                 withAnimation {
                     toggleAction()

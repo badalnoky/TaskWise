@@ -4,23 +4,7 @@ struct MacTaskPopoverView {
     private typealias Txt = Str.Task
 
     @Environment(\.dismiss) var dismiss
-    @Bindable var viewModel: MacTaskPopoverViewModel
-
-    init(
-        dataService: DataServiceInput,
-        task: TWTask,
-        priorities: [Priority],
-        categories: [Category],
-        columns: [TaskColumn]
-    ) {
-        self.viewModel = MacTaskPopoverViewModel(
-            dataService: dataService,
-            task: task,
-            priorities: priorities,
-            categories: categories,
-            columns: columns
-        )
-    }
+    @StateObject var viewModel: MacTaskPopoverViewModel
 }
 
 extension MacTaskPopoverView: View {
@@ -125,6 +109,7 @@ extension MacTaskPopoverView {
                         .foregroundStyle(.accent)
                         .padding(.trailing, .padding4)
                 }
+                .contentShape(Rectangle())
                 .onTapGesture {
                     withAnimation {
                         viewModel.isStepViewExpanded.toggle()
