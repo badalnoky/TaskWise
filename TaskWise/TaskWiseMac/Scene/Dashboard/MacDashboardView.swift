@@ -44,6 +44,7 @@ extension MacDashboardView {
         HStack {
             MacIconButton(image: .settings, action: viewModel.didTapSettings)
                 .popover(isPresented: $viewModel.isSettingsOpen) {
+                    MacSettingsView()
                 }
 
             Spacer()

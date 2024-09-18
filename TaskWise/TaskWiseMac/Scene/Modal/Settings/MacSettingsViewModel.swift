@@ -2,7 +2,7 @@ import Combine
 import Resolver
 import SwiftUI
 
-@Observable final class PadSettingsViewModel {
+@Observable final class MacSettingsViewModel {
     private let dataService: DataServiceInput
     private var cancellables = Set<AnyCancellable>()
 
@@ -36,7 +36,7 @@ import SwiftUI
     }
 }
 
-extension PadSettingsViewModel {
+extension MacSettingsViewModel {
     func didTapAddCategory() {
         dataService.addCategory(.init(id: UUID(), name: newCategoryName, colorComponents: currentColor.components))
         newCategoryName = .empty
@@ -154,7 +154,7 @@ extension PadSettingsViewModel {
     }
 }
 
-private extension PadSettingsViewModel {
+private extension MacSettingsViewModel {
     private func registerBindings() {
         registerCategoryBinding()
         registerColumnsBinding()

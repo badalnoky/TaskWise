@@ -1,27 +1,23 @@
-import IntegratedColorPicker
 import SwiftUI
 
-struct PadSettingsView {
+struct MacSettingsView {
     private typealias Txt = Str.Settings
 
-    @Bindable var viewModel: PadSettingsViewModel
+    @Bindable var viewModel: MacSettingsViewModel
 
     init() {
-        self.viewModel = PadSettingsViewModel()
+        self.viewModel = MacSettingsViewModel()
     }
 }
 
-extension PadSettingsView: View {
+extension MacSettingsView: View {
     var body: some View {
         HStack(spacing: .padding32) {
-            categoryColumn
-            VStack(spacing: .padding32) {
-                columnColumn
-                priorityColumn
-            }
+            categoryColumn.frame(width: .popoverWidth)
+            columnColumn.frame(width: .popoverWidth)
+            priorityColumn.frame(width: .popoverWidth)
         }
         .padding(.padding32)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.appBackground)
         .alert(viewModel.alertMessage, isPresented: $viewModel.isAlertPresented) {
             Button(Str.Alert.ok, role: .cancel) {}
@@ -29,13 +25,13 @@ extension PadSettingsView: View {
     }
 }
 
-extension PadSettingsView {
+extension MacSettingsView {
     var categoryColumnHeader: some View {
-        HStack(spacing: .padding24) {
-            StyledText(text: Txt.categoriesLabel, style: .title)
+        HStack(spacing: .padding8) {
+            StyledText(text: Txt.categoriesLabel, style: .base)
             Spacer()
-            IconButton(.add, action: viewModel.didTapNewCategory)
-            IconButton(.edit, action: viewModel.didTapEditCategory)
+            MacIconButton(image: .add, action: viewModel.didTapNewCategory)
+            MacIconButton(image: .edit, action: viewModel.didTapEditCategory)
         }
         .padding(.horizontal, .padding16)
     }
@@ -55,7 +51,7 @@ extension PadSettingsView {
                                     viewModel.didChangeName(of: category, to: $0)
                                 }
                                 Spacer()
-                                CategoryColorPicker(category: category, isEditable: viewModel.isEditingCategory) {
+                                MacCategoryColorPicker(category: category, isEditable: viewModel.isEditingCategory) {
                                     viewModel.didChangeColor(on: category, to: $0)
                                 }
                                 .padding(.horizontal, .padding8)
@@ -89,14 +85,7 @@ extension PadSettingsView {
             HStack {
                 StyledText(text: Txt.colorLabel, style: .base)
                 Spacer()
-                IntegratedColorPicker(selectedColor: $viewModel.currentColor, isEditable: true) {
-                    TaskItemView(
-                        title: Txt.exampleTitle,
-                        priority: Txt.examplePriority,
-                        category: viewModel.newCategoryName,
-                        categoryColor: viewModel.currentColor
-                    )
-                }
+                ColorPicker(String.empty, selection: $viewModel.currentColor)
             }
             .padding(.horizontal, .padding4)
         }
@@ -107,11 +96,11 @@ extension PadSettingsView {
     }
 
     var columnColumnHeader: some View {
-        HStack(spacing: .padding24) {
-            StyledText(text: Txt.columnsLabel, style: .title)
+        HStack(spacing: .padding8) {
+            StyledText(text: Txt.columnsLabel, style: .base)
             Spacer()
-            IconButton(.add, action: viewModel.didTapNewColumn)
-            IconButton(.edit, action: viewModel.didTapEditColumn)
+            MacIconButton(image: .add, action: viewModel.didTapNewColumn)
+            MacIconButton(image: .edit, action: viewModel.didTapEditColumn)
         }
         .padding(.horizontal, .padding16)
     }
@@ -166,11 +155,11 @@ extension PadSettingsView {
     }
 
     var priorityColumnHeader: some View {
-        HStack(spacing: .padding24) {
-            StyledText(text: Txt.prioritiesLabel, style: .title)
+        HStack(spacing: .padding8) {
+            StyledText(text: Txt.prioritiesLabel, style: .base)
             Spacer()
-            IconButton(.add, action: viewModel.didTapNewPriority)
-            IconButton(.edit, action: viewModel.didTapEditPriority)
+            MacIconButton(image: .add, action: viewModel.didTapNewPriority)
+            MacIconButton(image: .edit, action: viewModel.didTapEditPriority)
         }
         .padding(.horizontal, .padding16)
     }
@@ -226,5 +215,5 @@ extension PadSettingsView {
 }
 
 #Preview {
-    PadSettingsView()
+    MacSettingsView()
 }

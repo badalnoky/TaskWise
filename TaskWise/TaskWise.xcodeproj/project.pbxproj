@@ -445,6 +445,12 @@
 		79ABB45F2C8F14F8001D8AF0 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988A0462AAE362400C63265 /* String+Extensions.swift */; };
 		79ABB4602C8F14F8001D8AF0 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988A0462AAE362400C63265 /* String+Extensions.swift */; };
 		79ABB4612C8F14F8001D8AF0 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988A0462AAE362400C63265 /* String+Extensions.swift */; };
+		79AFF60F2C9B3ED7001E9755 /* MacSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AFF60E2C9B3ED1001E9755 /* MacSettingsView.swift */; };
+		79AFF6112C9B3F41001E9755 /* MacSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AFF6102C9B3F3B001E9755 /* MacSettingsViewModel.swift */; };
+		79AFF6122C9B3F72001E9755 /* EditableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793C64862AED80BC00C9D3FF /* EditableText.swift */; };
+		79AFF6132C9B3FAF001E9755 /* OrderIndicatedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7948F4F22C6DFC8C009838C9 /* OrderIndicatedList.swift */; };
+		79AFF6162C9B52AC001E9755 /* MacCategoryColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AFF6152C9B52A5001E9755 /* MacCategoryColorPicker.swift */; };
+		79AFF6172C9B52AC001E9755 /* MacCategoryColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AFF6152C9B52A5001E9755 /* MacCategoryColorPicker.swift */; };
 		79B3490A2B23B15100AAB0A9 /* ColumnHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B823EA2B1E71DC0062B6E5 /* ColumnHeader.swift */; };
 		79B3490B2B23B15C00AAB0A9 /* TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983000D2B17C4D90013B834 /* TextStyle.swift */; };
 		79B3490C2B23B16900AAB0A9 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983000A2B17C0D10013B834 /* Fonts.swift */; };
@@ -835,6 +841,9 @@
 		79ABB4482C8F0DFA001D8AF0 /* TaskWiseMacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskWiseMacUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		79ABB44C2C8F0DFB001D8AF0 /* TaskWiseMacUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskWiseMacUITests.swift; sourceTree = "<group>"; };
 		79ABB4592C8F0E51001D8AF0 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		79AFF60E2C9B3ED1001E9755 /* MacSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacSettingsView.swift; sourceTree = "<group>"; };
+		79AFF6102C9B3F3B001E9755 /* MacSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacSettingsViewModel.swift; sourceTree = "<group>"; };
+		79AFF6152C9B52A5001E9755 /* MacCategoryColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacCategoryColorPicker.swift; sourceTree = "<group>"; };
 		79B349122B23CBA500AAB0A9 /* WidgetColumnButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetColumnButtonStyle.swift; sourceTree = "<group>"; };
 		79B349162B23CEBE00AAB0A9 /* TaskWidgetHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskWidgetHeader.swift; sourceTree = "<group>"; };
 		79B349182B23CF2A00AAB0A9 /* WidgetColumnButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetColumnButton.swift; sourceTree = "<group>"; };
@@ -1149,6 +1158,7 @@
 		7921551B2AB9E80C0044CDED /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				79AFF6142C9B529C001E9755 /* MacCategoryColorPicker */,
 				793C64882AED9E5900C9D3FF /* CategoryColorPicker */,
 				79B823E92B1E71CC0062B6E5 /* ColumnHeader */,
 				798300152B17E82A0013B834 /* CombinedDatePicker */,
@@ -1911,6 +1921,23 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		79AFF60D2C9B38CD001E9755 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				79AFF60E2C9B3ED1001E9755 /* MacSettingsView.swift */,
+				79AFF6102C9B3F3B001E9755 /* MacSettingsViewModel.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		79AFF6142C9B529C001E9755 /* MacCategoryColorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				79AFF6152C9B52A5001E9755 /* MacCategoryColorPicker.swift */,
+			);
+			path = MacCategoryColorPicker;
+			sourceTree = "<group>";
+		};
 		79B3491C2B23DB8200AAB0A9 /* Button */ = {
 			isa = PBXGroup;
 			children = (
@@ -2035,6 +2062,7 @@
 			isa = PBXGroup;
 			children = (
 				79C988122C96F17A0086A510 /* AddTask */,
+				79AFF60D2C9B38CD001E9755 /* Settings */,
 				7987E0852C98931D003474BB /* Task */,
 			);
 			path = Modal;
@@ -2940,6 +2968,7 @@
 				794AC2882BB424FD00DAC0F9 /* CustomRepeatSchedule.swift in Sources */,
 				79CD54B02AD33B9600D064C2 /* ColorComponents+CoreDataClass.swift in Sources */,
 				79CD54A82AD33B9600D064C2 /* DataService.swift in Sources */,
+				79AFF6172C9B52AC001E9755 /* MacCategoryColorPicker.swift in Sources */,
 				793C648A2AED9E7300C9D3FF /* CategoryColorPicker.swift in Sources */,
 				79E14AD62AE41A5D00FF730D /* TaskStep+Mock.swift in Sources */,
 				79B9625C2B1F799F00D16472 /* TaskContextMenu.swift in Sources */,
@@ -3189,6 +3218,7 @@
 				79ABB45E2C8F0F74001D8AF0 /* MacDashboardView.swift in Sources */,
 				798A6CB22C906A6F00DBB696 /* Task+CoreDataProperties.swift in Sources */,
 				7987E07F2C988986003474BB /* FilterPopoverView.swift in Sources */,
+				79AFF6112C9B3F41001E9755 /* MacSettingsViewModel.swift in Sources */,
 				798A6D0B2C91CDCF00DBB696 /* DateService+Widget.swift in Sources */,
 				79C988062C96EC0B0086A510 /* IconButtonStyle.swift in Sources */,
 				798A6CE12C91C3E500DBB696 /* StyledDateModel.swift in Sources */,
@@ -3201,6 +3231,7 @@
 				79C988032C96E8E50086A510 /* Image+Extensions.swift in Sources */,
 				798A6CCE2C906CFE00DBB696 /* Double+Extensions.swift in Sources */,
 				798A6D0D2C91CDFB00DBB696 /* DataOperationError.swift in Sources */,
+				79AFF6132C9B3FAF001E9755 /* OrderIndicatedList.swift in Sources */,
 				79C9881A2C96F29E0086A510 /* StyledFieldModel.swift in Sources */,
 				798A6CDC2C91C30F00DBB696 /* Localized.swift in Sources */,
 				798A6D092C91CDB900DBB696 /* DataService+Task.swift in Sources */,
@@ -3216,6 +3247,7 @@
 				798A6CC12C906C2800DBB696 /* RepeatingTasks+CoreDataProperties.swift in Sources */,
 				798A6CB82C906AC300DBB696 /* Category+CoreDataProperties.swift in Sources */,
 				798A6D072C91CDAD00DBB696 /* DataService+Priority.swift in Sources */,
+				79AFF60F2C9B3ED7001E9755 /* MacSettingsView.swift in Sources */,
 				798A6CBD2C906BED00DBB696 /* TaskColumn+CoreDataProperties.swift in Sources */,
 				798A6CB42C906A9200DBB696 /* Priority+CoreDataClass.swift in Sources */,
 				7987E0822C9890A9003474BB /* SearchPopoverViewModel.swift in Sources */,
@@ -3229,12 +3261,14 @@
 				79C988172C96F2380086A510 /* TaskRow.swift in Sources */,
 				798A6D132C91D05300DBB696 /* TaskProgressIndicator.swift in Sources */,
 				798A6CC42C906C7300DBB696 /* RepeatFrequency.swift in Sources */,
+				79AFF6122C9B3F72001E9755 /* EditableText.swift in Sources */,
 				798A6CC82C906CA500DBB696 /* ColorComponents+DTO.swift in Sources */,
 				79C988182C96F2580086A510 /* BaseButtonStyle.swift in Sources */,
 				798A6CB12C906A6B00DBB696 /* Task+CoreDataClass.swift in Sources */,
 				798A6CB52C906A9D00DBB696 /* Priority+CoreDataProperties.swift in Sources */,
 				798A6D082C91CDB300DBB696 /* DataService+RepeatingTasks.swift in Sources */,
 				798A6CD22C906D8800DBB696 /* Color+Extensions.swift in Sources */,
+				79AFF6162C9B52AC001E9755 /* MacCategoryColorPicker.swift in Sources */,
 				79C988192C96F2920086A510 /* StyledField.swift in Sources */,
 				798A6CE22C91C40600DBB696 /* ColumnHeader.swift in Sources */,
 				798A6CBC2C906BE700DBB696 /* TaskColumn+CoreDataClass.swift in Sources */,
