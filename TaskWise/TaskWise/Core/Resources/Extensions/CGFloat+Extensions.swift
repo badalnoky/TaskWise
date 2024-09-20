@@ -47,6 +47,8 @@ public extension CGFloat {
     static let defaultFilterSheetHeight: CGFloat = 260
     /// 400 pt
     static let popoverWidth: CGFloat = 400
+    /// 600 pt
+    static let macMinSize: CGFloat = 600
     /// 800 pt
     static let popoverMinHeight: CGFloat = 800
 }

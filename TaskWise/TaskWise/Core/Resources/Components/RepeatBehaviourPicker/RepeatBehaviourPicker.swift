@@ -65,7 +65,11 @@ extension RepeatBehaviourPicker: View {
                 repeatBehaviour.wrappedValue.frequency = repeatFrequency
             }
             if repeatFrequency == .custom {
+                #if !os(macOS)
                 customFrequencyButton
+                #else
+                customFrequencyPanel
+                #endif
             }
             if repeatFrequency != .never {
                 endDatePicker
@@ -91,12 +95,65 @@ extension RepeatBehaviourPicker {
         DatePicker(selection: $selectedEndDate, in: startingDate..., displayedComponents: .date) {
             Text(Str.RepeatBehaviorPicker.endDateLabel)
                 .textStyle(.body)
+            #if os(macOS)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            #endif
         }
         .padding(.horizontal, .padding4)
         .frame(height: .defaultRowHeight)
         .onChange(of: selectedEndDate) {
             repeatBehaviour.wrappedValue.end = selectedEndDate.endOfDay
         }
+    }
+
+    // swiftlint: disable closure_body_length
+    private var customFrequencyPanel: some View {
+        VStack(spacing: .padding24) {
+            Text(customRepeatLabel)
+                .textStyle(.body)
+                .multilineTextAlignment(.leading)
+                .frame(maxWidth: .infinity, alignment: .leading)
+
+            HStack(spacing: .zero) {
+                Text(Str.RepeatBehaviorPicker.frequencyLabel)
+                    .textStyle(.body)
+                Spacer()
+                Picker(String.empty, selection: $repeatUnit) {
+                    ForEach(RepeatUnit.allCases, id: \.self) {
+                        Text($0.rawValue)
+                    }
+                }
+            }
+            .onChange(of: repeatUnit) {
+                unitFrequency = .one
+                indices = []
+                repeatBehaviour.wrappedValue.schedule = .init(unit: repeatUnit, unitFrequency: unitFrequency, indices: indices)
+            }
+
+            HStack {
+                Text(Str.RepeatBehaviorPicker.everyLabel)
+                    .textStyle(.body)
+                Spacer()
+                TextField(String.empty, value: $unitFrequency, format: .number)
+                    .textFieldStyle(.roundedBorder)
+                    .frame(width: .columnButtonWidth)
+                let unitFrequencyLabel = if unitFrequency == .one {
+                    String(Str.RepeatBehaviorPicker.repeatEveryLabel(unitFrequency, repeatUnit.label).dropFirst(2))
+                } else {
+                    Str.RepeatBehaviorPicker.repeatEveryLabel(unitFrequency, repeatUnit.label)
+                }
+                Text(unitFrequencyLabel)
+            }
+
+            if repeatUnit == .week {
+                weekView
+            }
+
+            if repeatUnit == .month {
+                monthView
+            }
+        }
+        .padding(.horizontal, .padding4)
     }
 
     private var customFrequencyButton: some View {
@@ -118,22 +175,24 @@ extension RepeatBehaviourPicker {
         LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: .weekDayCount)) {
             ForEach(Weekday.allCases) { day in
                 let isSelected = indices.contains { $0 == day.index }
-                Button(day.abbreviated.uppercased()) {
-                    if isSelected {
-                        indices.removeAll { $0 == day.index }
-                    } else {
-                        indices.append(day.index)
-                        indices = indices.sorted()
+                Text(day.abbreviated.uppercased())
+                    .foregroundStyle(isSelected ? .white : Color.text)
+                    .font(.footnote)
+                    .frame(maxWidth: .infinity)
+                    .padding(.padding4)
+                    .background {
+                        RoundedRectangle(cornerRadius: .cornerRadius)
+                            .fill(isSelected ? Color.accentColor : Color.clear)
                     }
-                }
-                .foregroundStyle(isSelected ? .white : Color.text)
-                .font(.footnote)
-                .frame(maxWidth: .infinity)
-                .padding(.padding4)
-                .background {
-                    RoundedRectangle(cornerRadius: .cornerRadius)
-                        .fill(isSelected ? Color.accentColor : Color.clear)
-                }
+                    .contentShape(RoundedRectangle(cornerRadius: .cornerRadius))
+                    .onTapGesture {
+                        if isSelected {
+                            indices.removeAll { $0 == day.index }
+                        } else {
+                            indices.append(day.index)
+                            indices = indices.sorted()
+                        }
+                    }
             }
         }
         .padding(.padding12)
@@ -146,21 +205,23 @@ extension RepeatBehaviourPicker {
         LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: .weekDayCount)) {
             ForEach(.one...Int.maxMonthlyDayCount, id: \.self) { day in
                 let isSelected = indices.contains { $0 == day }
-                Button(Str.RepeatBehaviorPicker.dayButtonLabel(day)) {
-                    if isSelected {
-                        indices.removeAll { $0 == day }
-                    } else {
-                        indices.append(day)
-                        indices = indices.sorted()
+                Text(Str.RepeatBehaviorPicker.dayButtonLabel(day))
+                    .foregroundStyle(isSelected ? Color.white : Color.black )
+                    .frame(maxWidth: .infinity)
+                    .padding(.padding4)
+                    .background {
+                        RoundedRectangle(cornerRadius: .cornerRadius)
+                            .fill(isSelected ? Color.accentColor : Color.clear)
                     }
-                }
-                .foregroundStyle(isSelected ? Color.white : Color.black )
-                .frame(maxWidth: .infinity)
-                .padding(.padding4)
-                .background {
-                    RoundedRectangle(cornerRadius: .cornerRadius)
-                        .fill(isSelected ? Color.accentColor : Color.clear)
-                }
+                    .contentShape(RoundedRectangle(cornerRadius: .cornerRadius))
+                    .onTapGesture {
+                        if isSelected {
+                            indices.removeAll { $0 == day }
+                        } else {
+                            indices.append(day)
+                            indices = indices.sorted()
+                        }
+                    }
             }
         }
         .padding(.padding12)
@@ -186,7 +247,9 @@ extension RepeatBehaviourPicker {
                 }
             }
         }
+        #if !os(macOS)
         .pickerStyle(.wheel)
+        #endif
         .onChange(of: unitFrequency) {
             repeatBehaviour.wrappedValue.schedule = .init(unit: repeatUnit, unitFrequency: unitFrequency, indices: indices)
         }
@@ -250,9 +313,11 @@ extension RepeatBehaviourPicker {
             }
             Spacer()
         }
+        #if !os(macOS)
         .frame(minWidth: UIScreen.isPhone ? .zero : .popoverWidth)
         .defaultViewPadding()
         .presentationDetents(UIScreen.isPhone ? [.medium] : [.height(.popoverMinHeight)])
+        #endif
     }
 }
 

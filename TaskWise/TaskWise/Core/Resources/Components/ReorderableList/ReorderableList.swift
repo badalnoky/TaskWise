@@ -37,7 +37,11 @@ extension ReorderableList: View {
                     }
                     .onDrag {
                         self.draggedItem = item
+                        #if !os(macOS)
                         return NSItemProvider()
+                        #else
+                        return NSItemProvider(object: item.name as NSString)
+                        #endif
                     }
                     .onDrop(
                         of: [.text],

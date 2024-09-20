@@ -35,7 +35,7 @@ extension RepeatingTasks {
             let dto = TWTask.DTO(
                 id: UUID(),
                 title: existingTask.title,
-                description: existingTask.description,
+                description: existingTask.taskDescription,
                 date: start,
                 hasTimeConstraints: existingTask.hasTimeConstraints,
                 startDateTime: start,

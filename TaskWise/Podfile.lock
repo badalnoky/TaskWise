@@ -14,7 +14,7 @@ DEPENDENCIES:
   - Resolver
   - Sourcery
   - SwiftGen
-  - SwiftLint
+  - SwiftLint (= 0.56.2)
 
 SPEC REPOS:
   trunk:
@@ -31,20 +31,20 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   CalendarDatePicker:
-    :commit: d147499ef015fdc79e9a030ff7b25c5823174661
+    :commit: 67a99eaf03a5b5733b4ea401b9c6b17fdc5850c5
     :git: https://github.com/badalnoky/CalendarDatePicker.git
   IntegratedColorPicker:
     :commit: 462ed791125b8b2088b6f62633646226f69f8c90
     :git: https://github.com/badalnoky/IntegratedColorPicker.git
 
 SPEC CHECKSUMS:
-  CalendarDatePicker: 1d1c7ca9467bf11b4ea31f00a8fa04f0f6449c8f
+  CalendarDatePicker: d230c19d282290432bd8a96a8b39517b423d7dbf
   IntegratedColorPicker: ff6c7a0b825f6f3464579352148e9c10385fcba7
   Resolver: 0e2ce51257e9366c54afe1b9e9be25059e9b9300
   Sourcery: 088e2f5a70844da8bc439f9eb9d88f35fc702f93
   SwiftGen: 4993cbf71cbc4886f775e26f8d5c3a1188ec9f99
   SwiftLint: bd7cfb914762ab5f0cbb632964849571db075706
 
-PODFILE CHECKSUM: 17364f2a0b416d2a4400b6a36d7012ca8bb031a6
+PODFILE CHECKSUM: ca9c8ef19f80d0f5b9e23498afcc5af59ad2e6ee
 
 COCOAPODS: 1.15.2

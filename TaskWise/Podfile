@@ -1,13 +1,12 @@
-platform :ios, '17.0'
-
 inhibit_all_warnings!
 
 target 'TaskWise' do
+  platform :ios, '17.0'
   use_frameworks!
 
   pod 'Resolver'
   pod 'SwiftGen'
-  pod 'SwiftLint'
+  pod 'SwiftLint', '0.56.2'
   pod 'Sourcery'
   pod 'CalendarDatePicker', :git => 'https://github.com/badalnoky/CalendarDatePicker.git'
   pod 'IntegratedColorPicker', :git => 'https://github.com/badalnoky/IntegratedColorPicker.git'
@@ -17,10 +16,22 @@ target 'TaskWiseTests' do
   inherit! :search_paths
 end
 
+target 'TaskWiseMac' do
+  platform :osx, '14.0'
+  use_frameworks!
+
+  pod 'Resolver'
+  pod 'SwiftGen'
+  pod 'SwiftLint', '0.56.2'
+  pod 'Sourcery'
+  pod 'CalendarDatePicker', :git => 'https://github.com/badalnoky/CalendarDatePicker.git'
+end
+
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
       config.build_settings.delete 'IPHONEOS_DEPLOYMENT_TARGET'
+      config.build_settings.delete 'MACOSX_DEPLOYMENT_TARGET'
     end
   end
 end

@@ -17,6 +17,7 @@ extension Image {
     static let up = Image(systemName: Icons.up)
     static let down = Image(systemName: Icons.down)
     static let trash = Image(systemName: Icons.trash)
+    static let close = Image(systemName: Icons.close)
 }
 
 public extension Image {

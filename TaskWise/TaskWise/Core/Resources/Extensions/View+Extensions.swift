@@ -13,6 +13,9 @@ extension View {
 
     func textFieldOverlay(_ isEnabled: Bool = true) -> some View {
         self
+            #if os(macOS)
+            .textFieldStyle(.plain)
+            #endif
             .padding(.vertical, .padding8)
             .padding(.horizontal, .padding8)
             .frame(maxWidth: .infinity, alignment: .center)
@@ -34,7 +37,16 @@ extension View {
         var green: CGFloat = .zero
         var blue: CGFloat = .zero
         var alpha: CGFloat = .zero
+        #if os(macOS)
+        // swiftlint: disable force_unwrapping
+        let color = CIColor(color: NSColor(color))!
+        // swiftlint: enable force_unwrapping
+        red = color.red
+        green = color.green
+        blue = color.blue
+        #else
         UIColor(color).getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        #endif
         let luminance = 0.2126 * red + 0.7152 * green + 0.0722 * blue
         return  luminance < 0.6 ? self.foregroundColor(.lightContrast) : self.foregroundColor(.darkContrast)
     }

@@ -23,6 +23,9 @@ extension PadSettingsView: View {
         .padding(.padding32)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.appBackground)
+        .alert(viewModel.alertMessage, isPresented: $viewModel.isAlertPresented) {
+            Button(Str.Alert.ok, role: .cancel) {}
+        }
     }
 }
 

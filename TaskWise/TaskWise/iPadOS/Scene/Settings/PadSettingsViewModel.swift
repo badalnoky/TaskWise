@@ -46,10 +46,13 @@ extension PadSettingsViewModel {
     func didTapAddColumn() {
         dataService.addColumn(.init(id: UUID(), index: columns.count.next, name: newColumnName))
         newColumnName = .empty
+        isNewColumnSheetPresented.toggle()
     }
 
     func didTapAddPriority() {
         dataService.addPriority(.init(id: UUID(), level: priorities.count.next, name: newPriorityName))
+        newPriorityName = .empty
+        isNewPrioritySheetPresented.toggle()
     }
 
     func didChangeName(of item: NamedItem, to newName: String) {
