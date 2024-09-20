@@ -13,5 +13,6 @@ final class TaskWiseMacUITests: XCTestCase {
     func testExample() throws {
         let app = XCUIApplication()
         app.launch()
+        XCTAssertTrue(true)
     }
 }

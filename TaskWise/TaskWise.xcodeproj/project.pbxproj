@@ -415,6 +415,11 @@
 		798B08CC2AB85C8400311D93 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798B08CB2AB85C8400311D93 /* DayView.swift */; };
 		798B08CE2AB85C9600311D93 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798B08CD2AB85C9600311D93 /* SettingsView.swift */; };
 		798B08D02AB85CAB00311D93 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798B08CF2AB85CAB00311D93 /* TaskView.swift */; };
+		798FF8692C9D8AF100B5B683 /* Test+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9197AABF2C32B6DC00A5EDDC /* Test+Extensions.swift */; };
+		798FF86C2C9D8B2B00B5B683 /* MacAddTaskPopoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798FF86B2C9D8B2300B5B683 /* MacAddTaskPopoverViewModel.swift */; };
+		798FF86E2C9D8BF600B5B683 /* MacSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798FF86D2C9D8BF000B5B683 /* MacSettingViewModel.swift */; };
+		798FF8712C9D8E6C00B5B683 /* MacTaskPopoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798FF8702C9D8E6300B5B683 /* MacTaskPopoverViewModel.swift */; };
+		798FF8732C9D8F2D00B5B683 /* MacDashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798FF8722C9D8F2500B5B683 /* MacDashboardViewModel.swift */; };
 		799070B52AEA53330051AAC8 /* TaskColumn+DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799070B42AEA53330051AAC8 /* TaskColumn+DTO.swift */; };
 		799070B72AEA55090051AAC8 /* Category+DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799070B62AEA55090051AAC8 /* Category+DTO.swift */; };
 		799070B92AEA55150051AAC8 /* Priority+DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799070B82AEA55150051AAC8 /* Priority+DTO.swift */; };
@@ -438,7 +443,6 @@
 		79ABB4312C8F0DF9001D8AF0 /* TaskWiseMacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ABB4302C8F0DF9001D8AF0 /* TaskWiseMacApp.swift */; };
 		79ABB4352C8F0DFA001D8AF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79ABB4342C8F0DFA001D8AF0 /* Assets.xcassets */; };
 		79ABB4382C8F0DFA001D8AF0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79ABB4372C8F0DFA001D8AF0 /* Preview Assets.xcassets */; };
-		79ABB4432C8F0DFA001D8AF0 /* TaskWiseMacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ABB4422C8F0DFA001D8AF0 /* TaskWiseMacTests.swift */; };
 		79ABB44D2C8F0DFB001D8AF0 /* TaskWiseMacUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ABB44C2C8F0DFB001D8AF0 /* TaskWiseMacUITests.swift */; };
 		79ABB45A2C8F0E51001D8AF0 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79ABB4592C8F0E51001D8AF0 /* Colors.xcassets */; };
 		79ABB45E2C8F0F74001D8AF0 /* MacDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792EC2062C62BD3D00982732 /* MacDashboardView.swift */; };
@@ -819,6 +823,11 @@
 		798B08CB2AB85C8400311D93 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
 		798B08CD2AB85C9600311D93 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		798B08CF2AB85CAB00311D93 /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
+		798FF8672C9D8A3B00B5B683 /* TaskWiseMac.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TaskWiseMac.xctestplan; sourceTree = "<group>"; };
+		798FF86B2C9D8B2300B5B683 /* MacAddTaskPopoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacAddTaskPopoverViewModel.swift; sourceTree = "<group>"; };
+		798FF86D2C9D8BF000B5B683 /* MacSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacSettingViewModel.swift; sourceTree = "<group>"; };
+		798FF8702C9D8E6300B5B683 /* MacTaskPopoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacTaskPopoverViewModel.swift; sourceTree = "<group>"; };
+		798FF8722C9D8F2500B5B683 /* MacDashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacDashboardViewModel.swift; sourceTree = "<group>"; };
 		799070B42AEA53330051AAC8 /* TaskColumn+DTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskColumn+DTO.swift"; sourceTree = "<group>"; };
 		799070B62AEA55090051AAC8 /* Category+DTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+DTO.swift"; sourceTree = "<group>"; };
 		799070B82AEA55150051AAC8 /* Priority+DTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Priority+DTO.swift"; sourceTree = "<group>"; };
@@ -837,7 +846,6 @@
 		79ABB4372C8F0DFA001D8AF0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		79ABB4392C8F0DFA001D8AF0 /* TaskWiseMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TaskWiseMac.entitlements; sourceTree = "<group>"; };
 		79ABB43E2C8F0DFA001D8AF0 /* TaskWiseMacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskWiseMacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		79ABB4422C8F0DFA001D8AF0 /* TaskWiseMacTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskWiseMacTests.swift; sourceTree = "<group>"; };
 		79ABB4482C8F0DFA001D8AF0 /* TaskWiseMacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskWiseMacUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		79ABB44C2C8F0DFB001D8AF0 /* TaskWiseMacUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskWiseMacUITests.swift; sourceTree = "<group>"; };
 		79ABB4592C8F0E51001D8AF0 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -1810,6 +1818,17 @@
 			path = Calendar;
 			sourceTree = "<group>";
 		};
+		798FF86A2C9D8B1400B5B683 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				798FF8722C9D8F2500B5B683 /* MacDashboardViewModel.swift */,
+				798FF8702C9D8E6300B5B683 /* MacTaskPopoverViewModel.swift */,
+				798FF86B2C9D8B2300B5B683 /* MacAddTaskPopoverViewModel.swift */,
+				798FF86D2C9D8BF000B5B683 /* MacSettingViewModel.swift */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
 		79964A832C627768000EF203 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -1882,7 +1901,8 @@
 		79ABB4412C8F0DFA001D8AF0 /* TaskWiseMacTests */ = {
 			isa = PBXGroup;
 			children = (
-				79ABB4422C8F0DFA001D8AF0 /* TaskWiseMacTests.swift */,
+				798FF8672C9D8A3B00B5B683 /* TaskWiseMac.xctestplan */,
+				798FF86A2C9D8B1400B5B683 /* Scene */,
 			);
 			path = TaskWiseMacTests;
 			sourceTree = "<group>";
@@ -3286,7 +3306,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				79ABB4602C8F14F8001D8AF0 /* String+Extensions.swift in Sources */,
-				79ABB4432C8F0DFA001D8AF0 /* TaskWiseMacTests.swift in Sources */,
+				798FF8732C9D8F2D00B5B683 /* MacDashboardViewModel.swift in Sources */,
+				798FF86C2C9D8B2B00B5B683 /* MacAddTaskPopoverViewModel.swift in Sources */,
+				798FF86E2C9D8BF600B5B683 /* MacSettingViewModel.swift in Sources */,
+				798FF8712C9D8E6C00B5B683 /* MacTaskPopoverViewModel.swift in Sources */,
+				798FF8692C9D8AF100B5B683 /* Test+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
