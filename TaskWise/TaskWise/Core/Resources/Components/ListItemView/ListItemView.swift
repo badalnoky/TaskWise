@@ -51,6 +51,7 @@ extension ListItemView: View {
         .clipShape(RoundedRectangle(cornerRadius: .padding12))
         .edgeShadows()
         .padding(.vertical, .padding4)
+        #if !os(macOS)
         .gesture(
             DragGesture(minimumDistance: .minimumDragDistance)
                 .onChanged { gesture in
@@ -71,6 +72,13 @@ extension ListItemView: View {
                     }
                 }
         )
+        #else
+        .contextMenu {
+            Button(action: deleteAction) {
+                Label(Str.ContextMenu.deleteLabel, systemImage: Str.Icons.delete)
+            }
+        }
+        #endif
         .onChange(of: isEditable) { _, _ in
             withAnimation {
                 deletButtonWidth = isEditable ? .listDeleteButtonMaxWidth : .zero

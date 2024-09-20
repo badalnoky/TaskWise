@@ -125,7 +125,7 @@ extension MacTaskPopoverView {
             if viewModel.isEditable {
                 HStack {
                     StyledField(style: .base, title: Txt.stepLabel, text: $viewModel.newStepName)
-                    IconButton(.add, action: viewModel.didTapAddStep)
+                    MacIconButton(image: .add, action: viewModel.didTapAddStep)
                 }
             }
         }

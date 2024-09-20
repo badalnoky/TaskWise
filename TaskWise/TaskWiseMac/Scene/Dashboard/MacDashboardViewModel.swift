@@ -14,6 +14,7 @@ import SwiftUI
     var columns: [TaskColumn] = []
     var selectedPriority: Priority?
     var selectedCategory: Category?
+    var draggedTask: TWTask?
 
     var isAlertPresented = false
     var isAddTaskOpen = false

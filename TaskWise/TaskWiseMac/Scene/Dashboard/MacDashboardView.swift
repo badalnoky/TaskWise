@@ -118,6 +118,10 @@ extension MacDashboardView {
                                         category: task.category.name,
                                         categoryColor: .from(components: task.category.colorComponents)
                                     )
+                                    .onDrag {
+                                        viewModel.draggedTask = task
+                                        return NSItemProvider(object: task.id.uuidString as NSString)
+                                    }
                                     .onTapGesture {
                                         viewModel.didTapTask(task)
                                     }
@@ -139,6 +143,14 @@ extension MacDashboardView {
                                 }
                                 .padding(.horizontal, .padding16)
                             }
+                            .onDrop(
+                                of: [.text],
+                                delegate: DashboardDropViewDelegate(
+                                    destinationColumn: column,
+                                    draggedItem: $viewModel.draggedTask,
+                                    moveAction: viewModel.didChangeColumn
+                                )
+                            )
                         }
                         .frame(width: geometry.size.width.third)
                     }
