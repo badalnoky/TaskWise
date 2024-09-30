@@ -445,6 +445,75 @@
 		799F9D3C2CAAE30D00E1D5E4 /* TaskWiseWidgetMac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799F9D372CAAE30D00E1D5E4 /* TaskWiseWidgetMac.swift */; };
 		799F9D3D2CAAE30D00E1D5E4 /* TaskWiseWidgetMacBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799F9D382CAAE30D00E1D5E4 /* TaskWiseWidgetMacBundle.swift */; };
 		799F9D3E2CAAE3C900E1D5E4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79ABB4592C8F0E51001D8AF0 /* Colors.xcassets */; };
+		799F9D3F2CAAE4B000E1D5E4 /* WidgetTimelineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E6584C2B2326FA00DE5A0A /* WidgetTimelineService.swift */; };
+		799F9D402CAAE4D500E1D5E4 /* String+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797B4D952B2115CB001DAC30 /* String+Constants.swift */; };
+		799F9D412CAAE4E700E1D5E4 /* TaskProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792242F62B232EE10004F4FC /* TaskProvider.swift */; };
+		799F9D422CAAE4F800E1D5E4 /* TaskEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792242F42B232EC60004F4FC /* TaskEntry.swift */; };
+		799F9D432CAAE50600E1D5E4 /* TaskWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792242F22B232EB80004F4FC /* TaskWidget.swift */; };
+		799F9D442CAAE51200E1D5E4 /* TaskWidgetHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B349162B23CEBE00AAB0A9 /* TaskWidgetHeader.swift */; };
+		799F9D452CAAE52400E1D5E4 /* PagingIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795E11892B2492CC0000F8AA /* PagingIntent.swift */; };
+		799F9D462CAAE52900E1D5E4 /* ColumnIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795E118B2B24A6290000F8AA /* ColumnIntent.swift */; };
+		799F9D472CAAE52F00E1D5E4 /* WidgetButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B3491D2B23DBBC00AAB0A9 /* WidgetButtonType.swift */; };
+		799F9D482CAAE53400E1D5E4 /* WidgetColumnButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B349182B23CF2A00AAB0A9 /* WidgetColumnButton.swift */; };
+		799F9D492CAAE53900E1D5E4 /* WidgetPageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B3491A2B23D9FD00AAB0A9 /* WidgetPageButton.swift */; };
+		799F9D4A2CAAE54300E1D5E4 /* TaskItemPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795E11862B2484E90000F8AA /* TaskItemPlaceholder.swift */; };
+		799F9D4B2CAAE56300E1D5E4 /* Image+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988A0442AAE362400C63265 /* Image+Extensions.swift */; };
+		799F9D4C2CAAE58C00E1D5E4 /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988A0322AAE307E00C63265 /* Localized.swift */; };
+		799F9D4D2CAAE5C800E1D5E4 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54912AD33B9600D064C2 /* Category+CoreDataClass.swift */; };
+		799F9D4E2CAAE5C800E1D5E4 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54902AD33B9600D064C2 /* Category+CoreDataProperties.swift */; };
+		799F9D4F2CAAE5C800E1D5E4 /* Category+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790126122AD48684005620C2 /* Category+Defaults.swift */; };
+		799F9D502CAAE5C800E1D5E4 /* Category+DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799070B62AEA55090051AAC8 /* Category+DTO.swift */; };
+		799F9D512CAAE5C800E1D5E4 /* ColorComponents+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54A22AD33B9600D064C2 /* ColorComponents+CoreDataClass.swift */; };
+		799F9D522CAAE5C800E1D5E4 /* ColorComponents+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54A32AD33B9600D064C2 /* ColorComponents+CoreDataProperties.swift */; };
+		799F9D532CAAE5C800E1D5E4 /* ColorComponents+DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798605622AD5C99E007A64B3 /* ColorComponents+DTO.swift */; };
+		799F9D542CAAE5C800E1D5E4 /* Priority+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54A02AD33B9600D064C2 /* Priority+CoreDataClass.swift */; };
+		799F9D552CAAE5C800E1D5E4 /* Priority+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD549F2AD33B9600D064C2 /* Priority+CoreDataProperties.swift */; };
+		799F9D562CAAE5C800E1D5E4 /* Priority+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790126102AD4844C005620C2 /* Priority+Defaults.swift */; };
+		799F9D572CAAE5C800E1D5E4 /* Priority+DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799070B82AEA55150051AAC8 /* Priority+DTO.swift */; };
+		799F9D582CAAE5C800E1D5E4 /* RepeatingTasks+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798055AA2B9F17D000129BBA /* RepeatingTasks+CoreDataClass.swift */; };
+		799F9D592CAAE5C800E1D5E4 /* RepeatingTasks+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798055AB2B9F17D000129BBA /* RepeatingTasks+CoreDataProperties.swift */; };
+		799F9D5A2CAAE5C800E1D5E4 /* RepeatingTask+DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B52F7D2BAB28FB007CF9BA /* RepeatingTask+DTO.swift */; };
+		799F9D5B2CAAE5C800E1D5E4 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54982AD33B9600D064C2 /* Task+CoreDataClass.swift */; };
+		799F9D5C2CAAE5C800E1D5E4 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54972AD33B9600D064C2 /* Task+CoreDataProperties.swift */; };
+		799F9D5D2CAAE5C800E1D5E4 /* Task+DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798605602AD5C00B007A64B3 /* Task+DTO.swift */; };
+		799F9D5E2CAAE5C800E1D5E4 /* Task+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD74D12AD9A27200DCD573 /* Task+Extensions.swift */; };
+		799F9D5F2CAAE5C800E1D5E4 /* TaskColumn+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD549C2AD33B9600D064C2 /* TaskColumn+CoreDataClass.swift */; };
+		799F9D602CAAE5C800E1D5E4 /* TaskColumn+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD549D2AD33B9600D064C2 /* TaskColumn+CoreDataProperties.swift */; };
+		799F9D612CAAE5C800E1D5E4 /* TaskColumn+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790126142AD48710005620C2 /* TaskColumn+Defaults.swift */; };
+		799F9D622CAAE5C800E1D5E4 /* TaskColumn+DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799070B42AEA53330051AAC8 /* TaskColumn+DTO.swift */; };
+		799F9D632CAAE5C800E1D5E4 /* TaskStep+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54932AD33B9600D064C2 /* TaskStep+CoreDataClass.swift */; };
+		799F9D642CAAE5C800E1D5E4 /* TaskStep+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54942AD33B9600D064C2 /* TaskStep+CoreDataProperties.swift */; };
+		799F9D652CAAE5C800E1D5E4 /* TaskStep+DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988C4B32AE2E126004621EA /* TaskStep+DTO.swift */; };
+		799F9D662CAAE5C800E1D5E4 /* TaskWise.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54992AD33B9600D064C2 /* TaskWise.xcdatamodeld */; };
+		799F9D672CAAE5F500E1D5E4 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790C190C2AD34B52008647B8 /* Color+Extensions.swift */; };
+		799F9D682CAAE60600E1D5E4 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988A0462AAE362400C63265 /* String+Extensions.swift */; };
+		799F9D692CAAE61400E1D5E4 /* NamedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793C648C2AED9F3800C9D3FF /* NamedItem.swift */; };
+		799F9D6A2CAAE62000E1D5E4 /* RepeatBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794AC2852BB424F800DAC0F9 /* RepeatBehaviour.swift */; };
+		799F9D6B2CAAE67000E1D5E4 /* DataOperationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E84F4D2C4933AF00C4945E /* DataOperationError.swift */; };
+		799F9D6C2CAAE67000E1D5E4 /* DataServiceInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7944D7422AF6DD59001A528D /* DataServiceInput.swift */; };
+		799F9D6D2CAAE67000E1D5E4 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54952AD33B9600D064C2 /* DataService.swift */; };
+		799F9D6E2CAAE67000E1D5E4 /* DataService+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797B4DAC2B212997001DAC30 /* DataService+Category.swift */; };
+		799F9D6F2CAAE67000E1D5E4 /* DataService+Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797B4DAE2B2129A2001DAC30 /* DataService+Fetch.swift */; };
+		799F9D702CAAE67000E1D5E4 /* DataService+Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799070C42AEA717D0051AAC8 /* DataService+Priority.swift */; };
+		799F9D712CAAE67000E1D5E4 /* DataService+RepeatingTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799A42862B9F289300041AA3 /* DataService+RepeatingTasks.swift */; };
+		799F9D722CAAE67000E1D5E4 /* DataService+Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799070BE2AEA6BE90051AAC8 /* DataService+Task.swift */; };
+		799F9D732CAAE67000E1D5E4 /* DataService+TaskColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799070C22AEA70F50051AAC8 /* DataService+TaskColumn.swift */; };
+		799F9D742CAAE67000E1D5E4 /* DateService+Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791CA3752B224EB8009A5395 /* DateService+Widget.swift */; };
+		799F9D752CAAE67E00E1D5E4 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988A0432AAE362400C63265 /* Int+Extensions.swift */; };
+		799F9D762CAAE68B00E1D5E4 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798605642AD5E03C007A64B3 /* Date+Extensions.swift */; };
+		799F9D772CAAE69700E1D5E4 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988A0482AAE362400C63265 /* Double+Extensions.swift */; };
+		799F9D782CAAE6A500E1D5E4 /* RepeatFrequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794AC2812BB424E800DAC0F9 /* RepeatFrequency.swift */; };
+		799F9D792CAAE6B200E1D5E4 /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988A0472AAE362400C63265 /* CGFloat+Extensions.swift */; };
+		799F9D7A2CAAE6BB00E1D5E4 /* CustomRepeatSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794AC2872BB424FD00DAC0F9 /* CustomRepeatSchedule.swift */; };
+		799F9D7B2CAAE6C800E1D5E4 /* RepeatUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794AC27F2BB424E000DAC0F9 /* RepeatUnit.swift */; };
+		799F9D7C2CAAE6E000E1D5E4 /* WidgetColumnButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B349122B23CBA500AAB0A9 /* WidgetColumnButtonStyle.swift */; };
+		799F9D7D2CAAE6E700E1D5E4 /* WidgetPageButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B3491F2B23DD4100AAB0A9 /* WidgetPageButtonStyle.swift */; };
+		799F9D7E2CAAE6FE00E1D5E4 /* TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983000D2B17C4D90013B834 /* TextStyle.swift */; };
+		799F9D7F2CAAE72100E1D5E4 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983000A2B17C0D10013B834 /* Fonts.swift */; };
+		799F9D802CAAE73F00E1D5E4 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EAF75E2AB9EC3D00FC05BE /* View+Extensions.swift */; };
+		799F9D812CAAE75800E1D5E4 /* TaskItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B823ED2B1E77970062B6E5 /* TaskItemView.swift */; };
+		799F9D822CAAE77000E1D5E4 /* StyledText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794621AF2B1915360060F6CD /* StyledText.swift */; };
+		799F9D832CAAE78B00E1D5E4 /* StyledTextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794621B32B1917970060F6CD /* StyledTextModel.swift */; };
 		79A0C2DF2B226B1E005B3F04 /* TaskWise.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54992AD33B9600D064C2 /* TaskWise.xcdatamodeld */; };
 		79A519902B1BA29F00B0EEC2 /* ListButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A5198F2B1BA29F00B0EEC2 /* ListButtonStyle.swift */; };
 		79ABB4312C8F0DF9001D8AF0 /* TaskWiseMacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ABB4302C8F0DF9001D8AF0 /* TaskWiseMacApp.swift */; };
@@ -3275,8 +3344,77 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				799F9D6B2CAAE67000E1D5E4 /* DataOperationError.swift in Sources */,
+				799F9D7D2CAAE6E700E1D5E4 /* WidgetPageButtonStyle.swift in Sources */,
+				799F9D6C2CAAE67000E1D5E4 /* DataServiceInput.swift in Sources */,
+				799F9D6D2CAAE67000E1D5E4 /* DataService.swift in Sources */,
+				799F9D6E2CAAE67000E1D5E4 /* DataService+Category.swift in Sources */,
+				799F9D6F2CAAE67000E1D5E4 /* DataService+Fetch.swift in Sources */,
+				799F9D702CAAE67000E1D5E4 /* DataService+Priority.swift in Sources */,
+				799F9D712CAAE67000E1D5E4 /* DataService+RepeatingTasks.swift in Sources */,
+				799F9D722CAAE67000E1D5E4 /* DataService+Task.swift in Sources */,
+				799F9D732CAAE67000E1D5E4 /* DataService+TaskColumn.swift in Sources */,
+				799F9D742CAAE67000E1D5E4 /* DateService+Widget.swift in Sources */,
+				799F9D4D2CAAE5C800E1D5E4 /* Category+CoreDataClass.swift in Sources */,
+				799F9D7E2CAAE6FE00E1D5E4 /* TextStyle.swift in Sources */,
+				799F9D772CAAE69700E1D5E4 /* Double+Extensions.swift in Sources */,
+				799F9D4E2CAAE5C800E1D5E4 /* Category+CoreDataProperties.swift in Sources */,
+				799F9D7B2CAAE6C800E1D5E4 /* RepeatUnit.swift in Sources */,
+				799F9D4F2CAAE5C800E1D5E4 /* Category+Defaults.swift in Sources */,
+				799F9D502CAAE5C800E1D5E4 /* Category+DTO.swift in Sources */,
+				799F9D512CAAE5C800E1D5E4 /* ColorComponents+CoreDataClass.swift in Sources */,
+				799F9D522CAAE5C800E1D5E4 /* ColorComponents+CoreDataProperties.swift in Sources */,
+				799F9D532CAAE5C800E1D5E4 /* ColorComponents+DTO.swift in Sources */,
+				799F9D542CAAE5C800E1D5E4 /* Priority+CoreDataClass.swift in Sources */,
+				799F9D672CAAE5F500E1D5E4 /* Color+Extensions.swift in Sources */,
+				799F9D552CAAE5C800E1D5E4 /* Priority+CoreDataProperties.swift in Sources */,
+				799F9D562CAAE5C800E1D5E4 /* Priority+Defaults.swift in Sources */,
+				799F9D7C2CAAE6E000E1D5E4 /* WidgetColumnButtonStyle.swift in Sources */,
+				799F9D572CAAE5C800E1D5E4 /* Priority+DTO.swift in Sources */,
+				799F9D682CAAE60600E1D5E4 /* String+Extensions.swift in Sources */,
+				799F9D582CAAE5C800E1D5E4 /* RepeatingTasks+CoreDataClass.swift in Sources */,
+				799F9D592CAAE5C800E1D5E4 /* RepeatingTasks+CoreDataProperties.swift in Sources */,
+				799F9D5A2CAAE5C800E1D5E4 /* RepeatingTask+DTO.swift in Sources */,
+				799F9D5B2CAAE5C800E1D5E4 /* Task+CoreDataClass.swift in Sources */,
+				799F9D5C2CAAE5C800E1D5E4 /* Task+CoreDataProperties.swift in Sources */,
+				799F9D5D2CAAE5C800E1D5E4 /* Task+DTO.swift in Sources */,
+				799F9D7A2CAAE6BB00E1D5E4 /* CustomRepeatSchedule.swift in Sources */,
+				799F9D5E2CAAE5C800E1D5E4 /* Task+Extensions.swift in Sources */,
+				799F9D5F2CAAE5C800E1D5E4 /* TaskColumn+CoreDataClass.swift in Sources */,
+				799F9D602CAAE5C800E1D5E4 /* TaskColumn+CoreDataProperties.swift in Sources */,
+				799F9D832CAAE78B00E1D5E4 /* StyledTextModel.swift in Sources */,
+				799F9D612CAAE5C800E1D5E4 /* TaskColumn+Defaults.swift in Sources */,
+				799F9D622CAAE5C800E1D5E4 /* TaskColumn+DTO.swift in Sources */,
+				799F9D632CAAE5C800E1D5E4 /* TaskStep+CoreDataClass.swift in Sources */,
+				799F9D642CAAE5C800E1D5E4 /* TaskStep+CoreDataProperties.swift in Sources */,
+				799F9D652CAAE5C800E1D5E4 /* TaskStep+DTO.swift in Sources */,
+				799F9D662CAAE5C800E1D5E4 /* TaskWise.xcdatamodeld in Sources */,
+				799F9D432CAAE50600E1D5E4 /* TaskWidget.swift in Sources */,
+				799F9D752CAAE67E00E1D5E4 /* Int+Extensions.swift in Sources */,
+				799F9D4C2CAAE58C00E1D5E4 /* Localized.swift in Sources */,
+				799F9D792CAAE6B200E1D5E4 /* CGFloat+Extensions.swift in Sources */,
+				799F9D492CAAE53900E1D5E4 /* WidgetPageButton.swift in Sources */,
+				799F9D782CAAE6A500E1D5E4 /* RepeatFrequency.swift in Sources */,
+				799F9D482CAAE53400E1D5E4 /* WidgetColumnButton.swift in Sources */,
+				799F9D462CAAE52900E1D5E4 /* ColumnIntent.swift in Sources */,
+				799F9D442CAAE51200E1D5E4 /* TaskWidgetHeader.swift in Sources */,
+				799F9D4A2CAAE54300E1D5E4 /* TaskItemPlaceholder.swift in Sources */,
+				799F9D4B2CAAE56300E1D5E4 /* Image+Extensions.swift in Sources */,
+				799F9D412CAAE4E700E1D5E4 /* TaskProvider.swift in Sources */,
+				799F9D422CAAE4F800E1D5E4 /* TaskEntry.swift in Sources */,
+				799F9D402CAAE4D500E1D5E4 /* String+Constants.swift in Sources */,
+				799F9D802CAAE73F00E1D5E4 /* View+Extensions.swift in Sources */,
 				799F9D3C2CAAE30D00E1D5E4 /* TaskWiseWidgetMac.swift in Sources */,
+				799F9D812CAAE75800E1D5E4 /* TaskItemView.swift in Sources */,
+				799F9D6A2CAAE62000E1D5E4 /* RepeatBehaviour.swift in Sources */,
+				799F9D472CAAE52F00E1D5E4 /* WidgetButtonType.swift in Sources */,
+				799F9D7F2CAAE72100E1D5E4 /* Fonts.swift in Sources */,
+				799F9D762CAAE68B00E1D5E4 /* Date+Extensions.swift in Sources */,
 				799F9D3D2CAAE30D00E1D5E4 /* TaskWiseWidgetMacBundle.swift in Sources */,
+				799F9D692CAAE61400E1D5E4 /* NamedItem.swift in Sources */,
+				799F9D452CAAE52400E1D5E4 /* PagingIntent.swift in Sources */,
+				799F9D3F2CAAE4B000E1D5E4 /* WidgetTimelineService.swift in Sources */,
+				799F9D822CAAE77000E1D5E4 /* StyledText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
