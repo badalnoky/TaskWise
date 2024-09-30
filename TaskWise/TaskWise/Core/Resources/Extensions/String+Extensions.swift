@@ -8,6 +8,12 @@ public extension String {
     static var space = " "
     static var colon = ":"
 
+    // swiftlint: disable force_cast
+    static var groupIdentifierPrefix: String {
+        Bundle.main.object(forInfoDictionaryKey: "GroupIdentifierPrefix") as! String
+    }
+    // swiftlint: enable force_cast
+
     static func dashboardLink(index: Int) -> String {
         "TaskWiseApp://Dashboard/\(index)"
     }

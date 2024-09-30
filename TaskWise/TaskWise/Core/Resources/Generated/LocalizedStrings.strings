@@ -14,6 +14,7 @@
 "Alert.updateRepeating" = "This is a repeating task. Would you like to update this task only or all future tasks?";
 "App.groupIdentifier" = "group.bercidalnoky.TaskWise";
 "App.host" = "Dashboard";
+"App.macGroupIdentifier" = "%@group.me.bercidalnoky.TaskWiseMac";
 "App.scheme" = "TaskWiseApp";
 "App.sqlite" = "TaskWise.sqlite";
 "App.taskPath" = "Task";

@@ -939,8 +939,9 @@
 		799F9D362CAAE30D00E1D5E4 /* TaskWiseWidgetMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TaskWiseWidgetMac.entitlements; sourceTree = "<group>"; };
 		799F9D372CAAE30D00E1D5E4 /* TaskWiseWidgetMac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskWiseWidgetMac.swift; sourceTree = "<group>"; };
 		799F9D382CAAE30D00E1D5E4 /* TaskWiseWidgetMacBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskWiseWidgetMacBundle.swift; sourceTree = "<group>"; };
+		799F9D842CAAE97400E1D5E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		79A5198F2B1BA29F00B0EEC2 /* ListButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListButtonStyle.swift; sourceTree = "<group>"; };
-		79ABB42E2C8F0DF9001D8AF0 /* TaskWiseMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskWiseMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		79ABB42E2C8F0DF9001D8AF0 /* TaskWiseMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = TaskWiseMac.app; path = /Users/dalnokyberci/Developer/TaskWise/TaskWise/build/Debug/TaskWiseMac.app; sourceTree = "<absolute>"; };
 		79ABB4302C8F0DF9001D8AF0 /* TaskWiseMacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskWiseMacApp.swift; sourceTree = "<group>"; };
 		79ABB4342C8F0DFA001D8AF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		79ABB4372C8F0DFA001D8AF0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -1161,7 +1162,6 @@
 				797B4D722B2107D7001DAC30 /* TaskWiseWidgetExtension.appex */,
 				79BC64212BDB5E0F0081B299 /* TaskWise.app */,
 				79E176392BE2B676006577A8 /* TaskWiseWatchWidgetExtension.appex */,
-				79ABB42E2C8F0DF9001D8AF0 /* TaskWiseMac.app */,
 				79ABB43E2C8F0DFA001D8AF0 /* TaskWiseMacTests.xctest */,
 				79ABB4482C8F0DFA001D8AF0 /* TaskWiseMacUITests.xctest */,
 				799F9D202CAAE25B00E1D5E4 /* TaskWiseWidgetMacExtension.appex */,
@@ -2004,9 +2004,10 @@
 		79ABB42F2C8F0DF9001D8AF0 /* TaskWiseMac */ = {
 			isa = PBXGroup;
 			children = (
-				798A6D012C91CD5A00DBB696 /* DI */,
 				79ABB4392C8F0DFA001D8AF0 /* TaskWiseMac.entitlements */,
+				799F9D842CAAE97400E1D5E4 /* Info.plist */,
 				79ABB45B2C8F0EED001D8AF0 /* App */,
+				798A6D012C91CD5A00DBB696 /* DI */,
 				79ABB45C2C8F0F36001D8AF0 /* Resources */,
 				792EC2052C62BD1800982732 /* Scene */,
 			);
@@ -4201,6 +4202,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TaskWiseMac/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TaskWise;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -4236,6 +4238,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TaskWiseMac/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TaskWise;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
