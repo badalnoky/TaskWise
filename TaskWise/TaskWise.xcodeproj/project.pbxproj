@@ -438,6 +438,13 @@
 		799AED9D2BDEBE2B0024144F /* TaskStep+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E14AD52AE41A5D00FF730D /* TaskStep+Mock.swift */; };
 		799D0F8A2C76049F00B62B50 /* ReorderableList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799D0F892C76049800B62B50 /* ReorderableList.swift */; };
 		799D48E32ABC394400C149E3 /* CalendarViewModel+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799D48E22ABC394400C149E3 /* CalendarViewModel+Mock.swift */; };
+		799F9D212CAAE25B00E1D5E4 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 797B4D732B2107D7001DAC30 /* WidgetKit.framework */; };
+		799F9D222CAAE25B00E1D5E4 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 797B4D752B2107D7001DAC30 /* SwiftUI.framework */; };
+		799F9D2E2CAAE25C00E1D5E4 /* TaskWiseWidgetMacExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 799F9D202CAAE25B00E1D5E4 /* TaskWiseWidgetMacExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		799F9D3A2CAAE30D00E1D5E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 799F9D342CAAE30D00E1D5E4 /* Assets.xcassets */; };
+		799F9D3C2CAAE30D00E1D5E4 /* TaskWiseWidgetMac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799F9D372CAAE30D00E1D5E4 /* TaskWiseWidgetMac.swift */; };
+		799F9D3D2CAAE30D00E1D5E4 /* TaskWiseWidgetMacBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799F9D382CAAE30D00E1D5E4 /* TaskWiseWidgetMacBundle.swift */; };
+		799F9D3E2CAAE3C900E1D5E4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79ABB4592C8F0E51001D8AF0 /* Colors.xcassets */; };
 		79A0C2DF2B226B1E005B3F04 /* TaskWise.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79CD54992AD33B9600D064C2 /* TaskWise.xcdatamodeld */; };
 		79A519902B1BA29F00B0EEC2 /* ListButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A5198F2B1BA29F00B0EEC2 /* ListButtonStyle.swift */; };
 		79ABB4312C8F0DF9001D8AF0 /* TaskWiseMacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ABB4302C8F0DF9001D8AF0 /* TaskWiseMacApp.swift */; };
@@ -600,6 +607,13 @@
 			remoteGlobalIDString = 797B4D712B2107D7001DAC30;
 			remoteInfo = TaskWiseWidgetExtension;
 		};
+		799F9D2C2CAAE25C00E1D5E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 790A80FB2AAE19A600283D7E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 799F9D1F2CAAE25B00E1D5E4;
+			remoteInfo = TaskWiseWidgetMacExtension;
+		};
 		79ABB43F2C8F0DFA001D8AF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 790A80FB2AAE19A600283D7E /* Project object */;
@@ -638,6 +652,17 @@
 			dstSubfolderSpec = 13;
 			files = (
 				797B4D812B2107D8001DAC30 /* TaskWiseWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		799F9D2F2CAAE25C00E1D5E4 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				799F9D2E2CAAE25C00E1D5E4 /* TaskWiseWidgetMacExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -839,6 +864,12 @@
 		799A42862B9F289300041AA3 /* DataService+RepeatingTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataService+RepeatingTasks.swift"; sourceTree = "<group>"; };
 		799D0F892C76049800B62B50 /* ReorderableList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderableList.swift; sourceTree = "<group>"; };
 		799D48E22ABC394400C149E3 /* CalendarViewModel+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarViewModel+Mock.swift"; sourceTree = "<group>"; };
+		799F9D202CAAE25B00E1D5E4 /* TaskWiseWidgetMacExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TaskWiseWidgetMacExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		799F9D342CAAE30D00E1D5E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		799F9D352CAAE30D00E1D5E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		799F9D362CAAE30D00E1D5E4 /* TaskWiseWidgetMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TaskWiseWidgetMac.entitlements; sourceTree = "<group>"; };
+		799F9D372CAAE30D00E1D5E4 /* TaskWiseWidgetMac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskWiseWidgetMac.swift; sourceTree = "<group>"; };
+		799F9D382CAAE30D00E1D5E4 /* TaskWiseWidgetMacBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskWiseWidgetMacBundle.swift; sourceTree = "<group>"; };
 		79A5198F2B1BA29F00B0EEC2 /* ListButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListButtonStyle.swift; sourceTree = "<group>"; };
 		79ABB42E2C8F0DF9001D8AF0 /* TaskWiseMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskWiseMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79ABB4302C8F0DF9001D8AF0 /* TaskWiseMacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskWiseMacApp.swift; sourceTree = "<group>"; };
@@ -960,6 +991,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		799F9D1D2CAAE25B00E1D5E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				799F9D222CAAE25B00E1D5E4 /* SwiftUI.framework in Frameworks */,
+				799F9D212CAAE25B00E1D5E4 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		79ABB42B2C8F0DF9001D8AF0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1034,6 +1074,7 @@
 				79BC64222BDB5E0F0081B299 /* TaskWiseWatch Watch App */,
 				79E1763C2BE2B676006577A8 /* TaskWiseWatchWidget */,
 				79ABB42F2C8F0DF9001D8AF0 /* TaskWiseMac */,
+				799F9D392CAAE30D00E1D5E4 /* TaskWiseWidgetMac */,
 				79ABB4412C8F0DFA001D8AF0 /* TaskWiseMacTests */,
 				79ABB44B2C8F0DFB001D8AF0 /* TaskWiseMacUITests */,
 				790A81042AAE19A700283D7E /* Products */,
@@ -1054,6 +1095,7 @@
 				79ABB42E2C8F0DF9001D8AF0 /* TaskWiseMac.app */,
 				79ABB43E2C8F0DFA001D8AF0 /* TaskWiseMacTests.xctest */,
 				79ABB4482C8F0DFA001D8AF0 /* TaskWiseMacUITests.xctest */,
+				799F9D202CAAE25B00E1D5E4 /* TaskWiseWidgetMacExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1856,6 +1898,18 @@
 			path = OrderIndicatedList;
 			sourceTree = "<group>";
 		};
+		799F9D392CAAE30D00E1D5E4 /* TaskWiseWidgetMac */ = {
+			isa = PBXGroup;
+			children = (
+				799F9D342CAAE30D00E1D5E4 /* Assets.xcassets */,
+				799F9D352CAAE30D00E1D5E4 /* Info.plist */,
+				799F9D362CAAE30D00E1D5E4 /* TaskWiseWidgetMac.entitlements */,
+				799F9D372CAAE30D00E1D5E4 /* TaskWiseWidgetMac.swift */,
+				799F9D382CAAE30D00E1D5E4 /* TaskWiseWidgetMacBundle.swift */,
+			);
+			path = TaskWiseWidgetMac;
+			sourceTree = "<group>";
+		};
 		79A0C2E12B2276D2005B3F04 /* TasksWidget */ = {
 			isa = PBXGroup;
 			children = (
@@ -2381,6 +2435,25 @@
 			productReference = 797B4D722B2107D7001DAC30 /* TaskWiseWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		799F9D1F2CAAE25B00E1D5E4 /* TaskWiseWidgetMacExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 799F9D332CAAE25C00E1D5E4 /* Build configuration list for PBXNativeTarget "TaskWiseWidgetMacExtension" */;
+			buildPhases = (
+				799F9D1C2CAAE25B00E1D5E4 /* Sources */,
+				799F9D1D2CAAE25B00E1D5E4 /* Frameworks */,
+				799F9D1E2CAAE25B00E1D5E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TaskWiseWidgetMacExtension;
+			packageProductDependencies = (
+			);
+			productName = TaskWiseWidgetMacExtension;
+			productReference = 799F9D202CAAE25B00E1D5E4 /* TaskWiseWidgetMacExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		79ABB42D2C8F0DF9001D8AF0 /* TaskWiseMac */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 79ABB4502C8F0DFB001D8AF0 /* Build configuration list for PBXNativeTarget "TaskWiseMac" */;
@@ -2393,10 +2466,12 @@
 				79ABB42B2C8F0DF9001D8AF0 /* Frameworks */,
 				79ABB42C2C8F0DF9001D8AF0 /* Resources */,
 				B741152EB8FE8715120A7109 /* [CP] Embed Pods Frameworks */,
+				799F9D2F2CAAE25C00E1D5E4 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				799F9D2D2CAAE25C00E1D5E4 /* PBXTargetDependency */,
 			);
 			name = TaskWiseMac;
 			productName = TaskWiseMac;
@@ -2499,6 +2574,9 @@
 					797B4D712B2107D7001DAC30 = {
 						CreatedOnToolsVersion = 15.0;
 					};
+					799F9D1F2CAAE25B00E1D5E4 = {
+						CreatedOnToolsVersion = 16.0;
+					};
 					79ABB42D2C8F0DF9001D8AF0 = {
 						CreatedOnToolsVersion = 16.0;
 					};
@@ -2538,6 +2616,7 @@
 				79BC64202BDB5E0F0081B299 /* TaskWiseWatch Watch App */,
 				79E176382BE2B676006577A8 /* TaskWiseWatchWidgetExtension */,
 				79ABB42D2C8F0DF9001D8AF0 /* TaskWiseMac */,
+				799F9D1F2CAAE25B00E1D5E4 /* TaskWiseWidgetMacExtension */,
 				79ABB43D2C8F0DFA001D8AF0 /* TaskWiseMacTests */,
 				79ABB4472C8F0DFA001D8AF0 /* TaskWiseMacUITests */,
 			);
@@ -2578,6 +2657,15 @@
 				79B349112B23B70E00AAB0A9 /* ProximaNova-Bold.otf in Resources */,
 				797B4D7D2B2107D8001DAC30 /* Assets.xcassets in Resources */,
 				797B4D8D2B211242001DAC30 /* Colors.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		799F9D1E2CAAE25B00E1D5E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				799F9D3A2CAAE30D00E1D5E4 /* Assets.xcassets in Resources */,
+				799F9D3E2CAAE3C900E1D5E4 /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3183,6 +3271,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		799F9D1C2CAAE25B00E1D5E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				799F9D3C2CAAE30D00E1D5E4 /* TaskWiseWidgetMac.swift in Sources */,
+				799F9D3D2CAAE30D00E1D5E4 /* TaskWiseWidgetMacBundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		79ABB42A2C8F0DF9001D8AF0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3486,6 +3583,11 @@
 			isa = PBXTargetDependency;
 			target = 797B4D712B2107D7001DAC30 /* TaskWiseWidgetExtension */;
 			targetProxy = 797B4D7F2B2107D8001DAC30 /* PBXContainerItemProxy */;
+		};
+		799F9D2D2CAAE25C00E1D5E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 799F9D1F2CAAE25B00E1D5E4 /* TaskWiseWidgetMacExtension */;
+			targetProxy = 799F9D2C2CAAE25C00E1D5E4 /* PBXContainerItemProxy */;
 		};
 		79ABB4402C8F0DFA001D8AF0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3879,6 +3981,70 @@
 			};
 			name = Release;
 		};
+		799F9D302CAAE25C00E1D5E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = TaskWiseWidgetMac/TaskWiseWidgetMac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2D3N9A382G;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TaskWiseWidgetMac/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TaskWiseWidgetMac;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.bercidalnoky.TaskWiseMac.TaskWiseWidgetMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		799F9D312CAAE25C00E1D5E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = TaskWiseWidgetMac/TaskWiseWidgetMac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2D3N9A382G;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TaskWiseWidgetMac/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TaskWiseWidgetMac;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.bercidalnoky.TaskWiseMac.TaskWiseWidgetMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		79ABB4512C8F0DFB001D8AF0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ED6F965C8B1B98BA47DD13F9 /* Pods-TaskWiseMac.debug.xcconfig */;
@@ -4209,6 +4375,15 @@
 			buildConfigurations = (
 				797B4D832B2107D8001DAC30 /* Debug */,
 				797B4D842B2107D8001DAC30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		799F9D332CAAE25C00E1D5E4 /* Build configuration list for PBXNativeTarget "TaskWiseWidgetMacExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				799F9D302CAAE25C00E1D5E4 /* Debug */,
+				799F9D312CAAE25C00E1D5E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
