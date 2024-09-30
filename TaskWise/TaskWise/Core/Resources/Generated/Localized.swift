@@ -31,6 +31,13 @@ internal enum Str {
         internal static let groupIdentifier = String(localized: "App.groupIdentifier", defaultValue: "group.bercidalnoky.TaskWise")
         /// Dashboard
         internal static let host = String(localized: "App.host", defaultValue: "Dashboard")
+        /// %@group.me.bercidalnoky.TaskWiseMac
+        internal static func macGroupIdentifier(_ p1: String) -> String {
+            _sf(
+                format: String(localized: "App.macGroupIdentifier" , defaultValue: "%@group.me.bercidalnoky.TaskWiseMac"),
+                with: p1
+            )
+        }
         /// TaskWiseApp
         internal static let scheme = String(localized: "App.scheme", defaultValue: "TaskWiseApp")
         /// TaskWise.sqlite

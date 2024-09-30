@@ -27,7 +27,12 @@ public final class DataService: DataServiceInput {
 
     private func loadContainer() {
         // swiftlint: disable force_unwrapping
-        let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: Str.App.groupIdentifier)!
+        #if os(macOS)
+        let groupIdentifier = Str.App.macGroupIdentifier(String.groupIdentifierPrefix)
+        #else
+        let groupIdentifier = Str.App.groupIdentifier
+        #endif
+        let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: groupIdentifier)!
         let storeURL = containerURL.appendingPathComponent(Str.App.sqlite)
         let description = container.persistentStoreDescriptions.first!
         // swiftlint: enable force_unwrapping

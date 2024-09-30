@@ -133,6 +133,17 @@
         }
       }
     },
+    "App.macGroupIdentifier" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@group.me.bercidalnoky.TaskWiseMac"
+          }
+        }
+      }
+    },
     "App.scheme" : {
       "extractionState" : "manual",
       "localizations" : {
