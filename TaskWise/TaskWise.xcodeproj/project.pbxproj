@@ -14,7 +14,6 @@
 		790A81072AAE19A700283D7E /* TaskWiseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790A81062AAE19A700283D7E /* TaskWiseApp.swift */; };
 		790A810B2AAE19A700283D7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 790A810A2AAE19A700283D7E /* Assets.xcassets */; };
 		790A810E2AAE19A700283D7E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 790A810D2AAE19A700283D7E /* Preview Assets.xcassets */; };
-		790A81222AAE19A700283D7E /* TaskWiseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790A81212AAE19A700283D7E /* TaskWiseUITests.swift */; };
 		790A81332AAE285A00283D7E /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 790A81322AAE285A00283D7E /* Localizable.xcstrings */; };
 		790C190D2AD34B52008647B8 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790C190C2AD34B52008647B8 /* Color+Extensions.swift */; };
 		7911B20B2C82003000E7D1D4 /* FilterPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7911B2092C82003000E7D1D4 /* FilterPopoverView.swift */; };
@@ -75,6 +74,7 @@
 		792242F52B232EC60004F4FC /* TaskEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792242F42B232EC60004F4FC /* TaskEntry.swift */; };
 		792242F72B232EE10004F4FC /* TaskProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792242F62B232EE10004F4FC /* TaskProvider.swift */; };
 		792736162BDFC45000F11950 /* WatchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792736152BDFC45000F11950 /* WatchRow.swift */; };
+		792CE4672CAC15E200CC8355 /* DashboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792CE4662CAC15E200CC8355 /* DashboardUITests.swift */; };
 		792E16A62B16888F005641F4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 792E16A52B16888F005641F4 /* Colors.xcassets */; };
 		792E99DA2BDB6C3F0008C7A2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 792E99D92BDB6C3F0008C7A2 /* Colors.xcassets */; };
 		792E99DE2BDB89C70008C7A2 /* CompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792E99DD2BDB89C70008C7A2 /* CompletionView.swift */; };
@@ -773,7 +773,6 @@
 		790A810D2AAE19A700283D7E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		790A81132AAE19A700283D7E /* TaskWiseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskWiseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		790A811D2AAE19A700283D7E /* TaskWiseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskWiseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		790A81212AAE19A700283D7E /* TaskWiseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskWiseUITests.swift; sourceTree = "<group>"; };
 		790A81322AAE285A00283D7E /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		790C190C2AD34B52008647B8 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		7911B2092C82003000E7D1D4 /* FilterPopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPopoverView.swift; sourceTree = "<group>"; };
@@ -797,6 +796,7 @@
 		792242F42B232EC60004F4FC /* TaskEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEntry.swift; sourceTree = "<group>"; };
 		792242F62B232EE10004F4FC /* TaskProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskProvider.swift; sourceTree = "<group>"; };
 		792736152BDFC45000F11950 /* WatchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchRow.swift; sourceTree = "<group>"; };
+		792CE4662CAC15E200CC8355 /* DashboardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardUITests.swift; sourceTree = "<group>"; };
 		792E16A52B16888F005641F4 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		792E99D92BDB6C3F0008C7A2 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		792E99DD2BDB89C70008C7A2 /* CompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionView.swift; sourceTree = "<group>"; };
@@ -940,8 +940,8 @@
 		799F9D372CAAE30D00E1D5E4 /* TaskWiseWidgetMac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskWiseWidgetMac.swift; sourceTree = "<group>"; };
 		799F9D382CAAE30D00E1D5E4 /* TaskWiseWidgetMacBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskWiseWidgetMacBundle.swift; sourceTree = "<group>"; };
 		799F9D842CAAE97400E1D5E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		799F9D882CAC082700E1D5E4 /* TaskWiseMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskWiseMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79A5198F2B1BA29F00B0EEC2 /* ListButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListButtonStyle.swift; sourceTree = "<group>"; };
-		79ABB42E2C8F0DF9001D8AF0 /* TaskWiseMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = TaskWiseMac.app; path = /Users/dalnokyberci/Developer/TaskWise/TaskWise/build/Debug/TaskWiseMac.app; sourceTree = "<absolute>"; };
 		79ABB4302C8F0DF9001D8AF0 /* TaskWiseMacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskWiseMacApp.swift; sourceTree = "<group>"; };
 		79ABB4342C8F0DFA001D8AF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		79ABB4372C8F0DFA001D8AF0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -1165,6 +1165,7 @@
 				79ABB43E2C8F0DFA001D8AF0 /* TaskWiseMacTests.xctest */,
 				79ABB4482C8F0DFA001D8AF0 /* TaskWiseMacUITests.xctest */,
 				799F9D202CAAE25B00E1D5E4 /* TaskWiseWidgetMacExtension.appex */,
+				799F9D882CAC082700E1D5E4 /* TaskWiseMac.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1206,7 +1207,8 @@
 		790A81202AAE19A700283D7E /* TaskWiseUITests */ = {
 			isa = PBXGroup;
 			children = (
-				790A81212AAE19A700283D7E /* TaskWiseUITests.swift */,
+				794437442CAC563F00DC0483 /* iOS */,
+				794437432CAC562700DC0483 /* iPadOS */,
 			);
 			path = TaskWiseUITests;
 			sourceTree = "<group>";
@@ -1385,6 +1387,26 @@
 				793C648C2AED9F3800C9D3FF /* NamedItem.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		794437432CAC562700DC0483 /* iPadOS */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = iPadOS;
+			sourceTree = "<group>";
+		};
+		794437442CAC563F00DC0483 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				799F9D892CAC0A9300E1D5E4 /* AddTask */,
+				799F9D8A2CAC0A9D00E1D5E4 /* Calendar */,
+				799F9D8B2CAC0AA200E1D5E4 /* Dashboard */,
+				799F9D8C2CAC0AD800E1D5E4 /* Day */,
+				799F9D8D2CAC0AE700E1D5E4 /* Settings */,
+				799F9D8E2CAC0AED00E1D5E4 /* Task */,
+			);
+			path = iOS;
 			sourceTree = "<group>";
 		};
 		794621AE2B1915190060F6CD /* StyledText */ = {
@@ -1979,6 +2001,49 @@
 			path = TaskWiseWidgetMac;
 			sourceTree = "<group>";
 		};
+		799F9D892CAC0A9300E1D5E4 /* AddTask */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AddTask;
+			sourceTree = "<group>";
+		};
+		799F9D8A2CAC0A9D00E1D5E4 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		799F9D8B2CAC0AA200E1D5E4 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				792CE4662CAC15E200CC8355 /* DashboardUITests.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		799F9D8C2CAC0AD800E1D5E4 /* Day */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Day;
+			sourceTree = "<group>";
+		};
+		799F9D8D2CAC0AE700E1D5E4 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		799F9D8E2CAC0AED00E1D5E4 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
 		79A0C2E12B2276D2005B3F04 /* TasksWidget */ = {
 			isa = PBXGroup;
 			children = (
@@ -2545,7 +2610,7 @@
 			);
 			name = TaskWiseMac;
 			productName = TaskWiseMac;
-			productReference = 79ABB42E2C8F0DF9001D8AF0 /* TaskWiseMac.app */;
+			productReference = 799F9D882CAC082700E1D5E4 /* TaskWiseMac.app */;
 			productType = "com.apple.product-type.application";
 		};
 		79ABB43D2C8F0DFA001D8AF0 /* TaskWiseMacTests */ = {
@@ -3249,7 +3314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91B85EC22C2D70AD0030CD7E /* String+Extensions.swift in Sources */,
-				790A81222AAE19A700283D7E /* TaskWiseUITests.swift in Sources */,
+				792CE4672CAC15E200CC8355 /* DashboardUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
