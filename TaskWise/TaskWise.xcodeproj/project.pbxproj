@@ -236,6 +236,11 @@
 		798055B12B9F17D000129BBA /* RepeatingTasks+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798055AA2B9F17D000129BBA /* RepeatingTasks+CoreDataClass.swift */; };
 		798055B22B9F17D000129BBA /* RepeatingTasks+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798055AB2B9F17D000129BBA /* RepeatingTasks+CoreDataProperties.swift */; };
 		798055B32B9F17D000129BBA /* RepeatingTasks+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798055AB2B9F17D000129BBA /* RepeatingTasks+CoreDataProperties.swift */; };
+		79829D292CAD5EBB00434A4A /* AddTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79829D282CAD5EBB00434A4A /* AddTaskUITests.swift */; };
+		79829D2B2CADAE4D00434A4A /* CalendarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79829D2A2CADAE4D00434A4A /* CalendarUITests.swift */; };
+		79829D2D2CADB6EE00434A4A /* DayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79829D2C2CADB6EE00434A4A /* DayUITests.swift */; };
+		79829D2F2CADB73400434A4A /* SettingsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79829D2E2CADB73400434A4A /* SettingsUITests.swift */; };
+		79829D312CADB75A00434A4A /* TaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79829D302CADB75A00434A4A /* TaskUITests.swift */; };
 		7982A4CC2BF7850E00DA67D7 /* Date+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7982A4CB2BF7850E00DA67D7 /* Date+ExtensionsTests.swift */; };
 		7982A4D02BF785BD00DA67D7 /* String+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7982A4CF2BF785BD00DA67D7 /* String+ExtensionsTests.swift */; };
 		7982A4D62BF7875F00DA67D7 /* CustomRepeatScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7982A4D52BF7875F00DA67D7 /* CustomRepeatScheduleTests.swift */; };
@@ -867,6 +872,11 @@
 		797F3BA42BDD83E0002226B7 /* TaskDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewModel.swift; sourceTree = "<group>"; };
 		798055AA2B9F17D000129BBA /* RepeatingTasks+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RepeatingTasks+CoreDataClass.swift"; sourceTree = "<group>"; };
 		798055AB2B9F17D000129BBA /* RepeatingTasks+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RepeatingTasks+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		79829D282CAD5EBB00434A4A /* AddTaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskUITests.swift; sourceTree = "<group>"; };
+		79829D2A2CADAE4D00434A4A /* CalendarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarUITests.swift; sourceTree = "<group>"; };
+		79829D2C2CADB6EE00434A4A /* DayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayUITests.swift; sourceTree = "<group>"; };
+		79829D2E2CADB73400434A4A /* SettingsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUITests.swift; sourceTree = "<group>"; };
+		79829D302CADB75A00434A4A /* TaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskUITests.swift; sourceTree = "<group>"; };
 		7982A4CB2BF7850E00DA67D7 /* Date+ExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ExtensionsTests.swift"; sourceTree = "<group>"; };
 		7982A4CF2BF785BD00DA67D7 /* String+ExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ExtensionsTests.swift"; sourceTree = "<group>"; };
 		7982A4D52BF7875F00DA67D7 /* CustomRepeatScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRepeatScheduleTests.swift; sourceTree = "<group>"; };
@@ -2004,6 +2014,7 @@
 		799F9D892CAC0A9300E1D5E4 /* AddTask */ = {
 			isa = PBXGroup;
 			children = (
+				79829D282CAD5EBB00434A4A /* AddTaskUITests.swift */,
 			);
 			path = AddTask;
 			sourceTree = "<group>";
@@ -2011,6 +2022,7 @@
 		799F9D8A2CAC0A9D00E1D5E4 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				79829D2A2CADAE4D00434A4A /* CalendarUITests.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -2026,6 +2038,7 @@
 		799F9D8C2CAC0AD800E1D5E4 /* Day */ = {
 			isa = PBXGroup;
 			children = (
+				79829D2C2CADB6EE00434A4A /* DayUITests.swift */,
 			);
 			path = Day;
 			sourceTree = "<group>";
@@ -2033,6 +2046,7 @@
 		799F9D8D2CAC0AE700E1D5E4 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				79829D2E2CADB73400434A4A /* SettingsUITests.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -2040,6 +2054,7 @@
 		799F9D8E2CAC0AED00E1D5E4 /* Task */ = {
 			isa = PBXGroup;
 			children = (
+				79829D302CADB75A00434A4A /* TaskUITests.swift */,
 			);
 			path = Task;
 			sourceTree = "<group>";
@@ -3313,8 +3328,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79829D2D2CADB6EE00434A4A /* DayUITests.swift in Sources */,
+				79829D312CADB75A00434A4A /* TaskUITests.swift in Sources */,
 				91B85EC22C2D70AD0030CD7E /* String+Extensions.swift in Sources */,
+				79829D292CAD5EBB00434A4A /* AddTaskUITests.swift in Sources */,
 				792CE4672CAC15E200CC8355 /* DashboardUITests.swift in Sources */,
+				79829D2F2CADB73400434A4A /* SettingsUITests.swift in Sources */,
+				79829D2B2CADAE4D00434A4A /* CalendarUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
