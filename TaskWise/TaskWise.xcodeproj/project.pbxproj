@@ -101,6 +101,8 @@
 		794EF1342BEF795200C4AE2D /* InlineCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794EF12A2BEF783100C4AE2D /* InlineCompletionView.swift */; };
 		794EF1362BEF799600C4AE2D /* RectangularCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794EF12E2BEF785500C4AE2D /* RectangularCompletionView.swift */; };
 		794EF1372BEF799900C4AE2D /* CircularCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794EF1302BEF78EA00C4AE2D /* CircularCompletionView.swift */; };
+		7955D2462CAF25B200C4B439 /* UIScreen+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795F54ED2C7DF6BB0047E141 /* UIScreen+Extensions.swift */; };
+		7955D2492CAF273200C4B439 /* PadDashboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7955D2482CAF273200C4B439 /* PadDashboardUITests.swift */; };
 		7956E78A2BDBACC6008CFC77 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988A0462AAE362400C63265 /* String+Extensions.swift */; };
 		795CC8EA2ABAEF3B0093C4BC /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CC8E92ABAEF3B0093C4BC /* SettingsViewModel.swift */; };
 		795CC8EC2ABAF28A0093C4BC /* SettingsViewModel+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CC8EB2ABAF28A0093C4BC /* SettingsViewModel+Mock.swift */; };
@@ -815,6 +817,7 @@
 		794EF12A2BEF783100C4AE2D /* InlineCompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineCompletionView.swift; sourceTree = "<group>"; };
 		794EF12E2BEF785500C4AE2D /* RectangularCompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangularCompletionView.swift; sourceTree = "<group>"; };
 		794EF1302BEF78EA00C4AE2D /* CircularCompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularCompletionView.swift; sourceTree = "<group>"; };
+		7955D2482CAF273200C4B439 /* PadDashboardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadDashboardUITests.swift; sourceTree = "<group>"; };
 		795CC8E92ABAEF3B0093C4BC /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		795CC8EB2ABAF28A0093C4BC /* SettingsViewModel+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsViewModel+Mock.swift"; sourceTree = "<group>"; };
 		795CC8ED2ABAF63B0093C4BC /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
@@ -1374,6 +1377,7 @@
 		794437432CAC562700DC0483 /* iPadOS */ = {
 			isa = PBXGroup;
 			children = (
+				7955D2472CAF272A00C4B439 /* Dashboard */,
 			);
 			path = iPadOS;
 			sourceTree = "<group>";
@@ -1454,6 +1458,14 @@
 				794EF12E2BEF785500C4AE2D /* RectangularCompletionView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		7955D2472CAF272A00C4B439 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				7955D2482CAF273200C4B439 /* PadDashboardUITests.swift */,
+			);
+			path = Dashboard;
 			sourceTree = "<group>";
 		};
 		795E11882B2492B60000F8AA /* Intents */ = {
@@ -3284,7 +3296,9 @@
 				91B85EC22C2D70AD0030CD7E /* String+Extensions.swift in Sources */,
 				79829D292CAD5EBB00434A4A /* AddTaskUITests.swift in Sources */,
 				792CE4672CAC15E200CC8355 /* DashboardUITests.swift in Sources */,
+				7955D2462CAF25B200C4B439 /* UIScreen+Extensions.swift in Sources */,
 				79829D2F2CADB73400434A4A /* SettingsUITests.swift in Sources */,
+				7955D2492CAF273200C4B439 /* PadDashboardUITests.swift in Sources */,
 				79829D2B2CADAE4D00434A4A /* CalendarUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
