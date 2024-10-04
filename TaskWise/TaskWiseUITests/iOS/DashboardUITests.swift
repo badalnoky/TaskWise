@@ -40,4 +40,16 @@ final class DashboardUITests: XCTestCase {
             XCTAssertTrue(settingsLabel.exists)
         }
     }
+
+    func test_task_whenTapped_shouldNavigate() throws {
+        if UIScreen.isPhone {
+            let id = UUID().uuidString
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["plus.app.fill"].tap()
+            let titleTextfield = app.scrollViews.otherElements.textFields["Title"]
+            titleTextfield.tap()
+            titleTextfield.typeText(id)
+            app.scrollViews.otherElements.buttons["Create task"].tap()
+            app.collectionViews.scrollViews.otherElements.staticTexts[id].tap()
+        }
+    }
 }

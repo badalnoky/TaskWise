@@ -419,6 +419,7 @@
 		799070BF2AEA6BE90051AAC8 /* DataService+Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799070BE2AEA6BE90051AAC8 /* DataService+Task.swift */; };
 		799070C32AEA70F50051AAC8 /* DataService+TaskColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799070C22AEA70F50051AAC8 /* DataService+TaskColumn.swift */; };
 		799070C52AEA717D0051AAC8 /* DataService+Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799070C42AEA717D0051AAC8 /* DataService+Priority.swift */; };
+		79961BA72CB0585000157CF0 /* PadSettingsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79961BA62CB0585000157CF0 /* PadSettingsUITests.swift */; };
 		799A42872B9F289300041AA3 /* DataService+RepeatingTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799A42862B9F289300041AA3 /* DataService+RepeatingTasks.swift */; };
 		799A42882B9F2AD200041AA3 /* DataService+RepeatingTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799A42862B9F289300041AA3 /* DataService+RepeatingTasks.swift */; };
 		799AED962BDEBD710024144F /* Task+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E14AD32AE41A4500FF730D /* Task+Mock.swift */; };
@@ -565,7 +566,6 @@
 		79C838AA2B1D230B00F35483 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C838A92B1D230B00F35483 /* SettingsModel.swift */; };
 		79C988022C96E8A40086A510 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7921551F2AB9E8450044CDED /* IconButton.swift */; };
 		79C988032C96E8E50086A510 /* Image+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988A0442AAE362400C63265 /* Image+Extensions.swift */; };
-		79C988052C96EBFA0086A510 /* IconButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C988042C96EBF60086A510 /* IconButtonStyle.swift */; };
 		79C988062C96EC0B0086A510 /* IconButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C988042C96EBF60086A510 /* IconButtonStyle.swift */; };
 		79C988102C96F1390086A510 /* MacAddTaskPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C9880F2C96F1310086A510 /* MacAddTaskPopoverView.swift */; };
 		79C988142C96F18A0086A510 /* MacAddTaskPopoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C988132C96F1850086A510 /* MacAddTaskPopoverViewModel.swift */; };
@@ -918,6 +918,7 @@
 		799070BE2AEA6BE90051AAC8 /* DataService+Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataService+Task.swift"; sourceTree = "<group>"; };
 		799070C22AEA70F50051AAC8 /* DataService+TaskColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataService+TaskColumn.swift"; sourceTree = "<group>"; };
 		799070C42AEA717D0051AAC8 /* DataService+Priority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataService+Priority.swift"; sourceTree = "<group>"; };
+		79961BA62CB0585000157CF0 /* PadSettingsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadSettingsUITests.swift; sourceTree = "<group>"; };
 		799886522C03C2540092AD8D /* TaskWise.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TaskWise.xctestplan; sourceTree = "<group>"; };
 		799A42862B9F289300041AA3 /* DataService+RepeatingTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataService+RepeatingTasks.swift"; sourceTree = "<group>"; };
 		799D0F892C76049800B62B50 /* ReorderableList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderableList.swift; sourceTree = "<group>"; };
@@ -1116,13 +1117,13 @@
 			isa = PBXGroup;
 			children = (
 				790A81052AAE19A700283D7E /* TaskWise */,
-				790A81162AAE19A700283D7E /* TaskWiseTests */,
-				790A81202AAE19A700283D7E /* TaskWiseUITests */,
 				797B4D772B2107D7001DAC30 /* TaskWiseWidget */,
-				79BC64222BDB5E0F0081B299 /* TaskWiseWatch Watch App */,
-				79E1763C2BE2B676006577A8 /* TaskWiseWatchWidget */,
 				79ABB42F2C8F0DF9001D8AF0 /* TaskWiseMac */,
 				799F9D392CAAE30D00E1D5E4 /* TaskWiseWidgetMac */,
+				79BC64222BDB5E0F0081B299 /* TaskWiseWatch Watch App */,
+				79E1763C2BE2B676006577A8 /* TaskWiseWatchWidget */,
+				790A81162AAE19A700283D7E /* TaskWiseTests */,
+				790A81202AAE19A700283D7E /* TaskWiseUITests */,
 				79ABB4412C8F0DFA001D8AF0 /* TaskWiseMacTests */,
 				79ABB44B2C8F0DFB001D8AF0 /* TaskWiseMacUITests */,
 				790A81042AAE19A700283D7E /* Products */,
@@ -1257,13 +1258,13 @@
 		7921551B2AB9E80C0044CDED /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				79AFF6142C9B529C001E9755 /* MacCategoryColorPicker */,
 				793C64882AED9E5900C9D3FF /* CategoryColorPicker */,
 				79B823E92B1E71CC0062B6E5 /* ColumnHeader */,
 				798300152B17E82A0013B834 /* CombinedDatePicker */,
 				793C64852AED808800C9D3FF /* EditableText */,
 				7921551E2AB9E8360044CDED /* IconButton */,
 				7948F4F02C6DFC7F009838C9 /* ListItemView */,
+				79AFF6142C9B529C001E9755 /* MacCategoryColorPicker */,
 				799D0F882C76044C00B62B50 /* OrderIndicatedList */,
 				7948F4F42C6DFC8C009838C9 /* ReorderableList */,
 				794AC27C2BB424B400DAC0F9 /* RepeatBehaviourPicker */,
@@ -1308,9 +1309,9 @@
 		792E99DC2BDB89B50008C7A2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				792736142BDFC42900F11950 /* WatchRow */,
 				797F3B9C2BDD82EC002226B7 /* CompletionView */,
 				797F3B9D2BDD82FD002226B7 /* TaskCell */,
+				792736142BDFC42900F11950 /* WatchRow */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1377,7 +1378,8 @@
 		794437432CAC562700DC0483 /* iPadOS */ = {
 			isa = PBXGroup;
 			children = (
-				7955D2472CAF272A00C4B439 /* Dashboard */,
+				7955D2482CAF273200C4B439 /* PadDashboardUITests.swift */,
+				79961BA62CB0585000157CF0 /* PadSettingsUITests.swift */,
 			);
 			path = iPadOS;
 			sourceTree = "<group>";
@@ -1385,12 +1387,12 @@
 		794437442CAC563F00DC0483 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				799F9D892CAC0A9300E1D5E4 /* AddTask */,
-				799F9D8A2CAC0A9D00E1D5E4 /* Calendar */,
-				799F9D8B2CAC0AA200E1D5E4 /* Dashboard */,
-				799F9D8C2CAC0AD800E1D5E4 /* Day */,
-				799F9D8D2CAC0AE700E1D5E4 /* Settings */,
-				799F9D8E2CAC0AED00E1D5E4 /* Task */,
+				79829D282CAD5EBB00434A4A /* AddTaskUITests.swift */,
+				79829D2A2CADAE4D00434A4A /* CalendarUITests.swift */,
+				792CE4662CAC15E200CC8355 /* DashboardUITests.swift */,
+				79829D2C2CADB6EE00434A4A /* DayUITests.swift */,
+				79829D2E2CADB73400434A4A /* SettingsUITests.swift */,
+				79829D302CADB75A00434A4A /* TaskUITests.swift */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -1460,19 +1462,11 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		7955D2472CAF272A00C4B439 /* Dashboard */ = {
-			isa = PBXGroup;
-			children = (
-				7955D2482CAF273200C4B439 /* PadDashboardUITests.swift */,
-			);
-			path = Dashboard;
-			sourceTree = "<group>";
-		};
 		795E11882B2492B60000F8AA /* Intents */ = {
 			isa = PBXGroup;
 			children = (
-				795E11892B2492CC0000F8AA /* PagingIntent.swift */,
 				795E118B2B24A6290000F8AA /* ColumnIntent.swift */,
+				795E11892B2492CC0000F8AA /* PagingIntent.swift */,
 			);
 			path = Intents;
 			sourceTree = "<group>";
@@ -1515,9 +1509,9 @@
 		7971469A2C81F282000C27E0 /* Modal */ = {
 			isa = PBXGroup;
 			children = (
-				7911B20D2C82005000E7D1D4 /* Search */,
 				795F54E72C7DE9030047E141 /* AddTask */,
 				7911B2082C82000500E7D1D4 /* FilterPopover */,
+				7911B20D2C82005000E7D1D4 /* Search */,
 				795F54E82C7DE9230047E141 /* Task */,
 			);
 			path = Modal;
@@ -1591,7 +1585,6 @@
 		797B4DAB2B212981001DAC30 /* DataService */ = {
 			isa = PBXGroup;
 			children = (
-				7944D7422AF6DD59001A528D /* DataServiceInput.swift */,
 				79CD54952AD33B9600D064C2 /* DataService.swift */,
 				797B4DAC2B212997001DAC30 /* DataService+Category.swift */,
 				797B4DAE2B2129A2001DAC30 /* DataService+Fetch.swift */,
@@ -1599,6 +1592,7 @@
 				799A42862B9F289300041AA3 /* DataService+RepeatingTasks.swift */,
 				799070BE2AEA6BE90051AAC8 /* DataService+Task.swift */,
 				799070C22AEA70F50051AAC8 /* DataService+TaskColumn.swift */,
+				7944D7422AF6DD59001A528D /* DataServiceInput.swift */,
 				791CA3752B224EB8009A5395 /* DateService+Widget.swift */,
 			);
 			path = DataService;
@@ -1782,9 +1776,9 @@
 		7988A02F2AAE2FB100C63265 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
-				7932A8EA2BFCF9B000846371 /* Mocks */,
 				7983000A2B17C0D10013B834 /* Fonts.swift */,
 				7988A0322AAE307E00C63265 /* Localized.swift */,
+				7932A8EA2BFCF9B000846371 /* Mocks */,
 			);
 			path = Generated;
 			sourceTree = "<group>";
@@ -1937,12 +1931,20 @@
 		798FF86A2C9D8B1400B5B683 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				798FF8722C9D8F2500B5B683 /* MacDashboardViewModel.swift */,
-				798FF8702C9D8E6300B5B683 /* MacTaskPopoverViewModel.swift */,
 				798FF86B2C9D8B2300B5B683 /* MacAddTaskPopoverViewModel.swift */,
+				798FF8722C9D8F2500B5B683 /* MacDashboardViewModel.swift */,
 				798FF86D2C9D8BF000B5B683 /* MacSettingViewModel.swift */,
+				798FF8702C9D8E6300B5B683 /* MacTaskPopoverViewModel.swift */,
 			);
 			path = Scene;
+			sourceTree = "<group>";
+		};
+		79961BA52CB053B400157CF0 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				79C988042C96EBF60086A510 /* IconButtonStyle.swift */,
+			);
+			path = Styles;
 			sourceTree = "<group>";
 		};
 		79964A832C627768000EF203 /* iOS */ = {
@@ -1984,54 +1986,6 @@
 			path = TaskWiseWidgetMac;
 			sourceTree = "<group>";
 		};
-		799F9D892CAC0A9300E1D5E4 /* AddTask */ = {
-			isa = PBXGroup;
-			children = (
-				79829D282CAD5EBB00434A4A /* AddTaskUITests.swift */,
-			);
-			path = AddTask;
-			sourceTree = "<group>";
-		};
-		799F9D8A2CAC0A9D00E1D5E4 /* Calendar */ = {
-			isa = PBXGroup;
-			children = (
-				79829D2A2CADAE4D00434A4A /* CalendarUITests.swift */,
-			);
-			path = Calendar;
-			sourceTree = "<group>";
-		};
-		799F9D8B2CAC0AA200E1D5E4 /* Dashboard */ = {
-			isa = PBXGroup;
-			children = (
-				792CE4662CAC15E200CC8355 /* DashboardUITests.swift */,
-			);
-			path = Dashboard;
-			sourceTree = "<group>";
-		};
-		799F9D8C2CAC0AD800E1D5E4 /* Day */ = {
-			isa = PBXGroup;
-			children = (
-				79829D2C2CADB6EE00434A4A /* DayUITests.swift */,
-			);
-			path = Day;
-			sourceTree = "<group>";
-		};
-		799F9D8D2CAC0AE700E1D5E4 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				79829D2E2CADB73400434A4A /* SettingsUITests.swift */,
-			);
-			path = Settings;
-			sourceTree = "<group>";
-		};
-		799F9D8E2CAC0AED00E1D5E4 /* Task */ = {
-			isa = PBXGroup;
-			children = (
-				79829D302CADB75A00434A4A /* TaskUITests.swift */,
-			);
-			path = Task;
-			sourceTree = "<group>";
-		};
 		79A0C2E12B2276D2005B3F04 /* TasksWidget */ = {
 			isa = PBXGroup;
 			children = (
@@ -2048,8 +2002,8 @@
 		79A0C2E22B227718005B3F04 /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
-				79A0C2E12B2276D2005B3F04 /* TasksWidget */,
 				797B4D982B2115D8001DAC30 /* CompletionWidget */,
+				79A0C2E12B2276D2005B3F04 /* TasksWidget */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -2103,9 +2057,10 @@
 		79ABB45C2C8F0F36001D8AF0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				79ABB45D2C8F0F46001D8AF0 /* Assets */,
 				79403AFD2CADD8490047DC86 /* Components */,
 				79ABB4362C8F0DFA001D8AF0 /* Preview Content */,
-				79ABB45D2C8F0F46001D8AF0 /* Assets */,
+				79961BA52CB053B400157CF0 /* Styles */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -2113,8 +2068,8 @@
 		79ABB45D2C8F0F46001D8AF0 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				79ABB4592C8F0E51001D8AF0 /* Colors.xcassets */,
 				79ABB4342C8F0DFA001D8AF0 /* Assets.xcassets */,
+				79ABB4592C8F0E51001D8AF0 /* Colors.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -2184,10 +2139,10 @@
 		79B962602B1FD36700D16472 /* NavigationBars */ = {
 			isa = PBXGroup;
 			children = (
-				791C824E2C790993007D4627 /* PadDashboardNavigationBarModifier.swift */,
 				794621C12B1933E40060F6CD /* CalendarNavigationBarModifier.swift */,
 				794621BB2B1922690060F6CD /* DashboardNavigationBarModifier.swift */,
 				794621BF2B1930900060F6CD /* DayNavigationBarModifier.swift */,
+				791C824E2C790993007D4627 /* PadDashboardNavigationBarModifier.swift */,
 				79C838A72B1D109500F35483 /* SettingsNavigationBarModifier.swift */,
 				794621C32B193A8B0060F6CD /* TaskNavigationBarModifier.swift */,
 			);
@@ -2197,8 +2152,8 @@
 		79BC64222BDB5E0F0081B299 /* TaskWiseWatch Watch App */ = {
 			isa = PBXGroup;
 			children = (
-				79F5D5A42BDEEE1E006573BD /* TaskWiseWatch-Watch-App-Info.plist */,
 				792EE6B22BDEC932000814D9 /* TaskWiseWatch Watch App.entitlements */,
+				79F5D5A42BDEEE1E006573BD /* TaskWiseWatch-Watch-App-Info.plist */,
 				79BC64332BDB5EE40081B299 /* App */,
 				79BC64292BDB5E120081B299 /* Preview Content */,
 				79BC64362BDB5F150081B299 /* Resources */,
@@ -2235,8 +2190,8 @@
 		79BC64362BDB5F150081B299 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				792E99DC2BDB89B50008C7A2 /* Components */,
 				792E99DB2BDB6CDA0008C7A2 /* Assets */,
+				792E99DC2BDB89B50008C7A2 /* Components */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -2246,7 +2201,6 @@
 			children = (
 				7983001B2B17F6520013B834 /* BaseButtonStyle.swift */,
 				794621C52B1942310060F6CD /* BaseTextFieldStyle.swift */,
-				79C988042C96EBF60086A510 /* IconButtonStyle.swift */,
 				79A5198F2B1BA29F00B0EEC2 /* ListButtonStyle.swift */,
 				794621BD2B192B5A0060F6CD /* TextButtonStyle.swift */,
 				7983000D2B17C4D90013B834 /* TextStyle.swift */,
@@ -2732,13 +2686,13 @@
 			projectRoot = "";
 			targets = (
 				790A81022AAE19A600283D7E /* TaskWise */,
-				790A81122AAE19A700283D7E /* TaskWiseTests */,
-				790A811C2AAE19A700283D7E /* TaskWiseUITests */,
 				797B4D712B2107D7001DAC30 /* TaskWiseWidgetExtension */,
-				79BC64202BDB5E0F0081B299 /* TaskWiseWatch Watch App */,
-				79E176382BE2B676006577A8 /* TaskWiseWatchWidgetExtension */,
 				79ABB42D2C8F0DF9001D8AF0 /* TaskWiseMac */,
 				799F9D1F2CAAE25B00E1D5E4 /* TaskWiseWidgetMacExtension */,
+				79BC64202BDB5E0F0081B299 /* TaskWiseWatch Watch App */,
+				79E176382BE2B676006577A8 /* TaskWiseWatchWidgetExtension */,
+				790A81122AAE19A700283D7E /* TaskWiseTests */,
+				790A811C2AAE19A700283D7E /* TaskWiseUITests */,
 				79ABB43D2C8F0DFA001D8AF0 /* TaskWiseMacTests */,
 				79ABB4472C8F0DFA001D8AF0 /* TaskWiseMacUITests */,
 			);
@@ -3086,7 +3040,6 @@
 				799070BF2AEA6BE90051AAC8 /* DataService+Task.swift in Sources */,
 				79D9835F2ACC9285002A8222 /* AddTaskView.swift in Sources */,
 				798300142B17D75C0013B834 /* TaskRow.swift in Sources */,
-				79C988052C96EBFA0086A510 /* IconButtonStyle.swift in Sources */,
 				798B08CE2AB85C9600311D93 /* SettingsView.swift in Sources */,
 				799070B72AEA55090051AAC8 /* Category+DTO.swift in Sources */,
 				798B08CC2AB85C8400311D93 /* DayView.swift in Sources */,
@@ -3291,6 +3244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79961BA72CB0585000157CF0 /* PadSettingsUITests.swift in Sources */,
 				79829D2D2CADB6EE00434A4A /* DayUITests.swift in Sources */,
 				79829D312CADB75A00434A4A /* TaskUITests.swift in Sources */,
 				91B85EC22C2D70AD0030CD7E /* String+Extensions.swift in Sources */,
