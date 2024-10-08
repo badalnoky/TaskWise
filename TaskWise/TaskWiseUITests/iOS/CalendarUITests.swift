@@ -54,7 +54,7 @@ final class CalendarUITests: XCTestCase {
         }
     }
 
-    func test_searchSearchtextfield_whenTyped_shouldShowResults() throws {
+    func test_searchTextfield_whenTyped_shouldShowResults() throws {
         if UIScreen.isPhone {
             app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["Back"].tap()
             app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["plus.app.fill"].tap()

@@ -106,6 +106,7 @@ extension RepeatBehaviourPicker {
         }
     }
 
+    #if os(macOS)
     // swiftlint: disable closure_body_length
     private var customFrequencyPanel: some View {
         VStack(spacing: .padding24) {
@@ -155,7 +156,9 @@ extension RepeatBehaviourPicker {
         }
         .padding(.horizontal, .padding4)
     }
+    #endif
 
+    #if !os(macOS)
     private var customFrequencyButton: some View {
         Button(action: { isCustomSheetPresented = true }) {
             HStack {
@@ -170,6 +173,7 @@ extension RepeatBehaviourPicker {
         .padding(.leading, .padding4)
         .padding(.trailing, .padding16)
     }
+    #endif
 
     private var weekView: some View {
         LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: .weekDayCount)) {

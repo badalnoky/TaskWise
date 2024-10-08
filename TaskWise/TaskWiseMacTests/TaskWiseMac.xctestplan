@@ -22,7 +22,8 @@
       "containerPath" : "container:TaskWise.xcodeproj",
       "identifier" : "79ABB42D2C8F0DF9001D8AF0",
       "name" : "TaskWiseMac"
-    }
+    },
+    "testRepetitionMode" : "retryOnFailure"
   },
   "testTargets" : [
     {
