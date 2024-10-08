@@ -14,6 +14,12 @@ final class TaskUITests: XCTestCase {
             let titleTextfield = app.scrollViews.otherElements.textFields["Title"]
             titleTextfield.tap()
             titleTextfield.typeText(id)
+            app.scrollViews.otherElements.images["chevron.right"].tap()
+            app.swipeUp()
+            let stepTextfield = app.scrollViews.otherElements.textFields["Step"]
+            stepTextfield.tap()
+            stepTextfield.typeText("UITestStep")
+            app.scrollViews.otherElements.buttons["plus.app.fill"].tap()
             app.scrollViews.otherElements.buttons["Create task"].tap()
             app.collectionViews.scrollViews.otherElements.staticTexts[id].tap()
         }

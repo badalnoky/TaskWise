@@ -54,6 +54,26 @@ final class CalendarUITests: XCTestCase {
         }
     }
 
+    func test_searchSearchtextfield_whenTyped_shouldShowResults() throws {
+        if UIScreen.isPhone {
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["Back"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["plus.app.fill"].tap()
+            let titleTextfield = app.scrollViews.otherElements.textFields["Title"]
+            titleTextfield.tap()
+            let id = UUID().uuidString
+            titleTextfield.typeText(id)
+            app.scrollViews.otherElements.buttons["Create task"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["calendar"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["magnifyingglass"].tap()
+            let searchTextfield = app.textFields["Search"]
+            searchTextfield.tap()
+            searchTextfield.typeText(id)
+            let result = app.scrollViews.otherElements.buttons[id]
+            _ = result.waitForExistence(timeout: 5)
+            XCTAssertTrue(result.exists)
+        }
+    }
+
     func test_dayButton_whenTapped_shouldNavigate() throws {
         if UIScreen.isPhone {
             let date = Date.now
