@@ -82,7 +82,3 @@ extension PhoneDashboardView: View {
         .onOpenURL { viewModel.openAt($0) }
     }
 }
-
-#Preview {
-    PhoneDashboardView(viewModel: .mock)
-}

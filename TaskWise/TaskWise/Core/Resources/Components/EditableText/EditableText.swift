@@ -30,7 +30,3 @@ struct EditableText: View {
         }
     }
 }
-
-#Preview {
-    EditableText(item: Category.mock, isEditable: false) { _ in }
-}

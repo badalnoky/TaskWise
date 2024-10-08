@@ -184,7 +184,3 @@ extension SettingsView {
         .background(Color.appBackground)
     }
 }
-
-#Preview {
-    SettingsView(viewModel: .mock)
-}

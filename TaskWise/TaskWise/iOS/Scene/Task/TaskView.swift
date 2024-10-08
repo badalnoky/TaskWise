@@ -133,7 +133,3 @@ extension TaskView {
         .frame(height: .defaultListHeight)
     }
 }
-
-#Preview {
-    TaskView(viewModel: .mock)
-}

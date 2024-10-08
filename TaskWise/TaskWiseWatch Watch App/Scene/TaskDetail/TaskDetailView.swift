@@ -57,7 +57,3 @@ extension TaskDetailView: View {
         .containerBackground(Color.from(components: viewModel.task.category.colorComponents).gradient, for: .navigation)
     }
 }
-
-#Preview {
-    TaskDetailView(task: .mock)
-}

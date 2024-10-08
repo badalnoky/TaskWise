@@ -160,7 +160,3 @@ extension CalendarView {
         .transition(.move(edge: .top).combined(with: .opacity))
     }
 }
-
-#Preview {
-    CalendarView(viewModel: .mock)
-}

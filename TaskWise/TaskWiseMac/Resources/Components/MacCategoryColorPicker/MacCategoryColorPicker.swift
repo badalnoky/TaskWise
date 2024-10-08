@@ -27,10 +27,3 @@ struct MacCategoryColorPicker: View {
         self.colorChangedAction = colorChangedAction
     }
 }
-
-#Preview {
-    VStack {
-        MacCategoryColorPicker(category: .mock, isEditable: true) { _ in }
-        MacCategoryColorPicker(category: .mock, isEditable: false) { _ in }
-    }
-}

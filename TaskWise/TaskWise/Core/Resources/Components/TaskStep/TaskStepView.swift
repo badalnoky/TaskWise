@@ -61,7 +61,3 @@ public struct TaskStepView: View {
         }
     }
 }
-
-#Preview {
-    TaskStepView(step: .mock, isEditable: false, toggleAction: {}, newLabelAcion: { _ in })
-}
