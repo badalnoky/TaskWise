@@ -34,10 +34,3 @@ struct CategoryColorPicker: View {
         self.colorChangedAction = colorChangedAction
     }
 }
-
-#Preview {
-    VStack {
-        CategoryColorPicker(category: .mock, isEditable: true) { _ in }
-        CategoryColorPicker(category: .mock, isEditable: false) { _ in }
-    }
-}

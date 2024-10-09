@@ -118,7 +118,3 @@ extension AddTaskView {
         .frame(height: .defaultListHeight)
     }
 }
-
-#Preview {
-    AddTaskView(viewModel: .mock)
-}

@@ -171,8 +171,8 @@ extension MacSettingsView {
             ScrollView {
                 VStack {
                     OrderIndicatedList(
-                        highLabel: Txt.highLabel,
-                        lowLabel: Txt.lowLabel,
+                        highLabel: Txt.lowLabel,
+                        lowLabel: Txt.highLabel,
                         isEditable: viewModel.isEditingPriority,
                         items: viewModel.priorities,
                         deleteAction: { viewModel.didTapDeletePriority($0) },

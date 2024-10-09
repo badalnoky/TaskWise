@@ -109,7 +109,3 @@ extension DayView {
         .background(Color.appBackground)
     }
 }
-
-#Preview {
-    DayView(viewModel: .mock)
-}

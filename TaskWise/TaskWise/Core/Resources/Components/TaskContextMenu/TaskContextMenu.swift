@@ -36,7 +36,3 @@ extension TaskContextMenuItems: View {
         }
     }
 }
-
-#Preview {
-    TaskContextMenuItems(task: .mock, columns: [], changeColumnAction: { _, _ in }, deleteAction: { _ in })
-}
