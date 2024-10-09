@@ -56,7 +56,6 @@ extension TaskPopoverView: View {
                 Button(viewModel.actionButtonLabel, action: viewModel.didTapAction)
                     .buttonStyle(BaseButtonStyle())
             }
-            .frame(width: .popoverWidth)
             .padding(.padding32)
         }
         .alert(viewModel.deleteAlertMessage, isPresented: $viewModel.isDeleteAlertPresented) {

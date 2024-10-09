@@ -69,7 +69,7 @@ extension PadSettingsView {
         }
         .frame(maxHeight: .infinity)
         .sheet(isPresented: $viewModel.isNewCategorySheetPresented) {
-            newCategorySheet
+            newCategorySheet.presentationDetents([.height(.defaultFilterSheetHeight)])
         }
     }
 
@@ -99,8 +99,8 @@ extension PadSettingsView {
                 }
             }
             .padding(.horizontal, .padding4)
+            Spacer()
         }
-        .frame(width: .popoverWidth)
         .padding(.padding32)
         .background(Color.appBackground)
         .onDisappear(perform: viewModel.closeSheet)
@@ -141,7 +141,7 @@ extension PadSettingsView {
         }
         .frame(maxHeight: .infinity)
         .sheet(isPresented: $viewModel.isNewColumnSheetPresented) {
-            newColumnSheet
+            newColumnSheet.presentationDetents([.height(.defaultFilterSheetHeight)])
         }
     }
 
@@ -158,8 +158,8 @@ extension PadSettingsView {
             .padding(.top, .padding12)
             .padding(.horizontal, .padding4)
             StyledField(style: .base, title: Txt.columnPlaceholder, text: $viewModel.newColumnName)
+            Spacer()
         }
-        .frame(width: .popoverWidth)
         .padding(.padding32)
         .background(Color.appBackground)
         .onDisappear(perform: viewModel.closeSheet)
@@ -200,7 +200,7 @@ extension PadSettingsView {
         }
         .frame(maxHeight: .infinity)
         .sheet(isPresented: $viewModel.isNewPrioritySheetPresented) {
-            newPrioritySheet
+            newPrioritySheet.presentationDetents([.height(.defaultFilterSheetHeight)])
         }
     }
 
@@ -217,8 +217,8 @@ extension PadSettingsView {
             .padding(.top, .padding12)
             .padding(.horizontal, .padding4)
             StyledField(style: .base, title: Txt.priorityPlaceholder, text: $viewModel.newPriorityName)
+            Spacer()
         }
-        .frame(width: .popoverWidth)
         .padding(.padding32)
         .background(Color.appBackground)
         .onDisappear(perform: viewModel.closeSheet)
